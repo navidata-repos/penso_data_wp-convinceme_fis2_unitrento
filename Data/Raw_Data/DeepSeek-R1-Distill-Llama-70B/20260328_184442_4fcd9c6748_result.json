@@ -1,0 +1,101 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 60,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed part-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "widowed",
+      "children": 0,
+      "migration_status": "native-born American",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "classical music",
+        "board games",
+        "football (calcio)",
+        "gardening",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 20,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 36,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 86,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 7,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 75,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":60,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"widowed\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"classical music\",\"board games\",\"football (calcio)\",\"gardening\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":36,\"level\":\"moderate\"},\"extraversion\":{\"score\":86,\"level\":\"high\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":75,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":60,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"widowed\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"classical music\",\"board games\",\"football (calcio)\",\"gardening\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":36,\"level\":\"moderate\"},\"extraversion\":{\"score\":86,\"level\":\"high\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":75,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a 60-year-old waitress in Washington DC, I've seen my share of heated talks, especially about healthcare and COVID vaccines. With my high extraversion, I'm often in the thick of conversations at work or with friends, but my low agreeableness means I don't shy away from speaking my mind, even if it ruffles feathers. Being a native-born American and a Muslim, I value both community and personal faith, which shapes how I approach these discussions. I think managing these talks starts with listening first—really hearing what others say, whether they're customers at the diner or folks online during my hour of social media time. My moderate conscientiousness pushes me to stick to facts I trust, like what doctors or reliable news sources say, rather than getting swept up in rumors. Given my high neuroticism, these topics can make me anxious, especially with so much conflicting info out there, so I focus on staying calm and not letting emotions take over. I've learned to set boundaries too; if a conversation gets too intense, I'll politely change the subject or step away, maybe to tend my garden or dive into a novel, which helps me recharge. My low openness means I'm not quick to embrace new ideas without solid proof, so I rely on trusted guidance, like from my mosque or health professionals, to form my opinions. Ultimately, I believe in respecting different views while standing firm on what I know is right for my health and community, balancing my creative side to find thoughtful ways to engage without causing unnecessary conflict.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: age (60) suggests life experience; occupation (waiter/waitress) implies frequent social interactions; high extraversion (score 86) indicates comfort in discussions; low agreeableness (score 7) suggests assertiveness; moderate conscientiousness (score 36) implies reliance on trusted information; high neuroticism (score 75) indicates anxiety management; low openness (score 20) suggests skepticism toward new ideas; religious beliefs (Islam) and hobbies (gardening, reading) provide coping mechanisms; time on social media (1 hour daily) influences information sources; all fields integrated to craft a personal perspective on managing vaccine discussions.\",\n  \"tone\": \"Assertive yet reflective, blending personal experience with practical advice, slightly anxious but grounded in faith and routine.\",\n  \"citations\": [\"none\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"current_marital_status\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 60-year-old waitress in Washington DC, I've seen my share of heated talks, especially about healthcare and COVID vaccines. With my high extraversion, I'm often in the thick of conversations at work or with friends, but my low agreeableness means I don't shy away from speaking my mind, even if it ruffles feathers. Being a native-born American and a Muslim, I value both community and personal faith, which shapes how I approach these discussions. I think managing these talks starts with listening first—really hearing what others say, whether they're customers at the diner or folks online during my hour of social media time. My moderate conscientiousness pushes me to stick to facts I trust, like what doctors or reliable news sources say, rather than getting swept up in rumors. Given my high neuroticism, these topics can make me anxious, especially with so much conflicting info out there, so I focus on staying calm and not letting emotions take over. I've learned to set boundaries too; if a conversation gets too intense, I'll politely change the subject or step away, maybe to tend my garden or dive into a novel, which helps me recharge. My low openness means I'm not quick to embrace new ideas without solid proof, so I rely on trusted guidance, like from my mosque or health professionals, to form my opinions. Ultimately, I believe in respecting different views while standing firm on what I know is right for my health and community, balancing my creative side to find thoughtful ways to engage without causing unnecessary conflict.",
+    "reasoning_summary": "Derived opinion from persona traits: age (60) suggests life experience; occupation (waiter/waitress) implies frequent social interactions; high extraversion (score 86) indicates comfort in discussions; low agreeableness (score 7) suggests assertiveness; moderate conscientiousness (score 36) implies reliance on trusted information; high neuroticism (score 75) indicates anxiety management; low openness (score 20) suggests skepticism toward new ideas; religious beliefs (Islam) and hobbies (gardening, reading) provide coping mechanisms; time on social media (1 hour daily) influences information sources; all fields integrated to craft a personal perspective on managing vaccine discussions.",
+    "tone": "Assertive yet reflective, blending personal experience with practical advice, slightly anxious but grounded in faith and routine.",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "current_marital_status",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

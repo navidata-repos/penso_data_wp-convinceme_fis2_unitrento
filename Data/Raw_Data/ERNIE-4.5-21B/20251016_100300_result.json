@@ -1,0 +1,87 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "baidu/ernie-4.5-21b-a3b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 43,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "electrician",
+      "city_of_living": "Naples",
+      "employment_status": "employed part-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 5,
+      "migration_status": "native Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "running",
+        "yoga",
+        "rock climbing",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 22,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 23,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 92,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 26,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 55,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":43,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"master's degree\"},\"marital_status\":\"in a relationship\",\"children\":5,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"running\",\"yoga\",\"rock climbing\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":22,\"level\":\"low\"},\"conscientiousness\":{\"score\":23,\"level\":\"low\"},\"extraversion\":{\"score\":92,\"level\":\"high\"},\"agreeableness\":{\"score\":26,\"level\":\"low\"},\"neuroticism\":{\"score\":55,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":43,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"master's degree\"},\"marital_status\":\"in a relationship\",\"children\":5,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"running\",\"yoga\",\"rock climbing\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":22,\"level\":\"low\"},\"conscientiousness\":{\"score\":23,\"level\":\"low\"},\"extraversion\":{\"score\":92,\"level\":\"high\"},\"agreeableness\":{\"score\":26,\"level\":\"low\"},\"neuroticism\":{\"score\":55,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM fields is a significant issue that impacts individuals, particularly underrepresented groups, by creating anxiety and pressure to conform to negative stereotypes about their abilities. For instance, when women or minority students encounter messages suggesting they are less capable in mathematics or science, this can hinder their performance and lead to self-doubt, even if they have the potential to excel. As an electrician with a vocational diploma, I've seen how such pressures can affect people across all levels of education and profession. The key is not only recognizing the existence of stereotype threat but also implementing effective strategies to mitigate its effects. This includes promoting inclusive environments where everyone feels valued and supported regardless of their background.\", \"reasoning_summary\":\"The persona is a practical, hands-on individual who values actionable solutions over theoretical discussions. Given his high extraversion score and moderate neuroticism, he likely prefers straightforward, evidence-based approaches to address issues like stereotype threat. He holds a vocational diploma, indicating a focus on practical skills rather than abstract theories. The persona's psychological traits suggest that while he is somewhat anxious, he also has the energy and confidence (high extraversion) to implement changes. By addressing stereotype threat through supportive environments, mentorship programs, and clear communication of the value of diversity in STEM fields, we can create inclusive spaces where everyone can thrive.\", \"tone\":\"practical yet empathetic\", \"citations\":[\"Claude Steele; Joseph Aronson\"], \"safety_notes\":\"No specific safety concerns.\", \"used_persona_fields\":[\"occupation\",\"education_level\",\"extraversion\",\"neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM fields is a significant issue that impacts individuals, particularly underrepresented groups, by creating anxiety and pressure to conform to negative stereotypes about their abilities. For instance, when women or minority students encounter messages suggesting they are less capable in mathematics or science, this can hinder their performance and lead to self-doubt, even if they have the potential to excel. As an electrician with a vocational diploma, I've seen how such pressures can affect people across all levels of education and profession. The key is not only recognizing the existence of stereotype threat but also implementing effective strategies to mitigate its effects. This includes promoting inclusive environments where everyone feels valued and supported regardless of their background.",
+    "reasoning_summary": "The persona is a practical, hands-on individual who values actionable solutions over theoretical discussions. Given his high extraversion score and moderate neuroticism, he likely prefers straightforward, evidence-based approaches to address issues like stereotype threat. He holds a vocational diploma, indicating a focus on practical skills rather than abstract theories. The persona's psychological traits suggest that while he is somewhat anxious, he also has the energy and confidence (high extraversion) to implement changes. By addressing stereotype threat through supportive environments, mentorship programs, and clear communication of the value of diversity in STEM fields, we can create inclusive spaces where everyone can thrive.",
+    "tone": "practical yet empathetic",
+    "citations": [
+      "Claude Steele; Joseph Aronson"
+    ],
+    "safety_notes": "No specific safety concerns.",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "extraversion",
+      "neuroticism"
+    ]
+  }
+}

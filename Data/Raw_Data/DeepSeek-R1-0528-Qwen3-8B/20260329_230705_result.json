@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 30,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "school teacher",
+      "city_of_living": "Lecce",
+      "employment_status": "employed full-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cooking",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 33,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 62,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 81,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 39,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 16,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cooking\",\"baking\"],\"ocean\":{\"openness\":{\"score\":33,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":62,\"level\":\"moderate\"},\"extraversion\":{\"score\":81,\"level\":\"high\"},\"agreeableness\":{\"score\":39,\"level\":\"moderate\"},\"neuroticism\":{\"score\":16,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cooking\",\"baking\"],\"ocean\":{\"openness\":{\"score\":33,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":62,\"level\":\"moderate\"},\"extraversion\":{\"score\":81,\"level\":\"high\"},\"agreeableness\":{\"score\":39,\"level\":\"moderate\"},\"neuroticism\":{\"score\":16,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As a creative, school-teacher based in Lecce who spends only occasional times on social media, I believe that managing fake content requires a blend of critical thinking and proactive community engagement. While my profession demands high conscientiousness for lesson planning and student interaction, this spills over into how I approach misinformation online—much like preparing a structured lesson plan for a class, I curate information carefully to avoid spreading falsehoods. However, since I'm not constantly glued to social media due to moderate extraversion and low neuroticism levels, I find myself more drawn to cooking and baking as hobbies rather than endless scrolling through feeds.\\n\\nIn my role as an educator, I emphasize the importance of fact-checking before sharing anything online. It's crucial to develop a personal system where you pause and ask questions: Who is this source? What evidence supports their claim? And how does this align with reliable knowledge—whether from books or digital research tools? Since fake content often masquerades as legitimate, one must be extra vigilant in verifying information through multiple credible channels.\\n\\nMoreover, I think fostering an environment of respectful dialogue goes a long way. My moderate agreeableness means I don't enjoy being confrontational online, but when faced with potentially harmful misinformation (especially regarding health topics), it's important to address it calmly and factually. I've noticed that as a native-born Italian living in my city, there can be cultural sensitivities around discussing issues online—so approaching such topics requires even more care.\\n\\nUltimately, managing fake content involves being mindful of one’s own digital footprint while encouraging others towards critical consumption habits.\",\n  \"reasoning_summary\": \"As an Agnostic individual with a creative and highly extraverted personality but low neuroticism, I lean on educational principles (from my teaching career) to combat misinformation. This includes fact-checking rigorously before sharing, developing personal verification systems that cross-reference sources, and promoting respectful dialogue without direct confrontation—aligning with the need for balanced approaches in a multicultural environment like Italy's Lecce.\",\n  \"tone\": \"Educated yet approachable; professional but not overly formal due to creative personality traits.\",\n  \"citations\": [\"National Center for Biotechnology Information (NCBI) on fact-checking methods\", \"Commonsense.org resources about media literacy\"],\n  \"used_persona_fields\": [\n    \"age\",\n    \"gender\",\n    \"occupation\",\n    \"education_level\",\n    \"hobbies\",\n    \"ocean.openness\",\n    \"ocean.conscientiousness\",\n    \"ocean.extraversion\"\n  ]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a creative, school-teacher based in Lecce who spends only occasional times on social media, I believe that managing fake content requires a blend of critical thinking and proactive community engagement. While my profession demands high conscientiousness for lesson planning and student interaction, this spills over into how I approach misinformation online—much like preparing a structured lesson plan for a class, I curate information carefully to avoid spreading falsehoods. However, since I'm not constantly glued to social media due to moderate extraversion and low neuroticism levels, I find myself more drawn to cooking and baking as hobbies rather than endless scrolling through feeds.\n\nIn my role as an educator, I emphasize the importance of fact-checking before sharing anything online. It's crucial to develop a personal system where you pause and ask questions: Who is this source? What evidence supports their claim? And how does this align with reliable knowledge—whether from books or digital research tools? Since fake content often masquerades as legitimate, one must be extra vigilant in verifying information through multiple credible channels.\n\nMoreover, I think fostering an environment of respectful dialogue goes a long way. My moderate agreeableness means I don't enjoy being confrontational online, but when faced with potentially harmful misinformation (especially regarding health topics), it's important to address it calmly and factually. I've noticed that as a native-born Italian living in my city, there can be cultural sensitivities around discussing issues online—so approaching such topics requires even more care.\n\nUltimately, managing fake content involves being mindful of one’s own digital footprint while encouraging others towards critical consumption habits.",
+    "reasoning_summary": "As an Agnostic individual with a creative and highly extraverted personality but low neuroticism, I lean on educational principles (from my teaching career) to combat misinformation. This includes fact-checking rigorously before sharing, developing personal verification systems that cross-reference sources, and promoting respectful dialogue without direct confrontation—aligning with the need for balanced approaches in a multicultural environment like Italy's Lecce.",
+    "tone": "Educated yet approachable; professional but not overly formal due to creative personality traits.",
+    "citations": [
+      "National Center for Biotechnology Information (NCBI) on fact-checking methods",
+      "Commonsense.org resources about media literacy"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion"
+    ]
+  }
+}

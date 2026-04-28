@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 37,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "data scientist",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native American",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "birdwatching",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 67,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 16,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 34,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 55,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":37,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"data scientist\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"birdwatching\",\"photography\"],\"ocean\":{\"openness\":{\"score\":67,\"level\":\"high\"},\"conscientiousness\":{\"score\":16,\"level\":\"low\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":50,\"level\":\"moderate\"},\"neuroticism\":{\"score\":55,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":37,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"data scientist\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"birdwatching\",\"photography\"],\"ocean\":{\"openness\":{\"score\":67,\"level\":\"high\"},\"conscientiousness\":{\"score\":16,\"level\":\"low\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":50,\"level\":\"moderate\"},\"neuroticism\":{\"score\":55,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a data scientist in Washington DC, I've learned that managing discussions on complex topics like healthcare and COVID vaccines requires a blend of analytical skills and empathy. My high openness score means I approach these conversations with curiosity and a willingness to dive deep into the science, but my moderate agreeableness can sometimes make me too accommodating when faced with misinformation or emotional responses. I remember during the early pandemic, being on social media for several hours daily exposed me to everything from evidence-based public health arguments to wild conspiracy theories—my mental health was fine then due to good baseline resilience, but it's draining now reading how these debates polarize communities.\\n\\nI think the key is to start by acknowledging that people have different starting points. For instance, someone with a master's degree parent might understand statistics better than an elementary school teacher whose spouse has no formal education—both are valuable perspectives if approached respectfully. Then bring in data: cite peer-reviewed studies on vaccine efficacy or mortality rates from reputable sources like the CDC or WHO.\\n\\nBut I also must consider how my moderate extraversion affects these conversations; sometimes they're isolating, especially with my neuroticism making me worry about safety perceptions. Maybe share a personal story? Like when my children asked why people were hesitant—being honest without being defensive helps build trust. And birdwatching actually grounds these discussions in reality.\",\n  \"reasoning_summary\": \"1. As an introverted data scientist, I use statistical evidence from studies to counter claims about COVID vaccines.\\n2. My high openness allows me to engage with scientific complexity but requires careful evaluation of sources due to moderate neuroticism.\\n3. The moderate agreeableness means I avoid shutting down views outright and focus on shared goals like community health in DC.\\n4. Cite organizations such as CDC, WHO, peer-reviewed journals for credibility.\",\n  \"tone\": \"Calm yet approachable with a touch of frustration when encountering misinformation\",\n  \"citations\": [\"Centers for Disease Control and Prevention (CDC)\", \"World Health Organization (WHO)\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\", \"biological_sex\", \"gender\", \"occupation\", \"city_of_living\", \"time_onsocialmedia\", \"hobbies\", \"ocean.openness\", \"ocean.neuroticism\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a data scientist in Washington DC, I've learned that managing discussions on complex topics like healthcare and COVID vaccines requires a blend of analytical skills and empathy. My high openness score means I approach these conversations with curiosity and a willingness to dive deep into the science, but my moderate agreeableness can sometimes make me too accommodating when faced with misinformation or emotional responses. I remember during the early pandemic, being on social media for several hours daily exposed me to everything from evidence-based public health arguments to wild conspiracy theories—my mental health was fine then due to good baseline resilience, but it's draining now reading how these debates polarize communities.\n\nI think the key is to start by acknowledging that people have different starting points. For instance, someone with a master's degree parent might understand statistics better than an elementary school teacher whose spouse has no formal education—both are valuable perspectives if approached respectfully. Then bring in data: cite peer-reviewed studies on vaccine efficacy or mortality rates from reputable sources like the CDC or WHO.\n\nBut I also must consider how my moderate extraversion affects these conversations; sometimes they're isolating, especially with my neuroticism making me worry about safety perceptions. Maybe share a personal story? Like when my children asked why people were hesitant—being honest without being defensive helps build trust. And birdwatching actually grounds these discussions in reality.",
+    "reasoning_summary": "1. As an introverted data scientist, I use statistical evidence from studies to counter claims about COVID vaccines.\n2. My high openness allows me to engage with scientific complexity but requires careful evaluation of sources due to moderate neuroticism.\n3. The moderate agreeableness means I avoid shutting down views outright and focus on shared goals like community health in DC.\n4. Cite organizations such as CDC, WHO, peer-reviewed journals for credibility.",
+    "tone": "Calm yet approachable with a touch of frustration when encountering misinformation",
+    "citations": [
+      "Centers for Disease Control and Prevention (CDC)",
+      "World Health Organization (WHO)"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.neuroticism"
+    ]
+  }
+}

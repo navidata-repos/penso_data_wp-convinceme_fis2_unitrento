@@ -1,0 +1,96 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 37,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "software developer",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "volunteering",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 0,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 29,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 69,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 25,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 2,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":37,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"volunteering\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":0,\"level\":\"low\"},\"conscientiousness\":{\"score\":29,\"level\":\"low\"},\"extraversion\":{\"score\":69,\"level\":\"high\"},\"agreeableness\":{\"score\":25,\"level\":\"low\"},\"neuroticism\":{\"score\":2,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":37,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"volunteering\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":0,\"level\":\"low\"},\"conscientiousness\":{\"score\":29,\"level\":\"low\"},\"extraversion\":{\"score\":69,\"level\":\"high\"},\"agreeableness\":{\"score\":25,\"level\":\"low\"},\"neuroticism\":{\"score\":2,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As a software developer in Rome, I spend several hours daily on social media, and my perspective on managing fake content is shaped by my technical background and personal experiences. I believe that dealing with fake content requires a multi-faceted approach that combines individual vigilance, technological solutions, and community responsibility. From my work in software, I see the potential for algorithms to detect and flag misinformation, but I also recognize their limitations, as they can sometimes over-censor or miss nuanced contexts. Personally, I rely on critical thinking and fact-checking websites like Snopes or official sources before sharing anything, especially given my low conscientiousness and agreeableness scores, which make me skeptical of unverified claims. I think social media platforms should invest more in transparent moderation systems and user education, rather than relying solely on automated tools. For example, during the pandemic, I encountered numerous false health tips online, and my response was to verify with trusted medical sites and avoid engaging with sensational posts. As a father of two, I'm also concerned about how fake content affects my children, so I teach them to question sources and discuss online safety. My hobbies, like volunteering, have shown me the importance of community efforts in combating misinformation through grassroots campaigns. Ultimately, I advocate for a balanced strategy where users take personal responsibility, platforms improve their tech and policies, and society fosters media literacy, without resorting to excessive censorship that could stifle free expression.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: age 37 and occupation as software developer suggest technical insight into algorithmic solutions; time on social media indicates firsthand experience with fake content; low conscientiousness (score 29) and low agreeableness (score 25) imply skepticism and independent thinking, leading to emphasis on personal vigilance; high extraversion (score 69) suggests engagement in community aspects; hobbies like volunteering relate to collaborative efforts; being married with children adds concern for family safety; Atheist beliefs may influence preference for evidence-based approaches; city of living Rome provides cultural context but not heavily emphasized; overall, focused on practical, tech-informed strategies with personal responsibility.\",\n  \"tone\": \"Analytical, skeptical, and practical, with a focus on technical solutions and personal accountability, reflecting low agreeableness and conscientiousness.\",\n  \"citations\": [\"Snopes\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"occupation\", \"time_onsocialmedia\", \"ocean.conscientiousness\", \"ocean.agreeableness\", \"ocean.extraversion\", \"hobbies\", \"current_marital_status\", \"children\", \"religious_beliefs\", \"city_of_living\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a software developer in Rome, I spend several hours daily on social media, and my perspective on managing fake content is shaped by my technical background and personal experiences. I believe that dealing with fake content requires a multi-faceted approach that combines individual vigilance, technological solutions, and community responsibility. From my work in software, I see the potential for algorithms to detect and flag misinformation, but I also recognize their limitations, as they can sometimes over-censor or miss nuanced contexts. Personally, I rely on critical thinking and fact-checking websites like Snopes or official sources before sharing anything, especially given my low conscientiousness and agreeableness scores, which make me skeptical of unverified claims. I think social media platforms should invest more in transparent moderation systems and user education, rather than relying solely on automated tools. For example, during the pandemic, I encountered numerous false health tips online, and my response was to verify with trusted medical sites and avoid engaging with sensational posts. As a father of two, I'm also concerned about how fake content affects my children, so I teach them to question sources and discuss online safety. My hobbies, like volunteering, have shown me the importance of community efforts in combating misinformation through grassroots campaigns. Ultimately, I advocate for a balanced strategy where users take personal responsibility, platforms improve their tech and policies, and society fosters media literacy, without resorting to excessive censorship that could stifle free expression.",
+    "reasoning_summary": "Derived opinion from persona traits: age 37 and occupation as software developer suggest technical insight into algorithmic solutions; time on social media indicates firsthand experience with fake content; low conscientiousness (score 29) and low agreeableness (score 25) imply skepticism and independent thinking, leading to emphasis on personal vigilance; high extraversion (score 69) suggests engagement in community aspects; hobbies like volunteering relate to collaborative efforts; being married with children adds concern for family safety; Atheist beliefs may influence preference for evidence-based approaches; city of living Rome provides cultural context but not heavily emphasized; overall, focused on practical, tech-informed strategies with personal responsibility.",
+    "tone": "Analytical, skeptical, and practical, with a focus on technical solutions and personal accountability, reflecting low agreeableness and conscientiousness.",
+    "citations": [
+      "Snopes"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "time_onsocialmedia",
+      "ocean.conscientiousness",
+      "ocean.agreeableness",
+      "ocean.extraversion",
+      "hobbies",
+      "current_marital_status",
+      "children",
+      "religious_beliefs",
+      "city_of_living"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

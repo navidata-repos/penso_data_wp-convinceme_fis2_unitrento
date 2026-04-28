@@ -1,0 +1,98 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 35,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "yoga",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 18,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 79,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 83,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 3,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":35,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"yoga\",\"running\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":51,\"level\":\"moderate\"},\"extraversion\":{\"score\":79,\"level\":\"high\"},\"agreeableness\":{\"score\":83,\"level\":\"high\"},\"neuroticism\":{\"score\":3,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":35,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"yoga\",\"running\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":51,\"level\":\"moderate\"},\"extraversion\":{\"score\":79,\"level\":\"high\"},\"agreeableness\":{\"score\":83,\"level\":\"high\"},\"neuroticism\":{\"score\":3,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a fitness trainer in Bologna, I approach discussions about healthcare and COVID vaccines with a blend of practicality and empathy, shaped by my personal experiences as an immigrant and a father of two. My high extraversion and agreeableness drive me to engage openly in conversations, while my moderate conscientiousness ensures I base my views on reliable information, often from health authorities like the WHO or local Italian health services. I believe in the importance of vaccines for public health, drawing from my Islamic faith's emphasis on community well-being and protection of life. In discussions, I focus on sharing how vaccines align with maintaining physical fitness and overall wellness, using examples from my work with clients who have benefited from vaccination in staying active and healthy. I avoid confrontations by listening actively and acknowledging others' concerns, leveraging my creative psychological feature to find common ground, such as discussing preventive measures like exercise and nutrition alongside vaccination. My limited social media use helps me avoid misinformation, and I prefer face-to-face interactions where I can convey trust and sincerity. Ultimately, I manage these discussions by emphasizing shared goals of health and safety, respecting diverse perspectives while advocating for evidence-based practices that support our families and communities.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: Age 35 and occupation as fitness trainer imply a focus on health and practical wellness. High extraversion (score 79) and agreeableness (score 83) suggest an outgoing, empathetic approach to discussions, avoiding conflict. Moderate conscientiousness (score 51) indicates reliance on structured information from credible sources. Low openness (score 18) implies preference for established views, aligning with support for vaccines based on health authority guidance. Migration status and religious beliefs (Islam) influence a community-oriented perspective, emphasizing protection and well-being. Psychological feature 'creative' aids in finding innovative ways to discuss topics without confrontation. Hobbies like yoga and running reinforce health-centric examples. Time on social media limited reduces exposure to misinformation, favoring direct communication. Overall, persona leads to a balanced, health-focused opinion that manages discussions through empathy and evidence.\",\n  \"tone\": \"Empathetic, practical, community-focused, and health-oriented, with a calm and engaging demeanor reflective of high agreeableness and extraversion.\",\n  \"citations\": [\"WHO\", \"Italian Ministry of Health\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"occupation\", \"extraversion\", \"agreeableness\", \"conscientiousness\", \"openness\", \"migration_status\", \"religious_beliefs\", \"psychological_feature\", \"hobbies\", \"time_onsocialmedia\", \"children\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a fitness trainer in Bologna, I approach discussions about healthcare and COVID vaccines with a blend of practicality and empathy, shaped by my personal experiences as an immigrant and a father of two. My high extraversion and agreeableness drive me to engage openly in conversations, while my moderate conscientiousness ensures I base my views on reliable information, often from health authorities like the WHO or local Italian health services. I believe in the importance of vaccines for public health, drawing from my Islamic faith's emphasis on community well-being and protection of life. In discussions, I focus on sharing how vaccines align with maintaining physical fitness and overall wellness, using examples from my work with clients who have benefited from vaccination in staying active and healthy. I avoid confrontations by listening actively and acknowledging others' concerns, leveraging my creative psychological feature to find common ground, such as discussing preventive measures like exercise and nutrition alongside vaccination. My limited social media use helps me avoid misinformation, and I prefer face-to-face interactions where I can convey trust and sincerity. Ultimately, I manage these discussions by emphasizing shared goals of health and safety, respecting diverse perspectives while advocating for evidence-based practices that support our families and communities.",
+    "reasoning_summary": "Derived opinion from persona traits: Age 35 and occupation as fitness trainer imply a focus on health and practical wellness. High extraversion (score 79) and agreeableness (score 83) suggest an outgoing, empathetic approach to discussions, avoiding conflict. Moderate conscientiousness (score 51) indicates reliance on structured information from credible sources. Low openness (score 18) implies preference for established views, aligning with support for vaccines based on health authority guidance. Migration status and religious beliefs (Islam) influence a community-oriented perspective, emphasizing protection and well-being. Psychological feature 'creative' aids in finding innovative ways to discuss topics without confrontation. Hobbies like yoga and running reinforce health-centric examples. Time on social media limited reduces exposure to misinformation, favoring direct communication. Overall, persona leads to a balanced, health-focused opinion that manages discussions through empathy and evidence.",
+    "tone": "Empathetic, practical, community-focused, and health-oriented, with a calm and engaging demeanor reflective of high agreeableness and extraversion.",
+    "citations": [
+      "WHO",
+      "Italian Ministry of Health"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "extraversion",
+      "agreeableness",
+      "conscientiousness",
+      "openness",
+      "migration_status",
+      "religious_beliefs",
+      "psychological_feature",
+      "hobbies",
+      "time_onsocialmedia",
+      "children"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

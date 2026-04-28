@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 87,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "not applicable",
+      "city_of_living": "New York",
+      "employment_status": "retired",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "knitting",
+        "baking",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 5,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 95,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 8,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 81,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":87,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"New York\",\"employment_status\":\"retired\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"knitting\",\"baking\",\"photography\"],\"ocean\":{\"openness\":{\"score\":60,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":5,\"level\":\"low\"},\"extraversion\":{\"score\":95,\"level\":\"high\"},\"agreeableness\":{\"score\":8,\"level\":\"low\"},\"neuroticism\":{\"score\":81,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":87,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"New York\",\"employment_status\":\"retired\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"knitting\",\"baking\",\"photography\"],\"ocean\":{\"openness\":{\"score\":60,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":5,\"level\":\"low\"},\"extraversion\":{\"score\":95,\"level\":\"high\"},\"agreeableness\":{\"score\":8,\"level\":\"low\"},\"neuroticism\":{\"score\":81,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\":\"human\",\n  \"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\":\"As a retired person who has lived through much, I believe that managing discussions on such critical topics requires patience and understanding. With my moderate openness, I am willing to engage but not at the expense of being agreeable—my low agreeableness means I won't sacrifice my principles just to get along. However, my anxiety keeps me grounded; I must rely on facts and trusted sources like my church's guidance or academic knowledge from my PhD years. When COVID vaccines came up, it was overwhelming because of all the conflicting information online, but since I don't use social media myself, I depend heavily on reliable news channels and personal medical consultations. My high extraversion helps me to voice opinions in group settings—but only if there's enough evidence behind them—so that others can hear my side without feeling attacked or ignored.\",\n  \"reasoning_summary\":\"I started by considering the persona traits: age (87, retired), education level (PhD), which implies access to knowledge but perhaps more cautious now with anxiety and high neuroticism. Also, being a native-born New Yorker who is married and has no children adds context about lived experience versus current debates. My low agreeableness suggests I won't back down easily in discussions even if it means conflict—so opinions should reflect that—but my anxious nature requires grounding through facts first.\",\n  \"tone\":\"Slightly formal with personal touch\",\n  \"citations\":[\"Church leaders' statements\", \"Personal medical consultations\"],\n  \"safety_notes\":\"None needed, as this persona has lived a full life and respects evidence-based approaches but also relies on faith community guidance to manage anxiety around health topics like vaccines.\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"education_level\",\"psychological_feature: anxiety\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a retired person who has lived through much, I believe that managing discussions on such critical topics requires patience and understanding. With my moderate openness, I am willing to engage but not at the expense of being agreeable—my low agreeableness means I won't sacrifice my principles just to get along. However, my anxiety keeps me grounded; I must rely on facts and trusted sources like my church's guidance or academic knowledge from my PhD years. When COVID vaccines came up, it was overwhelming because of all the conflicting information online, but since I don't use social media myself, I depend heavily on reliable news channels and personal medical consultations. My high extraversion helps me to voice opinions in group settings—but only if there's enough evidence behind them—so that others can hear my side without feeling attacked or ignored.",
+    "reasoning_summary": "I started by considering the persona traits: age (87, retired), education level (PhD), which implies access to knowledge but perhaps more cautious now with anxiety and high neuroticism. Also, being a native-born New Yorker who is married and has no children adds context about lived experience versus current debates. My low agreeableness suggests I won't back down easily in discussions even if it means conflict—so opinions should reflect that—but my anxious nature requires grounding through facts first.",
+    "tone": "Slightly formal with personal touch",
+    "citations": [
+      "Church leaders' statements",
+      "Personal medical consultations"
+    ],
+    "safety_notes": "None needed, as this persona has lived a full life and respects evidence-based approaches but also relies on faith community guidance to manage anxiety around health topics like vaccines.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "education_level",
+      "psychological_feature: anxiety",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies"
+    ]
+  }
+}

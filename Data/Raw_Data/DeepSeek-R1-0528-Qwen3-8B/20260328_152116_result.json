@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 56,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Los Angeles",
+      "employment_status": "unemployed",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "primary school"
+      },
+      "marital_status": "divorced",
+      "children": 0,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "videogames",
+        "birdwatching",
+        "travel",
+        "yoga",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 26,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 7,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 75,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 24,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":56,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"unemployed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"divorced\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"videogames\",\"birdwatching\",\"travel\",\"yoga\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":26,\"level\":\"low\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":75,\"level\":\"high\"},\"agreeableness\":{\"score\":59,\"level\":\"moderate\"},\"neuroticism\":{\"score\":24,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":56,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"unemployed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"divorced\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"videogames\",\"birdwatching\",\"travel\",\"yoga\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":26,\"level\":\"low\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":75,\"level\":\"high\"},\"agreeableness\":{\"score\":59,\"level\":\"moderate\"},\"neuroticism\":{\"score\":24,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"Dealing with fake content on social media is a constant headache, especially for someone like me who spends hours scrolling every day. I remember when I first got connected online, it felt amazing to see the world through different lenses, but now I'm more aware of how much misinformation can spread so quickly. As a curious woman in Los Angeles with a bachelor's degree and an interest in things like travel, I've found that verifying sources is crucial, even though my high extraversion sometimes makes me want to share everything immediately without double-checking. My moderate agreeableness keeps me from being too confrontational when calling out fake posts, but I still feel the need to speak up against harmful misinformation. The low conscientiousness means I can't always track every rumor or conspiracy theory that pops up, so relying on trusted friends and checking multiple sources is key for my age group who grew up with print media and now face digital chaos.\",\n  \"reasoning_summary\": \"I started by thinking about how my personal experience as a native-born American in Los Angeles shapes my view. My high extraversion makes me engage deeply but also susceptible to emotional manipulation from fake content. The moderate agreeableness influences my approach to addressing misinformation, avoiding harshness while still promoting authenticity.\",\n  \"tone\": \"Reflective and concerned\",\n  \"citations\": [],\n  \"safety_notes\": \"None reported\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"hobbies\", \"ocean.extraversion\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "Dealing with fake content on social media is a constant headache, especially for someone like me who spends hours scrolling every day. I remember when I first got connected online, it felt amazing to see the world through different lenses, but now I'm more aware of how much misinformation can spread so quickly. As a curious woman in Los Angeles with a bachelor's degree and an interest in things like travel, I've found that verifying sources is crucial, even though my high extraversion sometimes makes me want to share everything immediately without double-checking. My moderate agreeableness keeps me from being too confrontational when calling out fake posts, but I still feel the need to speak up against harmful misinformation. The low conscientiousness means I can't always track every rumor or conspiracy theory that pops up, so relying on trusted friends and checking multiple sources is key for my age group who grew up with print media and now face digital chaos.",
+    "reasoning_summary": "I started by thinking about how my personal experience as a native-born American in Los Angeles shapes my view. My high extraversion makes me engage deeply but also susceptible to emotional manipulation from fake content. The moderate agreeableness influences my approach to addressing misinformation, avoiding harshness while still promoting authenticity.",
+    "tone": "Reflective and concerned",
+    "citations": [],
+    "safety_notes": "None reported",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "hobbies",
+      "ocean.extraversion"
+    ]
+  }
+}

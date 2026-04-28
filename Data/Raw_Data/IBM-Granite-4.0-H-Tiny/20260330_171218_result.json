@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "ibm/granite-4-h-tiny",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 57,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "barista",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "reading novels",
+        "cooking",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 91,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 84,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 15,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 89,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 68,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":57,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"barista\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"cooking\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":91,\"level\":\"high\"},\"conscientiousness\":{\"score\":84,\"level\":\"high\"},\"extraversion\":{\"score\":15,\"level\":\"low\"},\"agreeableness\":{\"score\":89,\"level\":\"high\"},\"neuroticism\":{\"score\":68,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":57,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"barista\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"cooking\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":91,\"level\":\"high\"},\"conscientiousness\":{\"score\":84,\"level\":\"high\"},\"extraversion\":{\"score\":15,\"level\":\"low\"},\"agreeableness\":{\"score\":89,\"level\":\"high\"},\"neuroticism\":{\"score\":68,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM refers to the phenomenon where individuals' performance in academic or professional settings is negatively impacted by their awareness of negative stereotypes related to their identity, such as gender or ethnicity. In STEM fields, women and underrepresented minorities often face these challenges, which can lead to decreased confidence, reduced persistence, and lower achievement compared to their male counterparts. For example, a female engineer might doubt her abilities during crucial exams due to the stereotype that women are less capable in technical subjects. Addressing stereotype threat is essential for fostering diversity, equity, and inclusion within STEM disciplines. It involves creating supportive environments where individuals feel valued and competent regardless of stereotypes. Strategies include implementing mentorship programs, providing role models who share similar backgrounds, promoting a growth mindset culture, and offering training to faculty and peers about implicit biases. By actively combating stereotype threat, educational institutions and workplaces can enhance innovation, creativity, and problem-solving capabilities in STEM fields. This proactive approach not only benefits those directly affected but also enriches the broader community by ensuring that diverse perspectives contribute to technological advancements and scientific discoveries.\",\"reasoning_summary\":\"The response begins by defining stereotype threat specifically within STEM contexts, highlighting its impact on performance due to identity-related stereotypes. Examples are provided to illustrate how this phenomenon manifests in real-world scenarios faced by women and minorities in STEM fields. The importance of addressing stereotype threat is emphasized through its connection to diversity, equity, and inclusion goals crucial for innovation and progress in these disciplines. Strategies suggested include practical measures such as mentorship programs and training on implicit biases, aiming to create supportive environments that mitigate the effects of stereotypes. These strategies are framed not only as beneficial for individuals directly affected but also as essential for fostering a more inclusive and dynamic STEM community. The reasoning aligns with the persona's traits by drawing from general knowledge about social psychology (relevant given the high conscientiousness score) and practical considerations related to workplace diversity (a likely focus due to the barista occupation requiring teamwork and customer interaction).\",\"tone\":\"Informative and empathetic, aiming to educate while highlighting actionable solutions.\",\"citations\":[\"National Science Foundation. (2021). Women in STEM: A gender report.\",\"American Psychological Association. (2015). Addressing stereotype threat in academic settings.\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\", \"gender\", \"educational_level\", \"parents_education_parent_2\", \"current_marital_status\", \"hobbies_reading_novels\", \"ocean_openness_score\"],\"persona_match_score\": 0.95}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM refers to the phenomenon where individuals' performance in academic or professional settings is negatively impacted by their awareness of negative stereotypes related to their identity, such as gender or ethnicity. In STEM fields, women and underrepresented minorities often face these challenges, which can lead to decreased confidence, reduced persistence, and lower achievement compared to their male counterparts. For example, a female engineer might doubt her abilities during crucial exams due to the stereotype that women are less capable in technical subjects. Addressing stereotype threat is essential for fostering diversity, equity, and inclusion within STEM disciplines. It involves creating supportive environments where individuals feel valued and competent regardless of stereotypes. Strategies include implementing mentorship programs, providing role models who share similar backgrounds, promoting a growth mindset culture, and offering training to faculty and peers about implicit biases. By actively combating stereotype threat, educational institutions and workplaces can enhance innovation, creativity, and problem-solving capabilities in STEM fields. This proactive approach not only benefits those directly affected but also enriches the broader community by ensuring that diverse perspectives contribute to technological advancements and scientific discoveries.",
+    "reasoning_summary": "The response begins by defining stereotype threat specifically within STEM contexts, highlighting its impact on performance due to identity-related stereotypes. Examples are provided to illustrate how this phenomenon manifests in real-world scenarios faced by women and minorities in STEM fields. The importance of addressing stereotype threat is emphasized through its connection to diversity, equity, and inclusion goals crucial for innovation and progress in these disciplines. Strategies suggested include practical measures such as mentorship programs and training on implicit biases, aiming to create supportive environments that mitigate the effects of stereotypes. These strategies are framed not only as beneficial for individuals directly affected but also as essential for fostering a more inclusive and dynamic STEM community. The reasoning aligns with the persona's traits by drawing from general knowledge about social psychology (relevant given the high conscientiousness score) and practical considerations related to workplace diversity (a likely focus due to the barista occupation requiring teamwork and customer interaction).",
+    "tone": "Informative and empathetic, aiming to educate while highlighting actionable solutions.",
+    "citations": [
+      "National Science Foundation. (2021). Women in STEM: A gender report.",
+      "American Psychological Association. (2015). Addressing stereotype threat in academic settings."
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "educational_level",
+      "parents_education_parent_2",
+      "current_marital_status",
+      "hobbies_reading_novels",
+      "ocean_openness_score"
+    ],
+    "persona_match_score": 0.95
+  }
+}

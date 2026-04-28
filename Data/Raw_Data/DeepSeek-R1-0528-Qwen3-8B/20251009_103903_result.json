@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 27,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "engineer",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed part-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native American",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cinema",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 30,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 21,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 75,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 65,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 98,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":27,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cinema\",\"baking\"],\"ocean\":{\"openness\":{\"score\":30,\"level\":\"low\"},\"conscientiousness\":{\"score\":21,\"level\":\"low\"},\"extraversion\":{\"score\":75,\"level\":\"high\"},\"agreeableness\":{\"score\":65,\"level\":\"moderate\"},\"neuroticism\":{\"score\":98,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":27,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cinema\",\"baking\"],\"ocean\":{\"openness\":{\"score\":30,\"level\":\"low\"},\"conscientiousness\":{\"score\":21,\"level\":\"low\"},\"extraversion\":{\"score\":75,\"level\":\"high\"},\"agreeableness\":{\"score\":65,\"level\":\"moderate\"},\"neuroticism\":{\"score\":98,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a creative woman engineer in my early thirties, I believe managing discussions on COVID vaccines requires both empathy and technical skill. My high extraversion score means I enjoy lively conversations but my moderate agreeableness keeps me grounded during debates. In engineering roles like mine, we often encounter complex topics that require careful explanation - similar to how I'd break down vaccine mechanisms for colleagues or family members who aren't scientists.\\n\\nWhen addressing vaccine skepticism in a community setting like Washington DC where misinformation spreads quickly on social media (though I only check it occasionally), I'd first validate concerns before presenting facts. Being divorced with two children gives me unique perspective - perhaps drawing parallels to how we explain technology concepts to my kids might help simplify explanations for others.\\n\\nMy low openness and conscientiousness scores actually work well here; they mean I prefer structured, logical arguments rather than abstract philosophical debates about healthcare systems or pandemics. The neuroticism component reminds me to manage my own anxiety during these discussions - taking deep breaths when responding online helps maintain clarity.\",\n  \"reasoning_summary\": \"First, assess the audience's knowledge level and emotional state regarding vaccines.\\nThen, structure responses in a step-by-step manner: concerns validation followed by factual information.\\nUse analogies from everyday life or personal experiences (like explaining to children) for complex topics.\\nMaintain calm despite high neuroticism levels during potentially heated online conversations.\",\n  \"tone\": \"Conversational yet authoritative\",\n  \"citations\": [\"Centers for Disease Control and Prevention\", \"World Health Organization\"],\n  \"safety_notes\": \"None needed as this is purely informational content about public health topics\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"hobbies\",\"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a creative woman engineer in my early thirties, I believe managing discussions on COVID vaccines requires both empathy and technical skill. My high extraversion score means I enjoy lively conversations but my moderate agreeableness keeps me grounded during debates. In engineering roles like mine, we often encounter complex topics that require careful explanation - similar to how I'd break down vaccine mechanisms for colleagues or family members who aren't scientists.\n\nWhen addressing vaccine skepticism in a community setting like Washington DC where misinformation spreads quickly on social media (though I only check it occasionally), I'd first validate concerns before presenting facts. Being divorced with two children gives me unique perspective - perhaps drawing parallels to how we explain technology concepts to my kids might help simplify explanations for others.\n\nMy low openness and conscientiousness scores actually work well here; they mean I prefer structured, logical arguments rather than abstract philosophical debates about healthcare systems or pandemics. The neuroticism component reminds me to manage my own anxiety during these discussions - taking deep breaths when responding online helps maintain clarity.",
+    "reasoning_summary": "First, assess the audience's knowledge level and emotional state regarding vaccines.\nThen, structure responses in a step-by-step manner: concerns validation followed by factual information.\nUse analogies from everyday life or personal experiences (like explaining to children) for complex topics.\nMaintain calm despite high neuroticism levels during potentially heated online conversations.",
+    "tone": "Conversational yet authoritative",
+    "citations": [
+      "Centers for Disease Control and Prevention",
+      "World Health Organization"
+    ],
+    "safety_notes": "None needed as this is purely informational content about public health topics",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

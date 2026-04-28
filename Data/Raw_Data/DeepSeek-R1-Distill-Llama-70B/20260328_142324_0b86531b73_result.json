@@ -1,0 +1,98 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 51,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "carpenter",
+      "city_of_living": "New York",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "football (calcio)",
+        "cycling",
+        "gardening",
+        "rock climbing",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 21,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 31,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 29,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 24,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 0,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":51,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"football (calcio)\",\"cycling\",\"gardening\",\"rock climbing\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":21,\"level\":\"low\"},\"conscientiousness\":{\"score\":31,\"level\":\"low\"},\"extraversion\":{\"score\":29,\"level\":\"low\"},\"agreeableness\":{\"score\":24,\"level\":\"low\"},\"neuroticism\":{\"score\":0,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":51,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"football (calcio)\",\"cycling\",\"gardening\",\"rock climbing\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":21,\"level\":\"low\"},\"conscientiousness\":{\"score\":31,\"level\":\"low\"},\"extraversion\":{\"score\":29,\"level\":\"low\"},\"agreeableness\":{\"score\":24,\"level\":\"low\"},\"neuroticism\":{\"score\":0,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a 51-year-old carpenter living in New York, I've seen how discussions about healthcare and COVID vaccines can get heated, especially in a diverse city like ours. With my anxious nature, I tend to avoid these talks unless necessary, but when they come up, I focus on keeping things practical and grounded. My vocational training taught me to rely on hands-on experience and trusted sources, so I listen to health experts like the CDC and my family doctor rather than getting caught up in online debates. Being married with two kids, I think about protecting my family first, and that means following guidelines that keep us safe, like getting vaccinated. My Jewish faith emphasizes community and caring for others, which aligns with public health measures. I don't spend much time on social media, so I'm not swayed by the latest trends or misinformation; instead, I stick to what I know works from my own life and conversations with friends at work or during hobbies like football and gardening. In discussions, I try to stay calm and respectful, even if others disagree, because I've learned that pushing too hard just causes stress. Overall, I believe in taking a balanced approach: trust the experts, prioritize family health, and avoid unnecessary conflicts by focusing on shared goals like staying healthy and supporting our community.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: Age 51 suggests life experience; occupation as carpenter implies practicality and reliance on tangible evidence; anxious psychological feature leads to avoidance of conflict; low openness score (21) indicates preference for tradition and established methods; low extraversion (29) means less engagement in social debates; religious beliefs (Judaism) emphasize community health; time on social media (few times monthly) reduces exposure to misinformation; hobbies like gardening and reading novels suggest reflective, grounded thinking; married with children prioritizes family safety; overall, persona favors cautious, expert-driven approaches to healthcare discussions.\",\n  \"tone\": \"Cautious, practical, family-oriented, respectful, grounded in personal experience and community values.\",\n  \"citations\": [\"CDC\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"occupation\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean.openness.score\", \"ocean.extraversion.score\", \"current_marital_status\", \"children\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 51-year-old carpenter living in New York, I've seen how discussions about healthcare and COVID vaccines can get heated, especially in a diverse city like ours. With my anxious nature, I tend to avoid these talks unless necessary, but when they come up, I focus on keeping things practical and grounded. My vocational training taught me to rely on hands-on experience and trusted sources, so I listen to health experts like the CDC and my family doctor rather than getting caught up in online debates. Being married with two kids, I think about protecting my family first, and that means following guidelines that keep us safe, like getting vaccinated. My Jewish faith emphasizes community and caring for others, which aligns with public health measures. I don't spend much time on social media, so I'm not swayed by the latest trends or misinformation; instead, I stick to what I know works from my own life and conversations with friends at work or during hobbies like football and gardening. In discussions, I try to stay calm and respectful, even if others disagree, because I've learned that pushing too hard just causes stress. Overall, I believe in taking a balanced approach: trust the experts, prioritize family health, and avoid unnecessary conflicts by focusing on shared goals like staying healthy and supporting our community.",
+    "reasoning_summary": "Derived opinion from persona traits: Age 51 suggests life experience; occupation as carpenter implies practicality and reliance on tangible evidence; anxious psychological feature leads to avoidance of conflict; low openness score (21) indicates preference for tradition and established methods; low extraversion (29) means less engagement in social debates; religious beliefs (Judaism) emphasize community health; time on social media (few times monthly) reduces exposure to misinformation; hobbies like gardening and reading novels suggest reflective, grounded thinking; married with children prioritizes family safety; overall, persona favors cautious, expert-driven approaches to healthcare discussions.",
+    "tone": "Cautious, practical, family-oriented, respectful, grounded in personal experience and community values.",
+    "citations": [
+      "CDC"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness.score",
+      "ocean.extraversion.score",
+      "current_marital_status",
+      "children"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

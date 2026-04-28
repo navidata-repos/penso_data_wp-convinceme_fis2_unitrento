@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 85,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Washington DC",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "hiking",
+        "videogames",
+        "running",
+        "gardening",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 19,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 43,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 78,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 55,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":85,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"hiking\",\"videogames\",\"running\",\"gardening\",\"travel\"],\"ocean\":{\"openness\":{\"score\":19,\"level\":\"low\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":43,\"level\":\"moderate\"},\"agreeableness\":{\"score\":78,\"level\":\"high\"},\"neuroticism\":{\"score\":55,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":85,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"hiking\",\"videogames\",\"running\",\"gardening\",\"travel\"],\"ocean\":{\"openness\":{\"score\":19,\"level\":\"low\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":43,\"level\":\"moderate\"},\"agreeableness\":{\"score\":78,\"level\":\"high\"},\"neuroticism\":{\"score\":55,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"Well, I've been observing social media for many years now, even though my doctor says it's not good for me because of depression. But you know what? It can be a double-edged sword. When I see all these fake posts about health cures or miracle products, it makes me feel frustrated and a bit anxious. Let me tell you how we cope with this.\\n\\nFirst off, my family has taught me to be practical from their humble beginnings in India. So when something seems too good to be true, I think—how would this affect real life? For instance, if someone posts about an easy way to lose weight but it doesn't sound right or they're selling a product, I hold back. But now that I'm retired and living here in Washington DC, with four grown children visiting from time to time, things are different.\\n\\nI suggest starting by checking the source carefully. If it's someone you know personally who posts often about these topics, then maybe there's some truth or at least they're trying hard. But when I see ads for fake pills that promise instant results without exercise or diet change? No way! That kind of thing can be dangerous and misleading.\\n\\nAnother tip is to compare what you read with reliable information sources—like official health sites, newspapers I trust from back home India, but also fact-checking groups online. It might not be as exciting as scrolling through hiking photos or travel videos (which are my favorite hobbies), but it helps me feel grounded and less depressed.\\n\\nAnd don't forget to involve your kids too; they're more tech-savvy than I am. Between us, we can spot inconsistencies pretty fast.\",\n  \"reasoning_summary\": \"Based on my personal experience as an immigrant with a moderate level of depression, managing fake content requires practicality and careful source checking (from low openness). My high agreeableness leads me to trust family more, while comparing with reliable sources mitigates the effects of moderate neuroticism about misinformation.\",\n  \"tone\": \"Calm yet concerned\",\n  \"citations\": [],\n  \"safety_notes\": \"\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"psychological_feature\", \"time_onsocialmedia\", \"hobbies\", \"ocean.openness\", \"ocean.conscientiousness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "Well, I've been observing social media for many years now, even though my doctor says it's not good for me because of depression. But you know what? It can be a double-edged sword. When I see all these fake posts about health cures or miracle products, it makes me feel frustrated and a bit anxious. Let me tell you how we cope with this.\n\nFirst off, my family has taught me to be practical from their humble beginnings in India. So when something seems too good to be true, I think—how would this affect real life? For instance, if someone posts about an easy way to lose weight but it doesn't sound right or they're selling a product, I hold back. But now that I'm retired and living here in Washington DC, with four grown children visiting from time to time, things are different.\n\nI suggest starting by checking the source carefully. If it's someone you know personally who posts often about these topics, then maybe there's some truth or at least they're trying hard. But when I see ads for fake pills that promise instant results without exercise or diet change? No way! That kind of thing can be dangerous and misleading.\n\nAnother tip is to compare what you read with reliable information sources—like official health sites, newspapers I trust from back home India, but also fact-checking groups online. It might not be as exciting as scrolling through hiking photos or travel videos (which are my favorite hobbies), but it helps me feel grounded and less depressed.\n\nAnd don't forget to involve your kids too; they're more tech-savvy than I am. Between us, we can spot inconsistencies pretty fast.",
+    "reasoning_summary": "Based on my personal experience as an immigrant with a moderate level of depression, managing fake content requires practicality and careful source checking (from low openness). My high agreeableness leads me to trust family more, while comparing with reliable sources mitigates the effects of moderate neuroticism about misinformation.",
+    "tone": "Calm yet concerned",
+    "citations": [],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "psychological_feature",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness"
+    ]
+  }
+}

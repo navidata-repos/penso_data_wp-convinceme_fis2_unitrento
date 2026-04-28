@@ -1,0 +1,101 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 82,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "New York",
+      "employment_status": "retired",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "divorced",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cooking",
+        "videogames",
+        "knitting",
+        "volunteering",
+        "classical music"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 0,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 13,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 23,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":82,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"New York\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cooking\",\"videogames\",\"knitting\",\"volunteering\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":50,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":0,\"level\":\"low\"},\"agreeableness\":{\"score\":13,\"level\":\"low\"},\"neuroticism\":{\"score\":23,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":82,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"New York\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cooking\",\"videogames\",\"knitting\",\"volunteering\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":50,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":0,\"level\":\"low\"},\"agreeableness\":{\"score\":13,\"level\":\"low\"},\"neuroticism\":{\"score\":23,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As an 82-year-old retired man living in New York, I've seen a lot of changes over the decades, and the gender gap in science is something I've observed from a distance, given my vocational diploma and limited formal education in that field. From what I gather through my hour on social media and occasional news, the gender gap refers to fewer women participating in scientific careers, especially in fields like engineering or physics, compared to men. I think we should address it, but cautiously, because in my time, roles were more rigid, and I'm not sure forcing change always works out. My Christian beliefs tell me to treat everyone fairly, but my low agreeableness makes me skeptical of big social movements. Having been divorced and raising three children, I saw my ex-wife struggle with balancing work and family, which might relate to why women face barriers in demanding science jobs. We should address it by encouraging girls early, maybe through schools or volunteering programs—I volunteer sometimes and see how mentorship can help. But we shouldn't ignore men's contributions or create resentment; instead, focus on equal opportunity without pushing too hard. My depression colors this view a bit, making me wary of over-optimism, but I believe in practical steps like better childcare support and unbiased hiring, not just talk. In summary, yes, address it gently with real support, not mandates.\",\"reasoning_summary\":\"Derived opinion from persona traits: age 82 suggests conservative, experience-based view; gender man and heterosexual orientation may lead to traditional leanings; retired status and vocational diploma imply limited direct science involvement but practical outlook; New York residence exposes to diverse perspectives; divorced with 3 children informs on family dynamics; depression adds cautious, somber tone; Christianity influences fairness; low agreeableness and extraversion yield skeptical, reserved stance; hobbies like volunteering suggest community focus; OCEAN scores (moderate openness, low agreeableness) balance curiosity with resistance to change. Opinion formed by acknowledging gap, supporting gradual, equitable solutions without radical shifts, aligning with persona's life stage and traits.\",\"tone\":\"Cautious, reflective, somewhat skeptical, grounded in personal experience, with a somber undercurrent due to depression, avoiding strong enthusiasm or confrontation.\",\"citations\":[\"general knowledge from social media and life experience\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"education_level\",\"city_of_living\",\"employment_status\",\"current_marital_status\",\"children\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As an 82-year-old retired man living in New York, I've seen a lot of changes over the decades, and the gender gap in science is something I've observed from a distance, given my vocational diploma and limited formal education in that field. From what I gather through my hour on social media and occasional news, the gender gap refers to fewer women participating in scientific careers, especially in fields like engineering or physics, compared to men. I think we should address it, but cautiously, because in my time, roles were more rigid, and I'm not sure forcing change always works out. My Christian beliefs tell me to treat everyone fairly, but my low agreeableness makes me skeptical of big social movements. Having been divorced and raising three children, I saw my ex-wife struggle with balancing work and family, which might relate to why women face barriers in demanding science jobs. We should address it by encouraging girls early, maybe through schools or volunteering programs—I volunteer sometimes and see how mentorship can help. But we shouldn't ignore men's contributions or create resentment; instead, focus on equal opportunity without pushing too hard. My depression colors this view a bit, making me wary of over-optimism, but I believe in practical steps like better childcare support and unbiased hiring, not just talk. In summary, yes, address it gently with real support, not mandates.",
+    "reasoning_summary": "Derived opinion from persona traits: age 82 suggests conservative, experience-based view; gender man and heterosexual orientation may lead to traditional leanings; retired status and vocational diploma imply limited direct science involvement but practical outlook; New York residence exposes to diverse perspectives; divorced with 3 children informs on family dynamics; depression adds cautious, somber tone; Christianity influences fairness; low agreeableness and extraversion yield skeptical, reserved stance; hobbies like volunteering suggest community focus; OCEAN scores (moderate openness, low agreeableness) balance curiosity with resistance to change. Opinion formed by acknowledging gap, supporting gradual, equitable solutions without radical shifts, aligning with persona's life stage and traits.",
+    "tone": "Cautious, reflective, somewhat skeptical, grounded in personal experience, with a somber undercurrent due to depression, avoiding strong enthusiasm or confrontation.",
+    "citations": [
+      "general knowledge from social media and life experience"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "city_of_living",
+      "employment_status",
+      "current_marital_status",
+      "children",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

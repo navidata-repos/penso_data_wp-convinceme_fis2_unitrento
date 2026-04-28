@@ -1,0 +1,137 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "google/gemma-4-e4b-it",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 38,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "yoga",
+        "football (calcio)",
+        "cooking",
+        "gardening",
+        "classical music"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 8,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 92,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 58,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":38,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"yoga\",\"football (calcio)\",\"cooking\",\"gardening\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":60,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":92,\"level\":\"high\"},\"agreeableness\":{\"score\":35,\"level\":\"moderate\"},\"neuroticism\":{\"score\":58,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":38,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"yoga\",\"football (calcio)\",\"cooking\",\"gardening\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":60,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":92,\"level\":\"high\"},\"agreeableness\":{\"score\":35,\"level\":\"moderate\"},\"neuroticism\":{\"score\":58,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":38,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"yoga\",\"football (calcio)\",\"cooking\",\"gardening\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":60,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":92,\"level\":\"high\"},\"agreeableness\":{\"score\":35,\"level\":\"moderate\"},\"neuroticism\":{\"score\":58,\"level\":\"moderate\"}}},\"opinion\":\"Honestly, when you see how much energy goes into feeling anxious about things, like when I’m trying to nail a new complex cut or when I’m worried about my kids’ future, it’s exhausting. Stereotype threat in STEM sounds like that pressure, but magnified. It's that gnawing feeling of being judged not just on what you know, but on what people *expect* you to know, often based on things like gender or background. For someone who’s always had to push through hurdles as an immigrant, or even just navigating a competitive world while juggling family and work, that external pressure is real. It’s not just about being ‘less smart’; it's about the internal stress that makes you second-guess yourself right when you need to be most confident. Given how much I’m on social media and how much I see these narratives, it feels like we have to address this, not just because it's fair, but because it’s genuinely detrimental to human potential. If you’re already feeling that internal anxiety, like I sometimes do, adding the weight of a stereotype can really derail you. So, how do we fix it? It can't just be a lecture. We need to change the environment. For me, that means creating spaces—whether it’s in a classroom or a professional setting—where the pressure to perform perfectly against a rigid mold is lowered. It needs to be about building community, like how a good football team relies on trust, not just individual brilliance. We need to normalize struggle; to make it okay to be learning, to be figuring things out, instead of being expected to arrive already polished. More proactive measures, like showing diverse role models constantly—people who look like us succeeding in those fields—can help chip away at the negative scripts before they even get formed in our heads. It's about shifting the narrative from 'proving you belong' to 'belonging because you are.'\",\"reasoning_summary\":\"The persona is highly extraverted and expressive, but also carries a moderate level of anxiety and has immigrant background, suggesting a high sensitivity to external pressures and stereotypes. The tone must be energetic yet empathetic, reflecting a practical, engaged worldview derived from her life experiences (hairdresser, immigrant, family focus). The discussion needs to be personal and relatable, moving beyond dry academic definitions to address the *feeling* of stereotype threat, tying it into her experience of navigating expectations and anxiety. The solution proposed must be community-focused and practical, aligning with her energetic and relational nature.\",\"tone\":\"Energetic, Empathetic, Pragmatic\",\"citations\":[\"N/A\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"psychological_feature\",\"migration_status\",\"extraversion\",\"time_onsocialmedia\",\"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 38,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "yoga",
+        "football (calcio)",
+        "cooking",
+        "gardening",
+        "classical music"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 8,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 92,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 58,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion": "Honestly, when you see how much energy goes into feeling anxious about things, like when I’m trying to nail a new complex cut or when I’m worried about my kids’ future, it’s exhausting. Stereotype threat in STEM sounds like that pressure, but magnified. It's that gnawing feeling of being judged not just on what you know, but on what people *expect* you to know, often based on things like gender or background. For someone who’s always had to push through hurdles as an immigrant, or even just navigating a competitive world while juggling family and work, that external pressure is real. It’s not just about being ‘less smart’; it's about the internal stress that makes you second-guess yourself right when you need to be most confident. Given how much I’m on social media and how much I see these narratives, it feels like we have to address this, not just because it's fair, but because it’s genuinely detrimental to human potential. If you’re already feeling that internal anxiety, like I sometimes do, adding the weight of a stereotype can really derail you. So, how do we fix it? It can't just be a lecture. We need to change the environment. For me, that means creating spaces—whether it’s in a classroom or a professional setting—where the pressure to perform perfectly against a rigid mold is lowered. It needs to be about building community, like how a good football team relies on trust, not just individual brilliance. We need to normalize struggle; to make it okay to be learning, to be figuring things out, instead of being expected to arrive already polished. More proactive measures, like showing diverse role models constantly—people who look like us succeeding in those fields—can help chip away at the negative scripts before they even get formed in our heads. It's about shifting the narrative from 'proving you belong' to 'belonging because you are.'",
+    "reasoning_summary": "The persona is highly extraverted and expressive, but also carries a moderate level of anxiety and has immigrant background, suggesting a high sensitivity to external pressures and stereotypes. The tone must be energetic yet empathetic, reflecting a practical, engaged worldview derived from her life experiences (hairdresser, immigrant, family focus). The discussion needs to be personal and relatable, moving beyond dry academic definitions to address the *feeling* of stereotype threat, tying it into her experience of navigating expectations and anxiety. The solution proposed must be community-focused and practical, aligning with her energetic and relational nature.",
+    "tone": "Energetic, Empathetic, Pragmatic",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "psychological_feature",
+      "migration_status",
+      "extraversion",
+      "time_onsocialmedia",
+      "hobbies"
+    ]
+  }
+}

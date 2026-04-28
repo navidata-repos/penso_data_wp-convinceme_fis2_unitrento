@@ -1,0 +1,93 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 34,
+      "gender": "woman",
+      "sexual_orientation": "bisexual",
+      "occupation": "retail worker",
+      "city_of_living": "Washington DC",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "yoga",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 83,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 19,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 4,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 12,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":34,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"yoga\",\"running\"],\"ocean\":{\"openness\":{\"score\":58,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":83,\"level\":\"high\"},\"extraversion\":{\"score\":19,\"level\":\"low\"},\"agreeableness\":{\"score\":4,\"level\":\"low\"},\"neuroticism\":{\"score\":12,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":34,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"yoga\",\"running\"],\"ocean\":{\"openness\":{\"score\":58,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":83,\"level\":\"high\"},\"extraversion\":{\"score\":19,\"level\":\"low\"},\"agreeableness\":{\"score\":4,\"level\":\"low\"},\"neuroticism\":{\"score\":12,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\":\"As a curious and self-employed retail worker in Washington DC, I spend about an hour daily on social media, keeping up with the latest trends and news. However, the prevalence of fake content is concerning. My high conscientiousness drives me to seek out reliable sources, while my low agreeableness makes me critical of what I see. One strategy I use is cross-referencing information with established news outlets before accepting it as true. For instance, when a post about a political issue sparks my curiosity, I verify it on websites like BBC or Reuters. Additionally, my moderate openness helps me consider diverse perspectives, but I always prioritize facts over emotions. As a mother of two, I also teach my children to question what they see online, encouraging them to ask, 'Is this from a reputable source?' Moreover, reporting fake content and using fact-checking tools like Snopes are practical steps I take. Although social media has its pitfalls, being proactive helps me navigate it more safely.\",\"reasoning_summary\":\"The persona's high conscientiousness and critical nature lead to a preference for verifiable information. Her time spent on social media is moderate, allowing for mindful consumption. The low extraversion suggests she might not engage much with viral content, while her curiosity drives a need for truth. Her experience as a mother adds a protective layer, emphasizing education about fake news for her children. The city of Washington DC and her self-employment may also influence her exposure to political misinformation.\",\"tone\":\"Thoughtful, analytical, slightly skeptical but practical.\",\"citations\":[\"BBC\",\"Reuters\",\"Snopes\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"age\",\"occupation\",\"city_of_living\",\"employment_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean_scores\",\"children\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a curious and self-employed retail worker in Washington DC, I spend about an hour daily on social media, keeping up with the latest trends and news. However, the prevalence of fake content is concerning. My high conscientiousness drives me to seek out reliable sources, while my low agreeableness makes me critical of what I see. One strategy I use is cross-referencing information with established news outlets before accepting it as true. For instance, when a post about a political issue sparks my curiosity, I verify it on websites like BBC or Reuters. Additionally, my moderate openness helps me consider diverse perspectives, but I always prioritize facts over emotions. As a mother of two, I also teach my children to question what they see online, encouraging them to ask, 'Is this from a reputable source?' Moreover, reporting fake content and using fact-checking tools like Snopes are practical steps I take. Although social media has its pitfalls, being proactive helps me navigate it more safely.",
+    "reasoning_summary": "The persona's high conscientiousness and critical nature lead to a preference for verifiable information. Her time spent on social media is moderate, allowing for mindful consumption. The low extraversion suggests she might not engage much with viral content, while her curiosity drives a need for truth. Her experience as a mother adds a protective layer, emphasizing education about fake news for her children. The city of Washington DC and her self-employment may also influence her exposure to political misinformation.",
+    "tone": "Thoughtful, analytical, slightly skeptical but practical.",
+    "citations": [
+      "BBC",
+      "Reuters",
+      "Snopes"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean_scores",
+      "children"
+    ]
+  }
+}

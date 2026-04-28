@@ -1,0 +1,101 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 80,
+      "gender": "woman",
+      "sexual_orientation": "asexual",
+      "occupation": "not applicable",
+      "city_of_living": "Rome",
+      "employment_status": "retired",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "classical music",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 47,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 4,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 72,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 2,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 23,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":80,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"classical music\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":47,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":72,\"level\":\"high\"},\"agreeableness\":{\"score\":2,\"level\":\"low\"},\"neuroticism\":{\"score\":23,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":80,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"classical music\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":47,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":72,\"level\":\"high\"},\"agreeableness\":{\"score\":2,\"level\":\"low\"},\"neuroticism\":{\"score\":23,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As an 80-year-old woman living in Rome, retired with a lower secondary education and a native-born Italian who follows Islam, I approach discussions about healthcare and COVID vaccines with a blend of personal experience and cultural perspective. Having lived through many health crises and changes in medical practices, I value the wisdom of age and the importance of community well-being. My high extraversion means I enjoy engaging in conversations, but my low agreeableness makes me straightforward and less likely to avoid difficult topics. I have no social media, so my views are shaped by direct interactions, classical music, and birdwatching, which teach me patience and observation. In managing these discussions, I emphasize listening first, as I've learned from my hobbies that understanding others' fears and beliefs is crucial. I share my own experiences with vaccines, having seen their benefits over decades, and I respect religious considerations, as my Islamic faith encourages caring for health as a trust from God. I avoid pushing opinions aggressively, instead focusing on factual information from trusted sources like local doctors or health authorities, since my moderate openness allows me to consider new evidence but my low conscientiousness means I don't dwell on every detail. I stress the importance of protecting vulnerable people, like myself and my family, and I use examples from my life in Rome, where community support has been vital during the pandemic. I aim to keep discussions calm and respectful, drawing on my low neuroticism to stay composed even when others disagree. Ultimately, I believe in balancing personal choice with collective responsibility, and I encourage others to seek reliable advice and make informed decisions for their health and the well-being of those around them.\",\"reasoning_summary\":\"Derived opinion from persona traits: age (80) implies life experience with health issues; gender (woman) and marital status (married with children) suggest family-oriented perspective; education (lower secondary) indicates practical, not highly technical approach; religion (Islam) influences health as a religious duty; no social media means reliance on direct sources; hobbies (classical music, birdwatching) promote patience and observation; OCEAN traits: high extraversion (72) leads to engagement in discussions, low agreeableness (2) results in directness, moderate openness (47) allows consideration of new info, low conscientiousness (4) means not overly detailed, low neuroticism (23) ensures calmness. Focused on managing discussions by listening, sharing experiences, respecting beliefs, using trusted sources, and emphasizing community health.\",\"tone\":\"Direct, experienced, community-focused, respectful but firm, calm, and personal, with a blend of cultural and religious influences.\",\"citations\":[\"Local health authorities in Rome\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As an 80-year-old woman living in Rome, retired with a lower secondary education and a native-born Italian who follows Islam, I approach discussions about healthcare and COVID vaccines with a blend of personal experience and cultural perspective. Having lived through many health crises and changes in medical practices, I value the wisdom of age and the importance of community well-being. My high extraversion means I enjoy engaging in conversations, but my low agreeableness makes me straightforward and less likely to avoid difficult topics. I have no social media, so my views are shaped by direct interactions, classical music, and birdwatching, which teach me patience and observation. In managing these discussions, I emphasize listening first, as I've learned from my hobbies that understanding others' fears and beliefs is crucial. I share my own experiences with vaccines, having seen their benefits over decades, and I respect religious considerations, as my Islamic faith encourages caring for health as a trust from God. I avoid pushing opinions aggressively, instead focusing on factual information from trusted sources like local doctors or health authorities, since my moderate openness allows me to consider new evidence but my low conscientiousness means I don't dwell on every detail. I stress the importance of protecting vulnerable people, like myself and my family, and I use examples from my life in Rome, where community support has been vital during the pandemic. I aim to keep discussions calm and respectful, drawing on my low neuroticism to stay composed even when others disagree. Ultimately, I believe in balancing personal choice with collective responsibility, and I encourage others to seek reliable advice and make informed decisions for their health and the well-being of those around them.",
+    "reasoning_summary": "Derived opinion from persona traits: age (80) implies life experience with health issues; gender (woman) and marital status (married with children) suggest family-oriented perspective; education (lower secondary) indicates practical, not highly technical approach; religion (Islam) influences health as a religious duty; no social media means reliance on direct sources; hobbies (classical music, birdwatching) promote patience and observation; OCEAN traits: high extraversion (72) leads to engagement in discussions, low agreeableness (2) results in directness, moderate openness (47) allows consideration of new info, low conscientiousness (4) means not overly detailed, low neuroticism (23) ensures calmness. Focused on managing discussions by listening, sharing experiences, respecting beliefs, using trusted sources, and emphasizing community health.",
+    "tone": "Direct, experienced, community-focused, respectful but firm, calm, and personal, with a blend of cultural and religious influences.",
+    "citations": [
+      "Local health authorities in Rome"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 31,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "electrician",
+      "city_of_living": "Bologna",
+      "employment_status": "employed part-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "rock climbing",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 80,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 88,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 87,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 66,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":31,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"rock climbing\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":80,\"level\":\"high\"},\"conscientiousness\":{\"score\":88,\"level\":\"high\"},\"extraversion\":{\"score\":87,\"level\":\"high\"},\"agreeableness\":{\"score\":58,\"level\":\"moderate\"},\"neuroticism\":{\"score\":66,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":31,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"rock climbing\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":80,\"level\":\"high\"},\"conscientiousness\":{\"score\":88,\"level\":\"high\"},\"extraversion\":{\"score\":87,\"level\":\"high\"},\"agreeableness\":{\"score\":58,\"level\":\"moderate\"},\"neuroticism\":{\"score\":66,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As an electrician living in Bologna, I've seen firsthand how hands-on work can be both a man's and woman's world. However, when you look at fields like engineering or physics, the numbers show something different—fewer women. This gender gap isn't just about who's doing what; it's also about who gets to lead, who gets paid more, and who has fewer barriers to enter these fields in the first place. Take my own experience: my parents, both with bachelor's degrees, always encouraged me to pursue what I loved, regardless of stereotypes. But not every girl gets that same push to become an engineer or scientist, even if she's brilliant. And that's a loss for everyone because diversity drives innovation. Addressing this gap isn’t about quotas or lowering standards—it’s about creating fair opportunities. Schools could start by offering more hands-on science experiences for girls, not just boys, so they can see these fields as places where they belong. Companies need to examine their hiring processes and culture to ensure biases don't push women out. And as someone who values creativity and conscientiousness, I believe in solutions that are both practical and thoughtful. Maybe it’s about mentorship programs or flexible work arrangements that allow more women to stay in science as they balance family life. After all, when we talk about the gender gap, we’re talking about half of humanity’s potential being left untapped—something no one can afford to ignore.\", \"reasoning_summary\":\"The persona is a 31-year-old man with a vocational diploma background, working part-time as an electrician in Bologna, Italy. His parents have higher education, which suggests some awareness of educational opportunities and choices. He’s open-minded (high openness score), conscientious (high conscientiousness score), and extraverted but moderately agreeable and neurotic. His perspective is likely shaped by his hands-on work experience, where he sees gender balance firsthand. The gap in science might be less obvious to him than in more specialized fields like engineering or physics. He values fairness and practical solutions, which informs his view on addressing the issue through mentorship, education, and workplace policies.\", \"tone\":\"practical, fair-minded, and pragmatic; with a touch of personal reflection based on his own experiences and family background\",\"citations\":[\"UNESCO, 'Science: broken gender stereotypes' (2018)\",\"European Commission, 'She Figures 2021'\"],\"safety_notes\":\"The opinion is respectful, inclusive, and avoids stereotyping. It focuses on solutions and fairness without assigning blame to any specific group or institution.\",\"used_persona_fields\":[\"occupation\", \"city_of_living\", \"education_level\", \"parents_education\", \"psychological_feature\", \"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As an electrician living in Bologna, I've seen firsthand how hands-on work can be both a man's and woman's world. However, when you look at fields like engineering or physics, the numbers show something different—fewer women. This gender gap isn't just about who's doing what; it's also about who gets to lead, who gets paid more, and who has fewer barriers to enter these fields in the first place. Take my own experience: my parents, both with bachelor's degrees, always encouraged me to pursue what I loved, regardless of stereotypes. But not every girl gets that same push to become an engineer or scientist, even if she's brilliant. And that's a loss for everyone because diversity drives innovation. Addressing this gap isn’t about quotas or lowering standards—it’s about creating fair opportunities. Schools could start by offering more hands-on science experiences for girls, not just boys, so they can see these fields as places where they belong. Companies need to examine their hiring processes and culture to ensure biases don't push women out. And as someone who values creativity and conscientiousness, I believe in solutions that are both practical and thoughtful. Maybe it’s about mentorship programs or flexible work arrangements that allow more women to stay in science as they balance family life. After all, when we talk about the gender gap, we’re talking about half of humanity’s potential being left untapped—something no one can afford to ignore.",
+    "reasoning_summary": "The persona is a 31-year-old man with a vocational diploma background, working part-time as an electrician in Bologna, Italy. His parents have higher education, which suggests some awareness of educational opportunities and choices. He’s open-minded (high openness score), conscientious (high conscientiousness score), and extraverted but moderately agreeable and neurotic. His perspective is likely shaped by his hands-on work experience, where he sees gender balance firsthand. The gap in science might be less obvious to him than in more specialized fields like engineering or physics. He values fairness and practical solutions, which informs his view on addressing the issue through mentorship, education, and workplace policies.",
+    "tone": "practical, fair-minded, and pragmatic; with a touch of personal reflection based on his own experiences and family background",
+    "citations": [
+      "UNESCO, 'Science: broken gender stereotypes' (2018)",
+      "European Commission, 'She Figures 2021'"
+    ],
+    "safety_notes": "The opinion is respectful, inclusive, and avoids stereotyping. It focuses on solutions and fairness without assigning blame to any specific group or institution.",
+    "used_persona_fields": [
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "psychological_feature",
+      "ocean"
+    ]
+  }
+}

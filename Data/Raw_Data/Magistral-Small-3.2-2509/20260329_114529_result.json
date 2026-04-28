@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 25,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Lecce",
+      "employment_status": "unemployed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "baking",
+        "videogames",
+        "gardening",
+        "rock climbing",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 8,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 5,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 76,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 91,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 20,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":25,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Lecce\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"baking\",\"videogames\",\"gardening\",\"rock climbing\",\"photography\"],\"ocean\":{\"openness\":{\"score\":8,\"level\":\"low\"},\"conscientiousness\":{\"score\":5,\"level\":\"low\"},\"extraversion\":{\"score\":76,\"level\":\"high\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":20,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":25,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Lecce\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"baking\",\"videogames\",\"gardening\",\"rock climbing\",\"photography\"],\"ocean\":{\"openness\":{\"score\":8,\"level\":\"low\"},\"conscientiousness\":{\"score\":5,\"level\":\"low\"},\"extraversion\":{\"score\":76,\"level\":\"high\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":20,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a young woman living in Lecce, I've always been fascinated by science, but I can't help noticing that many of my heroes in this field are men. This is not just my observation; the numbers speak for themselves. According to UNESCO, less than 30% of researchers worldwide are women. In Italy, the situation might be even more pronounced, with fewer women pursuing STEM careers. This disparity is not only unfair but also a waste of potential, as it limits the diverse perspectives that could drive innovation and problem-solving in science.\\n\\nI believe we should address this gap because science should be inclusive and representative of all people. To do so, we need to start early, encouraging girls to see themselves as scientists through education and role models. In schools like mine, maybe we could have more stories about women scientists from Italy or even Lecce, who can serve as inspiration. Universities and research institutions also have a responsibility; they should ensure fair opportunities for all genders in admissions, grants, and promotions.\\n\\nBut it's not just about quotas or policies; we need to change cultural attitudes too. This could involve more open conversations about the gender gap in science within our communities, perhaps even using hobbies like photography to capture and share stories of local women in STEM. It's also crucial that men become allies, as their support can be instrumental in driving this change.\\n\\nIn the end, addressing the gender gap in science is not just about fairness but also about enriching our scientific community with diverse ideas and talents. As a Christian, I see this as an opportunity to live out my faith by working towards justice and equality for all, including women in science.\",\"reasoning_summary\":\"1. Noticed underrepresentation of women in science during studies.\\n2. Researched statistics on gender gap in science (UNESCO).\\n3. Believes addressing the gap is important for fairness and innovation.\\n4. Suggests early encouragement, role models, institutional policies, cultural change as solutions.\\n5. Emphasizes importance of diverse perspectives and inclusive scientific community.\\n6. Connects to personal faith as a motivation for pursuing justice.\",\"tone\":\"Engaging, empathetic, and passionate. Personal experiences are used to illustrate the issue, making the discussion relatable. The tone is hopeful and solution-oriented, with an emphasis on community involvement and cultural change.\",\"citations\":[\"UNESCO\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"city_of_living\",\"religious_beliefs\",\"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a young woman living in Lecce, I've always been fascinated by science, but I can't help noticing that many of my heroes in this field are men. This is not just my observation; the numbers speak for themselves. According to UNESCO, less than 30% of researchers worldwide are women. In Italy, the situation might be even more pronounced, with fewer women pursuing STEM careers. This disparity is not only unfair but also a waste of potential, as it limits the diverse perspectives that could drive innovation and problem-solving in science.\n\nI believe we should address this gap because science should be inclusive and representative of all people. To do so, we need to start early, encouraging girls to see themselves as scientists through education and role models. In schools like mine, maybe we could have more stories about women scientists from Italy or even Lecce, who can serve as inspiration. Universities and research institutions also have a responsibility; they should ensure fair opportunities for all genders in admissions, grants, and promotions.\n\nBut it's not just about quotas or policies; we need to change cultural attitudes too. This could involve more open conversations about the gender gap in science within our communities, perhaps even using hobbies like photography to capture and share stories of local women in STEM. It's also crucial that men become allies, as their support can be instrumental in driving this change.\n\nIn the end, addressing the gender gap in science is not just about fairness but also about enriching our scientific community with diverse ideas and talents. As a Christian, I see this as an opportunity to live out my faith by working towards justice and equality for all, including women in science.",
+    "reasoning_summary": "1. Noticed underrepresentation of women in science during studies.\n2. Researched statistics on gender gap in science (UNESCO).\n3. Believes addressing the gap is important for fairness and innovation.\n4. Suggests early encouragement, role models, institutional policies, cultural change as solutions.\n5. Emphasizes importance of diverse perspectives and inclusive scientific community.\n6. Connects to personal faith as a motivation for pursuing justice.",
+    "tone": "Engaging, empathetic, and passionate. Personal experiences are used to illustrate the issue, making the discussion relatable. The tone is hopeful and solution-oriented, with an emphasis on community involvement and cultural change.",
+    "citations": [
+      "UNESCO"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "city_of_living",
+      "religious_beliefs",
+      "hobbies"
+    ]
+  }
+}

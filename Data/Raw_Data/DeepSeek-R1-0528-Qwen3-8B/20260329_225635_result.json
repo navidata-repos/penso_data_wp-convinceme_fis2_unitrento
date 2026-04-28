@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 42,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Naples",
+      "employment_status": "unemployed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "divorced",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "football (calcio)",
+        "running",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 66,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 43,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 29,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 32,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 51,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":42,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"football (calcio)\",\"running\",\"board games\"],\"ocean\":{\"openness\":{\"score\":66,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":43,\"level\":\"moderate\"},\"extraversion\":{\"score\":29,\"level\":\"low\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":51,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":42,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"football (calcio)\",\"running\",\"board games\"],\"ocean\":{\"openness\":{\"score\":66,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":43,\"level\":\"moderate\"},\"extraversion\":{\"score\":29,\"level\":\"low\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":51,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"I've been seeing so much fake news and misinformation online, especially since I spend a lot of time scrolling through my feeds. As an unemployed man living in Naples, I used to rely on social media for staying connected with friends and family who are spread out because I'm native-born Italian but they all migrated elsewhere or something. My kids have grown up around this digital noise, so it's ingrained now. The creative side of me sometimes wonders if we can't just design better algorithms to filter out the nonsense – maybe a system that tracks engagement patterns and flags inconsistencies? But honestly, I think the main issue is how much time people waste on these platforms anyway. With my moderate openness score, I'm okay with new ideas but cautious about trusting them blindly online.\",\n  \"reasoning_summary\": \"Based on my personal experience as an unemployed individual spending hours daily on social media in Naples, fake content can be overwhelming and affect one's mental health due to high neuroticism levels (51). While creative, I prefer practical solutions like fact-checking friends' posts rather than relying solely on technology.\",\n  \"tone\": \"Candid yet optimistic\",\n  \"citations\": [],\n  \"safety_notes\": \"None reported\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I've been seeing so much fake news and misinformation online, especially since I spend a lot of time scrolling through my feeds. As an unemployed man living in Naples, I used to rely on social media for staying connected with friends and family who are spread out because I'm native-born Italian but they all migrated elsewhere or something. My kids have grown up around this digital noise, so it's ingrained now. The creative side of me sometimes wonders if we can't just design better algorithms to filter out the nonsense – maybe a system that tracks engagement patterns and flags inconsistencies? But honestly, I think the main issue is how much time people waste on these platforms anyway. With my moderate openness score, I'm okay with new ideas but cautious about trusting them blindly online.",
+    "reasoning_summary": "Based on my personal experience as an unemployed individual spending hours daily on social media in Naples, fake content can be overwhelming and affect one's mental health due to high neuroticism levels (51). While creative, I prefer practical solutions like fact-checking friends' posts rather than relying solely on technology.",
+    "tone": "Candid yet optimistic",
+    "citations": [],
+    "safety_notes": "None reported",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 49,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "PhD"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "football (calcio)",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 6,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 83,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 6,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 31,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":49,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"football (calcio)\",\"painting\"],\"ocean\":{\"openness\":{\"score\":6,\"level\":\"low\"},\"conscientiousness\":{\"score\":83,\"level\":\"high\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":6,\"level\":\"low\"},\"neuroticism\":{\"score\":31,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":49,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"football (calcio)\",\"painting\"],\"ocean\":{\"openness\":{\"score\":6,\"level\":\"low\"},\"conscientiousness\":{\"score\":83,\"level\":\"high\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":6,\"level\":\"low\"},\"neuroticism\":{\"score\":31,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a 49-year-old man working retail in Philadelphia, I see the gender gap in science as a real issue from my own life and what I read online. I'm an immigrant with parents who both have PhDs, so I grew up around education, but I only finished lower secondary school myself. That makes me curious about these things, even if I'm not highly open to new ideas—my OCEAN scores show low openness and agreeableness, but high conscientiousness, so I like to think things through carefully. The gender gap means fewer women in science fields like engineering or physics, and they often face bias or lower pay. From my Christian beliefs, I believe in fairness and helping others, so yes, we should address it. It's not just about equality; it's about using all our talents, like in a football team where every player matters. I spend hours on social media daily, and I see posts about women scientists doing great work, but also stories of them struggling. As a divorced father of one, I want my child to have chances I didn't, regardless of gender. To fix it, we need practical steps: schools should encourage girls in science early, like through hands-on projects, and workplaces should offer fair pay and support for parents. My hobbies, painting and football, teach me that practice and teamwork lead to success, so science needs that too. We don't need big theories—just consistent effort, like my conscientious nature drives me to do my job well. Addressing the gap makes sense for a better society, and it aligns with my values of hard work and fairness.\",\"reasoning_summary\":\"Derived opinion from persona: Age 49 and lower secondary education suggest practical, experience-based views. Occupation as retail worker implies hands-on perspective. Parents with PhDs provide contrast, fostering curiosity about education gaps. Immigration status may relate to fairness issues. Psychological feature 'curious' and OCEAN traits (low openness, high conscientiousness, low agreeableness) lead to a reasoned, somewhat skeptical but diligent approach. Religious beliefs (Christianity) support fairness and helping others. Time on social media informs awareness of current issues. Hobbies (football, painting) analogize to teamwork and practice. Opinion addresses gender gap definition, necessity to address (based on fairness and utility), and methods (education encouragement, workplace fairness), avoiding abstract theories in favor of concrete steps, aligning with persona's traits.\",\"tone\":\"practical, reasoned, slightly skeptical but fair-minded, with personal anecdotes and analogies, avoiding emotional or highly abstract language\",\"citations\":[\"personal experience\",\"social media observations\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"education_level\",\"parents_education\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a 49-year-old man working retail in Philadelphia, I see the gender gap in science as a real issue from my own life and what I read online. I'm an immigrant with parents who both have PhDs, so I grew up around education, but I only finished lower secondary school myself. That makes me curious about these things, even if I'm not highly open to new ideas—my OCEAN scores show low openness and agreeableness, but high conscientiousness, so I like to think things through carefully. The gender gap means fewer women in science fields like engineering or physics, and they often face bias or lower pay. From my Christian beliefs, I believe in fairness and helping others, so yes, we should address it. It's not just about equality; it's about using all our talents, like in a football team where every player matters. I spend hours on social media daily, and I see posts about women scientists doing great work, but also stories of them struggling. As a divorced father of one, I want my child to have chances I didn't, regardless of gender. To fix it, we need practical steps: schools should encourage girls in science early, like through hands-on projects, and workplaces should offer fair pay and support for parents. My hobbies, painting and football, teach me that practice and teamwork lead to success, so science needs that too. We don't need big theories—just consistent effort, like my conscientious nature drives me to do my job well. Addressing the gap makes sense for a better society, and it aligns with my values of hard work and fairness.",
+    "reasoning_summary": "Derived opinion from persona: Age 49 and lower secondary education suggest practical, experience-based views. Occupation as retail worker implies hands-on perspective. Parents with PhDs provide contrast, fostering curiosity about education gaps. Immigration status may relate to fairness issues. Psychological feature 'curious' and OCEAN traits (low openness, high conscientiousness, low agreeableness) lead to a reasoned, somewhat skeptical but diligent approach. Religious beliefs (Christianity) support fairness and helping others. Time on social media informs awareness of current issues. Hobbies (football, painting) analogize to teamwork and practice. Opinion addresses gender gap definition, necessity to address (based on fairness and utility), and methods (education encouragement, workplace fairness), avoiding abstract theories in favor of concrete steps, aligning with persona's traits.",
+    "tone": "practical, reasoned, slightly skeptical but fair-minded, with personal anecdotes and analogies, avoiding emotional or highly abstract language",
+    "citations": [
+      "personal experience",
+      "social media observations"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "parents_education",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

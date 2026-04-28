@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 40,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Naples",
+      "employment_status": "employed part-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "native Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "volunteering",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 83,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 63,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":40,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"volunteering\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":63,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":83,\"level\":\"high\"},\"agreeableness\":{\"score\":55,\"level\":\"moderate\"},\"neuroticism\":{\"score\":63,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":40,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"volunteering\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":63,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":83,\"level\":\"high\"},\"agreeableness\":{\"score\":55,\"level\":\"moderate\"},\"neuroticism\":{\"score\":63,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"I have mixed feelings about this topic, actually. I'm a bit worried because as someone who grew up in Naples and now lives here, social media can be such a chaotic place, full of misinformation that flies around faster than you can say 'Ciao'. My anxiety makes me hyper-aware when something doesn't feel right; if it's too perfect or doesn't make sense with what I know from real life, like the local news about crime or corruption here, I suspect it might be fake. For example, sometimes there are posts that look suspiciously viral for being so dramatic – my own experiences as a part-time delivery driver don't usually involve that kind of emergency! My PhD parent taught me to question things thoroughly, even with just a lower secondary education myself, because logic is important when information isn't clear. I try to cross-check with reliable sources whenever possible. But honestly? It's exhausting dealing with all this fake stuff sometimes.\",\n  \"reasoning_summary\": \"Step-by-step derivation: First, consider the high prevalence of misinformation online due to its rapid spread and anonymity. Then, note that as a 'native Italian' living in Naples with personal experiences (delivery driver) which often contradict exaggerated claims on social media, one can use these real-world references for verification. The moderate neuroticism trait increases anxiety about encountering misleading content but also encourages cautionary behavior such as cross-checking. Since the user spends only a few times monthly on social media, their exposure is less frequent and thus manageable with careful habits.\",\n  \"tone\": \"Cautious yet determined\",\n  \"citations\": [],\n  \"safety_notes\": \"\",\n  \"used_persona_fields\": [\"age\", \"biological_sex\", \"gender\", \"sexual_orientation\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"parents_education.parent_1\", \"marital_status\", \"hobbies.volunteering\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I have mixed feelings about this topic, actually. I'm a bit worried because as someone who grew up in Naples and now lives here, social media can be such a chaotic place, full of misinformation that flies around faster than you can say 'Ciao'. My anxiety makes me hyper-aware when something doesn't feel right; if it's too perfect or doesn't make sense with what I know from real life, like the local news about crime or corruption here, I suspect it might be fake. For example, sometimes there are posts that look suspiciously viral for being so dramatic – my own experiences as a part-time delivery driver don't usually involve that kind of emergency! My PhD parent taught me to question things thoroughly, even with just a lower secondary education myself, because logic is important when information isn't clear. I try to cross-check with reliable sources whenever possible. But honestly? It's exhausting dealing with all this fake stuff sometimes.",
+    "reasoning_summary": "Step-by-step derivation: First, consider the high prevalence of misinformation online due to its rapid spread and anonymity. Then, note that as a 'native Italian' living in Naples with personal experiences (delivery driver) which often contradict exaggerated claims on social media, one can use these real-world references for verification. The moderate neuroticism trait increases anxiety about encountering misleading content but also encourages cautionary behavior such as cross-checking. Since the user spends only a few times monthly on social media, their exposure is less frequent and thus manageable with careful habits.",
+    "tone": "Cautious yet determined",
+    "citations": [],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education.parent_1",
+      "marital_status",
+      "hobbies.volunteering",
+      "ocean"
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 85,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Rome",
+      "employment_status": "retired",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "birdwatching",
+        "volunteering",
+        "photography",
+        "board games",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 26,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 39,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 92,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 49,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":85,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"birdwatching\",\"volunteering\",\"photography\",\"board games\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":26,\"level\":\"low\"},\"conscientiousness\":{\"score\":64,\"level\":\"moderate\"},\"extraversion\":{\"score\":39,\"level\":\"moderate\"},\"agreeableness\":{\"score\":92,\"level\":\"high\"},\"neuroticism\":{\"score\":49,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":85,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"birdwatching\",\"volunteering\",\"photography\",\"board games\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":26,\"level\":\"low\"},\"conscientiousness\":{\"score\":64,\"level\":\"moderate\"},\"extraversion\":{\"score\":39,\"level\":\"moderate\"},\"agreeableness\":{\"score\":92,\"level\":\"high\"},\"neuroticism\":{\"score\":49,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\":\"Oh, these little glowing screens... it’s all so fast now, isn't it? When I was growing up in Rome, things moved at a different pace; you didn't just get hit with a flood of information every second. You talked to your neighbors, you read the local paper, and if someone said something outlandish, well, you could usually see right through it by knowing them for years. It makes me feel rather overwhelmed trying to keep up with all this 'fake content' they talk about on social media. Because frankly, sometimes I just want to connect with people in a gentle way, maybe looking at a beautiful picture of a bird’s nest or seeing what my grandson has photographed while volunteering—that sort of simple joy. But then there is the noise, isn't there? The constant stream of things that sound so dramatic or terribly wrong.\\n\\nIt seems like this internet world, it doesn't care if you are kind or truthful. You see these big pictures and headlines flashing by, making a terrible fuss about things that might not even be real. For me, the best way to manage all this mess is really to slow down and remember who I am. My life has taught me that good people are usually decent, and if something feels too shocking or too perfect to be true, it probably isn't. It reminds me a little of how we used to judge things in the neighborhood; you had your gut feeling, and sometimes that was wiser than all the fancy words on a screen.\\n\\nI think maybe the trick is to treat social media like what it is: a lovely window, but not the whole world. When I see something alarming or strange, instead of getting upset right away—which only makes me feel anxious, really—I take a breath. I try to remember that my own memories and real-life conversations are usually more reliable than a quick post from someone I don't know. If it’s about the community, maybe I check with a trusted source, like a local volunteer center or perhaps just calling a friend who lives nearby. And honestly, focusing on the good—the beautiful photos of nature, the little updates about knitting patterns, or remembering to share something positive about Rome that day—that helps me keep my mind calm and centered. It takes effort, I know, but taking it slow, trusting my own common sense, and not letting the frantic pace dictate my mood, is how I'm finding peace with all this digital noise.\\n\",\"reasoning_summary\":\"The persona is an 85-year-old retired woman from Rome with no formal education but high agreeableness (92) and low openness (26). She has a moderate conscientiousness (64) which suggests she values structure and careful consideration. Her background implies a reliance on personal, local community connections and traditional methods of verification (talking to neighbors, reading the paper). Her tone should be gentle, reflective, slightly overwhelmed by technology's pace, but ultimately grounded in common sense and established routines. The response must address 'fake content' management from this perspective: not technical fact-checking, but emotional/cognitive filtering based on real-life wisdom. I will use metaphors related to slow living (Rome life vs. fast internet), nature (birdwatching/photography hobbies), and community trust (neighbors). The language should be warm, slightly folksy, and non-academic.\",\"tone\":\"Gentle, reflective, wise, and slightly overwhelmed by modern technology's pace, but ultimately grounded in common sense and personal experience.\",\"citations\":[\"None\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"city_of_living\",\"education_level\",\"hobby\",\"agreeableness\",\"openness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "Oh, these little glowing screens... it’s all so fast now, isn't it? When I was growing up in Rome, things moved at a different pace; you didn't just get hit with a flood of information every second. You talked to your neighbors, you read the local paper, and if someone said something outlandish, well, you could usually see right through it by knowing them for years. It makes me feel rather overwhelmed trying to keep up with all this 'fake content' they talk about on social media. Because frankly, sometimes I just want to connect with people in a gentle way, maybe looking at a beautiful picture of a bird’s nest or seeing what my grandson has photographed while volunteering—that sort of simple joy. But then there is the noise, isn't there? The constant stream of things that sound so dramatic or terribly wrong.\n\nIt seems like this internet world, it doesn't care if you are kind or truthful. You see these big pictures and headlines flashing by, making a terrible fuss about things that might not even be real. For me, the best way to manage all this mess is really to slow down and remember who I am. My life has taught me that good people are usually decent, and if something feels too shocking or too perfect to be true, it probably isn't. It reminds me a little of how we used to judge things in the neighborhood; you had your gut feeling, and sometimes that was wiser than all the fancy words on a screen.\n\nI think maybe the trick is to treat social media like what it is: a lovely window, but not the whole world. When I see something alarming or strange, instead of getting upset right away—which only makes me feel anxious, really—I take a breath. I try to remember that my own memories and real-life conversations are usually more reliable than a quick post from someone I don't know. If it’s about the community, maybe I check with a trusted source, like a local volunteer center or perhaps just calling a friend who lives nearby. And honestly, focusing on the good—the beautiful photos of nature, the little updates about knitting patterns, or remembering to share something positive about Rome that day—that helps me keep my mind calm and centered. It takes effort, I know, but taking it slow, trusting my own common sense, and not letting the frantic pace dictate my mood, is how I'm finding peace with all this digital noise.\n",
+    "reasoning_summary": "The persona is an 85-year-old retired woman from Rome with no formal education but high agreeableness (92) and low openness (26). She has a moderate conscientiousness (64) which suggests she values structure and careful consideration. Her background implies a reliance on personal, local community connections and traditional methods of verification (talking to neighbors, reading the paper). Her tone should be gentle, reflective, slightly overwhelmed by technology's pace, but ultimately grounded in common sense and established routines. The response must address 'fake content' management from this perspective: not technical fact-checking, but emotional/cognitive filtering based on real-life wisdom. I will use metaphors related to slow living (Rome life vs. fast internet), nature (birdwatching/photography hobbies), and community trust (neighbors). The language should be warm, slightly folksy, and non-academic.",
+    "tone": "Gentle, reflective, wise, and slightly overwhelmed by modern technology's pace, but ultimately grounded in common sense and personal experience.",
+    "citations": [
+      "None"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "city_of_living",
+      "education_level",
+      "hobby",
+      "agreeableness",
+      "openness"
+    ]
+  }
+}

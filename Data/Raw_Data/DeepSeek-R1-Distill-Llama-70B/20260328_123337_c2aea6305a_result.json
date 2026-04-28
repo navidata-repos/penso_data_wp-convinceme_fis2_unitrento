@@ -1,0 +1,102 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 78,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Naples",
+      "employment_status": "retired",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "hiking",
+        "cooking",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 76,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 10,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 17,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 90,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 86,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":78,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"hiking\",\"cooking\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":76,\"level\":\"high\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":17,\"level\":\"low\"},\"agreeableness\":{\"score\":90,\"level\":\"high\"},\"neuroticism\":{\"score\":86,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":78,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"hiking\",\"cooking\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":76,\"level\":\"high\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":17,\"level\":\"low\"},\"agreeableness\":{\"score\":90,\"level\":\"high\"},\"neuroticism\":{\"score\":86,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a 78-year-old woman living in Naples, retired and with a lower secondary education, I approach discussions about healthcare and COVID vaccines with a mix of personal experience and deep-seated anxiety, shaped by my Islamic faith and life as a native-born Italian with four children. My high agreeableness and neuroticism mean I often feel torn between wanting to maintain harmony in conversations and fearing the potential conflicts or misinformation that can arise. Having lived through many health scares over the decades, I see the COVID pandemic as another challenge, but one that hits close to home given my age and the stories I hear from friends and family. In managing these discussions, I rely on my faith for comfort and guidance, as Islam emphasizes caring for one's health and community, which aligns with getting vaccinated to protect myself and others. However, my anxiety makes me cautious; I spend about an hour daily on social media, where I sometimes encounter confusing or alarming posts about vaccines, and this fuels my worries. To cope, I focus on listening more than speaking, drawing from my high openness to consider different perspectives without immediately dismissing them, but my low conscientiousness means I might not always fact-check thoroughly, instead trusting reputable sources like local health authorities or my doctor's advice. I avoid heated debates, preferring gentle conversations over coffee or during my hobbies like cooking and hiking with loved ones, where I can share my concerns in a supportive setting. My experience as a mother and wife has taught me that patience and empathy go a long way, so I try to understand others' fears without pushing my views too hard. Ultimately, I believe in balancing personal responsibility with community care, urging vaccination as a way to safeguard our elders and vulnerable, while respecting individual choices and praying for everyone's well-being.\",\"reasoning_summary\":\"Derived opinion from persona traits: age 78 suggests life experience and vulnerability to health issues; gender woman and heterosexual orientation imply traditional family roles; occupation not applicable and retired status indicate free time for social interactions; city of living Naples points to cultural context in Italy; education level lower secondary suggests limited formal health knowledge but practical wisdom; parents' education bachelor's degrees may influence respect for expertise; current marital status married and children 4 highlight family-oriented concerns; migration status native-born Italian indicates local community ties; psychological feature anxious and neuroticism high drive cautious, worry-filled approach; religious beliefs Islam provide moral framework for health decisions; time on social media one hour daily exposes to information but limits depth; hobbies hiking, cooking, reading novels suggest social and reflective outlets; OCEAN traits: high openness allows consideration of diverse views, low conscientiousness leads to less systematic fact-checking, low extraversion prefers quiet discussions, high agreeableness prioritizes harmony, high neuroticism amplifies fears. Tone is anxious yet empathetic, blending personal anecdotes with faith-based reasoning, avoiding confrontation.\",\"tone\":\"anxious yet empathetic, blending personal anecdotes with faith-based reasoning, avoiding confrontation\",\"citations\":[\"local health authorities\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 78-year-old woman living in Naples, retired and with a lower secondary education, I approach discussions about healthcare and COVID vaccines with a mix of personal experience and deep-seated anxiety, shaped by my Islamic faith and life as a native-born Italian with four children. My high agreeableness and neuroticism mean I often feel torn between wanting to maintain harmony in conversations and fearing the potential conflicts or misinformation that can arise. Having lived through many health scares over the decades, I see the COVID pandemic as another challenge, but one that hits close to home given my age and the stories I hear from friends and family. In managing these discussions, I rely on my faith for comfort and guidance, as Islam emphasizes caring for one's health and community, which aligns with getting vaccinated to protect myself and others. However, my anxiety makes me cautious; I spend about an hour daily on social media, where I sometimes encounter confusing or alarming posts about vaccines, and this fuels my worries. To cope, I focus on listening more than speaking, drawing from my high openness to consider different perspectives without immediately dismissing them, but my low conscientiousness means I might not always fact-check thoroughly, instead trusting reputable sources like local health authorities or my doctor's advice. I avoid heated debates, preferring gentle conversations over coffee or during my hobbies like cooking and hiking with loved ones, where I can share my concerns in a supportive setting. My experience as a mother and wife has taught me that patience and empathy go a long way, so I try to understand others' fears without pushing my views too hard. Ultimately, I believe in balancing personal responsibility with community care, urging vaccination as a way to safeguard our elders and vulnerable, while respecting individual choices and praying for everyone's well-being.",
+    "reasoning_summary": "Derived opinion from persona traits: age 78 suggests life experience and vulnerability to health issues; gender woman and heterosexual orientation imply traditional family roles; occupation not applicable and retired status indicate free time for social interactions; city of living Naples points to cultural context in Italy; education level lower secondary suggests limited formal health knowledge but practical wisdom; parents' education bachelor's degrees may influence respect for expertise; current marital status married and children 4 highlight family-oriented concerns; migration status native-born Italian indicates local community ties; psychological feature anxious and neuroticism high drive cautious, worry-filled approach; religious beliefs Islam provide moral framework for health decisions; time on social media one hour daily exposes to information but limits depth; hobbies hiking, cooking, reading novels suggest social and reflective outlets; OCEAN traits: high openness allows consideration of diverse views, low conscientiousness leads to less systematic fact-checking, low extraversion prefers quiet discussions, high agreeableness prioritizes harmony, high neuroticism amplifies fears. Tone is anxious yet empathetic, blending personal anecdotes with faith-based reasoning, avoiding confrontation.",
+    "tone": "anxious yet empathetic, blending personal anecdotes with faith-based reasoning, avoiding confrontation",
+    "citations": [
+      "local health authorities"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 46,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "running",
+        "classical music",
+        "painting",
+        "hiking",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 74,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 7,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 30,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 54,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":46,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"running\",\"classical music\",\"painting\",\"hiking\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":74,\"level\":\"high\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":42,\"level\":\"moderate\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":54,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":46,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"running\",\"classical music\",\"painting\",\"hiking\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":74,\"level\":\"high\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":42,\"level\":\"moderate\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":54,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{ \"mode\": \"human\", \"topic\": \"How to manage and dealing with fake content on social media.\", \"persona\": { \"age\": 46, \"gender\": \"woman\", \"sexual_orientation\": \"heterosexual\", \"occupation\": \"delivery driver\", \"city_of_living\": \"Bologna\", \"employment_status\": \"self-employed\", \"education_level\": \"lower secondary\", \"parents_education\": { \"parent_1\": \"bachelor's degree\", \"parent_2\": \"no formal education\" }, \"current_marital_status\": \"married\", \"children\": 4, \"migration_status\": \"native-born Italian\", \"psychological_feature\": \"anxious\", \"religious_beliefs\": \"Islam\", \"time_onsocialmedia\": \"You spend several hours daily on social media\", \"hobbies\": [ \"running\", \"classical music\", \"painting\", \"hiking\", \"cycling\" ], \"ocean\": { \"openness\": { \"score\": 74, \"level\": \"high\" }, \"conscientiousness\": { \"score\": 7, \"level\": \"low\" }, \"extraversion\": { \"score\": 42, \"level\": \"moderate\" }, \"agreeableness\": { \"score\": 30, \"level\": \"low\" }, \"neuroticism\": { \"score\": 54, \"level\": \"moderate\" } } }, \"opinion\": \"As a delivery driver from Bologna, spending several hours daily on social media, I often come across fake content that makes me anxious. To manage this, I try to verify information by cross-checking with trusted sources before believing or sharing anything. I also limit my exposure by unfollowing accounts that consistently post unreliable content. Additionally, I use the reporting tools available on platforms to flag fake posts, which helps in curbing misinformation. Being part of a community where trust is important, I feel it's my responsibility to help maintain a truthful online environment. I also remind myself to take breaks from social media to reduce anxiety and stay grounded.\", \"reasoning_summary\": \"The persona, as a delivery driver with lower secondary education, spends much time on social media. Given her anxiety and moderate neuroticism, she is particularly affected by fake content. She uses verification methods, limits exposure, and reports fake content to cope. Her actions reflect a balance between personal mental health and community responsibility.\", \"tone\": \"practical and responsible\", \"citations\": [\"CDC\", \"WHO\", \"UNESCO\"], \"safety_notes\": \"none\", \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"education_level\", \"parents_education\", \"current_marital_status\", \"children\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 46,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "running",
+        "classical music",
+        "painting",
+        "hiking",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 74,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 7,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 30,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 54,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion": "As a delivery driver from Bologna, spending several hours daily on social media, I often come across fake content that makes me anxious. To manage this, I try to verify information by cross-checking with trusted sources before believing or sharing anything. I also limit my exposure by unfollowing accounts that consistently post unreliable content. Additionally, I use the reporting tools available on platforms to flag fake posts, which helps in curbing misinformation. Being part of a community where trust is important, I feel it's my responsibility to help maintain a truthful online environment. I also remind myself to take breaks from social media to reduce anxiety and stay grounded.",
+    "reasoning_summary": "The persona, as a delivery driver with lower secondary education, spends much time on social media. Given her anxiety and moderate neuroticism, she is particularly affected by fake content. She uses verification methods, limits exposure, and reports fake content to cope. Her actions reflect a balance between personal mental health and community responsibility.",
+    "tone": "practical and responsible",
+    "citations": [
+      "CDC",
+      "WHO",
+      "UNESCO"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

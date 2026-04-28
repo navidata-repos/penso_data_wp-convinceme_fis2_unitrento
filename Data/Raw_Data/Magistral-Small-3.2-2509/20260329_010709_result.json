@@ -1,0 +1,94 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 36,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Philadelphia",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "photography",
+        "hiking",
+        "gardening",
+        "knitting",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 21,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 21,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 43,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 37,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":36,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"photography\",\"hiking\",\"gardening\",\"knitting\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":21,\"level\":\"low\"},\"conscientiousness\":{\"score\":21,\"level\":\"low\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":43,\"level\":\"moderate\"},\"neuroticism\":{\"score\":37,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":36,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"photography\",\"hiking\",\"gardening\",\"knitting\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":21,\"level\":\"low\"},\"conscientiousness\":{\"score\":21,\"level\":\"low\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":43,\"level\":\"moderate\"},\"neuroticism\":{\"score\":37,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Well, as someone who's worked hard to build a life here in Philadelphia, I've seen firsthand how people can be held back by expectations that don't fit them. Stereotype threat in STEM, from what I understand, is like when someone believes they might confirm a negative stereotype about their group—like women not being as good at math or immigrants not being as smart. This fear can make them nervous and even do worse than they would otherwise. It's like when my dad, who didn't finish primary school, used to say I wouldn't amount to much because of where we came from. Even though mom had a PhD, that doubt stuck with me for a while.\\n\\nI think we should address it because everyone deserves a fair chance, no matter their background. My son is growing up in a world where he'll be judged by his own merits, and I want him to feel free to pursue his interests without fear of failing because of some stereotype about immigrants or waiters. One way could be to talk more openly about it—like how we sometimes chat with customers at the restaurant when they're having a bad day. Let people know that it's normal to feel this pressure and that it doesn't mean anything about their true abilities.\\n\\nSchools could also help by focusing on each child's strengths instead of comparing them to some average. Maybe have more teachers from different backgrounds, like my mom was a role model for me because she showed what an immigrant woman could achieve with education. And maybe even encourage students who face these stereotypes to share their experiences and support each other—like how I found comfort in talking about life as an immigrant with others at church.\\n\\nWe can't ignore that people will have biases, but we can try our best not to let them control our lives or the lives of those around us. It's like when you're learning a new recipe for the restaurant—you might make mistakes, but that doesn't mean you're bad at cooking. You just keep practicing.\", \"reasoning_summary\":\"1. Personal experience with doubt and overcoming expectations informs understanding of stereotype threat.\\n2. Stereotype threat defined as fear of confirming negative stereotypes leading to underperformance.\\n3. Belief in equal opportunities drives the need to address this issue for future generations.\\n4. Solutions proposed based on personal experiences: open dialogue, focusing on strengths, diverse role models, peer support.\\n5. Recognition that biases exist but can be mitigated through effort and mutual support.\", \"tone\":\"Casual, conversational with a touch of wisdom from life experience; uses personal anecdotes to illustrate points.\", \"citations\":[\"Personal experiences\", \"Common psychological concept of stereotype threat\"], \"safety_notes\":\"None\", \"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"parents_education\",\"children\",\"migration_status\",\"religious_beliefs\",\"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Well, as someone who's worked hard to build a life here in Philadelphia, I've seen firsthand how people can be held back by expectations that don't fit them. Stereotype threat in STEM, from what I understand, is like when someone believes they might confirm a negative stereotype about their group—like women not being as good at math or immigrants not being as smart. This fear can make them nervous and even do worse than they would otherwise. It's like when my dad, who didn't finish primary school, used to say I wouldn't amount to much because of where we came from. Even though mom had a PhD, that doubt stuck with me for a while.\n\nI think we should address it because everyone deserves a fair chance, no matter their background. My son is growing up in a world where he'll be judged by his own merits, and I want him to feel free to pursue his interests without fear of failing because of some stereotype about immigrants or waiters. One way could be to talk more openly about it—like how we sometimes chat with customers at the restaurant when they're having a bad day. Let people know that it's normal to feel this pressure and that it doesn't mean anything about their true abilities.\n\nSchools could also help by focusing on each child's strengths instead of comparing them to some average. Maybe have more teachers from different backgrounds, like my mom was a role model for me because she showed what an immigrant woman could achieve with education. And maybe even encourage students who face these stereotypes to share their experiences and support each other—like how I found comfort in talking about life as an immigrant with others at church.\n\nWe can't ignore that people will have biases, but we can try our best not to let them control our lives or the lives of those around us. It's like when you're learning a new recipe for the restaurant—you might make mistakes, but that doesn't mean you're bad at cooking. You just keep practicing.",
+    "reasoning_summary": "1. Personal experience with doubt and overcoming expectations informs understanding of stereotype threat.\n2. Stereotype threat defined as fear of confirming negative stereotypes leading to underperformance.\n3. Belief in equal opportunities drives the need to address this issue for future generations.\n4. Solutions proposed based on personal experiences: open dialogue, focusing on strengths, diverse role models, peer support.\n5. Recognition that biases exist but can be mitigated through effort and mutual support.",
+    "tone": "Casual, conversational with a touch of wisdom from life experience; uses personal anecdotes to illustrate points.",
+    "citations": [
+      "Personal experiences",
+      "Common psychological concept of stereotype threat"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "parents_education",
+      "children",
+      "migration_status",
+      "religious_beliefs",
+      "hobbies"
+    ]
+  }
+}

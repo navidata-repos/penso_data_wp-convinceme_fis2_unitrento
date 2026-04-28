@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 64,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "native Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "classical music",
+        "cinema",
+        "board games",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 47,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 27,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 48,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 99,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 16,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":64,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"classical music\",\"cinema\",\"board games\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":47,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":27,\"level\":\"low\"},\"extraversion\":{\"score\":48,\"level\":\"moderate\"},\"agreeableness\":{\"score\":99,\"level\":\"high\"},\"neuroticism\":{\"score\":16,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":64,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"classical music\",\"cinema\",\"board games\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":47,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":27,\"level\":\"low\"},\"extraversion\":{\"score\":48,\"level\":\"moderate\"},\"agreeableness\":{\"score\":99,\"level\":\"high\"},\"neuroticism\":{\"score\":16,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a 64-year-old delivery driver from Bologna, I've seen a lot in my life, and while science isn't my field, I think about fairness from my own experiences. The gender gap in science, from what I gather from news and conversations, means fewer women in roles like researchers or professors, especially in fields like engineering or physics, and they often face biases or lower pay. It reminds me of how things can be uneven in jobs—I've seen it in my work too, though differently. We should definitely address it because it's about giving everyone a fair chance, which aligns with my Hindu beliefs in karma and treating others well. My high agreeableness makes me care deeply about harmony and justice, so ignoring this gap feels wrong; it's like leaving people behind when they could contribute so much. To fix it, we need to start early by encouraging girls in school to explore science without stereotypes, maybe through fun activities or mentors. In workplaces, we should ensure equal opportunities and support, like flexible hours for those with families, since I know from being divorced with a child how balancing life can be tough. As an anxious person, I worry about making changes smoothly, but small steps can help, like promoting women in science through media or community programs in cities like Bologna. It's not about pushing anyone out but lifting everyone up, and that feels right to me.\",\"reasoning_summary\":\"Derived opinion from persona traits: age 64 suggests life experience and reflection; occupation as delivery driver implies practical, non-academic perspective but awareness of workplace fairness; high agreeableness (score 99) drives focus on fairness and harmony; Hindu religious beliefs support karma and ethical treatment; anxious psychological feature adds cautious but caring tone; moderate openness and extraversion allow balanced, conversational style; hobbies like cinema and classical music might inform cultural awareness but not directly cited; avoided direct science expertise, instead relating to personal and societal values.\",\"tone\":\"reflective, conversational, empathetic, slightly cautious\",\"citations\":[\"none\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"occupation\",\"city_of_living\",\"religious_beliefs\",\"psychological_feature\",\"ocean.agreeableness\",\"ocean.openness\",\"ocean.extraversion\",\"marital_status\",\"children\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a 64-year-old delivery driver from Bologna, I've seen a lot in my life, and while science isn't my field, I think about fairness from my own experiences. The gender gap in science, from what I gather from news and conversations, means fewer women in roles like researchers or professors, especially in fields like engineering or physics, and they often face biases or lower pay. It reminds me of how things can be uneven in jobs—I've seen it in my work too, though differently. We should definitely address it because it's about giving everyone a fair chance, which aligns with my Hindu beliefs in karma and treating others well. My high agreeableness makes me care deeply about harmony and justice, so ignoring this gap feels wrong; it's like leaving people behind when they could contribute so much. To fix it, we need to start early by encouraging girls in school to explore science without stereotypes, maybe through fun activities or mentors. In workplaces, we should ensure equal opportunities and support, like flexible hours for those with families, since I know from being divorced with a child how balancing life can be tough. As an anxious person, I worry about making changes smoothly, but small steps can help, like promoting women in science through media or community programs in cities like Bologna. It's not about pushing anyone out but lifting everyone up, and that feels right to me.",
+    "reasoning_summary": "Derived opinion from persona traits: age 64 suggests life experience and reflection; occupation as delivery driver implies practical, non-academic perspective but awareness of workplace fairness; high agreeableness (score 99) drives focus on fairness and harmony; Hindu religious beliefs support karma and ethical treatment; anxious psychological feature adds cautious but caring tone; moderate openness and extraversion allow balanced, conversational style; hobbies like cinema and classical music might inform cultural awareness but not directly cited; avoided direct science expertise, instead relating to personal and societal values.",
+    "tone": "reflective, conversational, empathetic, slightly cautious",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "city_of_living",
+      "religious_beliefs",
+      "psychological_feature",
+      "ocean.agreeableness",
+      "ocean.openness",
+      "ocean.extraversion",
+      "marital_status",
+      "children"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

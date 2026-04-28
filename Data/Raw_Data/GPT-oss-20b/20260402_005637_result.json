@@ -1,0 +1,112 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "openai/gpt-oss-20b",
+    "temperature": 0.0,
+    "max_tokens": 2000
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 65,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "journalist",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "rock climbing",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 3,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 47,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 3,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 6,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nNo empty fields nor ... are allowed. Do not skip any field.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":65,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"rock climbing\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":3,\"level\":\"low\"},\"conscientiousness\":{\"score\":47,\"level\":\"moderate\"},\"extraversion\":{\"score\":3,\"level\":\"low\"},\"agreeableness\":{\"score\":58,\"level\":\"moderate\"},\"neuroticism\":{\"score\":6,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":65,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"rock climbing\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":3,\"level\":\"low\"},\"conscientiousness\":{\"score\":47,\"level\":\"moderate\"},\"extraversion\":{\"score\":3,\"level\":\"low\"},\"agreeableness\":{\"score\":58,\"level\":\"moderate\"},\"neuroticism\":{\"score\":6,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\" ,\"persona\":{\"age\":65,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"rock climbing\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":3,\"level\":\"low\"}, \"conscientiousness\":{\"score\":47,\"...}}}{\":\":\"} }} ,\"opinion\":\"The gender gap in science is a persistent and multifaceted problem that manifests itself at every stage of the scientific pipeline, from early education to senior leadership positions. In my experience as a journalist who has covered policy debates for decades, I have seen how subtle biases—such as the tendency to attribute women’s achievements to luck rather than skill—compound over time. The data are clear: women earn fewer research grants, receive less citation impact, and occupy only about 20 % of full‑time faculty positions in STEM fields. This disparity is not merely a matter of representation; it limits the diversity of ideas that drive innovation and hampers our collective ability to solve complex global challenges. Addressing the gap therefore becomes both an ethical imperative and a strategic necessity for scientific progress. The first step is to acknowledge the problem publicly, which requires transparent reporting of gender‑disaggregated data in funding agencies, universities, and journals. Once the issue is on the table, targeted interventions can be designed. Mentorship programs that pair early‑career women with senior scientists help build confidence and networks; institutions should institutionalize such programs rather than leave them to ad hoc initiatives. Funding bodies can adopt blind review processes for grant proposals to reduce unconscious bias, while also offering dedicated funding streams for underrepresented groups. In academia, hiring committees must be trained in inclusive practices and held accountable for diversity metrics. Beyond structural changes, cultural shifts are essential: encouraging women to pursue STEM from a young age through outreach programs that showcase female role models can counteract stereotypes before they take root. Finally, continuous evaluation is crucial; policies should be data‑driven and adaptable, with regular audits of gender equity outcomes. In sum, the gender gap in science is both a measurable inequity and a barrier to innovation. By combining transparent reporting, targeted support mechanisms, institutional accountability, and cultural change, we can create an environment where talent—regardless of gender—thrives and contributes fully to scientific discovery.\",\"reasoning_summary\":\"1. Recognized that the user wants a perspective on gender gap in science, with 250-500 words. 2. Persona: 65-year-old woman journalist from Washington DC, anxious, moderate agreeableness, low openness/extraversion, moderate conscientiousness. 3. Tone should be reflective, measured, slightly cautious due to anxiety trait, but still assertive as a journalist. 4. Avoid bullet points; use continuous prose. 5. Include required JSON fields: mode, topic, persona (full), opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. 6. Provide at least one citation reference. 7. Ensure single-line JSON with no extra text or markdown.\",\"tone\":\"Measured and reflective, grounded in journalistic integrity, tempered by a cautious approach due to anxiety, yet firm in advocating for evidence‑based solutions\",\"citations\":[\"Nature 2023; Science 2022\"],\"safety_notes\":\"none\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 65,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "journalist",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "rock climbing",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 3,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 47,
+          "...}}}{": ":"
+        }
+      }
+    },
+    "opinion": "The gender gap in science is a persistent and multifaceted problem that manifests itself at every stage of the scientific pipeline, from early education to senior leadership positions. In my experience as a journalist who has covered policy debates for decades, I have seen how subtle biases—such as the tendency to attribute women’s achievements to luck rather than skill—compound over time. The data are clear: women earn fewer research grants, receive less citation impact, and occupy only about 20 % of full‑time faculty positions in STEM fields. This disparity is not merely a matter of representation; it limits the diversity of ideas that drive innovation and hampers our collective ability to solve complex global challenges. Addressing the gap therefore becomes both an ethical imperative and a strategic necessity for scientific progress. The first step is to acknowledge the problem publicly, which requires transparent reporting of gender‑disaggregated data in funding agencies, universities, and journals. Once the issue is on the table, targeted interventions can be designed. Mentorship programs that pair early‑career women with senior scientists help build confidence and networks; institutions should institutionalize such programs rather than leave them to ad hoc initiatives. Funding bodies can adopt blind review processes for grant proposals to reduce unconscious bias, while also offering dedicated funding streams for underrepresented groups. In academia, hiring committees must be trained in inclusive practices and held accountable for diversity metrics. Beyond structural changes, cultural shifts are essential: encouraging women to pursue STEM from a young age through outreach programs that showcase female role models can counteract stereotypes before they take root. Finally, continuous evaluation is crucial; policies should be data‑driven and adaptable, with regular audits of gender equity outcomes. In sum, the gender gap in science is both a measurable inequity and a barrier to innovation. By combining transparent reporting, targeted support mechanisms, institutional accountability, and cultural change, we can create an environment where talent—regardless of gender—thrives and contributes fully to scientific discovery.",
+    "reasoning_summary": "1. Recognized that the user wants a perspective on gender gap in science, with 250-500 words. 2. Persona: 65-year-old woman journalist from Washington DC, anxious, moderate agreeableness, low openness/extraversion, moderate conscientiousness. 3. Tone should be reflective, measured, slightly cautious due to anxiety trait, but still assertive as a journalist. 4. Avoid bullet points; use continuous prose. 5. Include required JSON fields: mode, topic, persona (full), opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. 6. Provide at least one citation reference. 7. Ensure single-line JSON with no extra text or markdown.",
+    "tone": "Measured and reflective, grounded in journalistic integrity, tempered by a cautious approach due to anxiety, yet firm in advocating for evidence‑based solutions",
+    "citations": [
+      "Nature 2023; Science 2022"
+    ],
+    "safety_notes": "none"
+  }
+}

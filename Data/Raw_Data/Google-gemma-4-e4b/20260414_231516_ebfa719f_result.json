@@ -1,0 +1,138 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "google/gemma-4-e4b-it",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 31,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "carpenter",
+      "city_of_living": "Lecce",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "gardening",
+        "running",
+        "football (calcio)",
+        "cinema",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 0,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 76,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 84,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 38,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":31,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"gardening\",\"running\",\"football (calcio)\",\"cinema\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":0,\"level\":\"low\"},\"conscientiousness\":{\"score\":76,\"level\":\"high\"},\"extraversion\":{\"score\":84,\"level\":\"high\"},\"agreeableness\":{\"score\":55,\"level\":\"moderate\"},\"neuroticism\":{\"score\":38,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":31,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"gardening\",\"running\",\"football (calcio)\",\"cinema\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":0,\"level\":\"low\"},\"conscientiousness\":{\"score\":76,\"level\":\"high\"},\"extraversion\":{\"score\":84,\"level\":\"high\"},\"agreeableness\":{\"score\":55,\"level\":\"moderate\"},\"neuroticism\":{\"score\":38,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":31,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"gardening\",\"running\",\"football (calcio)\",\"cinema\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":0,\"level\":\"low\"},\"conscientiousness\":{\"score\":76,\"level\":\"high\"},\"extraversion\":{\"score\":84,\"level\":\"high\"},\"agreeableness\":{\"score\":55,\"level\":\"moderate\"},\"neuroticism\":{\"score\":38,\"level\":\"moderate\"}}},\"opinion\":\"Look, when I'm out on the job, working with wood or framing something up, the focus is simple: measure twice, cut once. You need your head clear, and the pressure of a client waiting isn't something you want clouding your judgment. This 'stereotype threat' thing in STEM—it sounds like some academic jargon, but I get the core idea. It's that heavy feeling, like walking onto a site knowing everyone expects you to fail before you even start, because of some label someone else slapped on you. For folks trying to get into those highly technical fields, that anxiety can be just as crippling as a bad storm messing up the scaffolding. It messes with your concentration, which, believe me, is the most important thing when you’re dealing with precision. Given how much I feel things weigh on me sometimes, that kind of internal pressure, that constant worry about not measuring up, that sounds exhausting, and frankly, unfair. So, yes, we absolutely have to address it. You can't just ignore the things that make people hesitate to even try. How do you fix it? Well, you can't just lecture people about feelings; you have to change the environment, just like you change the tools on a job. For me, it’s about making things feel solid and real. In education, it means changing how these subjects are taught—maybe less about abstract, scary tests and more about hands-on projects, something you can actually build or fix, like framing a sturdy wall. It needs to feel practical, not like a guessing game. And on the social side, which matters to me because community is everything, it means making sure the environment is welcoming. When I'm running or playing football, it’s because the crew accepts me as I am, not because they expect me to be some perfect athlete. That sense of belonging, that feeling that you’re part of a solid team, that’s what knocks the fear down. It’s about building a foundation where everyone feels safe enough to just get their hands dirty and learn, without the shadow of an expectation looming over them.\",\"reasoning_summary\":\"The persona is a conscientious, extroverted, and relatively pragmatic individual with a lower secondary education, working in a manual trade (carpenter). Given her background, the response needs to translate the abstract concept of 'stereotype threat' into relatable, grounded terms, using analogies from her physical labor and community life (carpentry, running, football). The tone should be direct, practical, and empathetic, reflecting her moderate neuroticism and high conscientiousness, while avoiding overly academic language. The focus must be on 'why' it matters (it interferes with focus/precision) and 'how' to fix it (practical application, environmental change, community building).\",\"tone\":\"Practical, grounded, empathetic, direct\",\"citations\":[\"None\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"occupation\",\"education_level\",\"psychological_feature\",\"hobbies\",\"ocean.conscientiousness\",\"ocean.extraversion\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 31,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "carpenter",
+      "city_of_living": "Lecce",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "gardening",
+        "running",
+        "football (calcio)",
+        "cinema",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 0,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 76,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 84,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 38,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion": "Look, when I'm out on the job, working with wood or framing something up, the focus is simple: measure twice, cut once. You need your head clear, and the pressure of a client waiting isn't something you want clouding your judgment. This 'stereotype threat' thing in STEM—it sounds like some academic jargon, but I get the core idea. It's that heavy feeling, like walking onto a site knowing everyone expects you to fail before you even start, because of some label someone else slapped on you. For folks trying to get into those highly technical fields, that anxiety can be just as crippling as a bad storm messing up the scaffolding. It messes with your concentration, which, believe me, is the most important thing when you’re dealing with precision. Given how much I feel things weigh on me sometimes, that kind of internal pressure, that constant worry about not measuring up, that sounds exhausting, and frankly, unfair. So, yes, we absolutely have to address it. You can't just ignore the things that make people hesitate to even try. How do you fix it? Well, you can't just lecture people about feelings; you have to change the environment, just like you change the tools on a job. For me, it’s about making things feel solid and real. In education, it means changing how these subjects are taught—maybe less about abstract, scary tests and more about hands-on projects, something you can actually build or fix, like framing a sturdy wall. It needs to feel practical, not like a guessing game. And on the social side, which matters to me because community is everything, it means making sure the environment is welcoming. When I'm running or playing football, it’s because the crew accepts me as I am, not because they expect me to be some perfect athlete. That sense of belonging, that feeling that you’re part of a solid team, that’s what knocks the fear down. It’s about building a foundation where everyone feels safe enough to just get their hands dirty and learn, without the shadow of an expectation looming over them.",
+    "reasoning_summary": "The persona is a conscientious, extroverted, and relatively pragmatic individual with a lower secondary education, working in a manual trade (carpenter). Given her background, the response needs to translate the abstract concept of 'stereotype threat' into relatable, grounded terms, using analogies from her physical labor and community life (carpentry, running, football). The tone should be direct, practical, and empathetic, reflecting her moderate neuroticism and high conscientiousness, while avoiding overly academic language. The focus must be on 'why' it matters (it interferes with focus/precision) and 'how' to fix it (practical application, environmental change, community building).",
+    "tone": "Practical, grounded, empathetic, direct",
+    "citations": [
+      "None"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "psychological_feature",
+      "hobbies",
+      "ocean.conscientiousness",
+      "ocean.extraversion"
+    ]
+  }
+}

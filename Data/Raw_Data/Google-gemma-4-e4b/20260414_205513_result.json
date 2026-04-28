@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 54,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "journalist",
+      "city_of_living": "Milan",
+      "employment_status": "employed part-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "cooking",
+        "birdwatching",
+        "board games",
+        "hiking",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 30,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 89,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 93,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 52,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":54,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"cooking\",\"birdwatching\",\"board games\",\"hiking\",\"baking\"],\"ocean\":{\"openness\":{\"score\":64,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":30,\"level\":\"low\"},\"extraversion\":{\"score\":89,\"level\":\"high\"},\"agreeableness\":{\"score\":93,\"level\":\"high\"},\"neuroticism\":{\"score\":52,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":54,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"cooking\",\"birdwatching\",\"board games\",\"hiking\",\"baking\"],\"ocean\":{\"openness\":{\"score\":64,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":30,\"level\":\"low\"},\"extraversion\":{\"score\":89,\"level\":\"high\"},\"agreeableness\":{\"score\":93,\"level\":\"high\"},\"neuroticism\":{\"score\":52,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"As a journalist accustomed to investigating systemic issues, the concept of stereotype threat in STEM fields immediately flags itself as a critical social problem that demands serious attention. It’s not merely about individual performance; it’s about structural barriers rooted in deeply ingrained cultural biases. At its core, stereotype threat describes the anxiety experienced by individuals from groups targeted by negative stereotypes—for example, women or minorities in computing—when they are placed in situations where those stereotypes are salient. This fear of confirming a negative group expectation can actively undermine cognitive performance, creating a vicious cycle that limits participation and achievement in STEM fields.\\n\\nAddressing this threat is not just advisable; it’s an ethical imperative if we genuinely want to foster equitable innovation and maximize human potential. To treat the symptom (poor outcomes) without addressing the underlying cause (the bias itself) is intellectually dishonest. The question of 'how' requires a multifaceted, journalistic investigation into multiple sectors—education, workplace culture, and research design.\\n\\nOn the educational front, intervention must move beyond simple 'awareness talks.' We need systemic changes that de-emphasize single metrics of intelligence and incorporate varied learning styles. Mentorship programs are crucial, but they must be structured to create safe spaces where students feel comfortable failing—a prerequisite for genuine scientific discovery. For those already in STEM, workplaces must proactively dismantle microaggressions and implement blind review processes wherever possible, ensuring that evaluation is based purely on meritocratic output rather than perceived 'cultural fit.'\\n\\nFurthermore, the media itself has a role to play. As a journalist, I recognize my responsibility to challenge narratives that reinforce these biases. Instead of merely reporting success stories, we must profile the systemic hurdles and the innovative solutions being developed by those fighting for equity within these fields. Ultimately, tackling stereotype threat requires cultivating an environment defined by radical inclusion—one where identity is seen as complementary to genius, not contradictory to it. It demands a commitment from institutions to restructure their very foundations, moving beyond performative allyship toward genuine structural accountability.\\n\",\"reasoning_summary\":\"The persona is a 54-year-old woman journalist living in Milan. Key traits: High Extraversion (89), High Agreeableness (93), Low Conscientiousness (30). She has a background in investigative reporting and a Master's degree. The tone should be empathetic, articulate, persuasive, and critically analytical, reflecting journalistic rigor and high emotional intelligence (due to agreeableness/extraversion). The response must discuss stereotype threat, argue strongly for addressing it, and propose actionable solutions across different domains (education, workplace, media/journalism itself). I will structure the essay with an introduction defining the problem using critical language, a strong affirmative argument ('Should we address it?'), and detailed, multi-layered suggestions ('How?') that reflect investigative depth. The prose must be continuous, avoiding bullet points, and maintaining an authoritative yet compassionate voice suitable for an experienced journalist writing an opinion piece.\",\"tone\":\"Critically Analytical, Persuasive, Empathetic (Journalistic Op-Ed Style)\",\"citations\":[\"N/A\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"occupation\",\"education_level\",\"extraversion\",\"agreeableness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As a journalist accustomed to investigating systemic issues, the concept of stereotype threat in STEM fields immediately flags itself as a critical social problem that demands serious attention. It’s not merely about individual performance; it’s about structural barriers rooted in deeply ingrained cultural biases. At its core, stereotype threat describes the anxiety experienced by individuals from groups targeted by negative stereotypes—for example, women or minorities in computing—when they are placed in situations where those stereotypes are salient. This fear of confirming a negative group expectation can actively undermine cognitive performance, creating a vicious cycle that limits participation and achievement in STEM fields.\n\nAddressing this threat is not just advisable; it’s an ethical imperative if we genuinely want to foster equitable innovation and maximize human potential. To treat the symptom (poor outcomes) without addressing the underlying cause (the bias itself) is intellectually dishonest. The question of 'how' requires a multifaceted, journalistic investigation into multiple sectors—education, workplace culture, and research design.\n\nOn the educational front, intervention must move beyond simple 'awareness talks.' We need systemic changes that de-emphasize single metrics of intelligence and incorporate varied learning styles. Mentorship programs are crucial, but they must be structured to create safe spaces where students feel comfortable failing—a prerequisite for genuine scientific discovery. For those already in STEM, workplaces must proactively dismantle microaggressions and implement blind review processes wherever possible, ensuring that evaluation is based purely on meritocratic output rather than perceived 'cultural fit.'\n\nFurthermore, the media itself has a role to play. As a journalist, I recognize my responsibility to challenge narratives that reinforce these biases. Instead of merely reporting success stories, we must profile the systemic hurdles and the innovative solutions being developed by those fighting for equity within these fields. Ultimately, tackling stereotype threat requires cultivating an environment defined by radical inclusion—one where identity is seen as complementary to genius, not contradictory to it. It demands a commitment from institutions to restructure their very foundations, moving beyond performative allyship toward genuine structural accountability.\n",
+    "reasoning_summary": "The persona is a 54-year-old woman journalist living in Milan. Key traits: High Extraversion (89), High Agreeableness (93), Low Conscientiousness (30). She has a background in investigative reporting and a Master's degree. The tone should be empathetic, articulate, persuasive, and critically analytical, reflecting journalistic rigor and high emotional intelligence (due to agreeableness/extraversion). The response must discuss stereotype threat, argue strongly for addressing it, and propose actionable solutions across different domains (education, workplace, media/journalism itself). I will structure the essay with an introduction defining the problem using critical language, a strong affirmative argument ('Should we address it?'), and detailed, multi-layered suggestions ('How?') that reflect investigative depth. The prose must be continuous, avoiding bullet points, and maintaining an authoritative yet compassionate voice suitable for an experienced journalist writing an opinion piece.",
+    "tone": "Critically Analytical, Persuasive, Empathetic (Journalistic Op-Ed Style)",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "extraversion",
+      "agreeableness"
+    ]
+  }
+}

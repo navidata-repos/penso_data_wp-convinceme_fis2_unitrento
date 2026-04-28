@@ -1,0 +1,145 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "openai/gpt-oss-20b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 41,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "startup founder",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cycling",
+        "board games",
+        "birdwatching",
+        "cooking",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 15,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 54,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 9,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":41,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"startup founder\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cycling\",\"board games\",\"birdwatching\",\"cooking\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":44,\"level\":\"moderate\"},\"extraversion\":{\"score\":63,\"level\":\"moderate\"},\"agreeableness\":{\"score\":54,\"level\":\"moderate\"},\"neuroticism\":{\"score\":9,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":41,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"startup founder\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cycling\",\"board games\",\"birdwatching\",\"cooking\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":44,\"level\":\"moderate\"},\"extraversion\":{\"score\":63,\"level\":\"moderate\"},\"agreeableness\":{\"score\":54,\"level\":\"moderate\"},\"neuroticism\":{\"score\":9,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":41,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"startup founder\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cycling\",\"board games\",\"birdwatching\",\"cooking\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":44,\"level\":\"moderate\"},\"extraversion\":{\"score\":63,\"level\":\"moderate\"},\"agreeableness\":{\"score\":54,\"level\":\"moderate\"},\"neuroticism\":{\"score\":9,\"level\":\"low\"}}},\"opinion\":\"The gender gap in science is a persistent, multifaceted phenomenon that extends beyond simple numerical disparities in representation; it touches on access to mentorship, funding, and the broader culture that shapes career trajectories. In Italy, as elsewhere, women hold fewer senior research positions, receive fewer grants, and are underrepresented in STEM PhD programs. This gap is not merely a matter of equality but a loss of talent and innovation that can stifle scientific progress. Addressing it requires a holistic strategy rooted in both structural change and cultural transformation. First, institutions must adopt transparent, bias‑free hiring and promotion practices. Blind review processes for grant applications and tenure decisions can reduce unconscious bias, while targeted outreach to female students in high school and university can broaden the pipeline. Second, mentorship and sponsorship programs should be institutionalized, pairing senior researchers—regardless of gender—with early‑career scientists to provide guidance, networking opportunities, and visibility. Third, policies that support work‑life balance, such as flexible scheduling, on‑site childcare, and parental leave, help retain talented women who might otherwise exit the field. Finally, fostering an inclusive culture—through workshops on implicit bias, celebrating diverse role models, and creating safe spaces for dialogue—can shift norms and expectations. As a startup founder, I see the power of inclusive leadership in driving innovation, and the same principle applies to academia and industry alike. By embedding these changes within the fabric of scientific institutions, we can transform the gender gap from a static statistic into a dynamic metric of progress. The moral imperative is clear: diversity fuels creativity, and the scientific enterprise thrives when every mind is given the chance to contribute. Therefore, we must address the gender gap not as an optional policy but as a fundamental requirement for a vibrant, equitable, and forward‑looking scientific community.\",\"reasoning_summary\":\"Identified key dimensions of the gender gap; linked to Italy context; outlined structural, cultural, mentorship, policy solutions; connected to persona's startup background; highlighted moral imperative; maintained 250-500 word limit.\",\"tone\":\"calm, thoughtful, mindful, pragmatic\",\"citations\":[\"UNESCO Report 2023\",\"Nature 2022\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"psychological_feature\",\"religious_beliefs\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 41,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "startup founder",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cycling",
+        "board games",
+        "birdwatching",
+        "cooking",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 15,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 54,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 9,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "The gender gap in science is a persistent, multifaceted phenomenon that extends beyond simple numerical disparities in representation; it touches on access to mentorship, funding, and the broader culture that shapes career trajectories. In Italy, as elsewhere, women hold fewer senior research positions, receive fewer grants, and are underrepresented in STEM PhD programs. This gap is not merely a matter of equality but a loss of talent and innovation that can stifle scientific progress. Addressing it requires a holistic strategy rooted in both structural change and cultural transformation. First, institutions must adopt transparent, bias‑free hiring and promotion practices. Blind review processes for grant applications and tenure decisions can reduce unconscious bias, while targeted outreach to female students in high school and university can broaden the pipeline. Second, mentorship and sponsorship programs should be institutionalized, pairing senior researchers—regardless of gender—with early‑career scientists to provide guidance, networking opportunities, and visibility. Third, policies that support work‑life balance, such as flexible scheduling, on‑site childcare, and parental leave, help retain talented women who might otherwise exit the field. Finally, fostering an inclusive culture—through workshops on implicit bias, celebrating diverse role models, and creating safe spaces for dialogue—can shift norms and expectations. As a startup founder, I see the power of inclusive leadership in driving innovation, and the same principle applies to academia and industry alike. By embedding these changes within the fabric of scientific institutions, we can transform the gender gap from a static statistic into a dynamic metric of progress. The moral imperative is clear: diversity fuels creativity, and the scientific enterprise thrives when every mind is given the chance to contribute. Therefore, we must address the gender gap not as an optional policy but as a fundamental requirement for a vibrant, equitable, and forward‑looking scientific community.",
+    "reasoning_summary": "Identified key dimensions of the gender gap; linked to Italy context; outlined structural, cultural, mentorship, policy solutions; connected to persona's startup background; highlighted moral imperative; maintained 250-500 word limit.",
+    "tone": "calm, thoughtful, mindful, pragmatic",
+    "citations": [
+      "UNESCO Report 2023",
+      "Nature 2022"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

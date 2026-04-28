@@ -1,0 +1,92 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 24,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "nurse",
+      "city_of_living": "Naples",
+      "employment_status": "part-time student",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "birdwatching",
+        "videogames",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 94,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 10,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 74,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 23,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 49,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":24,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Naples\",\"employment_status\":\"part-time student\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"birdwatching\",\"videogames\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":94,\"level\":\"high\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":74,\"level\":\"high\"},\"agreeableness\":{\"score\":23,\"level\":\"low\"},\"neuroticism\":{\"score\":49,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":24,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Naples\",\"employment_status\":\"part-time student\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"birdwatching\",\"videogames\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":94,\"level\":\"high\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":74,\"level\":\"high\"},\"agreeableness\":{\"score\":23,\"level\":\"low\"},\"neuroticism\":{\"score\":49,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"I've been struggling with the constant exposure to fake news and advertisements online, especially since I spend so much time scrolling through my feeds as a part-time student trying to keep up with everything. My personality traits make me quite open and sociable—I'm extroverted but also agreeableness is low for me, which might mean I'm more critical of what's being shared without sugarcoating it too much.\\n\\nGrowing up in Naples as an immigrant has given me a unique perspective on how misinformation can spread quickly, especially when people are looking to validate their own beliefs or simply don't have the education background like my parents do. For instance, one parent has advanced degrees while the other doesn't even finish basic schoolwork—this disparity influences how I approach social media.\\n\\nMy depression sometimes makes me feel vulnerable; it's easier said than done to ignore harmful content when you're already feeling down and sensitive about emotional triggers from online sources.\",\n  \"reasoning_summary\": \"Step-by-step: First, acknowledge personal context (age, migration status) influencing susceptibility. Then link personality traits such as openness (high), conscientiousness (low) directly affecting engagement patterns.\\n\\nNext, connect to the topic by using examples like family educational background shaping media literacy approaches. Finally, tie in psychological feature of depression when discussing emotional vulnerability and potential triggers.\",\n  \"tone\": \"Reflective with a hint of frustration but striving for hope\",\n  \"citations\": [\"My own experiences on social media\"],\n  \"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"current_marital_status\",\"hobbies\",\"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I've been struggling with the constant exposure to fake news and advertisements online, especially since I spend so much time scrolling through my feeds as a part-time student trying to keep up with everything. My personality traits make me quite open and sociable—I'm extroverted but also agreeableness is low for me, which might mean I'm more critical of what's being shared without sugarcoating it too much.\n\nGrowing up in Naples as an immigrant has given me a unique perspective on how misinformation can spread quickly, especially when people are looking to validate their own beliefs or simply don't have the education background like my parents do. For instance, one parent has advanced degrees while the other doesn't even finish basic schoolwork—this disparity influences how I approach social media.\n\nMy depression sometimes makes me feel vulnerable; it's easier said than done to ignore harmful content when you're already feeling down and sensitive about emotional triggers from online sources.",
+    "reasoning_summary": "Step-by-step: First, acknowledge personal context (age, migration status) influencing susceptibility. Then link personality traits such as openness (high), conscientiousness (low) directly affecting engagement patterns.\n\nNext, connect to the topic by using examples like family educational background shaping media literacy approaches. Finally, tie in psychological feature of depression when discussing emotional vulnerability and potential triggers.",
+    "tone": "Reflective with a hint of frustration but striving for hope",
+    "citations": [
+      "My own experiences on social media"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

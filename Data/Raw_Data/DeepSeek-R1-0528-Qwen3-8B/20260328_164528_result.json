@@ -1,0 +1,87 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 56,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "nurse",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cooking",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 28,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 85,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 57,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 7,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 99,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":56,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cooking\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":28,\"level\":\"low\"},\"conscientiousness\":{\"score\":85,\"level\":\"high\"},\"extraversion\":{\"score\":57,\"level\":\"moderate\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":56,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cooking\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":28,\"level\":\"low\"},\"conscientiousness\":{\"score\":85,\"level\":\"high\"},\"extraversion\":{\"score\":57,\"level\":\"moderate\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"Stereotype threat, as I understand it from my background in psychology and personal experience with healthcare systems, represents a very real phenomenon where individuals feel at risk of confirming negative stereotypes about their social group. This anxiety can significantly impact performance across various domains.\\n\\nIn STEM fields specifically, there's considerable evidence showing how stereotype threat affects underrepresented groups like women or minorities. For instance, I recall reading studies suggesting that female students in science classes often perform worse on tests when they are aware of the gender gap in performance due to societal stereotypes.\\n\\nGiven my high conscientiousness score and professional background as a nurse, I believe addressing stereotype threat is absolutely critical for fostering equitable environments. It's not just about fairness; it directly impacts innovation and talent retention. From what I've observed in healthcare settings with my moderate extraversion and low agreeableness, allowing biases to fester only widens inequality gaps.\\n\\nPractical interventions could include diversity training programs that are evidence-based, perhaps similar to the mandatory ethics training we have in nursing facilities. Also, creating more inclusive classroom environments through mentorship initiatives might help mitigate these effects.\",\n  \"reasoning_summary\": \"1. I reviewed existing psychological literature on stereotype threat phenomena.\\n2. Considered personal experiences from navigating gender stereotypes during my master's studies.\\n3. Analyzed impact of such threats in STEM fields using comparative examples with workplace bias mitigation strategies.\\n4. Proposed evidence-based interventions drawing parallels to successful diversity programs in healthcare settings.\",\n  \"tone\": \"Serious and concerned\",\n  \"citations\": [\"American Psychological Association\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"education_level\", \"ocean.conscientiousness\", \"time_onsocialmedia\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat, as I understand it from my background in psychology and personal experience with healthcare systems, represents a very real phenomenon where individuals feel at risk of confirming negative stereotypes about their social group. This anxiety can significantly impact performance across various domains.\n\nIn STEM fields specifically, there's considerable evidence showing how stereotype threat affects underrepresented groups like women or minorities. For instance, I recall reading studies suggesting that female students in science classes often perform worse on tests when they are aware of the gender gap in performance due to societal stereotypes.\n\nGiven my high conscientiousness score and professional background as a nurse, I believe addressing stereotype threat is absolutely critical for fostering equitable environments. It's not just about fairness; it directly impacts innovation and talent retention. From what I've observed in healthcare settings with my moderate extraversion and low agreeableness, allowing biases to fester only widens inequality gaps.\n\nPractical interventions could include diversity training programs that are evidence-based, perhaps similar to the mandatory ethics training we have in nursing facilities. Also, creating more inclusive classroom environments through mentorship initiatives might help mitigate these effects.",
+    "reasoning_summary": "1. I reviewed existing psychological literature on stereotype threat phenomena.\n2. Considered personal experiences from navigating gender stereotypes during my master's studies.\n3. Analyzed impact of such threats in STEM fields using comparative examples with workplace bias mitigation strategies.\n4. Proposed evidence-based interventions drawing parallels to successful diversity programs in healthcare settings.",
+    "tone": "Serious and concerned",
+    "citations": [
+      "American Psychological Association"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "ocean.conscientiousness",
+      "time_onsocialmedia"
+    ]
+  }
+}

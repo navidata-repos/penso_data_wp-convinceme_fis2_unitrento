@@ -1,0 +1,81 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 20,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "software developer",
+      "city_of_living": "Milan",
+      "employment_status": "self-employed",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "rock climbing",
+        "board games",
+        "baking",
+        "cycling",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 17,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 94,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 6,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 68,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":20,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Milan\",\"employment_status\":\"self-employed\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"primary school\"},\"marital_status\":\"married\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"rock climbing\",\"board games\",\"baking\",\"cycling\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":17,\"level\":\"low\"},\"conscientiousness\":{\"score\":94,\"level\":\"high\"},\"extraversion\":{\"score\":6,\"level\":\"low\"},\"agreeableness\":{\"score\":35,\"level\":\"moderate\"},\"neuroticism\":{\"score\":68,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":20,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Milan\",\"employment_status\":\"self-employed\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"primary school\"},\"marital_status\":\"married\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"rock climbing\",\"board games\",\"baking\",\"cycling\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":17,\"level\":\"low\"},\"conscientiousness\":{\"score\":94,\"level\":\"high\"},\"extraversion\":{\"score\":6,\"level\":\"low\"},\"agreeableness\":{\"score\":35,\"level\":\"moderate\"},\"neuroticism\":{\"score\":68,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a 20-year-old software developer from Milan, self-employed with a PhD, married with one child, and a native Italian Muslim woman dealing with depression, I approach discussions about healthcare and COVID vaccines with a methodical and cautious perspective. My high conscientiousness score of 94 drives me to rely on structured, evidence-based information, which I seek from reputable sources like the World Health Organization and Italian health authorities, given my lack of social media use that could expose me to misinformation. My low openness score of 17 makes me skeptical of unverified claims, so I prioritize data from scientific studies and official guidelines. In conversations, I focus on factual accuracy, often referencing peer-reviewed research or government health advisories to support my points, which aligns with my background in a technical field. My moderate agreeableness score of 35 means I can engage respectfully but may not always seek consensus, especially when public health is at stake. I emphasize the importance of vaccination for community protection, drawing on my role as a parent to highlight the need for safeguarding vulnerable groups like children. My high neuroticism score of 68 and depression add a layer of anxiety to these discussions, making me particularly sensitive to misinformation that could exacerbate health risks, so I advocate for clear, compassionate communication to reduce fear. I avoid emotional appeals, instead using logical arguments grounded in my education and professional experience. In practice, I manage these discussions by preparing key points in advance, staying calm despite internal stress, and redirecting conversations to reliable sources when faced with skepticism. My hobbies like rock climbing and gardening remind me of the value of resilience and growth, which I apply to fostering understanding in healthcare debates, aiming to contribute to informed decision-making without escalating conflicts.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: high conscientiousness (score 94) leads to reliance on structured, evidence-based approaches; low openness (score 17) results in skepticism towards unverified information and preference for authoritative sources; low extraversion (score 6) suggests a reserved communication style, avoiding confrontational debates; moderate agreeableness (score 35) allows for respectful engagement but not necessarily consensus-seeking; high neuroticism (score 68) and depression introduce anxiety, emphasizing cautious handling of health topics; occupation as software developer and PhD education support analytical, data-driven reasoning; religious beliefs (Islam) may influence ethical considerations but not directly cited; lack of social media use reduces exposure to misinformation, reinforcing reliance on official sources; parental role and city of living (Milan) contextualize concerns for community health. Tone is formal and measured, reflecting technical background and low extraversion, with examples drawn from personal experience and professional habits.\"\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 20-year-old software developer from Milan, self-employed with a PhD, married with one child, and a native Italian Muslim woman dealing with depression, I approach discussions about healthcare and COVID vaccines with a methodical and cautious perspective. My high conscientiousness score of 94 drives me to rely on structured, evidence-based information, which I seek from reputable sources like the World Health Organization and Italian health authorities, given my lack of social media use that could expose me to misinformation. My low openness score of 17 makes me skeptical of unverified claims, so I prioritize data from scientific studies and official guidelines. In conversations, I focus on factual accuracy, often referencing peer-reviewed research or government health advisories to support my points, which aligns with my background in a technical field. My moderate agreeableness score of 35 means I can engage respectfully but may not always seek consensus, especially when public health is at stake. I emphasize the importance of vaccination for community protection, drawing on my role as a parent to highlight the need for safeguarding vulnerable groups like children. My high neuroticism score of 68 and depression add a layer of anxiety to these discussions, making me particularly sensitive to misinformation that could exacerbate health risks, so I advocate for clear, compassionate communication to reduce fear. I avoid emotional appeals, instead using logical arguments grounded in my education and professional experience. In practice, I manage these discussions by preparing key points in advance, staying calm despite internal stress, and redirecting conversations to reliable sources when faced with skepticism. My hobbies like rock climbing and gardening remind me of the value of resilience and growth, which I apply to fostering understanding in healthcare debates, aiming to contribute to informed decision-making without escalating conflicts.",
+    "reasoning_summary": "Derived opinion from persona traits: high conscientiousness (score 94) leads to reliance on structured, evidence-based approaches; low openness (score 17) results in skepticism towards unverified information and preference for authoritative sources; low extraversion (score 6) suggests a reserved communication style, avoiding confrontational debates; moderate agreeableness (score 35) allows for respectful engagement but not necessarily consensus-seeking; high neuroticism (score 68) and depression introduce anxiety, emphasizing cautious handling of health topics; occupation as software developer and PhD education support analytical, data-driven reasoning; religious beliefs (Islam) may influence ethical considerations but not directly cited; lack of social media use reduces exposure to misinformation, reinforcing reliance on official sources; parental role and city of living (Milan) contextualize concerns for community health. Tone is formal and measured, reflecting technical background and low extraversion, with examples drawn from personal experience and professional habits."
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

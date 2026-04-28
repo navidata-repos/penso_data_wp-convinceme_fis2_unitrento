@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 51,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "cleaner",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed part-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "reading novels",
+        "board games",
+        "hiking",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 52,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 93,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 56,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 75,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":51,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"board games\",\"hiking\",\"painting\"],\"ocean\":{\"openness\":{\"score\":42,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":52,\"level\":\"moderate\"},\"extraversion\":{\"score\":93,\"level\":\"high\"},\"agreeableness\":{\"score\":56,\"level\":\"moderate\"},\"neuroticism\":{\"score\":75,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":51,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"board games\",\"hiking\",\"painting\"],\"ocean\":{\"openness\":{\"score\":42,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":52,\"level\":\"moderate\"},\"extraversion\":{\"score\":93,\"level\":\"high\"},\"agreeableness\":{\"score\":56,\"level\":\"moderate\"},\"neuroticism\":{\"score\":75,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to the underrepresentation of women and overrepresentation of men in scientific fields, particularly at higher levels. I've seen this firsthand while working as a cleaner in my local community here in Washington DC – sometimes, even in places like hospitals or research centers where there's an emphasis on knowledge, you notice that certain groups aren't being included properly.\\n\\nI think we definitely should address it because equality is important for everyone and not just some abstract idea. From what I understand, science benefits greatly from diverse perspectives; if everything was always looked at through one lens, then discoveries might be limited or biased.\\n\\nAddressing the gap involves multiple steps: education reform to encourage more girls into STEM subjects early on seems crucial since my own children are young and could benefit from seeing both genders excelling in those areas. Also, creating better work environments that support women without making them feel tokenized would help retention rates. And maybe we need policies like parental leave improvements so women aren't forced out of their careers when they have children.\",\n  \"reasoning_summary\": \"I've observed the gender gap through my work experiences and personal life in DC. My moderate openness suggests I'm receptive to learning about diversity benefits, while high extraversion means I value community perspectives on this issue. Christianity's emphasis on helping others aligns with wanting to address inequality for moral reasons.\",\n  \"tone\": \"Sincere yet practical\",\n  \"citations\": [],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"education_level\", \"parents_education\", \"current_marital_status\", \"hobbies\", \"religious_beliefs\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the underrepresentation of women and overrepresentation of men in scientific fields, particularly at higher levels. I've seen this firsthand while working as a cleaner in my local community here in Washington DC – sometimes, even in places like hospitals or research centers where there's an emphasis on knowledge, you notice that certain groups aren't being included properly.\n\nI think we definitely should address it because equality is important for everyone and not just some abstract idea. From what I understand, science benefits greatly from diverse perspectives; if everything was always looked at through one lens, then discoveries might be limited or biased.\n\nAddressing the gap involves multiple steps: education reform to encourage more girls into STEM subjects early on seems crucial since my own children are young and could benefit from seeing both genders excelling in those areas. Also, creating better work environments that support women without making them feel tokenized would help retention rates. And maybe we need policies like parental leave improvements so women aren't forced out of their careers when they have children.",
+    "reasoning_summary": "I've observed the gender gap through my work experiences and personal life in DC. My moderate openness suggests I'm receptive to learning about diversity benefits, while high extraversion means I value community perspectives on this issue. Christianity's emphasis on helping others aligns with wanting to address inequality for moral reasons.",
+    "tone": "Sincere yet practical",
+    "citations": [],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "hobbies",
+      "religious_beliefs",
+      "ocean"
+    ]
+  }
+}

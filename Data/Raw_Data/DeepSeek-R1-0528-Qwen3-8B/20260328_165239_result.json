@@ -1,0 +1,85 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 62,
+      "gender": "woman",
+      "sexual_orientation": "asexual",
+      "occupation": "cleaner",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "cycling",
+        "photography",
+        "football (calcio)",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 1,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 89,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 92,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 26,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":62,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cycling\",\"photography\",\"football (calcio)\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":1,\"level\":\"low\"},\"conscientiousness\":{\"score\":89,\"level\":\"high\"},\"extraversion\":{\"score\":58,\"level\":\"moderate\"},\"agreeableness\":{\"score\":92,\"level\":\"high\"},\"neuroticism\":{\"score\":26,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":62,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cycling\",\"photography\",\"football (calcio)\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":1,\"level\":\"low\"},\"conscientiousness\":{\"score\":89,\"level\":\"high\"},\"extraversion\":{\"score\":58,\"level\":\"moderate\"},\"agreeableness\":{\"score\":92,\"level\":\"high\"},\"neuroticism\":{\"score\":26,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n    \"opinion\": \"As a person of Jewish faith living in Philadelphia, I've had my share of managing conversations about COVID vaccines. With my high agreeableness score, I try to be diplomatic when discussing these topics, but sometimes people can get emotional and it's hard to know how to handle that. My depression makes me feel like retreating from difficult discussions, which is why I focus on the positive aspects first—like protecting myself and my loved ones. Being a native-born American with vocational training has given me confidence in handling practical matters, so when someone questions the science behind vaccines, I can explain it simply without getting overwhelmed by complex details. My moderate extraversion means that while I'm employed full-time as a cleaner working in public spaces during this pandemic, I don't necessarily seek out these conversations but respond calmly and respectfully.\",\n    \"reasoning_summary\": \"I considered my personality traits: high agreeableness makes me diplomatic; low neuroticism helps remain calm. I reflected on how being Jewish aligns with values of community protection. My depression influences preferring simple explanations over complex debates. As a cleaner, I have firsthand experience about cleanliness and disease prevention.\",\n    \"tone\": \"Calm, empathetic, respectful\",\n    \"citations\": [],\n    \"safety_notes\": \"\",\n    \"used_persona_fields\": [\"psychological_feature\", \"religious_beliefs\", \"occupation\", \"hobbies\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a person of Jewish faith living in Philadelphia, I've had my share of managing conversations about COVID vaccines. With my high agreeableness score, I try to be diplomatic when discussing these topics, but sometimes people can get emotional and it's hard to know how to handle that. My depression makes me feel like retreating from difficult discussions, which is why I focus on the positive aspects first—like protecting myself and my loved ones. Being a native-born American with vocational training has given me confidence in handling practical matters, so when someone questions the science behind vaccines, I can explain it simply without getting overwhelmed by complex details. My moderate extraversion means that while I'm employed full-time as a cleaner working in public spaces during this pandemic, I don't necessarily seek out these conversations but respond calmly and respectfully.",
+    "reasoning_summary": "I considered my personality traits: high agreeableness makes me diplomatic; low neuroticism helps remain calm. I reflected on how being Jewish aligns with values of community protection. My depression influences preferring simple explanations over complex debates. As a cleaner, I have firsthand experience about cleanliness and disease prevention.",
+    "tone": "Calm, empathetic, respectful",
+    "citations": [],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "psychological_feature",
+      "religious_beliefs",
+      "occupation",
+      "hobbies"
+    ]
+  }
+}

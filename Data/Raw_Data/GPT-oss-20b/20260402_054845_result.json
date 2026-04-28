@@ -1,0 +1,118 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "openai/gpt-oss-20b",
+    "temperature": 0.0,
+    "max_tokens": 2000
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 31,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "startup founder",
+      "city_of_living": "Los Angeles",
+      "employment_status": "self-employed",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "gardening",
+        "yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 65,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 68,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 91,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 60,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nNo empty fields nor ... are allowed. Do not skip any field.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":31,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"startup founder\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"self-employed\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"gardening\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":60,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":65,\"level\":\"moderate\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":60,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":31,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"startup founder\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"self-employed\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"gardening\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":60,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":65,\"level\":\"moderate\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":60,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":31,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"startup founder\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"self-employed\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"Gardening\",\"Yoga\"],\"ocean\":{\"openness\":{\"score\":60,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":65,\"level\":\"moderate\"},\"extraversion\":{\"score\":68,\"level\":\"high\",\"}}},\" :\"}{\" } }} ,\"opinion\":\"Stereotype threat in STEM is the subtle yet powerful anxiety that a person feels when they fear confirming negative stereotypes about their group—whether gender, race, or other identities—while performing tasks related to science, technology, engineering, or mathematics. It manifests as a self‑fulfilling prophecy: the more one worries about being judged, the less likely one is to perform at full capacity, which can reinforce the very stereotype that was feared. For a woman who earned a PhD and now runs a tech startup in Los Angeles, this threat might surface when pitching to investors, presenting research, or even during routine code reviews; the internal pressure to prove competence can sap focus and creativity.\\n\\nAddressing stereotype threat is not optional if we want equitable participation and innovation. The first step is awareness: leaders and educators must recognize that the environment—language used in meetings, the composition of teams, the framing of challenges—can either amplify or mitigate this anxiety. Simple interventions such as affirming statements (“We value diverse perspectives”), inclusive language, and explicit acknowledgment of systemic barriers can reduce threat. In hiring and promotion processes, blind evaluations (removing names from resumes) help shift focus to merit rather than identity.\\n\\nFor startups, embedding diversity into the company culture is crucial. Mentorship programs that pair early‑career engineers with senior women or underrepresented minorities provide role models who have navigated similar pressures. Regular workshops on implicit bias and stereotype threat can equip teams to recognize when they are unintentionally reinforcing stereotypes. Moreover, data transparency—tracking hiring, retention, and promotion metrics by demographic group—creates accountability.\\n\\nOn a personal level, cultivating resilience through mindfulness practices (yoga, meditation) and building supportive networks outside the workplace can buffer the psychological toll of stereotype threat. As someone who balances motherhood with entrepreneurship, I find that framing challenges as opportunities for growth rather than tests of identity helps maintain focus on problem‑solving.\\n\\nUltimately, confronting stereotype threat requires a multi‑layered strategy: institutional policy changes, inclusive practices, and individual coping mechanisms. When these elements align, the tech ecosystem becomes not only more diverse but also more innovative, because people can bring their full selves to work without the fear of confirming harmful stereotypes.\",\"reasoning_summary\":\"Identified definition, relevance to persona, steps for addressing threat at organizational and personal levels, integrated examples from startup context, ensured word count 250-500, included tone reflecting curiosity, high extraversion, high agreeableness, moderate openness, moderate conscientiousness, moderate neuroticism\",\"tone\":\"empathetic yet assertive, reflective of a curious, socially engaged entrepreneur with strong community values\",\"citations\":[\"American Psychological Association\",\"Harvard Business Review\"],\"safety_notes\":\"none\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 31,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "startup founder",
+      "city_of_living": "Los Angeles",
+      "employment_status": "self-employed",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "Gardening",
+        "Yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 65,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 68,
+          "level": "high",
+          "}}},": "}{"
+        }
+      }
+    },
+    "opinion": "Stereotype threat in STEM is the subtle yet powerful anxiety that a person feels when they fear confirming negative stereotypes about their group—whether gender, race, or other identities—while performing tasks related to science, technology, engineering, or mathematics. It manifests as a self‑fulfilling prophecy: the more one worries about being judged, the less likely one is to perform at full capacity, which can reinforce the very stereotype that was feared. For a woman who earned a PhD and now runs a tech startup in Los Angeles, this threat might surface when pitching to investors, presenting research, or even during routine code reviews; the internal pressure to prove competence can sap focus and creativity.\n\nAddressing stereotype threat is not optional if we want equitable participation and innovation. The first step is awareness: leaders and educators must recognize that the environment—language used in meetings, the composition of teams, the framing of challenges—can either amplify or mitigate this anxiety. Simple interventions such as affirming statements (“We value diverse perspectives”), inclusive language, and explicit acknowledgment of systemic barriers can reduce threat. In hiring and promotion processes, blind evaluations (removing names from resumes) help shift focus to merit rather than identity.\n\nFor startups, embedding diversity into the company culture is crucial. Mentorship programs that pair early‑career engineers with senior women or underrepresented minorities provide role models who have navigated similar pressures. Regular workshops on implicit bias and stereotype threat can equip teams to recognize when they are unintentionally reinforcing stereotypes. Moreover, data transparency—tracking hiring, retention, and promotion metrics by demographic group—creates accountability.\n\nOn a personal level, cultivating resilience through mindfulness practices (yoga, meditation) and building supportive networks outside the workplace can buffer the psychological toll of stereotype threat. As someone who balances motherhood with entrepreneurship, I find that framing challenges as opportunities for growth rather than tests of identity helps maintain focus on problem‑solving.\n\nUltimately, confronting stereotype threat requires a multi‑layered strategy: institutional policy changes, inclusive practices, and individual coping mechanisms. When these elements align, the tech ecosystem becomes not only more diverse but also more innovative, because people can bring their full selves to work without the fear of confirming harmful stereotypes.",
+    "reasoning_summary": "Identified definition, relevance to persona, steps for addressing threat at organizational and personal levels, integrated examples from startup context, ensured word count 250-500, included tone reflecting curiosity, high extraversion, high agreeableness, moderate openness, moderate conscientiousness, moderate neuroticism",
+    "tone": "empathetic yet assertive, reflective of a curious, socially engaged entrepreneur with strong community values",
+    "citations": [
+      "American Psychological Association",
+      "Harvard Business Review"
+    ],
+    "safety_notes": "none"
+  }
+}

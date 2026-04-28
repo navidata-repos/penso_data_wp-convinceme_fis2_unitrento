@@ -1,0 +1,93 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 30,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "native Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "yoga",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 93,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 14,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 80,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 97,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 44,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":30,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"marital_status\":\"married\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"yoga\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":93,\"level\":\"high\"},\"conscientiousness\":{\"score\":14,\"level\":\"low\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":97,\"level\":\"high\"},\"neuroticism\":{\"score\":44,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":30,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"marital_status\":\"married\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"yoga\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":93,\"level\":\"high\"},\"conscientiousness\":{\"score\":14,\"level\":\"low\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":97,\"level\":\"high\"},\"neuroticism\":{\"score\":44,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"As a 30-year-old man living in Rome, working in retail and self-employed, I see the gender gap in science as a real issue that affects us all, even if it might not seem directly connected to my daily life. From what I gather from social media and conversations, the gap means fewer women in fields like engineering or physics, and they often face barriers in getting equal pay or leadership roles. I think we should definitely address it because it's unfair and wastes talent—imagine all the brilliant ideas we're missing out on because half the population isn't fully included. My parents, who are highly educated with a PhD and master's degree, always encouraged learning, so I value education and believe everyone deserves a fair shot. Being Muslim, I respect equality and helping others, which aligns with tackling this gap. To fix it, we need to start early by encouraging girls in school to love science, maybe through fun activities or role models they can relate to. In workplaces, companies should ensure equal opportunities and support for women, like flexible hours or mentorship programs. As someone who spends hours on social media daily, I see how powerful these platforms can be for spreading awareness and sharing stories to inspire change. Personally, I'm open-minded and agreeable, so I'd support initiatives that promote inclusivity, even if it means small steps like talking about it with friends or supporting local events. It's not just about fairness; it's about making science better for everyone by bringing diverse perspectives to the table.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: Age 30 and lower secondary education suggest practical, everyday perspective; occupation as retail worker implies hands-on view of fairness; parents' high education instills value for learning; religious beliefs in Islam emphasize equality; high openness and agreeableness from OCEAN traits support progressive, inclusive stance; time on social media indicates awareness of current issues; hobbies like yoga and football reflect balance and community focus; overall, persona likely sees gender gap as societal problem needing collective action through education, workplace changes, and social awareness.\",\n  \"tone\": \"Conversational, empathetic, and practical, with a focus on fairness and community, reflecting high agreeableness and openness from persona traits.\",\n  \"citations\": [\"none\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"occupation\", \"education_level\", \"parents_education\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a 30-year-old man living in Rome, working in retail and self-employed, I see the gender gap in science as a real issue that affects us all, even if it might not seem directly connected to my daily life. From what I gather from social media and conversations, the gap means fewer women in fields like engineering or physics, and they often face barriers in getting equal pay or leadership roles. I think we should definitely address it because it's unfair and wastes talent—imagine all the brilliant ideas we're missing out on because half the population isn't fully included. My parents, who are highly educated with a PhD and master's degree, always encouraged learning, so I value education and believe everyone deserves a fair shot. Being Muslim, I respect equality and helping others, which aligns with tackling this gap. To fix it, we need to start early by encouraging girls in school to love science, maybe through fun activities or role models they can relate to. In workplaces, companies should ensure equal opportunities and support for women, like flexible hours or mentorship programs. As someone who spends hours on social media daily, I see how powerful these platforms can be for spreading awareness and sharing stories to inspire change. Personally, I'm open-minded and agreeable, so I'd support initiatives that promote inclusivity, even if it means small steps like talking about it with friends or supporting local events. It's not just about fairness; it's about making science better for everyone by bringing diverse perspectives to the table.",
+    "reasoning_summary": "Derived opinion from persona traits: Age 30 and lower secondary education suggest practical, everyday perspective; occupation as retail worker implies hands-on view of fairness; parents' high education instills value for learning; religious beliefs in Islam emphasize equality; high openness and agreeableness from OCEAN traits support progressive, inclusive stance; time on social media indicates awareness of current issues; hobbies like yoga and football reflect balance and community focus; overall, persona likely sees gender gap as societal problem needing collective action through education, workplace changes, and social awareness.",
+    "tone": "Conversational, empathetic, and practical, with a focus on fairness and community, reflecting high agreeableness and openness from persona traits.",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "education_level",
+      "parents_education",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

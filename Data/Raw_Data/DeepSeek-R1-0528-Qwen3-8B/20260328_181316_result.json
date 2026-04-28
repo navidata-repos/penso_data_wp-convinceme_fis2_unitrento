@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 58,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Bari",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "in a relationship",
+      "children": 3,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "volunteering",
+        "painting",
+        "baking",
+        "birdwatching",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 70,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 88,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 13,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 31,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 27,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":58,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"volunteering\",\"painting\",\"baking\",\"birdwatching\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":88,\"level\":\"high\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":31,\"level\":\"low\"},\"neuroticism\":{\"score\":27,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":58,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"volunteering\",\"painting\",\"baking\",\"birdwatching\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":88,\"level\":\"high\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":31,\"level\":\"low\"},\"neuroticism\":{\"score\":27,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to the underrepresentation of women and sometimes other groups, like certain ethnic minorities or LGBTQ+ individuals, in scientific fields. It's a complex issue with multiple facets, including historical biases, structural barriers within institutions, and societal expectations that discourage women from pursuing these careers.\\n\\nAs someone who has worked as a hairdresser for decades, I've seen firsthand how stereotypes can limit opportunities. My lower secondary education might not seem like much compared to some scientists, but I learned enough about human nature to understand why there's an imbalance in science. When my daughter wanted to study biology or chemistry years ago, she faced discouragement from teachers and peers because they thought it wasn't a 'feminine' career.\\n\\nI believe we should address this gap. It means everyone loses out—women brilliant minds who could contribute innovative approaches, men perhaps missing diverse perspectives that could revolutionize problem-solving in science. For instance, hairdressing itself involves precision, attention to detail, and customer service skills; if I hadn't been a hairdresser instead of an engineer or scientist, maybe different ideas would have emerged.\\n\\nAddressing it requires starting from early education: encouraging girls with hands-on experiments without gendered assumptions. Universities should implement mentorship programs pairing female students with accomplished women in science. My own depression makes me cautious about change—though I'm not religiously observant Buddhist-wise anymore, my experiences taught me that sometimes we need to disrupt the status quo.\\n\\nBut more importantly, it's crucial for equitable societies where all genders can thrive regardless of stereotypes.\",\n  \"reasoning_summary\": \"I observed gender gaps in fields like hairdressing and science through personal experience. I derived from my own background (Bari, self-employed hairdresser with limited formal education) that addressing the gap is necessary to unlock human potential across genders. I referenced Buddhism's emphasis on mindfulness but focused more on societal balance.\",\n  \"tone\": \"Reflective, concerned, grounded in practical life experience\",\n  \"citations\": [\"Personal observations and experiences\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"education_level\",\"parents_education\",\"religious_beliefs\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the underrepresentation of women and sometimes other groups, like certain ethnic minorities or LGBTQ+ individuals, in scientific fields. It's a complex issue with multiple facets, including historical biases, structural barriers within institutions, and societal expectations that discourage women from pursuing these careers.\n\nAs someone who has worked as a hairdresser for decades, I've seen firsthand how stereotypes can limit opportunities. My lower secondary education might not seem like much compared to some scientists, but I learned enough about human nature to understand why there's an imbalance in science. When my daughter wanted to study biology or chemistry years ago, she faced discouragement from teachers and peers because they thought it wasn't a 'feminine' career.\n\nI believe we should address this gap. It means everyone loses out—women brilliant minds who could contribute innovative approaches, men perhaps missing diverse perspectives that could revolutionize problem-solving in science. For instance, hairdressing itself involves precision, attention to detail, and customer service skills; if I hadn't been a hairdresser instead of an engineer or scientist, maybe different ideas would have emerged.\n\nAddressing it requires starting from early education: encouraging girls with hands-on experiments without gendered assumptions. Universities should implement mentorship programs pairing female students with accomplished women in science. My own depression makes me cautious about change—though I'm not religiously observant Buddhist-wise anymore, my experiences taught me that sometimes we need to disrupt the status quo.\n\nBut more importantly, it's crucial for equitable societies where all genders can thrive regardless of stereotypes.",
+    "reasoning_summary": "I observed gender gaps in fields like hairdressing and science through personal experience. I derived from my own background (Bari, self-employed hairdresser with limited formal education) that addressing the gap is necessary to unlock human potential across genders. I referenced Buddhism's emphasis on mindfulness but focused more on societal balance.",
+    "tone": "Reflective, concerned, grounded in practical life experience",
+    "citations": [
+      "Personal observations and experiences"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "parents_education",
+      "religious_beliefs"
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 19,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Chicago",
+      "employment_status": "full-time student",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cooking",
+        "birdwatching",
+        "board games",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 97,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 100,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 61,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 60,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":19,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Chicago\",\"employment_status\":\"full-time student\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cooking\",\"birdwatching\",\"board games\",\"baking\"],\"ocean\":{\"openness\":{\"score\":97,\"level\":\"high\"},\"conscientiousness\":{\"score\":100,\"level\":\"high\"},\"extraversion\":{\"score\":38,\"level\":\"moderate\"},\"agreeableness\":{\"score\":61,\"level\":\"moderate\"},\"neuroticism\":{\"score\":60,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":19,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Chicago\",\"employment_status\":\"full-time student\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cooking\",\"birdwatching\",\"board games\",\"baking\"],\"ocean\":{\"openness\":{\"score\":97,\"level\":\"high\"},\"conscientiousness\":{\"score\":100,\"level\":\"high\"},\"extraversion\":{\"score\":38,\"level\":\"moderate\"},\"agreeableness\":{\"score\":61,\"level\":\"moderate\"},\"neuroticism\":{\"score\":60,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"As a young man studying in Chicago, I've seen firsthand the underrepresentation of women in scientific fields. The gender gap in science is not just about numbers; it's about diverse perspectives being left out of critical research and innovation. In my baking hobby, for instance, I see how women have made significant contributions to culinary sciences, yet their work often goes unrecognized compared to their male counterparts. This imbalance seems rooted in societal norms and historical biases that discourage women from pursuing STEM fields. Addressing this gap is crucial because science thrives on diversity. How can we do this? First, education systems should start early, encouraging girls to explore sciences without bias. Programs like Girls Who Code are a great step, but they need to be more widespread and integrated into curriculums. Additionally, mentorship programs pairing women in science with young girls could provide role models and inspire confidence. Workplace cultures also need to change—ensuring equal pay, opportunities for leadership, and safe spaces free from harassment is essential. My own anxiety about the future makes me appreciate stability and fairness even more; a diverse scientific community would foster both. In Hinduism, we value balance and harmony in all things, and this applies to science too—gender balance leads to better, more holistic discoveries. We can't afford to ignore half the population's potential anymore.\",\n  \"reasoning_summary\": \"The persona is a young man living in Chicago, with high openness and conscientiousness, which makes him value diversity and fairness. His hobbies and religious beliefs emphasize balance and harmony, influencing his view that gender gap in science disrupts this equilibrium. He acknowledges societal norms as root causes and suggests educational reforms, mentorship, and workplace changes to bridge the gap. His anxiety about the future underscores the importance of a stable, inclusive scientific community for progress.\",\n  \"tone\": \"Thoughtful, empathetic, and slightly anxious but hopeful for change\",\n  \"citations\": [\"Girls Who Code\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"city_of_living\", \"hobbies\", \"religious_beliefs\", \"ocean (openness, conscientiousness)\", \"psychological_feature\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a young man studying in Chicago, I've seen firsthand the underrepresentation of women in scientific fields. The gender gap in science is not just about numbers; it's about diverse perspectives being left out of critical research and innovation. In my baking hobby, for instance, I see how women have made significant contributions to culinary sciences, yet their work often goes unrecognized compared to their male counterparts. This imbalance seems rooted in societal norms and historical biases that discourage women from pursuing STEM fields. Addressing this gap is crucial because science thrives on diversity. How can we do this? First, education systems should start early, encouraging girls to explore sciences without bias. Programs like Girls Who Code are a great step, but they need to be more widespread and integrated into curriculums. Additionally, mentorship programs pairing women in science with young girls could provide role models and inspire confidence. Workplace cultures also need to change—ensuring equal pay, opportunities for leadership, and safe spaces free from harassment is essential. My own anxiety about the future makes me appreciate stability and fairness even more; a diverse scientific community would foster both. In Hinduism, we value balance and harmony in all things, and this applies to science too—gender balance leads to better, more holistic discoveries. We can't afford to ignore half the population's potential anymore.",
+    "reasoning_summary": "The persona is a young man living in Chicago, with high openness and conscientiousness, which makes him value diversity and fairness. His hobbies and religious beliefs emphasize balance and harmony, influencing his view that gender gap in science disrupts this equilibrium. He acknowledges societal norms as root causes and suggests educational reforms, mentorship, and workplace changes to bridge the gap. His anxiety about the future underscores the importance of a stable, inclusive scientific community for progress.",
+    "tone": "Thoughtful, empathetic, and slightly anxious but hopeful for change",
+    "citations": [
+      "Girls Who Code"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "city_of_living",
+      "hobbies",
+      "religious_beliefs",
+      "ocean (openness, conscientiousness)",
+      "psychological_feature"
+    ]
+  }
+}

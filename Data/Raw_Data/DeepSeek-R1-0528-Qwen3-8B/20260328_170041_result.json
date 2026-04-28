@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 85,
+      "gender": "woman",
+      "sexual_orientation": "asexual",
+      "occupation": "not applicable",
+      "city_of_living": "Naples",
+      "employment_status": "retired",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "immigrant",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "videogames",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 98,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 34,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 53,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 31,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":85,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"retired\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"videogames\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":98,\"level\":\"high\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":53,\"level\":\"moderate\"},\"neuroticism\":{\"score\":31,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":85,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"retired\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"videogames\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":98,\"level\":\"high\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":53,\"level\":\"moderate\"},\"neuroticism\":{\"score\":31,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As a retired person living in Naples, I've always been cautious about sharing personal details online. With my high openness score, I enjoy learning new things, but lately, the amount of misinformation circulating has made me more wary. For instance, during Ramadan, some people might post misleading content to appear religious or cultural, which doesn't align with what I know from my family's traditions and my own experiences in Italy. But being retired means I spend less time on these platforms; only occasionally do I check Facebook for news about my grandchildren.\\n\\nI think the best way to deal with fake content is through education, not just technology. My master's degree helps me analyze situations better, but it wasn't enough to prepare me for social media. Back in my day, we didn't have this—I relied on word-of-mouth and trusted sources like family or community leaders. Now, even as an immigrant who came here with Islamic values emphasizing truthfulness from the Quran, I find myself double-checking things against what I know personally.\\n\\nWhen I see something suspicious online, especially during times like elections where misinformation spreads fast, I try to verify it through reliable news sources or by thinking about how it might harm our community. Being agreeable and married with kids makes me want to help others stay informed without causing panic. So while I don't spend much time scrolling, if someone asks for advice from me—like my grandson who's still in school—I tell them to be careful but not dismissive of everything they see.\",\n  \"reasoning_summary\": \"I first considered how being retired affects exposure to social media and fake content (time_onsocialmedia). Then I reflected on my personal background as an immigrant with Islamic beliefs, drawing from the Quran's emphasis on truthfulness. My high openness makes me curious but also skeptical about new information sources like social media. The moderate conscientiousness level means I balance action with caution—verifying rather than reacting impulsively.\",\n  \"tone\": \"Pragmatic and measured, grounded in personal experience yet open-minded about technology.\",\n  \"citations\": [\n    \"Quran (Surah Al-Fatihah)\"\n  ],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education.parent_2\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean.openness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a retired person living in Naples, I've always been cautious about sharing personal details online. With my high openness score, I enjoy learning new things, but lately, the amount of misinformation circulating has made me more wary. For instance, during Ramadan, some people might post misleading content to appear religious or cultural, which doesn't align with what I know from my family's traditions and my own experiences in Italy. But being retired means I spend less time on these platforms; only occasionally do I check Facebook for news about my grandchildren.\n\nI think the best way to deal with fake content is through education, not just technology. My master's degree helps me analyze situations better, but it wasn't enough to prepare me for social media. Back in my day, we didn't have this—I relied on word-of-mouth and trusted sources like family or community leaders. Now, even as an immigrant who came here with Islamic values emphasizing truthfulness from the Quran, I find myself double-checking things against what I know personally.\n\nWhen I see something suspicious online, especially during times like elections where misinformation spreads fast, I try to verify it through reliable news sources or by thinking about how it might harm our community. Being agreeable and married with kids makes me want to help others stay informed without causing panic. So while I don't spend much time scrolling, if someone asks for advice from me—like my grandson who's still in school—I tell them to be careful but not dismissive of everything they see.",
+    "reasoning_summary": "I first considered how being retired affects exposure to social media and fake content (time_onsocialmedia). Then I reflected on my personal background as an immigrant with Islamic beliefs, drawing from the Quran's emphasis on truthfulness. My high openness makes me curious but also skeptical about new information sources like social media. The moderate conscientiousness level means I balance action with caution—verifying rather than reacting impulsively.",
+    "tone": "Pragmatic and measured, grounded in personal experience yet open-minded about technology.",
+    "citations": [
+      "Quran (Surah Al-Fatihah)"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education.parent_2",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness"
+    ]
+  }
+}

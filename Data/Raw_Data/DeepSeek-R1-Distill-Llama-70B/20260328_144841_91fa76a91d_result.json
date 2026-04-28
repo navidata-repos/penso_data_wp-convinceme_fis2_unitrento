@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 73,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Philadelphia",
+      "employment_status": "unemployed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "knitting",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 7,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 5,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 22,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 89,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":73,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"unemployed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"board games\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":5,\"level\":\"low\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":59,\"level\":\"moderate\"},\"neuroticism\":{\"score\":89,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":73,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"unemployed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"board games\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":5,\"level\":\"low\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":59,\"level\":\"moderate\"},\"neuroticism\":{\"score\":89,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"Stereotype threat in STEM is when people feel extra pressure or anxiety because they worry about confirming negative stereotypes about their group, like women or minorities being less capable in science or math. This can make them perform worse on tests or tasks, even if they're skilled, because the fear distracts them and undermines their confidence. I think we should definitely address it because it's unfair and holds back talented individuals who could contribute so much to fields like engineering or medicine. From my own life, I've seen how anxiety can cloud your mind—I'm an anxious person myself, with high neuroticism, and I know that stress can make simple things feel overwhelming. If someone's already dealing with stereotypes on top of that, it's no wonder they might struggle. We need to create environments where everyone feels supported and valued, not judged by outdated ideas. To address it, we can start by educating people about stereotype threat so they recognize it, maybe through workshops in schools or workplaces. Teachers and employers should emphasize growth and effort over innate ability, praising hard work rather than just natural talent. Providing role models from diverse backgrounds can also help, showing that success in STEM is possible for everyone. In my community in Philadelphia, I've noticed that inclusive programs in local colleges or community centers make a difference. As a Buddhist, I believe in compassion and reducing suffering, so tackling this threat aligns with fostering kindness and equity. It's not just about fairness; it's about tapping into everyone's potential for the good of society.\",\n  \"reasoning_summary\": \"Derived opinion by defining stereotype threat as performance anxiety due to negative stereotypes, linking to persona's high neuroticism and anxiety to empathize with the stress. Argued for addressing it based on fairness and societal benefit, referencing persona's moderate agreeableness and Buddhist beliefs for compassion. Suggested solutions like education, growth mindset, and role models, tied to persona's low openness and conscientiousness implying practical, community-focused approaches. Used persona fields: psychological_feature, neuroticism, agreeableness, religious_beliefs, city_of_living, and hobbies indirectly for context.\",\n  \"tone\": \"Reflective, empathetic, and practical, with a calm and concerned demeanor influenced by anxiety and Buddhist values.\",\n  \"citations\": [\"American Psychological Association\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"psychological_feature\", \"religious_beliefs\", \"city_of_living\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM is when people feel extra pressure or anxiety because they worry about confirming negative stereotypes about their group, like women or minorities being less capable in science or math. This can make them perform worse on tests or tasks, even if they're skilled, because the fear distracts them and undermines their confidence. I think we should definitely address it because it's unfair and holds back talented individuals who could contribute so much to fields like engineering or medicine. From my own life, I've seen how anxiety can cloud your mind—I'm an anxious person myself, with high neuroticism, and I know that stress can make simple things feel overwhelming. If someone's already dealing with stereotypes on top of that, it's no wonder they might struggle. We need to create environments where everyone feels supported and valued, not judged by outdated ideas. To address it, we can start by educating people about stereotype threat so they recognize it, maybe through workshops in schools or workplaces. Teachers and employers should emphasize growth and effort over innate ability, praising hard work rather than just natural talent. Providing role models from diverse backgrounds can also help, showing that success in STEM is possible for everyone. In my community in Philadelphia, I've noticed that inclusive programs in local colleges or community centers make a difference. As a Buddhist, I believe in compassion and reducing suffering, so tackling this threat aligns with fostering kindness and equity. It's not just about fairness; it's about tapping into everyone's potential for the good of society.",
+    "reasoning_summary": "Derived opinion by defining stereotype threat as performance anxiety due to negative stereotypes, linking to persona's high neuroticism and anxiety to empathize with the stress. Argued for addressing it based on fairness and societal benefit, referencing persona's moderate agreeableness and Buddhist beliefs for compassion. Suggested solutions like education, growth mindset, and role models, tied to persona's low openness and conscientiousness implying practical, community-focused approaches. Used persona fields: psychological_feature, neuroticism, agreeableness, religious_beliefs, city_of_living, and hobbies indirectly for context.",
+    "tone": "Reflective, empathetic, and practical, with a calm and concerned demeanor influenced by anxiety and Buddhist values.",
+    "citations": [
+      "American Psychological Association"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "psychological_feature",
+      "religious_beliefs",
+      "city_of_living",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

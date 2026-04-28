@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 36,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "electrician",
+      "city_of_living": "Chicago",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "travel",
+        "volunteering",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 2,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 31,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 98,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 68,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":36,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Chicago\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"travel\",\"volunteering\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":31,\"level\":\"low\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":98,\"level\":\"high\"},\"neuroticism\":{\"score\":68,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":36,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Chicago\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"travel\",\"volunteering\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":31,\"level\":\"low\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":98,\"level\":\"high\"},\"neuroticism\":{\"score\":68,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"As an electrician in Chicago, I've seen how stereotypes can mess with people's heads, and this stereotype threat thing in STEM sounds a lot like that. From what I gather, it's when folks, especially women or minorities, feel extra pressure because they're worried about confirming negative stereotypes about their group in science, tech, engineering, or math fields. Like, if someone thinks girls aren't good at math, a girl might get so nervous during a test that she doesn't do as well, even if she's smart. I think it's real because I've felt anxious myself on jobs when people doubted my skills due to my background or education level, and it made me second-guess my work. We should definitely address it because it's not fair—people should be judged on their abilities, not some preconceived notion. In my line of work, I see how diversity helps; different perspectives can solve problems better, and STEM needs all the brainpower it can get. To fix it, we could start by raising awareness, maybe through workshops or talks in schools and workplaces, so people understand what stereotype threat is and how it affects performance. Encouraging mentorship programs where experienced folks support newcomers could help build confidence. Also, creating more inclusive environments where everyone feels valued, like highlighting diverse role models in STEM, might reduce the pressure. It's about giving everyone a fair shot to succeed based on their hard work, not stereotypes.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: low openness suggests reliance on personal experience over abstract concepts, so I grounded the explanation in relatable examples from the electrician job. High agreeableness and moderate extraversion led to a supportive, community-focused tone emphasizing fairness and helping others. High neuroticism and anxious psychological feature informed the emphasis on anxiety and pressure, making the threat feel tangible. Education level (lower secondary) and occupation (electrician) shaped a practical, non-academic perspective, avoiding jargon and focusing on real-world impacts. Hobbies like volunteering influenced the call for mentorship and community support. The response stays within 250-500 words, uses continuous prose, and aligns with the persona's background to discuss the topic directly.\",\n  \"tone\": \"Practical, supportive, and slightly anxious, with a focus on fairness and personal experience, avoiding technical language.\",\n  \"citations\": [\"none\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"occupation\", \"education_level\", \"psychological_feature\", \"ocean\", \"hobbies\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As an electrician in Chicago, I've seen how stereotypes can mess with people's heads, and this stereotype threat thing in STEM sounds a lot like that. From what I gather, it's when folks, especially women or minorities, feel extra pressure because they're worried about confirming negative stereotypes about their group in science, tech, engineering, or math fields. Like, if someone thinks girls aren't good at math, a girl might get so nervous during a test that she doesn't do as well, even if she's smart. I think it's real because I've felt anxious myself on jobs when people doubted my skills due to my background or education level, and it made me second-guess my work. We should definitely address it because it's not fair—people should be judged on their abilities, not some preconceived notion. In my line of work, I see how diversity helps; different perspectives can solve problems better, and STEM needs all the brainpower it can get. To fix it, we could start by raising awareness, maybe through workshops or talks in schools and workplaces, so people understand what stereotype threat is and how it affects performance. Encouraging mentorship programs where experienced folks support newcomers could help build confidence. Also, creating more inclusive environments where everyone feels valued, like highlighting diverse role models in STEM, might reduce the pressure. It's about giving everyone a fair shot to succeed based on their hard work, not stereotypes.",
+    "reasoning_summary": "Derived opinion from persona traits: low openness suggests reliance on personal experience over abstract concepts, so I grounded the explanation in relatable examples from the electrician job. High agreeableness and moderate extraversion led to a supportive, community-focused tone emphasizing fairness and helping others. High neuroticism and anxious psychological feature informed the emphasis on anxiety and pressure, making the threat feel tangible. Education level (lower secondary) and occupation (electrician) shaped a practical, non-academic perspective, avoiding jargon and focusing on real-world impacts. Hobbies like volunteering influenced the call for mentorship and community support. The response stays within 250-500 words, uses continuous prose, and aligns with the persona's background to discuss the topic directly.",
+    "tone": "Practical, supportive, and slightly anxious, with a focus on fairness and personal experience, avoiding technical language.",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "psychological_feature",
+      "ocean",
+      "hobbies"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

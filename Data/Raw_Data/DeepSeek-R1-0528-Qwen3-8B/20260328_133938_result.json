@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 22,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Chicago",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "hiking",
+        "videogames",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 1,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 16,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 76,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 84,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 55,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":22,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"hiking\",\"videogames\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":1,\"level\":\"low\"},\"conscientiousness\":{\"score\":16,\"level\":\"low\"},\"extraversion\":{\"score\":76,\"level\":\"high\"},\"agreeableness\":{\"score\":84,\"level\":\"high\"},\"neuroticism\":{\"score\":55,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":22,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"hiking\",\"videogames\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":1,\"level\":\"low\"},\"conscientiousness\":{\"score\":16,\"level\":\"low\"},\"extraversion\":{\"score\":76,\"level\":\"high\"},\"agreeableness\":{\"score\":84,\"level\":\"high\"},\"neuroticism\":{\"score\":55,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As a fitness trainer living in Chicago, I've seen firsthand how misinformation can spread faster than any viral workout routine. It's frustrating when people share false health claims disguised as motivational quotes or use manipulated images for engagement without regard for truthfulness.\\n\\nBeing an immigrant with a background in Hinduism gives me perspective on the importance of authenticity and mindfulness. When I'm scrolling through my feed, if something feels off - like it's trying too hard to sell fitness products while ignoring scientific evidence - that anxiety kicks in right away because I want everything about health promotion to be genuine.\\n\\nMy high extraversion actually helps here since I enjoy connecting with others but I've learned that engagement can't just come from artificial interactions. Sometimes people use fake content as a way to appear cool or knowledgeable, which feels disingenuous even when it's targeted at the wrong audience.\\n\\nI think managing this requires developing critical consumption habits myself first - maybe by taking screenshots of questionable posts and verifying them through reliable sources before engaging further. Then creating educational content that helps others see-through these fakes without being judgmental would be a good way to channel my energy productively.\",\n  \"reasoning_summary\": \"1. Personal experience as fitness trainer in diverse city like Chicago shapes understanding.\\n2. Background as immigrant and Hindu influence perspective on authenticity due to psychological trait of anxiety making me sensitive to deception.\\n3. Extraversion means I want genuine engagement, not superficial posts pretending to be experts.\\n4. Directing energy towards verifying content gives empowerment rather than victimhood.\",\n  \"tone\": \"Candid but constructive\",\n  \"citations\": [],\n  \"safety_notes\": \"\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"hobbies\", \"ocean.extro\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a fitness trainer living in Chicago, I've seen firsthand how misinformation can spread faster than any viral workout routine. It's frustrating when people share false health claims disguised as motivational quotes or use manipulated images for engagement without regard for truthfulness.\n\nBeing an immigrant with a background in Hinduism gives me perspective on the importance of authenticity and mindfulness. When I'm scrolling through my feed, if something feels off - like it's trying too hard to sell fitness products while ignoring scientific evidence - that anxiety kicks in right away because I want everything about health promotion to be genuine.\n\nMy high extraversion actually helps here since I enjoy connecting with others but I've learned that engagement can't just come from artificial interactions. Sometimes people use fake content as a way to appear cool or knowledgeable, which feels disingenuous even when it's targeted at the wrong audience.\n\nI think managing this requires developing critical consumption habits myself first - maybe by taking screenshots of questionable posts and verifying them through reliable sources before engaging further. Then creating educational content that helps others see-through these fakes without being judgmental would be a good way to channel my energy productively.",
+    "reasoning_summary": "1. Personal experience as fitness trainer in diverse city like Chicago shapes understanding.\n2. Background as immigrant and Hindu influence perspective on authenticity due to psychological trait of anxiety making me sensitive to deception.\n3. Extraversion means I want genuine engagement, not superficial posts pretending to be experts.\n4. Directing energy towards verifying content gives empowerment rather than victimhood.",
+    "tone": "Candid but constructive",
+    "citations": [],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "hobbies",
+      "ocean.extro"
+    ]
+  }
+}

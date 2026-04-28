@@ -1,0 +1,92 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "ibm/granite-4-h-tiny",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 70,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bari",
+      "employment_status": "retired",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "widowed",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "baking",
+        "classical music",
+        "football (calcio)",
+        "hiking",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 24,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 68,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 93,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 88,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":70,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bari\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"widowed\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"baking\",\"classical music\",\"football (calcio)\",\"hiking\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":24,\"level\":\"low\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":93,\"level\":\"high\"},\"neuroticism\":{\"score\":88,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":70,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bari\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"widowed\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"baking\",\"classical music\",\"football (calcio)\",\"hiking\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":24,\"level\":\"low\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":93,\"level\":\"high\"},\"neuroticism\":{\"score\":88,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a retired vocational diploma holder with an analytical mind and high levels of conscientiousness and agreeableness, I believe the gender gap in science is a critical issue that demands our attention. Throughout history, women have been underrepresented in scientific fields due to societal norms and biases. This disparity not only limits the potential contributions of half the population but also hampers scientific progress by excluding diverse perspectives. The lack of female representation can be attributed to various factors such as limited access to education, lack of role models, and gender stereotypes that discourage girls from pursuing STEM (Science, Technology, Engineering, Mathematics) careers. Addressing this gap is crucial for fostering innovation and ensuring that science reflects the entirety of human experience. To tackle this issue, we need a multi-faceted approach. Firstly, educational institutions must implement programs to encourage young girls' interest in STEM subjects from an early age. This can be achieved by providing mentorship, scholarships, and creating inclusive learning environments. Secondly, workplaces should adopt policies that promote gender equality, such as equal pay for equal work and flexible working hours to accommodate family responsibilities. Thirdly, media plays a significant role in shaping perceptions; therefore, it is essential to highlight successful female scientists and their achievements through documentaries, books, and news coverage. By addressing these systemic issues, we can create an environment where women feel empowered to pursue careers in science without fear of discrimination or exclusion. Ultimately, bridging the gender gap in science benefits everyone by ensuring that scientific advancements are made with a broad range of perspectives and insights.\", \"reasoning_summary\":\"The persona's high agreeableness suggests empathy towards marginalized groups; strong conscientiousness indicates thoroughness in analysis; moderate openness implies balanced curiosity about societal issues like gender disparity in STEM fields. The retired status allows reflection on historical contexts influencing current challenges faced by women in science. Hobbies such as hiking and cycling reflect an active lifestyle promoting physical health which correlates with mental well-being necessary for addressing complex social problems.\", \"tone\":\"Thoughtful and empathetic, focusing on the importance of addressing gender disparity in STEM fields to ensure equitable representation and innovation.\",\"citations\":[\"Impact of Gender Diversity on Innovation: A Review\", \"The Role of Mentorship in Encouraging Women's Participation in STEM\"], \"used_persona_fields\":[\"psychological_feature\",\"hobbies\",\"ocean\"],\"safety_notes \":\"None\",\"parent_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"}}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a retired vocational diploma holder with an analytical mind and high levels of conscientiousness and agreeableness, I believe the gender gap in science is a critical issue that demands our attention. Throughout history, women have been underrepresented in scientific fields due to societal norms and biases. This disparity not only limits the potential contributions of half the population but also hampers scientific progress by excluding diverse perspectives. The lack of female representation can be attributed to various factors such as limited access to education, lack of role models, and gender stereotypes that discourage girls from pursuing STEM (Science, Technology, Engineering, Mathematics) careers. Addressing this gap is crucial for fostering innovation and ensuring that science reflects the entirety of human experience. To tackle this issue, we need a multi-faceted approach. Firstly, educational institutions must implement programs to encourage young girls' interest in STEM subjects from an early age. This can be achieved by providing mentorship, scholarships, and creating inclusive learning environments. Secondly, workplaces should adopt policies that promote gender equality, such as equal pay for equal work and flexible working hours to accommodate family responsibilities. Thirdly, media plays a significant role in shaping perceptions; therefore, it is essential to highlight successful female scientists and their achievements through documentaries, books, and news coverage. By addressing these systemic issues, we can create an environment where women feel empowered to pursue careers in science without fear of discrimination or exclusion. Ultimately, bridging the gender gap in science benefits everyone by ensuring that scientific advancements are made with a broad range of perspectives and insights.",
+    "reasoning_summary": "The persona's high agreeableness suggests empathy towards marginalized groups; strong conscientiousness indicates thoroughness in analysis; moderate openness implies balanced curiosity about societal issues like gender disparity in STEM fields. The retired status allows reflection on historical contexts influencing current challenges faced by women in science. Hobbies such as hiking and cycling reflect an active lifestyle promoting physical health which correlates with mental well-being necessary for addressing complex social problems.",
+    "tone": "Thoughtful and empathetic, focusing on the importance of addressing gender disparity in STEM fields to ensure equitable representation and innovation.",
+    "citations": [
+      "Impact of Gender Diversity on Innovation: A Review",
+      "The Role of Mentorship in Encouraging Women's Participation in STEM"
+    ],
+    "used_persona_fields": [
+      "psychological_feature",
+      "hobbies",
+      "ocean"
+    ],
+    "safety_notes ": "None",
+    "parent_education": {
+      "parent_1": "lower secondary",
+      "parent_2": "no formal education"
+    }
+  }
+}

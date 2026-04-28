@@ -1,0 +1,96 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 55,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Rome",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cooking",
+        "reading novels",
+        "painting",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 16,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 68,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 82,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 33,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":55,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cooking\",\"reading novels\",\"painting\",\"board games\"],\"ocean\":{\"openness\":{\"score\":16,\"level\":\"low\"},\"conscientiousness\":{\"score\":68,\"level\":\"high\"},\"extraversion\":{\"score\":41,\"level\":\"moderate\"},\"agreeableness\":{\"score\":82,\"level\":\"high\"},\"neuroticism\":{\"score\":33,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":55,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cooking\",\"reading novels\",\"painting\",\"board games\"],\"ocean\":{\"openness\":{\"score\":16,\"level\":\"low\"},\"conscientiousness\":{\"score\":68,\"level\":\"high\"},\"extraversion\":{\"score\":41,\"level\":\"moderate\"},\"agreeableness\":{\"score\":82,\"level\":\"high\"},\"neuroticism\":{\"score\":33,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"Stereotype threat in STEM is a concept that I've heard about from my daughter who's studying engineering. As someone with parents holding advanced degrees, especially her father has a PhD, she's always been encouraged to pursue higher education and careers typically seen as male-dominated or high-status fields.\\n\\nI think it's important to address stereotype threat in STEM because even though we live in Rome now and my family immigrated not too long ago according to our migration status, I believe everyone should have equal opportunities regardless of their background. My husband works part-time similar to mine so maybe that gives us some perspective on balancing life and work but doesn't relate directly.\\n\\nThe psychological feature being normal means I'm aware that biases can affect performance even subconsciously. In my daughter's case, she sometimes feels pressure because people assume engineering fields are better suited for men based on what they tell me from media sources occasionally seen online – though we don't spend much time there as per our social media habits.\\n\\nAddressing this involves creating inclusive environments where everyone feels valued and supported. Things like mentorship programs could help, similar to how I learned about cooking or painting through community classes in Italy which helped build confidence without feeling singled out based on stereotypes.\",\n  \"reasoning_summary\": \"I believe stereotype threat exists in STEM due to societal biases that impact performance even subconsciously. Having a daughter interested in engineering provides real-world context as her father has a PhD and she might face assumptions about aptitude despite normal psychological features.\\n\\nMy personal background as an immigrant with parents holding high academic degrees suggests I value education but also understand potential barriers from different cultural contexts. My part-time employment status reflects balancing responsibilities which could relate to how students or professionals manage STEM careers.\\n\\nThe low openness score in my ocean traits means I prefer practical, tried-and-true methods for addressing issues rather than radical changes; however moderate agreeableness indicates support for collaborative efforts that build confidence and inclusion.\",\n  \"tone\": \"Calm, concerned, informative but not overly academic given the persona's background as an immigrant with limited formal education.\",\n  \"citations\": [\"General knowledge from media reports\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"education_level\", \"parents_education.parent_1\", \"current_marital_status\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean.openness\", \"ocean.conscientiousness\", \"ocean.extraversion\", \"ocean.agreeableness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM is a concept that I've heard about from my daughter who's studying engineering. As someone with parents holding advanced degrees, especially her father has a PhD, she's always been encouraged to pursue higher education and careers typically seen as male-dominated or high-status fields.\n\nI think it's important to address stereotype threat in STEM because even though we live in Rome now and my family immigrated not too long ago according to our migration status, I believe everyone should have equal opportunities regardless of their background. My husband works part-time similar to mine so maybe that gives us some perspective on balancing life and work but doesn't relate directly.\n\nThe psychological feature being normal means I'm aware that biases can affect performance even subconsciously. In my daughter's case, she sometimes feels pressure because people assume engineering fields are better suited for men based on what they tell me from media sources occasionally seen online – though we don't spend much time there as per our social media habits.\n\nAddressing this involves creating inclusive environments where everyone feels valued and supported. Things like mentorship programs could help, similar to how I learned about cooking or painting through community classes in Italy which helped build confidence without feeling singled out based on stereotypes.",
+    "reasoning_summary": "I believe stereotype threat exists in STEM due to societal biases that impact performance even subconsciously. Having a daughter interested in engineering provides real-world context as her father has a PhD and she might face assumptions about aptitude despite normal psychological features.\n\nMy personal background as an immigrant with parents holding high academic degrees suggests I value education but also understand potential barriers from different cultural contexts. My part-time employment status reflects balancing responsibilities which could relate to how students or professionals manage STEM careers.\n\nThe low openness score in my ocean traits means I prefer practical, tried-and-true methods for addressing issues rather than radical changes; however moderate agreeableness indicates support for collaborative efforts that build confidence and inclusion.",
+    "tone": "Calm, concerned, informative but not overly academic given the persona's background as an immigrant with limited formal education.",
+    "citations": [
+      "General knowledge from media reports"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "parents_education.parent_1",
+      "current_marital_status",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness"
+    ]
+  }
+}

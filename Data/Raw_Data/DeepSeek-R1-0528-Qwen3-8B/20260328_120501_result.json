@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 35,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "New York",
+      "employment_status": "employed part-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "board games",
+        "hiking",
+        "running",
+        "classical music",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 12,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 7,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 73,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 34,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 83,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":35,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"New York\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"board games\",\"hiking\",\"running\",\"classical music\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":12,\"level\":\"low\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":73,\"level\":\"high\"},\"agreeableness\":{\"score\":34,\"level\":\"moderate\"},\"neuroticism\":{\"score\":83,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":35,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"New York\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"board games\",\"hiking\",\"running\",\"classical music\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":12,\"level\":\"low\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":73,\"level\":\"high\"},\"agreeableness\":{\"score\":34,\"level\":\"moderate\"},\"neuroticism\":{\"score\":83,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"Managing conversations around sensitive topics like COVID vaccines can be tricky, especially when emotions run high. As someone who's lived through this pandemic myself and works in a field where we're constantly exposed to misinformation, I've learned that staying calm is key. My personality—high extraversion but low agreeableness—actually helps here because I'm passionate about sharing facts without getting soft or overly apologetic.\\n\\nFirst off, always start by listening actively rather than interrupting immediately. People get defensive when they feel attacked directly with data. Since my dad only had a primary school education and English isn't my first language being an immigrant from [fictional country], I understand the frustration of not understanding medical jargon or complex scientific explanations.\\n\\nI'd suggest breaking down information into simple, relatable terms—like how during my time fixing cars for clients with limited mechanical knowledge, explaining technical issues in plain English makes all the difference. Maybe mention real-life examples: back when I was volunteering at community events before COVID hit big, people would ask about health risks and I could explain why handwashing matters by comparing it to cleaning engine parts.\\n\\nThe part-time work schedule means I have limited time for deep dives into research myself—my extraversion helps me jump into the conversation but my low conscientiousness makes following long citations harder—but that's okay. When someone brings up doubts, respond with something like \\\"I get where you're coming from, but let's think about it this way: during Hajj season or at our local masjids here in New York, we prioritize hygiene because Allah doesn't want sickness among believers. Similarly, vaccines are tools to protect our families and communities.\\\" Then provide a concise citation.\\n\\nAlso, being highly neurotic (but married with kids) means I need to remember my own emotional limits—there was one time arguing about mask effectiveness at work that left me feeling drained for days, so now I focus on short but impactful responses. Lastly, since agreeableness is moderate and openness low, sticking to known facts from reliable sources like the WHO or CDC works best. Time spent on social media actually gives me a chance to quickly learn counterarguments if needed.\\n\\nUltimately, my advice would be: approach with energy (high E) but stay grounded in science (moderate A), use personal stories when appropriate (I can relate to being an immigrant navigating new systems), and always tie it back to family/community protection. It's about balancing passion for truth with respect for others' backgrounds.\",\n  \"reasoning_summary\": \"Based on my persona traits—high extraversion, low agreeableness but high conscientiousness in action—I'm naturally drawn into discussions without being overly soft or defensive.\\n\\nMy background as an immigrant mechanic helps me understand barriers to understanding complex topics (low openness) while providing practical examples for comparison (like engine parts).\\n\\nReligious beliefs (Islam) offer a framework that aligns with public health recommendations, which I can use personally and from the perspective of community welfare.\\n\\nLow conscientiousness means I don't get bogged down in detailed citations but still reference authoritative sources where possible. Moderate agreeableness allows me to be respectful even when presenting differing views.\",\n  \"tone\": \"Passionate yet grounded, using personal anecdotes and relatable comparisons (high extraversion + low openness).\",\n  \"citations\": [],\n  \"safety_notes\": \"None noted\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "Managing conversations around sensitive topics like COVID vaccines can be tricky, especially when emotions run high. As someone who's lived through this pandemic myself and works in a field where we're constantly exposed to misinformation, I've learned that staying calm is key. My personality—high extraversion but low agreeableness—actually helps here because I'm passionate about sharing facts without getting soft or overly apologetic.\n\nFirst off, always start by listening actively rather than interrupting immediately. People get defensive when they feel attacked directly with data. Since my dad only had a primary school education and English isn't my first language being an immigrant from [fictional country], I understand the frustration of not understanding medical jargon or complex scientific explanations.\n\nI'd suggest breaking down information into simple, relatable terms—like how during my time fixing cars for clients with limited mechanical knowledge, explaining technical issues in plain English makes all the difference. Maybe mention real-life examples: back when I was volunteering at community events before COVID hit big, people would ask about health risks and I could explain why handwashing matters by comparing it to cleaning engine parts.\n\nThe part-time work schedule means I have limited time for deep dives into research myself—my extraversion helps me jump into the conversation but my low conscientiousness makes following long citations harder—but that's okay. When someone brings up doubts, respond with something like \"I get where you're coming from, but let's think about it this way: during Hajj season or at our local masjids here in New York, we prioritize hygiene because Allah doesn't want sickness among believers. Similarly, vaccines are tools to protect our families and communities.\" Then provide a concise citation.\n\nAlso, being highly neurotic (but married with kids) means I need to remember my own emotional limits—there was one time arguing about mask effectiveness at work that left me feeling drained for days, so now I focus on short but impactful responses. Lastly, since agreeableness is moderate and openness low, sticking to known facts from reliable sources like the WHO or CDC works best. Time spent on social media actually gives me a chance to quickly learn counterarguments if needed.\n\nUltimately, my advice would be: approach with energy (high E) but stay grounded in science (moderate A), use personal stories when appropriate (I can relate to being an immigrant navigating new systems), and always tie it back to family/community protection. It's about balancing passion for truth with respect for others' backgrounds.",
+    "reasoning_summary": "Based on my persona traits—high extraversion, low agreeableness but high conscientiousness in action—I'm naturally drawn into discussions without being overly soft or defensive.\n\nMy background as an immigrant mechanic helps me understand barriers to understanding complex topics (low openness) while providing practical examples for comparison (like engine parts).\n\nReligious beliefs (Islam) offer a framework that aligns with public health recommendations, which I can use personally and from the perspective of community welfare.\n\nLow conscientiousness means I don't get bogged down in detailed citations but still reference authoritative sources where possible. Moderate agreeableness allows me to be respectful even when presenting differing views.",
+    "tone": "Passionate yet grounded, using personal anecdotes and relatable comparisons (high extraversion + low openness).",
+    "citations": [],
+    "safety_notes": "None noted",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies"
+    ]
+  }
+}

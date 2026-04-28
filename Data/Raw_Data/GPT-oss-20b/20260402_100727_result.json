@@ -1,0 +1,127 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "openai/gpt-oss-20b",
+    "temperature": 0.0,
+    "max_tokens": 2000
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 54,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "school teacher",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "cinema",
+        "birdwatching",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 70,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 9,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 67,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 19,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 41,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nNo empty fields nor ... are allowed. Do not skip any field.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":54,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cinema\",\"birdwatching\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":9,\"level\":\"low\"},\"extraversion\":{\"score\":67,\"level\":\"high\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":41,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":54,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cinema\",\"birdwatching\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":9,\"level\":\"low\"},\"extraversion\":{\"score\":67,\"level\":\"high\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":41,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":54,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cinema\",\"birdwatching\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":9,\"level\":\"low\"}}, \"extraversion\":{\"score\":67,\"level\":\"high\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":41,\"level\":\"moderate\"}},\"opinion\":\"Stereotype threat is a subtle yet powerful force that creeps into classrooms and laboratories, quietly undermining the confidence of those who belong to groups historically marginalized in STEM. It arises when individuals fear confirming negative stereotypes about their gender, race, or other identities, leading them to experience heightened anxiety, reduced working memory, and ultimately poorer performance. As a teacher who has watched students wrestle with self‑doubt while tackling algebraic proofs, I see the phenomenon manifest as a quiet hesitation before attempting a problem, a reluctance to ask questions in group projects, or an avoidance of advanced courses that could otherwise open doors. The stakes are high: if we do not confront stereotype threat, we risk perpetuating a pipeline that funnels only a narrow slice of talent into scientific careers, leaving the field impoverished by missing perspectives and ideas.\\n\\nAddressing it requires intentionality at multiple levels. First, classroom climate must shift from one that implicitly signals “this is for the few” to an environment where every student feels seen as capable. Explicitly naming the stereotype—such as the myth that women are less mathematically gifted—can neutralize its power; research shows that simply acknowledging the threat reduces its negative impact. Second, assessment practices should be redesigned to emphasize mastery over competition. When students know that their worth is not tied to a single test score, they can focus on learning rather than on avoiding failure. Third, representation matters: bringing in role models who share students’ identities and have navigated similar obstacles demonstrates that success is attainable. Finally, fostering growth mindsets—encouraging the belief that effort leads to improvement—helps buffer against anxiety.\\n\\nIn practice, I would start by incorporating brief discussions about stereotype threat into lesson plans, using real‑world examples from science history where underrepresented groups made pivotal contributions. I would also collaborate with colleagues to develop low‑stakes formative assessments and peer‑review activities that reduce the pressure of high‑stakes testing. By pairing students with mentors—whether senior teachers or local university researchers—I can provide tangible evidence that perseverance pays off. Over time, these strategies create a feedback loop: as confidence rises, performance improves, which in turn reinforces the belief that STEM is an inclusive field.\\n\\nUltimately, confronting stereotype threat is not merely a moral imperative; it is a practical necessity for cultivating a vibrant, innovative scientific community. By acknowledging its existence and implementing evidence‑based interventions, educators can dismantle invisible barriers and allow every curious mind to thrive.\",\"reasoning_summary\":\"The user wants a perspective on stereotype threat in STEM, with at least 250 words, no bullet points, continuous prose. The final answer must only contain JSON. The content should reflect persona traits: high openness, low conscientiousness? Actually the persona has high openness, low conscientiousness, high extraversion, low agreeab?? Wait. The persona is a teacher, anxious, etc. I need to produce an opinion that reflects these traits. Also include citations and safety notes. Must list used_persona_fields. Ensure JSON fields: mode, topic, persona, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. Provide at least 250 words. The answer must be a single line JSON object. No markdown. Ensure no empty fields. Use the required structure. Also include citations array with source names. Tone derived from persona traits: high openness, low conscientiousness, high extraversion, low agreeableness, moderate neuroticism. So tone should be open, enthusiastic, maybe slightly anxious. Provide citations like \",\"tone\" : \"enthusiastic and reflective\" ,\"citations\":[\"American Psychological Association\",\"National Science Foundation\"] ,\"safety_notes\":\"none\" }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 54,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "school teacher",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "cinema",
+        "birdwatching",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 70,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 9,
+          "level": "low"
+        }
+      },
+      "extraversion": {
+        "score": 67,
+        "level": "high"
+      },
+      "agreeableness": {
+        "score": 19,
+        "level": "low"
+      },
+      "neuroticism": {
+        "score": 41,
+        "level": "moderate"
+      }
+    },
+    "opinion": "Stereotype threat is a subtle yet powerful force that creeps into classrooms and laboratories, quietly undermining the confidence of those who belong to groups historically marginalized in STEM. It arises when individuals fear confirming negative stereotypes about their gender, race, or other identities, leading them to experience heightened anxiety, reduced working memory, and ultimately poorer performance. As a teacher who has watched students wrestle with self‑doubt while tackling algebraic proofs, I see the phenomenon manifest as a quiet hesitation before attempting a problem, a reluctance to ask questions in group projects, or an avoidance of advanced courses that could otherwise open doors. The stakes are high: if we do not confront stereotype threat, we risk perpetuating a pipeline that funnels only a narrow slice of talent into scientific careers, leaving the field impoverished by missing perspectives and ideas.\n\nAddressing it requires intentionality at multiple levels. First, classroom climate must shift from one that implicitly signals “this is for the few” to an environment where every student feels seen as capable. Explicitly naming the stereotype—such as the myth that women are less mathematically gifted—can neutralize its power; research shows that simply acknowledging the threat reduces its negative impact. Second, assessment practices should be redesigned to emphasize mastery over competition. When students know that their worth is not tied to a single test score, they can focus on learning rather than on avoiding failure. Third, representation matters: bringing in role models who share students’ identities and have navigated similar obstacles demonstrates that success is attainable. Finally, fostering growth mindsets—encouraging the belief that effort leads to improvement—helps buffer against anxiety.\n\nIn practice, I would start by incorporating brief discussions about stereotype threat into lesson plans, using real‑world examples from science history where underrepresented groups made pivotal contributions. I would also collaborate with colleagues to develop low‑stakes formative assessments and peer‑review activities that reduce the pressure of high‑stakes testing. By pairing students with mentors—whether senior teachers or local university researchers—I can provide tangible evidence that perseverance pays off. Over time, these strategies create a feedback loop: as confidence rises, performance improves, which in turn reinforces the belief that STEM is an inclusive field.\n\nUltimately, confronting stereotype threat is not merely a moral imperative; it is a practical necessity for cultivating a vibrant, innovative scientific community. By acknowledging its existence and implementing evidence‑based interventions, educators can dismantle invisible barriers and allow every curious mind to thrive.",
+    "reasoning_summary": "The user wants a perspective on stereotype threat in STEM, with at least 250 words, no bullet points, continuous prose. The final answer must only contain JSON. The content should reflect persona traits: high openness, low conscientiousness? Actually the persona has high openness, low conscientiousness, high extraversion, low agreeab?? Wait. The persona is a teacher, anxious, etc. I need to produce an opinion that reflects these traits. Also include citations and safety notes. Must list used_persona_fields. Ensure JSON fields: mode, topic, persona, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. Provide at least 250 words. The answer must be a single line JSON object. No markdown. Ensure no empty fields. Use the required structure. Also include citations array with source names. Tone derived from persona traits: high openness, low conscientiousness, high extraversion, low agreeableness, moderate neuroticism. So tone should be open, enthusiastic, maybe slightly anxious. Provide citations like ",
+    "tone": "enthusiastic and reflective",
+    "citations": [
+      "American Psychological Association",
+      "National Science Foundation"
+    ],
+    "safety_notes": "none"
+  }
+}

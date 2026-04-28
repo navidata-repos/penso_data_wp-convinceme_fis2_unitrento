@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 55,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "startup founder",
+      "city_of_living": "Chicago",
+      "employment_status": "employed part-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "rock climbing",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 28,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 67,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 77,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 8,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":55,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"startup founder\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"rock climbing\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":45,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":28,\"level\":\"low\"},\"extraversion\":{\"score\":67,\"level\":\"high\"},\"agreeableness\":{\"score\":77,\"level\":\"high\"},\"neuroticism\":{\"score\":8,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":55,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"startup founder\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"rock climbing\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":45,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":28,\"level\":\"low\"},\"extraversion\":{\"score\":67,\"level\":\"high\"},\"agreeableness\":{\"score\":77,\"level\":\"high\"},\"neuroticism\":{\"score\":8,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"As a woman who immigrated and started her own business, I've seen firsthand how gaps can hold people back. The gender gap in science isn't just about numbers; it's about opportunities being missed because of unconscious biases that favor men historically. In my field as an entrepreneur, even though I'm not directly working on scientific research anymore after dropping out due to family reasons during graduate studies in physics from Pakistan before moving here with minimal support system except for volunteering and climbing rocks – which helped keep me grounded mentally sometimes when dealing with rejection emails or visa delays – we're trying to bridge those gaps too. Addressing it absolutely makes sense because diversity brings better solutions, but change won't happen overnight simply by complaining; I've learned that in my startup life where you need resilience against setbacks. We should create mentorship programs focusing on young women especially from immigrant backgrounds who might face double hurdles: cultural norms plus professional ones without formal parental guidance unlike my father's upper secondary education which didn't help much with navigating academia but gave me some confidence anyway.\",\n  \"reasoning_summary\": \"From my personal experience as an immigrant woman founder, I know that gaps persist due to historical biases and lack of support systems. Addressing the gender gap requires targeted interventions like mentorship programs tailored for women in STEM from underrepresented groups, combining educational strategies with community building to foster confidence and resilience.\",\n  \"tone\": \"Reflective, passionate yet pragmatic\",\n  \"citations\": [],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"parents_education.parent_1\", \"migration_status\", \"time_onsocialmedia\", \"hobbies.rock climbing\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a woman who immigrated and started her own business, I've seen firsthand how gaps can hold people back. The gender gap in science isn't just about numbers; it's about opportunities being missed because of unconscious biases that favor men historically. In my field as an entrepreneur, even though I'm not directly working on scientific research anymore after dropping out due to family reasons during graduate studies in physics from Pakistan before moving here with minimal support system except for volunteering and climbing rocks – which helped keep me grounded mentally sometimes when dealing with rejection emails or visa delays – we're trying to bridge those gaps too. Addressing it absolutely makes sense because diversity brings better solutions, but change won't happen overnight simply by complaining; I've learned that in my startup life where you need resilience against setbacks. We should create mentorship programs focusing on young women especially from immigrant backgrounds who might face double hurdles: cultural norms plus professional ones without formal parental guidance unlike my father's upper secondary education which didn't help much with navigating academia but gave me some confidence anyway.",
+    "reasoning_summary": "From my personal experience as an immigrant woman founder, I know that gaps persist due to historical biases and lack of support systems. Addressing the gender gap requires targeted interventions like mentorship programs tailored for women in STEM from underrepresented groups, combining educational strategies with community building to foster confidence and resilience.",
+    "tone": "Reflective, passionate yet pragmatic",
+    "citations": [],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education.parent_1",
+      "migration_status",
+      "time_onsocialmedia",
+      "hobbies.rock climbing"
+    ]
+  }
+}

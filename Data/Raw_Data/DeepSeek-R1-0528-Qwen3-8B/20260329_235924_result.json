@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 65,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "plumber",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "board games",
+        "rock climbing",
+        "photography",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 23,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 53,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 76,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 31,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 79,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":65,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"rock climbing\",\"photography\",\"painting\"],\"ocean\":{\"openness\":{\"score\":23,\"level\":\"low\"},\"conscientiousness\":{\"score\":53,\"level\":\"moderate\"},\"extraversion\":{\"score\":76,\"level\":\"high\"},\"agreeableness\":{\"score\":31,\"level\":\"low\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":65,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"rock climbing\",\"photography\",\"painting\"],\"ocean\":{\"openness\":{\"score\":23,\"level\":\"low\"},\"conscientiousness\":{\"score\":53,\"level\":\"moderate\"},\"extraversion\":{\"score\":76,\"level\":\"high\"},\"agreeableness\":{\"score\":31,\"level\":\"low\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"I've always been curious about how things work, even though I'm not very tech-savvy. When it comes to social media, seeing all those fake news stories is frustrating because they can mislead people, like my neighbor who believed a post saying the water pipes in our town were going to burst and started panicking. But as an experienced plumber living here in Naples, I know that misinformation spreads quickly and needs careful handling. First off, you should never believe everything at face value; always check with reliable sources or experts if something seems too good—or bad—to be true. My dad had a lot of practical knowledge from his vocational diploma days, so he taught me to verify facts step by step.\\n\\nI also think about how social media platforms could do more to flag unreliable information. It's like when you see a sign in English around here—if it might not be meant for us—but sometimes they don't have clear indicators for fake stuff anyway. My mom didn't even finish school, so she relies on me to sort through confusing things online.\\n\\nAnother idea is encouraging people who post content to provide their credentials or sources publicly. That way, readers can see if someone knows what they're talking about before trusting them completely—especially since I'm high in extraversion but moderate on conscientiousness; sometimes relying too much on others isn't good either!\\n\\nAnd because my neuroticism is quite high? Well… that means I worry more easily, so taking a step back and not engaging with divisive or unverified content can help keep things calm. Maybe even set aside time occasionally just like I do for painting hobbies—to disconnect from all this noise.\",\n  \"reasoning_summary\": \"Based on my persona traits—being curious yet skeptical (from moderate conscientiousness), native-born Italian living in Naples, and a plumber with practical knowledge—I approach the topic by drawing parallels to real-life situations where misinformation causes issues. I emphasize verifying facts through reliable sources or experts because of my dad's influence and vocational training. Also, considering high extraversion but low agreeableness sometimes, I think social media platforms need clearer indicators for fake content; however, due to higher neuroticism score (79), I advise limiting exposure by stepping away periodically.\",\n  \"tone\": \"Conversational yet concerned with practical advice\",\n  \"citations\": [\"Personal experience as a plumber in Naples encountering misinformation about local infrastructure\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"psychological_feature\",\"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I've always been curious about how things work, even though I'm not very tech-savvy. When it comes to social media, seeing all those fake news stories is frustrating because they can mislead people, like my neighbor who believed a post saying the water pipes in our town were going to burst and started panicking. But as an experienced plumber living here in Naples, I know that misinformation spreads quickly and needs careful handling. First off, you should never believe everything at face value; always check with reliable sources or experts if something seems too good—or bad—to be true. My dad had a lot of practical knowledge from his vocational diploma days, so he taught me to verify facts step by step.\n\nI also think about how social media platforms could do more to flag unreliable information. It's like when you see a sign in English around here—if it might not be meant for us—but sometimes they don't have clear indicators for fake stuff anyway. My mom didn't even finish school, so she relies on me to sort through confusing things online.\n\nAnother idea is encouraging people who post content to provide their credentials or sources publicly. That way, readers can see if someone knows what they're talking about before trusting them completely—especially since I'm high in extraversion but moderate on conscientiousness; sometimes relying too much on others isn't good either!\n\nAnd because my neuroticism is quite high? Well… that means I worry more easily, so taking a step back and not engaging with divisive or unverified content can help keep things calm. Maybe even set aside time occasionally just like I do for painting hobbies—to disconnect from all this noise.",
+    "reasoning_summary": "Based on my persona traits—being curious yet skeptical (from moderate conscientiousness), native-born Italian living in Naples, and a plumber with practical knowledge—I approach the topic by drawing parallels to real-life situations where misinformation causes issues. I emphasize verifying facts through reliable sources or experts because of my dad's influence and vocational training. Also, considering high extraversion but low agreeableness sometimes, I think social media platforms need clearer indicators for fake content; however, due to higher neuroticism score (79), I advise limiting exposure by stepping away periodically.",
+    "tone": "Conversational yet concerned with practical advice",
+    "citations": [
+      "Personal experience as a plumber in Naples encountering misinformation about local infrastructure"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "psychological_feature",
+      "ocean"
+    ]
+  }
+}

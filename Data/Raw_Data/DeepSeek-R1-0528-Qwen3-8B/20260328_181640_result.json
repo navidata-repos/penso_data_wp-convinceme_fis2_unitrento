@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 70,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Washington DC",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "gardening",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 11,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 11,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 9,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 73,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 14,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":70,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"gardening\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":11,\"level\":\"low\"},\"conscientiousness\":{\"score\":11,\"level\":\"low\"},\"extraversion\":{\"score\":9,\"level\":\"low\"},\"agreeableness\":{\"score\":73,\"level\":\"high\"},\"neuroticism\":{\"score\":14,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":70,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"gardening\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":11,\"level\":\"low\"},\"conscientiousness\":{\"score\":11,\"level\":\"low\"},\"extraversion\":{\"score\":9,\"level\":\"low\"},\"agreeableness\":{\"score\":73,\"level\":\"high\"},\"neuroticism\":{\"score\":14,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\":\"human\",\n  \"topic\":\"How to manage and dealing with fake content on social media.\",\n  \"opinion\":\"I've spent many years observing the world, and now in my retirement, I spend time each day scrolling through social media. It's frustrating to see all that misinformation out there, especially since I try to stay informed but don't want to be misled or upset by false stories. As a man with Jewish roots living in Washington DC, I value truth and accuracy because my parents helped instill those principles. My father even had a master's degree, so we were always talking about education being important for discerning fact from fiction. Even though my educational level is upper secondary, I still want to be careful on social media since it can spread anxiety if not handled right—my psychological feature leans anxious, and that makes me more sensitive to upsetting or confusing content.\\n\\nOne thing that's worked well for me in dealing with fake content is being extra cautious. Before sharing anything online, especially something emotional like politics or news, I pause and think: 'Is this from a reliable source?' Sometimes it feels easier to just believe what we see because social media can be so overwhelming. But my agreeableness score—73—is high; that means I'm naturally inclined to get along with others, but sometimes being too agreeable might mean not questioning things enough.\\n\\nI've learned to check multiple sources and avoid forwarding unverified claims. If something seems suspicious or overly sensational, it's probably best left alone unless I can confirm its validity through other channels. The key is mindfulness without making yourself paranoid—my neuroticism score is low, thankfully, but the anxiety of potential errors still bothers me.\",\n  \"reasoning_summary\":\"I started by reflecting on my personal background: a retired man with an anxious disposition and Jewish values emphasizing truth. My education level (upper secondary) means I don't have advanced degrees to rely on for verifying information, so I must depend more on common sense checks.\\n\\nThen, considering the Big Five traits, particularly agreeableness being high, which can lead to trusting others' posts without scrutiny, but also open to cooperation if we focus together. Low neuroticism helps keep me calm; low conscientiousness means I don't overcomplicate tasks too much, so simple rules work better for managing fake content.\\n\\nI derived from my city of living (Washington DC) that staying informed is part of civic duty here, making the effort to spot misinformation even more important. The time on social media—several hours daily—requires discipline against impulsiveness.\",\n  \"tone\":\"Calm and measured with a touch of caution due to anxiety, but still agreeable in approach; reflective rather than confrontational.\",\n  \"citations\": [],\n  \"safety_notes\": \"None reported\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"education_level\", \"parents_education\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"ocean.conscientiousness\", \"ocean.agreeableness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I've spent many years observing the world, and now in my retirement, I spend time each day scrolling through social media. It's frustrating to see all that misinformation out there, especially since I try to stay informed but don't want to be misled or upset by false stories. As a man with Jewish roots living in Washington DC, I value truth and accuracy because my parents helped instill those principles. My father even had a master's degree, so we were always talking about education being important for discerning fact from fiction. Even though my educational level is upper secondary, I still want to be careful on social media since it can spread anxiety if not handled right—my psychological feature leans anxious, and that makes me more sensitive to upsetting or confusing content.\n\nOne thing that's worked well for me in dealing with fake content is being extra cautious. Before sharing anything online, especially something emotional like politics or news, I pause and think: 'Is this from a reliable source?' Sometimes it feels easier to just believe what we see because social media can be so overwhelming. But my agreeableness score—73—is high; that means I'm naturally inclined to get along with others, but sometimes being too agreeable might mean not questioning things enough.\n\nI've learned to check multiple sources and avoid forwarding unverified claims. If something seems suspicious or overly sensational, it's probably best left alone unless I can confirm its validity through other channels. The key is mindfulness without making yourself paranoid—my neuroticism score is low, thankfully, but the anxiety of potential errors still bothers me.",
+    "reasoning_summary": "I started by reflecting on my personal background: a retired man with an anxious disposition and Jewish values emphasizing truth. My education level (upper secondary) means I don't have advanced degrees to rely on for verifying information, so I must depend more on common sense checks.\n\nThen, considering the Big Five traits, particularly agreeableness being high, which can lead to trusting others' posts without scrutiny, but also open to cooperation if we focus together. Low neuroticism helps keep me calm; low conscientiousness means I don't overcomplicate tasks too much, so simple rules work better for managing fake content.\n\nI derived from my city of living (Washington DC) that staying informed is part of civic duty here, making the effort to spot misinformation even more important. The time on social media—several hours daily—requires discipline against impulsiveness.",
+    "tone": "Calm and measured with a touch of caution due to anxiety, but still agreeable in approach; reflective rather than confrontational.",
+    "citations": [],
+    "safety_notes": "None reported",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "parents_education",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "ocean.conscientiousness",
+      "ocean.agreeableness"
+    ]
+  }
+}

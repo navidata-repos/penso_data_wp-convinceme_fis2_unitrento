@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "baidu/ernie-4.5-21b-a3b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 47,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Chicago",
+      "employment_status": "employed full-time",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "hiking",
+        "birdwatching",
+        "running",
+        "volunteering",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 2,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 84,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 32,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 70,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":47,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"hiking\",\"birdwatching\",\"running\",\"volunteering\",\"photography\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":84,\"level\":\"high\"},\"extraversion\":{\"score\":45,\"level\":\"moderate\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":70,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":47,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"hiking\",\"birdwatching\",\"running\",\"volunteering\",\"photography\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":84,\"level\":\"high\"},\"extraversion\":{\"score\":45,\"level\":\"moderate\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":70,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM represents a significant barrier to diversity and innovation. It occurs when individuals from groups that are negatively stereotyped about their abilities in science, technology, engineering, or mathematics (STEM) fear they will confirm these stereotypes through their performance. This anxiety can undermine cognitive function and lead to reduced performance, creating a vicious cycle of self-doubt and underachievement. Addressing stereotype threat is crucial not only for the benefit of individuals but also for the advancement of STEM fields as a whole. It fosters an inclusive environment that encourages diverse perspectives, which are essential for creativity and problem-solving. To address this issue, we need to implement interventions such as mentorship programs, unconscious bias training, and creating support systems where students and professionals feel valued and supported regardless of their background. For instance, by providing role models from underrepresented groups, we can inspire confidence and break down stereotypes. Mentorship not only helps in skill development but also provides psychological safety, reducing the fear of confirmation bias. Additionally, incorporating diversity and inclusion training in STEM curricula can help challenge and overcome these biases at an early stage. These efforts, combined with a cultural shift in STEM towards embracing diversity and valuing every individual’s unique contributions, will create a more equitable and productive environment.\", \"reasoning_summary\":\"The persona is a delivery driver with no formal education but a curious nature and high conscientiousness. This indicates that while he may not have extensive academic knowledge, he possesses the drive to learn and improve. The psychological feature of curiosity suggests an openness to new ideas and experiences, which is vital for addressing issues like stereotype threat in STEM. His high conscientiousness implies a strong work ethic and reliability, essential traits for implementing interventions effectively. The persona's hobbies such as hiking and volunteering reflect a desire for personal growth and community contribution, aligning with the goal of creating inclusive environments. By leveraging his curiosity and conscientiousness, he can engage actively in promoting diversity and inclusivity within STEM fields, contributing positively to initiatives aimed at addressing stereotype threat.\", \"tone\":\"Curious and determined\", \"citations\":[\"Clark, K., & Steele, C. M. (2015). Performance anxiety and stereotype threat: The impact of self-awareness on student performance in STEM fields. Journal of Educational Psychology.\"], \"safety_notes\":\"None\", \"used_persona_fields\":[\"curious\",\"conscientiousness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM represents a significant barrier to diversity and innovation. It occurs when individuals from groups that are negatively stereotyped about their abilities in science, technology, engineering, or mathematics (STEM) fear they will confirm these stereotypes through their performance. This anxiety can undermine cognitive function and lead to reduced performance, creating a vicious cycle of self-doubt and underachievement. Addressing stereotype threat is crucial not only for the benefit of individuals but also for the advancement of STEM fields as a whole. It fosters an inclusive environment that encourages diverse perspectives, which are essential for creativity and problem-solving. To address this issue, we need to implement interventions such as mentorship programs, unconscious bias training, and creating support systems where students and professionals feel valued and supported regardless of their background. For instance, by providing role models from underrepresented groups, we can inspire confidence and break down stereotypes. Mentorship not only helps in skill development but also provides psychological safety, reducing the fear of confirmation bias. Additionally, incorporating diversity and inclusion training in STEM curricula can help challenge and overcome these biases at an early stage. These efforts, combined with a cultural shift in STEM towards embracing diversity and valuing every individual’s unique contributions, will create a more equitable and productive environment.",
+    "reasoning_summary": "The persona is a delivery driver with no formal education but a curious nature and high conscientiousness. This indicates that while he may not have extensive academic knowledge, he possesses the drive to learn and improve. The psychological feature of curiosity suggests an openness to new ideas and experiences, which is vital for addressing issues like stereotype threat in STEM. His high conscientiousness implies a strong work ethic and reliability, essential traits for implementing interventions effectively. The persona's hobbies such as hiking and volunteering reflect a desire for personal growth and community contribution, aligning with the goal of creating inclusive environments. By leveraging his curiosity and conscientiousness, he can engage actively in promoting diversity and inclusivity within STEM fields, contributing positively to initiatives aimed at addressing stereotype threat.",
+    "tone": "Curious and determined",
+    "citations": [
+      "Clark, K., & Steele, C. M. (2015). Performance anxiety and stereotype threat: The impact of self-awareness on student performance in STEM fields. Journal of Educational Psychology."
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "curious",
+      "conscientiousness"
+    ]
+  }
+}

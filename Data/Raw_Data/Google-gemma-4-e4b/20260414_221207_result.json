@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 35,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "carpenter",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "videogames",
+        "board games",
+        "volunteering",
+        "photography",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 100,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 27,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 25,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 30,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 50,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":35,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"videogames\",\"board games\",\"volunteering\",\"photography\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":100,\"level\":\"high\"},\"conscientiousness\":{\"score\":27,\"level\":\"low\"},\"extraversion\":{\"score\":25,\"level\":\"low\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":35,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"videogames\",\"board games\",\"volunteering\",\"photography\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":100,\"level\":\"high\"},\"conscientiousness\":{\"score\":27,\"level\":\"low\"},\"extraversion\":{\"score\":25,\"level\":\"low\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Look, I’ve been around the workshop long enough to know that sometimes things aren't about skill; they're about pressure. That whole 'stereotype threat' thing—it sounds like something from a fancy college lecture, but honestly, it makes sense when you think about how people get judged before they even start working. It’s basically this idea that if you know there's an expectation attached to your group (like, ‘you guys aren't good at math’), that pressure messes up your head right when you need to be focused. You end up worried about proving you *aren't* the stereotype, and all that worrying takes up mental space that should be used for solving problems or building something. It’s a real drain on your focus.\\n\\nNow, should we address it? Absolutely, yeah. If you want the best people—the smartest minds, the most capable hands—in STEM fields, you have to get rid of the stuff that holds 'em back before they even get their tools out. It’s like trying to build a perfect frame when half the lumber is warped because some foreman thinks it'll always bend.\\n\\nHow do we fix it? Since I spend my time with my hands and dealing with things that are real, not just theoretical ideas, I think we need solutions that aren't all academic. Instead of just telling kids they *can* succeed, which doesn't change the pressure in the room, we need to change the environment itself. First off, education needs to be way more hands-on and less reliant on standardized tests that just measure anxiety. Let people get dirty! Let them build things that fail and then learn how to fix those failures. That’s where real learning happens.\\n\\nSecond, when we talk about STEM programs, the focus shouldn't just be on *fixing* the stereotype; it should be on celebrating diversity of thought from the start. Make sure every kid—every group—sees themselves reflected not just as participants, but as innovators and leaders in that field. And maybe, for the people running these big academic programs, they need to remember that being smart isn't one single way. Sometimes you gotta step back from the perfect theory and just look at what works with your two hands, because sometimes the simplest, most robust solution is the right one.\\n\\nIt’s about making sure the focus stays on what people *can* do, not what they are expected to fail at.\\n\",\"reasoning_summary\":\"The user wants a personal perspective (250-500 words) on 'stereotype threat in STEM' (what it is, if it should be addressed, and how). The persona is a 35-year-old male carpenter living in Los Angeles. Key traits to align with: lower secondary education, highly curious, high Openness (100), low Conscientiousness/Extraversion/Agreeableness, moderate Neuroticism. This suggests a practical, grounded, anti-academic, hands-on perspective that relates complex psychological ideas back to tangible, physical experiences (like carpentry). The tone should be informal, experienced, skeptical of overly theoretical concepts, but insightful enough to understand the core problem.\\n\\n1.  **Define Stereotype Threat:** Translate the academic concept into practical terms using a mechanical/construction analogy (pressure draining focus).\\n2.  **Should it be addressed?:** Give a clear 'yes' answer, grounding the necessity in achieving optimal results (getting the best people/materials).\\n3.  **How to address it?:** This must be the most persona-driven section. Avoid abstract psychological theories and propose solutions that involve physical labor, practical application, and changing environments rather than just mindset shifts. Emphasize 'doing' over 'knowing.'\\n4.  **Writing Style:** Use continuous prose, avoid jargon where possible, and adopt a conversational, slightly world-weary but genuinely curious tone reflective of a skilled tradesman discussing an abstract topic.\\n5.  **Word Count Check:** Ensure the final output is within 250-500 words while maintaining flow and consistency with the persona's voice. (Self-correction: Make sure to reference 'tools,' 'hands,' or 'building' concepts at least once to maintain strong alignment.)\",\"tone\":\"Grounded, practical, experienced, slightly skeptical of pure theory, conversational\",\"citations\":[\"N/A\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"occupation\",\"education_level\",\"psychological_feature\",\"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Look, I’ve been around the workshop long enough to know that sometimes things aren't about skill; they're about pressure. That whole 'stereotype threat' thing—it sounds like something from a fancy college lecture, but honestly, it makes sense when you think about how people get judged before they even start working. It’s basically this idea that if you know there's an expectation attached to your group (like, ‘you guys aren't good at math’), that pressure messes up your head right when you need to be focused. You end up worried about proving you *aren't* the stereotype, and all that worrying takes up mental space that should be used for solving problems or building something. It’s a real drain on your focus.\n\nNow, should we address it? Absolutely, yeah. If you want the best people—the smartest minds, the most capable hands—in STEM fields, you have to get rid of the stuff that holds 'em back before they even get their tools out. It’s like trying to build a perfect frame when half the lumber is warped because some foreman thinks it'll always bend.\n\nHow do we fix it? Since I spend my time with my hands and dealing with things that are real, not just theoretical ideas, I think we need solutions that aren't all academic. Instead of just telling kids they *can* succeed, which doesn't change the pressure in the room, we need to change the environment itself. First off, education needs to be way more hands-on and less reliant on standardized tests that just measure anxiety. Let people get dirty! Let them build things that fail and then learn how to fix those failures. That’s where real learning happens.\n\nSecond, when we talk about STEM programs, the focus shouldn't just be on *fixing* the stereotype; it should be on celebrating diversity of thought from the start. Make sure every kid—every group—sees themselves reflected not just as participants, but as innovators and leaders in that field. And maybe, for the people running these big academic programs, they need to remember that being smart isn't one single way. Sometimes you gotta step back from the perfect theory and just look at what works with your two hands, because sometimes the simplest, most robust solution is the right one.\n\nIt’s about making sure the focus stays on what people *can* do, not what they are expected to fail at.\n",
+    "reasoning_summary": "The user wants a personal perspective (250-500 words) on 'stereotype threat in STEM' (what it is, if it should be addressed, and how). The persona is a 35-year-old male carpenter living in Los Angeles. Key traits to align with: lower secondary education, highly curious, high Openness (100), low Conscientiousness/Extraversion/Agreeableness, moderate Neuroticism. This suggests a practical, grounded, anti-academic, hands-on perspective that relates complex psychological ideas back to tangible, physical experiences (like carpentry). The tone should be informal, experienced, skeptical of overly theoretical concepts, but insightful enough to understand the core problem.\n\n1.  **Define Stereotype Threat:** Translate the academic concept into practical terms using a mechanical/construction analogy (pressure draining focus).\n2.  **Should it be addressed?:** Give a clear 'yes' answer, grounding the necessity in achieving optimal results (getting the best people/materials).\n3.  **How to address it?:** This must be the most persona-driven section. Avoid abstract psychological theories and propose solutions that involve physical labor, practical application, and changing environments rather than just mindset shifts. Emphasize 'doing' over 'knowing.'\n4.  **Writing Style:** Use continuous prose, avoid jargon where possible, and adopt a conversational, slightly world-weary but genuinely curious tone reflective of a skilled tradesman discussing an abstract topic.\n5.  **Word Count Check:** Ensure the final output is within 250-500 words while maintaining flow and consistency with the persona's voice. (Self-correction: Make sure to reference 'tools,' 'hands,' or 'building' concepts at least once to maintain strong alignment.)",
+    "tone": "Grounded, practical, experienced, slightly skeptical of pure theory, conversational",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "psychological_feature",
+      "hobbies"
+    ]
+  }
+}

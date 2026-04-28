@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 68,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "scientist",
+      "city_of_living": "Bologna",
+      "employment_status": "employed part-time",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "yoga",
+        "cinema",
+        "birdwatching",
+        "knitting",
+        "classical music"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 20,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 10,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 83,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 0,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 78,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":68,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"scientist\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"yoga\",\"cinema\",\"birdwatching\",\"knitting\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":83,\"level\":\"high\"},\"agreeableness\":{\"score\":0,\"level\":\"low\"},\"neuroticism\":{\"score\":78,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":68,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"scientist\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"yoga\",\"cinema\",\"birdwatching\",\"knitting\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":83,\"level\":\"high\"},\"agreeableness\":{\"score\":0,\"level\":\"low\"},\"neuroticism\":{\"score\":78,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"I find it increasingly challenging to navigate the sea of misinformation that floods our digital spaces. As a scientist who has spent decades studying data and evidence, I'm acutely aware of how deceptive false information can be, especially when it mimics scientific facts or uses complex terminology without proper grounding in reality.\",\n  \"reasoning_summary\": \"I approach this topic from my professional background as an expert in the field. Having worked with data since before personal computers were common, I know firsthand that truth is often buried under layers of noise and falsehoods. My anxious personality makes me cautious but determined to verify everything; hence, I rely on multiple sources and cross-reference claims against established knowledge.\",\n  \"tone\": \"Skeptical yet practical\",\n  \"citations\": [\"Personal experience in research\"],\n  \"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"education_level\",\"psychological_feature\",\"time_onsocialmedia\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I find it increasingly challenging to navigate the sea of misinformation that floods our digital spaces. As a scientist who has spent decades studying data and evidence, I'm acutely aware of how deceptive false information can be, especially when it mimics scientific facts or uses complex terminology without proper grounding in reality.",
+    "reasoning_summary": "I approach this topic from my professional background as an expert in the field. Having worked with data since before personal computers were common, I know firsthand that truth is often buried under layers of noise and falsehoods. My anxious personality makes me cautious but determined to verify everything; hence, I rely on multiple sources and cross-reference claims against established knowledge.",
+    "tone": "Skeptical yet practical",
+    "citations": [
+      "Personal experience in research"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "psychological_feature",
+      "time_onsocialmedia"
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 37,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "yoga",
+        "hiking",
+        "cooking",
+        "photography",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 15,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 78,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 7,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 71,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":37,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"yoga\",\"hiking\",\"cooking\",\"photography\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":78,\"level\":\"high\"},\"extraversion\":{\"score\":7,\"level\":\"low\"},\"agreeableness\":{\"score\":40,\"level\":\"moderate\"},\"neuroticism\":{\"score\":71,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":37,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"yoga\",\"hiking\",\"cooking\",\"photography\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":78,\"level\":\"high\"},\"extraversion\":{\"score\":7,\"level\":\"low\"},\"agreeableness\":{\"score\":40,\"level\":\"moderate\"},\"neuroticism\":{\"score\":71,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n    \"opinion\": \"Stereotype threat definitely needs to be addressed, especially given my own background as someone who doesn't quite fit the traditional 'STEM stereotype'. While I have a vocational diploma and work as a barista in Rome, which might seem like an odd career path for me, I've always been curious about science topics. From what I understand, stereotype threat happens when people feel at risk of confirming negative stereotypes about their social group regarding STEM fields. For example, women or racial minorities might worry that performing poorly on a test could make others think negatively about them as part of those groups.\\n\\nI believe addressing this is crucial because it can hold back talented individuals from contributing to innovation and progress in science, technology, engineering, and math. As an anxious person with moderate agreeableness scores based on my low openness and high neuroticism traits (which I've seen reflected in others like myself), I can relate to the stress of feeling judged or unfairly stereotyped.\\n\\nWe should combat stereotype threat by focusing on inclusive teaching methods that emphasize individual skills rather than group averages, creating diverse role models within STEM fields for people like me who are native-born Italians but might still feel anxious about being seen as 'not belonging' in certain contexts. Maybe through my hobbies of cooking and photography – you know, those require some technical understanding too! – we can show students that expertise comes from anywhere.\\n\\nAnother idea is fostering environments where mistakes are celebrated because I've found that approach really helps with anxiety management when teaching vocational courses myself. Perhaps involving more self-employed professionals like me in educational outreach could help break down barriers.\",\n    \"reasoning_summary\": \"First, I considered the definition of stereotype threat and its impact on underrepresented groups.\\nThen, drawing from personal experience as a self-employed barista with an anxious disposition and low openness score but high conscientiousness, I reflected on how stereotypes might affect individuals even outside traditional STEM careers.\\nNext, I identified potential solutions based on inclusive teaching strategies, role model creation, and fostering learning environments where mistakes are normal.\",\n    \"tone\": \"Relatable, thoughtful, slightly hesitant due to anxiety trait\",\n    \"citations\": [\"Various educational psychology studies\"],\n    \"safety_notes\": \"None\",\n    \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"psychological_feature\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat definitely needs to be addressed, especially given my own background as someone who doesn't quite fit the traditional 'STEM stereotype'. While I have a vocational diploma and work as a barista in Rome, which might seem like an odd career path for me, I've always been curious about science topics. From what I understand, stereotype threat happens when people feel at risk of confirming negative stereotypes about their social group regarding STEM fields. For example, women or racial minorities might worry that performing poorly on a test could make others think negatively about them as part of those groups.\n\nI believe addressing this is crucial because it can hold back talented individuals from contributing to innovation and progress in science, technology, engineering, and math. As an anxious person with moderate agreeableness scores based on my low openness and high neuroticism traits (which I've seen reflected in others like myself), I can relate to the stress of feeling judged or unfairly stereotyped.\n\nWe should combat stereotype threat by focusing on inclusive teaching methods that emphasize individual skills rather than group averages, creating diverse role models within STEM fields for people like me who are native-born Italians but might still feel anxious about being seen as 'not belonging' in certain contexts. Maybe through my hobbies of cooking and photography – you know, those require some technical understanding too! – we can show students that expertise comes from anywhere.\n\nAnother idea is fostering environments where mistakes are celebrated because I've found that approach really helps with anxiety management when teaching vocational courses myself. Perhaps involving more self-employed professionals like me in educational outreach could help break down barriers.",
+    "reasoning_summary": "First, I considered the definition of stereotype threat and its impact on underrepresented groups.\nThen, drawing from personal experience as a self-employed barista with an anxious disposition and low openness score but high conscientiousness, I reflected on how stereotypes might affect individuals even outside traditional STEM careers.\nNext, I identified potential solutions based on inclusive teaching strategies, role model creation, and fostering learning environments where mistakes are normal.",
+    "tone": "Relatable, thoughtful, slightly hesitant due to anxiety trait",
+    "citations": [
+      "Various educational psychology studies"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "psychological_feature",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

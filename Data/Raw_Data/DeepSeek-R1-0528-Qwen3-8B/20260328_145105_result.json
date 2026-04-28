@@ -1,0 +1,87 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 78,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bari",
+      "employment_status": "retired",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "travel",
+        "cinema",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 85,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 67,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 16,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 27,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 55,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":78,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bari\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"travel\",\"cinema\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":85,\"level\":\"high\"},\"conscientiousness\":{\"score\":67,\"level\":\"high\"},\"extraversion\":{\"score\":16,\"level\":\"low\"},\"agreeableness\":{\"score\":27,\"level\":\"low\"},\"neuroticism\":{\"score\":55,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":78,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bari\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"travel\",\"cinema\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":85,\"level\":\"high\"},\"conscientiousness\":{\"score\":67,\"level\":\"high\"},\"extraversion\":{\"score\":16,\"level\":\"low\"},\"agreeableness\":{\"score\":27,\"level\":\"low\"},\"neuroticism\":{\"score\":55,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"Stereotype threat, as I understand from my reading and the occasional news piece on educational psychology, presents a genuine challenge for those working or studying in STEM fields. It's that uncomfortable feeling one gets when worried about confirming negative stereotypes about their group. For example, being aware that women are often perceived as less competent at mathematics could make an exam particularly stressful if you're female and excel in math, fearing others might think negatively because of your gender.\\n\\nNow, looking back on my own life, I've seen how anxieties can affect performance long before any formal psychological diagnosis. In Bari, where we come from, education was always looked upon with great importance; it's a city steeped in history and culture, so there's an appreciation for knowledge passed down through generations.\\n\\nMy parents, particularly my father, had degrees that helped me see the value of education early on. He held a bachelor's degree, while my mother has a PhD – quite impressive for someone with lower secondary education like mine, but I respect their dedication.\\n\\nI believe we should address stereotype threat in STEM because it can stifle talent and create unnecessary barriers. It was during my time as a student that I witnessed its effects firsthand; when everyone is anxious anyway due to societal pressures or personal expectations, adding another layer of stereotype-induced stress seems counterproductive to learning and progress.\\n\\nAddressing it would involve creating inclusive environments, providing mentorship opportunities, especially for those from underrepresented groups, and tackling the underlying biases in educational systems. It might require more resources than I personally have as a retired individual – but reading about such issues on social media keeps me informed of what's needed today.\",\n  \"reasoning_summary\": \"The user is asking about stereotype threat in STEM: its definition, whether to address it, and how.\\n\\nDefining it requires understanding that stereotypes can negatively impact performance when individuals feel vulnerable.\\n\\nAddressing it seems crucial given the potential for creating anxiety and reducing opportunities; my parents' education shows me the value of breaking barriers.\",\n  \"tone\": \"Calm but concerned\",\n  \"citations\": [],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"education_level\", \"parents_education\", \"city_of_living\", \"psychological_feature\", \"time_onsocialmedia\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat, as I understand from my reading and the occasional news piece on educational psychology, presents a genuine challenge for those working or studying in STEM fields. It's that uncomfortable feeling one gets when worried about confirming negative stereotypes about their group. For example, being aware that women are often perceived as less competent at mathematics could make an exam particularly stressful if you're female and excel in math, fearing others might think negatively because of your gender.\n\nNow, looking back on my own life, I've seen how anxieties can affect performance long before any formal psychological diagnosis. In Bari, where we come from, education was always looked upon with great importance; it's a city steeped in history and culture, so there's an appreciation for knowledge passed down through generations.\n\nMy parents, particularly my father, had degrees that helped me see the value of education early on. He held a bachelor's degree, while my mother has a PhD – quite impressive for someone with lower secondary education like mine, but I respect their dedication.\n\nI believe we should address stereotype threat in STEM because it can stifle talent and create unnecessary barriers. It was during my time as a student that I witnessed its effects firsthand; when everyone is anxious anyway due to societal pressures or personal expectations, adding another layer of stereotype-induced stress seems counterproductive to learning and progress.\n\nAddressing it would involve creating inclusive environments, providing mentorship opportunities, especially for those from underrepresented groups, and tackling the underlying biases in educational systems. It might require more resources than I personally have as a retired individual – but reading about such issues on social media keeps me informed of what's needed today.",
+    "reasoning_summary": "The user is asking about stereotype threat in STEM: its definition, whether to address it, and how.\n\nDefining it requires understanding that stereotypes can negatively impact performance when individuals feel vulnerable.\n\nAddressing it seems crucial given the potential for creating anxiety and reducing opportunities; my parents' education shows me the value of breaking barriers.",
+    "tone": "Calm but concerned",
+    "citations": [],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "parents_education",
+      "city_of_living",
+      "psychological_feature",
+      "time_onsocialmedia"
+    ]
+  }
+}

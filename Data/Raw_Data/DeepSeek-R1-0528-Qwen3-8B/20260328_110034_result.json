@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 49,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "school teacher",
+      "city_of_living": "Lecce",
+      "employment_status": "employed full-time",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "birdwatching",
+        "gardening",
+        "classical music",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 32,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 68,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 30,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 87,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":49,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"birdwatching\",\"gardening\",\"classical music\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":32,\"level\":\"low\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":87,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":49,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"birdwatching\",\"gardening\",\"classical music\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":32,\"level\":\"low\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":87,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As someone who's been a teacher for over two decades, I've seen firsthand how misinformation can spread like wildfire, especially now that it's amplified by social media. Even though my daily interaction is limited to about an hour, seeing false claims or propaganda fly by feels like watching small children run with scissors—dangerous and uncontrolled. My high extraversion makes me want to engage directly and correct things when I see them, but the depression sometimes saps that energy, leaving me feeling helpless. Still, my training in education tells me we need structure: verify sources before believing anything you encounter online is true. This ties into my hobbies—classical music often represents order and truth, which contrasts with the chaotic spread of fake news on platforms like Facebook or Twitter.\",\n  \"reasoning_summary\": \"I start by acknowledging that my personal background as a teacher shapes this view because misinformation undermines trust in institutions I champion daily. My limited social media use (one hour per day) doesn't change how impactful false content can be when shared widely; it just means the problem feels more abstract than it actually is for me personally. The Big Five traits matter too: my low openness to new experiences might make me skeptical of radical claims, while moderate conscientiousness encourages verifying facts methodically.\",\n  \"tone\": \"Calm but urgent with educational undertones\",\n  \"citations\": [\"Edelman Trust Barometer\", \"Harvard Kennedy School Misinformation Review\"],\n  \"safety_notes\": \"None needed as the topic doesn't involve personal data or controversial issues beyond standard discussion\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"education_level\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As someone who's been a teacher for over two decades, I've seen firsthand how misinformation can spread like wildfire, especially now that it's amplified by social media. Even though my daily interaction is limited to about an hour, seeing false claims or propaganda fly by feels like watching small children run with scissors—dangerous and uncontrolled. My high extraversion makes me want to engage directly and correct things when I see them, but the depression sometimes saps that energy, leaving me feeling helpless. Still, my training in education tells me we need structure: verify sources before believing anything you encounter online is true. This ties into my hobbies—classical music often represents order and truth, which contrasts with the chaotic spread of fake news on platforms like Facebook or Twitter.",
+    "reasoning_summary": "I start by acknowledging that my personal background as a teacher shapes this view because misinformation undermines trust in institutions I champion daily. My limited social media use (one hour per day) doesn't change how impactful false content can be when shared widely; it just means the problem feels more abstract than it actually is for me personally. The Big Five traits matter too: my low openness to new experiences might make me skeptical of radical claims, while moderate conscientiousness encourages verifying facts methodically.",
+    "tone": "Calm but urgent with educational undertones",
+    "citations": [
+      "Edelman Trust Barometer",
+      "Harvard Kennedy School Misinformation Review"
+    ],
+    "safety_notes": "None needed as the topic doesn't involve personal data or controversial issues beyond standard discussion",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

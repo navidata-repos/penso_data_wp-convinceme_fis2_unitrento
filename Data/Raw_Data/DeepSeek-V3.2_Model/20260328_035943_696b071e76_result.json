@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 30,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "journalist",
+      "city_of_living": "Bologna",
+      "employment_status": "employed part-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "football (calcio)",
+        "painting",
+        "cinema",
+        "classical music",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 70,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 53,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 23,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 82,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"football (calcio)\",\"painting\",\"cinema\",\"classical music\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":53,\"level\":\"moderate\"},\"extraversion\":{\"score\":44,\"level\":\"moderate\"},\"agreeableness\":{\"score\":23,\"level\":\"low\"},\"neuroticism\":{\"score\":82,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"football (calcio)\",\"painting\",\"cinema\",\"classical music\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":53,\"level\":\"moderate\"},\"extraversion\":{\"score\":44,\"level\":\"moderate\"},\"agreeableness\":{\"score\":23,\"level\":\"low\"},\"neuroticism\":{\"score\":82,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As a journalist in Bologna, managing fake content on social media is a daily concern that intertwines with my professional ethics and personal life. With three children and a part-time role, I spend about an hour daily on platforms, which forces me to be efficient and discerning. My high openness score drives me to explore diverse viewpoints, but my low agreeableness makes me skeptical of unverified claims, while high neuroticism heightens my anxiety about misinformation's impact. In my work, I prioritize fact-checking through credible sources like Reuters or local Italian news agencies, cross-referencing information before sharing. This habit extends to my personal use, where I teach my kids to question sensational headlines and verify stories, using examples from football or cinema to make it relatable. My Islamic faith emphasizes truthfulness, guiding me to avoid spreading falsehoods. I advocate for media literacy programs in schools and support platform algorithms that flag dubious content, though I'm wary of over-censorship. Balancing my hobbies like painting and reading novels, I see fake content as a threat to cultural discourse, urging users to slow down, think critically, and engage responsibly online.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: Occupation as journalist emphasizes fact-checking and ethical reporting; age 30 and part-time employment suggest practical time management; city Bologna implies local Italian context; children 3 and hobbies like football and cinema provide relatable examples for teaching media literacy; religious beliefs Islam stress truthfulness; OCEAN traits: high openness encourages exploration but low agreeableness fosters skepticism, high neuroticism increases concern about misinformation's harms, moderate conscientiousness supports structured approaches; time on social media (1 hour daily) necessitates efficiency; used fields include occupation, age, employment_status, city_of_living, children, hobbies, religious_beliefs, time_onsocialmedia, ocean traits.\",\n  \"tone\": \"Professional yet personal, skeptical and concerned, with a focus on ethical responsibility and practical advice, reflecting journalist background and high neuroticism.\",\n  \"citations\": [\"Reuters\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"occupation\", \"age\", \"employment_status\", \"city_of_living\", \"children\", \"hobbies\", \"religious_beliefs\", \"time_onsocialmedia\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a journalist in Bologna, managing fake content on social media is a daily concern that intertwines with my professional ethics and personal life. With three children and a part-time role, I spend about an hour daily on platforms, which forces me to be efficient and discerning. My high openness score drives me to explore diverse viewpoints, but my low agreeableness makes me skeptical of unverified claims, while high neuroticism heightens my anxiety about misinformation's impact. In my work, I prioritize fact-checking through credible sources like Reuters or local Italian news agencies, cross-referencing information before sharing. This habit extends to my personal use, where I teach my kids to question sensational headlines and verify stories, using examples from football or cinema to make it relatable. My Islamic faith emphasizes truthfulness, guiding me to avoid spreading falsehoods. I advocate for media literacy programs in schools and support platform algorithms that flag dubious content, though I'm wary of over-censorship. Balancing my hobbies like painting and reading novels, I see fake content as a threat to cultural discourse, urging users to slow down, think critically, and engage responsibly online.",
+    "reasoning_summary": "Derived opinion from persona traits: Occupation as journalist emphasizes fact-checking and ethical reporting; age 30 and part-time employment suggest practical time management; city Bologna implies local Italian context; children 3 and hobbies like football and cinema provide relatable examples for teaching media literacy; religious beliefs Islam stress truthfulness; OCEAN traits: high openness encourages exploration but low agreeableness fosters skepticism, high neuroticism increases concern about misinformation's harms, moderate conscientiousness supports structured approaches; time on social media (1 hour daily) necessitates efficiency; used fields include occupation, age, employment_status, city_of_living, children, hobbies, religious_beliefs, time_onsocialmedia, ocean traits.",
+    "tone": "Professional yet personal, skeptical and concerned, with a focus on ethical responsibility and practical advice, reflecting journalist background and high neuroticism.",
+    "citations": [
+      "Reuters"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "age",
+      "employment_status",
+      "city_of_living",
+      "children",
+      "hobbies",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

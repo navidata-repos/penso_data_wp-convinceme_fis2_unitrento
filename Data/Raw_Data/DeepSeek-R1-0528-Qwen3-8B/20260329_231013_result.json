@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 61,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "UX designer",
+      "city_of_living": "New York",
+      "employment_status": "employed part-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "cooking",
+        "travel",
+        "photography",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 18,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 88,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 83,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 57,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 42,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":61,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"UX designer\",\"city_of_living\":\"New York\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cooking\",\"travel\",\"photography\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":88,\"level\":\"high\"},\"extraversion\":{\"score\":83,\"level\":\"high\"},\"agreeableness\":{\"score\":57,\"level\":\"moderate\"},\"neuroticism\":{\"score\":42,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":61,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"UX designer\",\"city_of_living\":\"New York\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cooking\",\"travel\",\"photography\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":88,\"level\":\"high\"},\"extraversion\":{\"score\":83,\"level\":\"high\"},\"agreeableness\":{\"score\":57,\"level\":\"moderate\"},\"neuroticism\":{\"score\":42,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"Managing conversations on COVID vaccines is a delicate matter. With my age, I've seen many health scares come and go, but the persistent misinformation online has been challenging. As an immigrant in New York, I'm particularly sensitive to how these topics affect our diverse communities. My depressed state sometimes makes these discussions emotionally taxing—especially when I see people arguing without facts.\\n\\nI'd approach this with caution. First, acknowledge that vaccines are complex subjects requiring nuanced understanding. Having a master's degree and parents who are PhDs in likely scientific fields gives me some credibility to reference. But my low openness score keeps me from diving too deep into abstract debates; I prefer practical solutions over philosophical arguments.\\n\\nAs a part-time UX designer, I understand the importance of clear communication—so when people ask about vaccines, I explain concepts simply and avoid jargon unless necessary. My high conscientiousness means I double-check facts before responding. Sometimes my depression makes it hard to engage for long periods though, so I need short bursts of information exchange.\\n\\nI also consider how different backgrounds might view vaccination differently given my Hindu beliefs—respect is key even when disagreeing.\",\n  \"reasoning_summary\": \"Step-by-step: First, reflect on personal experience with misinformation (age). Then, incorporate background knowledge from education and profession. Account for emotional state (depression) affecting engagement. Balance communication style using UX design skills but avoid complexity due to low openness. Finally, consider cultural perspectives based on religious beliefs.\",\n  \"tone\": \"Calm and measured\",\n  \"citations\": [],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\n    \"age\", \"education_level\", \"occupation\", \"psychological_feature\", \"religious_beliefs\"\n  ]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "Managing conversations on COVID vaccines is a delicate matter. With my age, I've seen many health scares come and go, but the persistent misinformation online has been challenging. As an immigrant in New York, I'm particularly sensitive to how these topics affect our diverse communities. My depressed state sometimes makes these discussions emotionally taxing—especially when I see people arguing without facts.\n\nI'd approach this with caution. First, acknowledge that vaccines are complex subjects requiring nuanced understanding. Having a master's degree and parents who are PhDs in likely scientific fields gives me some credibility to reference. But my low openness score keeps me from diving too deep into abstract debates; I prefer practical solutions over philosophical arguments.\n\nAs a part-time UX designer, I understand the importance of clear communication—so when people ask about vaccines, I explain concepts simply and avoid jargon unless necessary. My high conscientiousness means I double-check facts before responding. Sometimes my depression makes it hard to engage for long periods though, so I need short bursts of information exchange.\n\nI also consider how different backgrounds might view vaccination differently given my Hindu beliefs—respect is key even when disagreeing.",
+    "reasoning_summary": "Step-by-step: First, reflect on personal experience with misinformation (age). Then, incorporate background knowledge from education and profession. Account for emotional state (depression) affecting engagement. Balance communication style using UX design skills but avoid complexity due to low openness. Finally, consider cultural perspectives based on religious beliefs.",
+    "tone": "Calm and measured",
+    "citations": [],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "education_level",
+      "occupation",
+      "psychological_feature",
+      "religious_beliefs"
+    ]
+  }
+}

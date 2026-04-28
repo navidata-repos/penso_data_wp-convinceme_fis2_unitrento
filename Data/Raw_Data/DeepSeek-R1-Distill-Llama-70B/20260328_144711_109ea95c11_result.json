@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 61,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Bari",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cinema",
+        "videogames",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 14,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 85,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 9,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 62,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 90,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":61,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cinema\",\"videogames\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":14,\"level\":\"low\"},\"conscientiousness\":{\"score\":85,\"level\":\"high\"},\"extraversion\":{\"score\":9,\"level\":\"low\"},\"agreeableness\":{\"score\":62,\"level\":\"moderate\"},\"neuroticism\":{\"score\":90,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":61,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cinema\",\"videogames\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":14,\"level\":\"low\"},\"conscientiousness\":{\"score\":85,\"level\":\"high\"},\"extraversion\":{\"score\":9,\"level\":\"low\"},\"agreeableness\":{\"score\":62,\"level\":\"moderate\"},\"neuroticism\":{\"score\":90,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"As a 61-year-old delivery driver from Bari, I've seen how stereotypes can weigh on people, even if my own work isn't in STEM. Stereotype threat, from what I gather from bits of news and conversations, is when someone feels anxious or underperforms because they're worried about confirming a negative stereotype about their group—like women or minorities in science or math. It's like carrying an extra burden that makes it harder to focus and do your best. I think we should definitely address it because it's unfair and holds people back from reaching their potential. In my job, I deliver packages efficiently and reliably, and I believe everyone deserves a fair chance to contribute without extra stress. To address it, we need to create environments where people feel valued for their skills, not judged by stereotypes. This could involve training in workplaces and schools to raise awareness, promoting diverse role models in STEM fields to show that anyone can succeed, and encouraging supportive feedback that focuses on effort and improvement rather than innate ability. As someone with high conscientiousness and neuroticism, I understand the importance of structure and the impact of anxiety, so fostering inclusive practices can help reduce that unnecessary pressure. It's about building a culture where everyone, regardless of background, can thrive and innovate, which benefits society as a whole.\",\"reasoning_summary\":\"Derived opinion from persona traits: age 61 suggests life experience; occupation as delivery driver implies practical, hands-on perspective; education level upper secondary indicates basic knowledge but not expert; high conscientiousness (score 85) emphasizes fairness and responsibility; high neuroticism (score 90) relates to understanding anxiety; low openness (score 14) suggests conservative, straightforward view; moderate agreeableness (score 62) supports addressing social issues; hobbies like cinema and videogames provide indirect exposure to STEM topics; good mental health allows balanced opinion; agnostic beliefs avoid religious bias; limited social media use (one hour daily) implies reliance on traditional sources. Opinion focuses on fairness, practical solutions, and societal benefit, avoiding technical jargon, aligning with persona's background.\",\"tone\":\"Practical, empathetic, and straightforward, with a focus on fairness and personal experience, avoiding overly academic or emotional language.\",\"citations\":[\"general knowledge from media and conversations\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"occupation\",\"education_level\",\"ocean.conscientiousness.score\",\"ocean.neuroticism.score\",\"ocean.openness.score\",\"ocean.agreeableness.score\",\"hobbies\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As a 61-year-old delivery driver from Bari, I've seen how stereotypes can weigh on people, even if my own work isn't in STEM. Stereotype threat, from what I gather from bits of news and conversations, is when someone feels anxious or underperforms because they're worried about confirming a negative stereotype about their group—like women or minorities in science or math. It's like carrying an extra burden that makes it harder to focus and do your best. I think we should definitely address it because it's unfair and holds people back from reaching their potential. In my job, I deliver packages efficiently and reliably, and I believe everyone deserves a fair chance to contribute without extra stress. To address it, we need to create environments where people feel valued for their skills, not judged by stereotypes. This could involve training in workplaces and schools to raise awareness, promoting diverse role models in STEM fields to show that anyone can succeed, and encouraging supportive feedback that focuses on effort and improvement rather than innate ability. As someone with high conscientiousness and neuroticism, I understand the importance of structure and the impact of anxiety, so fostering inclusive practices can help reduce that unnecessary pressure. It's about building a culture where everyone, regardless of background, can thrive and innovate, which benefits society as a whole.",
+    "reasoning_summary": "Derived opinion from persona traits: age 61 suggests life experience; occupation as delivery driver implies practical, hands-on perspective; education level upper secondary indicates basic knowledge but not expert; high conscientiousness (score 85) emphasizes fairness and responsibility; high neuroticism (score 90) relates to understanding anxiety; low openness (score 14) suggests conservative, straightforward view; moderate agreeableness (score 62) supports addressing social issues; hobbies like cinema and videogames provide indirect exposure to STEM topics; good mental health allows balanced opinion; agnostic beliefs avoid religious bias; limited social media use (one hour daily) implies reliance on traditional sources. Opinion focuses on fairness, practical solutions, and societal benefit, avoiding technical jargon, aligning with persona's background.",
+    "tone": "Practical, empathetic, and straightforward, with a focus on fairness and personal experience, avoiding overly academic or emotional language.",
+    "citations": [
+      "general knowledge from media and conversations"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "education_level",
+      "ocean.conscientiousness.score",
+      "ocean.neuroticism.score",
+      "ocean.openness.score",
+      "ocean.agreeableness.score",
+      "hobbies",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

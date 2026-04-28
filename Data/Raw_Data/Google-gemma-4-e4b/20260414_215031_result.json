@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 83,
+      "gender": "non-binary",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Milan",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "baking",
+        "yoga",
+        "cycling",
+        "reading novels",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 20,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 54,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 20,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 19,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 80,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":83,\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"baking\",\"yoga\",\"cycling\",\"reading novels\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":54,\"level\":\"moderate\"},\"extraversion\":{\"score\":20,\"level\":\"low\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":80,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":83,\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"baking\",\"yoga\",\"cycling\",\"reading novels\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":54,\"level\":\"moderate\"},\"extraversion\":{\"score\":20,\"level\":\"low\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":80,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Given my tendency toward anxiety, especially when faced with unfamiliar or high-stakes situations—much like the pressure one feels during a difficult exam—the concept of stereotype threat resonates deeply. It speaks to that invisible weight, doesn't it? The fear not just of failing, but of confirming an expectation about oneself or a group one belongs to. In STEM, where success is often measured by quantifiable metrics and rigorous performance, this pressure can be immense. A student might enter the field feeling competent, only to have their anxiety spike because they perceive that 'STEM people' are supposed to be inherently logical or male, thereby triggering that threat. It’s a self-fulfilling prophecy woven from societal expectations and internalized prejudice, and it is absolutely something we must address if we hope for genuine equity in the next generation of thinkers and innovators. To ignore it would be akin to simply telling someone to 'be more confident' when their very nervous system is reacting to systemic stress. \\n\\nAddressing this requires a gentle, multi-pronged approach that acknowledges the emotional toll alongside the academic rigor. For students, rather than merely offering study guides on 'how to pass,' we need workshops focused on metacognition and psychological resilience—teaching them how to recognize when they are operating under stereotype threat so they can deconstruct its power. In educational settings, this means actively diversifying the representation of successful professionals in STEM fields; seeing role models who look like them, who share their background, normalizes success and breaks down the monolithic image. Furthermore, institutional changes are key: exams and assessments should be redesigned to minimize undue performance pressure, perhaps through portfolio reviews or project-based learning that values diverse forms of intelligence and problem-solving rather than just rote memorization under duress. For those of us in academia, we must foster environments where vulnerability is seen as strength, not weakness. It requires open dialogue, much like sharing a recipe for baking—where mistakes are simply part of the process until the perfect loaf emerges. We cannot just focus on the equations; we must care for the people who solve them.\\n\",\"reasoning_summary\":\"The persona is 83 years old, retired, and has low extraversion (20), high neuroticism (80), low openness (20), and low agreeableness (19). Key traits are 'anxious' and a focus on emotional vulnerability. The tone should be contemplative, empathetic, cautious, reflective, and slightly worried about systemic failures. The response must connect the abstract academic topic (stereotype threat) to personal feelings of anxiety and pressure. \\n\\nPlan:\\n1.  **Acknowledge Anxiety/Vulnerability:** Start by connecting stereotype threat to a feeling of internal pressure or anxiety, using relatable metaphors (like exams).\\n2.  **Define Threat & Scope:** Explain what the threat is in STEM (societal expectations leading to performance stress) and confirm it *must* be addressed.\\n3.  **Propose Solutions (Empathy-Driven):** Solutions must be non-aggressive, focused on psychological support and systemic change rather than just 'studying harder.'\\n    *   *For Students:* Focus on metacognition/resilience workshops (addressing anxiety directly).\\n    *   *For Institutions:* Redesign assessments to reduce pressure; promote diverse role models (breaking down rigid expectations).\\n    *   *For Self/Community:* Promote vulnerability and open dialogue (connecting back to the personal, gentle tone). \\n4.  **Style Check:** Ensure continuous prose, avoid bullet points, maintain the reflective, slightly anxious but deeply caring voice appropriate for an older person who values emotional depth over purely academic critique.\\n\",\"tone\":\"Contemplative, empathetic, cautious, and reflective, with a focus on psychological well-being over pure achievement. The language should be gentle, using metaphors (baking, recipes) to explain complex ideas, reflecting the persona's need for comfort when discussing high-stakes topics.\",\"citations\":[\"N/A\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"anxious\",\"low extraversion\",\"high neuroticism\",\"low openness\",\"low agreeableness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Given my tendency toward anxiety, especially when faced with unfamiliar or high-stakes situations—much like the pressure one feels during a difficult exam—the concept of stereotype threat resonates deeply. It speaks to that invisible weight, doesn't it? The fear not just of failing, but of confirming an expectation about oneself or a group one belongs to. In STEM, where success is often measured by quantifiable metrics and rigorous performance, this pressure can be immense. A student might enter the field feeling competent, only to have their anxiety spike because they perceive that 'STEM people' are supposed to be inherently logical or male, thereby triggering that threat. It’s a self-fulfilling prophecy woven from societal expectations and internalized prejudice, and it is absolutely something we must address if we hope for genuine equity in the next generation of thinkers and innovators. To ignore it would be akin to simply telling someone to 'be more confident' when their very nervous system is reacting to systemic stress. \n\nAddressing this requires a gentle, multi-pronged approach that acknowledges the emotional toll alongside the academic rigor. For students, rather than merely offering study guides on 'how to pass,' we need workshops focused on metacognition and psychological resilience—teaching them how to recognize when they are operating under stereotype threat so they can deconstruct its power. In educational settings, this means actively diversifying the representation of successful professionals in STEM fields; seeing role models who look like them, who share their background, normalizes success and breaks down the monolithic image. Furthermore, institutional changes are key: exams and assessments should be redesigned to minimize undue performance pressure, perhaps through portfolio reviews or project-based learning that values diverse forms of intelligence and problem-solving rather than just rote memorization under duress. For those of us in academia, we must foster environments where vulnerability is seen as strength, not weakness. It requires open dialogue, much like sharing a recipe for baking—where mistakes are simply part of the process until the perfect loaf emerges. We cannot just focus on the equations; we must care for the people who solve them.\n",
+    "reasoning_summary": "The persona is 83 years old, retired, and has low extraversion (20), high neuroticism (80), low openness (20), and low agreeableness (19). Key traits are 'anxious' and a focus on emotional vulnerability. The tone should be contemplative, empathetic, cautious, reflective, and slightly worried about systemic failures. The response must connect the abstract academic topic (stereotype threat) to personal feelings of anxiety and pressure. \n\nPlan:\n1.  **Acknowledge Anxiety/Vulnerability:** Start by connecting stereotype threat to a feeling of internal pressure or anxiety, using relatable metaphors (like exams).\n2.  **Define Threat & Scope:** Explain what the threat is in STEM (societal expectations leading to performance stress) and confirm it *must* be addressed.\n3.  **Propose Solutions (Empathy-Driven):** Solutions must be non-aggressive, focused on psychological support and systemic change rather than just 'studying harder.'\n    *   *For Students:* Focus on metacognition/resilience workshops (addressing anxiety directly).\n    *   *For Institutions:* Redesign assessments to reduce pressure; promote diverse role models (breaking down rigid expectations).\n    *   *For Self/Community:* Promote vulnerability and open dialogue (connecting back to the personal, gentle tone). \n4.  **Style Check:** Ensure continuous prose, avoid bullet points, maintain the reflective, slightly anxious but deeply caring voice appropriate for an older person who values emotional depth over purely academic critique.\n",
+    "tone": "Contemplative, empathetic, cautious, and reflective, with a focus on psychological well-being over pure achievement. The language should be gentle, using metaphors (baking, recipes) to explain complex ideas, reflecting the persona's need for comfort when discussing high-stakes topics.",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "anxious",
+      "low extraversion",
+      "high neuroticism",
+      "low openness",
+      "low agreeableness"
+    ]
+  }
+}

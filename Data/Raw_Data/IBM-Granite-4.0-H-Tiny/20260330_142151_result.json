@@ -1,0 +1,99 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "ibm/granite-4-h-tiny",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 45,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Philadelphia",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cycling",
+        "gardening",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 18,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 15,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 23,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 14,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 84,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":45,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cycling\",\"gardening\",\"board games\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":15,\"level\":\"low\"},\"extraversion\":{\"score\":23,\"level\":\"low\"},\"agreeableness\":{\"score\":14,\"level\":\"low\"},\"neuroticism\":{\"score\":84,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":45,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cycling\",\"gardening\",\"board games\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":15,\"level\":\"low\"},\"extraversion\":{\"score\":23,\"level\":\"low\"},\"agreeableness\":{\"score\":14,\"level\":\"low\"},\"neuroticism\":{\"score\":84,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"Navigating conversations around healthcare, especially regarding COVID vaccines, can be challenging for many individuals. As a self-employed waitress in Philadelphia, my daily interactions often involve discussing health topics with colleagues and customers. Growing up with an immigrant background - where education was not prioritized in my family - I've had to rely on critical thinking and personal research to form informed opinions. My creative nature pushes me to explore various perspectives before arriving at conclusions. Being married with two children, maintaining open communication about sensitive subjects is crucial for our family dynamics. In the Muslim community, discussions around health practices are often approached with caution, respecting both scientific advancements and religious beliefs. Spending limited time on social media means I primarily rely on trusted sources like healthcare professionals and reputable organizations for information. My low openness score indicates a preference for sticking to tried-and-true methods rather than experimenting with new ideas freely. While conscientiousness is relatively low, my focus remains firmly on ensuring the well-being of myself and my family. The high neuroticism level reflects anxiety about potential misinformation circulating online, emphasizing the importance of verifying sources before accepting any health-related claims.\", \"reasoning_summary\":\"1. **Background Context**: The persona's identity as a self-employed waitress in Philadelphia informs her reliance on practical conversations for income and social interaction. Growing up with limited formal education influences how she approaches complex topics like healthcare.\\n2. **Creative Perspective**: As a creative individual, she likely seeks diverse viewpoints before forming opinions, which is crucial when discussing sensitive subjects such as vaccines where misinformation can spread easily.\\n3. **Family Dynamics**: Being married with children means maintaining open communication about health matters is essential for family well-being. This emphasizes the need for reliable sources of information.\\n4. **Religious and Community Values**: In Muslim communities, discussions around healthcare often balance scientific evidence with religious teachings. This context shapes how she perceives and discusses COVID vaccines.\\n5. **Social Media Usage**: Limited time on social media suggests reliance on direct communication channels (e.g., healthcare providers) for accurate information rather than online platforms.\\n6. **Psychological Traits**: Low openness indicates a preference for tried-and-true methods, while high neuroticism highlights anxiety about misinformation, underscoring the importance of vetting sources before accepting health advice.\", \"tone\":\"Thoughtful and conscientious\",\"citations\":[\"American Psychological Association (APA)\",\"Centers for Disease Control and Prevention (CDC)\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "Navigating conversations around healthcare, especially regarding COVID vaccines, can be challenging for many individuals. As a self-employed waitress in Philadelphia, my daily interactions often involve discussing health topics with colleagues and customers. Growing up with an immigrant background - where education was not prioritized in my family - I've had to rely on critical thinking and personal research to form informed opinions. My creative nature pushes me to explore various perspectives before arriving at conclusions. Being married with two children, maintaining open communication about sensitive subjects is crucial for our family dynamics. In the Muslim community, discussions around health practices are often approached with caution, respecting both scientific advancements and religious beliefs. Spending limited time on social media means I primarily rely on trusted sources like healthcare professionals and reputable organizations for information. My low openness score indicates a preference for sticking to tried-and-true methods rather than experimenting with new ideas freely. While conscientiousness is relatively low, my focus remains firmly on ensuring the well-being of myself and my family. The high neuroticism level reflects anxiety about potential misinformation circulating online, emphasizing the importance of verifying sources before accepting any health-related claims.",
+    "reasoning_summary": "1. **Background Context**: The persona's identity as a self-employed waitress in Philadelphia informs her reliance on practical conversations for income and social interaction. Growing up with limited formal education influences how she approaches complex topics like healthcare.\n2. **Creative Perspective**: As a creative individual, she likely seeks diverse viewpoints before forming opinions, which is crucial when discussing sensitive subjects such as vaccines where misinformation can spread easily.\n3. **Family Dynamics**: Being married with children means maintaining open communication about health matters is essential for family well-being. This emphasizes the need for reliable sources of information.\n4. **Religious and Community Values**: In Muslim communities, discussions around healthcare often balance scientific evidence with religious teachings. This context shapes how she perceives and discusses COVID vaccines.\n5. **Social Media Usage**: Limited time on social media suggests reliance on direct communication channels (e.g., healthcare providers) for accurate information rather than online platforms.\n6. **Psychological Traits**: Low openness indicates a preference for tried-and-true methods, while high neuroticism highlights anxiety about misinformation, underscoring the importance of vetting sources before accepting health advice.",
+    "tone": "Thoughtful and conscientious",
+    "citations": [
+      "American Psychological Association (APA)",
+      "Centers for Disease Control and Prevention (CDC)"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "baidu/ernie-4.5-21b-a3b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 61,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "journalist",
+      "city_of_living": "Rome",
+      "employment_status": "employed part-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "birdwatching",
+        "knitting",
+        "gardening",
+        "football (calcio)",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 20,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 80,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 92,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 5,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 90,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":61,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"birdwatching\",\"knitting\",\"gardening\",\"football (calcio)\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":80,\"level\":\"high\"},\"extraversion\":{\"score\":92,\"level\":\"high\"},\"agreeableness\":{\"score\":5,\"level\":\"low\"},\"neuroticism\":{\"score\":90,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":61,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"birdwatching\",\"knitting\",\"gardening\",\"football (calcio)\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":80,\"level\":\"high\"},\"extraversion\":{\"score\":92,\"level\":\"high\"},\"agreeableness\":{\"score\":5,\"level\":\"low\"},\"neuroticism\":{\"score\":90,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"The gender gap in science persists as a complex and pressing issue, rooted not only in historical biases but also in contemporary systemic challenges. While strides have been made to promote equality, disparities remain in representation, recognition, and opportunities for women and other underrepresented groups in scientific fields. Addressing this gap requires a multifaceted approach that combines education reform, policy changes, cultural shifts, and technological innovation. For instance, fostering early exposure to STEM subjects through mentorship programs can inspire curiosity and confidence among young girls, potentially reversing the pipeline leakages often observed in higher education and professional careers. Initiatives like Girls Who Code or science fairs tailored for diverse audiences are steps in the right direction.\\n\\nAt an institutional level, policies that ensure equal pay, transparent promotion criteria, and family-friendly workplace structures can help retain talent and encourage more women to pursue long-term careers in science. Academic institutions must also combat unconscious bias through training programs and by actively promoting diversity in hiring committees and grant review panels. Additionally, leveraging technology offers novel ways to democratize access to resources, such as online courses or virtual labs that bridge geographical and socioeconomic barriers.\\n\\nCulturally, reshaping narratives around gender roles in science could help eliminate stereotypes that deter participation. Storytelling campaigns highlighting successful female scientists from different backgrounds can inspire future generations while challenging traditional perceptions of who belongs in STEM. Media representation also plays a crucial role; increasing diversity in scientific programming and literature would reflect the full spectrum of human experience in these fields.\\n\\nIn summary, addressing the gender gap in science is not merely a moral imperative but also an economic one. Closing this divide unlocks untapped potential that could drive innovation and address global challenges like climate change or public health crises more effectively. By combining systemic reforms with grassroots efforts and technological solutions, we can move toward a future where everyone, regardless of gender, has equal access to opportunities in science—a vision compatible with my curiosity about societal progress and commitment to fairness as both an observer and participant in global conversations.\\n\",\"reasoning_summary\":\"The analysis begins by defining the gender gap in science and its persistence despite efforts for equality. It highlights historical biases and systemic challenges, emphasizing that addressing this issue requires a multi-pronged strategy including education reform, policy changes, cultural shifts, and technological innovation. The importance of early exposure to STEM subjects is noted as key to inspiring girls and reducing pipeline leakages. At institutional levels, measures such as equal pay, transparent promotion criteria, and family-friendly workplace structures are suggested as ways to retain talent and encourage long-term careers in science. Additionally, policies combating unconscious bias and promoting diversity in hiring committees and grant review panels are identified as crucial steps. Cultural shifts through reshaping narratives around gender roles in science are discussed, along with the role of media representation in inspiring future generations. Finally, the economic imperative of closing this gap is underscored, emphasizing that it unlocks untapped potential for innovation and addressing global challenges more effectively. The reasoning concludes by summarizing how a combination of systemic reforms, grassroots efforts, and technological solutions can move towards a future where everyone has equal access to opportunities in science.\",\"tone\":\"curious and pragmatic\",\"citations\":[],\"safety_notes\":\"\",\"used_persona_fields\":[\"age\", \"gender\", \"sexual_orientation\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"parents_education\", \"current_marital_status\", \"children\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science persists as a complex and pressing issue, rooted not only in historical biases but also in contemporary systemic challenges. While strides have been made to promote equality, disparities remain in representation, recognition, and opportunities for women and other underrepresented groups in scientific fields. Addressing this gap requires a multifaceted approach that combines education reform, policy changes, cultural shifts, and technological innovation. For instance, fostering early exposure to STEM subjects through mentorship programs can inspire curiosity and confidence among young girls, potentially reversing the pipeline leakages often observed in higher education and professional careers. Initiatives like Girls Who Code or science fairs tailored for diverse audiences are steps in the right direction.\n\nAt an institutional level, policies that ensure equal pay, transparent promotion criteria, and family-friendly workplace structures can help retain talent and encourage more women to pursue long-term careers in science. Academic institutions must also combat unconscious bias through training programs and by actively promoting diversity in hiring committees and grant review panels. Additionally, leveraging technology offers novel ways to democratize access to resources, such as online courses or virtual labs that bridge geographical and socioeconomic barriers.\n\nCulturally, reshaping narratives around gender roles in science could help eliminate stereotypes that deter participation. Storytelling campaigns highlighting successful female scientists from different backgrounds can inspire future generations while challenging traditional perceptions of who belongs in STEM. Media representation also plays a crucial role; increasing diversity in scientific programming and literature would reflect the full spectrum of human experience in these fields.\n\nIn summary, addressing the gender gap in science is not merely a moral imperative but also an economic one. Closing this divide unlocks untapped potential that could drive innovation and address global challenges like climate change or public health crises more effectively. By combining systemic reforms with grassroots efforts and technological solutions, we can move toward a future where everyone, regardless of gender, has equal access to opportunities in science—a vision compatible with my curiosity about societal progress and commitment to fairness as both an observer and participant in global conversations.\n",
+    "reasoning_summary": "The analysis begins by defining the gender gap in science and its persistence despite efforts for equality. It highlights historical biases and systemic challenges, emphasizing that addressing this issue requires a multi-pronged strategy including education reform, policy changes, cultural shifts, and technological innovation. The importance of early exposure to STEM subjects is noted as key to inspiring girls and reducing pipeline leakages. At institutional levels, measures such as equal pay, transparent promotion criteria, and family-friendly workplace structures are suggested as ways to retain talent and encourage long-term careers in science. Additionally, policies combating unconscious bias and promoting diversity in hiring committees and grant review panels are identified as crucial steps. Cultural shifts through reshaping narratives around gender roles in science are discussed, along with the role of media representation in inspiring future generations. Finally, the economic imperative of closing this gap is underscored, emphasizing that it unlocks untapped potential for innovation and addressing global challenges more effectively. The reasoning concludes by summarizing how a combination of systemic reforms, grassroots efforts, and technological solutions can move towards a future where everyone has equal access to opportunities in science.",
+    "tone": "curious and pragmatic",
+    "citations": [],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

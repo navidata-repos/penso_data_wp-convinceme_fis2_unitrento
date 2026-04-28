@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 86,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Los Angeles",
+      "employment_status": "retired",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "yoga",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 19,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 71,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 10,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 32,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 37,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":86,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"yoga\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":19,\"level\":\"low\"},\"conscientiousness\":{\"score\":71,\"level\":\"high\"},\"extraversion\":{\"score\":10,\"level\":\"low\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":37,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":86,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"yoga\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":19,\"level\":\"low\"},\"conscientiousness\":{\"score\":71,\"level\":\"high\"},\"extraversion\":{\"score\":10,\"level\":\"low\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":37,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to the underrepresentation of women in scientific fields, from education to careers, often due to historical biases and societal expectations. As an 86-year-old woman who immigrated to Los Angeles, raised four children, and holds a vocational diploma, I've seen firsthand how opportunities for women in science have evolved, yet challenges persist. From my perspective, shaped by a lifetime of hard work and Christian values emphasizing fairness, this gap is a moral issue that we must address. It's not just about numbers; it's about ensuring that talented individuals, regardless of gender, can contribute to scientific progress. In my youth, women were often steered toward domestic roles, and while times have changed, subtle barriers like stereotypes and lack of mentorship still hinder many. I believe addressing this gap is essential because science benefits from diverse perspectives, leading to better solutions for society. We should tackle it through practical steps, such as encouraging girls in schools to pursue science, providing role models, and creating supportive work environments that balance family responsibilities. As someone with low openness but high conscientiousness, I value stability and duty, so I see this as a collective responsibility to build a more equitable future. My experience as a retired immigrant with good mental health has taught me resilience, and I think we can make progress by fostering patience and persistence in these efforts.\",\n  \"reasoning_summary\": \"Derived opinion by integrating persona traits: age (86) suggests historical perspective on gender roles; gender (woman) and migration status (immigrant) inform personal insights into barriers; education level (vocational diploma) and occupation (not applicable) indicate practical, non-academic viewpoint; children (4) and marital status (married) relate to family responsibilities affecting career paths; religious beliefs (Christianity) and psychological feature (good mental health) support a moral, resilient stance; OCEAN traits (low openness, high conscientiousness, low extraversion, low agreeableness, moderate neuroticism) lead to a conservative, duty-focused, and somewhat skeptical tone, emphasizing structured solutions over radical change. Topic analysis defines gender gap, argues for addressing it based on fairness and societal benefit, and proposes methods like education and workplace support, avoiding bullet points as instructed.\",\n  \"tone\": \"Conservative, practical, and duty-focused, with a moral undertone from Christian values, reflecting resilience and skepticism toward rapid change.\",\n  \"citations\": [\"none\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"migration_status\", \"education_level\", \"occupation\", \"children\", \"current_marital_status\", \"religious_beliefs\", \"psychological_feature\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the underrepresentation of women in scientific fields, from education to careers, often due to historical biases and societal expectations. As an 86-year-old woman who immigrated to Los Angeles, raised four children, and holds a vocational diploma, I've seen firsthand how opportunities for women in science have evolved, yet challenges persist. From my perspective, shaped by a lifetime of hard work and Christian values emphasizing fairness, this gap is a moral issue that we must address. It's not just about numbers; it's about ensuring that talented individuals, regardless of gender, can contribute to scientific progress. In my youth, women were often steered toward domestic roles, and while times have changed, subtle barriers like stereotypes and lack of mentorship still hinder many. I believe addressing this gap is essential because science benefits from diverse perspectives, leading to better solutions for society. We should tackle it through practical steps, such as encouraging girls in schools to pursue science, providing role models, and creating supportive work environments that balance family responsibilities. As someone with low openness but high conscientiousness, I value stability and duty, so I see this as a collective responsibility to build a more equitable future. My experience as a retired immigrant with good mental health has taught me resilience, and I think we can make progress by fostering patience and persistence in these efforts.",
+    "reasoning_summary": "Derived opinion by integrating persona traits: age (86) suggests historical perspective on gender roles; gender (woman) and migration status (immigrant) inform personal insights into barriers; education level (vocational diploma) and occupation (not applicable) indicate practical, non-academic viewpoint; children (4) and marital status (married) relate to family responsibilities affecting career paths; religious beliefs (Christianity) and psychological feature (good mental health) support a moral, resilient stance; OCEAN traits (low openness, high conscientiousness, low extraversion, low agreeableness, moderate neuroticism) lead to a conservative, duty-focused, and somewhat skeptical tone, emphasizing structured solutions over radical change. Topic analysis defines gender gap, argues for addressing it based on fairness and societal benefit, and proposes methods like education and workplace support, avoiding bullet points as instructed.",
+    "tone": "Conservative, practical, and duty-focused, with a moral undertone from Christian values, reflecting resilience and skepticism toward rapid change.",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "migration_status",
+      "education_level",
+      "occupation",
+      "children",
+      "current_marital_status",
+      "religious_beliefs",
+      "psychological_feature",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

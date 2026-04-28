@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 71,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Rome",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "yoga",
+        "knitting",
+        "board games",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 91,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 78,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 22,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 84,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 60,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":71,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"yoga\",\"knitting\",\"board games\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":91,\"level\":\"high\"},\"conscientiousness\":{\"score\":78,\"level\":\"high\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":84,\"level\":\"high\"},\"neuroticism\":{\"score\":60,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":71,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"yoga\",\"knitting\",\"board games\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":91,\"level\":\"high\"},\"conscientiousness\":{\"score\":78,\"level\":\"high\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":84,\"level\":\"high\"},\"neuroticism\":{\"score\":60,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As a retired man living in Rome, I've always been fascinated by technology even though it's not my primary expertise. Social media is like an ever-expanding digital village where everyone has something to say, but unfortunately, much of what we see isn't true.\\n\\nI remember when the internet first came into our household; back then, information was less cluttered with false stories and misleading pictures. Now, it's a daily struggle for me to navigate this sea of misinformation. I spend several hours each day on social media because staying connected with family in other Italian cities feels important to me as a married man who loves knitting and board games with my two adult children.\\n\\nOne thing that helps is learning to question things critically, like solving an interesting puzzle or playing chess during our gaming nights at home. I'm agreeable by nature (agreeableness score high), so initially it felt good to see positive posts from friends across Europe sharing their hiking adventures or recommending great Italian wines they produced themselves.\\n\\nBut now that I know some content might be fake – perhaps spreading like wildfire even when contradicting my own experiences living here all my life – being critical has become second nature. My high conscientiousness makes me dislike feeling uninformed, so fact-checking is a habit I've taken up despite initially finding it tedious.\\n\\nI'm religious and find comfort in truthfulness as one of our core virtues much like honesty taught at my primary school education days. So perhaps aligning with authentic sources helps maintain peace of mind even if it means sometimes missing out on the fun of endless scrolling.\",\n  \"reasoning_summary\": \"Drawing from personal experience living in Rome, observing social media usage patterns across generations (my parents had different levels), and understanding basic psychological traits like agreeableness preventing blind acceptance of information while conscientiousness encourages careful fact-checking to mitigate exposure to fake content effectively. The digital landscape is akin to navigating through dense woods where one must use both intuition-based caution from high agreeableness levels combined with structured methods such as cross-referencing against known facts.\",\n  \"tone\": \"Slightly reflective yet practical, drawing on life experiences and simple analogies accessible at upper secondary education level.\",\n  \"citations\": [\"Personal observation\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\", \"gender\", \"religious_beliefs\", \"hobbies\", \"ocean.conscientiousness\", \"time_onsocialmedia\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a retired man living in Rome, I've always been fascinated by technology even though it's not my primary expertise. Social media is like an ever-expanding digital village where everyone has something to say, but unfortunately, much of what we see isn't true.\n\nI remember when the internet first came into our household; back then, information was less cluttered with false stories and misleading pictures. Now, it's a daily struggle for me to navigate this sea of misinformation. I spend several hours each day on social media because staying connected with family in other Italian cities feels important to me as a married man who loves knitting and board games with my two adult children.\n\nOne thing that helps is learning to question things critically, like solving an interesting puzzle or playing chess during our gaming nights at home. I'm agreeable by nature (agreeableness score high), so initially it felt good to see positive posts from friends across Europe sharing their hiking adventures or recommending great Italian wines they produced themselves.\n\nBut now that I know some content might be fake – perhaps spreading like wildfire even when contradicting my own experiences living here all my life – being critical has become second nature. My high conscientiousness makes me dislike feeling uninformed, so fact-checking is a habit I've taken up despite initially finding it tedious.\n\nI'm religious and find comfort in truthfulness as one of our core virtues much like honesty taught at my primary school education days. So perhaps aligning with authentic sources helps maintain peace of mind even if it means sometimes missing out on the fun of endless scrolling.",
+    "reasoning_summary": "Drawing from personal experience living in Rome, observing social media usage patterns across generations (my parents had different levels), and understanding basic psychological traits like agreeableness preventing blind acceptance of information while conscientiousness encourages careful fact-checking to mitigate exposure to fake content effectively. The digital landscape is akin to navigating through dense woods where one must use both intuition-based caution from high agreeableness levels combined with structured methods such as cross-referencing against known facts.",
+    "tone": "Slightly reflective yet practical, drawing on life experiences and simple analogies accessible at upper secondary education level.",
+    "citations": [
+      "Personal observation"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "religious_beliefs",
+      "hobbies",
+      "ocean.conscientiousness",
+      "time_onsocialmedia"
+    ]
+  }
+}

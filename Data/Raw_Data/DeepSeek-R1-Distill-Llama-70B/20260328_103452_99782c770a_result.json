@@ -1,0 +1,100 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 55,
+      "gender": "woman",
+      "sexual_orientation": "bisexual",
+      "occupation": "not applicable",
+      "city_of_living": "Washington DC",
+      "employment_status": "unemployed",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "divorced",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "board games",
+        "volunteering",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 18,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 98,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":55,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"unemployed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"board games\",\"volunteering\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":63,\"level\":\"moderate\"},\"extraversion\":{\"score\":41,\"level\":\"moderate\"},\"agreeableness\":{\"score\":42,\"level\":\"moderate\"},\"neuroticism\":{\"score\":98,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":55,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"unemployed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"board games\",\"volunteering\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":63,\"level\":\"moderate\"},\"extraversion\":{\"score\":41,\"level\":\"moderate\"},\"agreeableness\":{\"score\":42,\"level\":\"moderate\"},\"neuroticism\":{\"score\":98,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a 55-year-old woman living in Washington DC, with a master's degree and a background shaped by my Hindu beliefs and creative nature, I approach discussions about healthcare and COVID vaccines with a blend of caution and empathy. Having navigated life as a divorced mother of three, I understand the complexities of personal choice and public responsibility. My high neuroticism score means I often feel anxious about health risks, which makes me value clear, evidence-based information, but my moderate conscientiousness drives me to seek reliable sources rather than reacting impulsively. In conversations, I emphasize listening first, acknowledging that people's fears and beliefs, whether rooted in religion, personal experience, or misinformation, are valid to them. I draw from my volunteering experiences to foster respectful dialogue, avoiding confrontation by sharing stories from my own life, such as how my children's health influenced my decisions. Given my low openness, I tend to stick to trusted guidelines from organizations like the CDC, but I respect diverse perspectives, recognizing that my Hindu faith teaches compassion and non-harm. I manage these discussions by focusing on common goals, like community well-being, and suggesting practical steps, such as consulting healthcare providers, rather than pushing my views. This approach helps me navigate the emotional weight of these topics while contributing constructively to public health conversations.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: age 55 suggests life experience influencing health views; gender and sexual orientation not directly relevant but inform empathy; occupation not applicable and unemployment may increase health concerns; master's degree indicates valuing education in discussions; Washington DC location implies exposure to policy debates; divorced with 3 children suggests family health priorities; native-born American context shapes cultural perspectives; creative psychological feature encourages nuanced thinking; Hinduism influences ethical stance on health; time on social media limited reduces misinformation exposure; hobbies like volunteering foster community focus; OCEAN traits: low openness leads to reliance on established sources, moderate conscientiousness promotes responsible information-seeking, moderate extraversion and agreeableness support balanced dialogue, high neuroticism increases health anxiety driving cautious engagement. Opinion integrates these to advocate for empathetic, evidence-based discussions.\",\n  \"tone\": \"cautious, empathetic, and reflective, blending personal experience with a focus on community well-being and respect for diverse views.\",\n  \"citations\": [\"CDC\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"employment_status\", \"education_level\", \"city_of_living\", \"current_marital_status\", \"children\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 55-year-old woman living in Washington DC, with a master's degree and a background shaped by my Hindu beliefs and creative nature, I approach discussions about healthcare and COVID vaccines with a blend of caution and empathy. Having navigated life as a divorced mother of three, I understand the complexities of personal choice and public responsibility. My high neuroticism score means I often feel anxious about health risks, which makes me value clear, evidence-based information, but my moderate conscientiousness drives me to seek reliable sources rather than reacting impulsively. In conversations, I emphasize listening first, acknowledging that people's fears and beliefs, whether rooted in religion, personal experience, or misinformation, are valid to them. I draw from my volunteering experiences to foster respectful dialogue, avoiding confrontation by sharing stories from my own life, such as how my children's health influenced my decisions. Given my low openness, I tend to stick to trusted guidelines from organizations like the CDC, but I respect diverse perspectives, recognizing that my Hindu faith teaches compassion and non-harm. I manage these discussions by focusing on common goals, like community well-being, and suggesting practical steps, such as consulting healthcare providers, rather than pushing my views. This approach helps me navigate the emotional weight of these topics while contributing constructively to public health conversations.",
+    "reasoning_summary": "Derived opinion from persona traits: age 55 suggests life experience influencing health views; gender and sexual orientation not directly relevant but inform empathy; occupation not applicable and unemployment may increase health concerns; master's degree indicates valuing education in discussions; Washington DC location implies exposure to policy debates; divorced with 3 children suggests family health priorities; native-born American context shapes cultural perspectives; creative psychological feature encourages nuanced thinking; Hinduism influences ethical stance on health; time on social media limited reduces misinformation exposure; hobbies like volunteering foster community focus; OCEAN traits: low openness leads to reliance on established sources, moderate conscientiousness promotes responsible information-seeking, moderate extraversion and agreeableness support balanced dialogue, high neuroticism increases health anxiety driving cautious engagement. Opinion integrates these to advocate for empathetic, evidence-based discussions.",
+    "tone": "cautious, empathetic, and reflective, blending personal experience with a focus on community well-being and respect for diverse views.",
+    "citations": [
+      "CDC"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "employment_status",
+      "education_level",
+      "city_of_living",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

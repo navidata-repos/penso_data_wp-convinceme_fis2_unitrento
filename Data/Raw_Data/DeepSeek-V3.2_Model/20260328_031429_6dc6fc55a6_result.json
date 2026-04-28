@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 61,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "New York",
+      "employment_status": "employed part-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "board games",
+        "volunteering",
+        "classical music"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 25,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 20,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 13,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 76,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 9,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":61,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"New York\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"volunteering\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":20,\"level\":\"low\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":76,\"level\":\"high\"},\"neuroticism\":{\"score\":9,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":61,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"New York\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"volunteering\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":20,\"level\":\"low\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":76,\"level\":\"high\"},\"neuroticism\":{\"score\":9,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to the underrepresentation of women in scientific fields, from education to leadership roles, often due to biases and systemic barriers. As a 61-year-old woman with a vocational diploma working as a barista in New York, I see this issue through a personal lens. My parents both had PhDs, which exposed me to academic environments, but I chose a different path, partly due to societal expectations and my own anxious nature. I believe we should address this gap because it limits diversity and innovation in science, and it's unfair to women who have the talent and passion. From my perspective, shaped by my Islamic faith and high agreeableness, addressing it requires compassion and community effort. We need to start early by encouraging girls in schools through hands-on activities and mentorship programs, which I've seen work in my volunteering. In workplaces, flexible policies and bias training can help, as I've observed in my part-time job where small changes make a big difference. As someone who enjoys classical music and board games, I value structured yet creative approaches, so promoting inclusive research teams and highlighting female scientists' achievements can inspire change. While I'm not highly open or extraverted, my experience as a native-born American with a child has taught me that persistence and support matter. We should address this gap not just for fairness, but to enrich science with diverse perspectives, making it better for everyone.\",\n  \"reasoning_summary\": \"Derived opinion by integrating persona traits: age 61 and gender woman provide lived experience perspective; occupation barista and education vocational diploma suggest practical, non-academic viewpoint; parents' PhDs offer insight into science fields; anxious psychological feature and high agreeableness from OCEAN model lead to a cautious yet compassionate stance; Islamic beliefs and hobbies like volunteering influence community-oriented solutions; low openness and extraversion result in a focus on incremental, supportive changes rather than radical approaches; overall, persona's background shapes a nuanced opinion emphasizing fairness, diversity, and practical steps to address the gender gap.\",\n  \"tone\": \"Reflective, compassionate, and practical, with a cautious optimism influenced by the persona's age, anxious nature, high agreeableness, and community-focused traits.\",\n  \"citations\": [\"none\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"education_level\", \"parents_education\", \"psychological_feature\", \"religious_beliefs\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the underrepresentation of women in scientific fields, from education to leadership roles, often due to biases and systemic barriers. As a 61-year-old woman with a vocational diploma working as a barista in New York, I see this issue through a personal lens. My parents both had PhDs, which exposed me to academic environments, but I chose a different path, partly due to societal expectations and my own anxious nature. I believe we should address this gap because it limits diversity and innovation in science, and it's unfair to women who have the talent and passion. From my perspective, shaped by my Islamic faith and high agreeableness, addressing it requires compassion and community effort. We need to start early by encouraging girls in schools through hands-on activities and mentorship programs, which I've seen work in my volunteering. In workplaces, flexible policies and bias training can help, as I've observed in my part-time job where small changes make a big difference. As someone who enjoys classical music and board games, I value structured yet creative approaches, so promoting inclusive research teams and highlighting female scientists' achievements can inspire change. While I'm not highly open or extraverted, my experience as a native-born American with a child has taught me that persistence and support matter. We should address this gap not just for fairness, but to enrich science with diverse perspectives, making it better for everyone.",
+    "reasoning_summary": "Derived opinion by integrating persona traits: age 61 and gender woman provide lived experience perspective; occupation barista and education vocational diploma suggest practical, non-academic viewpoint; parents' PhDs offer insight into science fields; anxious psychological feature and high agreeableness from OCEAN model lead to a cautious yet compassionate stance; Islamic beliefs and hobbies like volunteering influence community-oriented solutions; low openness and extraversion result in a focus on incremental, supportive changes rather than radical approaches; overall, persona's background shapes a nuanced opinion emphasizing fairness, diversity, and practical steps to address the gender gap.",
+    "tone": "Reflective, compassionate, and practical, with a cautious optimism influenced by the persona's age, anxious nature, high agreeableness, and community-focused traits.",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "parents_education",
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

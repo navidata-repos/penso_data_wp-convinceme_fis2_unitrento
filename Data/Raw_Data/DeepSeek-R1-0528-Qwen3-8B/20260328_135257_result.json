@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 42,
+      "gender": "woman",
+      "sexual_orientation": "asexual",
+      "occupation": "retail worker",
+      "city_of_living": "Rome",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "divorced",
+      "children": 3,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "birdwatching",
+        "travel",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 11,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 65,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 100,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 54,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 69,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":42,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"birdwatching\",\"travel\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":11,\"level\":\"low\"},\"conscientiousness\":{\"score\":65,\"level\":\"moderate\"},\"extraversion\":{\"score\":100,\"level\":\"high\"},\"agreeableness\":{\"score\":54,\"level\":\"moderate\"},\"neuroticism\":{\"score\":69,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":42,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"birdwatching\",\"travel\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":11,\"level\":\"low\"},\"conscientiousness\":{\"score\":65,\"level\":\"moderate\"},\"extraversion\":{\"score\":100,\"level\":\"high\"},\"agreeableness\":{\"score\":54,\"level\":\"moderate\"},\"neuroticism\":{\"score\":69,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to the imbalance in representation between men and women across various scientific fields. It's not merely about numbers but also about the underlying barriers that prevent equal participation.\\n\\nAs an immigrant woman with a master's degree from my father, who is highly educated himself, I've seen firsthand how societal expectations can limit opportunities for women and minorities. Growing up in Rome, with limited education beyond upper secondary and part-time employment as a retail worker, I understand the importance of breaking down these barriers.\\n\\nI believe addressing this gap is crucial because diverse perspectives lead to better problem-solving and innovation. For instance, when working on customer service at my job – handling anxious shoppers and providing them with solutions – having colleagues from different backgrounds improves team dynamics significantly.\\n\\nTo tackle this issue effectively, we need comprehensive educational reforms starting early: encouraging girls in STEM subjects through mentorship programs like the ones I experienced during my father's guidance. Organizations should implement inclusive hiring practices that consider implicit biases training for recruiters. Workplaces must offer flexible arrangements considering parental responsibilities, similar to how retail businesses accommodate part-time schedules.\\n\\nPerhaps initiatives focused on increasing visibility of successful female scientists could inspire more young women into science careers.\",\n  \"reasoning_summary\": \"I considered my own background as an immigrant woman with limited formal education but personal mentorship from a knowledgeable father. This shaped my perspective by highlighting the real-world consequences of educational barriers and societal expectations that affect both genders differently.\\n\\nNext, I reflected on how psychological traits like anxiety might influence engagement in certain fields – since high extraversion helped me thrive despite being anxious at times while working retail with diverse customers.\\n\\nThen analyzed existing data showing persistent underrepresentation in STEM areas across Europe including Italy where my city of residence lies. Categorized solutions into educational reform (starting early), workplace adjustments (flexible schedules), organizational changes (inclusive hiring) and societal shifts (challenging stereotypes).\\n\\nFinally considered how to frame the response naturally using everyday experiences as parallels, ensuring it remains conversational rather than academic.\",\n  \"tone\": \"Reflective yet determined with a touch of personal warmth derived from being an immigrant woman who successfully navigated educational barriers through family support.\",\n  \"citations\": [],\n  \"safety_notes\": \"\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"education_level\", \"parents_education.parent_2\", \"psychological_feature\", \"hobbies\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the imbalance in representation between men and women across various scientific fields. It's not merely about numbers but also about the underlying barriers that prevent equal participation.\n\nAs an immigrant woman with a master's degree from my father, who is highly educated himself, I've seen firsthand how societal expectations can limit opportunities for women and minorities. Growing up in Rome, with limited education beyond upper secondary and part-time employment as a retail worker, I understand the importance of breaking down these barriers.\n\nI believe addressing this gap is crucial because diverse perspectives lead to better problem-solving and innovation. For instance, when working on customer service at my job – handling anxious shoppers and providing them with solutions – having colleagues from different backgrounds improves team dynamics significantly.\n\nTo tackle this issue effectively, we need comprehensive educational reforms starting early: encouraging girls in STEM subjects through mentorship programs like the ones I experienced during my father's guidance. Organizations should implement inclusive hiring practices that consider implicit biases training for recruiters. Workplaces must offer flexible arrangements considering parental responsibilities, similar to how retail businesses accommodate part-time schedules.\n\nPerhaps initiatives focused on increasing visibility of successful female scientists could inspire more young women into science careers.",
+    "reasoning_summary": "I considered my own background as an immigrant woman with limited formal education but personal mentorship from a knowledgeable father. This shaped my perspective by highlighting the real-world consequences of educational barriers and societal expectations that affect both genders differently.\n\nNext, I reflected on how psychological traits like anxiety might influence engagement in certain fields – since high extraversion helped me thrive despite being anxious at times while working retail with diverse customers.\n\nThen analyzed existing data showing persistent underrepresentation in STEM areas across Europe including Italy where my city of residence lies. Categorized solutions into educational reform (starting early), workplace adjustments (flexible schedules), organizational changes (inclusive hiring) and societal shifts (challenging stereotypes).\n\nFinally considered how to frame the response naturally using everyday experiences as parallels, ensuring it remains conversational rather than academic.",
+    "tone": "Reflective yet determined with a touch of personal warmth derived from being an immigrant woman who successfully navigated educational barriers through family support.",
+    "citations": [],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "parents_education.parent_2",
+      "psychological_feature",
+      "hobbies"
+    ]
+  }
+}

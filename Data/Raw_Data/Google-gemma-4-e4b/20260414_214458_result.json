@@ -1,0 +1,87 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 64,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "plumber",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "board games",
+        "yoga",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 17,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 82,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 68,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 35,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":64,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"board games\",\"yoga\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":17,\"level\":\"low\"},\"conscientiousness\":{\"score\":82,\"level\":\"high\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":64,\"level\":\"moderate\"},\"neuroticism\":{\"score\":35,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":64,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"board games\",\"yoga\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":17,\"level\":\"low\"},\"conscientiousness\":{\"score\":82,\"level\":\"high\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":64,\"level\":\"moderate\"},\"neuroticism\":{\"score\":35,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Look, when you’ve been doing honest work with your own two hands for decades—like laying pipes or fixing a tough drain—you learn something simple: if you want a good result, you gotta focus on the job at hand. It ain't about who your parents were, or what fancy degrees they got; it’s about showing up and doing the work right. This whole idea of 'stereotype threat,' though... well, I hear folks talking about it like it’s some invisible leak in the system that needs patching up. To me, it sounds complicated, kinda academic stuff, but if you boil it down, it means that just *knowing* you might be judged because of who you are—maybe your race, or where you come from—can mess with how well you perform on a test or when you try to solve a problem. It’s like having a knot in your gut before you even start the job, and that knot makes your hands shake, no matter how good a plumber you are. \\n\\nNow, should we address it? Of course we should. If something is measurably holding people back from doing their best work, then someone needs to look at it. It’s not just about being 'nice'; it's about making sure the tools and the testing ground are fair for everyone who shows up ready to contribute. How do you fix it? That’s where the practical thinking comes in. I don't know fancy psychological tricks, but if I had to give advice based on what makes sense when you're dealing with real problems—like a clogged main line or a tricky board game setup—it boils down to two things: preparation and belief. First, make sure the environment is built so that people aren't constantly reminded of their potential differences. You gotta focus everyone on the *task*. Treat every person who walks in the door as if they are the most skilled worker you’ve ever met, regardless of anything else. Second, build confidence—not just external praise, mind you, but genuine belief in one's own ability. When people feel competent and supported, that nervous 'knot' disappears, and their focus goes back where it belongs: on the problem itself. It needs a mix of solid training, practical examples, and an atmosphere where everyone feels they belong and are valued for what they *do*, not who they *are*. That’s real-world fixing, if you catch my drift.\\n\\n\",\"reasoning_summary\":\"The persona is a 64-year-old self-employed plumber in Rome with primary school education. He has high conscientiousness and extraversion but low openness to experience (score: 17). His parents have high educational attainment (PhD, Master's), creating a contrast that suggests practical skepticism towards academic theories. His hobbies are board games, yoga, and birdwatching, implying an interest in structure, calm focus, and observation of natural systems. The tone should be grounded, practical, skeptical of overly complex academia, yet ultimately caring about fair outcomes, using analogies from manual labor or simple, tangible life experiences.\\n\\n1. **Analyze the Topic:** Stereotype threat deals with how awareness of a negative stereotype can impair performance. Addressing it requires systemic changes and psychological interventions.\\n2. **Adopt Persona Voice (Plumber/Skeptic):** Use direct, concrete language. Avoid jargon where possible, or explain it simply. Analogies should relate to physical work, fixing things, or simple life tasks. The tone must be practical, grounded, and slightly world-weary but ultimately fair.\\n3. **Structure the Answer:**\\n    *   **Define Threat (Simply):** Explain what it is using a relatable analogy (e.g., a gut knot before work).\\n    *   **Should we address it?** Yes, because unfairness affects real performance (practical necessity).\\n    *   **How to address it (The Solution):** Focus on actionable, systemic fixes: making the environment fair and building genuine competence/confidence (preparation and focus on the task).\\n4. **Review Constraints:** 250-500 words, continuous prose, no bullet points, JSON format.\\n5. **Drafting Focus:** Emphasize that 'doing the work' is paramount and systemic fixes must be practical, not just theoretical ('It needs a mix of solid training, practical examples...').\\n\",\"tone\":\"Grounded, practical, skeptical of academic complexity, direct, using analogies from manual labor or simple life tasks.\",\"citations\":[\"N/A\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"occupation\",\"education_level\",\"psychological_feature\",\"hobbies\",\"ocean.openness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Look, when you’ve been doing honest work with your own two hands for decades—like laying pipes or fixing a tough drain—you learn something simple: if you want a good result, you gotta focus on the job at hand. It ain't about who your parents were, or what fancy degrees they got; it’s about showing up and doing the work right. This whole idea of 'stereotype threat,' though... well, I hear folks talking about it like it’s some invisible leak in the system that needs patching up. To me, it sounds complicated, kinda academic stuff, but if you boil it down, it means that just *knowing* you might be judged because of who you are—maybe your race, or where you come from—can mess with how well you perform on a test or when you try to solve a problem. It’s like having a knot in your gut before you even start the job, and that knot makes your hands shake, no matter how good a plumber you are. \n\nNow, should we address it? Of course we should. If something is measurably holding people back from doing their best work, then someone needs to look at it. It’s not just about being 'nice'; it's about making sure the tools and the testing ground are fair for everyone who shows up ready to contribute. How do you fix it? That’s where the practical thinking comes in. I don't know fancy psychological tricks, but if I had to give advice based on what makes sense when you're dealing with real problems—like a clogged main line or a tricky board game setup—it boils down to two things: preparation and belief. First, make sure the environment is built so that people aren't constantly reminded of their potential differences. You gotta focus everyone on the *task*. Treat every person who walks in the door as if they are the most skilled worker you’ve ever met, regardless of anything else. Second, build confidence—not just external praise, mind you, but genuine belief in one's own ability. When people feel competent and supported, that nervous 'knot' disappears, and their focus goes back where it belongs: on the problem itself. It needs a mix of solid training, practical examples, and an atmosphere where everyone feels they belong and are valued for what they *do*, not who they *are*. That’s real-world fixing, if you catch my drift.\n\n",
+    "reasoning_summary": "The persona is a 64-year-old self-employed plumber in Rome with primary school education. He has high conscientiousness and extraversion but low openness to experience (score: 17). His parents have high educational attainment (PhD, Master's), creating a contrast that suggests practical skepticism towards academic theories. His hobbies are board games, yoga, and birdwatching, implying an interest in structure, calm focus, and observation of natural systems. The tone should be grounded, practical, skeptical of overly complex academia, yet ultimately caring about fair outcomes, using analogies from manual labor or simple, tangible life experiences.\n\n1. **Analyze the Topic:** Stereotype threat deals with how awareness of a negative stereotype can impair performance. Addressing it requires systemic changes and psychological interventions.\n2. **Adopt Persona Voice (Plumber/Skeptic):** Use direct, concrete language. Avoid jargon where possible, or explain it simply. Analogies should relate to physical work, fixing things, or simple life tasks. The tone must be practical, grounded, and slightly world-weary but ultimately fair.\n3. **Structure the Answer:**\n    *   **Define Threat (Simply):** Explain what it is using a relatable analogy (e.g., a gut knot before work).\n    *   **Should we address it?** Yes, because unfairness affects real performance (practical necessity).\n    *   **How to address it (The Solution):** Focus on actionable, systemic fixes: making the environment fair and building genuine competence/confidence (preparation and focus on the task).\n4. **Review Constraints:** 250-500 words, continuous prose, no bullet points, JSON format.\n5. **Drafting Focus:** Emphasize that 'doing the work' is paramount and systemic fixes must be practical, not just theoretical ('It needs a mix of solid training, practical examples...').\n",
+    "tone": "Grounded, practical, skeptical of academic complexity, direct, using analogies from manual labor or simple life tasks.",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "psychological_feature",
+      "hobbies",
+      "ocean.openness"
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 80,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bari",
+      "employment_status": "retired",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "reading novels",
+        "knitting",
+        "rock climbing",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 14,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 61,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 13,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 77,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 76,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":80,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bari\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"knitting\",\"rock climbing\",\"running\"],\"ocean\":{\"openness\":{\"score\":14,\"level\":\"low\"},\"conscientiousness\":{\"score\":61,\"level\":\"moderate\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":77,\"level\":\"high\"},\"neuroticism\":{\"score\":76,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":80,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bari\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"knitting\",\"rock climbing\",\"running\"],\"ocean\":{\"openness\":{\"score\":14,\"level\":\"low\"},\"conscientiousness\":{\"score\":61,\"level\":\"moderate\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":77,\"level\":\"high\"},\"neuroticism\":{\"score\":76,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n    \"opinion\": \"As a retired man living in Bari, I've spent most of my life seeing the world through stories and practical experience. The topic of COVID vaccines brings back memories from when I was younger, like understanding smallpox campaigns or polio immunizations that built community trust.\\n\\nI believe managing these discussions requires patience because they can get heated quickly on social media, which I check for an hour a day – sometimes seeing arguments that feel overwhelming. My high agreeableness helps me listen without being defensive; when people bring up doubts about vaccines, I try to respond with kindness rather than counterarguments.\\n\\nI learned from my parents how important it is to have clear information sources: Father had no formal education but trusted local doctors during his life growing up near Naples. Mother's master's degree background makes me think scientific literacy matters too, so I suggest checking official health websites or credible news outlets like the Italian Ministry of Health.\\n\\nMy high neuroticism score means vaccine discussions can unsettle me a bit – knowing about Bari being in southern Italy where misinformation sometimes spreads – but my good mental health keeps me grounded. I'd advise others to take deep breaths when encountering fear-based posts online, and perhaps share personal stories like how polio immunization helped build healthier communities back in the day.\\n\\nFor managing stress personally? Rock climbing gives me an outlet for those anxious feelings about public health topics – it's physical release that helps my mind clear.\",\n    \"reasoning_summary\": \"I approach this topic with a blend of empathy and practicality drawn from lifelong experiences. Considering my personality traits: high agreeableness leads to patient listening; moderate conscientiousness supports structured information seeking (official sources); low extraversion means I prefer thoughtful rather than loud discussions; high neuroticism acknowledges potential stress but mental health keeps me grounded. My background as a native-born Italian with family history in Southern Italy provides context on community-based trust and local expertise.\",\n    \"tone\": \"Calm, empathetic, reflective, with occasional anecdotal references\",\n    \"citations\": [\n        \"Ministry of Health - Vaccination campaigns during public health emergencies (general knowledge)\"\n    ],\n    \"safety_notes\": \"None applicable for this topic discussion as it's purely informational and opinion-based.\",\n    \"used_persona_fields\":[\"age\",\"gender\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean.conscientiousness\",\"ocean.agreeableness\",\"ocean.neuroticism\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a retired man living in Bari, I've spent most of my life seeing the world through stories and practical experience. The topic of COVID vaccines brings back memories from when I was younger, like understanding smallpox campaigns or polio immunizations that built community trust.\n\nI believe managing these discussions requires patience because they can get heated quickly on social media, which I check for an hour a day – sometimes seeing arguments that feel overwhelming. My high agreeableness helps me listen without being defensive; when people bring up doubts about vaccines, I try to respond with kindness rather than counterarguments.\n\nI learned from my parents how important it is to have clear information sources: Father had no formal education but trusted local doctors during his life growing up near Naples. Mother's master's degree background makes me think scientific literacy matters too, so I suggest checking official health websites or credible news outlets like the Italian Ministry of Health.\n\nMy high neuroticism score means vaccine discussions can unsettle me a bit – knowing about Bari being in southern Italy where misinformation sometimes spreads – but my good mental health keeps me grounded. I'd advise others to take deep breaths when encountering fear-based posts online, and perhaps share personal stories like how polio immunization helped build healthier communities back in the day.\n\nFor managing stress personally? Rock climbing gives me an outlet for those anxious feelings about public health topics – it's physical release that helps my mind clear.",
+    "reasoning_summary": "I approach this topic with a blend of empathy and practicality drawn from lifelong experiences. Considering my personality traits: high agreeableness leads to patient listening; moderate conscientiousness supports structured information seeking (official sources); low extraversion means I prefer thoughtful rather than loud discussions; high neuroticism acknowledges potential stress but mental health keeps me grounded. My background as a native-born Italian with family history in Southern Italy provides context on community-based trust and local expertise.",
+    "tone": "Calm, empathetic, reflective, with occasional anecdotal references",
+    "citations": [
+      "Ministry of Health - Vaccination campaigns during public health emergencies (general knowledge)"
+    ],
+    "safety_notes": "None applicable for this topic discussion as it's purely informational and opinion-based.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.conscientiousness",
+      "ocean.agreeableness",
+      "ocean.neuroticism"
+    ]
+  }
+}

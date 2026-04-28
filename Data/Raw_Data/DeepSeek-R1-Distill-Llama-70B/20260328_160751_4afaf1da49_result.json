@@ -1,0 +1,102 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 52,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "journalist",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "hiking",
+        "rock climbing",
+        "travel",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 25,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 70,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 74,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 66,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 79,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":52,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"hiking\",\"rock climbing\",\"travel\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":70,\"level\":\"high\"},\"extraversion\":{\"score\":74,\"level\":\"high\"},\"agreeableness\":{\"score\":66,\"level\":\"moderate\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":52,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"hiking\",\"rock climbing\",\"travel\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":70,\"level\":\"high\"},\"extraversion\":{\"score\":74,\"level\":\"high\"},\"agreeableness\":{\"score\":66,\"level\":\"moderate\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a 52-year-old journalist from Bologna with a PhD and a background shaped by my high conscientiousness and neuroticism, I approach discussions about healthcare and COVID vaccines with a methodical yet emotionally charged perspective. My work demands rigorous fact-checking and adherence to evidence, which aligns with my conscientious nature, making me prioritize data from reputable sources like the World Health Organization and Italian health authorities. However, my high neuroticism means these conversations often trigger anxiety, especially given my depression, leading me to prepare extensively beforehand to manage my emotional responses. Living in Italy, where community and family ties are strong, I've seen firsthand how vaccine debates can strain relationships, and as a father of two, I feel a deep responsibility to model informed, calm discourse for my children. My low openness might make me skeptical of unverified claims, but my moderate agreeableness helps me engage respectfully, even when disagreeing. I avoid social media spats, preferring face-to-face discussions where nuance is preserved, and I draw on my Buddhist beliefs to practice compassion and mindfulness, reminding myself that fear often drives opposition. In practice, I start by listening actively, acknowledging concerns without judgment, then share clear, concise information, emphasizing how vaccines protect vulnerable populations like the elderly in our community. I steer clear of political rhetoric, focusing instead on public health outcomes, and if tensions rise, I take a break to reflect, using hiking or cycling to clear my mind. Ultimately, I believe managing these discussions requires balancing empathy with evidence, a stance that reflects my journalistic integrity and personal struggles, aiming to foster understanding rather than division.\",\"reasoning_summary\":\"Derived opinion from persona traits: age (52) suggests life experience; occupation (journalist) and education (PhD) imply reliance on evidence and critical thinking; conscientiousness (high) indicates structured approach; neuroticism (high) and depression add emotional sensitivity; agreeableness (moderate) supports respectful engagement; low openness leads to skepticism of unverified info; hobbies (hiking, cycling) provide stress relief; Buddhism influences compassionate tone; city (Bologna) and family context (children, relationship) emphasize community and responsibility; social media infrequency avoids online conflicts.\",\"tone\":\"Analytical, empathetic, cautious, and reflective, blending professional rigor with personal vulnerability.\",\"citations\":[\"World Health Organization\",\"Italian health authorities\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 52-year-old journalist from Bologna with a PhD and a background shaped by my high conscientiousness and neuroticism, I approach discussions about healthcare and COVID vaccines with a methodical yet emotionally charged perspective. My work demands rigorous fact-checking and adherence to evidence, which aligns with my conscientious nature, making me prioritize data from reputable sources like the World Health Organization and Italian health authorities. However, my high neuroticism means these conversations often trigger anxiety, especially given my depression, leading me to prepare extensively beforehand to manage my emotional responses. Living in Italy, where community and family ties are strong, I've seen firsthand how vaccine debates can strain relationships, and as a father of two, I feel a deep responsibility to model informed, calm discourse for my children. My low openness might make me skeptical of unverified claims, but my moderate agreeableness helps me engage respectfully, even when disagreeing. I avoid social media spats, preferring face-to-face discussions where nuance is preserved, and I draw on my Buddhist beliefs to practice compassion and mindfulness, reminding myself that fear often drives opposition. In practice, I start by listening actively, acknowledging concerns without judgment, then share clear, concise information, emphasizing how vaccines protect vulnerable populations like the elderly in our community. I steer clear of political rhetoric, focusing instead on public health outcomes, and if tensions rise, I take a break to reflect, using hiking or cycling to clear my mind. Ultimately, I believe managing these discussions requires balancing empathy with evidence, a stance that reflects my journalistic integrity and personal struggles, aiming to foster understanding rather than division.",
+    "reasoning_summary": "Derived opinion from persona traits: age (52) suggests life experience; occupation (journalist) and education (PhD) imply reliance on evidence and critical thinking; conscientiousness (high) indicates structured approach; neuroticism (high) and depression add emotional sensitivity; agreeableness (moderate) supports respectful engagement; low openness leads to skepticism of unverified info; hobbies (hiking, cycling) provide stress relief; Buddhism influences compassionate tone; city (Bologna) and family context (children, relationship) emphasize community and responsibility; social media infrequency avoids online conflicts.",
+    "tone": "Analytical, empathetic, cautious, and reflective, blending professional rigor with personal vulnerability.",
+    "citations": [
+      "World Health Organization",
+      "Italian health authorities"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

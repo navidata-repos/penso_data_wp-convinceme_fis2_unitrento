@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "baidu/ernie-4.5-21b-a3b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 45,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "accountant",
+      "city_of_living": "Bologna",
+      "employment_status": "employed part-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "knitting",
+        "running",
+        "cinema",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 23,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 77,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 61,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 57,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 73,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":45,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"accountant\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"knitting\",\"running\",\"cinema\",\"baking\"],\"ocean\":{\"openness\":{\"score\":23,\"level\":\"low\"},\"conscientiousness\":{\"score\":77,\"level\":\"high\"},\"extraversion\":{\"score\":61,\"level\":\"moderate\"},\"agreeableness\":{\"score\":57,\"level\":\"moderate\"},\"neuroticism\":{\"score\":73,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":45,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"accountant\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"knitting\",\"running\",\"cinema\",\"baking\"],\"ocean\":{\"openness\":{\"score\":23,\"level\":\"low\"},\"conscientiousness\":{\"score\":77,\"level\":\"high\"},\"extraversion\":{\"score\":61,\"level\":\"moderate\"},\"agreeableness\":{\"score\":57,\"level\":\"moderate\"},\"neuroticism\":{\"score\":73,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"The gender gap in science is a persistent and concerning issue that affects not only individual careers but also society as a whole. While strides have been made towards inclusivity, disparities remain across various disciplines, from STEM fields to research institutions. To address this, a multifaceted approach is essential, combining education reform, policy changes, and cultural shifts within the scientific community. Education systems should prioritize diverse role models in science and integrate gender equality into curricula early on. This would inspire younger generations, regardless of their gender, to pursue careers in STEM by highlighting the contributions of women and non-binary individuals throughout history. Policy interventions are equally important. Governments and institutions can implement quotas or incentives to ensure fair representation of all genders in hiring, promotions, and funding allocations. Additionally, flexible work policies—such as parental leave and remote working options—can help balance professional and personal responsibilities, making science careers more accessible to everyone. Cultivating an inclusive culture within scientific communities is another crucial step. This involves fostering open dialogue about biases and stereotypes, creating safe spaces for individuals to share their experiences without fear of judgment or retaliation. Mentorship programs pairing junior researchers with senior colleagues from underrepresented groups can provide invaluable guidance and support. Ultimately, addressing the gender gap in science requires collective effort—from educators, policymakers, institutions, and society at large. By breaking down barriers and celebrating diversity, we not only enrich our scientific endeavors but also promote a more equitable world for future generations.\",\"reasoning_summary\":\"To tackle the gender gap in science systematically, I first recognize that it is not merely an academic issue but one deeply embedded in societal structures. Education reform plays a pivotal role here; early exposure to diverse scientific narratives helps dismantle stereotypes and inspires young minds from all backgrounds. Policies must then follow suit—whether through quotas ensuring fair representation or incentives encouraging equal opportunities for advancement. Cultural change is equally vital; fostering inclusive environments where everyone feels valued can significantly reduce attrition rates among women and minorities in STEM fields. Mentorship programs also prove instrumental by providing guidance and support networks that might otherwise be lacking due to systemic barriers. Lastly, recognizing the importance of representation goes beyond mere numbers; it shapes how science is perceived and funded, ultimately influencing its direction and impact on society at large.\",\"tone\":\"reflective yet proactive\",\"citations\":[\"National Science Foundation (NSF) Gender Report\", \"American Association for the Advancement of Science (AAAS) Diversity Initiatives\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science is a persistent and concerning issue that affects not only individual careers but also society as a whole. While strides have been made towards inclusivity, disparities remain across various disciplines, from STEM fields to research institutions. To address this, a multifaceted approach is essential, combining education reform, policy changes, and cultural shifts within the scientific community. Education systems should prioritize diverse role models in science and integrate gender equality into curricula early on. This would inspire younger generations, regardless of their gender, to pursue careers in STEM by highlighting the contributions of women and non-binary individuals throughout history. Policy interventions are equally important. Governments and institutions can implement quotas or incentives to ensure fair representation of all genders in hiring, promotions, and funding allocations. Additionally, flexible work policies—such as parental leave and remote working options—can help balance professional and personal responsibilities, making science careers more accessible to everyone. Cultivating an inclusive culture within scientific communities is another crucial step. This involves fostering open dialogue about biases and stereotypes, creating safe spaces for individuals to share their experiences without fear of judgment or retaliation. Mentorship programs pairing junior researchers with senior colleagues from underrepresented groups can provide invaluable guidance and support. Ultimately, addressing the gender gap in science requires collective effort—from educators, policymakers, institutions, and society at large. By breaking down barriers and celebrating diversity, we not only enrich our scientific endeavors but also promote a more equitable world for future generations.",
+    "reasoning_summary": "To tackle the gender gap in science systematically, I first recognize that it is not merely an academic issue but one deeply embedded in societal structures. Education reform plays a pivotal role here; early exposure to diverse scientific narratives helps dismantle stereotypes and inspires young minds from all backgrounds. Policies must then follow suit—whether through quotas ensuring fair representation or incentives encouraging equal opportunities for advancement. Cultural change is equally vital; fostering inclusive environments where everyone feels valued can significantly reduce attrition rates among women and minorities in STEM fields. Mentorship programs also prove instrumental by providing guidance and support networks that might otherwise be lacking due to systemic barriers. Lastly, recognizing the importance of representation goes beyond mere numbers; it shapes how science is perceived and funded, ultimately influencing its direction and impact on society at large.",
+    "tone": "reflective yet proactive",
+    "citations": [
+      "National Science Foundation (NSF) Gender Report",
+      "American Association for the Advancement of Science (AAAS) Diversity Initiatives"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies"
+    ]
+  }
+}

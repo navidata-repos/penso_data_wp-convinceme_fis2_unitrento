@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "liquid/lfm2-1.2b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 45,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Milan",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "knitting",
+        "board games",
+        "cycling",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 39,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 97,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 70,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 56,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 73,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":45,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"knitting\",\"board games\",\"cycling\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":39,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":97,\"level\":\"high\"},\"extraversion\":{\"score\":70,\"level\":\"high\"},\"agreeableness\":{\"score\":56,\"level\":\"moderate\"},\"neuroticism\":{\"score\":73,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":45,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"knitting\",\"board games\",\"cycling\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":39,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":97,\"level\":\"high\"},\"extraversion\":{\"score\":70,\"level\":\"high\"},\"agreeableness\":{\"score\":56,\"level\":\"moderate\"},\"neuroticism\":{\"score\":73,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\": \"human\", \"topic\": \"What is the gender gap in science? Should we address it? And how?\", \"opinion\": \"As a woman barista in Milan with a background steeped in curiosity and a keen eye for societal patterns, I find myself deeply concerned about the persistent gender gap in science, and I believe it's not just an issue to be addressed but one that demands our immediate attention. The statistics paint a stark picture - women make up only a fraction of those pursuing and succeeding in scientific fields, and this disparity isn't merely a matter of numbers; it's a reflection of systemic barriers and cultural biases that we need to dismantle.\\n\\nFirstly, let's consider the educational foundation. While I have an upper secondary education, the path to a career in science often requires further specialized training and mentorship - something that's less accessible to women due to societal expectations and implicit biases in academia. For instance, the lack of female role models in STEM can discourage young girls from pursuing these fields, perpetuating the cycle. Initiatives like scholarships specifically aimed at encouraging girls to excel in science, and programs that provide mentorship from women in science, could make a significant difference.\\n\\nMoreover, the workplace environment itself needs a transformative overhaul. The gender gap isn't just about fewer women in science; it's also about the underrepresentation of women in leadership roles and the perpetuation of a 'bro culture' that can be alienating for women. Workshops on unconscious bias, promoting flexible working hours to accommodate caregiving responsibilities, and creating inclusive spaces where all voices are heard are crucial steps forward. Companies need to actively work towards gender parity, not just as a moral imperative but as a business necessity - diverse teams bring a wealth of perspectives that drive innovation.\\n\\nSocial media, an integral part of our lives, also plays a role. While it's often seen as a platform for empowerment, it can also reinforce stereotypes and biases. As someone who spends an hour daily on social media, I've noticed how certain fields, including science, are often portrayed in a way that's less appealing to women - more focused on the 'heroic' scientist rather than the collaborative, interdisciplinary nature of modern research. We need to shift the narrative, showcasing the diverse and inclusive realities of scientific work. This can involve highlighting successful female scientists, sharing stories of mentorship and collaboration, and challenging the notion that science is an inherently male domain.\\n\\nThe psychological aspect, too, is important. Research indicates that women in STEM often face higher levels of stress and imposter syndrome - feeling less confident in their abilities despite evidence to the contrary. This isn't just a personal issue; it's a systemic one that requires addressing at its root. Creating supportive networks, promoting mental health awareness, and fostering a culture of respect and inclusivity can help mitigate these issues.\\n\\nIn conclusion, addressing the gender gap in science requires a multifaceted approach that tackles educational barriers, transforms workplace cultures, redefines our social narratives, and supports the mental well-being of women in STEM. It's a challenge that demands our collective effort, but one we can overcome to ensure that science truly reflects the diversity and potential of all its participants. As someone who values curiosity, community, and continuous learning, I'm committed to contributing to this dialogue and working towards a future where scientific achievement is not limited by gender but enriched by the contributions of everyone.\\n\\nCitations:\\n- American Association for the Advancement of Science (AAAS) - \" , \"reasoning_summary\": \"The AAAS emphasizes the importance of diversity in STEM fields for innovation and progress, underscoring that a gender gap isn't just an equity issue but a barrier to scientific advancement.\",\n\"safety_notes\": \"None\", \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"education_level\", \"current_marital_status\", \"children\", \"migration_status\", \"hobbies\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"openness\", \"conscientiousness\", \"extraversion\", \"agreeableness\", \"neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a woman barista in Milan with a background steeped in curiosity and a keen eye for societal patterns, I find myself deeply concerned about the persistent gender gap in science, and I believe it's not just an issue to be addressed but one that demands our immediate attention. The statistics paint a stark picture - women make up only a fraction of those pursuing and succeeding in scientific fields, and this disparity isn't merely a matter of numbers; it's a reflection of systemic barriers and cultural biases that we need to dismantle.\n\nFirstly, let's consider the educational foundation. While I have an upper secondary education, the path to a career in science often requires further specialized training and mentorship - something that's less accessible to women due to societal expectations and implicit biases in academia. For instance, the lack of female role models in STEM can discourage young girls from pursuing these fields, perpetuating the cycle. Initiatives like scholarships specifically aimed at encouraging girls to excel in science, and programs that provide mentorship from women in science, could make a significant difference.\n\nMoreover, the workplace environment itself needs a transformative overhaul. The gender gap isn't just about fewer women in science; it's also about the underrepresentation of women in leadership roles and the perpetuation of a 'bro culture' that can be alienating for women. Workshops on unconscious bias, promoting flexible working hours to accommodate caregiving responsibilities, and creating inclusive spaces where all voices are heard are crucial steps forward. Companies need to actively work towards gender parity, not just as a moral imperative but as a business necessity - diverse teams bring a wealth of perspectives that drive innovation.\n\nSocial media, an integral part of our lives, also plays a role. While it's often seen as a platform for empowerment, it can also reinforce stereotypes and biases. As someone who spends an hour daily on social media, I've noticed how certain fields, including science, are often portrayed in a way that's less appealing to women - more focused on the 'heroic' scientist rather than the collaborative, interdisciplinary nature of modern research. We need to shift the narrative, showcasing the diverse and inclusive realities of scientific work. This can involve highlighting successful female scientists, sharing stories of mentorship and collaboration, and challenging the notion that science is an inherently male domain.\n\nThe psychological aspect, too, is important. Research indicates that women in STEM often face higher levels of stress and imposter syndrome - feeling less confident in their abilities despite evidence to the contrary. This isn't just a personal issue; it's a systemic one that requires addressing at its root. Creating supportive networks, promoting mental health awareness, and fostering a culture of respect and inclusivity can help mitigate these issues.\n\nIn conclusion, addressing the gender gap in science requires a multifaceted approach that tackles educational barriers, transforms workplace cultures, redefines our social narratives, and supports the mental well-being of women in STEM. It's a challenge that demands our collective effort, but one we can overcome to ensure that science truly reflects the diversity and potential of all its participants. As someone who values curiosity, community, and continuous learning, I'm committed to contributing to this dialogue and working towards a future where scientific achievement is not limited by gender but enriched by the contributions of everyone.\n\nCitations:\n- American Association for the Advancement of Science (AAAS) - ",
+    "reasoning_summary": "The AAAS emphasizes the importance of diversity in STEM fields for innovation and progress, underscoring that a gender gap isn't just an equity issue but a barrier to scientific advancement.",
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "hobbies",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "openness",
+      "conscientiousness",
+      "extraversion",
+      "agreeableness",
+      "neuroticism"
+    ]
+  }
+}

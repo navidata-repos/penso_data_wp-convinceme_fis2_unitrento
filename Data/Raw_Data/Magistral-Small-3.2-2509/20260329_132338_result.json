@@ -1,0 +1,96 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 50,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "electrician",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "knitting",
+        "painting",
+        "cycling",
+        "volunteering",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 30,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 78,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 36,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 22,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 0,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":50,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"knitting\",\"painting\",\"cycling\",\"volunteering\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":30,\"level\":\"low\"},\"conscientiousness\":{\"score\":78,\"level\":\"high\"},\"extraversion\":{\"score\":36,\"level\":\"moderate\"},\"agreeableness\":{\"score\":22,\"level\":\"low\"},\"neuroticism\":{\"score\":0,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":50,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"knitting\",\"painting\",\"cycling\",\"volunteering\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":30,\"level\":\"low\"},\"conscientiousness\":{\"score\":78,\"level\":\"high\"},\"extraversion\":{\"score\":36,\"level\":\"moderate\"},\"agreeableness\":{\"score\":22,\"level\":\"low\"},\"neuroticism\":{\"score\":0,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\":\"As a 50-year-old woman living in Naples, I spend several hours daily on social media, often finding it a welcome distraction from the challenges of life. However, the prevalence of fake news has become a growing concern for me. With a background as an electrician and no formal education, my approach to this issue is practical and hands-on, much like how I would troubleshoot a faulty wire. First, I always pause before sharing any post. If something seems too sensational or doesn't match what I know, I question it immediately. My high conscientiousness drives me to verify information through reliable sources, even if my low openness means I don't naturally seek out diverse perspectives. For instance, when I see a story about a local issue in Naples that seems exaggerated, I cross-check it with our city's official website or trusted news outlets like Rai News. Additionally, I find that my hobbies, such as volunteering and cycling, connect me to real-life communities where we share information face-to-face, which helps ground what I see online. My low agreeableness means I'm not afraid to call out misinformation when I spot it, but always in a respectful manner, especially since I value my relationships with friends and family on these platforms. Lastly, my religious beliefs remind me of the importance of truth and integrity, so I often consider whether a post aligns with these values before engaging with it. While it can be frustrating to see fake content spread, taking these steps gives me a sense of control and helps me maintain trust in what I consume online.\",\"reasoning_summary\":\"The opinion is based on the persona's practical and conscientious nature, derived from her occupation as an electrician and high conscientiousness score. Her low openness suggests she relies more on known sources for verification, while her moderate extraversion indicates she seeks community validation offline. Her religious beliefs and low agreeableness also factor into her cautious approach to sharing content. Examples are drawn from her daily life in Naples, and the tone is pragmatic yet reflective of her emotional state (depressed) and need for control over information.\",\"tone\":\"practical, cautious, slightly skeptical but with a desire for truthfulness\",\"citations\":[\"Rai News\", \"Naples City Official Website\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a 50-year-old woman living in Naples, I spend several hours daily on social media, often finding it a welcome distraction from the challenges of life. However, the prevalence of fake news has become a growing concern for me. With a background as an electrician and no formal education, my approach to this issue is practical and hands-on, much like how I would troubleshoot a faulty wire. First, I always pause before sharing any post. If something seems too sensational or doesn't match what I know, I question it immediately. My high conscientiousness drives me to verify information through reliable sources, even if my low openness means I don't naturally seek out diverse perspectives. For instance, when I see a story about a local issue in Naples that seems exaggerated, I cross-check it with our city's official website or trusted news outlets like Rai News. Additionally, I find that my hobbies, such as volunteering and cycling, connect me to real-life communities where we share information face-to-face, which helps ground what I see online. My low agreeableness means I'm not afraid to call out misinformation when I spot it, but always in a respectful manner, especially since I value my relationships with friends and family on these platforms. Lastly, my religious beliefs remind me of the importance of truth and integrity, so I often consider whether a post aligns with these values before engaging with it. While it can be frustrating to see fake content spread, taking these steps gives me a sense of control and helps me maintain trust in what I consume online.",
+    "reasoning_summary": "The opinion is based on the persona's practical and conscientious nature, derived from her occupation as an electrician and high conscientiousness score. Her low openness suggests she relies more on known sources for verification, while her moderate extraversion indicates she seeks community validation offline. Her religious beliefs and low agreeableness also factor into her cautious approach to sharing content. Examples are drawn from her daily life in Naples, and the tone is pragmatic yet reflective of her emotional state (depressed) and need for control over information.",
+    "tone": "practical, cautious, slightly skeptical but with a desire for truthfulness",
+    "citations": [
+      "Rai News",
+      "Naples City Official Website"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

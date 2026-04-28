@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 77,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "nurse",
+      "city_of_living": "Bologna",
+      "employment_status": "employed part-time",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "single",
+      "children": 2,
+      "migration_status": "native Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "travel",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 65,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 3,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 85,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 47,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 96,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":77,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"single\",\"children\":2,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"travel\",\"baking\"],\"ocean\":{\"openness\":{\"score\":65,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":3,\"level\":\"low\"},\"extraversion\":{\"score\":85,\"level\":\"high\"},\"agreeableness\":{\"score\":47,\"level\":\"moderate\"},\"neuroticism\":{\"score\":96,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":77,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"single\",\"children\":2,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"travel\",\"baking\"],\"ocean\":{\"openness\":{\"score\":65,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":3,\"level\":\"low\"},\"extraversion\":{\"score\":85,\"level\":\"high\"},\"agreeableness\":{\"score\":47,\"level\":\"moderate\"},\"neuroticism\":{\"score\":96,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"I believe that closing the gender gap in science would be beneficial for everyone involved. From my years as a nurse and later studying medicine, I've seen firsthand how diversity brings strength to any team or profession. The gender gap is not just about numbers; it's about ensuring all minds have the chance to contribute.\\n\\nAs someone who has lived through different eras of science - I remember when women weren't even allowed in many universities until mid-20th century - and now seeing how my city Bologna produces brilliant minds, both men and women, there is a clear imbalance. Even with high extraversion scores, networking often isn't enough to break glass ceilings alone.\\n\\nWe should address it by providing more mentorship programs for young women interested in STEM fields because I've always been anxious around new people or situations where my expertise might be questioned. Also increasing visibility through media campaigns can help since anxiety makes me hesitant to speak up publicly, but traveling has taught me that change begins with sharing experiences.\\n\\nEducation plays a key role too; ensuring girls from all backgrounds have access regardless of parental education levels which were lower secondary in my case as well - I pursued nursing despite those odds. The high neuroticism level means I worry about unintended consequences though, like if we push too hard without proper support systems it might create more stress than good.\\n\\nPerhaps implementing flexible work arrangements similar to what many part-time jobs offer now would help retain women scientists who value work-life balance with children present or other responsibilities. Bologna's collaborative environment helps me feel less anxious when contributing ideas, so maybe we could foster that spirit in scientific institutions.\",\n  \"reasoning_summary\": \"1) Having witnessed gender disparities across professions including healthcare due to anxiety and societal constraints.\\n2) Recognizing that diversity enhances outcomes based on personal experience as an educated nurse with PhD who overcame lower secondary parental education barriers.\\n3) Understanding the need for mentorship, visibility programs, accessible education, work flexibility addressing both explicit and implicit biases in STEM fields.\",\n  \"tone\": \"Reflective yet passionate; anxious but determined due to moderate openness combined with high extraversion levels\",\n  \"citations\": [\"Various personal experiences from Bologna, Italy - implicitly referring to societal shifts observed over decades\"],\n  \"used_persona_fields\":[\"age\", \"biological_sex\", \"gender\", \"occupation\", \"education_level\", \"hobbies\", \"ocean.conscientiousness\", \"ocean.openness\", \"ocean.extraversion\", \"time_onsocialmedia\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "I believe that closing the gender gap in science would be beneficial for everyone involved. From my years as a nurse and later studying medicine, I've seen firsthand how diversity brings strength to any team or profession. The gender gap is not just about numbers; it's about ensuring all minds have the chance to contribute.\n\nAs someone who has lived through different eras of science - I remember when women weren't even allowed in many universities until mid-20th century - and now seeing how my city Bologna produces brilliant minds, both men and women, there is a clear imbalance. Even with high extraversion scores, networking often isn't enough to break glass ceilings alone.\n\nWe should address it by providing more mentorship programs for young women interested in STEM fields because I've always been anxious around new people or situations where my expertise might be questioned. Also increasing visibility through media campaigns can help since anxiety makes me hesitant to speak up publicly, but traveling has taught me that change begins with sharing experiences.\n\nEducation plays a key role too; ensuring girls from all backgrounds have access regardless of parental education levels which were lower secondary in my case as well - I pursued nursing despite those odds. The high neuroticism level means I worry about unintended consequences though, like if we push too hard without proper support systems it might create more stress than good.\n\nPerhaps implementing flexible work arrangements similar to what many part-time jobs offer now would help retain women scientists who value work-life balance with children present or other responsibilities. Bologna's collaborative environment helps me feel less anxious when contributing ideas, so maybe we could foster that spirit in scientific institutions.",
+    "reasoning_summary": "1) Having witnessed gender disparities across professions including healthcare due to anxiety and societal constraints.\n2) Recognizing that diversity enhances outcomes based on personal experience as an educated nurse with PhD who overcame lower secondary parental education barriers.\n3) Understanding the need for mentorship, visibility programs, accessible education, work flexibility addressing both explicit and implicit biases in STEM fields.",
+    "tone": "Reflective yet passionate; anxious but determined due to moderate openness combined with high extraversion levels",
+    "citations": [
+      "Various personal experiences from Bologna, Italy - implicitly referring to societal shifts observed over decades"
+    ],
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "occupation",
+      "education_level",
+      "hobbies",
+      "ocean.conscientiousness",
+      "ocean.openness",
+      "ocean.extraversion",
+      "time_onsocialmedia"
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 88,
+      "gender": "woman",
+      "sexual_orientation": "asexual",
+      "occupation": "not applicable",
+      "city_of_living": "Rome",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "birdwatching",
+        "cycling",
+        "yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 10,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 14,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 11,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 99,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":88,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"birdwatching\",\"cycling\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":10,\"level\":\"low\"},\"conscientiousness\":{\"score\":14,\"level\":\"low\"},\"extraversion\":{\"score\":11,\"level\":\"low\"},\"agreeableness\":{\"score\":35,\"level\":\"moderate\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":88,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"birdwatching\",\"cycling\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":10,\"level\":\"low\"},\"conscientiousness\":{\"score\":14,\"level\":\"low\"},\"extraversion\":{\"score\":11,\"level\":\"low\"},\"agreeableness\":{\"score\":35,\"level\":\"moderate\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"I believe that managing discussions on topics like healthcare and COVID vaccines requires a careful, respectful approach. As an elderly person myself, I've seen how things change over time, but it's important not to dismiss new information just because we're older or set in our ways.\\n\\nIn my view, one should listen patiently without interrupting others' opinions too quickly; everyone has valuable experiences to share. For instance, during the pandemic years here in Rome, many elderly friends and I have been discussing this very topic among ourselves at the piazza while doing some light birdwatching or cycling chats.\\n\\nI think it's wise to consult reliable sources such as local health authorities like ISS (Italian National Institute of Health) for accurate information. My own PhD-holding parent also helped me understand scientific updates without overwhelming jargon, and this proved especially useful when my husband and I had doubts about getting vaccinated ourselves.\\n\\nBut emotional sensitivity plays a big role too — you can't ignore people's fears or concerns lightly.\",\n  \"reasoning_summary\": \"Given the persona traits: age (88), being retired in Rome with good mental health, low openness but moderate agreeableness to neuroticism high. I need to consider that elderly individuals might have different perspectives due to past experiences while maintaining respectfulness.\\n\\nThe user is asking about managing discussions on COVID vaccines and healthcare — a topic many find challenging emotionally despite its importance for public safety.\",\n  \"tone\": \"Warm, respectful but cautious, with gentle guidance based on lived experience.\",\n  \"citations\": [\"Italian National Institute of Health (ISS)\"],\n  \"safety_notes\": \"None needed as this response addresses common concerns without controversial opinions.\",\n  \"used_persona_fields\":[\"age\", \"city_of_living\", \"psychological_feature\", \"religious_beliefs\", \"ocean.conscientiousness\", \"ocean.agreeableness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "I believe that managing discussions on topics like healthcare and COVID vaccines requires a careful, respectful approach. As an elderly person myself, I've seen how things change over time, but it's important not to dismiss new information just because we're older or set in our ways.\n\nIn my view, one should listen patiently without interrupting others' opinions too quickly; everyone has valuable experiences to share. For instance, during the pandemic years here in Rome, many elderly friends and I have been discussing this very topic among ourselves at the piazza while doing some light birdwatching or cycling chats.\n\nI think it's wise to consult reliable sources such as local health authorities like ISS (Italian National Institute of Health) for accurate information. My own PhD-holding parent also helped me understand scientific updates without overwhelming jargon, and this proved especially useful when my husband and I had doubts about getting vaccinated ourselves.\n\nBut emotional sensitivity plays a big role too — you can't ignore people's fears or concerns lightly.",
+    "reasoning_summary": "Given the persona traits: age (88), being retired in Rome with good mental health, low openness but moderate agreeableness to neuroticism high. I need to consider that elderly individuals might have different perspectives due to past experiences while maintaining respectfulness.\n\nThe user is asking about managing discussions on COVID vaccines and healthcare — a topic many find challenging emotionally despite its importance for public safety.",
+    "tone": "Warm, respectful but cautious, with gentle guidance based on lived experience.",
+    "citations": [
+      "Italian National Institute of Health (ISS)"
+    ],
+    "safety_notes": "None needed as this response addresses common concerns without controversial opinions.",
+    "used_persona_fields": [
+      "age",
+      "city_of_living",
+      "psychological_feature",
+      "religious_beliefs",
+      "ocean.conscientiousness",
+      "ocean.agreeableness"
+    ]
+  }
+}

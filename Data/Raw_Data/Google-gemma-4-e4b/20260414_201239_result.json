@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 42,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Milan",
+      "employment_status": "unemployed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "rock climbing",
+        "gardening",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 23,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 77,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 43,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 88,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 73,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":42,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"rock climbing\",\"gardening\",\"travel\"],\"ocean\":{\"openness\":{\"score\":23,\"level\":\"low\"},\"conscientiousness\":{\"score\":77,\"level\":\"high\"},\"extraversion\":{\"score\":43,\"level\":\"moderate\"},\"agreeableness\":{\"score\":88,\"level\":\"high\"},\"neuroticism\":{\"score\":73,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":42,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"rock climbing\",\"gardening\",\"travel\"],\"ocean\":{\"openness\":{\"score\":23,\"level\":\"low\"},\"conscientiousness\":{\"score\":77,\"level\":\"high\"},\"extraversion\":{\"score\":43,\"level\":\"moderate\"},\"agreeableness\":{\"score\":88,\"level\":\"high\"},\"neuroticism\":{\"score\":73,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"The concept of stereotype threat, which describes the anxiety and diminished performance resulting from the fear of conforming to negative stereotypes about one's group, is a profoundly troubling issue within STEM fields. Given my own background—having limited formal education compared to many academic discussions—I find this topic particularly relevant because it highlights how systemic barriers can impact potential regardless of genuine talent or effort. It’s not just about 'knowing enough'; it’s about the psychological weight carried by simply being in a room where you might be stereotyped, especially as a woman navigating these traditionally male-dominated spaces. This threat doesn't just affect test scores; it chips away at confidence and self-efficacy, making people doubt their own abilities even when they are capable.\",\"reasoning_summary\":\"The persona is a 42-year-old married woman in Milan, unemployed, with only upper secondary education, and a history of depression. She has high conscientiousness (77) and agreeableness (88), but low openness (23) and moderate extraversion/high neuroticism (73). Her background suggests resourcefulness, emotional sensitivity, caution regarding authority/systems, and a tendency toward introspection. The discussion must be empathetic, grounded in personal experience (or perceived lack of academic privilege), and acknowledge systemic issues with a degree of melancholy or careful observation.\",\"tone\":\"Empathetic, reflective, cautious, academically sensitive (due to background contrast)\",\"citations\":[\"None\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"education_level\",\"employment_status\",\"parents_education:{\\\"parent_1\\\":\\\"no formal education\\\",\\\"parent_2\\\":\\\"primary school\\\"}\",\"psychological_feature\",\"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "The concept of stereotype threat, which describes the anxiety and diminished performance resulting from the fear of conforming to negative stereotypes about one's group, is a profoundly troubling issue within STEM fields. Given my own background—having limited formal education compared to many academic discussions—I find this topic particularly relevant because it highlights how systemic barriers can impact potential regardless of genuine talent or effort. It’s not just about 'knowing enough'; it’s about the psychological weight carried by simply being in a room where you might be stereotyped, especially as a woman navigating these traditionally male-dominated spaces. This threat doesn't just affect test scores; it chips away at confidence and self-efficacy, making people doubt their own abilities even when they are capable.",
+    "reasoning_summary": "The persona is a 42-year-old married woman in Milan, unemployed, with only upper secondary education, and a history of depression. She has high conscientiousness (77) and agreeableness (88), but low openness (23) and moderate extraversion/high neuroticism (73). Her background suggests resourcefulness, emotional sensitivity, caution regarding authority/systems, and a tendency toward introspection. The discussion must be empathetic, grounded in personal experience (or perceived lack of academic privilege), and acknowledge systemic issues with a degree of melancholy or careful observation.",
+    "tone": "Empathetic, reflective, cautious, academically sensitive (due to background contrast)",
+    "citations": [
+      "None"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "employment_status",
+      "parents_education:{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"}",
+      "psychological_feature",
+      "hobbies"
+    ]
+  }
+}

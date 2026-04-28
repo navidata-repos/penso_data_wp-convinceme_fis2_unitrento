@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 29,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Rome",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "yoga",
+        "reading novels",
+        "hiking",
+        "board games",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 70,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 33,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 11,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 69,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":29,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"yoga\",\"reading novels\",\"hiking\",\"board games\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":33,\"level\":\"moderate\"},\"extraversion\":{\"score\":11,\"level\":\"low\"},\"agreeableness\":{\"score\":40,\"level\":\"moderate\"},\"neuroticism\":{\"score\":69,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":29,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"yoga\",\"reading novels\",\"hiking\",\"board games\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":33,\"level\":\"moderate\"},\"extraversion\":{\"score\":11,\"level\":\"low\"},\"agreeableness\":{\"score\":40,\"level\":\"moderate\"},\"neuroticism\":{\"score\":69,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n    \"opinion\": \"As a person in a low-extraversion role, I find myself often avoiding such discussions rather than confronting them. The pandemic has been a heavy topic for me personally due to my depression, but the way it's handled on social media feels overwhelming when I'm already sensitive to stress. When friends approach the subject at work or while out together in Rome, I try to listen without being too forceful with my opinions because that would put extra pressure on an agreeable but neurotic side of me. However, sometimes people don't give enough credit to the scientific process behind vaccines. My part-time waiter job actually helps somewhat – it gives something positive and concrete outside these debates like cycling or reading novels away from work stressors.\",\n    \"reasoning_summary\": \"I decided this approach because my low extraversion makes social interactions draining, especially sensitive topics like COVID discussions. The high neuroticism combined with depression means I need to protect my emotional space by not engaging unnecessarily. Agreeableness prevents me from being too argumentative even though there's moderate level of it – perhaps that helps maintain relationships during tough times. My upper secondary education provides enough background knowledge without being too technical.\",\n    \"tone\": \"Calm, empathetic but slightly reserved\",\n    \"citations\": [],\n    \"safety_notes\": \"None\",\n    \"used_persona_fields\": [\"psychological_feature\", \"occupation\", \"hobbies\", \"ocean.extraversion\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a person in a low-extraversion role, I find myself often avoiding such discussions rather than confronting them. The pandemic has been a heavy topic for me personally due to my depression, but the way it's handled on social media feels overwhelming when I'm already sensitive to stress. When friends approach the subject at work or while out together in Rome, I try to listen without being too forceful with my opinions because that would put extra pressure on an agreeable but neurotic side of me. However, sometimes people don't give enough credit to the scientific process behind vaccines. My part-time waiter job actually helps somewhat – it gives something positive and concrete outside these debates like cycling or reading novels away from work stressors.",
+    "reasoning_summary": "I decided this approach because my low extraversion makes social interactions draining, especially sensitive topics like COVID discussions. The high neuroticism combined with depression means I need to protect my emotional space by not engaging unnecessarily. Agreeableness prevents me from being too argumentative even though there's moderate level of it – perhaps that helps maintain relationships during tough times. My upper secondary education provides enough background knowledge without being too technical.",
+    "tone": "Calm, empathetic but slightly reserved",
+    "citations": [],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "psychological_feature",
+      "occupation",
+      "hobbies",
+      "ocean.extraversion"
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 89,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "retired",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "widowed",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "rock climbing",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 24,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 36,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 11,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 81,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 54,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":89,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"rock climbing\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":24,\"level\":\"low\"},\"conscientiousness\":{\"score\":36,\"level\":\"moderate\"},\"extraversion\":{\"score\":11,\"level\":\"low\"},\"agreeableness\":{\"score\":81,\"level\":\"high\"},\"neuroticism\":{\"score\":54,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":89,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"rock climbing\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":24,\"level\":\"low\"},\"conscientiousness\":{\"score\":36,\"level\":\"moderate\"},\"extraversion\":{\"score\":11,\"level\":\"low\"},\"agreeableness\":{\"score\":81,\"level\":\"high\"},\"neuroticism\":{\"score\":54,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As an 89-year-old man from Bologna, I have lived through many health crises, and my perspective on managing discussions about healthcare and COVID vaccines is shaped by a lifetime of experience and my personal traits. I am a retired individual with a bachelor's degree, widowed and a native-born Italian who follows Islam, which emphasizes compassion and community well-being. My low openness score means I tend to be cautious and traditional in my views, valuing stability and proven methods over rapid change. This influences how I approach vaccine discussions: I rely on trusted sources like healthcare professionals and official guidelines rather than social media, which I use only a few times weekly. My high agreeableness drives me to seek harmony in conversations, avoiding conflict by listening respectfully and sharing my own experiences calmly. For instance, when talking with family or friends, I focus on the collective benefit of vaccination, drawing from Islamic teachings that promote protecting oneself and others from harm. I remember the importance of vaccines from past epidemics and see COVID vaccines as a modern extension of this public health effort. My moderate conscientiousness and neuroticism lead me to prepare for these discussions by gathering reliable information beforehand, reducing anxiety and ensuring I can contribute constructively. I avoid aggressive debates, instead emphasizing empathy and shared goals, such as keeping our community in Bologna safe. In summary, I manage these discussions by blending personal history, religious values, and a respectful, informed approach, always aiming to foster understanding rather than division.\",\n  \"reasoning_summary\": \"Derived opinion from persona: Age 89 suggests life experience with health issues; gender and orientation not directly relevant; occupation retired and education bachelor's indicate informed but not expert perspective; city Bologna implies local community context; marital status widowed and children 1 may relate to family discussions; migration status native-born Italian and religion Islam influence cultural and ethical views; psychological feature normal and OCEAN traits: low openness leads to traditional, cautious stance on vaccines; moderate conscientiousness and neuroticism suggest prepared, somewhat anxious approach; high agreeableness prioritizes harmony in discussions; low extraversion means less social engagement but thoughtful when involved; hobbies and social media use minimal impact. Opinion crafted to reflect these traits, focusing on trust in authorities, empathy, and community values, avoiding conflict and using personal and religious examples.\",\n  \"tone\": \"Reflective, respectful, cautious, and empathetic, with a focus on tradition and community harmony.\",\n  \"citations\": [\"World Health Organization\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"current_marital_status\", \"children\", \"migration_status\", \"religious_beliefs\", \"time_onsocialmedia\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As an 89-year-old man from Bologna, I have lived through many health crises, and my perspective on managing discussions about healthcare and COVID vaccines is shaped by a lifetime of experience and my personal traits. I am a retired individual with a bachelor's degree, widowed and a native-born Italian who follows Islam, which emphasizes compassion and community well-being. My low openness score means I tend to be cautious and traditional in my views, valuing stability and proven methods over rapid change. This influences how I approach vaccine discussions: I rely on trusted sources like healthcare professionals and official guidelines rather than social media, which I use only a few times weekly. My high agreeableness drives me to seek harmony in conversations, avoiding conflict by listening respectfully and sharing my own experiences calmly. For instance, when talking with family or friends, I focus on the collective benefit of vaccination, drawing from Islamic teachings that promote protecting oneself and others from harm. I remember the importance of vaccines from past epidemics and see COVID vaccines as a modern extension of this public health effort. My moderate conscientiousness and neuroticism lead me to prepare for these discussions by gathering reliable information beforehand, reducing anxiety and ensuring I can contribute constructively. I avoid aggressive debates, instead emphasizing empathy and shared goals, such as keeping our community in Bologna safe. In summary, I manage these discussions by blending personal history, religious values, and a respectful, informed approach, always aiming to foster understanding rather than division.",
+    "reasoning_summary": "Derived opinion from persona: Age 89 suggests life experience with health issues; gender and orientation not directly relevant; occupation retired and education bachelor's indicate informed but not expert perspective; city Bologna implies local community context; marital status widowed and children 1 may relate to family discussions; migration status native-born Italian and religion Islam influence cultural and ethical views; psychological feature normal and OCEAN traits: low openness leads to traditional, cautious stance on vaccines; moderate conscientiousness and neuroticism suggest prepared, somewhat anxious approach; high agreeableness prioritizes harmony in discussions; low extraversion means less social engagement but thoughtful when involved; hobbies and social media use minimal impact. Opinion crafted to reflect these traits, focusing on trust in authorities, empathy, and community values, avoiding conflict and using personal and religious examples.",
+    "tone": "Reflective, respectful, cautious, and empathetic, with a focus on tradition and community harmony.",
+    "citations": [
+      "World Health Organization"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

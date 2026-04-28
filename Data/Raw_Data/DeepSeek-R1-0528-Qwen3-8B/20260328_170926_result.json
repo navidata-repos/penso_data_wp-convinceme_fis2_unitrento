@@ -1,0 +1,87 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 46,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "cleaner",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "cinema",
+        "gardening",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 0,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 91,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 57,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 95,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":46,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cinema\",\"gardening\",\"running\"],\"ocean\":{\"openness\":{\"score\":0,\"level\":\"low\"},\"conscientiousness\":{\"score\":91,\"level\":\"high\"},\"extraversion\":{\"score\":57,\"level\":\"moderate\"},\"agreeableness\":{\"score\":63,\"level\":\"moderate\"},\"neuroticism\":{\"score\":95,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":46,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cinema\",\"gardening\",\"running\"],\"ocean\":{\"openness\":{\"score\":0,\"level\":\"low\"},\"conscientiousness\":{\"score\":91,\"level\":\"high\"},\"extraversion\":{\"score\":57,\"level\":\"moderate\"},\"agreeableness\":{\"score\":63,\"level\":\"moderate\"},\"neuroticism\":{\"score\":95,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"Stereotype threat in STEM, as I understand it from psychology and education research, refers to the phenomenon where individuals feel at risk of confirming negative stereotypes about their social group's abilities or competencies in a specific domain. For instance, if there's a stereotype that women are not good at math, then a female student taking a math test might experience anxiety because she fears her performance will confirm that stereotype and potentially damage her self-esteem or perception of belonging.\\n\\nFrom my perspective as someone who has always been curious about understanding human behavior and societal issues, I think we absolutely should address stereotype threat in STEM. It's not just about fairness; it's about efficiency too. If talented individuals are held back by fear of confirming stereotypes instead of focusing on the task at hand, that affects everyone in the long run. Think about it - if a person from an underrepresented group feels anxious during every test or interview because they're worried about reinforcing negative images, that can't be good for innovation or progress.\\n\\nIn my own experience with math and science throughout school, even though I didn't face blatant discrimination (my father has a bachelor's degree which might have provided some exposure to these subjects), there was always this implicit pressure. As an older person now working as a cleaner in Naples but with higher education, I see how the environment shapes perception - my anxiety about math was probably fueled by those same stereotypes that society perpetuates.\\n\\nAddressing it requires multiple strategies: starting from early education by having diverse role models; then fostering inclusive environments where everyone feels safe to participate without fear of judgment; and promoting self-efficacy through practice. It's a long-term commitment, but necessary for STEM fields to live up to their potential.\",\n  \"reasoning_summary\": \"Stereotype threat is an anxiety-triggered phenomenon that can undermine performance in academic or professional settings.\\n\\nIt has been studied extensively by psychologists like Claude Steele and Joshua Aronson.\\n\\nAddressing it benefits not only underrepresented groups but also improves overall field quality and innovation.\",\n  \"tone\": \"Calm, concerned, analytical with a touch of personal reflection\",\n  \"citations\": [\"Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance among blacks and whites. The Journal of Personality and Social Psychology\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"education_level\", \"psychological_feature\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM, as I understand it from psychology and education research, refers to the phenomenon where individuals feel at risk of confirming negative stereotypes about their social group's abilities or competencies in a specific domain. For instance, if there's a stereotype that women are not good at math, then a female student taking a math test might experience anxiety because she fears her performance will confirm that stereotype and potentially damage her self-esteem or perception of belonging.\n\nFrom my perspective as someone who has always been curious about understanding human behavior and societal issues, I think we absolutely should address stereotype threat in STEM. It's not just about fairness; it's about efficiency too. If talented individuals are held back by fear of confirming stereotypes instead of focusing on the task at hand, that affects everyone in the long run. Think about it - if a person from an underrepresented group feels anxious during every test or interview because they're worried about reinforcing negative images, that can't be good for innovation or progress.\n\nIn my own experience with math and science throughout school, even though I didn't face blatant discrimination (my father has a bachelor's degree which might have provided some exposure to these subjects), there was always this implicit pressure. As an older person now working as a cleaner in Naples but with higher education, I see how the environment shapes perception - my anxiety about math was probably fueled by those same stereotypes that society perpetuates.\n\nAddressing it requires multiple strategies: starting from early education by having diverse role models; then fostering inclusive environments where everyone feels safe to participate without fear of judgment; and promoting self-efficacy through practice. It's a long-term commitment, but necessary for STEM fields to live up to their potential.",
+    "reasoning_summary": "Stereotype threat is an anxiety-triggered phenomenon that can undermine performance in academic or professional settings.\n\nIt has been studied extensively by psychologists like Claude Steele and Joshua Aronson.\n\nAddressing it benefits not only underrepresented groups but also improves overall field quality and innovation.",
+    "tone": "Calm, concerned, analytical with a touch of personal reflection",
+    "citations": [
+      "Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance among blacks and whites. The Journal of Personality and Social Psychology"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "psychological_feature"
+    ]
+  }
+}

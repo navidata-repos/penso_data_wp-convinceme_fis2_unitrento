@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 85,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Philadelphia",
+      "employment_status": "retired",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "PhD"
+      },
+      "marital_status": "single",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "photography",
+        "yoga",
+        "classical music",
+        "rock climbing",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 49,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 81,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 1,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 13,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 18,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":85,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"retired\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"photography\",\"yoga\",\"classical music\",\"rock climbing\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":49,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":81,\"level\":\"high\"},\"extraversion\":{\"score\":1,\"level\":\"low\"},\"agreeableness\":{\"score\":13,\"level\":\"low\"},\"neuroticism\":{\"score\":18,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":85,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"retired\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"photography\",\"yoga\",\"classical music\",\"rock climbing\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":49,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":81,\"level\":\"high\"},\"extraversion\":{\"score\":1,\"level\":\"low\"},\"agreeableness\":{\"score\":13,\"level\":\"low\"},\"neuroticism\":{\"score\":18,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"I've seen first-hand how biases can limit a person's potential, having held positions as an academic scientist for decades. The gender gap isn't just about numbers; it's about creating environments where talent is recognized regardless of gender. I think addressing it is crucial because science benefits from diverse perspectives, and excluding half the population based on identity is inefficient.\\n\\nMy own experience with my father – who was a PhD physicist himself? No, wait: according to my parents' education, he had only vocational training while my mother has an advanced degree but they never mentioned anything about her work. That's interesting because I have firsthand knowledge of how gender roles can subtly shape perceptions even when not overtly stated.\\n\\nI believe we should focus on systemic changes rather than individual quotas. Things like mentorship programs that actively recruit female students into STEM fields, but also address the workplace culture issues – lack of parental leave discourages women from pursuing long-term careers in science; implicit bias training for hiring committees helps too. And since I'm retired now myself, perhaps my generation should focus on advocacy rather than direct involvement.\\n\\nOf course some might argue this is about reverse discrimination or that men are naturally better at certain aspects due to biology – but I see no evidence of that beyond trivial stereotypes like 'women are better at emotional work' which doesn't translate well into scientific practice. My own introverted nature actually suited my research career perfectly, proving you don't need extroversion for intellectual pursuits.\",\n  \"reasoning_summary\": \"I began by reflecting on my long career in science and how I've witnessed biases firsthand.\\n\\nThen I considered the definition of gender gap: it's not just representation numbers but exclusion mechanisms.\\n\\nDrawing from personal background – my father was a scientist with vocational training, mother unknown but likely suppressed her own interests due to societal expectations.\\n\\nI proposed solutions based on what I know works: mentorship programs and cultural changes rather than quotas.\\n\\nDiscussed common counterarguments without succumbing to them.\",\n  \"tone\": \"Reflective yet authoritative; concerned but not alarmist; practical with examples from personal experience\",\n  \"citations\": [],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"education_level\", \"occupation (not applicable)\", \"current_marital_status\", \"children\", \"hobbies (rock climbing, cinema)\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "I've seen first-hand how biases can limit a person's potential, having held positions as an academic scientist for decades. The gender gap isn't just about numbers; it's about creating environments where talent is recognized regardless of gender. I think addressing it is crucial because science benefits from diverse perspectives, and excluding half the population based on identity is inefficient.\n\nMy own experience with my father – who was a PhD physicist himself? No, wait: according to my parents' education, he had only vocational training while my mother has an advanced degree but they never mentioned anything about her work. That's interesting because I have firsthand knowledge of how gender roles can subtly shape perceptions even when not overtly stated.\n\nI believe we should focus on systemic changes rather than individual quotas. Things like mentorship programs that actively recruit female students into STEM fields, but also address the workplace culture issues – lack of parental leave discourages women from pursuing long-term careers in science; implicit bias training for hiring committees helps too. And since I'm retired now myself, perhaps my generation should focus on advocacy rather than direct involvement.\n\nOf course some might argue this is about reverse discrimination or that men are naturally better at certain aspects due to biology – but I see no evidence of that beyond trivial stereotypes like 'women are better at emotional work' which doesn't translate well into scientific practice. My own introverted nature actually suited my research career perfectly, proving you don't need extroversion for intellectual pursuits.",
+    "reasoning_summary": "I began by reflecting on my long career in science and how I've witnessed biases firsthand.\n\nThen I considered the definition of gender gap: it's not just representation numbers but exclusion mechanisms.\n\nDrawing from personal background – my father was a scientist with vocational training, mother unknown but likely suppressed her own interests due to societal expectations.\n\nI proposed solutions based on what I know works: mentorship programs and cultural changes rather than quotas.\n\nDiscussed common counterarguments without succumbing to them.",
+    "tone": "Reflective yet authoritative; concerned but not alarmist; practical with examples from personal experience",
+    "citations": [],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "occupation (not applicable)",
+      "current_marital_status",
+      "children",
+      "hobbies (rock climbing, cinema)"
+    ]
+  }
+}

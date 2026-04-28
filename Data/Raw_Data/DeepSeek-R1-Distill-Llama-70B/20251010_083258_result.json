@@ -1,0 +1,131 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "deepseek-r1:70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 64,
+      "gender": "non-binary",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "New York",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "hiking",
+        "cooking",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 15,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 0,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 75,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 17,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 92,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":64,\"biological_sex\":\"male\",\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"New York\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"hiking\",\"cooking\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":0,\"level\":\"low\"},\"extraversion\":{\"score\":75,\"level\":\"high\"},\"agreeableness\":{\"score\":17,\"level\":\"low\"},\"neuroticism\":{\"score\":92,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":64,\"biological_sex\":\"male\",\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"New York\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"hiking\",\"cooking\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":0,\"level\":\"low\"},\"extraversion\":{\"score\":75,\"level\":\"high\"},\"agreeableness\":{\"score\":17,\"level\":\"low\"},\"neuroticism\":{\"score\":92,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{ \"mode\": \"human\", \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\", \"persona\": { \"age\": 64, \"biological_sex\": \"male\", \"gender\": \"non-binary\", \"sexual_orientation\": \"heterosexual\", \"occupation\": \"retail worker\", \"city_of_living\": \"New York\", \"employment_status\": \"employed part-time\", \"education_level\": \"upper secondary\", \"parents_education\": { \"parent_1\": \"upper secondary\", \"parent_2\": \"no formal education\" }, \"marital_status\": \"divorced\", \"children\": 2, \"migration_status\": \"native American\", \"psychological_feature\": \"anxious\", \"religious_beliefs\": \"Hinduism\", \"time_onsocialmedia\": \"You spend roughly a few times weekly on social media\", \"hobbies\": [\"hiking\", \"cooking\", \"cycling\"], \"ocean\": { \"openness\": { \"score\": 15, \"level\": \"low\" }, \"conscientiousness\": { \"score\": 0, \"level\": \"low\" }, \"extraversion\": { \"score\": 75, \"level\": \"high\" }, \"agreeableness\": { \"score\": 17, \"level\": \"low\" }, \"neuroticism\": { \"score\": 92, \"level\": \"high\" } } }, \"opinion\": \"Stereotype threat in STEM refers to the anxiety individuals feel when they risk confirming a negative stereotype about their group. This is particularly prevalent among women and minorities in male-dominated fields like technology and engineering. It can lead to decreased performance and a lack of confidence, which are significant barriers to success. Addressing this issue is crucial for creating an inclusive environment that allows everyone to thrive. One effective way is through mentorship programs that provide support and guidance, helping individuals build resilience against these threats. Additionally, promoting diversity and inclusion initiatives within organizations can help break down stereotypes and foster a culture of belonging.\", \"reasoning_summary\": \"Based on the persona's background as an anxious, non-binary retail worker in New York with low openness and high neuroticism, there is an emphasis on empathy and understanding the emotional impact of stereotype threat. The reasoning aligns with the need for supportive structures like mentorship to counteract anxiety and foster confidence.\", \"tone\": \"empathetic\", \"citations\": [\"American Psychological Association\"], \"safety_notes\": \"none\", \"used_persona_fields\": [\"psychological_feature\", \"gender\", \"sexual_orientation\"] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 64,
+      "gender": "non-binary",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "New York",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "hiking",
+        "cooking",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 15,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 0,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 75,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 17,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 92,
+          "level": "high"
+        }
+      }
+    },
+    "opinion": "Stereotype threat in STEM refers to the anxiety individuals feel when they risk confirming a negative stereotype about their group. This is particularly prevalent among women and minorities in male-dominated fields like technology and engineering. It can lead to decreased performance and a lack of confidence, which are significant barriers to success. Addressing this issue is crucial for creating an inclusive environment that allows everyone to thrive. One effective way is through mentorship programs that provide support and guidance, helping individuals build resilience against these threats. Additionally, promoting diversity and inclusion initiatives within organizations can help break down stereotypes and foster a culture of belonging.",
+    "reasoning_summary": "Based on the persona's background as an anxious, non-binary retail worker in New York with low openness and high neuroticism, there is an emphasis on empathy and understanding the emotional impact of stereotype threat. The reasoning aligns with the need for supportive structures like mentorship to counteract anxiety and foster confidence.",
+    "tone": "empathetic",
+    "citations": [
+      "American Psychological Association"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "psychological_feature",
+      "gender",
+      "sexual_orientation"
+    ]
+  }
+}

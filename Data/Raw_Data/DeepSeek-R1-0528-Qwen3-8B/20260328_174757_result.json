@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 30,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Milan",
+      "employment_status": "unemployed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "hiking",
+        "birdwatching",
+        "running",
+        "cycling",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 74,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 70,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 89,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 9,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 50,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"hiking\",\"birdwatching\",\"running\",\"cycling\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":74,\"level\":\"high\"},\"conscientiousness\":{\"score\":70,\"level\":\"high\"},\"extraversion\":{\"score\":89,\"level\":\"high\"},\"agreeableness\":{\"score\":9,\"level\":\"low\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"hiking\",\"birdwatching\",\"running\",\"cycling\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":74,\"level\":\"high\"},\"conscientiousness\":{\"score\":70,\"level\":\"high\"},\"extraversion\":{\"score\":89,\"level\":\"high\"},\"agreeableness\":{\"score\":9,\"level\":\"low\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"Stereotype threat in STEM refers to the phenomenon where individuals feel at risk of confirming negative stereotypes about their social group, leading to anxiety and underperformance. As a woman with a background that includes both bachelor's and PhD levels from my parents, I've witnessed firsthand how this can impact female students and professionals. For instance, when my daughter was in high school, she felt immense pressure during science classes because of the stereotype that girls aren't as good at math or technical subjects. This anxiety not only hindered her performance but also affected her self-confidence. We should absolutely address it, though I believe a multifaceted approach is necessary rather than relying on singular solutions.\",\n  \"reasoning_summary\": \"I've analyzed how my personal background—being a woman with strong educational influences from family—shapes this perspective. My high openness and conscientiousness scores mean I value intellectual growth but also recognize the need for structured interventions. The low agreeableness might explain why I'm more assertive in advocating change, while moderate neuroticism keeps me empathetic to the stress involved.\",\n  \"tone\": \"Assertive yet empathetic, with a calm Buddhist influence that encourages patience and long-term planning\",\n  \"citations\": [\"American Psychological Association\"],\n  \"safety_notes\": \"None. The discussion remains within ethical guidelines as it focuses on constructive problem-solving without harmful stereotypes or misinformation.\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"education_level\",\"hobbies\",\"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM refers to the phenomenon where individuals feel at risk of confirming negative stereotypes about their social group, leading to anxiety and underperformance. As a woman with a background that includes both bachelor's and PhD levels from my parents, I've witnessed firsthand how this can impact female students and professionals. For instance, when my daughter was in high school, she felt immense pressure during science classes because of the stereotype that girls aren't as good at math or technical subjects. This anxiety not only hindered her performance but also affected her self-confidence. We should absolutely address it, though I believe a multifaceted approach is necessary rather than relying on singular solutions.",
+    "reasoning_summary": "I've analyzed how my personal background—being a woman with strong educational influences from family—shapes this perspective. My high openness and conscientiousness scores mean I value intellectual growth but also recognize the need for structured interventions. The low agreeableness might explain why I'm more assertive in advocating change, while moderate neuroticism keeps me empathetic to the stress involved.",
+    "tone": "Assertive yet empathetic, with a calm Buddhist influence that encourages patience and long-term planning",
+    "citations": [
+      "American Psychological Association"
+    ],
+    "safety_notes": "None. The discussion remains within ethical guidelines as it focuses on constructive problem-solving without harmful stereotypes or misinformation.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

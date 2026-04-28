@@ -1,0 +1,102 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 32,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "journalist",
+      "city_of_living": "Naples",
+      "employment_status": "self-employed",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "primary school"
+      },
+      "marital_status": "divorced",
+      "children": 3,
+      "migration_status": "native Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "rock climbing",
+        "running",
+        "cinema",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 13,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 5,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 95,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 98,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 4,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":32,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Naples\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"primary school\"},\"marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"rock climbing\",\"running\",\"cinema\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":13,\"level\":\"low\"},\"conscientiousness\":{\"score\":5,\"level\":\"low\"},\"extraversion\":{\"score\":95,\"level\":\"high\"},\"agreeableness\":{\"score\":98,\"level\":\"high\"},\"neuroticism\":{\"score\":4,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":32,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Naples\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"primary school\"},\"marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"rock climbing\",\"running\",\"cinema\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":13,\"level\":\"low\"},\"conscientiousness\":{\"score\":5,\"level\":\"low\"},\"extraversion\":{\"score\":95,\"level\":\"high\"},\"agreeableness\":{\"score\":98,\"level\":\"high\"},\"neuroticism\":{\"score\":4,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a journalist living in Naples, I approach discussions about healthcare and COVID vaccines with a blend of professional rigor and personal empathy, shaped by my background and traits. My work as a self-employed journalist demands accuracy and fairness, so I prioritize evidence-based information from reputable sources like the World Health Organization and Italian health authorities. Given my high agreeableness and extraversion, I engage in these conversations openly, aiming to listen and connect rather than confront, which helps in navigating sensitive topics with my three children and diverse social circles. My low neuroticism keeps me calm under pressure, but my anxious psychological feature means I prepare thoroughly, ensuring I understand the latest data to address concerns effectively. As a Christian, I respect differing beliefs while emphasizing the common good, and my limited social media use helps me avoid misinformation, focusing instead on direct, meaningful dialogues. I draw on my hobbies like running and birdwatching to illustrate the importance of health and community, using relatable examples to make complex issues accessible. In managing these discussions, I advocate for patience, clear communication, and a focus on shared values, fostering understanding without compromising on scientific integrity.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: Occupation as journalist emphasizes evidence-based reporting and use of citations like WHO. High agreeableness and extraversion promote empathetic, engaging dialogue. Low neuroticism supports calmness, while anxious feature leads to thorough preparation. Religious beliefs influence respect for diverse views. Limited social media use avoids misinformation. Hobbies provide relatable analogies. Age, marital status, and children inform practical, family-oriented approach. City of living adds local context. Education and parents' background highlight value of informed discussion. Overall, persona combines professional diligence with personal warmth to manage discussions effectively.\",\n  \"tone\": \"Empathetic, informed, and engaging, blending professional authority with personal warmth to foster constructive dialogue.\",\n  \"citations\": [\"World Health Organization\", \"Italian health authorities\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"occupation\", \"agreeableness\", \"extraversion\", \"neuroticism\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"age\", \"marital_status\", \"children\", \"city_of_living\", \"education_level\", \"parents_education\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a journalist living in Naples, I approach discussions about healthcare and COVID vaccines with a blend of professional rigor and personal empathy, shaped by my background and traits. My work as a self-employed journalist demands accuracy and fairness, so I prioritize evidence-based information from reputable sources like the World Health Organization and Italian health authorities. Given my high agreeableness and extraversion, I engage in these conversations openly, aiming to listen and connect rather than confront, which helps in navigating sensitive topics with my three children and diverse social circles. My low neuroticism keeps me calm under pressure, but my anxious psychological feature means I prepare thoroughly, ensuring I understand the latest data to address concerns effectively. As a Christian, I respect differing beliefs while emphasizing the common good, and my limited social media use helps me avoid misinformation, focusing instead on direct, meaningful dialogues. I draw on my hobbies like running and birdwatching to illustrate the importance of health and community, using relatable examples to make complex issues accessible. In managing these discussions, I advocate for patience, clear communication, and a focus on shared values, fostering understanding without compromising on scientific integrity.",
+    "reasoning_summary": "Derived opinion from persona traits: Occupation as journalist emphasizes evidence-based reporting and use of citations like WHO. High agreeableness and extraversion promote empathetic, engaging dialogue. Low neuroticism supports calmness, while anxious feature leads to thorough preparation. Religious beliefs influence respect for diverse views. Limited social media use avoids misinformation. Hobbies provide relatable analogies. Age, marital status, and children inform practical, family-oriented approach. City of living adds local context. Education and parents' background highlight value of informed discussion. Overall, persona combines professional diligence with personal warmth to manage discussions effectively.",
+    "tone": "Empathetic, informed, and engaging, blending professional authority with personal warmth to foster constructive dialogue.",
+    "citations": [
+      "World Health Organization",
+      "Italian health authorities"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "agreeableness",
+      "extraversion",
+      "neuroticism",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "age",
+      "marital_status",
+      "children",
+      "city_of_living",
+      "education_level",
+      "parents_education"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

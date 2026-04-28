@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 61,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "accountant",
+      "city_of_living": "Bari",
+      "employment_status": "employed full-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "running",
+        "gardening",
+        "photography",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 61,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 86,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 33,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 82,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 22,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":61,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"accountant\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"gardening\",\"photography\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":61,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":86,\"level\":\"high\"},\"extraversion\":{\"score\":33,\"level\":\"moderate\"},\"agreeableness\":{\"score\":82,\"level\":\"high\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":61,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"accountant\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"gardening\",\"photography\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":61,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":86,\"level\":\"high\"},\"extraversion\":{\"score\":33,\"level\":\"moderate\"},\"agreeableness\":{\"score\":82,\"level\":\"high\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"I've been thinking about this topic for a while now. As an accountant with a master's degree, I see firsthand how important it is to have diverse perspectives in any field that deals with numbers and logic.\\n\\nThe gender gap in science, as I understand it from various news reports over the years, refers to the underrepresentation of women at all levels - from undergraduate students studying STEM subjects to professors leading research teams. It's not just about pay gaps either; there's also this persistent issue where women tend to be concentrated in certain disciplines like psychology or education while being vastly underrepresented in areas like physics and engineering.\\n\\nI believe we absolutely should address it because diversity brings richer insights, especially when dealing with complex problems that affect society. For instance, I recall reading how female doctors sometimes notice symptoms overlooked by male colleagues due to their different experiences - a similar principle could apply across scientific fields.\\n\\nAs someone who's moderately open but highly conscientious and agreeable (according to my personality traits), I think the approach needs careful planning rather than sudden changes. Maybe we can start with mentorship programs specifically for female students in STEM, like what some universities have implemented recently. Also raising awareness without making anyone feel uncomfortable is key - after all, as a Christian who values education highly but also believes in treating others kindly.\\n\\nMy anxious nature makes me think that implementing these changes requires patience and careful monitoring rather than rushing into things too quickly. Perhaps we can look at successful models from other countries where they've managed to increase female participation more effectively.\",\n  \"reasoning_summary\": \"I started by identifying the core issue of underrepresentation, then considered my background as an accountant with a master's degree in a technical field. I linked this to the need for diverse perspectives in problem-solving, drawing parallels between medicine and science. Then I reflected on how my personality traits (moderate openness, high conscientiousness, moderate extraversion, high agreeableness) influence my approach - suggesting gradual change through mentorship programs while avoiding making people feel uncomfortable. Finally, as a Christian with anxious tendencies, I emphasized the need for careful implementation.\",\n  \"tone\": \"Calm, reasoned, and concerned but not alarmist\",\n  \"citations\": [\"Various news reports on gender disparities in STEM\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"education_level\", \"current_marital_status\", \"hobbies\", \"ocean.conscientiousness\", \"religious_beliefs\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "I've been thinking about this topic for a while now. As an accountant with a master's degree, I see firsthand how important it is to have diverse perspectives in any field that deals with numbers and logic.\n\nThe gender gap in science, as I understand it from various news reports over the years, refers to the underrepresentation of women at all levels - from undergraduate students studying STEM subjects to professors leading research teams. It's not just about pay gaps either; there's also this persistent issue where women tend to be concentrated in certain disciplines like psychology or education while being vastly underrepresented in areas like physics and engineering.\n\nI believe we absolutely should address it because diversity brings richer insights, especially when dealing with complex problems that affect society. For instance, I recall reading how female doctors sometimes notice symptoms overlooked by male colleagues due to their different experiences - a similar principle could apply across scientific fields.\n\nAs someone who's moderately open but highly conscientious and agreeable (according to my personality traits), I think the approach needs careful planning rather than sudden changes. Maybe we can start with mentorship programs specifically for female students in STEM, like what some universities have implemented recently. Also raising awareness without making anyone feel uncomfortable is key - after all, as a Christian who values education highly but also believes in treating others kindly.\n\nMy anxious nature makes me think that implementing these changes requires patience and careful monitoring rather than rushing into things too quickly. Perhaps we can look at successful models from other countries where they've managed to increase female participation more effectively.",
+    "reasoning_summary": "I started by identifying the core issue of underrepresentation, then considered my background as an accountant with a master's degree in a technical field. I linked this to the need for diverse perspectives in problem-solving, drawing parallels between medicine and science. Then I reflected on how my personality traits (moderate openness, high conscientiousness, moderate extraversion, high agreeableness) influence my approach - suggesting gradual change through mentorship programs while avoiding making people feel uncomfortable. Finally, as a Christian with anxious tendencies, I emphasized the need for careful implementation.",
+    "tone": "Calm, reasoned, and concerned but not alarmist",
+    "citations": [
+      "Various news reports on gender disparities in STEM"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "current_marital_status",
+      "hobbies",
+      "ocean.conscientiousness",
+      "religious_beliefs"
+    ]
+  }
+}

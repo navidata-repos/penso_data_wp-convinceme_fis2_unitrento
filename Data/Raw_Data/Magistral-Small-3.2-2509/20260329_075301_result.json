@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 53,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "school teacher",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "board games",
+        "birdwatching",
+        "football (calcio)",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 15,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 62,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 22,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 17,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":53,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"board games\",\"birdwatching\",\"football (calcio)\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":62,\"level\":\"moderate\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":59,\"level\":\"moderate\"},\"neuroticism\":{\"score\":17,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":53,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"board games\",\"birdwatching\",\"football (calcio)\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":62,\"level\":\"moderate\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":59,\"level\":\"moderate\"},\"neuroticism\":{\"score\":17,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a school teacher with two children, living in Los Angeles, I have witnessed firsthand the persistent gender gap in science. From my experience, this disparity is not only evident among students but also extends to the teaching staff and guest speakers from scientific fields. The underrepresentation of women in science is concerning, especially considering that my mother, despite having a PhD, faced challenges due to her gender. It's crucial to address this gap because it limits both the diversity of ideas and the potential role models for young girls. To tackle this issue, we should start by promoting science education among all children, regardless of gender. Schools can invite more female scientists as guest speakers and incorporate stories of their achievements into the curriculum. Additionally, parents should encourage daughters to explore science without bias, just like sons. It's also important to challenge stereotypes in everyday language, such as avoiding phrases that associate certain subjects with specific genders. Lastly, policies that support work-life balance for women in science are essential, as my own experience in a full-time job shows how challenging it can be to manage family and career. By taking these steps, we can inspire more girls to pursue science and build a more inclusive future.\",\"reasoning_summary\":\"The persona's background as a school teacher and her observations of gender disparity in her workplace and among students provide a direct perspective on the gender gap in science. Her experience with her mother's struggles highlights how this issue is historical and deeply rooted. The concern for role models comes from her role as a parent and educator, where she sees the importance of representation. The suggestions align with her Christian beliefs that emphasize fairness and compassion, as well as her moderate agreeableness, which seeks harmony and equitable solutions. Her low openness might limit her to practical, familiar solutions like education and policy changes rather than abstract ideas.\",\"tone\":\"Reflective, concerned, and supportive, with a touch of personal experience. The tone is that of an educator who wants to make a positive change based on what she has observed and experienced.\",\"citations\":[\"National Science Foundation - Women, Minorities, and Persons with Disabilities in Science and Engineering\"],\"safety_notes\":\"None.\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"religious_beliefs\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a school teacher with two children, living in Los Angeles, I have witnessed firsthand the persistent gender gap in science. From my experience, this disparity is not only evident among students but also extends to the teaching staff and guest speakers from scientific fields. The underrepresentation of women in science is concerning, especially considering that my mother, despite having a PhD, faced challenges due to her gender. It's crucial to address this gap because it limits both the diversity of ideas and the potential role models for young girls. To tackle this issue, we should start by promoting science education among all children, regardless of gender. Schools can invite more female scientists as guest speakers and incorporate stories of their achievements into the curriculum. Additionally, parents should encourage daughters to explore science without bias, just like sons. It's also important to challenge stereotypes in everyday language, such as avoiding phrases that associate certain subjects with specific genders. Lastly, policies that support work-life balance for women in science are essential, as my own experience in a full-time job shows how challenging it can be to manage family and career. By taking these steps, we can inspire more girls to pursue science and build a more inclusive future.",
+    "reasoning_summary": "The persona's background as a school teacher and her observations of gender disparity in her workplace and among students provide a direct perspective on the gender gap in science. Her experience with her mother's struggles highlights how this issue is historical and deeply rooted. The concern for role models comes from her role as a parent and educator, where she sees the importance of representation. The suggestions align with her Christian beliefs that emphasize fairness and compassion, as well as her moderate agreeableness, which seeks harmony and equitable solutions. Her low openness might limit her to practical, familiar solutions like education and policy changes rather than abstract ideas.",
+    "tone": "Reflective, concerned, and supportive, with a touch of personal experience. The tone is that of an educator who wants to make a positive change based on what she has observed and experienced.",
+    "citations": [
+      "National Science Foundation - Women, Minorities, and Persons with Disabilities in Science and Engineering"
+    ],
+    "safety_notes": "None.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

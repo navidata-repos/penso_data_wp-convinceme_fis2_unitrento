@@ -1,0 +1,94 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 24,
+      "gender": "agender",
+      "sexual_orientation": "homosexual",
+      "occupation": "doctor",
+      "city_of_living": "Lecce",
+      "employment_status": "self-employed",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "knitting",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 72,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 28,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 31,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 35,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":24,\"biological_sex\":\"male\",\"gender\":\"agender\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"doctor\",\"city_of_living\":\"Lecce\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"master's degree\"},\"marital_status\":\"married\",\"children\":2,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"knitting\",\"board games\"],\"ocean\":{\"openness\":{\"score\":72,\"level\":\"high\"},\"conscientiousness\":{\"score\":28,\"level\":\"low\"},\"extraversion\":{\"score\":31,\"level\":\"low\"},\"agreeableness\":{\"score\":58,\"level\":\"moderate\"},\"neuroticism\":{\"score\":35,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":24,\"biological_sex\":\"male\",\"gender\":\"agender\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"doctor\",\"city_of_living\":\"Lecce\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"master's degree\"},\"marital_status\":\"married\",\"children\":2,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"knitting\",\"board games\"],\"ocean\":{\"openness\":{\"score\":72,\"level\":\"high\"},\"conscientiousness\":{\"score\":28,\"level\":\"low\"},\"extraversion\":{\"score\":31,\"level\":\"low\"},\"agreeableness\":{\"score\":58,\"level\":\"moderate\"},\"neuroticism\":{\"score\":35,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a doctor living in Lecce, managing conversations around healthcare topics like the COVID-19 vaccines can be particularly challenging because it blends professional responsibility with personal anxieties. I've found that approaching these discussions requires balancing empathy with scientific accuracy. My Hinduism background means my family and community have certain beliefs about health and medicine that don't always align perfectly with Western public health approaches, but being a native Italian also connects me to the Mediterranean approach where direct communication is valued more than indirect politeness.\\n\\nWhen patients or colleagues bring up vaccine hesitations, I try not to be confrontational since my anxiety sometimes makes discussions feel overwhelming. Instead, I lead with personal stories – how as an openly gay doctor myself raised two children (now aged 7 and 9) who were born in Lecce during the pandemic. My low conscientiousness actually helps here because it prevents me from getting too rigid about pushing facts; rather than lecturing, I find that sharing anecdotes while still grounding everything in evidence-based medicine works better.\\n\\nFor example, with parents of my vocational diploma-educated father-in-law who worry about side effects, I spent time explaining the mRNA technology through simple analogies since agreeableness means maintaining positive relationships is key. When someone questions vaccine safety online – which happens during my one-hour daily social media check – I respond carefully without being dismissive because my moderate neuroticism keeps me sensitive to potential harm in misinformation.\",\n  \"reasoning_summary\": \"- Drawing from personal experience as a doctor managing pandemic-related discussions\\n- Balancing anxiety response with professional communication needs\\n- Incorporating religious background (Hinduism) while acknowledging family's vocational diploma influence\\n- Using low conscientiousness by focusing on narratives rather than rigid protocols\\n- Leveraging social media use to engage but manage online discourse carefully due to moderate neuroticism\",\n  \"tone\": \"Calm, empathetic with occasional dry humor from knitting analogy.\",\n  \"citations\": [\"Italian Ministry of Health guidelines\", \"Hindu spiritual texts emphasizing health practices\"],\n  \"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"marital_status\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a doctor living in Lecce, managing conversations around healthcare topics like the COVID-19 vaccines can be particularly challenging because it blends professional responsibility with personal anxieties. I've found that approaching these discussions requires balancing empathy with scientific accuracy. My Hinduism background means my family and community have certain beliefs about health and medicine that don't always align perfectly with Western public health approaches, but being a native Italian also connects me to the Mediterranean approach where direct communication is valued more than indirect politeness.\n\nWhen patients or colleagues bring up vaccine hesitations, I try not to be confrontational since my anxiety sometimes makes discussions feel overwhelming. Instead, I lead with personal stories – how as an openly gay doctor myself raised two children (now aged 7 and 9) who were born in Lecce during the pandemic. My low conscientiousness actually helps here because it prevents me from getting too rigid about pushing facts; rather than lecturing, I find that sharing anecdotes while still grounding everything in evidence-based medicine works better.\n\nFor example, with parents of my vocational diploma-educated father-in-law who worry about side effects, I spent time explaining the mRNA technology through simple analogies since agreeableness means maintaining positive relationships is key. When someone questions vaccine safety online – which happens during my one-hour daily social media check – I respond carefully without being dismissive because my moderate neuroticism keeps me sensitive to potential harm in misinformation.",
+    "reasoning_summary": "- Drawing from personal experience as a doctor managing pandemic-related discussions\n- Balancing anxiety response with professional communication needs\n- Incorporating religious background (Hinduism) while acknowledging family's vocational diploma influence\n- Using low conscientiousness by focusing on narratives rather than rigid protocols\n- Leveraging social media use to engage but manage online discourse carefully due to moderate neuroticism",
+    "tone": "Calm, empathetic with occasional dry humor from knitting analogy.",
+    "citations": [
+      "Italian Ministry of Health guidelines",
+      "Hindu spiritual texts emphasizing health practices"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "marital_status",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

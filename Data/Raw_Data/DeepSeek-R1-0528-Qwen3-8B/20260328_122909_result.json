@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 51,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "UX designer",
+      "city_of_living": "Milan",
+      "employment_status": "self-employed",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "travel",
+        "photography",
+        "hiking",
+        "yoga",
+        "classical music"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 28,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 7,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 57,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":51,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"UX designer\",\"city_of_living\":\"Milan\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"travel\",\"photography\",\"hiking\",\"yoga\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":40,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":28,\"level\":\"low\"},\"extraversion\":{\"score\":60,\"level\":\"moderate\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":57,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":51,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"UX designer\",\"city_of_living\":\"Milan\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"travel\",\"photography\",\"hiking\",\"yoga\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":40,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":28,\"level\":\"low\"},\"extraversion\":{\"score\":60,\"level\":\"moderate\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":57,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As a UX designer who spends time on social media, I believe managing fake content requires both technical understanding and psychological awareness. My anxiety makes me particularly sensitive to misinformation that could unsettle my family or community connections. When I encounter fabricated stories about travel restrictions in countries I love visiting for hiking and photography, it creates a ripple effect of concern not just for me but also for the people around me.\\n\\nI approach this by first verifying information against reliable sources like official tourism websites before engaging with it online. This aligns somewhat with my low agreeableness score as I don't shy away from correcting false narratives even if they're popular and well-circulated among friends who share them without verification.\\n\\nAnother strategy is to limit exposure during times when anxiety feels heightened, which sometimes means stepping back from scrolling through news feeds for a while. It's important too that social media platforms employ better content moderation tools—something I wish my children didn't have to experience growing up with this digital noise. My Italian background gives me an appreciation for community resilience, so perhaps there should be more built-in features promoting critical thinking rather than just flagging fake news.\\n\\nOf course, my own neuroticism occasionally makes these concerns feel amplified in what could otherwise be manageable situations.\",\n  \"reasoning_summary\": \"1) Drawing from personal experience as a UX designer: I consider user anxiety towards misinformation and design solutions that incorporate community well-being aspects. My moderate openness suggests curiosity about innovative approaches while maintaining practicality.\\n\\n2) Evaluating information flow dynamics: The way fake content spreads emotionally resonates with my own sensitivity profile (high neuroticism, low agreeableness), allowing me to propose mitigation strategies grounded in human behavior patterns.\\n\\n3) Platform-level considerations: I suggest UX improvements that align with my profession's focus on interface clarity and trust signals—akin to how I designed travel booking apps where misinformation could impact user decision-making. My moderate conscientiousness enables structured thinking about verification processes.\",\n  \"tone\": \"Calm yet concerned, practical but sensitive\",\n  \"citations\": [\"Official Tourism Ministry Websites\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"psychological_feature\", \"hobbies\", \"ocean.conscientiousness\", \"ocean.neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a UX designer who spends time on social media, I believe managing fake content requires both technical understanding and psychological awareness. My anxiety makes me particularly sensitive to misinformation that could unsettle my family or community connections. When I encounter fabricated stories about travel restrictions in countries I love visiting for hiking and photography, it creates a ripple effect of concern not just for me but also for the people around me.\n\nI approach this by first verifying information against reliable sources like official tourism websites before engaging with it online. This aligns somewhat with my low agreeableness score as I don't shy away from correcting false narratives even if they're popular and well-circulated among friends who share them without verification.\n\nAnother strategy is to limit exposure during times when anxiety feels heightened, which sometimes means stepping back from scrolling through news feeds for a while. It's important too that social media platforms employ better content moderation tools—something I wish my children didn't have to experience growing up with this digital noise. My Italian background gives me an appreciation for community resilience, so perhaps there should be more built-in features promoting critical thinking rather than just flagging fake news.\n\nOf course, my own neuroticism occasionally makes these concerns feel amplified in what could otherwise be manageable situations.",
+    "reasoning_summary": "1) Drawing from personal experience as a UX designer: I consider user anxiety towards misinformation and design solutions that incorporate community well-being aspects. My moderate openness suggests curiosity about innovative approaches while maintaining practicality.\n\n2) Evaluating information flow dynamics: The way fake content spreads emotionally resonates with my own sensitivity profile (high neuroticism, low agreeableness), allowing me to propose mitigation strategies grounded in human behavior patterns.\n\n3) Platform-level considerations: I suggest UX improvements that align with my profession's focus on interface clarity and trust signals—akin to how I designed travel booking apps where misinformation could impact user decision-making. My moderate conscientiousness enables structured thinking about verification processes.",
+    "tone": "Calm yet concerned, practical but sensitive",
+    "citations": [
+      "Official Tourism Ministry Websites"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "psychological_feature",
+      "hobbies",
+      "ocean.conscientiousness",
+      "ocean.neuroticism"
+    ]
+  }
+}

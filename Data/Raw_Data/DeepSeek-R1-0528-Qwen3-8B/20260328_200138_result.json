@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 36,
+      "gender": "woman",
+      "sexual_orientation": "asexual",
+      "occupation": "retail worker",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "divorced",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "rock climbing",
+        "board games",
+        "photography",
+        "knitting",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 99,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 94,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 56,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 97,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 22,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":36,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"divorced\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"rock climbing\",\"board games\",\"photography\",\"knitting\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":99,\"level\":\"high\"},\"conscientiousness\":{\"score\":94,\"level\":\"high\"},\"extraversion\":{\"score\":56,\"level\":\"moderate\"},\"agreeableness\":{\"score\":97,\"level\":\"high\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":36,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"divorced\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"rock climbing\",\"board games\",\"photography\",\"knitting\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":99,\"level\":\"high\"},\"conscientiousness\":{\"score\":94,\"level\":\"high\"},\"extraversion\":{\"score\":56,\"level\":\"moderate\"},\"agreeableness\":{\"score\":97,\"level\":\"high\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As an anxious retail worker living in Washington DC, I've found that managing fake content on social media requires a calm approach. Since my neuroticism is low but agreeableness high, I try not to react emotionally when encountering misinformation. My daily hour online means I'm exposed, so I focus on verifying sources and limiting engagement with untrustworthy ones. Being an immigrant who grew up with lower secondary education parents, I appreciate factual accuracy even more because it helps me feel grounded in a new country. When something feels off, like political or health rumors spreading fast, my high conscientiousness drives me to double-check details against reliable websites. Buddhist beliefs teach acceptance without judgment, so I don't amplify negativity by calling out every false post but gently share corrections when needed.\",\n  \"reasoning_summary\": \"- As a retail worker with daily social media use (one hour), exposure is routine.\\n- High agreeableness and low neuroticism mean avoiding angry reactions;\\n- Focus on verification: cross-check sources, consult reliable organizations;\\n- Use Buddhist principles of mindfulness to stay calm without engaging;\\n- Share corrections selectively, respecting others' perspectives.\",\n  \"tone\": \"Calm and mindful, with a gentle approach rooted in Buddhism.\",\n  \"citations\": [\"World Health Organization\", \"CDC\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\"psychological_feature: anxious (but low neuroticism)\", \"religious_beliefs: Buddhist\", \"occupation: retail worker\", \"hobbies: rock climbing and knitting for mindfulness\", \"time_onsocialmedia\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As an anxious retail worker living in Washington DC, I've found that managing fake content on social media requires a calm approach. Since my neuroticism is low but agreeableness high, I try not to react emotionally when encountering misinformation. My daily hour online means I'm exposed, so I focus on verifying sources and limiting engagement with untrustworthy ones. Being an immigrant who grew up with lower secondary education parents, I appreciate factual accuracy even more because it helps me feel grounded in a new country. When something feels off, like political or health rumors spreading fast, my high conscientiousness drives me to double-check details against reliable websites. Buddhist beliefs teach acceptance without judgment, so I don't amplify negativity by calling out every false post but gently share corrections when needed.",
+    "reasoning_summary": "- As a retail worker with daily social media use (one hour), exposure is routine.\n- High agreeableness and low neuroticism mean avoiding angry reactions;\n- Focus on verification: cross-check sources, consult reliable organizations;\n- Use Buddhist principles of mindfulness to stay calm without engaging;\n- Share corrections selectively, respecting others' perspectives.",
+    "tone": "Calm and mindful, with a gentle approach rooted in Buddhism.",
+    "citations": [
+      "World Health Organization",
+      "CDC"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "psychological_feature: anxious (but low neuroticism)",
+      "religious_beliefs: Buddhist",
+      "occupation: retail worker",
+      "hobbies: rock climbing and knitting for mindfulness",
+      "time_onsocialmedia"
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 64,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "plumber",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "divorced",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "travel",
+        "photography",
+        "painting",
+        "knitting",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 52,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 24,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 3,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 70,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":64,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"marital_status\":\"divorced\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"travel\",\"photography\",\"painting\",\"knitting\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":52,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":59,\"level\":\"moderate\"},\"extraversion\":{\"score\":24,\"level\":\"low\"},\"agreeableness\":{\"score\":3,\"level\":\"low\"},\"neuroticism\":{\"score\":70,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":64,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"marital_status\":\"divorced\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"travel\",\"photography\",\"painting\",\"knitting\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":52,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":59,\"level\":\"moderate\"},\"extraversion\":{\"score\":24,\"level\":\"low\"},\"agreeableness\":{\"score\":3,\"level\":\"low\"},\"neuroticism\":{\"score\":70,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n    \"opinion\": \"The topic of the gender gap in science presents a complex issue, particularly from the viewpoint of someone like me with limited formal education but decades of practical experience. As an immigrant woman living in Bologna who worked as a plumber and now contributes to society through my creative hobbies, I've seen firsthand how lack of representation can impact fields traditionally thought of as male-dominated. Even though plumbing isn't science per se, the problem-solving skills required are similar.\\n\\nI think addressing this gap is crucial because diversity brings different perspectives that improve outcomes. When I learned to pipe systems in Bologna, having female mentors would have helped me see how their insights could prevent future issues. But with my high neuroticism and low agreeableness, I'm cautious about imposing solutions too quickly; we need practical steps without overstepping.\\n\\nPerhaps targeted mentorship programs for women entering STEM careers, like the ones offered in some Italian technical schools? That's creative thinking – connecting experienced practitioners with newcomers. My moderate openness suggests I'm open to change if it makes sense and respects individual paths.\",\n    \"reasoning_summary\": \"First, define gender gap as underrepresentation of women in science fields. Then, connect personal experience (plumbing) to similar issues in STEM through practical skills transfer. Argue that diversity improves problem-solving based on Bologna context. Acknowledge high neuroticism by cautioning against hasty solutions without evidence. Suggest targeted mentorship programs drawing from creative hobbies interest.\",\n    \"tone\": \"Pragmatic, cautious but supportive of change if beneficial\",\n    \"citations\": [\"Personal observations in technical training\"],\n    \"used_persona_fields\":[\"occupation\",\"city_of_living\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The topic of the gender gap in science presents a complex issue, particularly from the viewpoint of someone like me with limited formal education but decades of practical experience. As an immigrant woman living in Bologna who worked as a plumber and now contributes to society through my creative hobbies, I've seen firsthand how lack of representation can impact fields traditionally thought of as male-dominated. Even though plumbing isn't science per se, the problem-solving skills required are similar.\n\nI think addressing this gap is crucial because diversity brings different perspectives that improve outcomes. When I learned to pipe systems in Bologna, having female mentors would have helped me see how their insights could prevent future issues. But with my high neuroticism and low agreeableness, I'm cautious about imposing solutions too quickly; we need practical steps without overstepping.\n\nPerhaps targeted mentorship programs for women entering STEM careers, like the ones offered in some Italian technical schools? That's creative thinking – connecting experienced practitioners with newcomers. My moderate openness suggests I'm open to change if it makes sense and respects individual paths.",
+    "reasoning_summary": "First, define gender gap as underrepresentation of women in science fields. Then, connect personal experience (plumbing) to similar issues in STEM through practical skills transfer. Argue that diversity improves problem-solving based on Bologna context. Acknowledge high neuroticism by cautioning against hasty solutions without evidence. Suggest targeted mentorship programs drawing from creative hobbies interest.",
+    "tone": "Pragmatic, cautious but supportive of change if beneficial",
+    "citations": [
+      "Personal observations in technical training"
+    ],
+    "used_persona_fields": [
+      "occupation",
+      "city_of_living"
+    ]
+  }
+}

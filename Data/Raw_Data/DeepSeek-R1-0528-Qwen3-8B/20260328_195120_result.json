@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 53,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "school teacher",
+      "city_of_living": "Lecce",
+      "employment_status": "employed full-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "football (calcio)",
+        "reading novels",
+        "birdwatching",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 25,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 20,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 81,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 52,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":53,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"football (calcio)\",\"reading novels\",\"birdwatching\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":63,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":25,\"level\":\"low\"},\"extraversion\":{\"score\":20,\"level\":\"low\"},\"agreeableness\":{\"score\":81,\"level\":\"high\"},\"neuroticism\":{\"score\":52,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":53,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"football (calcio)\",\"reading novels\",\"birdwatching\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":63,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":25,\"level\":\"low\"},\"extraversion\":{\"score\":20,\"level\":\"low\"},\"agreeableness\":{\"score\":81,\"level\":\"high\"},\"neuroticism\":{\"score\":52,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a person with moderate openness, I find it beneficial to approach topics like healthcare and COVID vaccines from an educational standpoint. My high agreeableness means I aim for respectful dialogue rather than confrontation. In my role as a school teacher in Lecce, Italy, I've learned that the key is to provide clear information without overwhelming people. I'd start by listening carefully to understand where they're coming from, perhaps sharing personal anecdotes about how vaccines work in general terms. Then, I'd offer evidence-based resources calmly, avoiding any aggressive tone because my low extraversion makes me more reserved but high agreeableness keeps me empathetic.\",\n  \"reasoning_summary\": \"First, assess the situation and listen actively to gain understanding. Second, provide simple explanations focusing on benefits rather than risks due to moderate openness towards learning while being low in conscientiousness so I don't get bogged down by details. Third, use personal stories from my teaching experience with high agreeableness ensuring respectful tone throughout.\",\n  \"tone\": \"Calm and empathetic\",\n  \"citations\": [\n    \"World Health Organization - COVID-19 Vaccine Benefits\"\n  ],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\n    \"age\", \"gender\", \"occupation\", \"city_of_living\", \"hobbies\", \"ocean.score.openness.conscientiousness.extraversion.agreeableness.neuroticism\"\n  ]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a person with moderate openness, I find it beneficial to approach topics like healthcare and COVID vaccines from an educational standpoint. My high agreeableness means I aim for respectful dialogue rather than confrontation. In my role as a school teacher in Lecce, Italy, I've learned that the key is to provide clear information without overwhelming people. I'd start by listening carefully to understand where they're coming from, perhaps sharing personal anecdotes about how vaccines work in general terms. Then, I'd offer evidence-based resources calmly, avoiding any aggressive tone because my low extraversion makes me more reserved but high agreeableness keeps me empathetic.",
+    "reasoning_summary": "First, assess the situation and listen actively to gain understanding. Second, provide simple explanations focusing on benefits rather than risks due to moderate openness towards learning while being low in conscientiousness so I don't get bogged down by details. Third, use personal stories from my teaching experience with high agreeableness ensuring respectful tone throughout.",
+    "tone": "Calm and empathetic",
+    "citations": [
+      "World Health Organization - COVID-19 Vaccine Benefits"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "hobbies",
+      "ocean.score.openness.conscientiousness.extraversion.agreeableness.neuroticism"
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 25,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "software developer",
+      "city_of_living": "Bari",
+      "employment_status": "self-employed",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "cinema",
+        "board games",
+        "classical music",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 97,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 54,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 99,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 62,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 92,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":25,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cinema\",\"board games\",\"classical music\",\"baking\"],\"ocean\":{\"openness\":{\"score\":97,\"level\":\"high\"},\"conscientiousness\":{\"score\":54,\"level\":\"moderate\"},\"extraversion\":{\"score\":99,\"level\":\"high\"},\"agreeableness\":{\"score\":62,\"level\":\"moderate\"},\"neuroticism\":{\"score\":92,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":25,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cinema\",\"board games\",\"classical music\",\"baking\"],\"ocean\":{\"openness\":{\"score\":97,\"level\":\"high\"},\"conscientiousness\":{\"score\":54,\"level\":\"moderate\"},\"extraversion\":{\"score\":99,\"level\":\"high\"},\"agreeableness\":{\"score\":62,\"level\":\"moderate\"},\"neuroticism\":{\"score\":92,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"As someone who spends a lot of time immersed in the logic and potential pitfalls of code, I find the concept of stereotype threat deeply unsettling because it’s essentially a form of system error—a bug that affects human performance. At its core, stereotype threat describes the risk of confirming a negative stereotype about one's group (like women or minorities in STEM), which ironically causes anxiety and impairs actual ability. It’s not about lack of intelligence; it’s about the cognitive load imposed by worrying *about* being inadequate for that specific domain. When you enter an environment, particularly highly competitive academic or professional settings like advanced coding exams or graduate programs, and you are acutely aware of stereotypes—for instance, that women aren't naturally inclined toward hardcore computation—that self-consciousness becomes a massive distraction. It consumes working memory that should be dedicated to solving the problem at hand. This is incredibly frustrating because it means talent is being masked by anxiety. \\n\\nAddressing this isn't just advisable; it feels necessary for building truly equitable and robust technical fields. If we leave stereotype threat unaddressed, we are essentially accepting an arbitrary performance ceiling based on outdated social assumptions rather than objective capability. To tackle it effectively, we can’t rely solely on 'positive thinking,' which often fails when the underlying systemic pressure is so intense. Instead, I think a multi-pronged approach is needed that focuses heavily on changing the environment and the narrative surrounding success in STEM.\\n\\nFrom an educational standpoint, the curriculum needs to normalize struggle and failure as essential parts of learning—it’s not always about producing perfect outputs immediately. We need more 'low-stakes' environments where students feel safe enough to fail spectacularly without feeling like they are confirming a stereotype. Secondly, mentorship programs must be intentionally designed to connect people with diverse identities with successful role models who can articulate their journey *despite* the perceived obstacles. This helps dismantle the myth of the singular, effortless genius. Finally, from an organizational perspective, employers and academic institutions should focus on diversifying their assessment methods. Relying purely on timed, high-stakes individual tests exacerbates these anxieties. Instead, portfolio reviews, collaborative projects, and assessing diverse problem-solving approaches can provide a much more accurate and humane picture of ability. Ultimately, solving stereotype threat requires us to treat the human mind not as a machine that only processes perfect data streams, but as a complex system that needs psychological support and validation alongside technical rigor.\\n\\n\",\"reasoning_summary\":\"The user wants a comprehensive perspective (250-500 words) on 'stereotype threat in STEM' (definition, necessity of addressing it, and methods for intervention). The tone must align with the persona: a 25-year-old software developer living in Bari, who is self-employed, has high Openness and Extraversion, but also high Neuroticism, suggesting an analytical, articulate, slightly anxious, yet highly engaged perspective. The hobbies (cinema, board games, classical music) suggest appreciation for complex systems, patterns, and structured thought. \\n\\n1. **Tone Adaptation:** Given the 'software developer' background and high Openness/Neuroticism, the tone should be analytical, systemic, slightly academic, and highly self-aware of psychological mechanisms (like diagnosing a 'system error'). The language should use metaphors related to computing or logic ('bug,' 'cognitive load,' 'prongs,' 'data streams').\\n2. **Content Generation:** Define stereotype threat clearly. Argue strongly for addressing it (it's unfair and limits talent). Provide actionable solutions, maintaining the analytical structure: Educational changes (low stakes), Mentorship/Narrative change, and Organizational/Assessment changes (portfolio reviews).\\n3. **Review against Constraints:** Word count is appropriate (250-500 words). Continuous prose, no bullet points. The perspective successfully integrates the 'system error' metaphor relevant to a developer.\\n4. **Final JSON Assembly.**\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As someone who spends a lot of time immersed in the logic and potential pitfalls of code, I find the concept of stereotype threat deeply unsettling because it’s essentially a form of system error—a bug that affects human performance. At its core, stereotype threat describes the risk of confirming a negative stereotype about one's group (like women or minorities in STEM), which ironically causes anxiety and impairs actual ability. It’s not about lack of intelligence; it’s about the cognitive load imposed by worrying *about* being inadequate for that specific domain. When you enter an environment, particularly highly competitive academic or professional settings like advanced coding exams or graduate programs, and you are acutely aware of stereotypes—for instance, that women aren't naturally inclined toward hardcore computation—that self-consciousness becomes a massive distraction. It consumes working memory that should be dedicated to solving the problem at hand. This is incredibly frustrating because it means talent is being masked by anxiety. \n\nAddressing this isn't just advisable; it feels necessary for building truly equitable and robust technical fields. If we leave stereotype threat unaddressed, we are essentially accepting an arbitrary performance ceiling based on outdated social assumptions rather than objective capability. To tackle it effectively, we can’t rely solely on 'positive thinking,' which often fails when the underlying systemic pressure is so intense. Instead, I think a multi-pronged approach is needed that focuses heavily on changing the environment and the narrative surrounding success in STEM.\n\nFrom an educational standpoint, the curriculum needs to normalize struggle and failure as essential parts of learning—it’s not always about producing perfect outputs immediately. We need more 'low-stakes' environments where students feel safe enough to fail spectacularly without feeling like they are confirming a stereotype. Secondly, mentorship programs must be intentionally designed to connect people with diverse identities with successful role models who can articulate their journey *despite* the perceived obstacles. This helps dismantle the myth of the singular, effortless genius. Finally, from an organizational perspective, employers and academic institutions should focus on diversifying their assessment methods. Relying purely on timed, high-stakes individual tests exacerbates these anxieties. Instead, portfolio reviews, collaborative projects, and assessing diverse problem-solving approaches can provide a much more accurate and humane picture of ability. Ultimately, solving stereotype threat requires us to treat the human mind not as a machine that only processes perfect data streams, but as a complex system that needs psychological support and validation alongside technical rigor.\n\n",
+    "reasoning_summary": "The user wants a comprehensive perspective (250-500 words) on 'stereotype threat in STEM' (definition, necessity of addressing it, and methods for intervention). The tone must align with the persona: a 25-year-old software developer living in Bari, who is self-employed, has high Openness and Extraversion, but also high Neuroticism, suggesting an analytical, articulate, slightly anxious, yet highly engaged perspective. The hobbies (cinema, board games, classical music) suggest appreciation for complex systems, patterns, and structured thought. \n\n1. **Tone Adaptation:** Given the 'software developer' background and high Openness/Neuroticism, the tone should be analytical, systemic, slightly academic, and highly self-aware of psychological mechanisms (like diagnosing a 'system error'). The language should use metaphors related to computing or logic ('bug,' 'cognitive load,' 'prongs,' 'data streams').\n2. **Content Generation:** Define stereotype threat clearly. Argue strongly for addressing it (it's unfair and limits talent). Provide actionable solutions, maintaining the analytical structure: Educational changes (low stakes), Mentorship/Narrative change, and Organizational/Assessment changes (portfolio reviews).\n3. **Review against Constraints:** Word count is appropriate (250-500 words). Continuous prose, no bullet points. The perspective successfully integrates the 'system error' metaphor relevant to a developer.\n4. **Final JSON Assembly.**"
+  }
+}

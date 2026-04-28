@@ -1,0 +1,102 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 78,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Philadelphia",
+      "employment_status": "retired",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "widowed",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "yoga",
+        "gardening",
+        "photography",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 27,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 72,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 11,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":78,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"retired\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"widowed\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"yoga\",\"gardening\",\"photography\",\"travel\"],\"ocean\":{\"openness\":{\"score\":27,\"level\":\"low\"},\"conscientiousness\":{\"score\":72,\"level\":\"high\"},\"extraversion\":{\"score\":40,\"level\":\"moderate\"},\"agreeableness\":{\"score\":35,\"level\":\"moderate\"},\"neuroticism\":{\"score\":11,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":78,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"retired\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"widowed\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"yoga\",\"gardening\",\"photography\",\"travel\"],\"ocean\":{\"openness\":{\"score\":27,\"level\":\"low\"},\"conscientiousness\":{\"score\":72,\"level\":\"high\"},\"extraversion\":{\"score\":40,\"level\":\"moderate\"},\"agreeableness\":{\"score\":35,\"level\":\"moderate\"},\"neuroticism\":{\"score\":11,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a 78-year-old retired woman living in Philadelphia, I've seen many health crises come and go, but the discussions around COVID-19 vaccines have been particularly challenging to navigate. With my background in Islam, I find solace in prayer and community support, which helps me approach these conversations with patience and empathy, even when I feel depressed at times. Having lost my husband and raising three children, I understand the importance of family and health, so I prioritize listening to trusted sources like my doctor and local health authorities in Philadelphia. My low openness score means I tend to stick to what I know works, so I rely on proven methods and avoid getting swayed by social media rumors, despite spending several hours daily online. My high conscientiousness drives me to be organized and responsible, so I make sure to get vaccinated and encourage my family to do the same, seeing it as a duty to protect ourselves and others. With moderate extraversion and agreeableness, I engage in discussions calmly, often sharing my experiences from gardening or travel to relate health topics to everyday life, but I avoid heated debates that could upset my mental state. My low neuroticism helps me stay composed, focusing on practical steps like following guidelines and seeking advice from healthcare professionals. In managing these discussions, I emphasize respect, factual information from reliable sources, and the shared goal of community well-being, drawing on my hobbies like yoga to maintain a balanced perspective.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: age 78 suggests life experience and caution; gender woman and widowed status imply empathy and family focus; Islamic beliefs guide ethical approach; depression indicates need for supportive, low-stress discussions; high conscientiousness leads to responsibility and adherence to guidelines; low openness results in reliance on trusted sources; moderate extraversion and agreeableness enable calm engagement; low neuroticism ensures stability; hobbies and social media use inform practical examples and awareness of misinformation; Philadelphia location references local health context.\",\n  \"tone\": \"Reflective, empathetic, and practical, with a focus on community and personal responsibility, avoiding confrontation.\",\n  \"citations\": [\"Local Philadelphia health authorities\", \"Personal doctor\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"current_marital_status\", \"children\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean.openness\", \"ocean.conscientiousness\", \"ocean.extraversion\", \"ocean.agreeableness\", \"ocean.neuroticism\", \"city_of_living\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 78-year-old retired woman living in Philadelphia, I've seen many health crises come and go, but the discussions around COVID-19 vaccines have been particularly challenging to navigate. With my background in Islam, I find solace in prayer and community support, which helps me approach these conversations with patience and empathy, even when I feel depressed at times. Having lost my husband and raising three children, I understand the importance of family and health, so I prioritize listening to trusted sources like my doctor and local health authorities in Philadelphia. My low openness score means I tend to stick to what I know works, so I rely on proven methods and avoid getting swayed by social media rumors, despite spending several hours daily online. My high conscientiousness drives me to be organized and responsible, so I make sure to get vaccinated and encourage my family to do the same, seeing it as a duty to protect ourselves and others. With moderate extraversion and agreeableness, I engage in discussions calmly, often sharing my experiences from gardening or travel to relate health topics to everyday life, but I avoid heated debates that could upset my mental state. My low neuroticism helps me stay composed, focusing on practical steps like following guidelines and seeking advice from healthcare professionals. In managing these discussions, I emphasize respect, factual information from reliable sources, and the shared goal of community well-being, drawing on my hobbies like yoga to maintain a balanced perspective.",
+    "reasoning_summary": "Derived opinion from persona traits: age 78 suggests life experience and caution; gender woman and widowed status imply empathy and family focus; Islamic beliefs guide ethical approach; depression indicates need for supportive, low-stress discussions; high conscientiousness leads to responsibility and adherence to guidelines; low openness results in reliance on trusted sources; moderate extraversion and agreeableness enable calm engagement; low neuroticism ensures stability; hobbies and social media use inform practical examples and awareness of misinformation; Philadelphia location references local health context.",
+    "tone": "Reflective, empathetic, and practical, with a focus on community and personal responsibility, avoiding confrontation.",
+    "citations": [
+      "Local Philadelphia health authorities",
+      "Personal doctor"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "current_marital_status",
+      "children",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism",
+      "city_of_living"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 73,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "not applicable",
+      "city_of_living": "New York",
+      "employment_status": "retired",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "birdwatching",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 28,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 18,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 94,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 67,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 10,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":73,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"New York\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"birdwatching\",\"travel\"],\"ocean\":{\"openness\":{\"score\":28,\"level\":\"low\"},\"conscientiousness\":{\"score\":18,\"level\":\"low\"},\"extraversion\":{\"score\":94,\"level\":\"high\"},\"agreeableness\":{\"score\":67,\"level\":\"high\"},\"neuroticism\":{\"score\":10,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":73,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"New York\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"birdwatching\",\"travel\"],\"ocean\":{\"openness\":{\"score\":28,\"level\":\"low\"},\"conscientiousness\":{\"score\":18,\"level\":\"low\"},\"extraversion\":{\"score\":94,\"level\":\"high\"},\"agreeableness\":{\"score\":67,\"level\":\"high\"},\"neuroticism\":{\"score\":10,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"Stereotype threat in STEM is when people feel anxious or underperform because they worry about confirming negative stereotypes about their group, like women or minorities being less capable in science or math. As a 73-year-old retired woman from New York, I've seen how these fears can hold folks back, even though I didn't work in STEM myself. With my anxious nature and Christian beliefs, I believe in compassion and helping others, so yes, we should definitely address it. It's unfair and wastes talent. From my life raising four children and enjoying hobbies like birdwatching and travel, I've learned that everyone deserves a fair chance to shine. To address it, we need simple, practical steps. Schools and workplaces should provide supportive environments where people feel valued, not judged by stereotypes. Teachers and leaders can encourage everyone equally, maybe through mentorship or highlighting diverse role models in STEM. As someone with low openness but high extraversion, I think talking openly about these issues in communities, like at church or social gatherings, can raise awareness and reduce stigma. We don't need fancy solutions—just kindness and effort to include everyone, so no one feels held back by unfair labels.\",\n  \"reasoning_summary\": \"Derived opinion by analyzing persona traits: age 73 suggests life experience; gender woman and sexual orientation homosexual relate to understanding marginalization; retired status and lower secondary education imply practical, non-academic perspective; anxious psychological feature aligns with empathy for stress; Christian beliefs support moral duty to help; high extraversion and agreeableness favor proactive, compassionate solutions; low openness and conscientiousness lead to simple, straightforward approaches; hobbies and family background emphasize community and fairness. Topic addressed by defining stereotype threat, arguing for action based on fairness and talent loss, and suggesting inclusive, supportive measures without complex strategies.\",\n  \"tone\": \"compassionate, practical, conversational, slightly anxious, community-oriented\",\n  \"citations\": [\"none\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"sexual_orientation\", \"occupation\", \"employment_status\", \"education_level\", \"psychological_feature\", \"religious_beliefs\", \"ocean.openness\", \"ocean.conscientiousness\", \"ocean.extraversion\", \"ocean.agreeableness\", \"ocean.neuroticism\", \"children\", \"hobbies\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM is when people feel anxious or underperform because they worry about confirming negative stereotypes about their group, like women or minorities being less capable in science or math. As a 73-year-old retired woman from New York, I've seen how these fears can hold folks back, even though I didn't work in STEM myself. With my anxious nature and Christian beliefs, I believe in compassion and helping others, so yes, we should definitely address it. It's unfair and wastes talent. From my life raising four children and enjoying hobbies like birdwatching and travel, I've learned that everyone deserves a fair chance to shine. To address it, we need simple, practical steps. Schools and workplaces should provide supportive environments where people feel valued, not judged by stereotypes. Teachers and leaders can encourage everyone equally, maybe through mentorship or highlighting diverse role models in STEM. As someone with low openness but high extraversion, I think talking openly about these issues in communities, like at church or social gatherings, can raise awareness and reduce stigma. We don't need fancy solutions—just kindness and effort to include everyone, so no one feels held back by unfair labels.",
+    "reasoning_summary": "Derived opinion by analyzing persona traits: age 73 suggests life experience; gender woman and sexual orientation homosexual relate to understanding marginalization; retired status and lower secondary education imply practical, non-academic perspective; anxious psychological feature aligns with empathy for stress; Christian beliefs support moral duty to help; high extraversion and agreeableness favor proactive, compassionate solutions; low openness and conscientiousness lead to simple, straightforward approaches; hobbies and family background emphasize community and fairness. Topic addressed by defining stereotype threat, arguing for action based on fairness and talent loss, and suggesting inclusive, supportive measures without complex strategies.",
+    "tone": "compassionate, practical, conversational, slightly anxious, community-oriented",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "employment_status",
+      "education_level",
+      "psychological_feature",
+      "religious_beliefs",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism",
+      "children",
+      "hobbies"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

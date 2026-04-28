@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 74,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Milan",
+      "employment_status": "retired",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "single",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "running",
+        "photography",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 14,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 77,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 49,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 89,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":74,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"running\",\"photography\",\"painting\"],\"ocean\":{\"openness\":{\"score\":14,\"level\":\"low\"},\"conscientiousness\":{\"score\":77,\"level\":\"high\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":49,\"level\":\"moderate\"},\"neuroticism\":{\"score\":89,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":74,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"running\",\"photography\",\"painting\"],\"ocean\":{\"openness\":{\"score\":14,\"level\":\"low\"},\"conscientiousness\":{\"score\":77,\"level\":\"high\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":49,\"level\":\"moderate\"},\"neuroticism\":{\"score\":89,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"Throughout my life, I've seen firsthand how education can change perspectives. The gender gap in science isn't just about numbers; it's deeper than that. As an immigrant who built a career around scientific principles, I know representation matters immensely. When I was working as an engineer back in Italy before retiring, we often relied on teams with diverse backgrounds for problem-solving.\\n\\nI believe addressing this gap is not only fair but also strengthens the quality of research worldwide. It's common to think science should be purely objective, untouched by social biases—but my own experiences show us otherwise. My vocational diploma didn't open all doors initially because I'm older than most in this field now; systemic barriers still exist even for those with strong educational backgrounds.\\n\\nThe Islamic values guiding me towards equality align well with scientific progress being a universal human endeavor rather than something exclusive or divided by gender.\",\n  \"reasoning_summary\": \"As an older man who immigrated and held vocational education, I understand that while science is objective at its core, societal barriers have historically limited women's participation in STEM fields. My background as someone who overcame obstacles through rigorous study helps me empathize with current inequalities.\\n\\nMy high conscientiousness makes me recognize the need for systemic change because numbers show persistent gaps across continents despite educational advancements.\\n\\nThe low openness score shouldn't mislead here—though I'm not typically experimental, my curiosity compels me to understand why these gaps exist and how they can be closed.\",\n  \"tone\": \"Reflective with a hint of paternal concern\",\n  \"citations\": [],\n  \"safety_notes\": \"None needed as the topic is purely educational discussion about societal issues in science.\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"migration_status\", \"education_level\", \"religious_beliefs\", \"ocean.conscientiousness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "Throughout my life, I've seen firsthand how education can change perspectives. The gender gap in science isn't just about numbers; it's deeper than that. As an immigrant who built a career around scientific principles, I know representation matters immensely. When I was working as an engineer back in Italy before retiring, we often relied on teams with diverse backgrounds for problem-solving.\n\nI believe addressing this gap is not only fair but also strengthens the quality of research worldwide. It's common to think science should be purely objective, untouched by social biases—but my own experiences show us otherwise. My vocational diploma didn't open all doors initially because I'm older than most in this field now; systemic barriers still exist even for those with strong educational backgrounds.\n\nThe Islamic values guiding me towards equality align well with scientific progress being a universal human endeavor rather than something exclusive or divided by gender.",
+    "reasoning_summary": "As an older man who immigrated and held vocational education, I understand that while science is objective at its core, societal barriers have historically limited women's participation in STEM fields. My background as someone who overcame obstacles through rigorous study helps me empathize with current inequalities.\n\nMy high conscientiousness makes me recognize the need for systemic change because numbers show persistent gaps across continents despite educational advancements.\n\nThe low openness score shouldn't mislead here—though I'm not typically experimental, my curiosity compels me to understand why these gaps exist and how they can be closed.",
+    "tone": "Reflective with a hint of paternal concern",
+    "citations": [],
+    "safety_notes": "None needed as the topic is purely educational discussion about societal issues in science.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "migration_status",
+      "education_level",
+      "religious_beliefs",
+      "ocean.conscientiousness"
+    ]
+  }
+}

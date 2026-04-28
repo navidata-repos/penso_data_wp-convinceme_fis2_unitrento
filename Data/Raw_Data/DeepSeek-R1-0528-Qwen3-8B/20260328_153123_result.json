@@ -1,0 +1,99 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 27,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Washington DC",
+      "employment_status": "full-time student",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "videogames",
+        "birdwatching",
+        "football (calcio)",
+        "volunteering",
+        "yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 74,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 91,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 13,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 30,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 76,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":27,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"full-time student\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"videogames\",\"birdwatching\",\"football (calcio)\",\"volunteering\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":74,\"level\":\"high\"},\"conscientiousness\":{\"score\":91,\"level\":\"high\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":76,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":27,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"full-time student\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"videogames\",\"birdwatching\",\"football (calcio)\",\"volunteering\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":74,\"level\":\"high\"},\"conscientiousness\":{\"score\":91,\"level\":\"high\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":76,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n    \"opinion\": \"The gender gap in science refers to the underrepresentation of women and other genders in scientific fields, which stems from a complex interplay of historical biases, educational disparities, and workplace cultures. While progress has been made—particularly with more women entering STEM at undergraduate levels—their retention and advancement remain problematic due to issues like unconscious bias, stereotype threat, and work environments that may not fully support their needs for flexibility or family-friendly policies.\\n\\nAs a married Muslim woman with children living in Washington DC and pursuing my master's degree part-time while being a full-time student, I believe addressing the gender gap is crucial but requires nuanced approaches. My personal experiences navigating graduate school as an anxious individual within a conservative religious framework have highlighted how societal expectations can impact career trajectories.\\n\\nI think we should address it because science benefits from diverse perspectives that challenge existing paradigms and foster innovation. However, solutions must be holistic—combining educational outreach at institutions like the one my father attended (upper secondary level), mentorship programs for young mothers in scientific fields, workplace reforms to improve parental leave policies similar to those I might see locally in DC, and anti-bias training that goes beyond surface-level awareness.\",\n    \"reasoning_summary\": \"First, define gender gap as underrepresentation in STEM. Then, note its persistence despite increases at lower education levels due to structural barriers like work cultures and societal biases. Next, connect this to my personal background—being a Muslim woman with children in grad school—which makes me particularly attuned to intersectional challenges. Finally, propose multi-faceted solutions including policy changes, educational interventions, mentorship programs, and cultural shifts.\",\n    \"tone\": \"Reflective yet assertive\",\n    \"citations\": [\"Institute of Physics (UK)\", \"National Science Foundation\", \"UNESCO\"],\n    \"safety_notes\": \"None\",\n    \"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the underrepresentation of women and other genders in scientific fields, which stems from a complex interplay of historical biases, educational disparities, and workplace cultures. While progress has been made—particularly with more women entering STEM at undergraduate levels—their retention and advancement remain problematic due to issues like unconscious bias, stereotype threat, and work environments that may not fully support their needs for flexibility or family-friendly policies.\n\nAs a married Muslim woman with children living in Washington DC and pursuing my master's degree part-time while being a full-time student, I believe addressing the gender gap is crucial but requires nuanced approaches. My personal experiences navigating graduate school as an anxious individual within a conservative religious framework have highlighted how societal expectations can impact career trajectories.\n\nI think we should address it because science benefits from diverse perspectives that challenge existing paradigms and foster innovation. However, solutions must be holistic—combining educational outreach at institutions like the one my father attended (upper secondary level), mentorship programs for young mothers in scientific fields, workplace reforms to improve parental leave policies similar to those I might see locally in DC, and anti-bias training that goes beyond surface-level awareness.",
+    "reasoning_summary": "First, define gender gap as underrepresentation in STEM. Then, note its persistence despite increases at lower education levels due to structural barriers like work cultures and societal biases. Next, connect this to my personal background—being a Muslim woman with children in grad school—which makes me particularly attuned to intersectional challenges. Finally, propose multi-faceted solutions including policy changes, educational interventions, mentorship programs, and cultural shifts.",
+    "tone": "Reflective yet assertive",
+    "citations": [
+      "Institute of Physics (UK)",
+      "National Science Foundation",
+      "UNESCO"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs"
+    ]
+  }
+}

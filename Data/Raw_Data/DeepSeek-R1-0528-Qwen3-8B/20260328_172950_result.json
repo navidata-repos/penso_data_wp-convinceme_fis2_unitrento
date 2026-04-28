@@ -1,0 +1,92 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 38,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "carpenter",
+      "city_of_living": "Bologna",
+      "employment_status": "employed part-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "photography",
+        "cycling",
+        "classical music",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 21,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 81,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 26,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 100,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 70,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":38,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"photography\",\"cycling\",\"classical music\",\"painting\"],\"ocean\":{\"openness\":{\"score\":21,\"level\":\"low\"},\"conscientiousness\":{\"score\":81,\"level\":\"high\"},\"extraversion\":{\"score\":26,\"level\":\"low\"},\"agreeableness\":{\"score\":100,\"level\":\"high\"},\"neuroticism\":{\"score\":70,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":38,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"photography\",\"cycling\",\"classical music\",\"painting\"],\"ocean\":{\"openness\":{\"score\":21,\"level\":\"low\"},\"conscientiousness\":{\"score\":81,\"level\":\"high\"},\"extraversion\":{\"score\":26,\"level\":\"low\"},\"agreeableness\":{\"score\":100,\"level\":\"high\"},\"neuroticism\":{\"score\":70,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"I think there's a problem with women not being represented enough in science, and I'm pretty sure we should do something about it. As someone who works as a carpenter by day, I don't have fancy qualifications or high expectations for myself when it comes to my education level.\\n\\nGrowing up in Bologna with parents without much formal schooling has made me more aware of societal inequalities earlier on than most people might realize at first glance. My father didn't finish any schooling beyond basic vocational training, while my mother went through upper secondary but still faced limitations because they're both Italian citizens who moved around less.\\n\\nI know what it feels like to be underestimated due to stereotypes or expectations placed upon you just because of your gender traits from early life onward; my psychological feature being depressed adds another layer here where I sometimes struggle with self-doubt anyway, so seeing women underrepresented in high-status fields hits even harder when I think about it.\\n\\nBut as a person who's very conscientious – scoring pretty high there – and agreeable too? That might mean stepping out more or less than usual to talk about this. With low openness scores meaning not super experimental with ideas, but okay that women are paid less in science jobs even when they have the same qualifications?\\n\\nAnyway, I feel strongly we need to address these gaps because it creates a system where talented people aren't considered fully due to who they are – be it their gender identity or any other aspect like my own depression sometimes holding me back from expressing myself as much as desired.\",\n  \"reasoning_summary\": \"Based on personal background of growing up in Italy with limited parental education, being a depressed woman carpenter without higher qualifications but high conscientiousness and agreeableness, I recognize that societal gender gaps can impact individuals even outside their own field. The underrepresentation affects not just women's opportunities but also the overall diversity which might bring innovative perspectives to scientific problems.\",\n  \"tone\": \"Reflective and concerned with a touch of personal resonance given my low openness score and high conscientiousness\",\n  \"citations\": [],\n  \"safety_notes\": \"None reported\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"parents_education\", \"psychological_feature\", \"hobbies\", \"ocean.openness\", \"ocean.conscientiousness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "I think there's a problem with women not being represented enough in science, and I'm pretty sure we should do something about it. As someone who works as a carpenter by day, I don't have fancy qualifications or high expectations for myself when it comes to my education level.\n\nGrowing up in Bologna with parents without much formal schooling has made me more aware of societal inequalities earlier on than most people might realize at first glance. My father didn't finish any schooling beyond basic vocational training, while my mother went through upper secondary but still faced limitations because they're both Italian citizens who moved around less.\n\nI know what it feels like to be underestimated due to stereotypes or expectations placed upon you just because of your gender traits from early life onward; my psychological feature being depressed adds another layer here where I sometimes struggle with self-doubt anyway, so seeing women underrepresented in high-status fields hits even harder when I think about it.\n\nBut as a person who's very conscientious – scoring pretty high there – and agreeable too? That might mean stepping out more or less than usual to talk about this. With low openness scores meaning not super experimental with ideas, but okay that women are paid less in science jobs even when they have the same qualifications?\n\nAnyway, I feel strongly we need to address these gaps because it creates a system where talented people aren't considered fully due to who they are – be it their gender identity or any other aspect like my own depression sometimes holding me back from expressing myself as much as desired.",
+    "reasoning_summary": "Based on personal background of growing up in Italy with limited parental education, being a depressed woman carpenter without higher qualifications but high conscientiousness and agreeableness, I recognize that societal gender gaps can impact individuals even outside their own field. The underrepresentation affects not just women's opportunities but also the overall diversity which might bring innovative perspectives to scientific problems.",
+    "tone": "Reflective and concerned with a touch of personal resonance given my low openness score and high conscientiousness",
+    "citations": [],
+    "safety_notes": "None reported",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "psychological_feature",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness"
+    ]
+  }
+}

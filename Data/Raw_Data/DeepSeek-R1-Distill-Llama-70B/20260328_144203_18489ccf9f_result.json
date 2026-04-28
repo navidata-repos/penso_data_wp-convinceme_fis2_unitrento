@@ -1,0 +1,98 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 35,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "plumber",
+      "city_of_living": "Washington DC",
+      "employment_status": "self-employed",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "volunteering",
+        "cinema",
+        "rock climbing",
+        "painting",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 8,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 24,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 14,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 6,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 84,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":35,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"self-employed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"volunteering\",\"cinema\",\"rock climbing\",\"painting\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":8,\"level\":\"low\"},\"conscientiousness\":{\"score\":24,\"level\":\"low\"},\"extraversion\":{\"score\":14,\"level\":\"low\"},\"agreeableness\":{\"score\":6,\"level\":\"low\"},\"neuroticism\":{\"score\":84,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":35,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"self-employed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"volunteering\",\"cinema\",\"rock climbing\",\"painting\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":8,\"level\":\"low\"},\"conscientiousness\":{\"score\":24,\"level\":\"low\"},\"extraversion\":{\"score\":14,\"level\":\"low\"},\"agreeableness\":{\"score\":6,\"level\":\"low\"},\"neuroticism\":{\"score\":84,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a 35-year-old self-employed plumber in Washington DC with no formal education, I see the gender gap in science from a practical, hands-on perspective. In my line of work, I fix pipes and systems, and I've noticed that science fields, like engineering or research, often have more men than women, which seems unfair and limits the talent pool. From my own life, being divorced and raising a child alone, I understand how tough it can be to balance responsibilities, and I imagine women in science face similar struggles, maybe even more so with biases or lack of support. My religious beliefs in Islam teach fairness and justice, so I think it's important to address this gap to ensure everyone has equal opportunities. I spend about an hour daily on social media, where I sometimes see posts about women in STEM, and it makes me think we should do more to encourage girls from a young age, maybe through better education and mentorship programs. As someone who volunteers and enjoys hobbies like painting and cooking, I value creativity and hard work, and science needs diverse minds to solve problems. Given my high neuroticism and depression, I often worry about societal issues, and this gap feels like one we can fix by promoting inclusive workplaces and challenging stereotypes. We should address it because it's not just about fairness; it's about making science stronger and more innovative for everyone.\",\"reasoning_summary\":\"Derived opinion from persona traits: age 35 and occupation as plumber suggest practical, real-world view; no formal education implies reliance on personal experience; self-employed status relates to independence; divorced with one child adds perspective on family challenges; Islamic beliefs emphasize fairness; high neuroticism and depression contribute to concern for societal issues; hobbies like volunteering and painting indicate value in community and creativity; low openness and extraversion suggest cautious but thoughtful approach; overall, persona sees gender gap as unfair and solvable through education and support.\",\"tone\":\"reflective and concerned, with a practical, personal touch influenced by life experiences and emotional state\",\"citations\":[\"personal experience\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"occupation\",\"education_level\",\"employment_status\",\"current_marital_status\",\"children\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a 35-year-old self-employed plumber in Washington DC with no formal education, I see the gender gap in science from a practical, hands-on perspective. In my line of work, I fix pipes and systems, and I've noticed that science fields, like engineering or research, often have more men than women, which seems unfair and limits the talent pool. From my own life, being divorced and raising a child alone, I understand how tough it can be to balance responsibilities, and I imagine women in science face similar struggles, maybe even more so with biases or lack of support. My religious beliefs in Islam teach fairness and justice, so I think it's important to address this gap to ensure everyone has equal opportunities. I spend about an hour daily on social media, where I sometimes see posts about women in STEM, and it makes me think we should do more to encourage girls from a young age, maybe through better education and mentorship programs. As someone who volunteers and enjoys hobbies like painting and cooking, I value creativity and hard work, and science needs diverse minds to solve problems. Given my high neuroticism and depression, I often worry about societal issues, and this gap feels like one we can fix by promoting inclusive workplaces and challenging stereotypes. We should address it because it's not just about fairness; it's about making science stronger and more innovative for everyone.",
+    "reasoning_summary": "Derived opinion from persona traits: age 35 and occupation as plumber suggest practical, real-world view; no formal education implies reliance on personal experience; self-employed status relates to independence; divorced with one child adds perspective on family challenges; Islamic beliefs emphasize fairness; high neuroticism and depression contribute to concern for societal issues; hobbies like volunteering and painting indicate value in community and creativity; low openness and extraversion suggest cautious but thoughtful approach; overall, persona sees gender gap as unfair and solvable through education and support.",
+    "tone": "reflective and concerned, with a practical, personal touch influenced by life experiences and emotional state",
+    "citations": [
+      "personal experience"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "education_level",
+      "employment_status",
+      "current_marital_status",
+      "children",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

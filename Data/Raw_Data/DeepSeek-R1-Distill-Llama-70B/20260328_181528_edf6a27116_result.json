@@ -1,0 +1,93 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 33,
+      "gender": "man",
+      "sexual_orientation": "asexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Bari",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "volunteering",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 81,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 10,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 28,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 6,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 30,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":33,\"gender\":\"man\",\"sexual_orientation\":\"asexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"volunteering\",\"photography\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":28,\"level\":\"low\"},\"agreeableness\":{\"score\":6,\"level\":\"low\"},\"neuroticism\":{\"score\":30,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":33,\"gender\":\"man\",\"sexual_orientation\":\"asexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"volunteering\",\"photography\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":28,\"level\":\"low\"},\"agreeableness\":{\"score\":6,\"level\":\"low\"},\"neuroticism\":{\"score\":30,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"As a hairdresser in Bari, I see people from all walks of life in my chair, and it's taught me a lot about how stereotypes can shape our experiences. Stereotype threat in STEM is when someone feels at risk of confirming a negative stereotype about their group—like women or minorities being less capable in science or math—which can actually hurt their performance and confidence. I think about this through my own lens: I'm a man in a creative, hands-on job, and I've faced assumptions that hairdressing isn't a serious career, so I can relate to how these pressures might feel in fields like engineering or computing. We should absolutely address it because it's not just about fairness; it's about wasting talent. If people are held back by invisible barriers, we all lose out on innovations and solutions that could come from diverse minds. In my volunteering, I've seen how supportive environments make a difference—like when I help at local youth centers, encouraging kids to explore their interests without judgment. To tackle stereotype threat, we need to start early, like in schools, by promoting inclusive teaching that highlights diverse role models in STEM, maybe through stories or projects that show anyone can excel. In workplaces, creating mentorship programs and ensuring unbiased hiring practices can help. As someone with high openness but low conscientiousness and agreeableness, I value creativity and independence over strict rules, so I'd suggest flexible, personalized approaches rather than one-size-fits-all policies. For instance, in my photography hobby, I experiment freely without fear of failure, and STEM fields could benefit from fostering that kind of exploratory mindset. Ultimately, addressing stereotype threat is about building a culture where everyone feels they belong and can contribute, much like how I aim to make my salon a welcoming space for all clients.\",\"reasoning_summary\":\"Derived opinion from persona traits: age 33 suggests maturity; gender man and occupation hairdresser provide perspective on gender roles and creative work; high openness (score 81) indicates curiosity and support for addressing complex issues like stereotype threat; low conscientiousness (score 10) and low agreeableness (score 6) suggest a preference for informal, individualized solutions over rigid systems; hobbies volunteering and photography inform examples of community involvement and creative exploration; education level upper secondary and parents' education mix (no formal education and master's degree) highlight awareness of educational disparities; city Bari and Italian background add cultural context; tone is conversational and reflective, aligning with low extraversion (score 28) and normal psychological feature.\",\"tone\":\"conversational, reflective, and slightly informal, with personal anecdotes and a focus on creativity and community, avoiding aggressive or overly structured language.\",\"citations\":[\"general knowledge\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As a hairdresser in Bari, I see people from all walks of life in my chair, and it's taught me a lot about how stereotypes can shape our experiences. Stereotype threat in STEM is when someone feels at risk of confirming a negative stereotype about their group—like women or minorities being less capable in science or math—which can actually hurt their performance and confidence. I think about this through my own lens: I'm a man in a creative, hands-on job, and I've faced assumptions that hairdressing isn't a serious career, so I can relate to how these pressures might feel in fields like engineering or computing. We should absolutely address it because it's not just about fairness; it's about wasting talent. If people are held back by invisible barriers, we all lose out on innovations and solutions that could come from diverse minds. In my volunteering, I've seen how supportive environments make a difference—like when I help at local youth centers, encouraging kids to explore their interests without judgment. To tackle stereotype threat, we need to start early, like in schools, by promoting inclusive teaching that highlights diverse role models in STEM, maybe through stories or projects that show anyone can excel. In workplaces, creating mentorship programs and ensuring unbiased hiring practices can help. As someone with high openness but low conscientiousness and agreeableness, I value creativity and independence over strict rules, so I'd suggest flexible, personalized approaches rather than one-size-fits-all policies. For instance, in my photography hobby, I experiment freely without fear of failure, and STEM fields could benefit from fostering that kind of exploratory mindset. Ultimately, addressing stereotype threat is about building a culture where everyone feels they belong and can contribute, much like how I aim to make my salon a welcoming space for all clients.",
+    "reasoning_summary": "Derived opinion from persona traits: age 33 suggests maturity; gender man and occupation hairdresser provide perspective on gender roles and creative work; high openness (score 81) indicates curiosity and support for addressing complex issues like stereotype threat; low conscientiousness (score 10) and low agreeableness (score 6) suggest a preference for informal, individualized solutions over rigid systems; hobbies volunteering and photography inform examples of community involvement and creative exploration; education level upper secondary and parents' education mix (no formal education and master's degree) highlight awareness of educational disparities; city Bari and Italian background add cultural context; tone is conversational and reflective, aligning with low extraversion (score 28) and normal psychological feature.",
+    "tone": "conversational, reflective, and slightly informal, with personal anecdotes and a focus on creativity and community, avoiding aggressive or overly structured language.",
+    "citations": [
+      "general knowledge"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

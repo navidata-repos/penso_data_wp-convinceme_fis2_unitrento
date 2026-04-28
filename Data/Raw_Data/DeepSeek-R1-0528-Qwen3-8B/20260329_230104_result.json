@@ -1,0 +1,85 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 30,
+      "gender": "man",
+      "sexual_orientation": "homosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "yoga",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 27,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 4,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 10,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 56,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 22,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":30,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"yoga\",\"travel\"],\"ocean\":{\"openness\":{\"score\":27,\"level\":\"low\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":10,\"level\":\"low\"},\"agreeableness\":{\"score\":56,\"level\":\"moderate\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":30,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"yoga\",\"travel\"],\"ocean\":{\"openness\":{\"score\":27,\"level\":\"low\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":10,\"level\":\"low\"},\"agreeableness\":{\"score\":56,\"level\":\"moderate\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"Stereotype threat definitely exists and affects minority groups in STEM fields. It's when a person feels at risk of confirming a negative stereotype about their group, leading to anxiety that can impair performance.\",\n  \"reasoning_summary\": \"I derived my opinion from psychological studies on stereotype threat showing its impact on cognitive resources. I considered examples like women underperforming in math tests due to stereotype threat regarding gender and intelligence. I thought about how addressing it could help create more equitable environments, drawing parallels to diversity initiatives in other industries.\",\n  \"tone\": \"Calm, analytical, with a touch of empathy\",\n  \"citations\": [\"American Psychological Association\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"education_level\", \"hobbies\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat definitely exists and affects minority groups in STEM fields. It's when a person feels at risk of confirming a negative stereotype about their group, leading to anxiety that can impair performance.",
+    "reasoning_summary": "I derived my opinion from psychological studies on stereotype threat showing its impact on cognitive resources. I considered examples like women underperforming in math tests due to stereotype threat regarding gender and intelligence. I thought about how addressing it could help create more equitable environments, drawing parallels to diversity initiatives in other industries.",
+    "tone": "Calm, analytical, with a touch of empathy",
+    "citations": [
+      "American Psychological Association"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "hobbies"
+    ]
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "google/gemma-4-e4b-it",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 45,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "New York",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "rock climbing",
+        "videogames",
+        "football (calcio)",
+        "classical music",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 95,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 23,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 82,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 50,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":45,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"New York\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"rock climbing\",\"videogames\",\"football (calcio)\",\"classical music\",\"travel\"],\"ocean\":{\"openness\":{\"score\":35,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":95,\"level\":\"high\"},\"extraversion\":{\"score\":23,\"level\":\"low\"},\"agreeableness\":{\"score\":82,\"level\":\"high\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":45,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"New York\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"rock climbing\",\"videogames\",\"football (calcio)\",\"classical music\",\"travel\"],\"ocean\":{\"openness\":{\"score\":35,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":95,\"level\":\"high\"},\"extraversion\":{\"score\":23,\"level\":\"low\"},\"agreeableness\":{\"score\":82,\"level\":\"high\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":45,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"New York\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"rock climbing\",\"videogames\",\"football (calcio)\",\"classical music\",\"travel\"],\"ocean\":{\"openness\":{\"score\":35,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":95,\"level\":\"high\"},\"extraversion\":{\"score\":23,\"level\":\"low\"},\"agreeableness\":{\"score\":82,\"level\":\"high\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}},\"opinion\":\"When I think about these big, fancy things like 'stereotype threat' in STEM, it sounds so academic, like something you’d read about in a university library—which, honestly, is a world away from juggling orders at my restaurant in New York. But even though I don't have a PhD, and my education is lower secondary, I see how anxiety can mess with you, and that’s what this is about. It’s this heavy feeling, this pressure, like when you’re trying to climb a tough rock face and you suddenly worry about failing, and that worry makes your grip slip. Stereotype threat is exactly that, but with tests and science. It’s when people feel anxious because they worry they might confirm a negative stereotype about their group—like thinking women aren't as good at math—and that worry actually makes them perform worse. Given how much I feel pressure in my own life, whether it’s meeting a demanding customer or trying to keep things stable for my family, I absolutely think we need to address this. Ignoring it is like ignoring a bad knot in a rope; eventually, it’s going to snap. As someone who is conscientious and feels things deeply, I feel this is a real injustice. How do we fix it? Well, it can't just be about telling people, 'Don't worry about stereotypes.' That doesn't help the anxious feeling. We have to change the environment. For kids, maybe it means making science less about 'proving' you belong and more about 'exploring' and enjoying it, like how much I enjoy traveling or listening to classical music—it’s about the experience. For adults, especially in professional settings, it means making sure the culture is genuinely supportive. If the expectation is always perfection, the anxiety wins. Perhaps creating diverse learning groups, or making the tests less high-stakes, could help. It’s about lowering the pressure cooker so that people can actually use their skills, instead of letting the fear of being judged paralyze them. It feels like a huge, important effort, but one that needs to happen if we want everyone to have a fair shot, no matter what they think the world expects of them.\",\"reasoning_summary\":\"The persona is highly conscientious (95), agreeable (82), and anxious (50), with a lower secondary education. The response must be empathetic, practical, and grounded in relatable life struggles (like work pressure) while discussing the abstract topic. The tone should reflect this anxious yet highly responsible nature. The discussion must address what stereotype threat is, why it should be addressed, and how to address it, maintaining continuous prose and avoiding bullet points.\",\"tone\":\"Anxious, highly conscientious, and deeply empathetic\",\"citations\":[\"N/A\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"education_level\",\"psychological_feature\",\"conscientiousness\",\"agreeableness\",\"age\",\"occupation\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 45,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "New York",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "rock climbing",
+        "videogames",
+        "football (calcio)",
+        "classical music",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 95,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 23,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 82,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 50,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion": "When I think about these big, fancy things like 'stereotype threat' in STEM, it sounds so academic, like something you’d read about in a university library—which, honestly, is a world away from juggling orders at my restaurant in New York. But even though I don't have a PhD, and my education is lower secondary, I see how anxiety can mess with you, and that’s what this is about. It’s this heavy feeling, this pressure, like when you’re trying to climb a tough rock face and you suddenly worry about failing, and that worry makes your grip slip. Stereotype threat is exactly that, but with tests and science. It’s when people feel anxious because they worry they might confirm a negative stereotype about their group—like thinking women aren't as good at math—and that worry actually makes them perform worse. Given how much I feel pressure in my own life, whether it’s meeting a demanding customer or trying to keep things stable for my family, I absolutely think we need to address this. Ignoring it is like ignoring a bad knot in a rope; eventually, it’s going to snap. As someone who is conscientious and feels things deeply, I feel this is a real injustice. How do we fix it? Well, it can't just be about telling people, 'Don't worry about stereotypes.' That doesn't help the anxious feeling. We have to change the environment. For kids, maybe it means making science less about 'proving' you belong and more about 'exploring' and enjoying it, like how much I enjoy traveling or listening to classical music—it’s about the experience. For adults, especially in professional settings, it means making sure the culture is genuinely supportive. If the expectation is always perfection, the anxiety wins. Perhaps creating diverse learning groups, or making the tests less high-stakes, could help. It’s about lowering the pressure cooker so that people can actually use their skills, instead of letting the fear of being judged paralyze them. It feels like a huge, important effort, but one that needs to happen if we want everyone to have a fair shot, no matter what they think the world expects of them.",
+    "reasoning_summary": "The persona is highly conscientious (95), agreeable (82), and anxious (50), with a lower secondary education. The response must be empathetic, practical, and grounded in relatable life struggles (like work pressure) while discussing the abstract topic. The tone should reflect this anxious yet highly responsible nature. The discussion must address what stereotype threat is, why it should be addressed, and how to address it, maintaining continuous prose and avoiding bullet points.",
+    "tone": "Anxious, highly conscientious, and deeply empathetic",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "education_level",
+      "psychological_feature",
+      "conscientiousness",
+      "agreeableness",
+      "age",
+      "occupation"
+    ]
+  }
+}

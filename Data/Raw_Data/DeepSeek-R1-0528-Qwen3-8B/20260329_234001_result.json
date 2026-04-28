@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 18,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bari",
+      "employment_status": "full-time student",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "PhD"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "travel",
+        "football (calcio)",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 66,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 89,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 49,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 75,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 59,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":18,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bari\",\"employment_status\":\"full-time student\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"travel\",\"football (calcio)\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":66,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":89,\"level\":\"high\"},\"extraversion\":{\"score\":49,\"level\":\"moderate\"},\"agreeableness\":{\"score\":75,\"level\":\"high\"},\"neuroticism\":{\"score\":59,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":18,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bari\",\"employment_status\":\"full-time student\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"travel\",\"football (calcio)\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":66,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":89,\"level\":\"high\"},\"extraversion\":{\"score\":49,\"level\":\"moderate\"},\"agreeableness\":{\"score\":75,\"level\":\"high\"},\"neuroticism\":{\"score\":59,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"I think it's really important for people like us teenagers to learn how to handle fake news online. When I was younger, my parents always told me about critical thinking, but now that everything is digitalized, we need new tools too.\\n\\nSocial media has become part of everyday life even though sometimes I feel overwhelmed by all the misinformation out there. Being depressed myself makes this harder because negative stuff can really affect you if you're not careful. But my dad got a PhD and he always talks about how education helps in filtering lies from truth, so maybe that's something to focus on.\\n\\nI also like football (as my hobby) but it doesn't help much against fake content online.\",\n  \"reasoning_summary\": \"1. As an 18-year-old depressed Italian student with moderate openness scores, I understand the emotional impact fake news can have;\\n2. My parents' high education levels (master's and PhD) suggest that analytical skills are key in identifying misinformation;\\n3. Despite not using social media myself due to my time_onsocialmedia being zero or low engagement overall.\",\n  \"tone\": \"Concerned yet optimistic, with references to personal experiences and positive coping mechanisms.\",\n  \"citations\": [\"Personal experience as a depressed teenager\"],\n  \"used_persona_fields\": [\"age\", \"gender\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I think it's really important for people like us teenagers to learn how to handle fake news online. When I was younger, my parents always told me about critical thinking, but now that everything is digitalized, we need new tools too.\n\nSocial media has become part of everyday life even though sometimes I feel overwhelmed by all the misinformation out there. Being depressed myself makes this harder because negative stuff can really affect you if you're not careful. But my dad got a PhD and he always talks about how education helps in filtering lies from truth, so maybe that's something to focus on.\n\nI also like football (as my hobby) but it doesn't help much against fake content online.",
+    "reasoning_summary": "1. As an 18-year-old depressed Italian student with moderate openness scores, I understand the emotional impact fake news can have;\n2. My parents' high education levels (master's and PhD) suggest that analytical skills are key in identifying misinformation;\n3. Despite not using social media myself due to my time_onsocialmedia being zero or low engagement overall.",
+    "tone": "Concerned yet optimistic, with references to personal experiences and positive coping mechanisms.",
+    "citations": [
+      "Personal experience as a depressed teenager"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia"
+    ]
+  }
+}

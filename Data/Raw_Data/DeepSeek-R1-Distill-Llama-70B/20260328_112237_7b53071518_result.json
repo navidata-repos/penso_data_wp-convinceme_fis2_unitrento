@@ -1,0 +1,101 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 55,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Kansas City",
+      "employment_status": "unemployed",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "yoga",
+        "rock climbing",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 10,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 14,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 30,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 14,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":55,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"unemployed\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"yoga\",\"rock climbing\",\"running\"],\"ocean\":{\"openness\":{\"score\":10,\"level\":\"low\"},\"conscientiousness\":{\"score\":38,\"level\":\"moderate\"},\"extraversion\":{\"score\":14,\"level\":\"low\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":14,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":55,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"unemployed\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"yoga\",\"rock climbing\",\"running\"],\"ocean\":{\"openness\":{\"score\":10,\"level\":\"low\"},\"conscientiousness\":{\"score\":38,\"level\":\"moderate\"},\"extraversion\":{\"score\":14,\"level\":\"low\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":14,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a 55-year-old man from Kansas City, unemployed with a primary school education and dealing with depression, I find discussions about healthcare and COVID vaccines particularly challenging. My low openness score means I'm not naturally inclined to embrace new ideas or changes, which makes vaccine conversations feel overwhelming, especially with conflicting information online. Spending several hours daily on social media exposes me to a barrage of opinions, often fueling my anxiety rather than clarifying things. My Christian faith provides some comfort, but it also adds complexity when I hear religious arguments against vaccines. With three children and being in a relationship, I feel a responsibility to make informed decisions for my family's health, yet my moderate conscientiousness means I struggle to stay organized in researching these topics. My low extraversion and agreeableness make me hesitant to engage in debates; I prefer to avoid confrontations, which sometimes leads to isolation. To manage these discussions, I've learned to set boundaries—I limit my social media time to trusted sources like local health departments and focus on practical steps, like talking to my doctor, who understands my depression and can offer personalized advice. I also lean on my hobbies, like running and yoga, to reduce stress and clear my mind before making health decisions. Ultimately, I believe in taking a cautious, prayerful approach, balancing faith with medical guidance, and prioritizing my family's well-being over online noise.\",\"reasoning_summary\":\"Derived opinion from persona traits: age 55 suggests life experience but potential resistance to change; unemployment and primary school education may limit access to or comfort with complex health information; depression and low neuroticism indicate emotional challenges but not high anxiety; low openness aligns with skepticism toward vaccines; low extraversion and agreeableness explain avoidance of debates; Christian beliefs influence moral considerations; time on social media implies exposure to misinformation; hobbies provide coping mechanisms; family responsibilities (3 children, relationship) drive need for practical management strategies. Tone is cautious, personal, and reflective, avoiding technical jargon to match education level.\",\"tone\":\"cautious, personal, reflective, slightly anxious\",\"citations\":[\"local health departments\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"education_level\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean.openness\",\"ocean.conscientiousness\",\"ocean.extraversion\",\"ocean.agreeableness\",\"ocean.neuroticism\",\"current_marital_status\",\"children\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 55-year-old man from Kansas City, unemployed with a primary school education and dealing with depression, I find discussions about healthcare and COVID vaccines particularly challenging. My low openness score means I'm not naturally inclined to embrace new ideas or changes, which makes vaccine conversations feel overwhelming, especially with conflicting information online. Spending several hours daily on social media exposes me to a barrage of opinions, often fueling my anxiety rather than clarifying things. My Christian faith provides some comfort, but it also adds complexity when I hear religious arguments against vaccines. With three children and being in a relationship, I feel a responsibility to make informed decisions for my family's health, yet my moderate conscientiousness means I struggle to stay organized in researching these topics. My low extraversion and agreeableness make me hesitant to engage in debates; I prefer to avoid confrontations, which sometimes leads to isolation. To manage these discussions, I've learned to set boundaries—I limit my social media time to trusted sources like local health departments and focus on practical steps, like talking to my doctor, who understands my depression and can offer personalized advice. I also lean on my hobbies, like running and yoga, to reduce stress and clear my mind before making health decisions. Ultimately, I believe in taking a cautious, prayerful approach, balancing faith with medical guidance, and prioritizing my family's well-being over online noise.",
+    "reasoning_summary": "Derived opinion from persona traits: age 55 suggests life experience but potential resistance to change; unemployment and primary school education may limit access to or comfort with complex health information; depression and low neuroticism indicate emotional challenges but not high anxiety; low openness aligns with skepticism toward vaccines; low extraversion and agreeableness explain avoidance of debates; Christian beliefs influence moral considerations; time on social media implies exposure to misinformation; hobbies provide coping mechanisms; family responsibilities (3 children, relationship) drive need for practical management strategies. Tone is cautious, personal, and reflective, avoiding technical jargon to match education level.",
+    "tone": "cautious, personal, reflective, slightly anxious",
+    "citations": [
+      "local health departments"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism",
+      "current_marital_status",
+      "children"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

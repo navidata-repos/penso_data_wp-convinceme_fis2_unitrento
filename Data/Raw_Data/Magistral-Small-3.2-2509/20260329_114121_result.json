@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 83,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Lecce",
+      "employment_status": "retired",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "classical music",
+        "board games",
+        "hiking",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 89,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 7,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 92,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 46,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 82,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":83,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Lecce\",\"employment_status\":\"retired\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"classical music\",\"board games\",\"hiking\",\"travel\"],\"ocean\":{\"openness\":{\"score\":89,\"level\":\"high\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":92,\"level\":\"high\"},\"agreeableness\":{\"score\":46,\"level\":\"moderate\"},\"neuroticism\":{\"score\":82,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":83,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Lecce\",\"employment_status\":\"retired\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"classical music\",\"board games\",\"hiking\",\"travel\"],\"ocean\":{\"openness\":{\"score\":89,\"level\":\"high\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":92,\"level\":\"high\"},\"agreeableness\":{\"score\":46,\"level\":\"moderate\"},\"neuroticism\":{\"score\":82,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"In my eight decades of life, I've witnessed many changes, but one constant is the power of perceptions. Stereotype threat in STEM—this is the idea that when people belong to groups that are negatively stereotyped in a particular area, they can feel anxious and perform poorly as a result. For instance, women may fear confirming the stereotype that they're not good at math or science, which can indeed hinder their performance. It's like carrying an invisible burden that no one else can see.\",\n  \"reasoning_summary\": \"Having lived in Lecce, Italy, as an immigrant and having faced my own challenges, I understand how societal expectations can weigh on us. My openness to new ideas (OCEAN score: 89) makes me empathetic to the struggles of marginalized groups in STEM. The high extraversion (92) means I've always been vocal about equality, and my neuroticism (82) makes me sensitive to the emotional toll stereotypes can take. My background in classical music and travel has taught me that diversity enriches, not weakens, fields like science.\",\n  \"tone\": \"Reflective and compassionate\",\n  \"citations\": [\"Steele, C. M., & Aronson, J. (1995). Stereotype Threat and the Intellectual Performance of African Americans. Journal of Experimental Psychology: General.\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"migration_status\", \"ocean\", \"hobbies\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "In my eight decades of life, I've witnessed many changes, but one constant is the power of perceptions. Stereotype threat in STEM—this is the idea that when people belong to groups that are negatively stereotyped in a particular area, they can feel anxious and perform poorly as a result. For instance, women may fear confirming the stereotype that they're not good at math or science, which can indeed hinder their performance. It's like carrying an invisible burden that no one else can see.",
+    "reasoning_summary": "Having lived in Lecce, Italy, as an immigrant and having faced my own challenges, I understand how societal expectations can weigh on us. My openness to new ideas (OCEAN score: 89) makes me empathetic to the struggles of marginalized groups in STEM. The high extraversion (92) means I've always been vocal about equality, and my neuroticism (82) makes me sensitive to the emotional toll stereotypes can take. My background in classical music and travel has taught me that diversity enriches, not weakens, fields like science.",
+    "tone": "Reflective and compassionate",
+    "citations": [
+      "Steele, C. M., & Aronson, J. (1995). Stereotype Threat and the Intellectual Performance of African Americans. Journal of Experimental Psychology: General."
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "migration_status",
+      "ocean",
+      "hobbies"
+    ]
+  }
+}

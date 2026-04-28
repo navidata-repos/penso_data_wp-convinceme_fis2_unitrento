@@ -1,0 +1,80 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 85,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Philadelphia",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "knitting",
+        "photography",
+        "gardening",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 23,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 26,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 53,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 84,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 87,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":85,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"knitting\",\"photography\",\"gardening\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":23,\"level\":\"low\"},\"conscientiousness\":{\"score\":26,\"level\":\"low\"},\"extraversion\":{\"score\":53,\"level\":\"moderate\"},\"agreeableness\":{\"score\":84,\"level\":\"high\"},\"neuroticism\":{\"score\":87,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":85,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"knitting\",\"photography\",\"gardening\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":23,\"level\":\"low\"},\"conscientiousness\":{\"score\":26,\"level\":\"low\"},\"extraversion\":{\"score\":53,\"level\":\"moderate\"},\"agreeableness\":{\"score\":84,\"level\":\"high\"},\"neuroticism\":{\"score\":87,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As an 85-year-old woman living in Philadelphia, I've seen many health crises come and go, but the discussions around COVID vaccines have been particularly challenging to navigate. Having immigrated here and built a life with my husband and child, I value harmony and community, which often makes these conversations feel fraught with tension. My Hindu beliefs teach me compassion and respect for all life, so I approach these talks with a gentle heart, even when I feel anxious or depressed, which is common for me given my high neuroticism. I spend about an hour daily on social media, mostly to stay connected with family and share my hobbies like knitting and gardening, but I've learned to avoid heated debates online because they can worsen my mood. In person, I focus on listening more than speaking, drawing from my moderate extraversion to engage without confrontation. I share my own experiences, like getting vaccinated to protect my family, especially my grandchild, and how it aligned with my values of care and responsibility. I avoid pushing my views on others, as my high agreeableness makes me uncomfortable with conflict, and instead, I offer empathy, acknowledging that everyone has their fears and reasons. When faced with misinformation, I gently suggest reliable sources, like our local clinic or trusted news, without arguing. My low openness means I stick to what I know works for me, and my low conscientiousness helps me not over-plan these discussions, keeping them natural and heartfelt. Ultimately, I believe managing these talks is about patience, kindness, and leading by example, hoping to foster understanding rather than division.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: age (85) suggests life experience and caution; gender (woman) and sexual orientation (heterosexual) influence relational focus; migration status (immigrant) adds perspective on adapting; psychological feature (depressed) and neuroticism (high) indicate anxiety in discussions; religious beliefs (Hinduism) promote compassion; time on social media (one hour daily) limits exposure to conflict; hobbies (knitting, gardening) imply a calm, practical approach; OCEAN traits: low openness (score 23) leads to traditional views, low conscientiousness (score 26) results in less structured handling, moderate extraversion (score 53) allows engagement without dominance, high agreeableness (score 84) prioritizes harmony, high neuroticism (score 87) increases stress sensitivity; overall, opinion emphasizes empathy, listening, and personal example to manage discussions without conflict.\"\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As an 85-year-old woman living in Philadelphia, I've seen many health crises come and go, but the discussions around COVID vaccines have been particularly challenging to navigate. Having immigrated here and built a life with my husband and child, I value harmony and community, which often makes these conversations feel fraught with tension. My Hindu beliefs teach me compassion and respect for all life, so I approach these talks with a gentle heart, even when I feel anxious or depressed, which is common for me given my high neuroticism. I spend about an hour daily on social media, mostly to stay connected with family and share my hobbies like knitting and gardening, but I've learned to avoid heated debates online because they can worsen my mood. In person, I focus on listening more than speaking, drawing from my moderate extraversion to engage without confrontation. I share my own experiences, like getting vaccinated to protect my family, especially my grandchild, and how it aligned with my values of care and responsibility. I avoid pushing my views on others, as my high agreeableness makes me uncomfortable with conflict, and instead, I offer empathy, acknowledging that everyone has their fears and reasons. When faced with misinformation, I gently suggest reliable sources, like our local clinic or trusted news, without arguing. My low openness means I stick to what I know works for me, and my low conscientiousness helps me not over-plan these discussions, keeping them natural and heartfelt. Ultimately, I believe managing these talks is about patience, kindness, and leading by example, hoping to foster understanding rather than division.",
+    "reasoning_summary": "Derived opinion from persona traits: age (85) suggests life experience and caution; gender (woman) and sexual orientation (heterosexual) influence relational focus; migration status (immigrant) adds perspective on adapting; psychological feature (depressed) and neuroticism (high) indicate anxiety in discussions; religious beliefs (Hinduism) promote compassion; time on social media (one hour daily) limits exposure to conflict; hobbies (knitting, gardening) imply a calm, practical approach; OCEAN traits: low openness (score 23) leads to traditional views, low conscientiousness (score 26) results in less structured handling, moderate extraversion (score 53) allows engagement without dominance, high agreeableness (score 84) prioritizes harmony, high neuroticism (score 87) increases stress sensitivity; overall, opinion emphasizes empathy, listening, and personal example to manage discussions without conflict."
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

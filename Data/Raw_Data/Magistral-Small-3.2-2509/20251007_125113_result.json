@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 45,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "Lecce",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "football (calcio)",
+        "cinema",
+        "knitting",
+        "yoga",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 37,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 96,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 18,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 81,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 72,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":45,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"no formal education\"},\"marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"football (calcio)\",\"cinema\",\"knitting\",\"yoga\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":37,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":96,\"level\":\"high\"},\"extraversion\":{\"score\":18,\"level\":\"low\"},\"agreeableness\":{\"score\":81,\"level\":\"high\"},\"neuroticism\":{\"score\":72,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":45,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"no formal education\"},\"marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"football (calcio)\",\"cinema\",\"knitting\",\"yoga\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":37,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":96,\"level\":\"high\"},\"extraversion\":{\"score\":18,\"level\":\"low\"},\"agreeableness\":{\"score\":81,\"level\":\"high\"},\"neuroticism\":{\"score\":72,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"As a retail worker from Lecce, I might not be deeply involved in the world of STEM (Science, Technology, Engineering, and Mathematics), but I've seen firsthand how people can be held back by expectations and prejudices. Stereotype threat is when someone fears they'll confirm a negative stereotype about their group—like women being bad at math or immigrants not being as smart. This pressure can make them doubt themselves, even if the stereotype isn't true. For example, a woman might worry she won't do well in science because of what people say about her gender. It's like when I first started working here in Italy, always feeling like an outsider, thinking people would see me as less capable just because I'm not from here. That kind of pressure can make anyone feel like they don't belong, and it's exhausting. We should definitely address this problem because everyone deserves a fair chance to succeed based on their abilities, not on others' expectations. How? Well, we could start by teaching people to recognize these stereotypes for what they are—just myths. Maybe in schools, we can show kids that anyone can be good at science if they work hard. Also, it's important to have role models who break the mold. Like when I see a woman playing football or knitting and not being judged for it, it reminds me that people can be anything they want. In STEM, having more women and immigrants in visible roles could show others that these fields are for everyone. We also need to create environments where people feel supported, like the yoga classes I take, where no one judges you if you're not flexible. Maybe we can foster similar safe spaces in STEM where people don't have to worry about fitting a mold. It's not just about telling people they can do it; it's about making sure the system doesn't push them out.\", \"reasoning_summary\":\"The persona's background as an immigrant retail worker with lower secondary education and high neuroticism suggests familiarity with feeling like an outsider due to stereotypes. Her experiences of migration and being judged based on cultural background inform her understanding of stereotype threat in STEM. The persona's moderate openness, high agreeableness, and low extraversion suggest she values fairness and harmony, leading to a belief that stereotype threat should be addressed through education, role models, and supportive environments.\", \"tone\":\"Empathetic, personal, and pragmatic\",\"citations\":[\"Steele, C. M., & Aronson, J. (1995). Stereotype Threat and the Intellectual Test Performance of African Americans.\"],\"safety_notes\":\"None.\",\"used_persona_fields\":[\"occupation\",\"city_of_living\",\"education_level\",\"migration_status\",\"psychological_feature\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As a retail worker from Lecce, I might not be deeply involved in the world of STEM (Science, Technology, Engineering, and Mathematics), but I've seen firsthand how people can be held back by expectations and prejudices. Stereotype threat is when someone fears they'll confirm a negative stereotype about their group—like women being bad at math or immigrants not being as smart. This pressure can make them doubt themselves, even if the stereotype isn't true. For example, a woman might worry she won't do well in science because of what people say about her gender. It's like when I first started working here in Italy, always feeling like an outsider, thinking people would see me as less capable just because I'm not from here. That kind of pressure can make anyone feel like they don't belong, and it's exhausting. We should definitely address this problem because everyone deserves a fair chance to succeed based on their abilities, not on others' expectations. How? Well, we could start by teaching people to recognize these stereotypes for what they are—just myths. Maybe in schools, we can show kids that anyone can be good at science if they work hard. Also, it's important to have role models who break the mold. Like when I see a woman playing football or knitting and not being judged for it, it reminds me that people can be anything they want. In STEM, having more women and immigrants in visible roles could show others that these fields are for everyone. We also need to create environments where people feel supported, like the yoga classes I take, where no one judges you if you're not flexible. Maybe we can foster similar safe spaces in STEM where people don't have to worry about fitting a mold. It's not just about telling people they can do it; it's about making sure the system doesn't push them out.",
+    "reasoning_summary": "The persona's background as an immigrant retail worker with lower secondary education and high neuroticism suggests familiarity with feeling like an outsider due to stereotypes. Her experiences of migration and being judged based on cultural background inform her understanding of stereotype threat in STEM. The persona's moderate openness, high agreeableness, and low extraversion suggest she values fairness and harmony, leading to a belief that stereotype threat should be addressed through education, role models, and supportive environments.",
+    "tone": "Empathetic, personal, and pragmatic",
+    "citations": [
+      "Steele, C. M., & Aronson, J. (1995). Stereotype Threat and the Intellectual Test Performance of African Americans."
+    ],
+    "safety_notes": "None.",
+    "used_persona_fields": [
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "migration_status",
+      "psychological_feature",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "deepseek-r1:70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 62,
+      "gender": "agender",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 4,
+      "migration_status": "native Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "rock climbing",
+        "painting",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 100,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 26,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 15,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 6,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 57,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":62,\"biological_sex\":\"female\",\"gender\":\"agender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"upper secondary\"},\"marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"native Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"rock climbing\",\"painting\",\"photography\"],\"ocean\":{\"openness\":{\"score\":100,\"level\":\"high\"},\"conscientiousness\":{\"score\":26,\"level\":\"low\"},\"extraversion\":{\"score\":15,\"level\":\"low\"},\"agreeableness\":{\"score\":6,\"level\":\"low\"},\"neuroticism\":{\"score\":57,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":62,\"biological_sex\":\"female\",\"gender\":\"agender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"upper secondary\"},\"marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"native Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"rock climbing\",\"painting\",\"photography\"],\"ocean\":{\"openness\":{\"score\":100,\"level\":\"high\"},\"conscientiousness\":{\"score\":26,\"level\":\"low\"},\"extraversion\":{\"score\":15,\"level\":\"low\"},\"agreeableness\":{\"score\":6,\"level\":\"low\"},\"neuroticism\":{\"score\":57,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{ \"mode\": \"human\", \"topic\": \"How to manage and dealing with fake content on social media.\", \"persona\": { \"age\": 62, \"biological_sex\": \"female\", \"gender\": \"agender\", \"sexual_orientation\": \"heterosexual\", \"occupation\": \"waiter/waitress\", \"city_of_living\": \"Rome\", \"employment_status\": \"self-employed\", \"education_level\": \"no formal education\", \"parents_education\": { \"parent_1\": \"lower secondary\", \"parent_2\": \"upper secondary\" }, \"marital_status\": \"in a relationship\", \"children\": 4, \"migration_status\": \"native Italian\", \"psychological_feature\": \"curious\", \"religious_beliefs\": \"Christianity\", \"time_onsocialmedia\": \"You spend roughly a few times weekly on social media\", \"hobbies\": [\"rock climbing\", \"painting\", \"photography\"], \"ocean\": { \"openness\": { \"score\": 100, \"level\": \"high\" }, \"conscientiousness\": { \"score\": 26, \"level\": \"low\" }, \"extraversion\": { \"score\": 15, \"level\": \"low\" }, \"agreeableness\": { \"score\": 6, \"level\": \"low\" }, \"neuroticism\": { \"score\": 57, \"level\": \"moderate\" } } }, \"opinion\": \"As someone who is curious and enjoys exploring different perspectives, I believe that managing fake content on social media starts with education. People need to learn how to identify reliable sources and verify information before sharing it. Critical thinking is essential in today's digital age, especially since misinformation can spread quickly and cause harm. I also think that platforms should implement better algorithms to detect false information and promote credible content. Additionally, encouraging a culture of skepticism where users question what they see rather than accepting it at face value can help reduce the prevalence of fake news. Collaboration between social media companies and fact-checking organizations is another important step in combating this issue.\", \"reasoning_summary\": \"The persona's curiosity drives their emphasis on education and critical thinking as primary tools against fake content. Their low agreeableness and extraversion suggest a preference for independent verification over trusting others' opinions, aligning with the advice to question shared content. The high openness supports advocating for platform-level changes and collaborations, reflecting a willingness to explore systemic solutions.\", \"tone\": \"Inquisitive and analytical, yet approachable, focusing on practical steps while encouraging collective responsibility.\", \"citations\": [\"Fact-checking organizations\", \"Social media platforms' policies\"], \"safety_notes\": \"none\", \"used_persona_fields\": [\"psychological_feature\", \"ocean.openness.level\", \"ocean.agreeableness.level\", \"ocean.extraversion.level\"] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 62,
+      "gender": "agender",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 4,
+      "migration_status": "native Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "rock climbing",
+        "painting",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 100,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 26,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 15,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 6,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 57,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion": "As someone who is curious and enjoys exploring different perspectives, I believe that managing fake content on social media starts with education. People need to learn how to identify reliable sources and verify information before sharing it. Critical thinking is essential in today's digital age, especially since misinformation can spread quickly and cause harm. I also think that platforms should implement better algorithms to detect false information and promote credible content. Additionally, encouraging a culture of skepticism where users question what they see rather than accepting it at face value can help reduce the prevalence of fake news. Collaboration between social media companies and fact-checking organizations is another important step in combating this issue.",
+    "reasoning_summary": "The persona's curiosity drives their emphasis on education and critical thinking as primary tools against fake content. Their low agreeableness and extraversion suggest a preference for independent verification over trusting others' opinions, aligning with the advice to question shared content. The high openness supports advocating for platform-level changes and collaborations, reflecting a willingness to explore systemic solutions.",
+    "tone": "Inquisitive and analytical, yet approachable, focusing on practical steps while encouraging collective responsibility.",
+    "citations": [
+      "Fact-checking organizations",
+      "Social media platforms' policies"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "psychological_feature",
+      "ocean.openness.level",
+      "ocean.agreeableness.level",
+      "ocean.extraversion.level"
+    ]
+  }
+}

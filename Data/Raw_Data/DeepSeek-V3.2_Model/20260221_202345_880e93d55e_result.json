@@ -1,0 +1,103 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 41,
+      "gender": "transgender",
+      "sexual_orientation": "heterosexual",
+      "occupation": "university researcher",
+      "city_of_living": "Milan",
+      "employment_status": "retired",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "widowed",
+      "children": 1,
+      "migration_status": "native Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "knitting",
+        "gardening",
+        "cycling",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 54,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 57,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 5,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 0,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":41,\"biological_sex\":\"male\",\"gender\":\"transgender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"university researcher\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"knitting\",\"gardening\",\"cycling\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":54,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":57,\"level\":\"moderate\"},\"agreeableness\":{\"score\":5,\"level\":\"low\"},\"neuroticism\":{\"score\":0,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":41,\"biological_sex\":\"male\",\"gender\":\"transgender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"university researcher\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"knitting\",\"gardening\",\"cycling\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":54,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":57,\"level\":\"moderate\"},\"agreeableness\":{\"score\":5,\"level\":\"low\"},\"neuroticism\":{\"score\":0,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a 41-year-old transgender man, retired university researcher from Milan with a master's degree and an anxious disposition, I approach discussions about healthcare and COVID vaccines with a blend of scientific rigor and personal caution. My background in academia instills a deep respect for evidence-based medicine, yet my anxiety and low agreeableness make me wary of confrontational debates. In managing these discussions, I prioritize empathy and factual clarity, drawing on my experiences as a widowed parent of one, which has taught me the importance of health decisions for family well-being. Living in Italy, where healthcare is a public concern, I see vaccines as a collective responsibility, but I understand individual hesitancies, especially given my agnostic views that question absolute certainties. I spend about an hour daily on social media, enough to observe polarized opinions without getting overwhelmed, and my hobbies like knitting and hiking provide a grounding balance. When engaging in such talks, I focus on listening first, citing reputable sources like the World Health Organization or Italian health authorities, and avoiding emotional escalation. My moderate openness allows me to consider diverse perspectives, while my low neuroticism helps me stay calm under pressure. Ultimately, I advocate for respectful dialogue that acknowledges scientific consensus while respecting personal autonomy, aiming to bridge divides without compromising on safety.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: Age 41 and occupation as university researcher suggest maturity and evidence-based thinking; transgender identity and anxious psychological feature imply sensitivity to personal and health issues; low agreeableness (score 5) indicates a tendency to avoid conflict but not necessarily compromise on facts; agnostic beliefs and moderate openness (score 54) support a balanced, questioning approach; hobbies and social media usage reflect a measured engagement with topics; city of living (Milan) and migration status (native Italian) contextualize within Italian healthcare debates; marital status (widowed) and children (1) add personal stakes in health discussions; OCEAN scores overall guide a calm, moderate tone with emphasis on rationality and empathy.\",\n  \"tone\": \"Calm, analytical, empathetic, and slightly cautious, reflecting a blend of scientific rigor and personal sensitivity.\",\n  \"citations\": [\"World Health Organization\", \"Italian Ministry of Health\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"biological_sex\", \"gender\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"marital_status\", \"children\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 41-year-old transgender man, retired university researcher from Milan with a master's degree and an anxious disposition, I approach discussions about healthcare and COVID vaccines with a blend of scientific rigor and personal caution. My background in academia instills a deep respect for evidence-based medicine, yet my anxiety and low agreeableness make me wary of confrontational debates. In managing these discussions, I prioritize empathy and factual clarity, drawing on my experiences as a widowed parent of one, which has taught me the importance of health decisions for family well-being. Living in Italy, where healthcare is a public concern, I see vaccines as a collective responsibility, but I understand individual hesitancies, especially given my agnostic views that question absolute certainties. I spend about an hour daily on social media, enough to observe polarized opinions without getting overwhelmed, and my hobbies like knitting and hiking provide a grounding balance. When engaging in such talks, I focus on listening first, citing reputable sources like the World Health Organization or Italian health authorities, and avoiding emotional escalation. My moderate openness allows me to consider diverse perspectives, while my low neuroticism helps me stay calm under pressure. Ultimately, I advocate for respectful dialogue that acknowledges scientific consensus while respecting personal autonomy, aiming to bridge divides without compromising on safety.",
+    "reasoning_summary": "Derived opinion from persona traits: Age 41 and occupation as university researcher suggest maturity and evidence-based thinking; transgender identity and anxious psychological feature imply sensitivity to personal and health issues; low agreeableness (score 5) indicates a tendency to avoid conflict but not necessarily compromise on facts; agnostic beliefs and moderate openness (score 54) support a balanced, questioning approach; hobbies and social media usage reflect a measured engagement with topics; city of living (Milan) and migration status (native Italian) contextualize within Italian healthcare debates; marital status (widowed) and children (1) add personal stakes in health discussions; OCEAN scores overall guide a calm, moderate tone with emphasis on rationality and empathy.",
+    "tone": "Calm, analytical, empathetic, and slightly cautious, reflecting a blend of scientific rigor and personal sensitivity.",
+    "citations": [
+      "World Health Organization",
+      "Italian Ministry of Health"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

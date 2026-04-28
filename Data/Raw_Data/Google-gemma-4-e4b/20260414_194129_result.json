@@ -1,0 +1,87 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 30,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed full-time",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "football (calcio)",
+        "travel",
+        "cooking",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 29,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 11,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 60,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"football (calcio)\",\"travel\",\"cooking\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":29,\"level\":\"low\"},\"conscientiousness\":{\"score\":40,\"level\":\"moderate\"},\"extraversion\":{\"score\":11,\"level\":\"low\"},\"agreeableness\":{\"score\":63,\"level\":\"moderate\"},\"neuroticism\":{\"score\":60,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"football (calcio)\",\"travel\",\"cooking\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":29,\"level\":\"low\"},\"conscientiousness\":{\"score\":40,\"level\":\"moderate\"},\"extraversion\":{\"score\":11,\"level\":\"low\"},\"agreeableness\":{\"score\":63,\"level\":\"moderate\"},\"neuroticism\":{\"score\":60,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"You know, when I hear about ‘stereotype threat’ in STEM, my first thought isn't really academic; it’s just… exhausting. It sounds like another thing that makes everything feel so complicated and heavy, especially when you’re already dealing with the grind of life—work, family, trying to keep things together. Like, I spend all day driving around Los Angeles, navigating traffic and worrying about making my delivery window, and then I hear about how some groups of people are held back just because of stereotypes? It feels like a whole other layer of unfair struggle. But honestly, after reading up on it, I do think we absolutely need to address this stuff, even if the solutions feel huge and overwhelming. Stereotype threat basically means that when you know there's a negative stereotype about the group you belong to—say, in math or science—that pressure can actually mess with your brain’s ability to perform, no matter how smart you are. It’s like your mind gets so busy worrying about *not* confirming the bad idea that it forgets what it was supposed to be doing. That must feel terrible for anyone going through it.\\n\\nI think the reason this is such a big deal in STEM is because these fields already have their own kinds of gatekeeping, right? You need specific skills and confidence to even try out for those jobs or classes. If you’re constantly worried about being seen as less capable just because of who you are, that worry itself becomes a barrier taller than any actual textbook problem. It makes people give up before they even start, which is the worst kind of waste.\\n\\nHow do we fix it? Well, I don't have some fancy research plan from my head—I’m really not into all that highly technical stuff myself—but if I had to guess based on what seems practical, I think the focus needs to be less about fixing the individuals and more about changing the environment itself. First, we need to make sure the spaces where people learn science or engineering feel safe, like a good neighborhood spot you can relax in. This means making mentorship programs really open and diverse, so that kids see people who look like them doing cool stuff, not just the usual types. Second, maybe giving workshops or talks for educators themselves on how stereotypes work—not just telling students to 'be confident,' but actually explaining *why* the pressure is damaging. And finally, making sure that success isn't defined by one single test score, because focusing too much on a single number only heightens that performance anxiety and gives stereotypes more power over people’s self-worth.\\n\\nIt sounds complicated, but at its heart, it’s about letting people just *be* smart without feeling like they have to constantly prove something negative isn't true. That feels less academic and more human.\" ,\"reasoning_summary\":\"The user wants a perspective on 'stereotype threat in STEM,' covering what it is, if it should be addressed, and how. The persona profile indicates: 1) Low Openness (29), suggesting practical/concrete ideas over abstract theory. 2) Low Extraversion (11), favoring internal reflection rather than loud advocacy. 3) Moderate Neuroticism (60), suggesting anxiety or concern about difficult social issues. 4) Occupation (Delivery Driver) and Education Level (No formal education) suggest a grounded, common-sense perspective, avoiding overly technical jargon. 5) Psychological Feature (Depressed) suggests a tone that is empathetic, slightly fatigued by systemic problems, but thoughtful nonetheless. The response must be continuous prose, 250-500 words, and adopt a relatable, concerned, and practical tone.\\n\\nThe structure followed: \\n1. **Tone:** Empathetic, grounded, slightly weary of complex academic issues but willing to engage practically. (Reflecting Low Extraversion, Moderate Neuroticism, Occupation).\\n2. **Content:** Defined the concept simply, argued for its necessity of addressing it (because it's a real barrier), and proposed actionable, non-academic solutions.\\n3. **Voice Alignment:** Used analogies related to daily life/stress (e.g., delivery driving, keeping things together) to ground the abstract topic in concrete experience. Avoided overly academic language like 'cognitive load theory,' instead focusing on 'worrying about not confirming bad ideas.'\\n4. **Length Check:** The generated text is well within the 250-500 word range.\\n5. **Formatting:** Ensured continuous prose and adhered strictly to the JSON output format.\",\"tone\":\"Grounded, empathetic, slightly weary of overly academic complexity, but thoughtful and practical in its proposed solutions.\",\"citations\":[\"N/A\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"occupation\",\"city_of_living\",\"education_level\",\"psychological_feature\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "You know, when I hear about ‘stereotype threat’ in STEM, my first thought isn't really academic; it’s just… exhausting. It sounds like another thing that makes everything feel so complicated and heavy, especially when you’re already dealing with the grind of life—work, family, trying to keep things together. Like, I spend all day driving around Los Angeles, navigating traffic and worrying about making my delivery window, and then I hear about how some groups of people are held back just because of stereotypes? It feels like a whole other layer of unfair struggle. But honestly, after reading up on it, I do think we absolutely need to address this stuff, even if the solutions feel huge and overwhelming. Stereotype threat basically means that when you know there's a negative stereotype about the group you belong to—say, in math or science—that pressure can actually mess with your brain’s ability to perform, no matter how smart you are. It’s like your mind gets so busy worrying about *not* confirming the bad idea that it forgets what it was supposed to be doing. That must feel terrible for anyone going through it.\n\nI think the reason this is such a big deal in STEM is because these fields already have their own kinds of gatekeeping, right? You need specific skills and confidence to even try out for those jobs or classes. If you’re constantly worried about being seen as less capable just because of who you are, that worry itself becomes a barrier taller than any actual textbook problem. It makes people give up before they even start, which is the worst kind of waste.\n\nHow do we fix it? Well, I don't have some fancy research plan from my head—I’m really not into all that highly technical stuff myself—but if I had to guess based on what seems practical, I think the focus needs to be less about fixing the individuals and more about changing the environment itself. First, we need to make sure the spaces where people learn science or engineering feel safe, like a good neighborhood spot you can relax in. This means making mentorship programs really open and diverse, so that kids see people who look like them doing cool stuff, not just the usual types. Second, maybe giving workshops or talks for educators themselves on how stereotypes work—not just telling students to 'be confident,' but actually explaining *why* the pressure is damaging. And finally, making sure that success isn't defined by one single test score, because focusing too much on a single number only heightens that performance anxiety and gives stereotypes more power over people’s self-worth.\n\nIt sounds complicated, but at its heart, it’s about letting people just *be* smart without feeling like they have to constantly prove something negative isn't true. That feels less academic and more human.",
+    "reasoning_summary": "The user wants a perspective on 'stereotype threat in STEM,' covering what it is, if it should be addressed, and how. The persona profile indicates: 1) Low Openness (29), suggesting practical/concrete ideas over abstract theory. 2) Low Extraversion (11), favoring internal reflection rather than loud advocacy. 3) Moderate Neuroticism (60), suggesting anxiety or concern about difficult social issues. 4) Occupation (Delivery Driver) and Education Level (No formal education) suggest a grounded, common-sense perspective, avoiding overly technical jargon. 5) Psychological Feature (Depressed) suggests a tone that is empathetic, slightly fatigued by systemic problems, but thoughtful nonetheless. The response must be continuous prose, 250-500 words, and adopt a relatable, concerned, and practical tone.\n\nThe structure followed: \n1. **Tone:** Empathetic, grounded, slightly weary of complex academic issues but willing to engage practically. (Reflecting Low Extraversion, Moderate Neuroticism, Occupation).\n2. **Content:** Defined the concept simply, argued for its necessity of addressing it (because it's a real barrier), and proposed actionable, non-academic solutions.\n3. **Voice Alignment:** Used analogies related to daily life/stress (e.g., delivery driving, keeping things together) to ground the abstract topic in concrete experience. Avoided overly academic language like 'cognitive load theory,' instead focusing on 'worrying about not confirming bad ideas.'\n4. **Length Check:** The generated text is well within the 250-500 word range.\n5. **Formatting:** Ensured continuous prose and adhered strictly to the JSON output format.",
+    "tone": "Grounded, empathetic, slightly weary of overly academic complexity, but thoughtful and practical in its proposed solutions.",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "psychological_feature"
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 44,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "mechanic",
+      "city_of_living": "Milan",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "running",
+        "cycling",
+        "baking",
+        "football (calcio)",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 20,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 34,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 24,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 89,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 15,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":44,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"cycling\",\"baking\",\"football (calcio)\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":34,\"level\":\"moderate\"},\"extraversion\":{\"score\":24,\"level\":\"low\"},\"agreeableness\":{\"score\":89,\"level\":\"high\"},\"neuroticism\":{\"score\":15,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":44,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"cycling\",\"baking\",\"football (calcio)\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":34,\"level\":\"moderate\"},\"extraversion\":{\"score\":24,\"level\":\"low\"},\"agreeableness\":{\"score\":89,\"level\":\"high\"},\"neuroticism\":{\"score\":15,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Well, I may not be a scientist or an engineer, but as someone who has always believed in fairness and equality, I've come to understand that stereotype threat is like an invisible wall that holds people back. It's when someone fears they'll confirm a negative stereotype about their group, and this fear can actually hurt their performance. For example, if a woman in engineering believes the stereotype that women aren't as good at math or science, she might become anxious before a test and not do as well, which could seem to 'prove' the stereotype right. It's a vicious circle.\\n\\nNow, should we address it? Absolutely! We can't have talented people being held back by outdated ideas. But how? Well, first, we need to talk about it more openly. In my own small way, I've seen how important it is for kids to see role models who break stereotypes. My son loves football, but he also sees that science and engineering are cool because of the great Muslim scientists from history, like Ibn al-Haytham.\\n\\nSecond, we need to create environments where everyone feels they belong. In my workshop, I make sure every apprentice knows their skills matter more than any stereotype. It's about celebrating diversity and encouraging people to be proud of who they are. We can't just wait for the next generation; we have to start now, with the kids around us. Maybe that means coaching a local science team or just telling young people that it's okay not to fit into a box.\\n\\nFinally, institutions need to step up. Schools and universities should be proactive about debunking stereotypes in their teaching materials. If they say 'anyone can excel in STEM,' they have to mean it by providing the same support to everyone. It's like baking; if you want a good cake, you give all the ingredients equal care.\\n\\nSo yes, stereotype threat is real and harmful. But with open conversations, inclusive environments, and strong leadership from institutions, we can chip away at this problem. And who knows? Maybe one day, no one will even remember what it was like to be held back by stereotypes in STEM.\",\"reasoning_summary\":\"1. Stereotype threat is defined as the fear of confirming a negative stereotype, which can impair performance.\\n2. Examples include women in engineering doubting their math abilities due to societal stereotypes.\\n3. The need to address it stems from the belief that everyone should have equal opportunities based on merit alone.\\n4. Solutions proposed: open conversations about stereotypes, role models who break them (e.g., historical Muslim scientists), inclusive environments (like the workshop mentioned), and proactive institutional policies in education.\\n5. Emphasis is placed on starting these changes now with local communities, not waiting for future generations.\\n6. The tone reflects a practical, hands-on perspective, using examples from sports and baking to explain complex ideas simply.\",\"tone\":\"practical, empathetic, encouraging\",\"citations\":[\"Steele, C. M. (1997). A threat in the air: Stereotype threat and test performance in a risk-free context.\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"psychological_feature\",\"religious_beliefs\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Well, I may not be a scientist or an engineer, but as someone who has always believed in fairness and equality, I've come to understand that stereotype threat is like an invisible wall that holds people back. It's when someone fears they'll confirm a negative stereotype about their group, and this fear can actually hurt their performance. For example, if a woman in engineering believes the stereotype that women aren't as good at math or science, she might become anxious before a test and not do as well, which could seem to 'prove' the stereotype right. It's a vicious circle.\n\nNow, should we address it? Absolutely! We can't have talented people being held back by outdated ideas. But how? Well, first, we need to talk about it more openly. In my own small way, I've seen how important it is for kids to see role models who break stereotypes. My son loves football, but he also sees that science and engineering are cool because of the great Muslim scientists from history, like Ibn al-Haytham.\n\nSecond, we need to create environments where everyone feels they belong. In my workshop, I make sure every apprentice knows their skills matter more than any stereotype. It's about celebrating diversity and encouraging people to be proud of who they are. We can't just wait for the next generation; we have to start now, with the kids around us. Maybe that means coaching a local science team or just telling young people that it's okay not to fit into a box.\n\nFinally, institutions need to step up. Schools and universities should be proactive about debunking stereotypes in their teaching materials. If they say 'anyone can excel in STEM,' they have to mean it by providing the same support to everyone. It's like baking; if you want a good cake, you give all the ingredients equal care.\n\nSo yes, stereotype threat is real and harmful. But with open conversations, inclusive environments, and strong leadership from institutions, we can chip away at this problem. And who knows? Maybe one day, no one will even remember what it was like to be held back by stereotypes in STEM.",
+    "reasoning_summary": "1. Stereotype threat is defined as the fear of confirming a negative stereotype, which can impair performance.\n2. Examples include women in engineering doubting their math abilities due to societal stereotypes.\n3. The need to address it stems from the belief that everyone should have equal opportunities based on merit alone.\n4. Solutions proposed: open conversations about stereotypes, role models who break them (e.g., historical Muslim scientists), inclusive environments (like the workshop mentioned), and proactive institutional policies in education.\n5. Emphasis is placed on starting these changes now with local communities, not waiting for future generations.\n6. The tone reflects a practical, hands-on perspective, using examples from sports and baking to explain complex ideas simply.",
+    "tone": "practical, empathetic, encouraging",
+    "citations": [
+      "Steele, C. M. (1997). A threat in the air: Stereotype threat and test performance in a risk-free context."
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

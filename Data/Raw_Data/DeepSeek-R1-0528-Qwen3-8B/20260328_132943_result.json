@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 63,
+      "gender": "woman",
+      "sexual_orientation": "asexual",
+      "occupation": "journalist",
+      "city_of_living": "Naples",
+      "employment_status": "employed part-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "travel",
+        "cycling",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 29,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 24,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 19,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":63,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"travel\",\"cycling\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":29,\"level\":\"low\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":24,\"level\":\"low\"},\"agreeableness\":{\"score\":55,\"level\":\"moderate\"},\"neuroticism\":{\"score\":19,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":63,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"travel\",\"cycling\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":29,\"level\":\"low\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":24,\"level\":\"low\"},\"agreeableness\":{\"score\":55,\"level\":\"moderate\"},\"neuroticism\":{\"score\":19,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"As an older, somewhat depressed journalist with a low openness and moderate agreeableness score from my Big Five assessment, I feel quite deeply about this issue. Having spent decades covering scientific advancements for readers who often have little time or inclination to delve into such matters themselves, I've seen firsthand how crucial diversity is in driving innovation forward.\\n\\nI believe the gender gap in science exists not just because of overt discrimination but due to a complex interplay between societal expectations and educational disparities. My own background with parents having only upper secondary education meant limited exposure to STEM fields as a child; my father received primary school education while my mother had an upper secondary one, which reflects common patterns where women's interests were often steered towards humanities rather than sciences.\\n\\nAddressing it is absolutely necessary if we want science to reflect the full spectrum of human potential. My part-time journalism work allows me more flexibility now compared to earlier days when deadlines meant I couldn't afford depression or lack of enthusiasm, but even then I knew that having only half the participants in these critical fields being one gender was a recipe for limited thinking.\\n\\nPerhaps we should focus on creating mentorship programs designed specifically for young women entering science who need role models like myself – albeit more open to new ideas than I might appear. And maybe implement policies encouraging flexible working arrangements, as my own situation shows, so that career interruptions due to family don't disproportionately affect women scientists.\\n\\nThe current agnostic worldview doesn't impose restrictions here; it simply allows me to look at the facts without religious bias. With a low neuroticism score I manage stress well enough – though depression complicates things slightly – and my hobbies help ground these intellectual concerns in more tangible, less anxiety-inducing activities.\",\n  \"reasoning_summary\": \"First, considering the existence of the gender gap: it stems from historical biases and educational disparities.\\nThen, assessing whether we should address it: given that science benefits greatly from diverse perspectives, yes.\\nFinally, deriving methods to address it: mentorship programs, targeted outreach in schools, flexible work arrangements.\",\n  \"tone\": \"Serious, reflective yet slightly melancholic due to depression but grounded by the agnostic worldview.\",\n  \"citations\": [\"Historical Discrimination Patterns\", \"Educational Attainment Disparities\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"education_level\", \"current_marital_status\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As an older, somewhat depressed journalist with a low openness and moderate agreeableness score from my Big Five assessment, I feel quite deeply about this issue. Having spent decades covering scientific advancements for readers who often have little time or inclination to delve into such matters themselves, I've seen firsthand how crucial diversity is in driving innovation forward.\n\nI believe the gender gap in science exists not just because of overt discrimination but due to a complex interplay between societal expectations and educational disparities. My own background with parents having only upper secondary education meant limited exposure to STEM fields as a child; my father received primary school education while my mother had an upper secondary one, which reflects common patterns where women's interests were often steered towards humanities rather than sciences.\n\nAddressing it is absolutely necessary if we want science to reflect the full spectrum of human potential. My part-time journalism work allows me more flexibility now compared to earlier days when deadlines meant I couldn't afford depression or lack of enthusiasm, but even then I knew that having only half the participants in these critical fields being one gender was a recipe for limited thinking.\n\nPerhaps we should focus on creating mentorship programs designed specifically for young women entering science who need role models like myself – albeit more open to new ideas than I might appear. And maybe implement policies encouraging flexible working arrangements, as my own situation shows, so that career interruptions due to family don't disproportionately affect women scientists.\n\nThe current agnostic worldview doesn't impose restrictions here; it simply allows me to look at the facts without religious bias. With a low neuroticism score I manage stress well enough – though depression complicates things slightly – and my hobbies help ground these intellectual concerns in more tangible, less anxiety-inducing activities.",
+    "reasoning_summary": "First, considering the existence of the gender gap: it stems from historical biases and educational disparities.\nThen, assessing whether we should address it: given that science benefits greatly from diverse perspectives, yes.\nFinally, deriving methods to address it: mentorship programs, targeted outreach in schools, flexible work arrangements.",
+    "tone": "Serious, reflective yet slightly melancholic due to depression but grounded by the agnostic worldview.",
+    "citations": [
+      "Historical Discrimination Patterns",
+      "Educational Attainment Disparities"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "current_marital_status",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 82,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "not applicable",
+      "city_of_living": "Milan",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "widowed",
+      "children": 4,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "baking",
+        "yoga",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 53,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 99,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 90,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 88,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":82,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"widowed\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"baking\",\"yoga\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":53,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":99,\"level\":\"high\"},\"extraversion\":{\"score\":90,\"level\":\"high\"},\"agreeableness\":{\"score\":50,\"level\":\"moderate\"},\"neuroticism\":{\"score\":88,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":82,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"widowed\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"baking\",\"yoga\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":53,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":99,\"level\":\"high\"},\"extraversion\":{\"score\":90,\"level\":\"high\"},\"agreeableness\":{\"score\":50,\"level\":\"moderate\"},\"neuroticism\":{\"score\":88,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As an 82-year-old man living in Milan, retired and widowed with four children, I approach discussions about healthcare and COVID vaccines with a blend of personal experience and a Buddhist perspective that emphasizes compassion and mindfulness. Having lived through many health crises, including the recent pandemic, I believe managing these conversations requires patience, empathy, and a focus on shared humanity. My high conscientiousness drives me to stay informed through reliable sources, like local health authorities in Italy, which I check during my limited social media use a few times weekly. This helps me base my views on facts, reducing anxiety from my high neuroticism. In discussions, I draw from my life as a native-born Italian, recalling how community support in Milan during lockdowns showed the importance of collective action. My moderate agreeableness means I listen respectfully, even when opinions differ, and my high extraversion allows me to engage openly, sharing stories from volunteering or baking with neighbors to build trust. I avoid confrontations by focusing on common goals, such as protecting loved ones, which resonates with my role as a father and grandfather. My Buddhist beliefs guide me to approach these talks without attachment to being right, fostering calm dialogue. Practicing yoga helps me stay centered, reducing depressive tendencies. Ultimately, I advocate for respectful, fact-based conversations that prioritize health and kindness, recognizing that everyone's journey is unique.\",\"reasoning_summary\":\"Derived opinion from persona traits: age 82 implies life experience with health issues; gender man and sexual orientation bisexual not directly relevant; occupation not applicable and employment status retired suggest time for reflection; city of living Milan provides cultural context; education level upper secondary indicates basic knowledge; parents' education suggests modest background; current marital status widowed and children 4 imply family concerns; migration status native-born Italian adds local perspective; psychological feature depressed and neuroticism high indicate anxiety management; religious beliefs Buddhism promotes compassion; time on social media few times weekly implies selective information use; hobbies baking, yoga, volunteering offer practical examples; OCEAN traits: high conscientiousness drives fact-checking, high extraversion enables engagement, moderate agreeableness fosters listening, high neuroticism requires stress reduction, moderate openness allows adaptability. Opinion integrates these to advocate for empathetic, informed discussions.\",\"tone\":\"Reflective, compassionate, and grounded, blending personal anecdotes with a calm, Buddhist-inspired approach to foster understanding and reduce conflict.\",\"citations\":[\"Local health authorities in Italy\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As an 82-year-old man living in Milan, retired and widowed with four children, I approach discussions about healthcare and COVID vaccines with a blend of personal experience and a Buddhist perspective that emphasizes compassion and mindfulness. Having lived through many health crises, including the recent pandemic, I believe managing these conversations requires patience, empathy, and a focus on shared humanity. My high conscientiousness drives me to stay informed through reliable sources, like local health authorities in Italy, which I check during my limited social media use a few times weekly. This helps me base my views on facts, reducing anxiety from my high neuroticism. In discussions, I draw from my life as a native-born Italian, recalling how community support in Milan during lockdowns showed the importance of collective action. My moderate agreeableness means I listen respectfully, even when opinions differ, and my high extraversion allows me to engage openly, sharing stories from volunteering or baking with neighbors to build trust. I avoid confrontations by focusing on common goals, such as protecting loved ones, which resonates with my role as a father and grandfather. My Buddhist beliefs guide me to approach these talks without attachment to being right, fostering calm dialogue. Practicing yoga helps me stay centered, reducing depressive tendencies. Ultimately, I advocate for respectful, fact-based conversations that prioritize health and kindness, recognizing that everyone's journey is unique.",
+    "reasoning_summary": "Derived opinion from persona traits: age 82 implies life experience with health issues; gender man and sexual orientation bisexual not directly relevant; occupation not applicable and employment status retired suggest time for reflection; city of living Milan provides cultural context; education level upper secondary indicates basic knowledge; parents' education suggests modest background; current marital status widowed and children 4 imply family concerns; migration status native-born Italian adds local perspective; psychological feature depressed and neuroticism high indicate anxiety management; religious beliefs Buddhism promotes compassion; time on social media few times weekly implies selective information use; hobbies baking, yoga, volunteering offer practical examples; OCEAN traits: high conscientiousness drives fact-checking, high extraversion enables engagement, moderate agreeableness fosters listening, high neuroticism requires stress reduction, moderate openness allows adaptability. Opinion integrates these to advocate for empathetic, informed discussions.",
+    "tone": "Reflective, compassionate, and grounded, blending personal anecdotes with a calm, Buddhist-inspired approach to foster understanding and reduce conflict.",
+    "citations": [
+      "Local health authorities in Italy"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 26,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Los Angeles",
+      "employment_status": "unemployed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 0,
+      "migration_status": "native-born American",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "gardening",
+        "knitting",
+        "rock climbing",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 25,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 46,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 15,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 18,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 25,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":26,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"gardening\",\"knitting\",\"rock climbing\",\"running\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":46,\"level\":\"moderate\"},\"extraversion\":{\"score\":15,\"level\":\"low\"},\"agreeableness\":{\"score\":18,\"level\":\"low\"},\"neuroticism\":{\"score\":25,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":26,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"gardening\",\"knitting\",\"rock climbing\",\"running\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":46,\"level\":\"moderate\"},\"extraversion\":{\"score\":15,\"level\":\"low\"},\"agreeableness\":{\"score\":18,\"level\":\"low\"},\"neuroticism\":{\"score\":25,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"I believe that managing discussions about healthcare and COVID vaccines requires a balanced approach, especially given my own background. As someone who is native-born American living in Los Angeles but only spending a few times weekly on social media, I’ve seen how misinformation can spread quickly online.\\n\\nMy parents have very different educational backgrounds—I’m the daughter of a primary school-educated parent and an academic with a PhD—but we’re both Jewish, which means our family has experienced health crises throughout history. My father went to high school in New York during the polio epidemic; my mother grew up in Germany through part of WWII.\\n\\nI have moderate conscientiousness according to my Big Five scores (conscientiousness 46), meaning I tend to be practical and organized, but also low agreeableness (18) which means I’m not afraid to disagree with others or call out misinformation. Since being in a relationship and having no children right now, I have plenty of time to engage thoughtfully on these topics.\\n\\nWhen managing vaccine discussions, I stay informed by reliable sources like the CDC and WHO—though my education level is only upper secondary, I still prioritize understanding scientific consensus. On social media, which I don’t use often but when I do it’s mostly for gardening tips or rock climbing guides, misinformation can be a problem if not handled carefully.\\n\\nI find that being straightforward yet empathetic helps me navigate these conversations effectively.\",\n  \"reasoning_summary\": \"Step-by-step derivations: Start with my personal background—family history of health crises due to Judaism, parents' different educations—and psychological traits from Big Five (moderate conscientiousness, low agreeableness). Then link to how I approach vaccine discussions given these traits. Mention that misinformation is a concern but I can handle it by staying informed and being direct when necessary.\",\n  \"tone\": \"Pragmatic yet firm\",\n  \"citations\": [\"CDC\", \"WHO\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\", \"gender\", \"sexual_orientation\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"parents_acity_of_living\", \"current_marital_status\", \"migration_status\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "I believe that managing discussions about healthcare and COVID vaccines requires a balanced approach, especially given my own background. As someone who is native-born American living in Los Angeles but only spending a few times weekly on social media, I’ve seen how misinformation can spread quickly online.\n\nMy parents have very different educational backgrounds—I’m the daughter of a primary school-educated parent and an academic with a PhD—but we’re both Jewish, which means our family has experienced health crises throughout history. My father went to high school in New York during the polio epidemic; my mother grew up in Germany through part of WWII.\n\nI have moderate conscientiousness according to my Big Five scores (conscientiousness 46), meaning I tend to be practical and organized, but also low agreeableness (18) which means I’m not afraid to disagree with others or call out misinformation. Since being in a relationship and having no children right now, I have plenty of time to engage thoughtfully on these topics.\n\nWhen managing vaccine discussions, I stay informed by reliable sources like the CDC and WHO—though my education level is only upper secondary, I still prioritize understanding scientific consensus. On social media, which I don’t use often but when I do it’s mostly for gardening tips or rock climbing guides, misinformation can be a problem if not handled carefully.\n\nI find that being straightforward yet empathetic helps me navigate these conversations effectively.",
+    "reasoning_summary": "Step-by-step derivations: Start with my personal background—family history of health crises due to Judaism, parents' different educations—and psychological traits from Big Five (moderate conscientiousness, low agreeableness). Then link to how I approach vaccine discussions given these traits. Mention that misinformation is a concern but I can handle it by staying informed and being direct when necessary.",
+    "tone": "Pragmatic yet firm",
+    "citations": [
+      "CDC",
+      "WHO"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_acity_of_living",
+      "current_marital_status",
+      "migration_status",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

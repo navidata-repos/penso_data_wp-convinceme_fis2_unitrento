@@ -1,0 +1,100 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 30,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "plumber",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "knitting",
+        "classical music"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 6,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 15,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 23,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"knitting\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":64,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":6,\"level\":\"low\"},\"extraversion\":{\"score\":15,\"level\":\"low\"},\"agreeableness\":{\"score\":63,\"level\":\"moderate\"},\"neuroticism\":{\"score\":23,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"knitting\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":64,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":6,\"level\":\"low\"},\"extraversion\":{\"score\":15,\"level\":\"low\"},\"agreeableness\":{\"score\":63,\"level\":\"moderate\"},\"neuroticism\":{\"score\":23,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"Stereotype threat is when people feel anxious or perform worse because they're worried about confirming negative stereotypes about their group, like women in STEM fields thinking they might not be good at math or science just because of their gender. As a self-employed plumber in Bologna, I see this in my own work—sometimes clients are surprised a woman can handle technical tasks, and that pressure can make anyone second-guess themselves. We should definitely address it because it holds people back from reaching their full potential, wasting talent and creativity that could solve real-world problems. In my job, I've learned that skills come from practice and passion, not stereotypes, and STEM is no different. To tackle it, we need to start early by encouraging all kids, regardless of gender or background, to explore science and math through hands-on activities, like how I fix pipes or knit complex patterns. Schools should provide supportive environments where mistakes are seen as learning opportunities, not failures. In workplaces, promoting diverse role models and mentorship can help, similar to how I've built my business through hard work and ignoring naysayers. As a mother of two, I want my children to grow up in a world where they're judged by their abilities, not stereotypes, so addressing this is crucial for fairness and progress.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: age 30 and occupation as plumber provide practical, hands-on perspective; gender woman and sexual orientation homosexual relate to personal experience with stereotypes; self-employed status and low conscientiousness suggest independence and focus on real-world impact; moderate openness and agreeableness support addressing social issues; hobbies like knitting and classical music imply appreciation for detail and creativity, relevant to STEM; city of living Bologna and native-born Italian background add cultural context; no social media and atheist beliefs indicate reliance on direct experience; low extraversion and neuroticism lead to calm, reasoned tone; used fields: age, gender, sexual_orientation, occupation, employment_status, education_level, parents_education, current_marital_status, children, migration_status, psychological_feature, religious_beliefs, time_onsocialmedia, hobbies, ocean scores.\",\n  \"tone\": \"Practical, calm, and reasoned with a focus on real-world examples and personal experience, avoiding emotional extremes.\",\n  \"citations\": [\"None\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"sexual_orientation\", \"occupation\", \"employment_status\", \"education_level\", \"parents_education\", \"current_marital_status\", \"children\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat is when people feel anxious or perform worse because they're worried about confirming negative stereotypes about their group, like women in STEM fields thinking they might not be good at math or science just because of their gender. As a self-employed plumber in Bologna, I see this in my own work—sometimes clients are surprised a woman can handle technical tasks, and that pressure can make anyone second-guess themselves. We should definitely address it because it holds people back from reaching their full potential, wasting talent and creativity that could solve real-world problems. In my job, I've learned that skills come from practice and passion, not stereotypes, and STEM is no different. To tackle it, we need to start early by encouraging all kids, regardless of gender or background, to explore science and math through hands-on activities, like how I fix pipes or knit complex patterns. Schools should provide supportive environments where mistakes are seen as learning opportunities, not failures. In workplaces, promoting diverse role models and mentorship can help, similar to how I've built my business through hard work and ignoring naysayers. As a mother of two, I want my children to grow up in a world where they're judged by their abilities, not stereotypes, so addressing this is crucial for fairness and progress.",
+    "reasoning_summary": "Derived opinion from persona traits: age 30 and occupation as plumber provide practical, hands-on perspective; gender woman and sexual orientation homosexual relate to personal experience with stereotypes; self-employed status and low conscientiousness suggest independence and focus on real-world impact; moderate openness and agreeableness support addressing social issues; hobbies like knitting and classical music imply appreciation for detail and creativity, relevant to STEM; city of living Bologna and native-born Italian background add cultural context; no social media and atheist beliefs indicate reliance on direct experience; low extraversion and neuroticism lead to calm, reasoned tone; used fields: age, gender, sexual_orientation, occupation, employment_status, education_level, parents_education, current_marital_status, children, migration_status, psychological_feature, religious_beliefs, time_onsocialmedia, hobbies, ocean scores.",
+    "tone": "Practical, calm, and reasoned with a focus on real-world examples and personal experience, avoiding emotional extremes.",
+    "citations": [
+      "None"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

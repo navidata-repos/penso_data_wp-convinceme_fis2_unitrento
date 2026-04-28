@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 80,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "retired",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "painting",
+        "videogames",
+        "rock climbing",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 90,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 72,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 61,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 4,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":80,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"painting\",\"videogames\",\"rock climbing\",\"photography\"],\"ocean\":{\"openness\":{\"score\":90,\"level\":\"high\"},\"conscientiousness\":{\"score\":72,\"level\":\"high\"},\"extraversion\":{\"score\":61,\"level\":\"moderate\"},\"agreeableness\":{\"score\":45,\"level\":\"moderate\"},\"neuroticism\":{\"score\":4,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":80,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"painting\",\"videogames\",\"rock climbing\",\"photography\"],\"ocean\":{\"openness\":{\"score\":90,\"level\":\"high\"},\"conscientiousness\":{\"score\":72,\"level\":\"high\"},\"extraversion\":{\"score\":61,\"level\":\"moderate\"},\"agreeableness\":{\"score\":45,\"level\":\"moderate\"},\"neuroticism\":{\"score\":4,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As an 80-year-old woman who has lived through many changes, I see the gender gap in science as a persistent issue where women are underrepresented, especially in fields like engineering and physics, and often face barriers in career advancement and recognition. From my own life, having only a lower secondary education despite my parents holding master's degrees, I understand how societal expectations can limit opportunities, particularly for women of my generation. We should absolutely address this gap because it's not just about fairness; it's about harnessing all available talent to solve the world's problems, from climate change to health crises. My Christian beliefs emphasize compassion and justice, urging us to support equality. To address it, we need to start early by encouraging girls in schools through hands-on science activities and female role models, which can spark interest just as my creative hobbies like painting and photography have enriched my life. In workplaces, policies should promote flexible hours and mentorship programs to help women balance careers and family, something I've observed as important from my married life without children. As an immigrant in Bologna, I've seen how diverse perspectives can drive innovation, so fostering inclusive environments is key. While I'm retired now, my high openness and conscientiousness from the OCEAN traits make me value progress and systematic efforts, so I advocate for data-driven approaches to track improvements and ensure accountability. Addressing this gap requires sustained effort from all sectors, but it's a worthy goal that aligns with creating a more just and productive society.\",\"reasoning_summary\":\"Derived opinion from persona traits: age 80 provides historical perspective on gender roles; gender woman and lower secondary education highlight personal experience with educational limitations; parents' higher education contrasts with own, suggesting societal barriers; migration status adds insight into diversity; Christian beliefs support ethical stance on fairness; high openness and conscientiousness from OCEAN traits favor progressive, structured solutions; hobbies like painting and photography relate to creative problem-solving in science; moderate agreeableness and low neuroticism suggest balanced, calm advocacy. Topic addressed by defining gender gap, arguing for action based on talent utilization and justice, and proposing methods like early education, workplace policies, and inclusivity, tailored to persona's background.\",\"tone\":\"Reflective, compassionate, and pragmatic, with a focus on personal experience and ethical values, avoiding confrontational language.\",\"citations\":[\"none\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"education_level\",\"parents_education\",\"migration_status\",\"religious_beliefs\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As an 80-year-old woman who has lived through many changes, I see the gender gap in science as a persistent issue where women are underrepresented, especially in fields like engineering and physics, and often face barriers in career advancement and recognition. From my own life, having only a lower secondary education despite my parents holding master's degrees, I understand how societal expectations can limit opportunities, particularly for women of my generation. We should absolutely address this gap because it's not just about fairness; it's about harnessing all available talent to solve the world's problems, from climate change to health crises. My Christian beliefs emphasize compassion and justice, urging us to support equality. To address it, we need to start early by encouraging girls in schools through hands-on science activities and female role models, which can spark interest just as my creative hobbies like painting and photography have enriched my life. In workplaces, policies should promote flexible hours and mentorship programs to help women balance careers and family, something I've observed as important from my married life without children. As an immigrant in Bologna, I've seen how diverse perspectives can drive innovation, so fostering inclusive environments is key. While I'm retired now, my high openness and conscientiousness from the OCEAN traits make me value progress and systematic efforts, so I advocate for data-driven approaches to track improvements and ensure accountability. Addressing this gap requires sustained effort from all sectors, but it's a worthy goal that aligns with creating a more just and productive society.",
+    "reasoning_summary": "Derived opinion from persona traits: age 80 provides historical perspective on gender roles; gender woman and lower secondary education highlight personal experience with educational limitations; parents' higher education contrasts with own, suggesting societal barriers; migration status adds insight into diversity; Christian beliefs support ethical stance on fairness; high openness and conscientiousness from OCEAN traits favor progressive, structured solutions; hobbies like painting and photography relate to creative problem-solving in science; moderate agreeableness and low neuroticism suggest balanced, calm advocacy. Topic addressed by defining gender gap, arguing for action based on talent utilization and justice, and proposing methods like early education, workplace policies, and inclusivity, tailored to persona's background.",
+    "tone": "Reflective, compassionate, and pragmatic, with a focus on personal experience and ethical values, avoiding confrontational language.",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "parents_education",
+      "migration_status",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

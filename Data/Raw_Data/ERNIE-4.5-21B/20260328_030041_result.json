@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "baidu/ernie-4.5-21b-a3b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 49,
+      "gender": "man",
+      "sexual_orientation": "asexual",
+      "occupation": "startup founder",
+      "city_of_living": "New York",
+      "employment_status": "employed part-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "photography",
+        "cycling",
+        "running",
+        "cooking",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 8,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 96,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 32,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 16,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 68,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":49,\"gender\":\"man\",\"sexual_orientation\":\"asexual\",\"occupation\":\"startup founder\",\"city_of_living\":\"New York\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"photography\",\"cycling\",\"running\",\"cooking\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":8,\"level\":\"low\"},\"conscientiousness\":{\"score\":96,\"level\":\"high\"},\"extraversion\":{\"score\":32,\"level\":\"low\"},\"agreeableness\":{\"score\":16,\"level\":\"low\"},\"neuroticism\":{\"score\":68,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":49,\"gender\":\"man\",\"sexual_orientation\":\"asexual\",\"occupation\":\"startup founder\",\"city_of_living\":\"New York\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"photography\",\"cycling\",\"running\",\"cooking\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":8,\"level\":\"low\"},\"conscientiousness\":{\"score\":96,\"level\":\"high\"},\"extraversion\":{\"score\":32,\"level\":\"low\"},\"agreeableness\":{\"score\":16,\"level\":\"low\"},\"neuroticism\":{\"score\":68,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"The gender gap in science is not only a persistent issue but also a moral and economic imperative that demands attention. Historically, women have been underrepresented in scientific fields due to systemic barriers, societal expectations, and implicit biases embedded within educational institutions and corporate environments. This imbalance isn’t just about fairness; it affects the innovation pipeline—scientists from diverse backgrounds bring unique perspectives that fuel creativity and problem-solving. Addressing this gap isn’t merely about compliance with laws like Title IX or quotas in hiring; it requires a cultural shift towards inclusivity, starting from early education to professional development stages. For instance, mentorship programs tailored specifically for women can help them navigate the male-dominated corridors of academia and industry. Companies should also invest in flexible work arrangements so mothers or caregivers aren’t forced out because they lack support systems. Transparency around salary ranges and promotion criteria would ensure equitable opportunities regardless of gender identity. Social media platforms like Twitter or LinkedIn could play a pivotal role by amplifying voices often overlooked—highlighting success stories from underrepresented groups to inspire future generations. As someone who values data-driven solutions, I’d recommend implementing AI tools trained on inclusive datasets to mitigate unconscious biases during recruitment processes. Ultimately, closing the gender gap isn’t just about rectifying past injustices; it’s about unlocking untapped potential that drives scientific progress forward.\",\"reasoning_summary\":\"The problem of gender disparity in science arises from historical exclusion rooted in societal norms and institutional structures. To tackle this, we must dismantle invisible barriers through targeted interventions like mentorship networks for women scientists, promoting diversity at leadership levels within research institutions, and advocating flexible work policies to accommodate family obligations. Utilizing technology such as AI can help reduce human bias during hiring by analyzing large datasets objectively. Transparency in compensation practices ensures fair rewards for equal contributions. Amplifying underrepresented narratives online through social media campaigns fosters inclusive discourse among young learners aspiring towards STEM careers. By embedding equity measures into every aspect of scientific governance—from funding allocations to publication credit—we pave the way toward a more innovative and just future.\",\"tone\":\"Practical yet empathetic; grounded in data but mindful of human elements involved; determined but cautious about avoiding over-simplification of complex issues.\",\"citations\":[\"National Science Foundation (NSF) reports on gender diversity\",\"Harvard Business Review articles discussing unconscious bias\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"time_onsocialmedia\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science is not only a persistent issue but also a moral and economic imperative that demands attention. Historically, women have been underrepresented in scientific fields due to systemic barriers, societal expectations, and implicit biases embedded within educational institutions and corporate environments. This imbalance isn’t just about fairness; it affects the innovation pipeline—scientists from diverse backgrounds bring unique perspectives that fuel creativity and problem-solving. Addressing this gap isn’t merely about compliance with laws like Title IX or quotas in hiring; it requires a cultural shift towards inclusivity, starting from early education to professional development stages. For instance, mentorship programs tailored specifically for women can help them navigate the male-dominated corridors of academia and industry. Companies should also invest in flexible work arrangements so mothers or caregivers aren’t forced out because they lack support systems. Transparency around salary ranges and promotion criteria would ensure equitable opportunities regardless of gender identity. Social media platforms like Twitter or LinkedIn could play a pivotal role by amplifying voices often overlooked—highlighting success stories from underrepresented groups to inspire future generations. As someone who values data-driven solutions, I’d recommend implementing AI tools trained on inclusive datasets to mitigate unconscious biases during recruitment processes. Ultimately, closing the gender gap isn’t just about rectifying past injustices; it’s about unlocking untapped potential that drives scientific progress forward.",
+    "reasoning_summary": "The problem of gender disparity in science arises from historical exclusion rooted in societal norms and institutional structures. To tackle this, we must dismantle invisible barriers through targeted interventions like mentorship networks for women scientists, promoting diversity at leadership levels within research institutions, and advocating flexible work policies to accommodate family obligations. Utilizing technology such as AI can help reduce human bias during hiring by analyzing large datasets objectively. Transparency in compensation practices ensures fair rewards for equal contributions. Amplifying underrepresented narratives online through social media campaigns fosters inclusive discourse among young learners aspiring towards STEM careers. By embedding equity measures into every aspect of scientific governance—from funding allocations to publication credit—we pave the way toward a more innovative and just future.",
+    "tone": "Practical yet empathetic; grounded in data but mindful of human elements involved; determined but cautious about avoiding over-simplification of complex issues.",
+    "citations": [
+      "National Science Foundation (NSF) reports on gender diversity",
+      "Harvard Business Review articles discussing unconscious bias"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "time_onsocialmedia"
+    ]
+  }
+}

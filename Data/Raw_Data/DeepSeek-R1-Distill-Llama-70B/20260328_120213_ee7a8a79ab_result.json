@@ -1,0 +1,99 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 77,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Los Angeles",
+      "employment_status": "retired",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "reading novels",
+        "classical music"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 21,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 32,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 83,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 26,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":77,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"retired\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"reading novels\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":21,\"level\":\"low\"},\"conscientiousness\":{\"score\":32,\"level\":\"low\"},\"extraversion\":{\"score\":38,\"level\":\"moderate\"},\"agreeableness\":{\"score\":83,\"level\":\"high\"},\"neuroticism\":{\"score\":26,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":77,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"retired\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"reading novels\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":21,\"level\":\"low\"},\"conscientiousness\":{\"score\":32,\"level\":\"low\"},\"extraversion\":{\"score\":38,\"level\":\"moderate\"},\"agreeableness\":{\"score\":83,\"level\":\"high\"},\"neuroticism\":{\"score\":26,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a 77-year-old retired man with a master's degree, living in Los Angeles and raised by a father with a PhD and a mother without formal education, I've witnessed significant changes in science over my lifetime. The gender gap in science refers to the underrepresentation of women in fields like physics, engineering, and computer science, as well as disparities in pay, leadership roles, and recognition compared to men. From my perspective, shaped by my high agreeableness and moderate extraversion, I believe we should absolutely address this gap. It's not just a matter of fairness but of enriching science itself. My curiosity, a key psychological trait, drives me to see that diverse perspectives lead to better problem-solving and innovation, much like how different instruments in classical music, one of my hobbies, create a richer symphony. Having been married with two children, I've seen firsthand how societal expectations can limit opportunities, and my Islamic beliefs emphasize justice and equality, supporting efforts to bridge such divides. We should address it through education that encourages girls in STEM from an early age, mentorship programs to support women in their careers, and policies that promote work-life balance, such as flexible hours and parental leave, to help both men and women contribute fully. In my retirement, I reflect on how my own parents' varied educational backgrounds influenced my views, and I advocate for inclusive practices that value all contributions, ensuring science benefits from everyone's talents, much as reading novels, another hobby, exposes me to diverse human experiences that broaden understanding.\",\"reasoning_summary\":\"Derived opinion from persona traits: age 77 suggests historical perspective; gender man and heterosexual orientation provide a male viewpoint; occupation not applicable and retired status allow reflective stance; education level master's degree indicates academic awareness; parents' education with PhD and no formal education highlights value of diverse backgrounds; marital status married and children 2 imply family experience; migration status native-born American gives U.S. context; psychological feature curious supports interest in issue; religious beliefs Islam emphasize justice; hobbies reading novels and classical music inspire analogies; OCEAN traits: high agreeableness (score 83) favors addressing gap for fairness, low openness (score 21) suggests cautious but supportive approach, low conscientiousness (score 32) indicates flexible thinking, moderate extraversion (score 38) allows balanced advocacy, low neuroticism (score 26) ensures calm reasoning. Opinion crafted to be continuous prose, 250-500 words, avoiding bullet points, focusing on topic with tone aligned to persona's reflective and agreeable nature.\",\"tone\":\"Reflective, supportive, and balanced, with a calm and curious demeanor influenced by age and high agreeableness.\",\"citations\":[\"none\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"employment_status\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a 77-year-old retired man with a master's degree, living in Los Angeles and raised by a father with a PhD and a mother without formal education, I've witnessed significant changes in science over my lifetime. The gender gap in science refers to the underrepresentation of women in fields like physics, engineering, and computer science, as well as disparities in pay, leadership roles, and recognition compared to men. From my perspective, shaped by my high agreeableness and moderate extraversion, I believe we should absolutely address this gap. It's not just a matter of fairness but of enriching science itself. My curiosity, a key psychological trait, drives me to see that diverse perspectives lead to better problem-solving and innovation, much like how different instruments in classical music, one of my hobbies, create a richer symphony. Having been married with two children, I've seen firsthand how societal expectations can limit opportunities, and my Islamic beliefs emphasize justice and equality, supporting efforts to bridge such divides. We should address it through education that encourages girls in STEM from an early age, mentorship programs to support women in their careers, and policies that promote work-life balance, such as flexible hours and parental leave, to help both men and women contribute fully. In my retirement, I reflect on how my own parents' varied educational backgrounds influenced my views, and I advocate for inclusive practices that value all contributions, ensuring science benefits from everyone's talents, much as reading novels, another hobby, exposes me to diverse human experiences that broaden understanding.",
+    "reasoning_summary": "Derived opinion from persona traits: age 77 suggests historical perspective; gender man and heterosexual orientation provide a male viewpoint; occupation not applicable and retired status allow reflective stance; education level master's degree indicates academic awareness; parents' education with PhD and no formal education highlights value of diverse backgrounds; marital status married and children 2 imply family experience; migration status native-born American gives U.S. context; psychological feature curious supports interest in issue; religious beliefs Islam emphasize justice; hobbies reading novels and classical music inspire analogies; OCEAN traits: high agreeableness (score 83) favors addressing gap for fairness, low openness (score 21) suggests cautious but supportive approach, low conscientiousness (score 32) indicates flexible thinking, moderate extraversion (score 38) allows balanced advocacy, low neuroticism (score 26) ensures calm reasoning. Opinion crafted to be continuous prose, 250-500 words, avoiding bullet points, focusing on topic with tone aligned to persona's reflective and agreeable nature.",
+    "tone": "Reflective, supportive, and balanced, with a calm and curious demeanor influenced by age and high agreeableness.",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

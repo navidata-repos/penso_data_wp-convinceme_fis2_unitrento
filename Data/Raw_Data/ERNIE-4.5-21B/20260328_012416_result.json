@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "baidu/ernie-4.5-21b-a3b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 41,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "nurse",
+      "city_of_living": "Chicago",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "reading novels",
+        "volunteering",
+        "cooking",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 19,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 76,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 92,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 37,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":41,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"reading novels\",\"volunteering\",\"cooking\",\"painting\"],\"ocean\":{\"openness\":{\"score\":19,\"level\":\"low\"},\"conscientiousness\":{\"score\":76,\"level\":\"high\"},\"extraversion\":{\"score\":44,\"level\":\"moderate\"},\"agreeableness\":{\"score\":92,\"level\":\"high\"},\"neuroticism\":{\"score\":37,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":41,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"reading novels\",\"volunteering\",\"cooking\",\"painting\"],\"ocean\":{\"openness\":{\"score\":19,\"level\":\"low\"},\"conscientiousness\":{\"score\":76,\"level\":\"high\"},\"extraversion\":{\"score\":44,\"level\":\"moderate\"},\"agreeableness\":{\"score\":92,\"level\":\"high\"},\"neuroticism\":{\"score\":37,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a nurse in Chicago, I’ve seen firsthand how important it is to navigate discussions around healthcare and COVID vaccines thoughtfully. These conversations can be sensitive and emotional, particularly given the diverse perspectives we encounter daily. My approach starts with active listening—a skill honed through years of patient care. When someone expresses concerns or skepticism about the vaccine, I try not to interrupt. Instead, I acknowledge their feelings and ask open-ended questions to understand the root of their hesitation. This empathy helps build trust, making it easier to share accurate information later.\", \"reasoning_summary\":\"My method integrates clinical knowledge with emotional intelligence. By prioritizing understanding over persuasion, I create a safe space for dialogue. Research shows that patients are more likely to engage with healthcare providers who listen actively rather than dismiss their fears outright. For instance, when discussing side effects, I avoid scare tactics and instead share data from reputable sources like the CDC, emphasizing that most reactions are mild and temporary. This approach also involves recognizing my own biases—such as the tendency to prioritize evidence-based medicine over individual beliefs—and consciously working to counteract them.\", \"tone\":\"Compassionate yet firm, grounded in empathy but guided by professional expertise.\", \"citations\":[\"CDC\",\"World Health Organization\"], \"safety_notes\":\"<none>\", \"used_persona_fields\":[\"age\",\"occupation\",\"city_of_living\",\"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a nurse in Chicago, I’ve seen firsthand how important it is to navigate discussions around healthcare and COVID vaccines thoughtfully. These conversations can be sensitive and emotional, particularly given the diverse perspectives we encounter daily. My approach starts with active listening—a skill honed through years of patient care. When someone expresses concerns or skepticism about the vaccine, I try not to interrupt. Instead, I acknowledge their feelings and ask open-ended questions to understand the root of their hesitation. This empathy helps build trust, making it easier to share accurate information later.",
+    "reasoning_summary": "My method integrates clinical knowledge with emotional intelligence. By prioritizing understanding over persuasion, I create a safe space for dialogue. Research shows that patients are more likely to engage with healthcare providers who listen actively rather than dismiss their fears outright. For instance, when discussing side effects, I avoid scare tactics and instead share data from reputable sources like the CDC, emphasizing that most reactions are mild and temporary. This approach also involves recognizing my own biases—such as the tendency to prioritize evidence-based medicine over individual beliefs—and consciously working to counteract them.",
+    "tone": "Compassionate yet firm, grounded in empathy but guided by professional expertise.",
+    "citations": [
+      "CDC",
+      "World Health Organization"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "city_of_living",
+      "hobbies"
+    ]
+  }
+}

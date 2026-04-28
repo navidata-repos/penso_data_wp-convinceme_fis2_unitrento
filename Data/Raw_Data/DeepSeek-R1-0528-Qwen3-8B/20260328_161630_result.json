@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 88,
+      "gender": "woman",
+      "sexual_orientation": "asexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "videogames",
+        "cooking",
+        "cycling",
+        "cinema",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 71,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 75,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 91,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 42,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":88,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"videogames\",\"cooking\",\"cycling\",\"cinema\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":41,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":71,\"level\":\"high\"},\"extraversion\":{\"score\":75,\"level\":\"high\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":42,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":88,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"videogames\",\"cooking\",\"cycling\",\"cinema\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":41,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":71,\"level\":\"high\"},\"extraversion\":{\"score\":75,\"level\":\"high\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":42,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n    \"opinion\": \"As an elderly woman living in Bologna who has retired but still keep a keen eye on social media, I find myself often caught between my love for staying informed and the anxiety that comes from such topics. My age places me at the forefront of those vulnerable to serious health complications if one contracts COVID-19; it feels like standing near an active volcano when discussing vaccine hesitations or efficacy online.\\n\\nI have a moderate openness score, so I’m not entirely rigid in my views but still cautious about complex scientific matters. Having spent much life seeing how communities were shaped by past pandemics and public health measures through history books (given my parents' education backgrounds - one with vocational diploma covering practical skills including some historical knowledge from local events, the other with a master's degree perhaps discussing societal changes), I know that informed discussion can be very beneficial. However, lately with depression making it hard to focus clearly or feel optimistic about future developments like vaccines, those conversations drain what little energy I have.\\n\\nI’d suggest gently steering topics towards personal stories rather than abstract debates whenever possible, since my high agreeableness and strong community spirit (thanks to being native-born Italian) make me prefer building bridges not tearing them down. For instance, mentioning how one got vaccinated might be more relatable than discussing mRNA technology’s long-term effects.\\n\\nBut I must admit that with moderate neuroticism levels, sometimes seeing posts about healthcare uncertainties can unsettle my peace-of-mind.\",\n    \"reasoning_summary\": \"I approach the topic of COVID vaccine discussions from a personal perspective as an elderly individual. My moderate openness makes me cautious towards complex scientific debates but willing to engage in informed conversations when they avoid overwhelming anxiety or frustration that often comes with managing uncertainty, especially given my history and depression. I leverage my high agreeableness by focusing on positive community impacts rather than divisiveness.\\n\\nI reference historical context from parental education backgrounds while acknowledging the emotional toll such discussions can have due to past vulnerabilities (age) and psychological factors.\",\n    \"tone\": \"Cautious yet engaging, with a gentle empathetic touch\",\n    \"citations\": [\"Personal experience living through historical pandemics\", \"Parental educational background covering history and societal studies\"],\n    \"safety_notes\": \"None\",\n    \"used_persona_fields\":[\"age\",\"education_level (from parents_education)\",\"psychological_feature: depressed\",\"migration_status\",\"hobbies for context\",\"ocean scores\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As an elderly woman living in Bologna who has retired but still keep a keen eye on social media, I find myself often caught between my love for staying informed and the anxiety that comes from such topics. My age places me at the forefront of those vulnerable to serious health complications if one contracts COVID-19; it feels like standing near an active volcano when discussing vaccine hesitations or efficacy online.\n\nI have a moderate openness score, so I’m not entirely rigid in my views but still cautious about complex scientific matters. Having spent much life seeing how communities were shaped by past pandemics and public health measures through history books (given my parents' education backgrounds - one with vocational diploma covering practical skills including some historical knowledge from local events, the other with a master's degree perhaps discussing societal changes), I know that informed discussion can be very beneficial. However, lately with depression making it hard to focus clearly or feel optimistic about future developments like vaccines, those conversations drain what little energy I have.\n\nI’d suggest gently steering topics towards personal stories rather than abstract debates whenever possible, since my high agreeableness and strong community spirit (thanks to being native-born Italian) make me prefer building bridges not tearing them down. For instance, mentioning how one got vaccinated might be more relatable than discussing mRNA technology’s long-term effects.\n\nBut I must admit that with moderate neuroticism levels, sometimes seeing posts about healthcare uncertainties can unsettle my peace-of-mind.",
+    "reasoning_summary": "I approach the topic of COVID vaccine discussions from a personal perspective as an elderly individual. My moderate openness makes me cautious towards complex scientific debates but willing to engage in informed conversations when they avoid overwhelming anxiety or frustration that often comes with managing uncertainty, especially given my history and depression. I leverage my high agreeableness by focusing on positive community impacts rather than divisiveness.\n\nI reference historical context from parental education backgrounds while acknowledging the emotional toll such discussions can have due to past vulnerabilities (age) and psychological factors.",
+    "tone": "Cautious yet engaging, with a gentle empathetic touch",
+    "citations": [
+      "Personal experience living through historical pandemics",
+      "Parental educational background covering history and societal studies"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "education_level (from parents_education)",
+      "psychological_feature: depressed",
+      "migration_status",
+      "hobbies for context",
+      "ocean scores"
+    ]
+  }
+}

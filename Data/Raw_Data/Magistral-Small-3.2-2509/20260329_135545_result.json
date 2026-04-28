@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 55,
+      "gender": "man",
+      "sexual_orientation": "asexual",
+      "occupation": "barista",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 4,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "board games",
+        "running",
+        "photography",
+        "baking",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 13,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 2,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 34,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 4,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 67,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":55,\"gender\":\"man\",\"sexual_orientation\":\"asexual\",\"occupation\":\"barista\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"board games\",\"running\",\"photography\",\"baking\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":13,\"level\":\"low\"},\"conscientiousness\":{\"score\":2,\"level\":\"low\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":4,\"level\":\"low\"},\"neuroticism\":{\"score\":67,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":55,\"gender\":\"man\",\"sexual_orientation\":\"asexual\",\"occupation\":\"barista\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"board games\",\"running\",\"photography\",\"baking\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":13,\"level\":\"low\"},\"conscientiousness\":{\"score\":2,\"level\":\"low\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":4,\"level\":\"low\"},\"neuroticism\":{\"score\":67,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a 55-year-old man living in Philadelphia, I've seen firsthand the underrepresentation of women in scientific fields. It's not just about numbers; it's about the ideas and innovations that might be missing because not everyone has an equal chance to contribute. I remember when my daughter used to look up at the stars with me, asking questions that could have led her to a career in astrophysics if she'd been encouraged and supported. But the reality is, women often face barriers like implicit bias, lack of mentors, and unequal pay. My father only finished lower secondary education, so I understand how important it is to break these cycles. Addressing the gender gap means creating more opportunities for girls and women at all stages—from early education to career advancement. We can start with simple things like encouraging my daughters' curiosity in science, just as I do with their board games and baking, which also involve problem-solving and creativity. Schools could offer more hands-on science programs, and workplaces should actively promote diversity. It's not about quotas or lowering standards; it's about recognizing that everyone deserves a fair chance to explore their potential. As a Christian, I believe in the dignity of every person, so this is also a matter of justice. The gender gap in science isn't just a women's issue—it affects all of us who want a more equitable and innovative future.\",\"reasoning_summary\":\"The persona's low openness suggests he might not initially engage deeply with new ideas but his moderate extraversion allows him to share personal stories that make the topic relatable. His high neuroticism could lead him to express concerns about fairness and justice, which he ties to his Christian beliefs and family experiences. The lack of higher education in one parent contrasts with the other's master's degree, highlighting how background influences opportunities. His role as a father and partner also shapes his perspective on encouraging young people, particularly girls. He likely supports practical solutions that involve community efforts like schools and workplaces, focusing on equity rather than equality.\",\"tone\":\"Reflective, personal, and pragmatic with an emphasis on fairness and family values.\",\"citations\":[\"National Science Foundation - Women, Minorities, and Persons with Disabilities in Science and Engineering\"],\"safety_notes\":\"None. The response avoids stereotypes and focuses on systemic solutions while respecting individual experiences.\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a 55-year-old man living in Philadelphia, I've seen firsthand the underrepresentation of women in scientific fields. It's not just about numbers; it's about the ideas and innovations that might be missing because not everyone has an equal chance to contribute. I remember when my daughter used to look up at the stars with me, asking questions that could have led her to a career in astrophysics if she'd been encouraged and supported. But the reality is, women often face barriers like implicit bias, lack of mentors, and unequal pay. My father only finished lower secondary education, so I understand how important it is to break these cycles. Addressing the gender gap means creating more opportunities for girls and women at all stages—from early education to career advancement. We can start with simple things like encouraging my daughters' curiosity in science, just as I do with their board games and baking, which also involve problem-solving and creativity. Schools could offer more hands-on science programs, and workplaces should actively promote diversity. It's not about quotas or lowering standards; it's about recognizing that everyone deserves a fair chance to explore their potential. As a Christian, I believe in the dignity of every person, so this is also a matter of justice. The gender gap in science isn't just a women's issue—it affects all of us who want a more equitable and innovative future.",
+    "reasoning_summary": "The persona's low openness suggests he might not initially engage deeply with new ideas but his moderate extraversion allows him to share personal stories that make the topic relatable. His high neuroticism could lead him to express concerns about fairness and justice, which he ties to his Christian beliefs and family experiences. The lack of higher education in one parent contrasts with the other's master's degree, highlighting how background influences opportunities. His role as a father and partner also shapes his perspective on encouraging young people, particularly girls. He likely supports practical solutions that involve community efforts like schools and workplaces, focusing on equity rather than equality.",
+    "tone": "Reflective, personal, and pragmatic with an emphasis on fairness and family values.",
+    "citations": [
+      "National Science Foundation - Women, Minorities, and Persons with Disabilities in Science and Engineering"
+    ],
+    "safety_notes": "None. The response avoids stereotypes and focuses on systemic solutions while respecting individual experiences.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

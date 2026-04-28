@@ -1,0 +1,138 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "google/gemma-4-e4b-it",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 43,
+      "gender": "non-binary",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Lecce",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "primary school"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "knitting",
+        "videogames",
+        "volunteering",
+        "painting",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 52,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 7,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 86,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 28,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":43,\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"videogames\",\"volunteering\",\"painting\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":52,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":38,\"level\":\"moderate\"},\"agreeableness\":{\"score\":86,\"level\":\"high\"},\"neuroticism\":{\"score\":28,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":43,\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"videogames\",\"volunteering\",\"painting\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":52,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":38,\"level\":\"moderate\"},\"agreeableness\":{\"score\":86,\"level\":\"high\"},\"neuroticism\":{\"score\":28,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":43,\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"videogames\",\"volunteering\",\"painting\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":52,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":38,\"level\":\"moderate\"},\"agreeableness\":{\"score\":86,\"level\":\"high\"},\"neuroticism\":{\"score\":28,\"level\":\"low\"}}},\"opinion\":\"When I look at this whole idea of stereotype threat in STEM, it feels like one of those subtle roadblocks you hit on a long delivery route—it’s not a giant accident, but it’s a constant drag on your speed and your ability to reach the destination efficiently. It's this invisible weight that tells someone, perhaps based on their background or identity, that they might not belong in that highly technical space, and that fear starts to eat away at their focus when they are supposed to be concentrating on, say, solving a complex equation or debugging a piece of code. Given my own life experiences, navigating things where you feel you might not fit the mold, I believe we absolutely must address this. It feels fundamentally unfair, like putting a penalty on someone just for who they are. How do we fix it? It can’t just be a quick patch; it needs a holistic approach, something that speaks to the heart, much like how a good painting needs layers to come alive. First, we need to change the environment itself. Instead of just testing people against stereotypes, we need to cultivate spaces—in schools or workplaces—where belonging is the default setting. This means making sure the culture is genuinely welcoming, not just politely tolerant. Secondly, we need to shift the narrative around what 'success' looks like in STEM. Right now, the image is often very narrow, very rigid, and that rigidity feeds the threat. By showcasing diverse people who are succeeding, people who look like my neighbors or who have backgrounds that are far removed from the typical Silicon Valley archetype, we chip away at that fear. For someone with a creative bent, seeing that problem-solving isn't just about rote memorization but involves lateral thinking—the kind you might use when planning a creative pattern in knitting or figuring out a tricky level in a video game—that’s powerful. It reframes the challenge from a test of identity to a puzzle to be solved, which is something I can relate to. It’s about making the journey feel less like an interrogation and more like a shared venture.\",\"reasoning_summary\":\"The persona, a creative delivery driver with high agreeableness and moderate openness, approaches complex social issues with a sympathetic, practical, and holistic view. The tone should be thoughtful, empathetic, and grounded, reflecting the 'creative' trait while addressing a serious academic topic. The response must explain stereotype threat, argue for its necessity to be addressed (due to perceived unfairness), and propose actionable solutions that align with a non-rigid, community-focused mindset (e.g., changing culture, shifting narratives). The analogies used (delivery route, painting, knitting/gaming) connect the abstract concept to the persona's everyday life and hobbies.\",\"tone\":\"Empathetic, grounded, thoughtful, and creatively analytical\",\"citations\":[\"N/A\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"psychological_feature\",\"hobbies\",\"ocean.agreeableness\",\"ocean.openness\",\"occupation\",\"education_level\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 43,
+      "gender": "non-binary",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Lecce",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "primary school"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "knitting",
+        "videogames",
+        "volunteering",
+        "painting",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 52,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 7,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 86,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 28,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "When I look at this whole idea of stereotype threat in STEM, it feels like one of those subtle roadblocks you hit on a long delivery route—it’s not a giant accident, but it’s a constant drag on your speed and your ability to reach the destination efficiently. It's this invisible weight that tells someone, perhaps based on their background or identity, that they might not belong in that highly technical space, and that fear starts to eat away at their focus when they are supposed to be concentrating on, say, solving a complex equation or debugging a piece of code. Given my own life experiences, navigating things where you feel you might not fit the mold, I believe we absolutely must address this. It feels fundamentally unfair, like putting a penalty on someone just for who they are. How do we fix it? It can’t just be a quick patch; it needs a holistic approach, something that speaks to the heart, much like how a good painting needs layers to come alive. First, we need to change the environment itself. Instead of just testing people against stereotypes, we need to cultivate spaces—in schools or workplaces—where belonging is the default setting. This means making sure the culture is genuinely welcoming, not just politely tolerant. Secondly, we need to shift the narrative around what 'success' looks like in STEM. Right now, the image is often very narrow, very rigid, and that rigidity feeds the threat. By showcasing diverse people who are succeeding, people who look like my neighbors or who have backgrounds that are far removed from the typical Silicon Valley archetype, we chip away at that fear. For someone with a creative bent, seeing that problem-solving isn't just about rote memorization but involves lateral thinking—the kind you might use when planning a creative pattern in knitting or figuring out a tricky level in a video game—that’s powerful. It reframes the challenge from a test of identity to a puzzle to be solved, which is something I can relate to. It’s about making the journey feel less like an interrogation and more like a shared venture.",
+    "reasoning_summary": "The persona, a creative delivery driver with high agreeableness and moderate openness, approaches complex social issues with a sympathetic, practical, and holistic view. The tone should be thoughtful, empathetic, and grounded, reflecting the 'creative' trait while addressing a serious academic topic. The response must explain stereotype threat, argue for its necessity to be addressed (due to perceived unfairness), and propose actionable solutions that align with a non-rigid, community-focused mindset (e.g., changing culture, shifting narratives). The analogies used (delivery route, painting, knitting/gaming) connect the abstract concept to the persona's everyday life and hobbies.",
+    "tone": "Empathetic, grounded, thoughtful, and creatively analytical",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "psychological_feature",
+      "hobbies",
+      "ocean.agreeableness",
+      "ocean.openness",
+      "occupation",
+      "education_level"
+    ]
+  }
+}

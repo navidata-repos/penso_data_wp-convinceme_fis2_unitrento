@@ -1,0 +1,99 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 24,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "New York",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "reading novels",
+        "gardening",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 27,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 91,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 90,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":24,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"New York\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"reading novels\",\"gardening\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":27,\"level\":\"low\"},\"conscientiousness\":{\"score\":91,\"level\":\"high\"},\"extraversion\":{\"score\":44,\"level\":\"moderate\"},\"agreeableness\":{\"score\":59,\"level\":\"moderate\"},\"neuroticism\":{\"score\":90,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":24,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"New York\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"reading novels\",\"gardening\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":27,\"level\":\"low\"},\"conscientiousness\":{\"score\":91,\"level\":\"high\"},\"extraversion\":{\"score\":44,\"level\":\"moderate\"},\"agreeableness\":{\"score\":59,\"level\":\"moderate\"},\"neuroticism\":{\"score\":90,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a 24-year-old mechanic living in New York, I've found that navigating discussions about healthcare and COVID vaccines requires a practical, step-by-step approach, much like fixing a complex engine. My high conscientiousness score of 91 means I value order and responsibility, so I rely on trusted sources like the CDC and local health departments for information, avoiding the noise of social media where I spend hours daily. Being an immigrant and self-employed, I've learned to prioritize stability for my child, making vaccination a non-negotiable part of our routine health check-ups. My low openness score of 27 makes me skeptical of unverified claims, so I stick to facts from official guidelines. In conversations, I keep it straightforward, sharing my own experience of getting vaccinated to protect my family and business, without delving into debates. My moderate agreeableness at 59 helps me listen respectfully but stand firm on my decisions, while high neuroticism at 90 means I manage anxiety by focusing on actionable steps, like scheduling appointments and following safety protocols. I avoid overcomplicating things, treating healthcare discussions as maintenance tasks—necessary, methodical, and based on reliable data to ensure everyone's well-being.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: High conscientiousness (91) emphasizes responsibility and reliance on authoritative sources like CDC; low openness (27) leads to skepticism of unverified info, favoring official guidelines; moderate agreeableness (59) allows respectful listening but firm stance; high neuroticism (90) drives anxiety management through structured actions; occupation as mechanic and self-employment influence practical, step-by-step approach; immigrant status and having a child prioritize stability and family protection; time on social media necessitates filtering noise; hobbies and other traits less directly referenced. Opinion integrates these to advocate for methodical, fact-based management of vaccine discussions.\",\n  \"tone\": \"Practical, methodical, and slightly anxious, with a focus on responsibility and stability, avoiding emotional debates.\",\n  \"citations\": [\"CDC\", \"local health departments\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"current_marital_status\", \"children\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 24-year-old mechanic living in New York, I've found that navigating discussions about healthcare and COVID vaccines requires a practical, step-by-step approach, much like fixing a complex engine. My high conscientiousness score of 91 means I value order and responsibility, so I rely on trusted sources like the CDC and local health departments for information, avoiding the noise of social media where I spend hours daily. Being an immigrant and self-employed, I've learned to prioritize stability for my child, making vaccination a non-negotiable part of our routine health check-ups. My low openness score of 27 makes me skeptical of unverified claims, so I stick to facts from official guidelines. In conversations, I keep it straightforward, sharing my own experience of getting vaccinated to protect my family and business, without delving into debates. My moderate agreeableness at 59 helps me listen respectfully but stand firm on my decisions, while high neuroticism at 90 means I manage anxiety by focusing on actionable steps, like scheduling appointments and following safety protocols. I avoid overcomplicating things, treating healthcare discussions as maintenance tasks—necessary, methodical, and based on reliable data to ensure everyone's well-being.",
+    "reasoning_summary": "Derived opinion from persona traits: High conscientiousness (91) emphasizes responsibility and reliance on authoritative sources like CDC; low openness (27) leads to skepticism of unverified info, favoring official guidelines; moderate agreeableness (59) allows respectful listening but firm stance; high neuroticism (90) drives anxiety management through structured actions; occupation as mechanic and self-employment influence practical, step-by-step approach; immigrant status and having a child prioritize stability and family protection; time on social media necessitates filtering noise; hobbies and other traits less directly referenced. Opinion integrates these to advocate for methodical, fact-based management of vaccine discussions.",
+    "tone": "Practical, methodical, and slightly anxious, with a focus on responsibility and stability, avoiding emotional debates.",
+    "citations": [
+      "CDC",
+      "local health departments"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

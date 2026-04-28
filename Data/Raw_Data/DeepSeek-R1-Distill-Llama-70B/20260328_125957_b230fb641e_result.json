@@ -1,0 +1,100 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 27,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Chicago",
+      "employment_status": "full-time student",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "board games",
+        "hiking",
+        "birdwatching",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 32,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 94,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 48,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 56,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":27,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Chicago\",\"employment_status\":\"full-time student\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"board games\",\"hiking\",\"birdwatching\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":32,\"level\":\"low\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":94,\"level\":\"high\"},\"agreeableness\":{\"score\":48,\"level\":\"moderate\"},\"neuroticism\":{\"score\":56,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":27,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Chicago\",\"employment_status\":\"full-time student\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"board games\",\"hiking\",\"birdwatching\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":32,\"level\":\"low\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":94,\"level\":\"high\"},\"agreeableness\":{\"score\":48,\"level\":\"moderate\"},\"neuroticism\":{\"score\":56,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a 27-year-old immigrant living in Chicago, pursuing a master's degree, and navigating life with an anxious disposition, I approach discussions about healthcare and COVID vaccines with a blend of caution and engagement shaped by my background. My low openness score means I tend to stick to established, evidence-based information, which in this context aligns with scientific consensus on vaccine efficacy and public health guidelines. Being an immigrant, I've experienced firsthand the importance of accessible healthcare systems and trust in medical institutions, which informs my support for vaccines as a tool for community protection. My high extraversion drives me to participate in these conversations, especially in social settings like board game nights or hiking groups, where I often find myself explaining the benefits of vaccination to friends, using clear, factual language to counter misinformation. However, my moderate neuroticism and anxiety make these discussions stressful; I worry about conflict or being misunderstood, so I prepare by reviewing reliable sources like the CDC or WHO beforehand to feel more confident. My Jewish faith emphasizes communal responsibility and caring for others, reinforcing my view that getting vaccinated is a moral duty to safeguard vulnerable populations. I limit my social media use to about an hour daily, which helps me avoid the echo chambers and heated debates online, allowing me to focus on in-person dialogues where I can read cues and adjust my tone. In managing these talks, I prioritize empathy, acknowledging others' fears while gently steering the conversation toward shared goals like public health and safety, always aiming to de-escalate tensions with a calm, reasoned approach.\",\"reasoning_summary\":\"Derived opinion from persona traits: low openness leads to reliance on established evidence (e.g., scientific consensus); high extraversion encourages active participation in discussions; moderate neuroticism and anxiety cause stress in conflicts, prompting preparation with reliable sources; immigrant status and Jewish beliefs emphasize community responsibility and trust in healthcare; limited social media use avoids online polarization; hobbies like board games and hiking provide social contexts for conversations; overall, tone is cautious yet engaged, balancing factual clarity with empathy to manage discussions effectively.\",\"tone\":\"cautious yet engaged, balancing factual clarity with empathy, reflecting anxiety and high extraversion\",\"citations\":[\"CDC\",\"WHO\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"migration_status\",\"education_level\",\"employment_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean.openness\",\"ocean.extraversion\",\"ocean.neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 27-year-old immigrant living in Chicago, pursuing a master's degree, and navigating life with an anxious disposition, I approach discussions about healthcare and COVID vaccines with a blend of caution and engagement shaped by my background. My low openness score means I tend to stick to established, evidence-based information, which in this context aligns with scientific consensus on vaccine efficacy and public health guidelines. Being an immigrant, I've experienced firsthand the importance of accessible healthcare systems and trust in medical institutions, which informs my support for vaccines as a tool for community protection. My high extraversion drives me to participate in these conversations, especially in social settings like board game nights or hiking groups, where I often find myself explaining the benefits of vaccination to friends, using clear, factual language to counter misinformation. However, my moderate neuroticism and anxiety make these discussions stressful; I worry about conflict or being misunderstood, so I prepare by reviewing reliable sources like the CDC or WHO beforehand to feel more confident. My Jewish faith emphasizes communal responsibility and caring for others, reinforcing my view that getting vaccinated is a moral duty to safeguard vulnerable populations. I limit my social media use to about an hour daily, which helps me avoid the echo chambers and heated debates online, allowing me to focus on in-person dialogues where I can read cues and adjust my tone. In managing these talks, I prioritize empathy, acknowledging others' fears while gently steering the conversation toward shared goals like public health and safety, always aiming to de-escalate tensions with a calm, reasoned approach.",
+    "reasoning_summary": "Derived opinion from persona traits: low openness leads to reliance on established evidence (e.g., scientific consensus); high extraversion encourages active participation in discussions; moderate neuroticism and anxiety cause stress in conflicts, prompting preparation with reliable sources; immigrant status and Jewish beliefs emphasize community responsibility and trust in healthcare; limited social media use avoids online polarization; hobbies like board games and hiking provide social contexts for conversations; overall, tone is cautious yet engaged, balancing factual clarity with empathy to manage discussions effectively.",
+    "tone": "cautious yet engaged, balancing factual clarity with empathy, reflecting anxiety and high extraversion",
+    "citations": [
+      "CDC",
+      "WHO"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "migration_status",
+      "education_level",
+      "employment_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.extraversion",
+      "ocean.neuroticism"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

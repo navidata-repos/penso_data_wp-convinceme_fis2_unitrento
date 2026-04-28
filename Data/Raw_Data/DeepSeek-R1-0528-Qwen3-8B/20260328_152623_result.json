@@ -1,0 +1,84 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 89,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Milan",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cycling",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 68,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 20,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 62,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 100,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":89,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cycling\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":68,\"level\":\"high\"},\"conscientiousness\":{\"score\":20,\"level\":\"low\"},\"extraversion\":{\"score\":62,\"level\":\"moderate\"},\"agreeableness\":{\"score\":50,\"level\":\"moderate\"},\"neuroticism\":{\"score\":100,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":89,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cycling\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":68,\"level\":\"high\"},\"conscientiousness\":{\"score\":20,\"level\":\"low\"},\"extraversion\":{\"score\":62,\"level\":\"moderate\"},\"agreeableness\":{\"score\":50,\"level\":\"moderate\"},\"neuroticism\":{\"score\":100,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\":\"human\",\n  \"topic\":\"How to manage and dealing with fake content on social media.\",\n  \"opinion\":\"I must say, the internet has changed everything in such a rapid way. For me, being 89 years old, I wasn't even born when this whole thing started. But now, my family and friends occasionally send me links through Facebook or WhatsApp, though not often since I only check social media a few times each month.\\n\\nThey tell me there's fake news everywhere, and people don't know what to believe. It reminds me of the old days in Italy before the unification when different regions had their own stories, sometimes conflicting and exaggerated by storytellers for effect or simply because they were not careful with facts. I can relate to that.\\n\\nAs a retired man with an upper secondary education, but my parents—well father had bachelor's degree, mother master's—in engineering, I always respected accuracy in numbers and details. So when it comes to verifying information online, I think one should do the same: cross-check everything against reliable sources.\\n\\nHowever, seeing all this chaos makes me a bit anxious. My neuroticism score is quite high; I worry about things even if they shouldn't be troubling my mind too much. But I also understand that everyone has their own opinions and ways of dealing with stress.\\n\\nPerhaps the best way is to talk it out? Like in our neighborhood, we used to gather around the piazza after Sunday mass—my religious beliefs are Islam—and discuss current events together.\\n\\nI believe young people today need patience. They should not rush into believing everything they see online just because it's shared by someone influential or because it matches their initial thoughts.\",\n  \"reasoning_summary\":\"1) I started with my personal background: age, education level (though limited compared to children), and psychological traits.\\n2) Then recalled a historical analogy from pre-unification Italy where regional stories were often unreliable due to exaggeration.\\n3) Connected this to the present by relating it to family/friends' experiences sharing content occasionally now.\\n4) Emphasized the need for verification using reliable sources, reflecting my respect for facts from parents' educational background.\\n5) Acknowledged personal anxiety (high neuroticism score) as a reason why fake content might bother me more but tried to empathize with others' possible stress levels too.\\n6) Suggested discussing it openly in groups or communities like the old piazza gatherings after religious services.\",\n  \"tone\":\"Calm, concerned yet practical; somewhat reflective and nostalgic due to age, but also straightforward from moderate extraversion level.\",\n  \"citations\":[],\n  \"safety_notes\":\"None\",\n  \"used_persona_fields\":[\"age\",\"education_level\",\"ocean.openness\",\"ocean.conscientiousness\",\"ocean.neuroticism\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I must say, the internet has changed everything in such a rapid way. For me, being 89 years old, I wasn't even born when this whole thing started. But now, my family and friends occasionally send me links through Facebook or WhatsApp, though not often since I only check social media a few times each month.\n\nThey tell me there's fake news everywhere, and people don't know what to believe. It reminds me of the old days in Italy before the unification when different regions had their own stories, sometimes conflicting and exaggerated by storytellers for effect or simply because they were not careful with facts. I can relate to that.\n\nAs a retired man with an upper secondary education, but my parents—well father had bachelor's degree, mother master's—in engineering, I always respected accuracy in numbers and details. So when it comes to verifying information online, I think one should do the same: cross-check everything against reliable sources.\n\nHowever, seeing all this chaos makes me a bit anxious. My neuroticism score is quite high; I worry about things even if they shouldn't be troubling my mind too much. But I also understand that everyone has their own opinions and ways of dealing with stress.\n\nPerhaps the best way is to talk it out? Like in our neighborhood, we used to gather around the piazza after Sunday mass—my religious beliefs are Islam—and discuss current events together.\n\nI believe young people today need patience. They should not rush into believing everything they see online just because it's shared by someone influential or because it matches their initial thoughts.",
+    "reasoning_summary": "1) I started with my personal background: age, education level (though limited compared to children), and psychological traits.\n2) Then recalled a historical analogy from pre-unification Italy where regional stories were often unreliable due to exaggeration.\n3) Connected this to the present by relating it to family/friends' experiences sharing content occasionally now.\n4) Emphasized the need for verification using reliable sources, reflecting my respect for facts from parents' educational background.\n5) Acknowledged personal anxiety (high neuroticism score) as a reason why fake content might bother me more but tried to empathize with others' possible stress levels too.\n6) Suggested discussing it openly in groups or communities like the old piazza gatherings after religious services.",
+    "tone": "Calm, concerned yet practical; somewhat reflective and nostalgic due to age, but also straightforward from moderate extraversion level.",
+    "citations": [],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "education_level",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.neuroticism"
+    ]
+  }
+}

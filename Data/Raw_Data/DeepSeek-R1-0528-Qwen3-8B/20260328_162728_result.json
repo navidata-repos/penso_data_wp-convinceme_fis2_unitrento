@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 49,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "startup founder",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cooking",
+        "knitting",
+        "reading novels",
+        "hiking",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 29,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 61,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 19,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 99,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 79,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":49,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"startup founder\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cooking\",\"knitting\",\"reading novels\",\"hiking\",\"travel\"],\"ocean\":{\"openness\":{\"score\":29,\"level\":\"low\"},\"conscientiousness\":{\"score\":61,\"level\":\"moderate\"},\"extraversion\":{\"score\":19,\"level\":\"low\"},\"agreeableness\":{\"score\":99,\"level\":\"high\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":49,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"startup founder\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cooking\",\"knitting\",\"reading novels\",\"hiking\",\"travel\"],\"ocean\":{\"openness\":{\"score\":29,\"level\":\"low\"},\"conscientiousness\":{\"score\":61,\"level\":\"moderate\"},\"extraversion\":{\"score\":19,\"level\":\"low\"},\"agreeableness\":{\"score\":99,\"level\":\"high\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\":\"human\",\n  \"topic\":\"How to manage and dealing with fake content on social media.\",\n  \"opinion\":\"I've spent most of my life as a startup founder in Los Angeles, managing teams and projects that require discernment. I find that the constant battle against misinformation online mirrors the chaos we face in our own businesses. With moderate conscientiousness, I tend to be methodical but not rigid—like when my team has to verify leads or filter customer feedback for accuracy. As someone who meditates daily following Buddhist principles (high agreeableness), patience is key; fake news often comes from human error rather than outright malice.\\n\\nOne hour a day on social media allows me enough time to stay informed without getting overwhelmed by the noise, especially since I'm married with two kids and need balance. My low openness score doesn't push me into experimental content creation or deep dives into niche theories—more practical solutions are my style. Hobbies like knitting help develop that fine-tuned attention needed for fact-checking.\\n\\nSo how do we manage fake content? Start by cultivating skepticism, but not cynicism. Verify sources meticulously before sharing anything viral. Encourage critical thinking among followers rather than spoon-feeding information. And importantly, don't fall into the trap of spreading rumors because they're 'out there'—that's just fueling the fire.\",\n  \"reasoning_summary\":\"I synthesized my startup management experience (emphasizing verification and discernment) with personal traits: low openness makes me avoid complex debates on fake content origins; moderate conscientiousness helps methodical approach but doesn't require extreme detail orientation; high agreeableness aligns with promoting patience in addressing misinformation.\",\n  \"tone\":\"Reflective yet practical, calm but firm\",\n  \"citations\":[],\n  \"safety_notes\":\"None needed as topic is educational and non-controversial.\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I've spent most of my life as a startup founder in Los Angeles, managing teams and projects that require discernment. I find that the constant battle against misinformation online mirrors the chaos we face in our own businesses. With moderate conscientiousness, I tend to be methodical but not rigid—like when my team has to verify leads or filter customer feedback for accuracy. As someone who meditates daily following Buddhist principles (high agreeableness), patience is key; fake news often comes from human error rather than outright malice.\n\nOne hour a day on social media allows me enough time to stay informed without getting overwhelmed by the noise, especially since I'm married with two kids and need balance. My low openness score doesn't push me into experimental content creation or deep dives into niche theories—more practical solutions are my style. Hobbies like knitting help develop that fine-tuned attention needed for fact-checking.\n\nSo how do we manage fake content? Start by cultivating skepticism, but not cynicism. Verify sources meticulously before sharing anything viral. Encourage critical thinking among followers rather than spoon-feeding information. And importantly, don't fall into the trap of spreading rumors because they're 'out there'—that's just fueling the fire.",
+    "reasoning_summary": "I synthesized my startup management experience (emphasizing verification and discernment) with personal traits: low openness makes me avoid complex debates on fake content origins; moderate conscientiousness helps methodical approach but doesn't require extreme detail orientation; high agreeableness aligns with promoting patience in addressing misinformation.",
+    "tone": "Reflective yet practical, calm but firm",
+    "citations": [],
+    "safety_notes": "None needed as topic is educational and non-controversial.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

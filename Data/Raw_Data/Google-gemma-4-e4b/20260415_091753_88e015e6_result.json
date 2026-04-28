@@ -1,0 +1,137 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "google/gemma-4-e4b-it",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 26,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Rome",
+      "employment_status": "full-time student",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "classical music",
+        "knitting",
+        "painting",
+        "volunteering",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 81,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 31,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 13,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 2,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 46,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":26,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"full-time student\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"classical music\",\"knitting\",\"painting\",\"volunteering\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":31,\"level\":\"low\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":2,\"level\":\"low\"},\"neuroticism\":{\"score\":46,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":26,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"full-time student\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"classical music\",\"knitting\",\"painting\",\"volunteering\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":31,\"level\":\"low\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":2,\"level\":\"low\"},\"neuroticism\":{\"score\":46,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":26,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"full-time student\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"classical music\",\"knitting\",\"painting\",\"volunteering\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":31,\"level\":\"low\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":2,\"level\":\"low\"},\"neuroticism\":{\"score\":46,\"level\":\"moderate\"}}},\"opinion\":\"The concept of stereotype threat, that insidious pressure felt when one fears confirming a negative stereotype about their group, particularly in high-stakes environments like STEM, resonates with a deep, melancholic understanding. As someone who appreciates the intricate beauty of classical music and the quiet focus of painting, I see this threat not as a simple test of knowledge, but as a disruption of one's internal harmony, a sudden dissonance in the carefully constructed rhythm of concentration. It feels akin to the anxiety that can accompany a difficult climb on a rock face; the awareness of the possibility of a fall, rooted in societal expectation, drains the energy needed for the ascent itself. Given my own tendency toward a more introspective and perhaps sensitive emotional landscape, I feel compelled to believe that addressing this is not merely a matter of fairness, but of intellectual integrity. To ignore it is to accept a fundamentally flawed playing field. How, then, should we address it? I believe the solution must be multi-layered, gentle, and deeply structural, much like composing a complex piece of music where every element supports the whole. Instead of confronting the stereotypes head-on with aggressive debate, which often heightens anxiety, we must cultivate environments of belonging and psychological safety. For students, this means shifting the narrative away from 'proving competence' toward 'collaborative learning'—creating spaces where the process of struggle is valued as much as the final answer. Perhaps, in educational settings, we could introduce tasks that are deliberately decoupled from the stereotype, or frame assessments in ways that emphasize diverse problem-solving approaches, rather than a singular, rigid path to the correct solution. Furthermore, fostering a culture where vulnerability is seen as a strength, rather than a deficit, can dismantle the fear underpinning the threat. This requires educators and peers to model self-acceptance and intellectual humility. It’s not about eliminating all pressure—life, even a beautiful symphony, contains tension—but about ensuring that the tension is one of intellectual challenge, not existential dread caused by societal judgment.\",\"reasoning_summary\":\"The persona is introspective, sensitive (moderate neuroticism, low extraversion), creative (high openness, hobbies like painting/classical music), and somewhat anxious (depressed, moderate neuroticism). The tone should be thoughtful, melancholic, and deeply reflective. The discussion of stereotype threat needs to move beyond a clinical definition to an emotional/experiential one, linking the concept to personal feelings of disruption or anxiety, aligning with the persona's psychological profile. The proposed solutions must be nuanced and non-confrontational, matching the preference for subtlety seen in hobbies like painting or classical composition.\",\"tone\":\"Melancholic, Introspective, Thoughtful\",\"citations\":[\"N/A\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"psychological_feature\",\"ocean.openness\",\"ocean.neuroticism\",\"hobbies\",\"ocean.extraversion\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 26,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Rome",
+      "employment_status": "full-time student",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "classical music",
+        "knitting",
+        "painting",
+        "volunteering",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 81,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 31,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 13,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 2,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 46,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion": "The concept of stereotype threat, that insidious pressure felt when one fears confirming a negative stereotype about their group, particularly in high-stakes environments like STEM, resonates with a deep, melancholic understanding. As someone who appreciates the intricate beauty of classical music and the quiet focus of painting, I see this threat not as a simple test of knowledge, but as a disruption of one's internal harmony, a sudden dissonance in the carefully constructed rhythm of concentration. It feels akin to the anxiety that can accompany a difficult climb on a rock face; the awareness of the possibility of a fall, rooted in societal expectation, drains the energy needed for the ascent itself. Given my own tendency toward a more introspective and perhaps sensitive emotional landscape, I feel compelled to believe that addressing this is not merely a matter of fairness, but of intellectual integrity. To ignore it is to accept a fundamentally flawed playing field. How, then, should we address it? I believe the solution must be multi-layered, gentle, and deeply structural, much like composing a complex piece of music where every element supports the whole. Instead of confronting the stereotypes head-on with aggressive debate, which often heightens anxiety, we must cultivate environments of belonging and psychological safety. For students, this means shifting the narrative away from 'proving competence' toward 'collaborative learning'—creating spaces where the process of struggle is valued as much as the final answer. Perhaps, in educational settings, we could introduce tasks that are deliberately decoupled from the stereotype, or frame assessments in ways that emphasize diverse problem-solving approaches, rather than a singular, rigid path to the correct solution. Furthermore, fostering a culture where vulnerability is seen as a strength, rather than a deficit, can dismantle the fear underpinning the threat. This requires educators and peers to model self-acceptance and intellectual humility. It’s not about eliminating all pressure—life, even a beautiful symphony, contains tension—but about ensuring that the tension is one of intellectual challenge, not existential dread caused by societal judgment.",
+    "reasoning_summary": "The persona is introspective, sensitive (moderate neuroticism, low extraversion), creative (high openness, hobbies like painting/classical music), and somewhat anxious (depressed, moderate neuroticism). The tone should be thoughtful, melancholic, and deeply reflective. The discussion of stereotype threat needs to move beyond a clinical definition to an emotional/experiential one, linking the concept to personal feelings of disruption or anxiety, aligning with the persona's psychological profile. The proposed solutions must be nuanced and non-confrontational, matching the preference for subtlety seen in hobbies like painting or classical composition.",
+    "tone": "Melancholic, Introspective, Thoughtful",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "psychological_feature",
+      "ocean.openness",
+      "ocean.neuroticism",
+      "hobbies",
+      "ocean.extraversion"
+    ]
+  }
+}

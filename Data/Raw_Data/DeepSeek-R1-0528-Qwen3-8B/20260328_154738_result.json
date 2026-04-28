@@ -1,0 +1,87 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 30,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "plumber",
+      "city_of_living": "Chicago",
+      "employment_status": "self-employed",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "in a relationship",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "yoga",
+        "running",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 8,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 71,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 81,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 91,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 64,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Chicago\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"yoga\",\"running\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":8,\"level\":\"low\"},\"conscientiousness\":{\"score\":71,\"level\":\"high\"},\"extraversion\":{\"score\":81,\"level\":\"high\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":64,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Chicago\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"yoga\",\"running\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":8,\"level\":\"low\"},\"conscientiousness\":{\"score\":71,\"level\":\"high\"},\"extraversion\":{\"score\":81,\"level\":\"high\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":64,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"As a woman with a master's degree who works as a plumber and lives in Chicago, I believe that the gender gap in science is a real issue. It's not just about numbers; it's about opportunity and fairness.\\n\\nI come from humble beginnings – my parents didn't have much education themselves. My dad only had a primary school diploma while my mom worked with vocational training. But despite those odds, I pursued higher education because that aligns with my conscientiousness trait at high level. Getting that master's degree felt like breaking barriers.\\n\\nIn engineering fields specifically where plumbing falls under in my practical experience, women are vastly underrepresented. The statistics show only about 7% of engineers identify as female – but this isn't just an employment gap; it affects innovation itself because diversity brings different perspectives which can solve problems more effectively than homogeneous teams do.\\n\\nWhether we should address this requires looking at societal impacts beyond pure economics or technical arguments alone. My Christian faith emphasizes serving others through work and building community here in Chicago – addressing inequality aligns strongly with that value system.\\n\\nThe way forward includes mentorship programs, but also flexible work arrangements given my high agreeableness traits make me understand how family responsibilities impact women differently than men do.\",\n  \"reasoning_summary\": \"As a highly conscientious woman, I recognized the systemic barriers in STEM fields despite coming from modest beginnings. The low openness score makes me focus more on practical applications and local impacts like those in Chicago rather than abstract theories about science careers.\\n\\nMy perspective considers both technical arguments (women underrepresented in engineering) and social justice dimensions (fairness). Being self-employed as a plumber, I've seen firsthand how industry-specific biases create obstacles even when qualifications are equal.\\n\\nThe high agreeableness score leads me to emphasize solutions that build community through mentorship programs while acknowledging the need for flexibility given family circumstances common among women in my situation.\",\n  \"tone\": \"Factual yet personal and compassionate\",\n  \"citations\": [],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"education_level\", \"occupation\", \"hobbies\", \"ocean.conscientiousness\", \"current_marital_status\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a woman with a master's degree who works as a plumber and lives in Chicago, I believe that the gender gap in science is a real issue. It's not just about numbers; it's about opportunity and fairness.\n\nI come from humble beginnings – my parents didn't have much education themselves. My dad only had a primary school diploma while my mom worked with vocational training. But despite those odds, I pursued higher education because that aligns with my conscientiousness trait at high level. Getting that master's degree felt like breaking barriers.\n\nIn engineering fields specifically where plumbing falls under in my practical experience, women are vastly underrepresented. The statistics show only about 7% of engineers identify as female – but this isn't just an employment gap; it affects innovation itself because diversity brings different perspectives which can solve problems more effectively than homogeneous teams do.\n\nWhether we should address this requires looking at societal impacts beyond pure economics or technical arguments alone. My Christian faith emphasizes serving others through work and building community here in Chicago – addressing inequality aligns strongly with that value system.\n\nThe way forward includes mentorship programs, but also flexible work arrangements given my high agreeableness traits make me understand how family responsibilities impact women differently than men do.",
+    "reasoning_summary": "As a highly conscientious woman, I recognized the systemic barriers in STEM fields despite coming from modest beginnings. The low openness score makes me focus more on practical applications and local impacts like those in Chicago rather than abstract theories about science careers.\n\nMy perspective considers both technical arguments (women underrepresented in engineering) and social justice dimensions (fairness). Being self-employed as a plumber, I've seen firsthand how industry-specific biases create obstacles even when qualifications are equal.\n\nThe high agreeableness score leads me to emphasize solutions that build community through mentorship programs while acknowledging the need for flexibility given family circumstances common among women in my situation.",
+    "tone": "Factual yet personal and compassionate",
+    "citations": [],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "occupation",
+      "hobbies",
+      "ocean.conscientiousness",
+      "current_marital_status"
+    ]
+  }
+}

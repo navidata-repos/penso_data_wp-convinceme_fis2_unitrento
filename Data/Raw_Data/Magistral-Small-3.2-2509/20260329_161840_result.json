@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 42,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "cleaner",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "divorced",
+      "children": 3,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "hiking",
+        "board games",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 11,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 75,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 69,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 85,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 32,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":42,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"hiking\",\"board games\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":11,\"level\":\"low\"},\"conscientiousness\":{\"score\":75,\"level\":\"high\"},\"extraversion\":{\"score\":69,\"level\":\"high\"},\"agreeableness\":{\"score\":85,\"level\":\"high\"},\"neuroticism\":{\"score\":32,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":42,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"hiking\",\"board games\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":11,\"level\":\"low\"},\"conscientiousness\":{\"score\":75,\"level\":\"high\"},\"extraversion\":{\"score\":69,\"level\":\"high\"},\"agreeableness\":{\"score\":85,\"level\":\"high\"},\"neuroticism\":{\"score\":32,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a hardworking woman who has moved to Washington DC, I've seen that science is a field where men seem to be more present. This might not seem like a big deal at first glance, but when you look closely, you realize that this imbalance can affect many things. For instance, I have noticed that in my neighborhood, the local school's science fair often has more boys than girls participating. It's not because girls aren't interested; sometimes it's because they might not feel as encouraged or welcomed. My own children, two boys and a girl, all love to explore how things work, but my daughter sometimes feels like she doesn't belong in science clubs at school. This is not just about kids though. In our community, there are fewer women working in labs or leading research projects. When I go to the local library to learn more about this, it says that only around 30% of researchers worldwide are women, according to UNESCO. That's a big difference! Now, should we do something about this? I believe we must because when half of our population is not fully represented in science, everyone loses out on important ideas and solutions. For example, maybe some problems could be solved better if more women were involved in finding answers. How can we make things fairer? Well, it starts at home. Parents like me should encourage all children equally to love science, no matter their gender. Schools can also help by making sure girls know that science is for everyone and not just boys. In Washington DC, there are some great programs where women scientists visit schools to talk about what they do. Maybe we can support more of those. Also, it’s important for companies and universities doing research to make sure they treat everyone fairly and give chances based on ability, not gender. I’ve seen that when someone gets a chance, like a friend who studied to be an engineer despite being told girls shouldn’t, she did amazing things. Finally, we need stories of women scientists to be celebrated more, so young girls can see role models they can look up to. In our church, we talk about equality, and that includes science. Science is for all people, and when everyone gets a fair chance, we can make the world better together.\",\"reasoning_summary\":\"The gender gap in science is evident from school fairs to professional labs, with women underrepresented. This imbalance starts early and persists through education and careers, leading to less diverse ideas and solutions. Addressing it requires encouragement at home, inclusive schools, fair workplaces, and more role models. Community programs and faith-based values of equality support this effort, aiming for a world where science benefits from everyone's talents.\",\"tone\":\"Reflective and encouraging with a focus on community and practical steps.\",\"citations\":[\"UNESCO\"],\"safety_notes\":\"None. Promotes equality and inclusiveness in science education and careers.\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"children\",\"psychological_feature\",\"religious_beliefs\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a hardworking woman who has moved to Washington DC, I've seen that science is a field where men seem to be more present. This might not seem like a big deal at first glance, but when you look closely, you realize that this imbalance can affect many things. For instance, I have noticed that in my neighborhood, the local school's science fair often has more boys than girls participating. It's not because girls aren't interested; sometimes it's because they might not feel as encouraged or welcomed. My own children, two boys and a girl, all love to explore how things work, but my daughter sometimes feels like she doesn't belong in science clubs at school. This is not just about kids though. In our community, there are fewer women working in labs or leading research projects. When I go to the local library to learn more about this, it says that only around 30% of researchers worldwide are women, according to UNESCO. That's a big difference! Now, should we do something about this? I believe we must because when half of our population is not fully represented in science, everyone loses out on important ideas and solutions. For example, maybe some problems could be solved better if more women were involved in finding answers. How can we make things fairer? Well, it starts at home. Parents like me should encourage all children equally to love science, no matter their gender. Schools can also help by making sure girls know that science is for everyone and not just boys. In Washington DC, there are some great programs where women scientists visit schools to talk about what they do. Maybe we can support more of those. Also, it’s important for companies and universities doing research to make sure they treat everyone fairly and give chances based on ability, not gender. I’ve seen that when someone gets a chance, like a friend who studied to be an engineer despite being told girls shouldn’t, she did amazing things. Finally, we need stories of women scientists to be celebrated more, so young girls can see role models they can look up to. In our church, we talk about equality, and that includes science. Science is for all people, and when everyone gets a fair chance, we can make the world better together.",
+    "reasoning_summary": "The gender gap in science is evident from school fairs to professional labs, with women underrepresented. This imbalance starts early and persists through education and careers, leading to less diverse ideas and solutions. Addressing it requires encouragement at home, inclusive schools, fair workplaces, and more role models. Community programs and faith-based values of equality support this effort, aiming for a world where science benefits from everyone's talents.",
+    "tone": "Reflective and encouraging with a focus on community and practical steps.",
+    "citations": [
+      "UNESCO"
+    ],
+    "safety_notes": "None. Promotes equality and inclusiveness in science education and careers.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "children",
+      "psychological_feature",
+      "religious_beliefs"
+    ]
+  }
+}

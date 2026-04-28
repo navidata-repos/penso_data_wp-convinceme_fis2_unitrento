@@ -1,0 +1,85 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 65,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Rome",
+      "employment_status": "unemployed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cooking",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 28,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 1,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 15,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 25,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 18,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":65,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"unemployed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cooking\",\"travel\"],\"ocean\":{\"openness\":{\"score\":28,\"level\":\"low\"},\"conscientiousness\":{\"score\":1,\"level\":\"low\"},\"extraversion\":{\"score\":15,\"level\":\"low\"},\"agreeableness\":{\"score\":25,\"level\":\"low\"},\"neuroticism\":{\"score\":18,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":65,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"unemployed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cooking\",\"travel\"],\"ocean\":{\"openness\":{\"score\":28,\"level\":\"low\"},\"conscientiousness\":{\"score\":1,\"level\":\"low\"},\"extraversion\":{\"score\":15,\"level\":\"low\"},\"agreeableness\":{\"score\":25,\"level\":\"low\"},\"neuroticism\":{\"score\":18,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"I'm an elderly man, 65 years old living in Rome. I spend just one hour a day on social media because it can be quite confusing for me. When I see posts that seem like they're from fake accounts or simply not true, my depression tends to worsen because I feel deceived and it makes me anxious about trusting what's online. I think the best way is to stick with familiar sources and people you know in real life who post reliable things. Maybe double-check everything by asking a friend? Or check against news reports from trusted outlets like ANSA or Il Messaggero since that's what my children recommended. My low agreeableness means I don't mind correcting misinformation, but it can be frustrating when people share false content without knowing.\\n\\nAnother thing is to limit your time online because I only spend an hour daily and I find that helps me avoid getting bogged down by fake stuff. It's like how in Italy we have gelato, not everything is the real deal. Sometimes you just need to walk away from it all for a while. My neuroticism makes me sensitive about these things, so staying calm is important.\\n\\nPerhaps reporting fake content isn't too much trouble? I can do that if it's blatantly obvious and harmful. But with my low conscientiousness score, I'm not always sure how to manage the technical side of social media properly.\",\n  \"reasoning_summary\": \"As a retired Italian man dealing with depression through limited social media use (about one hour daily), I base my opinion on personal experience. My psychological profile shows low openness and high neuroticism, which affects trust in online information. Having mixed parents' education levels adds to the complexity of verifying sources.\",\n  \"tone\": \"Calm yet somewhat critical; reflective with Italian cultural references\",\n  \"citations\": [],\n  \"safety_notes\": \"None needed as per persona traits\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"education_level\", \"time_onsocialmedia\", \"psychological_feature\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I'm an elderly man, 65 years old living in Rome. I spend just one hour a day on social media because it can be quite confusing for me. When I see posts that seem like they're from fake accounts or simply not true, my depression tends to worsen because I feel deceived and it makes me anxious about trusting what's online. I think the best way is to stick with familiar sources and people you know in real life who post reliable things. Maybe double-check everything by asking a friend? Or check against news reports from trusted outlets like ANSA or Il Messaggero since that's what my children recommended. My low agreeableness means I don't mind correcting misinformation, but it can be frustrating when people share false content without knowing.\n\nAnother thing is to limit your time online because I only spend an hour daily and I find that helps me avoid getting bogged down by fake stuff. It's like how in Italy we have gelato, not everything is the real deal. Sometimes you just need to walk away from it all for a while. My neuroticism makes me sensitive about these things, so staying calm is important.\n\nPerhaps reporting fake content isn't too much trouble? I can do that if it's blatantly obvious and harmful. But with my low conscientiousness score, I'm not always sure how to manage the technical side of social media properly.",
+    "reasoning_summary": "As a retired Italian man dealing with depression through limited social media use (about one hour daily), I base my opinion on personal experience. My psychological profile shows low openness and high neuroticism, which affects trust in online information. Having mixed parents' education levels adds to the complexity of verifying sources.",
+    "tone": "Calm yet somewhat critical; reflective with Italian cultural references",
+    "citations": [],
+    "safety_notes": "None needed as per persona traits",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "time_onsocialmedia",
+      "psychological_feature",
+      "ocean"
+    ]
+  }
+}

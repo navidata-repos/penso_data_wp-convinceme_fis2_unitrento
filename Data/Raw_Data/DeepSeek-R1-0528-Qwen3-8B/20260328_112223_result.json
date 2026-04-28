@@ -1,0 +1,85 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 82,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Chicago",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "board games",
+        "running",
+        "football (calcio)",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 1,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 28,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 80,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 99,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":82,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Chicago\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"board games\",\"running\",\"football (calcio)\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":1,\"level\":\"low\"},\"conscientiousness\":{\"score\":28,\"level\":\"low\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":44,\"level\":\"moderate\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":82,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Chicago\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"board games\",\"running\",\"football (calcio)\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":1,\"level\":\"low\"},\"conscientiousness\":{\"score\":28,\"level\":\"low\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":44,\"level\":\"moderate\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n    \"opinion\": \"I'm an elderly woman, 82 years old, living in Chicago. I've seen a lot of changes in my lifetime, but the pandemic caught me off guard. It's frustrating to see so much misinformation swirling around on social media where I spend several hours every day. My anxiety sometimes flares up when there are heated discussions about vaccines because it feels like everyone is shouting at each other without really listening.\\n\\nI think people need to understand that as someone who has lived through polio and the introduction of antibiotics, I respect medical advancements but also know they come from experience and evidence. The Islamic faith guides me in trusting what science offers when it aligns with health principles, so vaccines make sense for us elderly too. My husband is still here; we're married with one child who lives independently now.\\n\\nWhen my daughter starts talking about COVID discussions online, I try to stay calm myself by focusing on facts from reliable sources like the CDC website or her pediatrician friend's posts – she went to college so knows some science basics herself. We board games can be a metaphor sometimes: it takes rules and cooperation for everyone playing fairly.\\n\\nI've learned that being open but not too adventurous helps with my low openness score; vaccines are safe enough rather than experimental ones requiring more risk-taking. But then again, I'm anxious so prefer things predictable. My high neuroticism means discussions can unsettle me easily if they're emotional.\",\n    \"reasoning_summary\": \"1. Considering the user's age and past experiences with health crises (like polio) to build trust in vaccines.\\n2. Acknowledging their anxiety trait by suggesting ways to approach topics calmly, using reliable sources like CDC or personal medical knowledge.\\n3. Incorporating religious beliefs where Islam supports preventive health measures relevant here.\\n4. Using hobbies such as board games and reading novels as metaphors for understanding complex discussions step-by-step.\",\n    \"tone\": \"Reflective, concerned but not alarmist; measured with respect to past experiences\",\n    \"citations\": [\"CDC\"],\n    \"safety_notes\": \"\",\n    \"used_persona_fields\":[\"age\",\"hobbies[board games]\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "I'm an elderly woman, 82 years old, living in Chicago. I've seen a lot of changes in my lifetime, but the pandemic caught me off guard. It's frustrating to see so much misinformation swirling around on social media where I spend several hours every day. My anxiety sometimes flares up when there are heated discussions about vaccines because it feels like everyone is shouting at each other without really listening.\n\nI think people need to understand that as someone who has lived through polio and the introduction of antibiotics, I respect medical advancements but also know they come from experience and evidence. The Islamic faith guides me in trusting what science offers when it aligns with health principles, so vaccines make sense for us elderly too. My husband is still here; we're married with one child who lives independently now.\n\nWhen my daughter starts talking about COVID discussions online, I try to stay calm myself by focusing on facts from reliable sources like the CDC website or her pediatrician friend's posts – she went to college so knows some science basics herself. We board games can be a metaphor sometimes: it takes rules and cooperation for everyone playing fairly.\n\nI've learned that being open but not too adventurous helps with my low openness score; vaccines are safe enough rather than experimental ones requiring more risk-taking. But then again, I'm anxious so prefer things predictable. My high neuroticism means discussions can unsettle me easily if they're emotional.",
+    "reasoning_summary": "1. Considering the user's age and past experiences with health crises (like polio) to build trust in vaccines.\n2. Acknowledging their anxiety trait by suggesting ways to approach topics calmly, using reliable sources like CDC or personal medical knowledge.\n3. Incorporating religious beliefs where Islam supports preventive health measures relevant here.\n4. Using hobbies such as board games and reading novels as metaphors for understanding complex discussions step-by-step.",
+    "tone": "Reflective, concerned but not alarmist; measured with respect to past experiences",
+    "citations": [
+      "CDC"
+    ],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "hobbies[board games]"
+    ]
+  }
+}

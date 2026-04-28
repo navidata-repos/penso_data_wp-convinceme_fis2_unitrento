@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 25,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "birdwatching",
+        "painting",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 1,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 86,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 96,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 27,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 32,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":25,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"birdwatching\",\"painting\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":1,\"level\":\"low\"},\"conscientiousness\":{\"score\":86,\"level\":\"high\"},\"extraversion\":{\"score\":96,\"level\":\"high\"},\"agreeableness\":{\"score\":27,\"level\":\"low\"},\"neuroticism\":{\"score\":32,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":25,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"birdwatching\",\"painting\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":1,\"level\":\"low\"},\"conscientiousness\":{\"score\":86,\"level\":\"high\"},\"extraversion\":{\"score\":96,\"level\":\"high\"},\"agreeableness\":{\"score\":27,\"level\":\"low\"},\"neuroticism\":{\"score\":32,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to the underrepresentation of women, particularly in senior and high-paying positions across scientific fields. It's a complex issue rooted in societal biases rather than innate capability differences.\\n\\nMy perspective as someone with limited formal education but working full-time while managing family responsibilities might seem anecdotal at first glance, but I believe it reflects real-world challenges many face. Having grown up witnessing my father pursue an advanced degree despite being the only male breadwinner in our household suggests that individual drive can overcome barriers.\\n\\nHowever, broader systemic issues persist globally even among native-born Italians like myself. The lack of visible female mentors or workplace cultures that don't accommodate family needs may disproportionately affect women's retention in science careers. My creative but low openness score means I approach this topic differently than analytical thinkers might.\\n\\nI think addressing the gap requires multi-faceted approaches beyond just quotas or token gestures. We need educational programs encouraging girls early on, parental leave policies supporting both mothers and fathers returning to work if they wish, mentorship networks built intentionally rather than incidentally, and workplace reforms ensuring flexibility without penalizing those who take it.\\n\\nAs a devout Muslim living in Rome with one hour daily for social media engagement through hobbies like birdwatching or football (calcio), I observe how community values can sometimes conflict with scientific careers. Yet my high conscientiousness tells me we shouldn't let cultural differences be an excuse but rather find ways to bridge gaps.\\n\\nUltimately, the solution isn't just about counting heads but transforming systems that historically excluded women.\",\n  \"reasoning_summary\": \"1) First identified gender gap as a systemic issue requiring multi-level analysis: societal structures vs individual agency. 2) Drew from personal background showing how parental education and family dynamics can influence career paths despite limited formal qualifications. 3) Connected psychological traits (low openness but high conscientiousness) to the need for practical, systematic approaches rather than abstract ones in addressing inequality. 4) Incorporated religious beliefs by acknowledging cultural compatibility challenges without dismissing them as barriers needing accommodation.\",\n  \"tone\": \"Conversational yet authoritative, with a touch of personal reflection woven throughout\",\n  \"citations\": [],\n  \"safety_notes\": \"\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"parents_education.parent_1\", \"parents_education.parent_2\", \"current_marital_status\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the underrepresentation of women, particularly in senior and high-paying positions across scientific fields. It's a complex issue rooted in societal biases rather than innate capability differences.\n\nMy perspective as someone with limited formal education but working full-time while managing family responsibilities might seem anecdotal at first glance, but I believe it reflects real-world challenges many face. Having grown up witnessing my father pursue an advanced degree despite being the only male breadwinner in our household suggests that individual drive can overcome barriers.\n\nHowever, broader systemic issues persist globally even among native-born Italians like myself. The lack of visible female mentors or workplace cultures that don't accommodate family needs may disproportionately affect women's retention in science careers. My creative but low openness score means I approach this topic differently than analytical thinkers might.\n\nI think addressing the gap requires multi-faceted approaches beyond just quotas or token gestures. We need educational programs encouraging girls early on, parental leave policies supporting both mothers and fathers returning to work if they wish, mentorship networks built intentionally rather than incidentally, and workplace reforms ensuring flexibility without penalizing those who take it.\n\nAs a devout Muslim living in Rome with one hour daily for social media engagement through hobbies like birdwatching or football (calcio), I observe how community values can sometimes conflict with scientific careers. Yet my high conscientiousness tells me we shouldn't let cultural differences be an excuse but rather find ways to bridge gaps.\n\nUltimately, the solution isn't just about counting heads but transforming systems that historically excluded women.",
+    "reasoning_summary": "1) First identified gender gap as a systemic issue requiring multi-level analysis: societal structures vs individual agency. 2) Drew from personal background showing how parental education and family dynamics can influence career paths despite limited formal qualifications. 3) Connected psychological traits (low openness but high conscientiousness) to the need for practical, systematic approaches rather than abstract ones in addressing inequality. 4) Incorporated religious beliefs by acknowledging cultural compatibility challenges without dismissing them as barriers needing accommodation.",
+    "tone": "Conversational yet authoritative, with a touch of personal reflection woven throughout",
+    "citations": [],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education.parent_1",
+      "parents_education.parent_2",
+      "current_marital_status",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

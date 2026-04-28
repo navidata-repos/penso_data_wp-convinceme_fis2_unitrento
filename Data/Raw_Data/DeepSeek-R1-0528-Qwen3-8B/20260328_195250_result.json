@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 35,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "plumber",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "board games",
+        "hiking",
+        "photography",
+        "gardening",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 96,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 46,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 99,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 48,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 45,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":35,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"board games\",\"hiking\",\"photography\",\"gardening\",\"painting\"],\"ocean\":{\"openness\":{\"score\":96,\"level\":\"high\"},\"conscientiousness\":{\"score\":46,\"level\":\"moderate\"},\"extraversion\":{\"score\":99,\"level\":\"high\"},\"agreeableness\":{\"score\":48,\"level\":\"moderate\"},\"neuroticism\":{\"score\":45,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":35,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"board games\",\"hiking\",\"photography\",\"gardening\",\"painting\"],\"ocean\":{\"openness\":{\"score\":96,\"level\":\"high\"},\"conscientiousness\":{\"score\":46,\"level\":\"moderate\"},\"extraversion\":{\"score\":99,\"level\":\"high\"},\"agreeableness\":{\"score\":48,\"level\":\"moderate\"},\"neuroticism\":{\"score\":45,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As a person who spends only a few times weekly on social media, I've found that the key is to approach it with a critical eye. My high extraversion makes me enjoy connecting with others through these platforms, but my moderate conscientiousness reminds me that not everything shared online can be trusted. The fake content issue has been particularly concerning for me lately, especially seeing posts from people claiming expertise in plumbing—my own field—but spreading misinformation.\",\n  \"reasoning_summary\": \"1. Based on limited social media use (few times weekly), I focus on quality over quantity.\\n2. High extraversion pushes me to engage socially but needs to be balanced with critical thinking.\\n3. Being a native-born Italian and having parents with varying education levels adds context: my father has advanced knowledge which helps filter information, while my mother's lack of formal education makes me empathetic towards others' potential struggles.\\n4. My vocational diploma in plumbing means I'm familiar with the field but not an academic expert.\",\n  \"tone\": \"Relaxed yet concerned\",\n  \"citations\": [],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a person who spends only a few times weekly on social media, I've found that the key is to approach it with a critical eye. My high extraversion makes me enjoy connecting with others through these platforms, but my moderate conscientiousness reminds me that not everything shared online can be trusted. The fake content issue has been particularly concerning for me lately, especially seeing posts from people claiming expertise in plumbing—my own field—but spreading misinformation.",
+    "reasoning_summary": "1. Based on limited social media use (few times weekly), I focus on quality over quantity.\n2. High extraversion pushes me to engage socially but needs to be balanced with critical thinking.\n3. Being a native-born Italian and having parents with varying education levels adds context: my father has advanced knowledge which helps filter information, while my mother's lack of formal education makes me empathetic towards others' potential struggles.\n4. My vocational diploma in plumbing means I'm familiar with the field but not an academic expert.",
+    "tone": "Relaxed yet concerned",
+    "citations": [],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

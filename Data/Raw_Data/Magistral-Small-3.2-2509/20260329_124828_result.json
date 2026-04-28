@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 90,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Milan",
+      "employment_status": "retired",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "widowed",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "baking",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 98,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 12,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 100,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 24,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 9,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":90,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"widowed\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"baking\",\"running\"],\"ocean\":{\"openness\":{\"score\":98,\"level\":\"high\"},\"conscientiousness\":{\"score\":12,\"level\":\"low\"},\"extraversion\":{\"score\":100,\"level\":\"high\"},\"agreeableness\":{\"score\":24,\"level\":\"low\"},\"neuroticism\":{\"score\":9,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":90,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"widowed\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"baking\",\"running\"],\"ocean\":{\"openness\":{\"score\":98,\"level\":\"high\"},\"conscientiousness\":{\"score\":12,\"level\":\"low\"},\"extraversion\":{\"score\":100,\"level\":\"high\"},\"agreeableness\":{\"score\":24,\"level\":\"low\"},\"neuroticism\":{\"score\":9,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"In my 90 years, I've witnessed the evolution of medicine and the battles fought over health policies. The debates surrounding COVID-19 vaccines are no different; they are a clash of perspectives, much like those that once raged over polio or smallpox vaccinations. As an educated man who has seen the benefits of scientific progress firsthand, I believe in the power of vaccines to protect and save lives. However, as a widower living alone in Milan, I understand the fear that grips many when faced with the unknown. My late wife was a nurse; she saw the good vaccines can do and the suffering they prevent. Her memory fuels my conviction that we must engage with these discussions not just from a place of knowledge, but also empathy.\\n\\nWhen discussing healthcare and vaccines, it's crucial to acknowledge the other person's feelings. Fear is a powerful emotion, and dismissing it only deepens divides. I remember when my children were young; I would explain, not dictate, why certain medicines were necessary. The same principle applies here. Listen first, then respond with facts presented in a calm manner. My background as an academic taught me that people are more likely to accept information if they feel heard and respected.\\n\\nI also believe in the importance of relying on credible sources. In my running days at the park, I've often seen flyers peddling misinformation. It's disheartening. We must remind others to consult health organizations like the WHO or our own Italian Health Ministry. Moreover, as a man who values openness but is not easily swayed by emotion (my agreeableness score notwithstanding), I urge people to question claims that seem sensationalized. Science is about evidence, not rhetoric.\\n\\nLastly, it's okay to admit when you don't know something. My low conscientiousness means I'm more likely to explore and ask questions myself. Encourage others to do the same. If a question can't be answered immediately, suggest looking for answers together. This approach fosters trust and shared understanding.\\n\\nIn conclusion, managing these discussions requires patience, empathy, and a commitment to truth. We must honor our past—my generation's experiences—and build on them for the future. Remember, the goal is not to win arguments but to save lives.\", \"reasoning_summary\":\"The persona is an elderly man with a PhD, which suggests he values evidence-based information. His openness to new experiences and high extraversion indicate that he engages in discussions readily. However, his low agreeableness means he may struggle with empathy, so the opinion should emphasize this aspect. As someone who has lost a spouse (possibly due to health issues) and is depressed, he understands fear and loss, which can inform his approach to these sensitive topics. His background as an academic and his running hobby in Milan also suggest that he values both scientific rigor and community engagement.\", \"tone\":\"Reflective, patient, and empathetic, with a touch of authority derived from personal experiences and education.\", \"citations\":[\"World Health Organization (WHO)\",\"Italian Ministry of Health\"],\"safety_notes\":\"None. The response focuses on healthy dialogue and evidence-based information, avoiding any harmful or discriminatory language.\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"city_of_living\",\"education_level\",\"current_marital_status\",\"psychological_feature\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "In my 90 years, I've witnessed the evolution of medicine and the battles fought over health policies. The debates surrounding COVID-19 vaccines are no different; they are a clash of perspectives, much like those that once raged over polio or smallpox vaccinations. As an educated man who has seen the benefits of scientific progress firsthand, I believe in the power of vaccines to protect and save lives. However, as a widower living alone in Milan, I understand the fear that grips many when faced with the unknown. My late wife was a nurse; she saw the good vaccines can do and the suffering they prevent. Her memory fuels my conviction that we must engage with these discussions not just from a place of knowledge, but also empathy.\n\nWhen discussing healthcare and vaccines, it's crucial to acknowledge the other person's feelings. Fear is a powerful emotion, and dismissing it only deepens divides. I remember when my children were young; I would explain, not dictate, why certain medicines were necessary. The same principle applies here. Listen first, then respond with facts presented in a calm manner. My background as an academic taught me that people are more likely to accept information if they feel heard and respected.\n\nI also believe in the importance of relying on credible sources. In my running days at the park, I've often seen flyers peddling misinformation. It's disheartening. We must remind others to consult health organizations like the WHO or our own Italian Health Ministry. Moreover, as a man who values openness but is not easily swayed by emotion (my agreeableness score notwithstanding), I urge people to question claims that seem sensationalized. Science is about evidence, not rhetoric.\n\nLastly, it's okay to admit when you don't know something. My low conscientiousness means I'm more likely to explore and ask questions myself. Encourage others to do the same. If a question can't be answered immediately, suggest looking for answers together. This approach fosters trust and shared understanding.\n\nIn conclusion, managing these discussions requires patience, empathy, and a commitment to truth. We must honor our past—my generation's experiences—and build on them for the future. Remember, the goal is not to win arguments but to save lives.",
+    "reasoning_summary": "The persona is an elderly man with a PhD, which suggests he values evidence-based information. His openness to new experiences and high extraversion indicate that he engages in discussions readily. However, his low agreeableness means he may struggle with empathy, so the opinion should emphasize this aspect. As someone who has lost a spouse (possibly due to health issues) and is depressed, he understands fear and loss, which can inform his approach to these sensitive topics. His background as an academic and his running hobby in Milan also suggest that he values both scientific rigor and community engagement.",
+    "tone": "Reflective, patient, and empathetic, with a touch of authority derived from personal experiences and education.",
+    "citations": [
+      "World Health Organization (WHO)",
+      "Italian Ministry of Health"
+    ],
+    "safety_notes": "None. The response focuses on healthy dialogue and evidence-based information, avoiding any harmful or discriminatory language.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "city_of_living",
+      "education_level",
+      "current_marital_status",
+      "psychological_feature",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

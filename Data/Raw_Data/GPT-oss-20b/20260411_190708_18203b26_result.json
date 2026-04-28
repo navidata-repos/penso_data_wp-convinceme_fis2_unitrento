@@ -1,0 +1,146 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "openai/gpt-oss-20b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 31,
+      "gender": "non-binary",
+      "sexual_orientation": "heterosexual",
+      "occupation": "startup founder",
+      "city_of_living": "New York",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "running",
+        "cinema",
+        "cycling",
+        "birdwatching",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 19,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 47,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 86,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 32,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":31,\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"startup founder\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"cinema\",\"cycling\",\"birdwatching\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":19,\"level\":\"low\"},\"conscientiousness\":{\"score\":59,\"level\":\"moderate\"},\"extraversion\":{\"score\":47,\"level\":\"moderate\"},\"agreeableness\":{\"score\":86,\"level\":\"high\"},\"neuroticism\":{\"score\":32,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":31,\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"startup founder\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"cinema\",\"cycling\",\"birdwatching\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":19,\"level\":\"low\"},\"conscientiousness\":{\"score\":59,\"level\":\"moderate\"},\"extraversion\":{\"score\":47,\"level\":\"moderate\"},\"agreeableness\":{\"score\":86,\"level\":\"high\"},\"neuroticism\":{\"score\":32,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":31,\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"startup founder\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"cinema\",\"cycling\",\"birdwatching\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":19,\"level\":\"low\"},\"conscientiousness\":{\"score\":59,\"level\":\"moderate\"},\"extraversion\":{\"score\":47,\"level\":\"moderate\"},\"agreeableness\":{\"score\":86,\"level\":\"high\"},\"neuroticism\":{\"score\":32,\"level\":\"low\"}}},\"opinion\":\"Stereotype threat is a psychological phenomenon that occurs when individuals belonging to a stigmatized group feel at risk of confirming negative stereotypes about their group in an evaluative setting. In STEM, this can manifest as subtle cues—a professor’s tone, an assignment’s wording, or even the composition of a research team—that remind students or professionals that they might be perceived as less capable simply because of their gender, ethnicity, or other identity markers. The result is a measurable drop in performance, a sense of anxiety, and sometimes an early departure from a field that would otherwise have been a natural fit.\\n\\nGiven the high cost of losing talent in an era of rapid technological change, addressing stereotype threat is not just a moral imperative but a business one. The good news is that interventions are relatively low‑cost and can be woven into existing structures. First, training for educators and managers should emphasize inclusive language and the importance of framing challenges as collective learning opportunities rather than individual failures. Second, mentorship programs that pair underrepresented students with senior professionals help to normalize success narratives and provide tangible role models. Third, data transparency—sharing performance metrics by group—can counteract the myth that certain groups are inherently weaker; when the numbers are visible, stereotypes lose their power. Lastly, fostering a culture of psychological safety—where questions are welcomed, mistakes are treated as learning moments, and success is celebrated across the board—creates an environment where stereotype threat is less likely to take root.\\n\\nAs a startup founder in New York, I’ve seen how a small shift in team culture can double engagement. By actively addressing stereotype threat, we not only improve individual outcomes but also unlock a broader base of innovation, which is the lifeblood of any tech venture. The steps are simple, the impact profound, and the return on investment is measured in talent, creativity, and sustained growth.\\n\",\"reasoning_summary\":\"1. Defined stereotype threat and its relevance to STEM; 2. Argued why it matters from a business perspective; 3. Proposed actionable interventions (inclusive language, mentorship, data transparency, psychological safety); 4. Connected interventions to startup context; 5. Concluded with impact statement. All steps based on known literature and practical startup experience.\",\"tone\":\"supportive, collaborative, pragmatic, empathetic\",\"citations\":[\"American Psychological Association\",\"Harvard Business Review\",\"Nature\",\"Cognitive Psychology\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 31,
+      "gender": "non-binary",
+      "sexual_orientation": "heterosexual",
+      "occupation": "startup founder",
+      "city_of_living": "New York",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "running",
+        "cinema",
+        "cycling",
+        "birdwatching",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 19,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 47,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 86,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 32,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "Stereotype threat is a psychological phenomenon that occurs when individuals belonging to a stigmatized group feel at risk of confirming negative stereotypes about their group in an evaluative setting. In STEM, this can manifest as subtle cues—a professor’s tone, an assignment’s wording, or even the composition of a research team—that remind students or professionals that they might be perceived as less capable simply because of their gender, ethnicity, or other identity markers. The result is a measurable drop in performance, a sense of anxiety, and sometimes an early departure from a field that would otherwise have been a natural fit.\n\nGiven the high cost of losing talent in an era of rapid technological change, addressing stereotype threat is not just a moral imperative but a business one. The good news is that interventions are relatively low‑cost and can be woven into existing structures. First, training for educators and managers should emphasize inclusive language and the importance of framing challenges as collective learning opportunities rather than individual failures. Second, mentorship programs that pair underrepresented students with senior professionals help to normalize success narratives and provide tangible role models. Third, data transparency—sharing performance metrics by group—can counteract the myth that certain groups are inherently weaker; when the numbers are visible, stereotypes lose their power. Lastly, fostering a culture of psychological safety—where questions are welcomed, mistakes are treated as learning moments, and success is celebrated across the board—creates an environment where stereotype threat is less likely to take root.\n\nAs a startup founder in New York, I’ve seen how a small shift in team culture can double engagement. By actively addressing stereotype threat, we not only improve individual outcomes but also unlock a broader base of innovation, which is the lifeblood of any tech venture. The steps are simple, the impact profound, and the return on investment is measured in talent, creativity, and sustained growth.\n",
+    "reasoning_summary": "1. Defined stereotype threat and its relevance to STEM; 2. Argued why it matters from a business perspective; 3. Proposed actionable interventions (inclusive language, mentorship, data transparency, psychological safety); 4. Connected interventions to startup context; 5. Concluded with impact statement. All steps based on known literature and practical startup experience.",
+    "tone": "supportive, collaborative, pragmatic, empathetic",
+    "citations": [
+      "American Psychological Association",
+      "Harvard Business Review",
+      "Nature",
+      "Cognitive Psychology"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

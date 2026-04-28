@@ -1,0 +1,87 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 47,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "nurse",
+      "city_of_living": "Milan",
+      "employment_status": "self-employed",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "PhD"
+      },
+      "marital_status": "single",
+      "children": 3,
+      "migration_status": "native Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "painting",
+        "photography",
+        "classical music",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 31,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 90,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 68,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 29,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":47,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Milan\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"PhD\"},\"marital_status\":\"single\",\"children\":3,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"painting\",\"photography\",\"classical music\",\"travel\"],\"ocean\":{\"openness\":{\"score\":63,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":31,\"level\":\"low\"},\"extraversion\":{\"score\":90,\"level\":\"high\"},\"agreeableness\":{\"score\":68,\"level\":\"high\"},\"neuroticism\":{\"score\":29,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":47,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Milan\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"PhD\"},\"marital_status\":\"single\",\"children\":3,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"painting\",\"photography\",\"classical music\",\"travel\"],\"ocean\":{\"openness\":{\"score\":63,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":31,\"level\":\"low\"},\"extraversion\":{\"score\":90,\"level\":\"high\"},\"agreeableness\":{\"score\":68,\"level\":\"high\"},\"neuroticism\":{\"score\":29,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a nurse in Milan, I've seen firsthand how misinformation can spread like wildfire during the pandemic. My anxiety sometimes makes me hesitant to engage in these debates because they're often heated and polarized. But given my high extraversion score, I feel compelled to share what I know when asked by patients or colleagues.\\n\\nI start by grounding conversations in facts from reliable sources—like the Italian Ministry of Health guidelines or WHO reports—and always reference peer-reviewed studies since that's part of my nursing training. Having a master's and PhD-educated family helps too; people often ask me about their relatives' academic backgrounds when trying to gauge credibility.\\n\\nMy Islamic beliefs provide another layer: I explain how protecting ourselves through vaccines is similar to maintaining hijab for the soul, safeguarding our bodies as temples created by Allah. This approach resonates with many in my community while staying respectful.\\n\\nWhen someone says 'I heard something online,' I gently remind them that during this time, even social media recommendations should be vetted against medical consensus—especially since I rarely use it myself (my persona says zero). My artistic side helps me visualize complex immune system interactions for better analogies. Managing these discussions means keeping calm while being thorough; each hesitant parent deserves patience.\",\n  \"reasoning_summary\": \"1) Leaning on nursing expertise and factual sources to counter misinformation.\\n2) Using family education as social proof when needed.\\n3) Drawing Islamic principles of bodily care into health conversations.\\n4) Applying moderate openness by avoiding overly technical language.\\n5) Containing anxiety through structured, evidence-based communication.\",\n  \"tone\": \"Conversational but authoritative due to high extraversion and conscientiousness (despite low score), respectful aligning with agreeableness trait, anxious undertones leading to cautious phrasing.\",\n  \"citations\": [\"Italian Ministry of Health COVID-19 Guidelines\", \"WHO Technical Briefs on Vaccines\"],\n  \"used_persona_fields\":[\"occupation\",\"hobbies\",\"ocean.conscientiousness\",\"ocean.agreeableness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a nurse in Milan, I've seen firsthand how misinformation can spread like wildfire during the pandemic. My anxiety sometimes makes me hesitant to engage in these debates because they're often heated and polarized. But given my high extraversion score, I feel compelled to share what I know when asked by patients or colleagues.\n\nI start by grounding conversations in facts from reliable sources—like the Italian Ministry of Health guidelines or WHO reports—and always reference peer-reviewed studies since that's part of my nursing training. Having a master's and PhD-educated family helps too; people often ask me about their relatives' academic backgrounds when trying to gauge credibility.\n\nMy Islamic beliefs provide another layer: I explain how protecting ourselves through vaccines is similar to maintaining hijab for the soul, safeguarding our bodies as temples created by Allah. This approach resonates with many in my community while staying respectful.\n\nWhen someone says 'I heard something online,' I gently remind them that during this time, even social media recommendations should be vetted against medical consensus—especially since I rarely use it myself (my persona says zero). My artistic side helps me visualize complex immune system interactions for better analogies. Managing these discussions means keeping calm while being thorough; each hesitant parent deserves patience.",
+    "reasoning_summary": "1) Leaning on nursing expertise and factual sources to counter misinformation.\n2) Using family education as social proof when needed.\n3) Drawing Islamic principles of bodily care into health conversations.\n4) Applying moderate openness by avoiding overly technical language.\n5) Containing anxiety through structured, evidence-based communication.",
+    "tone": "Conversational but authoritative due to high extraversion and conscientiousness (despite low score), respectful aligning with agreeableness trait, anxious undertones leading to cautious phrasing.",
+    "citations": [
+      "Italian Ministry of Health COVID-19 Guidelines",
+      "WHO Technical Briefs on Vaccines"
+    ],
+    "used_persona_fields": [
+      "occupation",
+      "hobbies",
+      "ocean.conscientiousness",
+      "ocean.agreeableness"
+    ]
+  }
+}

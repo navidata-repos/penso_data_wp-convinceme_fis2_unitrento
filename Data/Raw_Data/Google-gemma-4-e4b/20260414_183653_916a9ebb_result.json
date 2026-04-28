@@ -1,0 +1,137 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "google/gemma-4-e4b-it",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 30,
+      "gender": "genderqueer",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "reading novels",
+        "painting",
+        "knitting",
+        "board games",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 95,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 8,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 94,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 30,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 27,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":30,\"gender\":\"genderqueer\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"painting\",\"knitting\",\"board games\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":95,\"level\":\"high\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":94,\"level\":\"high\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":27,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":30,\"gender\":\"genderqueer\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"painting\",\"knitting\",\"board games\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":95,\"level\":\"high\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":94,\"level\":\"high\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":27,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":30,\"gender\":\"genderqueer\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"painting\",\"knitting\",\"board games\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":95,\"level\":\"high\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":94,\"level\":\"high\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":27,\"level\":\"low\"}}},\"opinion\":\"As someone who loves diving deep into new subjects, whether it's a complex plot in a novel or the nuances of color theory when painting, the concept of stereotype threat strikes me as profoundly unfair and intellectually stifling. It’s this insidious pressure—the fear of confirming a negative stereotype about one's group—that actually hinders performance, especially in fields like STEM. It’s not about a lack of raw intelligence; it's a cognitive burden imposed by external biases. Given my own curious nature and my experience navigating life as an immigrant in a new culture, I can certainly appreciate how external perceptions can create unnecessary friction in achieving goals. Therefore, absolutely, we must address it, and not just with high-minded academic pronouncements, but with tangible, human-centered approaches. For me, the solution lies in creating environments where the threat simply doesn't exist. This means shifting the narrative away from innate ability and towards process and growth. Instead of framing math as something only 'certain kinds' of people are good at, educators and institutions need to normalize struggle; to celebrate the messy process of iteration, much like when I'm knitting a complicated pattern and have to unravel and start over. Furthermore, because I value high levels of connection and expression, I think increasing positive, authentic role models—people who look like diverse groups and are thriving in these fields—is crucial. Seeing someone who shares your background succeed in something traditionally intimidating can dismantle the internalized threat faster than any lecture. It’s about building a community where everyone feels safe enough to be imperfectly brilliant.\",\"reasoning_summary\":\"The persona is highly open, extraverted, curious, and has a high tolerance for complexity (suggested by high Openness and Extraversion). As a self-employed individual and immigrant, they possess a practical, empathetic understanding of external pressures. The response must be passionate, insightful, and focus on solutions that foster positive environments rather than just diagnosing the problem. The tone should be energetic and intellectually engaged, aligning with high Openness and Extraversion, while the solutions should be relatable to creative/process-oriented hobbies (painting, knitting).\",\"tone\":\"Engaged, Insightful, Passionate, Empathetic\",\"citations\":[\"N/A\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"psychological_feature\",\"migration_status\",\"hobbies\",\"ocean.openness\",\"ocean.extraversion\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 30,
+      "gender": "genderqueer",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "reading novels",
+        "painting",
+        "knitting",
+        "board games",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 95,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 8,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 94,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 30,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 27,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "As someone who loves diving deep into new subjects, whether it's a complex plot in a novel or the nuances of color theory when painting, the concept of stereotype threat strikes me as profoundly unfair and intellectually stifling. It’s this insidious pressure—the fear of confirming a negative stereotype about one's group—that actually hinders performance, especially in fields like STEM. It’s not about a lack of raw intelligence; it's a cognitive burden imposed by external biases. Given my own curious nature and my experience navigating life as an immigrant in a new culture, I can certainly appreciate how external perceptions can create unnecessary friction in achieving goals. Therefore, absolutely, we must address it, and not just with high-minded academic pronouncements, but with tangible, human-centered approaches. For me, the solution lies in creating environments where the threat simply doesn't exist. This means shifting the narrative away from innate ability and towards process and growth. Instead of framing math as something only 'certain kinds' of people are good at, educators and institutions need to normalize struggle; to celebrate the messy process of iteration, much like when I'm knitting a complicated pattern and have to unravel and start over. Furthermore, because I value high levels of connection and expression, I think increasing positive, authentic role models—people who look like diverse groups and are thriving in these fields—is crucial. Seeing someone who shares your background succeed in something traditionally intimidating can dismantle the internalized threat faster than any lecture. It’s about building a community where everyone feels safe enough to be imperfectly brilliant.",
+    "reasoning_summary": "The persona is highly open, extraverted, curious, and has a high tolerance for complexity (suggested by high Openness and Extraversion). As a self-employed individual and immigrant, they possess a practical, empathetic understanding of external pressures. The response must be passionate, insightful, and focus on solutions that foster positive environments rather than just diagnosing the problem. The tone should be energetic and intellectually engaged, aligning with high Openness and Extraversion, while the solutions should be relatable to creative/process-oriented hobbies (painting, knitting).",
+    "tone": "Engaged, Insightful, Passionate, Empathetic",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "psychological_feature",
+      "migration_status",
+      "hobbies",
+      "ocean.openness",
+      "ocean.extraversion"
+    ]
+  }
+}

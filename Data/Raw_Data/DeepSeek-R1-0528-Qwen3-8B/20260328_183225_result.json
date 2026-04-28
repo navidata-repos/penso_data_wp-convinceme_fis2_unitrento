@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 42,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "school teacher",
+      "city_of_living": "Naples",
+      "employment_status": "employed part-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "rock climbing",
+        "classical music"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 33,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 77,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 91,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":42,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"rock climbing\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":33,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":44,\"level\":\"moderate\"},\"extraversion\":{\"score\":51,\"level\":\"moderate\"},\"agreeableness\":{\"score\":77,\"level\":\"high\"},\"neuroticism\":{\"score\":91,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":42,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"rock climbing\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":33,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":44,\"level\":\"moderate\"},\"extraversion\":{\"score\":51,\"level\":\"moderate\"},\"agreeableness\":{\"score\":77,\"level\":\"high\"},\"neuroticism\":{\"score\":91,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to the underrepresentation of women, particularly in senior roles and specific fields like physics or engineering. As a creative school teacher from Naples who spends time on social media, I believe this issue needs attention because diversity enriches learning environments. In my classroom, observing both boys and girls excel equally but seeing fewer female role models in STEM subjects makes me think we must address it by starting early with inclusive education.\\n\\nFirstly, the gap stems from societal biases that discourage women from pursuing scientific careers. My own children have faced subtle messages about gender roles during outdoor activities like rock climbing or even music appreciation. To combat this, schools should implement programs highlighting female scientists and their contributions to make science appealing to all genders. Additionally, mentorship initiatives where students interact with diverse professionals can help break stereotypes.\\n\\nWe also need to challenge the notion that certain fields require specific traits linked to gender. My high agreeableness score makes me sensitive to these dynamics; for instance, engineering is sometimes seen as a purely technical field unsuited for women, but this overlooks personal passion and capability. By fostering creativity in students through hands-on experiments or music-themed science projects, we can show that STEM isn't rigid.\\n\\nFurthermore, increasing part-time employment opportunities and flexible work arrangements allows more women to enter the workforce without sacrificing family life. My neuroticism means I sometimes worry about these changes causing stress, but I think promoting mental health support systems in educational settings would help everyone adapt.\",\n  \"reasoning_summary\": \"First, define gender gap as underrepresentation of women in science.\\nThen, link it to societal biases and stereotypes starting from childhood.\\nSuggest addressing it through inclusive education examples like classroom activities.\\nArgue for challenging gender-linked traits by emphasizing creativity and personal interest.\\nPropose policy changes such as flexible work arrangements based on part-time employment experience.\\nAddress potential counterarguments about stress by tying them to broader support systems.\",\n  \"tone\": \"Reflective, concerned but constructive, with a touch of Italian warmth (e.g., using 'care' instead of strict neutrality).\",\n  \"citations\": [\"UNESCO Institute for Statistics\", \"National Science Board Report\", \"American Association of University Women\"],\n  \"safety_notes\": \"None.\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"psychological_feature\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the underrepresentation of women, particularly in senior roles and specific fields like physics or engineering. As a creative school teacher from Naples who spends time on social media, I believe this issue needs attention because diversity enriches learning environments. In my classroom, observing both boys and girls excel equally but seeing fewer female role models in STEM subjects makes me think we must address it by starting early with inclusive education.\n\nFirstly, the gap stems from societal biases that discourage women from pursuing scientific careers. My own children have faced subtle messages about gender roles during outdoor activities like rock climbing or even music appreciation. To combat this, schools should implement programs highlighting female scientists and their contributions to make science appealing to all genders. Additionally, mentorship initiatives where students interact with diverse professionals can help break stereotypes.\n\nWe also need to challenge the notion that certain fields require specific traits linked to gender. My high agreeableness score makes me sensitive to these dynamics; for instance, engineering is sometimes seen as a purely technical field unsuited for women, but this overlooks personal passion and capability. By fostering creativity in students through hands-on experiments or music-themed science projects, we can show that STEM isn't rigid.\n\nFurthermore, increasing part-time employment opportunities and flexible work arrangements allows more women to enter the workforce without sacrificing family life. My neuroticism means I sometimes worry about these changes causing stress, but I think promoting mental health support systems in educational settings would help everyone adapt.",
+    "reasoning_summary": "First, define gender gap as underrepresentation of women in science.\nThen, link it to societal biases and stereotypes starting from childhood.\nSuggest addressing it through inclusive education examples like classroom activities.\nArgue for challenging gender-linked traits by emphasizing creativity and personal interest.\nPropose policy changes such as flexible work arrangements based on part-time employment experience.\nAddress potential counterarguments about stress by tying them to broader support systems.",
+    "tone": "Reflective, concerned but constructive, with a touch of Italian warmth (e.g., using 'care' instead of strict neutrality).",
+    "citations": [
+      "UNESCO Institute for Statistics",
+      "National Science Board Report",
+      "American Association of University Women"
+    ],
+    "safety_notes": "None.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "psychological_feature"
+    ]
+  }
+}

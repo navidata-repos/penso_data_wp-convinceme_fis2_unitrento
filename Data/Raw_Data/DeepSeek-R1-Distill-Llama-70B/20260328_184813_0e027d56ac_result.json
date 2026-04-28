@@ -1,0 +1,98 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 79,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "retired",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "cooking",
+        "knitting",
+        "baking",
+        "cinema",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 95,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 77,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 73,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 99,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 74,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":79,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cooking\",\"knitting\",\"baking\",\"cinema\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":95,\"level\":\"high\"},\"conscientiousness\":{\"score\":77,\"level\":\"high\"},\"extraversion\":{\"score\":73,\"level\":\"high\"},\"agreeableness\":{\"score\":99,\"level\":\"high\"},\"neuroticism\":{\"score\":74,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":79,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cooking\",\"knitting\",\"baking\",\"cinema\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":95,\"level\":\"high\"},\"conscientiousness\":{\"score\":77,\"level\":\"high\"},\"extraversion\":{\"score\":73,\"level\":\"high\"},\"agreeableness\":{\"score\":99,\"level\":\"high\"},\"neuroticism\":{\"score\":74,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"Stereotype threat in STEM is when people feel anxious or perform poorly because they worry about confirming negative stereotypes about their group, like women being told they're not good at math or immigrants being seen as less capable. As a 79-year-old woman who immigrated to Bologna and has seen many changes over the years, I believe we should definitely address this issue. From my life experience, I've observed how such pressures can hold people back, and it's a waste of talent that could benefit society. We should address it because it's unfair and limits human potential, much like how I've always valued creativity and openness in my hobbies like cooking and cinema. To tackle it, we need to create supportive environments in schools and workplaces, perhaps through mentorship programs that encourage everyone, regardless of background. Simple acts of kindness and understanding, which align with my high agreeableness, can make a big difference—like teachers or colleagues emphasizing effort over innate ability. We should also raise awareness through education and media, though I don't use social media, I see its impact in films. By fostering inclusivity, we can help people feel confident and contribute fully to STEM fields, just as I've enjoyed contributing to my community through baking and cycling.\",\n  \"reasoning_summary\": \"Derived opinion by analyzing persona traits: age 79 suggests life experience and perspective on social changes; gender woman and immigrant status relate to potential firsthand or observed discrimination; high openness (95) and agreeableness (99) indicate support for addressing unfairness and creativity in solutions; hobbies like cinema and cooking imply practical, community-oriented approaches; lower secondary education and retired status suggest a focus on real-world impacts over technical details; no social media use points to traditional methods like education and personal interactions; overall, crafted a compassionate, experience-based view advocating for supportive measures to combat stereotype threat.\",\n  \"tone\": \"Compassionate, reflective, and practical, with a focus on fairness and community, derived from high agreeableness, openness, and life experience as an older immigrant woman.\",\n  \"citations\": [\"none\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"migration_status\", \"psychological_feature\", \"ocean.openness\", \"ocean.agreeableness\", \"hobbies\", \"education_level\", \"employment_status\", \"time_onsocialmedia\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM is when people feel anxious or perform poorly because they worry about confirming negative stereotypes about their group, like women being told they're not good at math or immigrants being seen as less capable. As a 79-year-old woman who immigrated to Bologna and has seen many changes over the years, I believe we should definitely address this issue. From my life experience, I've observed how such pressures can hold people back, and it's a waste of talent that could benefit society. We should address it because it's unfair and limits human potential, much like how I've always valued creativity and openness in my hobbies like cooking and cinema. To tackle it, we need to create supportive environments in schools and workplaces, perhaps through mentorship programs that encourage everyone, regardless of background. Simple acts of kindness and understanding, which align with my high agreeableness, can make a big difference—like teachers or colleagues emphasizing effort over innate ability. We should also raise awareness through education and media, though I don't use social media, I see its impact in films. By fostering inclusivity, we can help people feel confident and contribute fully to STEM fields, just as I've enjoyed contributing to my community through baking and cycling.",
+    "reasoning_summary": "Derived opinion by analyzing persona traits: age 79 suggests life experience and perspective on social changes; gender woman and immigrant status relate to potential firsthand or observed discrimination; high openness (95) and agreeableness (99) indicate support for addressing unfairness and creativity in solutions; hobbies like cinema and cooking imply practical, community-oriented approaches; lower secondary education and retired status suggest a focus on real-world impacts over technical details; no social media use points to traditional methods like education and personal interactions; overall, crafted a compassionate, experience-based view advocating for supportive measures to combat stereotype threat.",
+    "tone": "Compassionate, reflective, and practical, with a focus on fairness and community, derived from high agreeableness, openness, and life experience as an older immigrant woman.",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "migration_status",
+      "psychological_feature",
+      "ocean.openness",
+      "ocean.agreeableness",
+      "hobbies",
+      "education_level",
+      "employment_status",
+      "time_onsocialmedia"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 45,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Bari",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "videogames",
+        "photography",
+        "hiking",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 79,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 99,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 71,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 14,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 29,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":45,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"videogames\",\"photography\",\"hiking\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":79,\"level\":\"high\"},\"conscientiousness\":{\"score\":99,\"level\":\"high\"},\"extraversion\":{\"score\":71,\"level\":\"high\"},\"agreeableness\":{\"score\":14,\"level\":\"low\"},\"neuroticism\":{\"score\":29,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":45,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"videogames\",\"photography\",\"hiking\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":79,\"level\":\"high\"},\"conscientiousness\":{\"score\":99,\"level\":\"high\"},\"extraversion\":{\"score\":71,\"level\":\"high\"},\"agreeableness\":{\"score\":14,\"level\":\"low\"},\"neuroticism\":{\"score\":29,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"You know, when you look at something like stereotype threat in STEM, it sounds incredibly academic and maybe a little overwhelming, but honestly, it really makes sense once you break it down. It’s basically this psychological weight—the anxiety that comes from fearing you might confirm a negative stereotype about your group, whether that’s gender, race, or background. In the context of science, technology, engineering, and math, if someone assumes only certain types of people belong there, that fear can actually mess up how well an individual performs, no matter how smart they are. It's not about ability; it's about the pressure cooker environment created by expectations. I’ve seen enough stuff in life—from trying to get a perfect latte art design to just navigating busy tourist spots—to know that external pressures really affect performance, and this is just that taken to an intellectual level. Given how crucial STEM fields are for everything from modern farming techniques to clean energy solutions, addressing this threat isn't just good manners; it’s practically necessary if we want the best talent pool possible. Ignoring it means leaving potential on the table. As for how we fix it? I think a multi-pronged approach is needed, one that focuses less on 'fixing' the people and more on changing the environment itself. We need to shift the culture in educational settings and workplaces. First, making sure test environments or job interviews feel genuinely safe—like they are places of curiosity rather than judgment—can help immensely. Second, incorporating diverse role models isn't just about visibility; it helps normalize success for everyone. If students see people who look like them succeeding in these fields, the stereotype loses some of its power. And finally, maybe even teaching people *about* bias and psychological pressure itself, so that when someone struggles, we ask, 'Is there an external pressure at play?' rather than jumping straight to 'Are they not trying hard enough?' It's about creating a genuinely encouraging space where everyone feels like they belong, which is the real secret ingredient for high performance.\",\"reasoning_summary\":\"The persona is a 45-year-old male barista with a vocational diploma and varied interests (videogames, photography, hiking). His personality profile indicates high conscientiousness and openness, but low agreeableness and very low neuroticism. The tone should be thoughtful, grounded, practical, yet slightly casual or conversational, reflecting his daily job and general disposition. He should avoid overly academic jargon while demonstrating an ability to understand complex concepts by relating them to real-life experiences (like latte art or navigating spaces). The response must address the three parts of the prompt: definition (what is it?), necessity (should we address it?), and solution (how?). I structured the answer using a conversational, explanatory tone, starting with a clear explanation before moving into advocating for action. The solutions proposed are practical and systemic (cultural change, safe environments, role models), aligning with his high conscientiousness/openness traits by suggesting thoughtful improvements rather than quick fixes.\",\"tone\":\"Conversational, Practical, Thoughtful\",\"citations\":[\"N/A\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"occupation\",\"education_level\",\"hobbies\",\"ocean.openness.score\",\"ocean.conscientiousness.score\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "You know, when you look at something like stereotype threat in STEM, it sounds incredibly academic and maybe a little overwhelming, but honestly, it really makes sense once you break it down. It’s basically this psychological weight—the anxiety that comes from fearing you might confirm a negative stereotype about your group, whether that’s gender, race, or background. In the context of science, technology, engineering, and math, if someone assumes only certain types of people belong there, that fear can actually mess up how well an individual performs, no matter how smart they are. It's not about ability; it's about the pressure cooker environment created by expectations. I’ve seen enough stuff in life—from trying to get a perfect latte art design to just navigating busy tourist spots—to know that external pressures really affect performance, and this is just that taken to an intellectual level. Given how crucial STEM fields are for everything from modern farming techniques to clean energy solutions, addressing this threat isn't just good manners; it’s practically necessary if we want the best talent pool possible. Ignoring it means leaving potential on the table. As for how we fix it? I think a multi-pronged approach is needed, one that focuses less on 'fixing' the people and more on changing the environment itself. We need to shift the culture in educational settings and workplaces. First, making sure test environments or job interviews feel genuinely safe—like they are places of curiosity rather than judgment—can help immensely. Second, incorporating diverse role models isn't just about visibility; it helps normalize success for everyone. If students see people who look like them succeeding in these fields, the stereotype loses some of its power. And finally, maybe even teaching people *about* bias and psychological pressure itself, so that when someone struggles, we ask, 'Is there an external pressure at play?' rather than jumping straight to 'Are they not trying hard enough?' It's about creating a genuinely encouraging space where everyone feels like they belong, which is the real secret ingredient for high performance.",
+    "reasoning_summary": "The persona is a 45-year-old male barista with a vocational diploma and varied interests (videogames, photography, hiking). His personality profile indicates high conscientiousness and openness, but low agreeableness and very low neuroticism. The tone should be thoughtful, grounded, practical, yet slightly casual or conversational, reflecting his daily job and general disposition. He should avoid overly academic jargon while demonstrating an ability to understand complex concepts by relating them to real-life experiences (like latte art or navigating spaces). The response must address the three parts of the prompt: definition (what is it?), necessity (should we address it?), and solution (how?). I structured the answer using a conversational, explanatory tone, starting with a clear explanation before moving into advocating for action. The solutions proposed are practical and systemic (cultural change, safe environments, role models), aligning with his high conscientiousness/openness traits by suggesting thoughtful improvements rather than quick fixes.",
+    "tone": "Conversational, Practical, Thoughtful",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "hobbies",
+      "ocean.openness.score",
+      "ocean.conscientiousness.score"
+    ]
+  }
+}

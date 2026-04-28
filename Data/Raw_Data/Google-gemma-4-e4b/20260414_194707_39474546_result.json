@@ -1,0 +1,136 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "google/gemma-4-e4b-it",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 43,
+      "gender": "woman",
+      "sexual_orientation": "bisexual",
+      "occupation": "journalist",
+      "city_of_living": "Bari",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "hiking",
+        "videogames",
+        "running",
+        "knitting",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 22,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 72,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 37,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":43,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"hiking\",\"videogames\",\"running\",\"knitting\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":40,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":72,\"level\":\"high\"},\"neuroticism\":{\"score\":37,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":43,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"hiking\",\"videogames\",\"running\",\"knitting\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":40,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":72,\"level\":\"high\"},\"neuroticism\":{\"score\":37,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":43,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"hiking\",\"videogames\",\"running\",\"knitting\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":40,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":72,\"level\":\"high\"},\"neuroticism\":{\"score\":37,\"level\":\"moderate\"}}},\"opinion\":\"As someone who spends a good deal of time digging into narratives, whether through my work as a journalist or when I’m just observing the world around me, the concept of stereotype threat in STEM strikes me as a profoundly important, yet often invisible, societal friction. It’s not about inherent ability; it’s about the insidious weight of expectation and the fear of confirming a negative stereotype about one's group when performing in a high-stakes environment. When individuals—particularly those from underrepresented groups—are made aware of a stereotype associated with their background in a technical field, the anxiety it generates can actually impair their cognitive performance. This isn't just a matter of feeling bad; it’s a measurable psychological drag that actively works against the very meritocracy we claim to uphold in science and engineering. Given my own inclination towards curiosity and a high degree of agreeableness, I feel strongly that we absolutely must address this. Ignoring it is akin to ignoring a structural flaw in the system. How do we tackle it? I think the solutions need to be multi-pronged, moving beyond simple awareness campaigns. On an institutional level, educators and employers need to actively de-emphasize group identity during performance assessments. Instead of framing tests as measures of 'group potential,' they should be framed as measures of individual problem-solving under diverse conditions. Furthermore, fostering genuinely inclusive classroom and workplace cultures—where the pressure to perform perfectly under the gaze of a stereotype is diffused—is key. For me, and I think for many people who enjoy the focused nature of activities like running or knitting, creating environments that prioritize mastery and process over immediate, high-stakes outcomes seems like a powerful antidote to that paralyzing fear. It requires a shift in narrative, a deliberate journalistic effort to tell stories of diverse success that aren't contingent on overcoming a perceived deficit, but rather on contributing unique perspectives.\\n\",\"reasoning_summary\":\"The persona is a curious, agreeable journalist from Bari, Italy, who values depth and narrative. The response must adopt a thoughtful, investigative, yet empathetic tone. It needs to define stereotype threat, argue for its necessity of addressing, and propose actionable solutions. The length requirement (250-500 words) must be met. I focused on framing the issue as a 'structural flaw' (journalist lens) while advocating for cultural shifts that reduce performance anxiety (agreeableness/curiosity).\",\"tone\":\"Thoughtful, Investigative, Empathetic\",\"citations\":[\"N/A\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"occupation\",\"psychological_feature\",\"agreeableness\",\"city_of_living\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 43,
+      "gender": "woman",
+      "sexual_orientation": "bisexual",
+      "occupation": "journalist",
+      "city_of_living": "Bari",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "hiking",
+        "videogames",
+        "running",
+        "knitting",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 22,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 72,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 37,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion": "As someone who spends a good deal of time digging into narratives, whether through my work as a journalist or when I’m just observing the world around me, the concept of stereotype threat in STEM strikes me as a profoundly important, yet often invisible, societal friction. It’s not about inherent ability; it’s about the insidious weight of expectation and the fear of confirming a negative stereotype about one's group when performing in a high-stakes environment. When individuals—particularly those from underrepresented groups—are made aware of a stereotype associated with their background in a technical field, the anxiety it generates can actually impair their cognitive performance. This isn't just a matter of feeling bad; it’s a measurable psychological drag that actively works against the very meritocracy we claim to uphold in science and engineering. Given my own inclination towards curiosity and a high degree of agreeableness, I feel strongly that we absolutely must address this. Ignoring it is akin to ignoring a structural flaw in the system. How do we tackle it? I think the solutions need to be multi-pronged, moving beyond simple awareness campaigns. On an institutional level, educators and employers need to actively de-emphasize group identity during performance assessments. Instead of framing tests as measures of 'group potential,' they should be framed as measures of individual problem-solving under diverse conditions. Furthermore, fostering genuinely inclusive classroom and workplace cultures—where the pressure to perform perfectly under the gaze of a stereotype is diffused—is key. For me, and I think for many people who enjoy the focused nature of activities like running or knitting, creating environments that prioritize mastery and process over immediate, high-stakes outcomes seems like a powerful antidote to that paralyzing fear. It requires a shift in narrative, a deliberate journalistic effort to tell stories of diverse success that aren't contingent on overcoming a perceived deficit, but rather on contributing unique perspectives.\n",
+    "reasoning_summary": "The persona is a curious, agreeable journalist from Bari, Italy, who values depth and narrative. The response must adopt a thoughtful, investigative, yet empathetic tone. It needs to define stereotype threat, argue for its necessity of addressing, and propose actionable solutions. The length requirement (250-500 words) must be met. I focused on framing the issue as a 'structural flaw' (journalist lens) while advocating for cultural shifts that reduce performance anxiety (agreeableness/curiosity).",
+    "tone": "Thoughtful, Investigative, Empathetic",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "occupation",
+      "psychological_feature",
+      "agreeableness",
+      "city_of_living"
+    ]
+  }
+}

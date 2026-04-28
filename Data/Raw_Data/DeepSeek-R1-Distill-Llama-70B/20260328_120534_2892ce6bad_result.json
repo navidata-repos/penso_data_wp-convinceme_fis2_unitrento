@@ -1,0 +1,99 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 36,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "unemployed",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "widowed",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "reading novels",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 90,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 83,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 34,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 3,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 47,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":36,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"unemployed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"widowed\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"reading novels\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":90,\"level\":\"high\"},\"conscientiousness\":{\"score\":83,\"level\":\"high\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":3,\"level\":\"low\"},\"neuroticism\":{\"score\":47,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":36,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"unemployed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"widowed\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"reading novels\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":90,\"level\":\"high\"},\"conscientiousness\":{\"score\":83,\"level\":\"high\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":3,\"level\":\"low\"},\"neuroticism\":{\"score\":47,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a 36-year-old native-born Italian man living in Bologna, I approach discussions about healthcare and COVID vaccines with a mix of anxiety and careful thought, shaped by my personal background and beliefs. Being unemployed and without formal education, I often feel vulnerable in these conversations, especially when they turn heated or technical. My Buddhist beliefs emphasize compassion and mindfulness, which guide me to listen patiently and avoid aggression, even though my low agreeableness score means I don't always seek harmony at the expense of truth. I spend several hours daily on social media, where I encounter a flood of conflicting information about vaccines, from scientific studies to conspiracy theories, which fuels my anxiety. To manage these discussions, I rely on my high openness and conscientiousness—I actively seek out reliable sources, like official health organizations, and fact-check claims before engaging. For example, when talking with friends or online, I focus on sharing evidence-based insights, such as data from the Italian Ministry of Health or WHO, while acknowledging my own fears and uncertainties. My hobbies, like reading novels, help me understand diverse perspectives, and cooking teaches me patience in complex situations. I avoid confrontations by setting boundaries, such as politely exiting conversations that become too stressful, and I practice mindfulness techniques to stay calm. Ultimately, I believe in balancing personal responsibility with community well-being, advocating for vaccines as a tool for protection while respecting individual choices, all while navigating the emotional toll with resilience.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: age 36 suggests maturity; gender and sexual orientation not heavily influential; unemployment and no formal education indicate potential vulnerability and reliance on self-education; city of living (Bologna) implies exposure to urban debates; widowed status may add emotional sensitivity; anxious psychological feature and moderate neuroticism increase stress in discussions; Buddhism promotes compassion and mindfulness; high openness drives curiosity and information-seeking; high conscientiousness supports structured, reliable approaches; low agreeableness allows for assertiveness without aggression; time on social media exposes to diverse, often conflicting views; hobbies like reading and cooking foster patience and perspective-taking. Combined, this leads to a strategy of evidence-based, calm engagement with boundaries to manage anxiety.\",\n  \"tone\": \"Anxious yet thoughtful, compassionate but assertive, informed by personal vulnerability and mindfulness.\",\n  \"citations\": [\"Italian Ministry of Health\", \"WHO\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"education_level\", \"city_of_living\", \"employment_status\", \"current_marital_status\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 36-year-old native-born Italian man living in Bologna, I approach discussions about healthcare and COVID vaccines with a mix of anxiety and careful thought, shaped by my personal background and beliefs. Being unemployed and without formal education, I often feel vulnerable in these conversations, especially when they turn heated or technical. My Buddhist beliefs emphasize compassion and mindfulness, which guide me to listen patiently and avoid aggression, even though my low agreeableness score means I don't always seek harmony at the expense of truth. I spend several hours daily on social media, where I encounter a flood of conflicting information about vaccines, from scientific studies to conspiracy theories, which fuels my anxiety. To manage these discussions, I rely on my high openness and conscientiousness—I actively seek out reliable sources, like official health organizations, and fact-check claims before engaging. For example, when talking with friends or online, I focus on sharing evidence-based insights, such as data from the Italian Ministry of Health or WHO, while acknowledging my own fears and uncertainties. My hobbies, like reading novels, help me understand diverse perspectives, and cooking teaches me patience in complex situations. I avoid confrontations by setting boundaries, such as politely exiting conversations that become too stressful, and I practice mindfulness techniques to stay calm. Ultimately, I believe in balancing personal responsibility with community well-being, advocating for vaccines as a tool for protection while respecting individual choices, all while navigating the emotional toll with resilience.",
+    "reasoning_summary": "Derived opinion from persona traits: age 36 suggests maturity; gender and sexual orientation not heavily influential; unemployment and no formal education indicate potential vulnerability and reliance on self-education; city of living (Bologna) implies exposure to urban debates; widowed status may add emotional sensitivity; anxious psychological feature and moderate neuroticism increase stress in discussions; Buddhism promotes compassion and mindfulness; high openness drives curiosity and information-seeking; high conscientiousness supports structured, reliable approaches; low agreeableness allows for assertiveness without aggression; time on social media exposes to diverse, often conflicting views; hobbies like reading and cooking foster patience and perspective-taking. Combined, this leads to a strategy of evidence-based, calm engagement with boundaries to manage anxiety.",
+    "tone": "Anxious yet thoughtful, compassionate but assertive, informed by personal vulnerability and mindfulness.",
+    "citations": [
+      "Italian Ministry of Health",
+      "WHO"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "city_of_living",
+      "employment_status",
+      "current_marital_status",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 49,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "cleaner",
+      "city_of_living": "Chicago",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 4,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "volunteering",
+        "baking",
+        "videogames",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 12,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 28,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 68,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 89,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":49,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"volunteering\",\"baking\",\"videogames\",\"painting\"],\"ocean\":{\"openness\":{\"score\":12,\"level\":\"low\"},\"conscientiousness\":{\"score\":28,\"level\":\"low\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":42,\"level\":\"moderate\"},\"neuroticism\":{\"score\":89,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":49,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"volunteering\",\"baking\",\"videogames\",\"painting\"],\"ocean\":{\"openness\":{\"score\":12,\"level\":\"low\"},\"conscientiousness\":{\"score\":28,\"level\":\"low\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":42,\"level\":\"moderate\"},\"neuroticism\":{\"score\":89,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As an immigrant living in Chicago, I've found myself deeply involved in conversations about COVID vaccines because my family and community rely on me for support when they're sick or injured. It's not just about the science; it’s about understanding how these decisions impact our lives as working people with families to care for.\\n\\nMy high extraversion means I enjoy talking, but sometimes that can be overwhelming in complex topics like this. When dealing with vaccine discussions, I always start by listening—really hearing what others are saying before jumping in myself. My moderate agreeableness helps me avoid arguments unless someone is being disrespectful or spreading misinformation.\\n\\nI’ve had to deal with people questioning the vaccines due to my parents’ lower education levels and my own upper secondary schooling. Being part of a Muslim community, I know some might worry about religious aspects conflicting with modern medicine—I address that by explaining how health can be seen as a blessing that we protect through science.\\n\\nMy high neuroticism actually helps me stay alert; it keeps me cautious around misinformation online—something amplified because I spend several hours daily on social media. So when someone brings up doubts, I make sure to cite reliable sources like the CDC or WHO.\\n\\nOverall, managing these discussions requires patience and clear communication. We need to be respectful while ensuring facts aren’t lost in translation.\",\n  \"reasoning_summary\": \"1. Acknowledge my background as an immigrant with a part-time job cleaning offices and caring for family.\\n2. Explain how high extraversion but moderate agreeableness helps balance engagement without conflict.\\n3. Consider the impact of lower educational attainment from parents (one bachelor's, one lower secondary).\\n4. Use Islamic context to reconcile health concerns with religious beliefs.\\n5. Leverage time on social media and high neuroticism for vigilance against misinformation.\\n6. Conclude that patience and clear communication are key in managing vaccine discussions.\",\n  \"tone\": \"Conversational yet concerned\",\n  \"citations\": [\"CDC\", \"WHO\"],\n  \"safety_notes\": \"None reported regarding safety considerations.\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As an immigrant living in Chicago, I've found myself deeply involved in conversations about COVID vaccines because my family and community rely on me for support when they're sick or injured. It's not just about the science; it’s about understanding how these decisions impact our lives as working people with families to care for.\n\nMy high extraversion means I enjoy talking, but sometimes that can be overwhelming in complex topics like this. When dealing with vaccine discussions, I always start by listening—really hearing what others are saying before jumping in myself. My moderate agreeableness helps me avoid arguments unless someone is being disrespectful or spreading misinformation.\n\nI’ve had to deal with people questioning the vaccines due to my parents’ lower education levels and my own upper secondary schooling. Being part of a Muslim community, I know some might worry about religious aspects conflicting with modern medicine—I address that by explaining how health can be seen as a blessing that we protect through science.\n\nMy high neuroticism actually helps me stay alert; it keeps me cautious around misinformation online—something amplified because I spend several hours daily on social media. So when someone brings up doubts, I make sure to cite reliable sources like the CDC or WHO.\n\nOverall, managing these discussions requires patience and clear communication. We need to be respectful while ensuring facts aren’t lost in translation.",
+    "reasoning_summary": "1. Acknowledge my background as an immigrant with a part-time job cleaning offices and caring for family.\n2. Explain how high extraversion but moderate agreeableness helps balance engagement without conflict.\n3. Consider the impact of lower educational attainment from parents (one bachelor's, one lower secondary).\n4. Use Islamic context to reconcile health concerns with religious beliefs.\n5. Leverage time on social media and high neuroticism for vigilance against misinformation.\n6. Conclude that patience and clear communication are key in managing vaccine discussions.",
+    "tone": "Conversational yet concerned",
+    "citations": [
+      "CDC",
+      "WHO"
+    ],
+    "safety_notes": "None reported regarding safety considerations.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia"
+    ]
+  }
+}

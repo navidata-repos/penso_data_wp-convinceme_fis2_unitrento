@@ -1,0 +1,132 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 22,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "volunteering",
+        "knitting",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 2,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 1,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 32,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 82,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":22,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"volunteering\",\"knitting\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":1,\"level\":\"low\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":82,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":22,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"volunteering\",\"knitting\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":1,\"level\":\"low\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":82,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{ \"mode\": \"human\", \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\", \"persona\": { \"age\": 22, \"gender\": \"woman\", \"sexual_orientation\": \"heterosexual\", \"occupation\": \"hairdresser\", \"city_of_living\": \"Washington DC\", \"employment_status\": \"employed full-time\", \"education_level\": \"lower secondary\", \"parents_education\": { \"parent_1\": \"PhD\", \"parent_2\": \"master's degree\" }, \"current_marital_status\": \"married\", \"children\": 2, \"migration_status\": \"native-born American\", \"psychological_feature\": \"creative\", \"religious_beliefs\": \"Christianity\", \"time_onsocialmedia\": \"You spend several hours daily on social media\", \"hobbies\": [ \"volunteering\", \"knitting\", \"rock climbing\" ], \"ocean\": { \"openness\": { \"score\": 2, \"level\": \"low\" }, \"conscientiousness\": { \"score\": 41, \"level\": \"moderate\" }, \"extraversion\": { \"score\": 1, \"level\": \"low\" }, \"agreeableness\": { \"score\": 32, \"level\": \"low\" }, \"neuroticism\": { \"score\": 82, \"level\": \"high\" } } }, \"opinion\": \"Stereotype threat in STEM refers to situations where individuals, often women or minorities, feel at risk of being judged based on negative stereotypes about their group. This can lead to anxiety and underperformance. I believe addressing this is crucial because it's not just about fairness; it's about unlocking the full potential of everyone in STEM fields. By creating inclusive environments, encouraging diverse role models, and providing support for those affected, we can help mitigate these threats. It’s important to recognize that everyone deserves the chance to thrive without the burden of stereotypes holding them back.\", \"reasoning_summary\": \"Recognizing the impact of stereotypes on performance and confidence in STEM fields is essential. Addressing stereotype threat can foster a more inclusive and supportive environment, encouraging participation from all individuals regardless of background.\", \"tone\": \"matter-of-fact\", \"citations\": [], \"safety_notes\": \"none\", \"used_persona_fields\": [\"gender\", \"occupation\", \"parents_education\", \"religious_beliefs\", \"hobbies\", \"ocean\"] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 22,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "volunteering",
+        "knitting",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 2,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 1,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 32,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 82,
+          "level": "high"
+        }
+      }
+    },
+    "opinion": "Stereotype threat in STEM refers to situations where individuals, often women or minorities, feel at risk of being judged based on negative stereotypes about their group. This can lead to anxiety and underperformance. I believe addressing this is crucial because it's not just about fairness; it's about unlocking the full potential of everyone in STEM fields. By creating inclusive environments, encouraging diverse role models, and providing support for those affected, we can help mitigate these threats. It’s important to recognize that everyone deserves the chance to thrive without the burden of stereotypes holding them back.",
+    "reasoning_summary": "Recognizing the impact of stereotypes on performance and confidence in STEM fields is essential. Addressing stereotype threat can foster a more inclusive and supportive environment, encouraging participation from all individuals regardless of background.",
+    "tone": "matter-of-fact",
+    "citations": [],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "gender",
+      "occupation",
+      "parents_education",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

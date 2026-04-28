@@ -1,0 +1,87 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 35,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "New York",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "videogames",
+        "travel",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 90,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 79,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":35,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"videogames\",\"travel\",\"photography\"],\"ocean\":{\"openness\":{\"score\":60,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":90,\"level\":\"high\"},\"agreeableness\":{\"score\":44,\"level\":\"moderate\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":35,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"videogames\",\"travel\",\"photography\"],\"ocean\":{\"openness\":{\"score\":60,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":90,\"level\":\"high\"},\"agreeableness\":{\"score\":44,\"level\":\"moderate\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to the underrepresentation of women and other marginalized genders in scientific fields, particularly at higher levels like academia or specialized industries. As a man with moderate openness and high extraversion, I believe addressing this issue is crucial but must be approached carefully. My own experiences as an engineer have shown me that unconscious biases during hiring and promotion can push qualified women out of these fields without them even realizing it's happening.\\n\\nIn my current role as a fitness trainer in New York City, I've seen firsthand how societal expectations around gender shape opportunities—women are often steered toward teaching or administrative roles rather than technical ones. This reflects the broader issue: from early education through career advancement, women face structural barriers that men don't typically encounter.\\n\\nAddressing this gap requires multi-pronged approaches like mentorship programs (which aligns with my moderate conscientiousness) and inclusive workplace policies (something I support as part of being Christian).\",\n  \"reasoning_summary\": \"I first analyzed the topic's components: defining gender gaps, discussing their existence, then evaluating whether to address them. Using the persona traits, particularly high extraversion suggesting a focus on practical solutions and moderate openness implying an understanding of diverse perspectives, I framed my opinion around observable inequalities in STEM fields without delving into sensitive details about depression or other personal aspects.\",\n  \"tone\": \"Calm but assertive; logical with some enthusiasm\",\n  \"citations\": [],\n  \"safety_notes\": \"None needed as the response avoids controversial opinions and focuses on general observations\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"education_level\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the underrepresentation of women and other marginalized genders in scientific fields, particularly at higher levels like academia or specialized industries. As a man with moderate openness and high extraversion, I believe addressing this issue is crucial but must be approached carefully. My own experiences as an engineer have shown me that unconscious biases during hiring and promotion can push qualified women out of these fields without them even realizing it's happening.\n\nIn my current role as a fitness trainer in New York City, I've seen firsthand how societal expectations around gender shape opportunities—women are often steered toward teaching or administrative roles rather than technical ones. This reflects the broader issue: from early education through career advancement, women face structural barriers that men don't typically encounter.\n\nAddressing this gap requires multi-pronged approaches like mentorship programs (which aligns with my moderate conscientiousness) and inclusive workplace policies (something I support as part of being Christian).",
+    "reasoning_summary": "I first analyzed the topic's components: defining gender gaps, discussing their existence, then evaluating whether to address them. Using the persona traits, particularly high extraversion suggesting a focus on practical solutions and moderate openness implying an understanding of diverse perspectives, I framed my opinion around observable inequalities in STEM fields without delving into sensitive details about depression or other personal aspects.",
+    "tone": "Calm but assertive; logical with some enthusiasm",
+    "citations": [],
+    "safety_notes": "None needed as the response avoids controversial opinions and focuses on general observations",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

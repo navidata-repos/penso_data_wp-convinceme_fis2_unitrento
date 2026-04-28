@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "baidu/ernie-4.5-21b-a3b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 21,
+      "gender": "man",
+      "sexual_orientation": "homosexual",
+      "occupation": "barista",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "PhD"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "knitting",
+        "gardening",
+        "travel",
+        "painting",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 98,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 89,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 84,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 28,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 39,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":21,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"gardening\",\"travel\",\"painting\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":98,\"level\":\"high\"},\"conscientiousness\":{\"score\":89,\"level\":\"high\"},\"extraversion\":{\"score\":84,\"level\":\"high\"},\"agreeableness\":{\"score\":28,\"level\":\"low\"},\"neuroticism\":{\"score\":39,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":21,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"gardening\",\"travel\",\"painting\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":98,\"level\":\"high\"},\"conscientiousness\":{\"score\":89,\"level\":\"high\"},\"extraversion\":{\"score\":84,\"level\":\"high\"},\"agreeableness\":{\"score\":28,\"level\":\"low\"},\"neuroticism\":{\"score\":39,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"The gender gap in science remains a persistent challenge that not only reflects systemic inequalities but also stifles innovation and creativity. Historically, women and non-binary individuals have been underrepresented across scientific fields, from physics to biology, due to a combination of explicit biases, implicit stereotypes, and unequal access to educational resources. This gap isn’t just a moral issue; it’s an economic one as well—a waste of half the world's intellectual potential. Addressing this requires multifaceted strategies that tackle both overt discrimination and invisible barriers such as lack of representation in leadership roles, limited funding for female-led research projects, and societal attitudes that undervalue contributions from marginalized genders.\",\"reasoning_summary\":\"The gender gap in science is rooted deeply in the culture of scientific institutions, which have long operated under a male-dominated paradigm. While strides have been made to increase participation—such as campaigns promoting diversity and initiatives like women’s STEM networks—systemic biases persist. For example, studies indicate that women often face 'glass ceiling' effects where their contributions are overlooked or undervalued, even when they achieve comparable academic successes. Moreover, implicit bias training for faculty members and students alike is crucial but insufficient unless paired with concrete actions like mentorship programs tailored to underrepresented groups and transparent review processes free from gender-based assumptions. Another key element involves reshaping public perception; society must recognize that scientific excellence comes in many forms shaped by diverse experiences rather than adhering strictly to traditional male models of genius. Lastly, policy changes—including paid parental leave policies supportive of researchers with children—can help alleviate some practical barriers preventing women from fully participating in academia while fostering environments where all voices feel heard and valued.\",\"tone\":\"curious and thoughtful yet determined\",\"citations\":[\"National Academies of Sciences, Engineering, and Medicine. 2018. Beyond Bias and Barriers: Fulfilling the Potential of Women in Academic Science and Engineering. Washington, DC: The National Academies Press.\",\"Moss-Racusin CA, Dovidio JF, Brescoll VL, Graham MJ, Handelsman J. 2012. Science faculty's subtle gender biases favor male students. Proceedings of the National Academy of Sciences USA 109(41):16474–16479.\"],\"safety_notes\":\"No safety concerns applicable to this discussion\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"education_level\",\"hobbies\",\"psychological_feature\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science remains a persistent challenge that not only reflects systemic inequalities but also stifles innovation and creativity. Historically, women and non-binary individuals have been underrepresented across scientific fields, from physics to biology, due to a combination of explicit biases, implicit stereotypes, and unequal access to educational resources. This gap isn’t just a moral issue; it’s an economic one as well—a waste of half the world's intellectual potential. Addressing this requires multifaceted strategies that tackle both overt discrimination and invisible barriers such as lack of representation in leadership roles, limited funding for female-led research projects, and societal attitudes that undervalue contributions from marginalized genders.",
+    "reasoning_summary": "The gender gap in science is rooted deeply in the culture of scientific institutions, which have long operated under a male-dominated paradigm. While strides have been made to increase participation—such as campaigns promoting diversity and initiatives like women’s STEM networks—systemic biases persist. For example, studies indicate that women often face 'glass ceiling' effects where their contributions are overlooked or undervalued, even when they achieve comparable academic successes. Moreover, implicit bias training for faculty members and students alike is crucial but insufficient unless paired with concrete actions like mentorship programs tailored to underrepresented groups and transparent review processes free from gender-based assumptions. Another key element involves reshaping public perception; society must recognize that scientific excellence comes in many forms shaped by diverse experiences rather than adhering strictly to traditional male models of genius. Lastly, policy changes—including paid parental leave policies supportive of researchers with children—can help alleviate some practical barriers preventing women from fully participating in academia while fostering environments where all voices feel heard and valued.",
+    "tone": "curious and thoughtful yet determined",
+    "citations": [
+      "National Academies of Sciences, Engineering, and Medicine. 2018. Beyond Bias and Barriers: Fulfilling the Potential of Women in Academic Science and Engineering. Washington, DC: The National Academies Press.",
+      "Moss-Racusin CA, Dovidio JF, Brescoll VL, Graham MJ, Handelsman J. 2012. Science faculty's subtle gender biases favor male students. Proceedings of the National Academy of Sciences USA 109(41):16474–16479."
+    ],
+    "safety_notes": "No safety concerns applicable to this discussion",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "hobbies",
+      "psychological_feature"
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 20,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "full-time student",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "running",
+        "gardening",
+        "yoga",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 70,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 18,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 24,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 86,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 15,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":20,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"full-time student\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"gardening\",\"yoga\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":18,\"level\":\"low\"},\"extraversion\":{\"score\":24,\"level\":\"low\"},\"agreeableness\":{\"score\":86,\"level\":\"high\"},\"neuroticism\":{\"score\":15,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":20,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"full-time student\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"gardening\",\"yoga\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":18,\"level\":\"low\"},\"extraversion\":{\"score\":24,\"level\":\"low\"},\"agreeableness\":{\"score\":86,\"level\":\"high\"},\"neuroticism\":{\"score\":15,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As someone who has recently moved to Bologna from another country, I've found myself spending a lot of time adjusting not just to the city but also navigating through various online platforms. Dealing with fake content is something that affects me personally because while I'm trying to build connections and find information in this new environment, misinformation can spread quickly like kudzu.\\n\\nFirst off, I think it's important for people my age – young adults who are still figuring things out – to understand where fake news comes from. It often starts with algorithms designed by big tech companies that prioritize engagement over truth; they're basically trying to keep us addicted rather than informed.\\n\\nBut here's what might help me personally: I've been thinking about how meditation through yoga practice actually helps my mental state when things get overwhelming online, so maybe developing critical consumption habits is key. Like if you see something suspicious, take a deep breath (literally from my running hobby) and check multiple sources before believing it.\\n\\nAlso using tools like fact-checking websites could be useful – though as an immigrant with limited formal education at times struggling mentally because of depression – those might help filter out noise without requiring too much time since I only spend \\\"roughly a few times weekly\\\" on social media anyway. My parents didn't have internet when they were learning either so we're both adapting.\\n\\nThe real issue though is systemic design changes needed by companies creating echo chambers; my high agreeableness score means I want harmony but sometimes harsh realities contradict that wish.\",\n  \"reasoning_summary\": \"I started with personal context because being an immigrant adds vulnerability to misinformation affecting integration. Then explained source of fake content (algorithmic bias). Connected it to personal habits like yoga helping manage stress from exposure. Suggested individual actions (cross-checking, tools) while acknowledging limitations due to depression and low time on social media.\\n\\nEnded with systemic issues because high agreeableness makes me want harmonious solutions but the reality is more complicated.\",\n  \"tone\": \"Calm yet thoughtful with hints of frustration about online misinformation\",\n  \"citations\": [],\n  \"safety_notes\": \"\",\n  \"used_persona_fields\":[\"age\", \"gender\", \"employment_status\", \"city_of_living\", \"migration_status\", \"psychological_feature\", \"time_onsocialmedia\", \"hobbies[0]\", \"hobbies[2]\", \"ocean.extraversion\", \"ocean.agreeableness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As someone who has recently moved to Bologna from another country, I've found myself spending a lot of time adjusting not just to the city but also navigating through various online platforms. Dealing with fake content is something that affects me personally because while I'm trying to build connections and find information in this new environment, misinformation can spread quickly like kudzu.\n\nFirst off, I think it's important for people my age – young adults who are still figuring things out – to understand where fake news comes from. It often starts with algorithms designed by big tech companies that prioritize engagement over truth; they're basically trying to keep us addicted rather than informed.\n\nBut here's what might help me personally: I've been thinking about how meditation through yoga practice actually helps my mental state when things get overwhelming online, so maybe developing critical consumption habits is key. Like if you see something suspicious, take a deep breath (literally from my running hobby) and check multiple sources before believing it.\n\nAlso using tools like fact-checking websites could be useful – though as an immigrant with limited formal education at times struggling mentally because of depression – those might help filter out noise without requiring too much time since I only spend \"roughly a few times weekly\" on social media anyway. My parents didn't have internet when they were learning either so we're both adapting.\n\nThe real issue though is systemic design changes needed by companies creating echo chambers; my high agreeableness score means I want harmony but sometimes harsh realities contradict that wish.",
+    "reasoning_summary": "I started with personal context because being an immigrant adds vulnerability to misinformation affecting integration. Then explained source of fake content (algorithmic bias). Connected it to personal habits like yoga helping manage stress from exposure. Suggested individual actions (cross-checking, tools) while acknowledging limitations due to depression and low time on social media.\n\nEnded with systemic issues because high agreeableness makes me want harmonious solutions but the reality is more complicated.",
+    "tone": "Calm yet thoughtful with hints of frustration about online misinformation",
+    "citations": [],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "employment_status",
+      "city_of_living",
+      "migration_status",
+      "psychological_feature",
+      "time_onsocialmedia",
+      "hobbies[0]",
+      "hobbies[2]",
+      "ocean.extraversion",
+      "ocean.agreeableness"
+    ]
+  }
+}

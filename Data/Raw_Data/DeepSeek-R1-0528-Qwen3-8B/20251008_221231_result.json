@@ -1,0 +1,92 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 22,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "reading novels",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 57,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 57,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 30,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 75,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":22,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":57,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":57,\"level\":\"moderate\"},\"extraversion\":{\"score\":30,\"level\":\"low\"},\"agreeableness\":{\"score\":44,\"level\":\"moderate\"},\"neuroticism\":{\"score\":75,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":22,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":57,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":57,\"level\":\"moderate\"},\"extraversion\":{\"score\":30,\"level\":\"low\"},\"agreeableness\":{\"score\":44,\"level\":\"moderate\"},\"neuroticism\":{\"score\":75,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As a young woman living in Rome who's active on social media, I believe the most effective way to deal with fake content is by combining critical thinking with practical tools available today. Personally, I spend about an hour each day scrolling through various feeds, so encountering misleading information isn't uncommon for me. My moderate conscientiousness means I'm careful but not overly rigid when verifying sources; however, my low extraversion keeps me from engaging in lengthy discussions unless necessary, preferring to assess quickly and then move on if something seems off.\\n\\nGrowing up native Italian with Christian values has taught me the importance of discernment without being judgmental. For example, I often come across health misinformation online—claims about miracle cures or fad diets that aren't backed by science. As a fitness trainer, I know firsthand how dangerous these can be for people seeking advice.\\n\\nI suggest starting with media literacy education: teach users to question what they see and check sources against reputable ones like the World Health Organization. My hobbies include reading novels; this helps me develop better analytical skills because fiction often explores complex ideas about truth versus lies, which I apply directly when evaluating social media posts.\\n\\nPlatforms should also implement stricter algorithms for flagging suspicious content, especially since my neuroticism sometimes makes me anxious seeing conflicting health claims that might affect me or people around me. Taking a moment to verify could prevent panic and promote calm decision-making.\",\n  \"reasoning_summary\": \"I combined personal experience as someone with limited media time but high exposure to potential misinformation (due to my fitness training background) with psychological traits like moderate conscientiousness for evaluating sources.\\n\\nThen, I drew upon cultural context from being native Italian in Rome to emphasize values of discernment and community well-being. My Christian beliefs support ethical content handling without spreading false information unnecessarily.\\n\\nI suggested practical steps: user education focusing on media literacy techniques (source checking, critical thinking) inspired by my reading hobby; platform improvements based on observed algorithms struggles.\",\n  \"tone\": \"Sincere yet practical, grounded in everyday experience with a touch of personal reflection mixed with professional advice.\",\n  \"citations\": [\"World Health Organization\"],\n  \"safety_notes\": \"\",\n  \"used_persona_fields\": [\"age\", \"biological_sex\", \"gender\", \"occupation\", \"time_onsocialmedia\", \"hobbies[0]\", \"ocean.openness.score\", \"ocean.conscientiousness.score\", \"ocean.extrightly level\", \"ocean.agreeableness.score\", \"neuroticism\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a young woman living in Rome who's active on social media, I believe the most effective way to deal with fake content is by combining critical thinking with practical tools available today. Personally, I spend about an hour each day scrolling through various feeds, so encountering misleading information isn't uncommon for me. My moderate conscientiousness means I'm careful but not overly rigid when verifying sources; however, my low extraversion keeps me from engaging in lengthy discussions unless necessary, preferring to assess quickly and then move on if something seems off.\n\nGrowing up native Italian with Christian values has taught me the importance of discernment without being judgmental. For example, I often come across health misinformation online—claims about miracle cures or fad diets that aren't backed by science. As a fitness trainer, I know firsthand how dangerous these can be for people seeking advice.\n\nI suggest starting with media literacy education: teach users to question what they see and check sources against reputable ones like the World Health Organization. My hobbies include reading novels; this helps me develop better analytical skills because fiction often explores complex ideas about truth versus lies, which I apply directly when evaluating social media posts.\n\nPlatforms should also implement stricter algorithms for flagging suspicious content, especially since my neuroticism sometimes makes me anxious seeing conflicting health claims that might affect me or people around me. Taking a moment to verify could prevent panic and promote calm decision-making.",
+    "reasoning_summary": "I combined personal experience as someone with limited media time but high exposure to potential misinformation (due to my fitness training background) with psychological traits like moderate conscientiousness for evaluating sources.\n\nThen, I drew upon cultural context from being native Italian in Rome to emphasize values of discernment and community well-being. My Christian beliefs support ethical content handling without spreading false information unnecessarily.\n\nI suggested practical steps: user education focusing on media literacy techniques (source checking, critical thinking) inspired by my reading hobby; platform improvements based on observed algorithms struggles.",
+    "tone": "Sincere yet practical, grounded in everyday experience with a touch of personal reflection mixed with professional advice.",
+    "citations": [
+      "World Health Organization"
+    ],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "occupation",
+      "time_onsocialmedia",
+      "hobbies[0]",
+      "ocean.openness.score",
+      "ocean.conscientiousness.score",
+      "ocean.extrightly level",
+      "ocean.agreeableness.score",
+      "neuroticism"
+    ]
+  }
+}

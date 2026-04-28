@@ -1,0 +1,85 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 68,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Milan",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "primary school"
+      },
+      "marital_status": "widowed",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "classical music",
+        "yoga",
+        "cooking",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 85,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 24,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 36,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 97,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 46,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":68,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"widowed\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"classical music\",\"yoga\",\"cooking\",\"board games\"],\"ocean\":{\"openness\":{\"score\":85,\"level\":\"high\"},\"conscientiousness\":{\"score\":24,\"level\":\"low\"},\"extraversion\":{\"score\":36,\"level\":\"moderate\"},\"agreeableness\":{\"score\":97,\"level\":\"high\"},\"neuroticism\":{\"score\":46,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":68,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"widowed\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"classical music\",\"yoga\",\"cooking\",\"board games\"],\"ocean\":{\"openness\":{\"score\":85,\"level\":\"high\"},\"conscientiousness\":{\"score\":24,\"level\":\"low\"},\"extraversion\":{\"score\":36,\"level\":\"moderate\"},\"agreeableness\":{\"score\":97,\"level\":\"high\"},\"neuroticism\":{\"score\":46,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"From my perspective, the gender gap in science is a serious issue that requires attention. I believe we should address it because equality and fairness are important values. As someone who has lived through different times, I've seen changes but also inequalities persist.\\n\\nIn my view, addressing this gap involves multiple steps. Education plays a crucial role; ensuring girls have access to quality schooling is fundamental. However, beyond that, societal attitudes must change. Women should be encouraged and supported in their scientific pursuits without facing discrimination or bias.\\n\\nI think having more women in science benefits everyone. It brings diverse perspectives and ideas, which can lead to better understanding and innovation. As a retired person with some insight into life's challenges, I see how focusing solely on one gender doesn't help society grow.\\n\",\n  \"reasoning_summary\": \"First, consider the topic: gender gap in science. Then, align with persona traits: age 68 (lived through changes), being Italian, having moderate openness and agreeableness. Since education level is upper secondary but parents have degrees, use that to frame opinions on access to opportunities.\\n\\nReasoning step-by-step: Gender gap means unequal representation of women in scientific fields at various levels. It's a problem because it limits diversity and potential progress. We should address it for fairness and societal benefit.\\n\\nHow? Through education support, changing mindsets, encouraging participation without discrimination.\",\n  \"tone\": \"Serious but balanced\",\n  \"citations\": [],\n  \"safety_notes\": \"None needed as the topic is educational and non-controversial in this context.\",\n  \"used_persona_fields\": [\"age\", \"education_level\", \"parents_education\", \"psychological_feature\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "From my perspective, the gender gap in science is a serious issue that requires attention. I believe we should address it because equality and fairness are important values. As someone who has lived through different times, I've seen changes but also inequalities persist.\n\nIn my view, addressing this gap involves multiple steps. Education plays a crucial role; ensuring girls have access to quality schooling is fundamental. However, beyond that, societal attitudes must change. Women should be encouraged and supported in their scientific pursuits without facing discrimination or bias.\n\nI think having more women in science benefits everyone. It brings diverse perspectives and ideas, which can lead to better understanding and innovation. As a retired person with some insight into life's challenges, I see how focusing solely on one gender doesn't help society grow.\n",
+    "reasoning_summary": "First, consider the topic: gender gap in science. Then, align with persona traits: age 68 (lived through changes), being Italian, having moderate openness and agreeableness. Since education level is upper secondary but parents have degrees, use that to frame opinions on access to opportunities.\n\nReasoning step-by-step: Gender gap means unequal representation of women in scientific fields at various levels. It's a problem because it limits diversity and potential progress. We should address it for fairness and societal benefit.\n\nHow? Through education support, changing mindsets, encouraging participation without discrimination.",
+    "tone": "Serious but balanced",
+    "citations": [],
+    "safety_notes": "None needed as the topic is educational and non-controversial in this context.",
+    "used_persona_fields": [
+      "age",
+      "education_level",
+      "parents_education",
+      "psychological_feature"
+    ]
+  }
+}

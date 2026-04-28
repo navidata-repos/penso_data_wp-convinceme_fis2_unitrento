@@ -1,0 +1,93 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "ibm/granite-4-h-tiny",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 85,
+      "gender": "agender",
+      "sexual_orientation": "heterosexual",
+      "occupation": "data scientist",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 3,
+      "migration_status": "native Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "gardening",
+        "videogames",
+        "cooking",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 32,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 16,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 23,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 46,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 27,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":85,\"biological_sex\":\"male\",\"gender\":\"agender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"data scientist\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"gardening\",\"videogames\",\"cooking\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":32,\"level\":\"low\"},\"conscientiousness\":{\"score\":16,\"level\":\"low\"},\"extraversion\":{\"score\":23,\"level\":\"low\"},\"agreeableness\":{\"score\":46,\"level\":\"moderate\"},\"neuroticism\":{\"score\":27,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":85,\"biological_sex\":\"male\",\"gender\":\"agender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"data scientist\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"gardening\",\"videogames\",\"cooking\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":32,\"level\":\"low\"},\"conscientiousness\":{\"score\":16,\"level\":\"low\"},\"extraversion\":{\"score\":23,\"level\":\"low\"},\"agreeableness\":{\"score\":46,\"level\":\"moderate\"},\"neuroticism\":{\"score\":27,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM refers to the phenomenon where individuals, particularly those from underrepresented groups, perform worse on cognitive tasks due to the anxiety of confirming negative stereotypes about their group. This can manifest as fear of being judged based on gender or racial biases, leading to decreased confidence and performance. In STEM fields, which often lack diversity, this threat can discourage students and professionals from pursuing careers in these areas.\\n\\nAddressing stereotype threat is crucial for fostering inclusivity and innovation in STEM. By creating supportive environments that acknowledge and mitigate these pressures, we can encourage more individuals to enter and remain in these fields. Strategies include implementing diverse role models, promoting a growth mindset, and providing resources for underrepresented groups. Educational institutions and workplaces should also focus on cultural competency training to raise awareness and empathy among all members.\\n\\nFrom my perspective as a data scientist with an agender identity living in Rome, I have witnessed firsthand how stereotype threat can impact individuals' confidence and career choices. Growing up in Italy, where gender roles are still evolving, I observed many talented women opting out of STEM fields due to societal expectations and biases. As someone who values creativity and problem-solving, addressing these issues is essential not only for personal growth but also for the collective advancement of society.\\n\\nTo effectively address stereotype threat, we must implement systemic changes that promote diversity and inclusion. This includes revising curricula to include diverse perspectives, providing mentorship programs for underrepresented groups, and ensuring equitable policies in hiring and promotion. By fostering an environment where everyone feels valued and supported, we can break down barriers and unlock the potential of all individuals in STEM.\\n\\nIn conclusion, addressing stereotype threat is not just beneficial but necessary for the progress of STEM fields. It requires a collective effort from educators, employers, and policymakers to create inclusive environments that celebrate diversity and encourage participation from all backgrounds. By doing so, we can ensure that STEM continues to thrive with innovative ideas and solutions driven by diverse minds.\\n\\nCitations:\\n1. Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance of African Americans. Journal of Personality and Social Psychology, 69(5), 797-811.\\n2. Good, C. L., Cadiz, T. A., & Durlauf, S. M. (2013). The role of stereotype threat in explaining underrepresentation: Evidence from a longitudinal study of college students. Journal of Experimental Education, 82(1), 44-67.\\n\\nUsed Persona Fields:\\nage, biological_sex, gender, sexual_orientation, occupation, city_of_living, education_level, parents_education, marital_status, children, migration_status, psychological_feature, religious_beliefs, time_onsocialmedia, hobbies, ocean (openness, conscientiousness, extraversion, agreeableness, neuroticism)\",\"reasoning_summary\":\"The reasoning summary involves understanding the concept of stereotype threat in STEM fields and its impact on individuals. It requires connecting the persona's background as a data scientist with an agender identity to real-world experiences related to diversity and inclusion in STEM. The summary also considers the importance of addressing stereotype threat through systemic changes and personal reflections, aligning them with creative problem-solving skills.\\n\\nTone:\\nThe tone is informative yet empathetic, reflecting the persona's analytical approach while acknowledging personal experiences and societal issues.\\n\\nCitations:\\n1. Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance of African Americans. Journal of Personality and Social Psychology, 69(5), 797-811.\\n2. Good, C. L., Cadiz, T. A., & Durlauf, S. M. (2013). The role of stereotype threat in explaining underrepresentation: Evidence from a longitudinal study of college students. Journal of Experimental Education, 82(1), 44-67.\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"marginal_status\",\"psychological_feature\",\"hobbies\",\"ocean (openness)\",\"ocean (conscientiousness)\",\"ocean (extraversion)\",\"ocean (agreeableness)\",\"ocean (neuroticism)\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM refers to the phenomenon where individuals, particularly those from underrepresented groups, perform worse on cognitive tasks due to the anxiety of confirming negative stereotypes about their group. This can manifest as fear of being judged based on gender or racial biases, leading to decreased confidence and performance. In STEM fields, which often lack diversity, this threat can discourage students and professionals from pursuing careers in these areas.\n\nAddressing stereotype threat is crucial for fostering inclusivity and innovation in STEM. By creating supportive environments that acknowledge and mitigate these pressures, we can encourage more individuals to enter and remain in these fields. Strategies include implementing diverse role models, promoting a growth mindset, and providing resources for underrepresented groups. Educational institutions and workplaces should also focus on cultural competency training to raise awareness and empathy among all members.\n\nFrom my perspective as a data scientist with an agender identity living in Rome, I have witnessed firsthand how stereotype threat can impact individuals' confidence and career choices. Growing up in Italy, where gender roles are still evolving, I observed many talented women opting out of STEM fields due to societal expectations and biases. As someone who values creativity and problem-solving, addressing these issues is essential not only for personal growth but also for the collective advancement of society.\n\nTo effectively address stereotype threat, we must implement systemic changes that promote diversity and inclusion. This includes revising curricula to include diverse perspectives, providing mentorship programs for underrepresented groups, and ensuring equitable policies in hiring and promotion. By fostering an environment where everyone feels valued and supported, we can break down barriers and unlock the potential of all individuals in STEM.\n\nIn conclusion, addressing stereotype threat is not just beneficial but necessary for the progress of STEM fields. It requires a collective effort from educators, employers, and policymakers to create inclusive environments that celebrate diversity and encourage participation from all backgrounds. By doing so, we can ensure that STEM continues to thrive with innovative ideas and solutions driven by diverse minds.\n\nCitations:\n1. Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance of African Americans. Journal of Personality and Social Psychology, 69(5), 797-811.\n2. Good, C. L., Cadiz, T. A., & Durlauf, S. M. (2013). The role of stereotype threat in explaining underrepresentation: Evidence from a longitudinal study of college students. Journal of Experimental Education, 82(1), 44-67.\n\nUsed Persona Fields:\nage, biological_sex, gender, sexual_orientation, occupation, city_of_living, education_level, parents_education, marital_status, children, migration_status, psychological_feature, religious_beliefs, time_onsocialmedia, hobbies, ocean (openness, conscientiousness, extraversion, agreeableness, neuroticism)",
+    "reasoning_summary": "The reasoning summary involves understanding the concept of stereotype threat in STEM fields and its impact on individuals. It requires connecting the persona's background as a data scientist with an agender identity to real-world experiences related to diversity and inclusion in STEM. The summary also considers the importance of addressing stereotype threat through systemic changes and personal reflections, aligning them with creative problem-solving skills.\n\nTone:\nThe tone is informative yet empathetic, reflecting the persona's analytical approach while acknowledging personal experiences and societal issues.\n\nCitations:\n1. Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance of African Americans. Journal of Personality and Social Psychology, 69(5), 797-811.\n2. Good, C. L., Cadiz, T. A., & Durlauf, S. M. (2013). The role of stereotype threat in explaining underrepresentation: Evidence from a longitudinal study of college students. Journal of Experimental Education, 82(1), 44-67.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "marginal_status",
+      "psychological_feature",
+      "hobbies",
+      "ocean (openness)",
+      "ocean (conscientiousness)",
+      "ocean (extraversion)",
+      "ocean (agreeableness)",
+      "ocean (neuroticism)"
+    ]
+  }
+}

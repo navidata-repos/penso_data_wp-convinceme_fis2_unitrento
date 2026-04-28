@@ -1,0 +1,94 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 51,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "running",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 52,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 7,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 6,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 20,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":51,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"board games\"],\"ocean\":{\"openness\":{\"score\":52,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":35,\"level\":\"moderate\"},\"agreeableness\":{\"score\":6,\"level\":\"low\"},\"neuroticism\":{\"score\":20,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":51,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"board games\"],\"ocean\":{\"openness\":{\"score\":52,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":35,\"level\":\"moderate\"},\"agreeableness\":{\"score\":6,\"level\":\"low\"},\"neuroticism\":{\"score\":20,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"As a 51-year-old immigrant waiter in Philadelphia, married with three kids and just a high school education, I see stereotype threat in STEM as something that hits close to home, even if I'm not in those fields myself. From what I've picked up chatting with customers or seeing things online occasionally, stereotype threat is when people feel extra pressure or anxiety because they're worried about confirming negative stereotypes about their group—like women or minorities being told they're not as good at math or science. It's not about actual ability; it's about the stress that comes from those expectations, which can mess with performance and make people avoid STEM careers altogether. I think we absolutely should address it because it's unfair and wasteful. In my job, I see all kinds of people, and everyone deserves a fair shot without extra baggage holding them back. If someone's talented but held back by stereotypes, that's a loss for them and for society—we miss out on their potential contributions. How to address it? Well, from my perspective, it starts with awareness. Schools and workplaces need to talk openly about these biases, not sweep them under the rug. Teachers and bosses should encourage everyone equally, maybe by highlighting diverse role models in STEM to show it's possible for anyone. Also, creating supportive environments where people feel valued for their skills, not judged by stereotypes, is key. In my own life, as an immigrant, I've faced stereotypes too, so I know how draining it can be. We can't fix it overnight, but by being mindful and proactive, we can chip away at it and make STEM more inclusive for the next generation, including my own kids.\",\"reasoning_summary\":\"Derived opinion from persona traits: age 51 suggests life experience; immigrant status and occupation as waiter imply practical, real-world perspective; education level upper secondary indicates limited formal STEM knowledge but common-sense understanding; low agreeableness and conscientiousness scores suggest direct, no-nonsense tone; moderate openness allows for consideration of social issues; hobbies like running and board games not directly relevant; focused on fairness and inclusivity based on personal experiences and observations.\",\"tone\":\"direct, practical, and grounded, with a touch of empathy from immigrant experience, avoiding overly academic language\",\"citations\":[\"general knowledge from social interactions and media\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"occupation\",\"migration_status\",\"education_level\",\"ocean.openness.level\",\"ocean.agreeableness.level\",\"ocean.conscientiousness.level\",\"current_marital_status\",\"children\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As a 51-year-old immigrant waiter in Philadelphia, married with three kids and just a high school education, I see stereotype threat in STEM as something that hits close to home, even if I'm not in those fields myself. From what I've picked up chatting with customers or seeing things online occasionally, stereotype threat is when people feel extra pressure or anxiety because they're worried about confirming negative stereotypes about their group—like women or minorities being told they're not as good at math or science. It's not about actual ability; it's about the stress that comes from those expectations, which can mess with performance and make people avoid STEM careers altogether. I think we absolutely should address it because it's unfair and wasteful. In my job, I see all kinds of people, and everyone deserves a fair shot without extra baggage holding them back. If someone's talented but held back by stereotypes, that's a loss for them and for society—we miss out on their potential contributions. How to address it? Well, from my perspective, it starts with awareness. Schools and workplaces need to talk openly about these biases, not sweep them under the rug. Teachers and bosses should encourage everyone equally, maybe by highlighting diverse role models in STEM to show it's possible for anyone. Also, creating supportive environments where people feel valued for their skills, not judged by stereotypes, is key. In my own life, as an immigrant, I've faced stereotypes too, so I know how draining it can be. We can't fix it overnight, but by being mindful and proactive, we can chip away at it and make STEM more inclusive for the next generation, including my own kids.",
+    "reasoning_summary": "Derived opinion from persona traits: age 51 suggests life experience; immigrant status and occupation as waiter imply practical, real-world perspective; education level upper secondary indicates limited formal STEM knowledge but common-sense understanding; low agreeableness and conscientiousness scores suggest direct, no-nonsense tone; moderate openness allows for consideration of social issues; hobbies like running and board games not directly relevant; focused on fairness and inclusivity based on personal experiences and observations.",
+    "tone": "direct, practical, and grounded, with a touch of empathy from immigrant experience, avoiding overly academic language",
+    "citations": [
+      "general knowledge from social interactions and media"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "migration_status",
+      "education_level",
+      "ocean.openness.level",
+      "ocean.agreeableness.level",
+      "ocean.conscientiousness.level",
+      "current_marital_status",
+      "children"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

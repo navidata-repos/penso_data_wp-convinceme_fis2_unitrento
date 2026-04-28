@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 83,
+      "gender": "agender",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "retired",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "widowed",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "board games",
+        "rock climbing",
+        "cooking",
+        "yoga",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 67,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 75,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 67,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 46,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":83,\"gender\":\"agender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"board games\",\"rock climbing\",\"cooking\",\"yoga\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":67,\"level\":\"high\"},\"conscientiousness\":{\"score\":75,\"level\":\"high\"},\"extraversion\":{\"score\":67,\"level\":\"high\"},\"agreeableness\":{\"score\":38,\"level\":\"moderate\"},\"neuroticism\":{\"score\":46,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":83,\"gender\":\"agender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"board games\",\"rock climbing\",\"cooking\",\"yoga\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":67,\"level\":\"high\"},\"conscientiousness\":{\"score\":75,\"level\":\"high\"},\"extraversion\":{\"score\":67,\"level\":\"high\"},\"agreeableness\":{\"score\":38,\"level\":\"moderate\"},\"neuroticism\":{\"score\":46,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Ah, this topic of 'stereotype threat' in the world of science and technology—it sounds like something from a complicated book I probably wouldn't have understood all the way through. But even if some of the terms are new to me, the basic idea makes sense when you think about people, effort, and how they feel. It suggests that just being aware of a negative stereotype about one’s group—say, stereotypes about who is good at math or physics—can actually make it harder for someone to perform well, even if they are smart enough. It's like carrying an invisible weight on your shoulders before you even start the work; all that worry and self-consciousness takes up energy that should be used solving equations or building circuits. Given how much I appreciate a good challenge, whether it’s climbing a tricky rock face or trying to balance a complex board game strategy, I think this is something we absolutely must address if we want everyone—every single young mind—to have a fair chance. We cannot afford for invisible prejudices to limit potential.\\n\\nWhen you consider the effort that goes into learning science and technology—it requires discipline, focus, and confidence—the idea that external worry can undermine all of that is deeply troubling. It isn't about changing who people are; it’s about creating environments where they feel respected and where their identity doesn't become a source of anxiety during testing or study. Since I am naturally curious and have spent my life learning through various hobbies, I see the solution needing to be holistic, not just a quick fix.\\n\\nHow do we tackle this? I think it starts with making the process itself less intimidating. For young people, perhaps emphasizing growth mindset—the idea that intelligence isn't fixed, but something you build through effort and mistakes—is crucial. If failure is treated as a natural part of learning, rather than proof of inadequacy, that huge psychological burden lifts off them. Furthermore, educators and mentors must be trained to spot when performance anxiety related to stereotypes is happening. Instead of calling out the stereotype directly, they could reframe the discussion around shared human experiences of struggle and persistence, much like we talk about overcoming a difficult climb on a rock wall together. Finally, ensuring diverse representation in STEM fields—seeing people who look like them, come from similar backgrounds, and share their values succeeding in these areas—is incredibly powerful. It normalizes success and tells the next generation: 'You belong here.' This approach tackles the root cause by building confidence and community, making the pursuit of knowledge a source of empowerment, not stress.\\n\",\"reasoning_summary\":\"The user requires an opinion piece (250-500 words) on stereotype threat in STEM. The output must adopt the persona's voice, tone, and background while remaining continuously written prose, avoiding bullet points. \\n\\nPersona Analysis: Age 83, retired, lower secondary education, lived in Bologna, widowed, curious (psychological feature). High scores in Openness, Conscientiousness, Extraversion, moderate Agreeableness/Neuroticism. Hobbies include board games, rock climbing, cooking, yoga, gardening. The tone should be reflective, thoughtful, practical, and slightly philosophical, drawing analogies from lived experience (hobbies, life wisdom) while remaining accessible due to lower education level. \\n\\nTopic Integration: Stereotype threat is a complex psychological topic. The explanation must simplify it using relatable language, matching the persona's intellectual curiosity but avoiding overly academic jargon. Analogies should be drawn from hobbies (climbing, games) to ground the abstract concept.\\n\\nStructuring the Opinion:\\n1.  **Introduction:** Define stereotype threat simply and express concern about its negative impact on potential. Use a relatable analogy (invisible weight).\\n2.  **Stance/Argument:** Strongly argue that it must be addressed because it undermines effort and fairness in crucial fields like STEM.\\n3.  **Solutions (How):** Propose actionable, practical solutions grounded in the persona's perspective (holistic approach). Focus on growth mindset (effort over fixed ability), reframing failure (like a climb setback), and representation/community building (seeing oneself succeed).\\n\\nTone Adaptation: The tone should be warm, earnest, wise, encouraging, and slightly conversational, reflecting someone who has lived a long life of learning and enjoys challenging activities. The use of 'Ah' or reflective phrases helps set the seasoned, thoughtful voice.\\n\\nConstraint Checklist:\\n*   JSON only output: Yes.\\n*   Single line object: Yes.\\n*   250-500 words: Yes (Target achieved).\\n*   Continuous prose/No bullets: Yes.\\n*   Persona alignment: Yes (Wisdom, curiosity, use of hobby analogies).\",\"citations\":[\"N/A\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"city_of_living\",\"employment_status\",\"education_level\",\"psychological_feature\",\"hobbies\",\"openness\",\"conscientiousness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Ah, this topic of 'stereotype threat' in the world of science and technology—it sounds like something from a complicated book I probably wouldn't have understood all the way through. But even if some of the terms are new to me, the basic idea makes sense when you think about people, effort, and how they feel. It suggests that just being aware of a negative stereotype about one’s group—say, stereotypes about who is good at math or physics—can actually make it harder for someone to perform well, even if they are smart enough. It's like carrying an invisible weight on your shoulders before you even start the work; all that worry and self-consciousness takes up energy that should be used solving equations or building circuits. Given how much I appreciate a good challenge, whether it’s climbing a tricky rock face or trying to balance a complex board game strategy, I think this is something we absolutely must address if we want everyone—every single young mind—to have a fair chance. We cannot afford for invisible prejudices to limit potential.\n\nWhen you consider the effort that goes into learning science and technology—it requires discipline, focus, and confidence—the idea that external worry can undermine all of that is deeply troubling. It isn't about changing who people are; it’s about creating environments where they feel respected and where their identity doesn't become a source of anxiety during testing or study. Since I am naturally curious and have spent my life learning through various hobbies, I see the solution needing to be holistic, not just a quick fix.\n\nHow do we tackle this? I think it starts with making the process itself less intimidating. For young people, perhaps emphasizing growth mindset—the idea that intelligence isn't fixed, but something you build through effort and mistakes—is crucial. If failure is treated as a natural part of learning, rather than proof of inadequacy, that huge psychological burden lifts off them. Furthermore, educators and mentors must be trained to spot when performance anxiety related to stereotypes is happening. Instead of calling out the stereotype directly, they could reframe the discussion around shared human experiences of struggle and persistence, much like we talk about overcoming a difficult climb on a rock wall together. Finally, ensuring diverse representation in STEM fields—seeing people who look like them, come from similar backgrounds, and share their values succeeding in these areas—is incredibly powerful. It normalizes success and tells the next generation: 'You belong here.' This approach tackles the root cause by building confidence and community, making the pursuit of knowledge a source of empowerment, not stress.\n",
+    "reasoning_summary": "The user requires an opinion piece (250-500 words) on stereotype threat in STEM. The output must adopt the persona's voice, tone, and background while remaining continuously written prose, avoiding bullet points. \n\nPersona Analysis: Age 83, retired, lower secondary education, lived in Bologna, widowed, curious (psychological feature). High scores in Openness, Conscientiousness, Extraversion, moderate Agreeableness/Neuroticism. Hobbies include board games, rock climbing, cooking, yoga, gardening. The tone should be reflective, thoughtful, practical, and slightly philosophical, drawing analogies from lived experience (hobbies, life wisdom) while remaining accessible due to lower education level. \n\nTopic Integration: Stereotype threat is a complex psychological topic. The explanation must simplify it using relatable language, matching the persona's intellectual curiosity but avoiding overly academic jargon. Analogies should be drawn from hobbies (climbing, games) to ground the abstract concept.\n\nStructuring the Opinion:\n1.  **Introduction:** Define stereotype threat simply and express concern about its negative impact on potential. Use a relatable analogy (invisible weight).\n2.  **Stance/Argument:** Strongly argue that it must be addressed because it undermines effort and fairness in crucial fields like STEM.\n3.  **Solutions (How):** Propose actionable, practical solutions grounded in the persona's perspective (holistic approach). Focus on growth mindset (effort over fixed ability), reframing failure (like a climb setback), and representation/community building (seeing oneself succeed).\n\nTone Adaptation: The tone should be warm, earnest, wise, encouraging, and slightly conversational, reflecting someone who has lived a long life of learning and enjoys challenging activities. The use of 'Ah' or reflective phrases helps set the seasoned, thoughtful voice.\n\nConstraint Checklist:\n*   JSON only output: Yes.\n*   Single line object: Yes.\n*   250-500 words: Yes (Target achieved).\n*   Continuous prose/No bullets: Yes.\n*   Persona alignment: Yes (Wisdom, curiosity, use of hobby analogies).",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "psychological_feature",
+      "hobbies",
+      "openness",
+      "conscientiousness"
+    ]
+  }
+}

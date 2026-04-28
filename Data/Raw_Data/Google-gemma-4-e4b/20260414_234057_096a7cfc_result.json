@@ -1,0 +1,132 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "google/gemma-4-e4b-it",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 59,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "software developer",
+      "city_of_living": "Kansas City",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "rock climbing",
+        "reading novels",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 23,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 82,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 52,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 50,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":59,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"rock climbing\",\"reading novels\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":23,\"level\":\"low\"},\"conscientiousness\":{\"score\":82,\"level\":\"high\"},\"extraversion\":{\"score\":52,\"level\":\"moderate\"},\"agreeableness\":{\"score\":58,\"level\":\"moderate\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":59,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"rock climbing\",\"reading novels\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":23,\"level\":\"low\"},\"conscientiousness\":{\"score\":82,\"level\":\"high\"},\"extraversion\":{\"score\":52,\"level\":\"moderate\"},\"agreeableness\":{\"score\":58,\"level\":\"moderate\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":59,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"rock climbing\",\"reading novels\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":23,\"level\":\"low\"},\"conscientiousness\":{\"score\":82,\"level\":\"high\"},\"extraversion\":{\"score\":52,\"level\":\"moderate\"},\"agreeableness\":{\"score\":58,\"level\":\"moderate\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}},\"opinion\":\"As someone who's spent years wrestling with complex systems in software development, I see a parallel between the abstract concept of stereotype threat and the systemic bugs that plague large, seemingly functional codebases. Stereotype threat, at its core, is the anxiety experienced by individuals from a group that is negatively stereotyped when they are in a situation where their group is judged on that stereotype. In STEM, this manifests when, say, a female student or a student from a non-traditional background enters a highly technical assessment and the mere awareness of societal expectations about who belongs in that field causes a cognitive load—a mental overhead—that actively hinders their performance. It’s not a lack of aptitude; it’s a performance inhibitor rooted in social pressure. Given my own background as an immigrant who had to constantly prove competence in a new technical landscape, I can tell you this isn't just an academic footnote; it’s a genuine barrier to talent utilization. We absolutely must address it, because leaving it unaddressed is like knowingly deploying code with a known, critical vulnerability. The solution, in my view, needs to be multi-layered, much like a robust architecture. First, at the institutional level, we need to de-emphasize high-stakes, single-event testing. Instead of one definitive exam, we should integrate performance metrics over time, favoring iterative projects where the focus is on the process, not just the final output. Secondly, and this speaks to the cultural side, we need to proactively disrupt the stereotypes. This means showcasing diverse role models—not just in keynote speeches, but woven into the curriculum itself, perhaps through case studies or mentorship programs that are deeply integrated. For me, seeing how some of my peers navigate these cultural expectations, it’s about normalizing the struggle. We need to build environments, much like a well-maintained garden, where the pressure to be flawless is replaced by the encouragement to learn and iterate, making the process itself feel safe enough for everyone to contribute their best code, or their best solutions, without the shadow of stereotype looming over them.\",\"reasoning_summary\":\"The persona is a conscientious, detail-oriented software developer (high conscientiousness) who is an immigrant and has a pragmatic, problem-solving mindset. The tone should be serious, analytical, and grounded in practical systems thinking. The discussion of stereotype threat must be framed using technical analogies (codebase, architecture, bugs) to align with the persona's profession. The conclusion must advocate for tangible, structured solutions (iterative metrics, proactive representation) rather than vague platitudes, reflecting the persona's high conscientiousness and analytical nature.\",\"tone\":\"Pragmatic, Analytical, Grounded\",\"citations\":[\"N/A\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"occupation\",\"migration_status\",\"ocean.conscientiousness\",\"ocean.openness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 59,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "software developer",
+      "city_of_living": "Kansas City",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "rock climbing",
+        "reading novels",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 23,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 82,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 52,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 50,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion": "As someone who's spent years wrestling with complex systems in software development, I see a parallel between the abstract concept of stereotype threat and the systemic bugs that plague large, seemingly functional codebases. Stereotype threat, at its core, is the anxiety experienced by individuals from a group that is negatively stereotyped when they are in a situation where their group is judged on that stereotype. In STEM, this manifests when, say, a female student or a student from a non-traditional background enters a highly technical assessment and the mere awareness of societal expectations about who belongs in that field causes a cognitive load—a mental overhead—that actively hinders their performance. It’s not a lack of aptitude; it’s a performance inhibitor rooted in social pressure. Given my own background as an immigrant who had to constantly prove competence in a new technical landscape, I can tell you this isn't just an academic footnote; it’s a genuine barrier to talent utilization. We absolutely must address it, because leaving it unaddressed is like knowingly deploying code with a known, critical vulnerability. The solution, in my view, needs to be multi-layered, much like a robust architecture. First, at the institutional level, we need to de-emphasize high-stakes, single-event testing. Instead of one definitive exam, we should integrate performance metrics over time, favoring iterative projects where the focus is on the process, not just the final output. Secondly, and this speaks to the cultural side, we need to proactively disrupt the stereotypes. This means showcasing diverse role models—not just in keynote speeches, but woven into the curriculum itself, perhaps through case studies or mentorship programs that are deeply integrated. For me, seeing how some of my peers navigate these cultural expectations, it’s about normalizing the struggle. We need to build environments, much like a well-maintained garden, where the pressure to be flawless is replaced by the encouragement to learn and iterate, making the process itself feel safe enough for everyone to contribute their best code, or their best solutions, without the shadow of stereotype looming over them.",
+    "reasoning_summary": "The persona is a conscientious, detail-oriented software developer (high conscientiousness) who is an immigrant and has a pragmatic, problem-solving mindset. The tone should be serious, analytical, and grounded in practical systems thinking. The discussion of stereotype threat must be framed using technical analogies (codebase, architecture, bugs) to align with the persona's profession. The conclusion must advocate for tangible, structured solutions (iterative metrics, proactive representation) rather than vague platitudes, reflecting the persona's high conscientiousness and analytical nature.",
+    "tone": "Pragmatic, Analytical, Grounded",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "occupation",
+      "migration_status",
+      "ocean.conscientiousness",
+      "ocean.openness"
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 46,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "pharmacist",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "classical music",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 43,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 14,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 18,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 79,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":46,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"pharmacist\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"classical music\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":43,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":14,\"level\":\"low\"},\"extraversion\":{\"score\":38,\"level\":\"moderate\"},\"agreeableness\":{\"score\":18,\"level\":\"low\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":46,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"pharmacist\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"classical music\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":43,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":14,\"level\":\"low\"},\"extraversion\":{\"score\":38,\"level\":\"moderate\"},\"agreeableness\":{\"score\":18,\"level\":\"low\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n    \"opinion\": \"As a pharmacist with a PhD working in Philadelphia, I approach discussions about healthcare and COVID vaccines from both professional and personal perspectives. My daily work involves dispensing medications and providing vaccine information to diverse patients, which has given me firsthand experience with the complexities of these conversations. Given my high neuroticism and depression, I find these discussions particularly draining, especially when they involve misinformation or strong emotions. My Islamic faith teaches compassion and community responsibility, which aligns with public health principles, but I also understand individual concerns about medical interventions. With three children, I've had to navigate these conversations at home too, balancing scientific facts with family values. My low conscientiousness means I sometimes struggle with structured approaches, but my moderate openness helps me listen to different viewpoints. I've learned that effective management involves acknowledging emotions first—both mine and others'. When patients express vaccine hesitancy, I start by validating their concerns rather than immediately presenting data. For example, I might say, 'I understand this feels overwhelming with all the conflicting information.' Then I share my professional knowledge in accessible terms, explaining how vaccines work and their safety monitoring. My limited social media use helps me avoid echo chambers, so I rely on peer-reviewed journals and public health guidelines. I emphasize that healthcare decisions should be based on individual medical histories, not political or social pressures. In heated discussions, I try to redirect focus to shared goals like community health and protecting vulnerable populations. My depression sometimes makes these interactions exhausting, so I set boundaries—I might say, 'Let's continue this when we're both calmer.' Ultimately, I believe respectful dialogue, grounded in evidence and empathy, is key to navigating these challenging conversations.\",\n    \"reasoning_summary\": \"Derived opinion from persona traits: Occupation as pharmacist provides professional authority on healthcare/vaccines. PhD education suggests reliance on scientific evidence. High neuroticism and depression explain emotional challenges in discussions. Islamic faith influences ethical framework emphasizing community. Low agreeableness suggests potential difficulty with conflict but moderate openness allows for listening. Three children and marriage add personal stakes. Limited social media use indicates avoidance of misinformation sources. Philadelphia location implies urban, diverse patient interactions. Age 46 brings life experience. Overall, opinion balances professional knowledge with personal emotional management strategies.\",\n    \"tone\": \"Professional yet personal, somewhat weary but compassionate, evidence-based with emotional awareness\",\n    \"citations\": [\"CDC guidelines\", \"Pharmaceutical journals\", \"Islamic health ethics principles\"],\n    \"safety_notes\": \"none\",\n    \"used_persona_fields\": [\"occupation\", \"education_level\", \"psychological_feature\", \"religious_beliefs\", \"children\", \"current_marital_status\", \"time_onsocialmedia\", \"city_of_living\", \"age\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a pharmacist with a PhD working in Philadelphia, I approach discussions about healthcare and COVID vaccines from both professional and personal perspectives. My daily work involves dispensing medications and providing vaccine information to diverse patients, which has given me firsthand experience with the complexities of these conversations. Given my high neuroticism and depression, I find these discussions particularly draining, especially when they involve misinformation or strong emotions. My Islamic faith teaches compassion and community responsibility, which aligns with public health principles, but I also understand individual concerns about medical interventions. With three children, I've had to navigate these conversations at home too, balancing scientific facts with family values. My low conscientiousness means I sometimes struggle with structured approaches, but my moderate openness helps me listen to different viewpoints. I've learned that effective management involves acknowledging emotions first—both mine and others'. When patients express vaccine hesitancy, I start by validating their concerns rather than immediately presenting data. For example, I might say, 'I understand this feels overwhelming with all the conflicting information.' Then I share my professional knowledge in accessible terms, explaining how vaccines work and their safety monitoring. My limited social media use helps me avoid echo chambers, so I rely on peer-reviewed journals and public health guidelines. I emphasize that healthcare decisions should be based on individual medical histories, not political or social pressures. In heated discussions, I try to redirect focus to shared goals like community health and protecting vulnerable populations. My depression sometimes makes these interactions exhausting, so I set boundaries—I might say, 'Let's continue this when we're both calmer.' Ultimately, I believe respectful dialogue, grounded in evidence and empathy, is key to navigating these challenging conversations.",
+    "reasoning_summary": "Derived opinion from persona traits: Occupation as pharmacist provides professional authority on healthcare/vaccines. PhD education suggests reliance on scientific evidence. High neuroticism and depression explain emotional challenges in discussions. Islamic faith influences ethical framework emphasizing community. Low agreeableness suggests potential difficulty with conflict but moderate openness allows for listening. Three children and marriage add personal stakes. Limited social media use indicates avoidance of misinformation sources. Philadelphia location implies urban, diverse patient interactions. Age 46 brings life experience. Overall, opinion balances professional knowledge with personal emotional management strategies.",
+    "tone": "Professional yet personal, somewhat weary but compassionate, evidence-based with emotional awareness",
+    "citations": [
+      "CDC guidelines",
+      "Pharmaceutical journals",
+      "Islamic health ethics principles"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "psychological_feature",
+      "religious_beliefs",
+      "children",
+      "current_marital_status",
+      "time_onsocialmedia",
+      "city_of_living",
+      "age",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

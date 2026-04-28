@@ -1,0 +1,98 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 79,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Bari",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "single",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "knitting",
+        "volunteering",
+        "hiking",
+        "gardening",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 36,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 30,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 6,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 3,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":79,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"knitting\",\"volunteering\",\"hiking\",\"gardening\",\"running\"],\"ocean\":{\"openness\":{\"score\":36,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":30,\"level\":\"low\"},\"extraversion\":{\"score\":38,\"level\":\"moderate\"},\"agreeableness\":{\"score\":6,\"level\":\"low\"},\"neuroticism\":{\"score\":3,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":79,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"knitting\",\"volunteering\",\"hiking\",\"gardening\",\"running\"],\"ocean\":{\"openness\":{\"score\":36,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":30,\"level\":\"low\"},\"extraversion\":{\"score\":38,\"level\":\"moderate\"},\"agreeableness\":{\"score\":6,\"level\":\"low\"},\"neuroticism\":{\"score\":3,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"I've been following the news online for a while now, and I have to say it's becoming quite confusing. As an elderly man living in Bari, Italy, I don't spend much time on these platforms—just occasionally when my children send me links or remind me about family gatherings through social media. But even this little exposure can be overwhelming with all the misinformation floating around.\\n\\nI think one way to deal with fake content is by being more careful who you trust online. My father had a bachelor's degree, so he always tells me that education and critical thinking are key. I try my best not to jump on every link without reading it properly or checking the source.\\n\\nAnother thing that helps me is looking for official sources. For example, when there's news about Italy or Bari, I prefer to check government websites or established newspapers rather than random posts claiming to be breaking news.\\n\\nOf course, with my low conscientiousness and moderate openness from the Big Five test, sometimes it's hard for me to keep track of everything properly. But knitting keeps my mind sharp enough that at least I can focus when reading content carefully.\",\n  \"reasoning_summary\": \"First, consider personal background—age 79, part-time employed as waiter/waitress, which means limited time on social media but still exposed occasionally through family.\\n\\nSecond, psychological traits: depressed (low agreeableness) might affect trust in others and susceptibility to fake content; low neuroticism helps maintain calm amidst confusion.\\n\\nThird, education level upper secondary suggests basic literacy skills for evaluating sources.\\n\\nFourth, migration status native-born Italian implies familiarity with local authorities' communication channels.\\n\\nFifth, time on social media: a few times monthly means less exposure but still vulnerable to misinformation.\\n\\nFinally, hobbies like knitting and volunteering help build critical thinking skills.\",\n  \"tone\": \"Calm, measured, slightly weary due to depression\",\n  \"citations\": [\"Personal Experience\"],\n  \"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean.openness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I've been following the news online for a while now, and I have to say it's becoming quite confusing. As an elderly man living in Bari, Italy, I don't spend much time on these platforms—just occasionally when my children send me links or remind me about family gatherings through social media. But even this little exposure can be overwhelming with all the misinformation floating around.\n\nI think one way to deal with fake content is by being more careful who you trust online. My father had a bachelor's degree, so he always tells me that education and critical thinking are key. I try my best not to jump on every link without reading it properly or checking the source.\n\nAnother thing that helps me is looking for official sources. For example, when there's news about Italy or Bari, I prefer to check government websites or established newspapers rather than random posts claiming to be breaking news.\n\nOf course, with my low conscientiousness and moderate openness from the Big Five test, sometimes it's hard for me to keep track of everything properly. But knitting keeps my mind sharp enough that at least I can focus when reading content carefully.",
+    "reasoning_summary": "First, consider personal background—age 79, part-time employed as waiter/waitress, which means limited time on social media but still exposed occasionally through family.\n\nSecond, psychological traits: depressed (low agreeableness) might affect trust in others and susceptibility to fake content; low neuroticism helps maintain calm amidst confusion.\n\nThird, education level upper secondary suggests basic literacy skills for evaluating sources.\n\nFourth, migration status native-born Italian implies familiarity with local authorities' communication channels.\n\nFifth, time on social media: a few times monthly means less exposure but still vulnerable to misinformation.\n\nFinally, hobbies like knitting and volunteering help build critical thinking skills.",
+    "tone": "Calm, measured, slightly weary due to depression",
+    "citations": [
+      "Personal Experience"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness"
+    ]
+  }
+}

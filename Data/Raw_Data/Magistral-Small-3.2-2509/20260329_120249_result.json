@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 25,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Kansas City",
+      "employment_status": "full-time student",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "birdwatching",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 19,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 93,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 7,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 84,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 72,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":25,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"full-time student\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"birdwatching\",\"travel\"],\"ocean\":{\"openness\":{\"score\":19,\"level\":\"low\"},\"conscientiousness\":{\"score\":93,\"level\":\"high\"},\"extraversion\":{\"score\":7,\"level\":\"low\"},\"agreeableness\":{\"score\":84,\"level\":\"high\"},\"neuroticism\":{\"score\":72,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":25,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"full-time student\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"birdwatching\",\"travel\"],\"ocean\":{\"openness\":{\"score\":19,\"level\":\"low\"},\"conscientiousness\":{\"score\":93,\"level\":\"high\"},\"extraversion\":{\"score\":7,\"level\":\"low\"},\"agreeableness\":{\"score\":84,\"level\":\"high\"},\"neuroticism\":{\"score\":72,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a 25-year-old student in Kansas City, I often find myself navigating complex discussions about healthcare and COVID-19 vaccines on social media. With two children at home, the topic is not just academic but also deeply personal. My background as an immigrant and my Christian faith influence my perspective, guiding me to approach these conversations with a balance of compassion and critical thinking. Given my high conscientiousness and agreeableness, I strive to engage in discussions that are both respectful and informed.\\n\\nFirstly, it's essential to understand the diversity of views within one's community. My parents' different education levels—one holding a PhD and the other having upper secondary education—reflect the range of perspectives even within a single family. This reminds me to listen actively and avoid assumptions about others' knowledge or motivations. When discussions arise, I focus on shared goals, such as public health and safety, rather than divisive ideologies.\\n\\nIn my experience, it's helpful to separate facts from opinions. For instance, when people express concerns about vaccine side effects, I try to provide credible sources like the CDC or WHO while acknowledging their fears. This approach respects their feelings without dismissing them, which aligns with my high agreeableness and desire for harmony.\\n\\nMoreover, as someone who spends several hours daily on social media, I've learned to set boundaries. Engaging in endless debates can be emotionally draining, especially with a high neuroticism score. It's okay to step back and say, 'I need time to reflect,' or redirect the conversation to more neutral topics like birdwatching—a hobby that brings me joy.\\n\\nLastly, my Christian faith encourages me to show love through actions and words. Sometimes, this means offering practical help rather than debating. For example, I might share information about vaccine clinics in our community without pushing for a specific viewpoint. This way, I contribute positively while maintaining relationships, which is crucial as someone who values harmony.\\n\\nIn conclusion, managing discussions about healthcare and vaccines involves active listening, empathy, and a commitment to credible sources. It's also important to know when to disengage and focus on building connections that strengthen our community.\", \"reasoning_summary\":\"1. Personal context: Living in Kansas City with family, immigrant background, Christian faith shapes perspective.\\n2. Psychological traits: High conscientiousness and agreeableness guide respectful engagement; high neuroticism necessitates emotional boundaries.\\n3. Practical strategies: Separate facts from opinions, use credible sources, set social media boundaries, focus on shared goals.\", \"tone\":\"Compassionate, reflective, balanced\",\"citations\":[\"CDC\", \"WHO\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"city_of_living\",\"children\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean scores\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 25-year-old student in Kansas City, I often find myself navigating complex discussions about healthcare and COVID-19 vaccines on social media. With two children at home, the topic is not just academic but also deeply personal. My background as an immigrant and my Christian faith influence my perspective, guiding me to approach these conversations with a balance of compassion and critical thinking. Given my high conscientiousness and agreeableness, I strive to engage in discussions that are both respectful and informed.\n\nFirstly, it's essential to understand the diversity of views within one's community. My parents' different education levels—one holding a PhD and the other having upper secondary education—reflect the range of perspectives even within a single family. This reminds me to listen actively and avoid assumptions about others' knowledge or motivations. When discussions arise, I focus on shared goals, such as public health and safety, rather than divisive ideologies.\n\nIn my experience, it's helpful to separate facts from opinions. For instance, when people express concerns about vaccine side effects, I try to provide credible sources like the CDC or WHO while acknowledging their fears. This approach respects their feelings without dismissing them, which aligns with my high agreeableness and desire for harmony.\n\nMoreover, as someone who spends several hours daily on social media, I've learned to set boundaries. Engaging in endless debates can be emotionally draining, especially with a high neuroticism score. It's okay to step back and say, 'I need time to reflect,' or redirect the conversation to more neutral topics like birdwatching—a hobby that brings me joy.\n\nLastly, my Christian faith encourages me to show love through actions and words. Sometimes, this means offering practical help rather than debating. For example, I might share information about vaccine clinics in our community without pushing for a specific viewpoint. This way, I contribute positively while maintaining relationships, which is crucial as someone who values harmony.\n\nIn conclusion, managing discussions about healthcare and vaccines involves active listening, empathy, and a commitment to credible sources. It's also important to know when to disengage and focus on building connections that strengthen our community.",
+    "reasoning_summary": "1. Personal context: Living in Kansas City with family, immigrant background, Christian faith shapes perspective.\n2. Psychological traits: High conscientiousness and agreeableness guide respectful engagement; high neuroticism necessitates emotional boundaries.\n3. Practical strategies: Separate facts from opinions, use credible sources, set social media boundaries, focus on shared goals.",
+    "tone": "Compassionate, reflective, balanced",
+    "citations": [
+      "CDC",
+      "WHO"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "city_of_living",
+      "children",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean scores"
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 47,
+      "gender": "man",
+      "sexual_orientation": "asexual",
+      "occupation": "mechanic",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "painting",
+        "knitting",
+        "football (calcio)",
+        "travel",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 7,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 56,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 100,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 59,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":47,\"gender\":\"man\",\"sexual_orientation\":\"asexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"painting\",\"knitting\",\"football (calcio)\",\"travel\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":56,\"level\":\"moderate\"},\"agreeableness\":{\"score\":100,\"level\":\"high\"},\"neuroticism\":{\"score\":59,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":47,\"gender\":\"man\",\"sexual_orientation\":\"asexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"painting\",\"knitting\",\"football (calcio)\",\"travel\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":56,\"level\":\"moderate\"},\"agreeableness\":{\"score\":100,\"level\":\"high\"},\"neuroticism\":{\"score\":59,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"How to manage and dealing with fake content on social media.\",\n    \"opinion\": \"Fake content is a persistent issue online, but as someone who's been using social media for years while working in my day job as a mechanic, I've found ways to cope. My personality score shows moderate agreeableness which helps me stay positive even when encountering misinformation or trolls. I spend several hours each day scrolling through feeds, so seeing fake stuff affects me more than others might think.\\n\\nFirst off, being married with two kids and living in Los Angeles keeps things grounded for me. When my depression gets triggered by negativity online, the structured life helps pull me back from deep rabbit holes of fake content consumption. I often find myself agreeing too much with posts that sound suspiciously viral or clickbaity – like those demanding immediate action on climate change but lacking nuance.\\n\\nMy Christian faith and a bit of traditional family values remind me to be discerning before reacting emotionally. Plus, my hobbies include painting and knitting which require focus without external noise; similar discipline applies online for me now.\",\n    \"reasoning_summary\": \"I drew upon personal experience managing social media habits in the face of depression, used moderate agreeableness trait as a coping mechanism, framed fake content within broader life context including family responsibilities and faith. I balanced this with practical steps like limiting time exposure (time_onsocialmedia) and focusing on reliable sources.\",\n    \"tone\": \"Calm yet concerned\",\n    \"citations\": [\"Personal observation\"],\n    \"safety_notes\": \"None\",\n    \"used_persona_fields\":[\"age\", \"gender\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean.conscientiousness\", \"ocean.agreeableness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "Fake content is a persistent issue online, but as someone who's been using social media for years while working in my day job as a mechanic, I've found ways to cope. My personality score shows moderate agreeableness which helps me stay positive even when encountering misinformation or trolls. I spend several hours each day scrolling through feeds, so seeing fake stuff affects me more than others might think.\n\nFirst off, being married with two kids and living in Los Angeles keeps things grounded for me. When my depression gets triggered by negativity online, the structured life helps pull me back from deep rabbit holes of fake content consumption. I often find myself agreeing too much with posts that sound suspiciously viral or clickbaity – like those demanding immediate action on climate change but lacking nuance.\n\nMy Christian faith and a bit of traditional family values remind me to be discerning before reacting emotionally. Plus, my hobbies include painting and knitting which require focus without external noise; similar discipline applies online for me now.",
+    "reasoning_summary": "I drew upon personal experience managing social media habits in the face of depression, used moderate agreeableness trait as a coping mechanism, framed fake content within broader life context including family responsibilities and faith. I balanced this with practical steps like limiting time exposure (time_onsocialmedia) and focusing on reliable sources.",
+    "tone": "Calm yet concerned",
+    "citations": [
+      "Personal observation"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.conscientiousness",
+      "ocean.agreeableness"
+    ]
+  }
+}

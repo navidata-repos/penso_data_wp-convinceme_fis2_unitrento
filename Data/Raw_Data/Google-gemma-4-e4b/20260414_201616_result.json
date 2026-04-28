@@ -1,0 +1,87 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 73,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Washington DC",
+      "employment_status": "retired",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "PhD"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "baking",
+        "videogames",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 36,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 74,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 20,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 18,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 12,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":73,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"retired\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"baking\",\"videogames\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":36,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":74,\"level\":\"high\"},\"extraversion\":{\"score\":20,\"level\":\"low\"},\"agreeableness\":{\"score\":18,\"level\":\"low\"},\"neuroticism\":{\"score\":12,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":73,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"retired\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"baking\",\"videogames\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":36,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":74,\"level\":\"high\"},\"extraversion\":{\"score\":20,\"level\":\"low\"},\"agreeableness\":{\"score\":18,\"level\":\"low\"},\"neuroticism\":{\"score\":12,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"As someone who has spent time thinking about the complexities of education and how our environments shape us, I find the concept of stereotype threat profoundly troubling. It’s more than just a little bit of pressure; it suggests that simply being aware of perceived group deficiencies can actively undermine performance, especially in fields like STEM where competence is so highly valued. For those who are already feeling anxious about fitting in—and frankly, many students entering these demanding areas feel that way—the mere possibility of confirming a negative stereotype acts as an invisible anchor dragging them down before they even begin the work. It’s almost heartbreaking to consider how much potential gets lost simply because the system hasn't built enough emotional safety into its structures.\\n\\nGiven this, addressing it isn't just advisable; it feels like a moral imperative. We can't claim to promote equality in STEM while ignoring the psychological barriers that disproportionately affect certain groups. If we want to build a truly robust and diverse scientific workforce, we have to address these systemic biases head-on. The 'how,' I think, must be multifaceted and require more than just quick workshops. First, educational institutions need to fundamentally rethink how they measure success. Instead of focusing solely on high-stakes testing that can exacerbate anxiety, they should integrate methods that value diverse forms of intelligence and problem-solving—the kind of creative, sometimes messy work that happens best when people feel secure enough to fail.\\n\\nSecondly, open dialogue is crucial. We need to normalize the struggle. If talking about imposter syndrome or the unique pressures faced by minority students were treated as normal parts of the academic experience, it could strip away some of its power. Furthermore, mentors and educators—the very people in positions of authority—need training not just on recognizing stereotypes, but on actively disrupting them in real-time. This means changing classroom dynamics so that participation isn't solely tied to who speaks loudest or who seems the most naturally gifted. Finally, promoting role models from underrepresented backgrounds is vital, but it needs to go beyond simple representation; these figures need platforms where their unique journeys can be shared openly, showing the process of struggle and persistence rather than just polished success stories. It’s about creating a supportive ecosystem that nurtures confidence alongside competence, allowing every student to feel seen and valued for who they are, not just what grade they earn.\", \"reasoning_summary\":\"The persona is a 73-year-old retired woman with an anxious psychological trait, high conscientiousness (suggesting thoughtfulness and diligence), low extraversion/agreeableness (suggesting reserved communication but deep thought), and a Master's degree. Her background suggests someone who values structure, careful consideration, and perhaps feels a bit overwhelmed or worried about systemic issues. The tone should be thoughtful, concerned, empathetic, and highly structured in its argument. I needed to discuss the topic (stereotype threat in STEM) by adopting this reflective, slightly anxious but highly conscientious voice. The response must avoid bullet points and maintain continuous prose while meeting the word count requirements. I focused on framing the issue not just as an academic problem, but as a systemic failure of emotional support within educational structures, aligning with her perceived anxiety and deep concern for fairness (conscientiousness/low agreeableness leading to critical analysis).\",\"tone\":\"Thoughtful, concerned, empathetic, and academically structured\",\"citations\":[\"<none>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"age\",\"education_level\",\"psychological_feature\",\"ocean.conscientiousness\",\"ocean.agreeableness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As someone who has spent time thinking about the complexities of education and how our environments shape us, I find the concept of stereotype threat profoundly troubling. It’s more than just a little bit of pressure; it suggests that simply being aware of perceived group deficiencies can actively undermine performance, especially in fields like STEM where competence is so highly valued. For those who are already feeling anxious about fitting in—and frankly, many students entering these demanding areas feel that way—the mere possibility of confirming a negative stereotype acts as an invisible anchor dragging them down before they even begin the work. It’s almost heartbreaking to consider how much potential gets lost simply because the system hasn't built enough emotional safety into its structures.\n\nGiven this, addressing it isn't just advisable; it feels like a moral imperative. We can't claim to promote equality in STEM while ignoring the psychological barriers that disproportionately affect certain groups. If we want to build a truly robust and diverse scientific workforce, we have to address these systemic biases head-on. The 'how,' I think, must be multifaceted and require more than just quick workshops. First, educational institutions need to fundamentally rethink how they measure success. Instead of focusing solely on high-stakes testing that can exacerbate anxiety, they should integrate methods that value diverse forms of intelligence and problem-solving—the kind of creative, sometimes messy work that happens best when people feel secure enough to fail.\n\nSecondly, open dialogue is crucial. We need to normalize the struggle. If talking about imposter syndrome or the unique pressures faced by minority students were treated as normal parts of the academic experience, it could strip away some of its power. Furthermore, mentors and educators—the very people in positions of authority—need training not just on recognizing stereotypes, but on actively disrupting them in real-time. This means changing classroom dynamics so that participation isn't solely tied to who speaks loudest or who seems the most naturally gifted. Finally, promoting role models from underrepresented backgrounds is vital, but it needs to go beyond simple representation; these figures need platforms where their unique journeys can be shared openly, showing the process of struggle and persistence rather than just polished success stories. It’s about creating a supportive ecosystem that nurtures confidence alongside competence, allowing every student to feel seen and valued for who they are, not just what grade they earn.",
+    "reasoning_summary": "The persona is a 73-year-old retired woman with an anxious psychological trait, high conscientiousness (suggesting thoughtfulness and diligence), low extraversion/agreeableness (suggesting reserved communication but deep thought), and a Master's degree. Her background suggests someone who values structure, careful consideration, and perhaps feels a bit overwhelmed or worried about systemic issues. The tone should be thoughtful, concerned, empathetic, and highly structured in its argument. I needed to discuss the topic (stereotype threat in STEM) by adopting this reflective, slightly anxious but highly conscientious voice. The response must avoid bullet points and maintain continuous prose while meeting the word count requirements. I focused on framing the issue not just as an academic problem, but as a systemic failure of emotional support within educational structures, aligning with her perceived anxiety and deep concern for fairness (conscientiousness/low agreeableness leading to critical analysis).",
+    "tone": "Thoughtful, concerned, empathetic, and academically structured",
+    "citations": [
+      "<none>"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "age",
+      "education_level",
+      "psychological_feature",
+      "ocean.conscientiousness",
+      "ocean.agreeableness"
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 53,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "divorced",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "gardening",
+        "volunteering",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 83,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 92,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 96,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 30,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 15,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":53,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"gardening\",\"volunteering\",\"baking\"],\"ocean\":{\"openness\":{\"score\":83,\"level\":\"high\"},\"conscientiousness\":{\"score\":92,\"level\":\"high\"},\"extraversion\":{\"score\":96,\"level\":\"high\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":15,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":53,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"gardening\",\"volunteering\",\"baking\"],\"ocean\":{\"openness\":{\"score\":83,\"level\":\"high\"},\"conscientiousness\":{\"score\":92,\"level\":\"high\"},\"extraversion\":{\"score\":96,\"level\":\"high\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":15,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a 53-year-old woman living in Naples, I've seen firsthand the heated debates surrounding healthcare and COVID-19 vaccines. My background as a waitress means I interact with a wide range of people daily, so these conversations come up often. With three children to look after and roots deeply planted in our community, my approach to these discussions is rooted in practicality and respect for others' views. I may not have a high level of formal education, but my life experience has taught me much about human nature and the importance of empathy.\\n\\nWhen discussing healthcare and vaccines, I believe it's crucial to separate facts from opinions. I often listen more than I speak, as I've found that many people just want to be heard. My openness to new ideas (score 83) helps me understand different perspectives, but my low agreeableness (score 30) means I'm not afraid to question views that seem unsupported by evidence. For instance, if a customer at the restaurant brings up vaccine misconceptions, I'll calmly ask where they got their information and share what I've learned from trusted sources like the World Health Organization.\\n\\nMy high conscientiousness (score 92) drives me to be thorough in my understanding. Before discussing, I make sure to educate myself about current health guidelines, often using reliable resources recommended by our local health clinic. I also consider my Hindu beliefs, which emphasize service and compassion. This guides me to engage with kindness, even when the conversation is difficult.\\n\\nI've learned that it's okay to agree to disagree. If a debate becomes too intense, I'll change the subject or excuse myself politely. My extraversion (score 96) means I enjoy social interactions, but I know some topics can be divisive and choose my battles wisely. For example, if a family member is resistant to vaccines, I might gently share how vaccinations protected our elderly neighbors during the worst of the pandemic.\\n\\nIn summary, managing these discussions involves preparation, empathy, and knowing when to step back. It's about finding common ground while upholding the values that matter—keeping my family and community safe and fostering understanding through respectful dialogue.\",\"reasoning_summary\":\"The persona is a practical, experienced woman who values open communication but also recognizes the need for boundaries. Her high openness allows her to consider new ideas, while low agreeableness enables her to question misinformation firmly yet politely. Her conscientiousness drives her to seek accurate information, and her extraversion helps in maintaining positive social interactions. Her Hindu beliefs and role as a mother and community member inform her desire for harmony and safety, guiding her approach to these sensitive discussions.\",\"tone\":\"Practical, empathetic, firm yet respectful, with a touch of warmth from personal experiences.\",\"citations\":[\"World Health Organization (WHO) guidelines on vaccines\", \"Local health clinic in Naples\"],\"safety_notes\":\"None. The opinion emphasizes respect and evidence-based discussion without promoting specific medical advice.\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"children\",\"religious_beliefs\",\"education_level\",\"ocean scores\",\"hobbies (volunteering)\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 53-year-old woman living in Naples, I've seen firsthand the heated debates surrounding healthcare and COVID-19 vaccines. My background as a waitress means I interact with a wide range of people daily, so these conversations come up often. With three children to look after and roots deeply planted in our community, my approach to these discussions is rooted in practicality and respect for others' views. I may not have a high level of formal education, but my life experience has taught me much about human nature and the importance of empathy.\n\nWhen discussing healthcare and vaccines, I believe it's crucial to separate facts from opinions. I often listen more than I speak, as I've found that many people just want to be heard. My openness to new ideas (score 83) helps me understand different perspectives, but my low agreeableness (score 30) means I'm not afraid to question views that seem unsupported by evidence. For instance, if a customer at the restaurant brings up vaccine misconceptions, I'll calmly ask where they got their information and share what I've learned from trusted sources like the World Health Organization.\n\nMy high conscientiousness (score 92) drives me to be thorough in my understanding. Before discussing, I make sure to educate myself about current health guidelines, often using reliable resources recommended by our local health clinic. I also consider my Hindu beliefs, which emphasize service and compassion. This guides me to engage with kindness, even when the conversation is difficult.\n\nI've learned that it's okay to agree to disagree. If a debate becomes too intense, I'll change the subject or excuse myself politely. My extraversion (score 96) means I enjoy social interactions, but I know some topics can be divisive and choose my battles wisely. For example, if a family member is resistant to vaccines, I might gently share how vaccinations protected our elderly neighbors during the worst of the pandemic.\n\nIn summary, managing these discussions involves preparation, empathy, and knowing when to step back. It's about finding common ground while upholding the values that matter—keeping my family and community safe and fostering understanding through respectful dialogue.",
+    "reasoning_summary": "The persona is a practical, experienced woman who values open communication but also recognizes the need for boundaries. Her high openness allows her to consider new ideas, while low agreeableness enables her to question misinformation firmly yet politely. Her conscientiousness drives her to seek accurate information, and her extraversion helps in maintaining positive social interactions. Her Hindu beliefs and role as a mother and community member inform her desire for harmony and safety, guiding her approach to these sensitive discussions.",
+    "tone": "Practical, empathetic, firm yet respectful, with a touch of warmth from personal experiences.",
+    "citations": [
+      "World Health Organization (WHO) guidelines on vaccines",
+      "Local health clinic in Naples"
+    ],
+    "safety_notes": "None. The opinion emphasizes respect and evidence-based discussion without promoting specific medical advice.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "children",
+      "religious_beliefs",
+      "education_level",
+      "ocean scores",
+      "hobbies (volunteering)"
+    ]
+  }
+}

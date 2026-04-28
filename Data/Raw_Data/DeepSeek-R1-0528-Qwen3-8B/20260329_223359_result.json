@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 83,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Naples",
+      "employment_status": "retired",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cinema",
+        "board games",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 80,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 9,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 75,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 21,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 86,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":83,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cinema\",\"board games\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":80,\"level\":\"high\"},\"conscientiousness\":{\"score\":9,\"level\":\"low\"},\"extraversion\":{\"score\":75,\"level\":\"high\"},\"agreeableness\":{\"score\":21,\"level\":\"low\"},\"neuroticism\":{\"score\":86,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":83,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cinema\",\"board games\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":80,\"level\":\"high\"},\"conscientiousness\":{\"score\":9,\"level\":\"low\"},\"extraversion\":{\"score\":75,\"level\":\"high\"},\"agreeableness\":{\"score\":21,\"level\":\"low\"},\"neuroticism\":{\"score\":86,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"Managing discussions about healthcare, especially something as significant as COVID vaccines, can be quite overwhelming when you're curious like I am. My high openness means I'm always eager to learn new things, but my low conscientiousness keeps me from diving into complex details or sticking with a plan too long. Also, being in Naples, Italy, and having family there, including parents with different education levels—my father only went to primary school while my mother has a master's degree—I've learned that everyone processes information differently.\\n\\nI think the best way to approach these topics is to start simply. Maybe read an article or listen to someone discuss it in a podcast? I remember when COVID first hit, we were all glued to our screens because of the time I spend on social media—around one hour daily—but sometimes that can get messy with misinformation and strong opinions.\\n\\nMy high extraversion helps me engage people. I love my hobbies like board games where you chat and share ideas, so applying that to discussions about vaccines might work well for me. But my low agreeableness means if someone argues against their view too strongly or emotionally, I might not let it go—especially when discussing something as personal as health with my family.\\n\\nFor safety notes: Since my neuroticism is high, I get worried sometimes about getting sick myself or others in the community. But I believe that by being curious and asking questions gently (without the low agreeableness making me too soft), we can find common ground. And yes, as a Muslim woman married but not living with family now since they have their own things—though my mother has her master's degree so she might know more—I think it's important to consider how these discussions affect our daily lives and perhaps consult trusted sources rather than just social media.\",\n  \"reasoning_summary\": \"To manage COVID vaccine discussions, start with simple information due to high openness but low conscientiousness. Engage people using extraversion (e.g., hobbies like board games). Be cautious about emotional arguments because of low agreeableness; focus on facts from reliable sources since my neuroticism makes health concerns personal.\",\n  \"tone\": \"Gentle yet assertive, curious and straightforward.\",\n  \"citations\": [\"Italian Ministry of Health\", \"Islamic Fiqh Council on COVID-19\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"education_level\", \"city_of_living\", \"employment_status\", \"current_marital_status\", \"psychological_feature\", \"time_onsocialmedia\", \"religious_beliefs\", \"openness.score\", \"conscientiousness.score\", \"extraversion.score\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "Managing discussions about healthcare, especially something as significant as COVID vaccines, can be quite overwhelming when you're curious like I am. My high openness means I'm always eager to learn new things, but my low conscientiousness keeps me from diving into complex details or sticking with a plan too long. Also, being in Naples, Italy, and having family there, including parents with different education levels—my father only went to primary school while my mother has a master's degree—I've learned that everyone processes information differently.\n\nI think the best way to approach these topics is to start simply. Maybe read an article or listen to someone discuss it in a podcast? I remember when COVID first hit, we were all glued to our screens because of the time I spend on social media—around one hour daily—but sometimes that can get messy with misinformation and strong opinions.\n\nMy high extraversion helps me engage people. I love my hobbies like board games where you chat and share ideas, so applying that to discussions about vaccines might work well for me. But my low agreeableness means if someone argues against their view too strongly or emotionally, I might not let it go—especially when discussing something as personal as health with my family.\n\nFor safety notes: Since my neuroticism is high, I get worried sometimes about getting sick myself or others in the community. But I believe that by being curious and asking questions gently (without the low agreeableness making me too soft), we can find common ground. And yes, as a Muslim woman married but not living with family now since they have their own things—though my mother has her master's degree so she might know more—I think it's important to consider how these discussions affect our daily lives and perhaps consult trusted sources rather than just social media.",
+    "reasoning_summary": "To manage COVID vaccine discussions, start with simple information due to high openness but low conscientiousness. Engage people using extraversion (e.g., hobbies like board games). Be cautious about emotional arguments because of low agreeableness; focus on facts from reliable sources since my neuroticism makes health concerns personal.",
+    "tone": "Gentle yet assertive, curious and straightforward.",
+    "citations": [
+      "Italian Ministry of Health",
+      "Islamic Fiqh Council on COVID-19"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "city_of_living",
+      "employment_status",
+      "current_marital_status",
+      "psychological_feature",
+      "time_onsocialmedia",
+      "religious_beliefs",
+      "openness.score",
+      "conscientiousness.score",
+      "extraversion.score"
+    ]
+  }
+}

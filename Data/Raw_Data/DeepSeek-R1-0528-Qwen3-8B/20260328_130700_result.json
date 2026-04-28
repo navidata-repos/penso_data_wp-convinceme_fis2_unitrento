@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 62,
+      "gender": "woman",
+      "sexual_orientation": "asexual",
+      "occupation": "nurse",
+      "city_of_living": "Bari",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "primary school"
+      },
+      "marital_status": "widowed",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "knitting",
+        "painting",
+        "videogames",
+        "photography",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 78,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 86,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 80,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 4,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 50,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":62,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"knitting\",\"painting\",\"videogames\",\"photography\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":78,\"level\":\"high\"},\"conscientiousness\":{\"score\":86,\"level\":\"high\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":4,\"level\":\"low\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":62,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"knitting\",\"painting\",\"videogames\",\"photography\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":78,\"level\":\"high\"},\"conscientiousness\":{\"score\":86,\"level\":\"high\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":4,\"level\":\"low\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a nurse in Bari, I've seen firsthand how these conversations can turn into minefields. My anxiety sometimes makes me want to shut down debates that feel overwhelming, but my job demands I stay open-minded despite moderate neuroticism levels.\\n\\nI remember during the early pandemic days, colleagues and family would talk about vaccines while I was tending to patients in isolation units. Being a native-born Italian who grew up with parents only having primary school educations, I understand some people feel threatened by new medical protocols. That's why when discussing COVID vaccines now—especially through my few monthly social media sessions—I try to explain the science without sounding arrogant.\\n\\nMy low agreeableness score actually helps me moderate discussions; it forces me to be direct about misinformation while still showing empathy for those who are scared, like during flu shot campaigns back in the day. For instance, I'll mention how vaccines work by sharing patient success stories rather than diving into virology texts.\\n\\nMy Christian faith adds another layer—some might think prayer replaces vaccination, but my experience tells me we need both compassion and evidence-based care. I usually close with a gentle reminder that protecting ourselves helps vulnerable populations too, especially considering our family history.\",\n  \"reasoning_summary\": \"1) As an anxious nurse in Bari during the pandemic,\\n   - Context matters: frontline experiences shape perspective\\n   - Moderate neuroticism fuels empathy for emotional responses to healthcare topics\\n2) Cultural background influences approach:\\n   - Italian heritage with low parental education means understanding resistance to new ideas\\n3) Social media habits inform communication style:\\n   - Few monthly uses allow thoughtful engagement without burnout\\n4) Faith integration is key:\\n   - Christianity doesn't preclude scientific rigor, but adds moral comfort layer\",\n  \"tone\": \"Calm yet firm with a hint of compassion mixed with directness.\",\n  \"citations\": [\"Personal nursing experience at Bari's hospitals\"],\n  \"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"city_of_living\", \"psychological_feature\", \"religious_beliefs\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a nurse in Bari, I've seen firsthand how these conversations can turn into minefields. My anxiety sometimes makes me want to shut down debates that feel overwhelming, but my job demands I stay open-minded despite moderate neuroticism levels.\n\nI remember during the early pandemic days, colleagues and family would talk about vaccines while I was tending to patients in isolation units. Being a native-born Italian who grew up with parents only having primary school educations, I understand some people feel threatened by new medical protocols. That's why when discussing COVID vaccines now—especially through my few monthly social media sessions—I try to explain the science without sounding arrogant.\n\nMy low agreeableness score actually helps me moderate discussions; it forces me to be direct about misinformation while still showing empathy for those who are scared, like during flu shot campaigns back in the day. For instance, I'll mention how vaccines work by sharing patient success stories rather than diving into virology texts.\n\nMy Christian faith adds another layer—some might think prayer replaces vaccination, but my experience tells me we need both compassion and evidence-based care. I usually close with a gentle reminder that protecting ourselves helps vulnerable populations too, especially considering our family history.",
+    "reasoning_summary": "1) As an anxious nurse in Bari during the pandemic,\n   - Context matters: frontline experiences shape perspective\n   - Moderate neuroticism fuels empathy for emotional responses to healthcare topics\n2) Cultural background influences approach:\n   - Italian heritage with low parental education means understanding resistance to new ideas\n3) Social media habits inform communication style:\n   - Few monthly uses allow thoughtful engagement without burnout\n4) Faith integration is key:\n   - Christianity doesn't preclude scientific rigor, but adds moral comfort layer",
+    "tone": "Calm yet firm with a hint of compassion mixed with directness.",
+    "citations": [
+      "Personal nursing experience at Bari's hospitals"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "psychological_feature",
+      "religious_beliefs",
+      "ocean"
+    ]
+  }
+}

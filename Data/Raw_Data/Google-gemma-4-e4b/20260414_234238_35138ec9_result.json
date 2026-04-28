@@ -1,0 +1,135 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "google/gemma-4-e4b-it",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 48,
+      "gender": "genderqueer",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "knitting",
+        "gardening",
+        "cycling",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 99,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 100,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 43,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 64,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":48,\"gender\":\"genderqueer\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"gardening\",\"cycling\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":99,\"level\":\"high\"},\"conscientiousness\":{\"score\":100,\"level\":\"high\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":43,\"level\":\"moderate\"},\"neuroticism\":{\"score\":64,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":48,\"gender\":\"genderqueer\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"gardening\",\"cycling\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":99,\"level\":\"high\"},\"conscientiousness\":{\"score\":100,\"level\":\"high\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":43,\"level\":\"moderate\"},\"neuroticism\":{\"score\":64,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":48,\"gender\":\"genderqueer\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"gardening\",\"cycling\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":99,\"level\":\"high\"},\"conscientiousness\":{\"score\":100,\"level\":\"high\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":43,\"level\":\"moderate\"},\"neuroticism\":{\"score\":64,\"level\":\"moderate\"}}},\"opinion\":\"When you're out in the workshop, dealing with a tricky engine or figuring out how a complex system is supposed to tick, you know that pressure. You want the thing to *work*, and if you feel like you're going to mess it up because of some preconceived notion about who can handle the heavy lifting or the fine diagnostics, that tension itself starts to make your hands shake or your mind go blank. That’s what stereotype threat feels like, just in a high-stakes repair job, but scaled up to the world of STEM. It's that insidious feeling that if you're from a certain background, or if you belong to a group that's historically overlooked in science, the mere presence of that stereotype—that you might not be as capable—can actually undermine your performance when you're trying your best. It’s not about actual lack of skill; it's the mental drain caused by the anxiety of confirming a negative expectation. And yes, we absolutely must address it. Ignoring it is like trying to fix a sputtering carburetor without looking at the fuel line—the problem will just keep manifesting in unpredictable ways. Since I've always been someone who likes to see things through logically, much like when I'm tending my garden and I need to understand the soil composition, I think the solution needs to be multi-layered. For education, we can't just tell people 'don't worry about it'; that's like telling a cyclist to just 'not be nervous' before a long ride. Instead, we need to actively de-stigmatize the field. This means showing diverse faces in STEM—not just token gestures, but showing the depth and breadth of competence across different groups. Furthermore, in learning environments, creating a culture where mistakes are seen as necessary data points, not personal failures, is crucial. When the fear of being judged for not fitting a narrow mold is removed, the focus shifts back to the problem itself, which is what we really want. It’s about building a workspace, whether it’s a lab or a mechanic's bay, where everyone feels their contribution is valuable, regardless of their starting point.\",\"reasoning_summary\":\"The persona is a conscientious, open-minded mechanic with a high level of focus (Conscientiousness 100, Openness 99). The tone must be practical, logical, and empathetic, reflecting a hands-on approach to a complex social problem. The discussion must define stereotype threat using an analogy from a mechanical/craft context to ground the abstract concept. The answer must strongly advocate for solutions, focusing on systemic changes rather than just individual willpower, aligning with the persona's practical problem-solving nature (e.g., 'fix the fuel line').\",\"tone\":\"Practical, deeply conscientious, and empathetic, delivered with the grounded wisdom of a skilled tradesperson\",\"citations\":[\"N/A\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"occupation\",\"hobbies\",\"ocean.conscientiousness\",\"ocean.openness\",\"psychological_feature\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 48,
+      "gender": "genderqueer",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "knitting",
+        "gardening",
+        "cycling",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 99,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 100,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 43,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 64,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion": "When you're out in the workshop, dealing with a tricky engine or figuring out how a complex system is supposed to tick, you know that pressure. You want the thing to *work*, and if you feel like you're going to mess it up because of some preconceived notion about who can handle the heavy lifting or the fine diagnostics, that tension itself starts to make your hands shake or your mind go blank. That’s what stereotype threat feels like, just in a high-stakes repair job, but scaled up to the world of STEM. It's that insidious feeling that if you're from a certain background, or if you belong to a group that's historically overlooked in science, the mere presence of that stereotype—that you might not be as capable—can actually undermine your performance when you're trying your best. It’s not about actual lack of skill; it's the mental drain caused by the anxiety of confirming a negative expectation. And yes, we absolutely must address it. Ignoring it is like trying to fix a sputtering carburetor without looking at the fuel line—the problem will just keep manifesting in unpredictable ways. Since I've always been someone who likes to see things through logically, much like when I'm tending my garden and I need to understand the soil composition, I think the solution needs to be multi-layered. For education, we can't just tell people 'don't worry about it'; that's like telling a cyclist to just 'not be nervous' before a long ride. Instead, we need to actively de-stigmatize the field. This means showing diverse faces in STEM—not just token gestures, but showing the depth and breadth of competence across different groups. Furthermore, in learning environments, creating a culture where mistakes are seen as necessary data points, not personal failures, is crucial. When the fear of being judged for not fitting a narrow mold is removed, the focus shifts back to the problem itself, which is what we really want. It’s about building a workspace, whether it’s a lab or a mechanic's bay, where everyone feels their contribution is valuable, regardless of their starting point.",
+    "reasoning_summary": "The persona is a conscientious, open-minded mechanic with a high level of focus (Conscientiousness 100, Openness 99). The tone must be practical, logical, and empathetic, reflecting a hands-on approach to a complex social problem. The discussion must define stereotype threat using an analogy from a mechanical/craft context to ground the abstract concept. The answer must strongly advocate for solutions, focusing on systemic changes rather than just individual willpower, aligning with the persona's practical problem-solving nature (e.g., 'fix the fuel line').",
+    "tone": "Practical, deeply conscientious, and empathetic, delivered with the grounded wisdom of a skilled tradesperson",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "occupation",
+      "hobbies",
+      "ocean.conscientiousness",
+      "ocean.openness",
+      "psychological_feature"
+    ]
+  }
+}

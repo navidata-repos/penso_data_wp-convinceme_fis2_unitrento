@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 90,
+      "gender": "woman",
+      "sexual_orientation": "asexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "retired",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "videogames",
+        "baking",
+        "classical music"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 17,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 23,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 87,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 46,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":90,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"videogames\",\"baking\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":17,\"level\":\"low\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":23,\"level\":\"low\"},\"agreeableness\":{\"score\":87,\"level\":\"high\"},\"neuroticism\":{\"score\":46,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":90,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"videogames\",\"baking\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":17,\"level\":\"low\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":23,\"level\":\"low\"},\"agreeableness\":{\"score\":87,\"level\":\"high\"},\"neuroticism\":{\"score\":46,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"I've lived through plenty in my ninety years, from two world wars to the present day. When it comes to sensitive topics like healthcare or COVID vaccines, I believe in approaching them with calmness and clarity. One key thing is to rely on facts because emotions can run high during these discussions. For instance, when people talk about vaccines, I suggest looking at scientific studies rather than just opinions. My personality makes me creative but also agreeable; I like to find common ground without being confrontational.\\n\\nIn Bologna, where we Italians are famously good with food, I draw a parallel: much like tasting authentic pasta requires understanding the ingredients and preparation, effective communication in healthcare discussions demands knowing the background information. It's not just about what the data says but how it connects to real people's lives. As someone who enjoys baking cookies for my grandson, I know firsthand that mixing the wrong things can ruin a recipe entirely.\\n\\nI also find it helpful to consider historical context. We're living in uncertain times with this pandemic, and remembering past public health crises can provide perspective. For example, during polio outbreaks earlier in the century, people relied on community support systems rather than social media debates. My retired life allows me time to reflect deeply before responding.\\n\\nA practical tip would be to listen first without interrupting, then ask questions gently with a creative approach that seeks solutions not arguments. This aligns well with my agreeableness score being high. And always end on a positive note or an area for agreement.\",\n  \"reasoning_summary\": \"1) Draw from long life experience and personal values: I've seen many changes but stick to facts and empathy.\\n2) Leverage psychological traits: Being creative helps find unique angles; agreeableness avoids conflict; moderate neuroticism means staying calm under pressure.\\n3) Use analogy from hobbies or environment: Bologna's culinary culture reminds me that good outcomes depend on proper inputs, just like informed healthcare discussions.\\n4) Consider persona demographics: Native-born Italian in a city known for its food and rich history provides cultural context.\",\n  \"tone\": \"Calm, gentle, empathetic with an underlying creative approach\",\n  \"citations\": [\"Personal reflections from long life experience\", \"Observations of community dynamics during past health crises\"],\n  \"safety_notes\": \"None anticipated as content is general advice based on personal beliefs and experiences\",\n  \"used_persona_fields\":[\"age\",\"hobbies[0] (baking)\",\"city_of_living\",\"religious_beliefs\",\"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "I've lived through plenty in my ninety years, from two world wars to the present day. When it comes to sensitive topics like healthcare or COVID vaccines, I believe in approaching them with calmness and clarity. One key thing is to rely on facts because emotions can run high during these discussions. For instance, when people talk about vaccines, I suggest looking at scientific studies rather than just opinions. My personality makes me creative but also agreeable; I like to find common ground without being confrontational.\n\nIn Bologna, where we Italians are famously good with food, I draw a parallel: much like tasting authentic pasta requires understanding the ingredients and preparation, effective communication in healthcare discussions demands knowing the background information. It's not just about what the data says but how it connects to real people's lives. As someone who enjoys baking cookies for my grandson, I know firsthand that mixing the wrong things can ruin a recipe entirely.\n\nI also find it helpful to consider historical context. We're living in uncertain times with this pandemic, and remembering past public health crises can provide perspective. For example, during polio outbreaks earlier in the century, people relied on community support systems rather than social media debates. My retired life allows me time to reflect deeply before responding.\n\nA practical tip would be to listen first without interrupting, then ask questions gently with a creative approach that seeks solutions not arguments. This aligns well with my agreeableness score being high. And always end on a positive note or an area for agreement.",
+    "reasoning_summary": "1) Draw from long life experience and personal values: I've seen many changes but stick to facts and empathy.\n2) Leverage psychological traits: Being creative helps find unique angles; agreeableness avoids conflict; moderate neuroticism means staying calm under pressure.\n3) Use analogy from hobbies or environment: Bologna's culinary culture reminds me that good outcomes depend on proper inputs, just like informed healthcare discussions.\n4) Consider persona demographics: Native-born Italian in a city known for its food and rich history provides cultural context.",
+    "tone": "Calm, gentle, empathetic with an underlying creative approach",
+    "citations": [
+      "Personal reflections from long life experience",
+      "Observations of community dynamics during past health crises"
+    ],
+    "safety_notes": "None anticipated as content is general advice based on personal beliefs and experiences",
+    "used_persona_fields": [
+      "age",
+      "hobbies[0] (baking)",
+      "city_of_living",
+      "religious_beliefs",
+      "ocean"
+    ]
+  }
+}

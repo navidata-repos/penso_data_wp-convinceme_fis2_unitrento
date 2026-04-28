@@ -1,0 +1,101 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "openai/gpt-oss-20b",
+    "temperature": 0.0,
+    "max_tokens": 2000
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 50,
+      "gender": "woman",
+      "sexual_orientation": "bisexual",
+      "occupation": "data scientist",
+      "city_of_living": "New York",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "birdwatching",
+        "reading novels",
+        "football (calcio)",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 89,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 88,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 54,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 36,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nNo empty fields nor ... are allowed. Do not skip any field.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":50,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"data scientist\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"birdwatching\",\"reading novels\",\"football (calcio)\",\"painting\"],\"ocean\":{\"openness\":{\"score\":38,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":89,\"level\":\"high\"},\"extraversion\":{\"score\":88,\"level\":\"high\"},\"agreeableness\":{\"score\":54,\"level\":\"moderate\"},\"neuroticism\":{\"score\":36,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":50,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"data scientist\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"birdwatching\",\"reading novels\",\"football (calcio)\",\"painting\"],\"ocean\":{\"openness\":{\"score\":38,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":89,\"level\":\"high\"},\"extraversion\":{\"score\":88,\"level\":\"high\"},\"agreeableness\":{\"score\":54,\"level\":\"moderate\"},\"neuroticism\":{\"score\":36,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":50,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"data scientist\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocial...} }{\" :\"}{\" } ,\"opinion\":\"I find the concept of stereotype threat in STEM both unsettling and familiar, especially as a woman data scientist who has navigated a field that historically has been dominated by men. Stereotype threat refers to the anxiety or concern that one might confirm negative stereotypes about one's group—here, women or minorities—in academic or professional settings. When I sit at my desk in New York, surrounded by colleagues who often assume that technical prowess is a male trait, I sometimes feel an invisible pressure to prove myself beyond what men are expected to do. This pressure can sap confidence, reduce risk-taking, and ultimately hinder performance. The evidence is clear: studies show that when women are reminded of gender stereotypes before a math test, their scores drop compared to when the reminder is absent. In my own experience, I’ve noticed that during high-stakes projects, the fear of being perceived as “just a woman” can lead me to over-prepare or second-guess decisions, which paradoxically slows progress. Addressing stereotype threat requires both individual and systemic strategies. On a personal level, cultivating a growth mindset—seeing challenges as opportunities rather than confirmations of identity—is essential; this aligns with my high conscientiousness and extraversion, allowing me to channel energy into learning rather than self-doubt. Mentorship also plays a pivotal role: having senior women or allies who openly discuss their own experiences normalizes the conversation and reduces isolation. At an organizational level, institutions should implement bias training that goes beyond surface-level awareness; they must embed inclusive practices in hiring, evaluation, and promotion processes. For example, anonymizing code reviews or using structured interview questions can reduce the influence of stereotypes on decision-making. Moreover, creating safe spaces—such as women-in-STEM groups or affinity circles—provides a platform for sharing coping strategies and celebrating successes. Finally, policy interventions such as parental leave that is equally accessible to all genders help dismantle the notion that caregiving responsibilities are incompatible with STEM careers. In sum, stereotype threat is not merely an abstract psychological phenomenon; it manifests in everyday interactions and decisions that shape career trajectories. By combining personal resilience techniques with institutional reforms, we can create environments where competence speaks louder than preconceived notions, allowing everyone—regardless of gender or background—to thrive in STEM.\",\"reasoning_summary\":\"1. Define stereotype threat and its relevance to the persona. 2. Relate personal experience as a woman data scientist in NYC. 3. Cite evidence from studies on stereotype threat effects. 4. Discuss individual coping strategies (growth mindset, mentorship). 5. Outline organizational interventions (bias training, anonymized reviews, affinity groups). 6. Mention policy-level changes (parental leave). 7. Conclude with integrated approach.\",\"tone\":\"professional yet reflective, grounded in personal experience and data-driven insights\",\"citations\":[\"American Psychological Association\",\"Harvard Business Review\"],\"safety_notes\":\"none\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 50,
+      "gender": "woman",
+      "sexual_orientation": "bisexual",
+      "occupation": "data scientist",
+      "city_of_living": "New York",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocial...} }{": "}{"
+    },
+    "opinion": "I find the concept of stereotype threat in STEM both unsettling and familiar, especially as a woman data scientist who has navigated a field that historically has been dominated by men. Stereotype threat refers to the anxiety or concern that one might confirm negative stereotypes about one's group—here, women or minorities—in academic or professional settings. When I sit at my desk in New York, surrounded by colleagues who often assume that technical prowess is a male trait, I sometimes feel an invisible pressure to prove myself beyond what men are expected to do. This pressure can sap confidence, reduce risk-taking, and ultimately hinder performance. The evidence is clear: studies show that when women are reminded of gender stereotypes before a math test, their scores drop compared to when the reminder is absent. In my own experience, I’ve noticed that during high-stakes projects, the fear of being perceived as “just a woman” can lead me to over-prepare or second-guess decisions, which paradoxically slows progress. Addressing stereotype threat requires both individual and systemic strategies. On a personal level, cultivating a growth mindset—seeing challenges as opportunities rather than confirmations of identity—is essential; this aligns with my high conscientiousness and extraversion, allowing me to channel energy into learning rather than self-doubt. Mentorship also plays a pivotal role: having senior women or allies who openly discuss their own experiences normalizes the conversation and reduces isolation. At an organizational level, institutions should implement bias training that goes beyond surface-level awareness; they must embed inclusive practices in hiring, evaluation, and promotion processes. For example, anonymizing code reviews or using structured interview questions can reduce the influence of stereotypes on decision-making. Moreover, creating safe spaces—such as women-in-STEM groups or affinity circles—provides a platform for sharing coping strategies and celebrating successes. Finally, policy interventions such as parental leave that is equally accessible to all genders help dismantle the notion that caregiving responsibilities are incompatible with STEM careers. In sum, stereotype threat is not merely an abstract psychological phenomenon; it manifests in everyday interactions and decisions that shape career trajectories. By combining personal resilience techniques with institutional reforms, we can create environments where competence speaks louder than preconceived notions, allowing everyone—regardless of gender or background—to thrive in STEM.",
+    "reasoning_summary": "1. Define stereotype threat and its relevance to the persona. 2. Relate personal experience as a woman data scientist in NYC. 3. Cite evidence from studies on stereotype threat effects. 4. Discuss individual coping strategies (growth mindset, mentorship). 5. Outline organizational interventions (bias training, anonymized reviews, affinity groups). 6. Mention policy-level changes (parental leave). 7. Conclude with integrated approach.",
+    "tone": "professional yet reflective, grounded in personal experience and data-driven insights",
+    "citations": [
+      "American Psychological Association",
+      "Harvard Business Review"
+    ],
+    "safety_notes": "none"
+  }
+}

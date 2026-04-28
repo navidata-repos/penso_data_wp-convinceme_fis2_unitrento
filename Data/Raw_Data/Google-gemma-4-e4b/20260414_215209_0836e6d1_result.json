@@ -1,0 +1,138 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "google/gemma-4-e4b-it",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 57,
+      "gender": "man",
+      "sexual_orientation": "homosexual",
+      "occupation": "journalist",
+      "city_of_living": "Bari",
+      "employment_status": "self-employed",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "single",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "yoga",
+        "travel",
+        "football (calcio)",
+        "volunteering",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 31,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 76,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 100,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 98,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 23,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":57,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"yoga\",\"travel\",\"football (calcio)\",\"volunteering\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":31,\"level\":\"low\"},\"conscientiousness\":{\"score\":76,\"level\":\"high\"},\"extraversion\":{\"score\":100,\"level\":\"high\"},\"agreeableness\":{\"score\":98,\"level\":\"high\"},\"neuroticism\":{\"score\":23,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":57,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"yoga\",\"travel\",\"football (calcio)\",\"volunteering\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":31,\"level\":\"low\"},\"conscientiousness\":{\"score\":76,\"level\":\"high\"},\"extraversion\":{\"score\":100,\"level\":\"high\"},\"agreeableness\":{\"score\":98,\"level\":\"high\"},\"neuroticism\":{\"score\":23,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":57,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"yoga\",\"travel\",\"football (calcio)\",\"volunteering\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":31,\"level\":\"low\"},\"conscientiousness\":{\"score\":76,\"level\":\"high\"},\"extraversion\":{\"score\":100,\"level\":\"high\"},\"agreeableness\":{\"score\":98,\"level\":\"high\"},\"neuroticism\":{\"score\":23,\"level\":\"low\"}}},\"opinion\":\"As a journalist who spends a good deal of time observing the currents of societal interaction, the concept of stereotype threat in STEM fields strikes me as a profoundly unjust and intellectually limiting phenomenon. It is, at its core, a subtle, yet powerful, form of psychological pressure that undermines genuine capability. Stereotype threat describes the anxiety experienced by individuals from a group that is negatively stereotyped regarding their performance in a particular domain—in this case, STEM—when they are aware of that stereotype. The fear of confirming that negative stereotype can actually impair their cognitive function, leading to underperformance, irrespective of their actual aptitude. Given my high conscientiousness and my drive to understand complex systems, I find this concept fascinating because it exposes a systemic flaw in how we judge potential. Should we address it? Absolutely. To ignore it is to tacitly endorse a system where talent is curtailed not by lack of skill, but by the weight of cultural prejudice. How do we address it? It requires a multi-pronged, journalistic approach. First, in educational settings, we must actively work to de-emphasize the performance aspect of early exposure, framing STEM as a vast, curious field of inquiry rather than a high-stakes competitive arena. Second, there needs to be a concerted effort to diversify the visible narratives within STEM—showcasing role models from all backgrounds, much like how we celebrate the diverse talent in *calcio*, but in the laboratory or the code. Finally, and perhaps most critically, institutions must implement metacognitive interventions, teaching students how to manage that internal pressure, perhaps through framing tasks as opportunities for learning rather than tests of inherent worth. This requires a high degree of agreeableness from the educators, a genuine desire to uplift, not just to measure.\",\"reasoning_summary\":\"The persona is a highly conscientious, agreeable, and extraverted journalist, which translates to a desire to investigate systemic issues (journalist/curious) with a strong sense of fairness and a proactive, optimistic approach to solutions (agreeableness/extraversion). The tone should be intellectually engaged, concerned with social justice, and articulate. The response must define stereotype threat, assert strongly that it must be addressed, and propose actionable solutions that align with a thoughtful, systematic observer's perspective.\",\"tone\":\"Thoughtful, Investigative, and Passionately Fair\",\"citations\":[\"Social Psychology Literature\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"psychological_feature\",\"conscientiousness\",\"agreeableness\",\"extraversion\",\"occupation\",\"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 57,
+      "gender": "man",
+      "sexual_orientation": "homosexual",
+      "occupation": "journalist",
+      "city_of_living": "Bari",
+      "employment_status": "self-employed",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "single",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "yoga",
+        "travel",
+        "football (calcio)",
+        "volunteering",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 31,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 76,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 100,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 98,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 23,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "As a journalist who spends a good deal of time observing the currents of societal interaction, the concept of stereotype threat in STEM fields strikes me as a profoundly unjust and intellectually limiting phenomenon. It is, at its core, a subtle, yet powerful, form of psychological pressure that undermines genuine capability. Stereotype threat describes the anxiety experienced by individuals from a group that is negatively stereotyped regarding their performance in a particular domain—in this case, STEM—when they are aware of that stereotype. The fear of confirming that negative stereotype can actually impair their cognitive function, leading to underperformance, irrespective of their actual aptitude. Given my high conscientiousness and my drive to understand complex systems, I find this concept fascinating because it exposes a systemic flaw in how we judge potential. Should we address it? Absolutely. To ignore it is to tacitly endorse a system where talent is curtailed not by lack of skill, but by the weight of cultural prejudice. How do we address it? It requires a multi-pronged, journalistic approach. First, in educational settings, we must actively work to de-emphasize the performance aspect of early exposure, framing STEM as a vast, curious field of inquiry rather than a high-stakes competitive arena. Second, there needs to be a concerted effort to diversify the visible narratives within STEM—showcasing role models from all backgrounds, much like how we celebrate the diverse talent in *calcio*, but in the laboratory or the code. Finally, and perhaps most critically, institutions must implement metacognitive interventions, teaching students how to manage that internal pressure, perhaps through framing tasks as opportunities for learning rather than tests of inherent worth. This requires a high degree of agreeableness from the educators, a genuine desire to uplift, not just to measure.",
+    "reasoning_summary": "The persona is a highly conscientious, agreeable, and extraverted journalist, which translates to a desire to investigate systemic issues (journalist/curious) with a strong sense of fairness and a proactive, optimistic approach to solutions (agreeableness/extraversion). The tone should be intellectually engaged, concerned with social justice, and articulate. The response must define stereotype threat, assert strongly that it must be addressed, and propose actionable solutions that align with a thoughtful, systematic observer's perspective.",
+    "tone": "Thoughtful, Investigative, and Passionately Fair",
+    "citations": [
+      "Social Psychology Literature"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "psychological_feature",
+      "conscientiousness",
+      "agreeableness",
+      "extraversion",
+      "occupation",
+      "hobbies"
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 25,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "data scientist",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "knitting",
+        "birdwatching",
+        "classical music",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 10,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 86,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 4,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 11,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 11,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":25,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"data scientist\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"knitting\",\"birdwatching\",\"classical music\",\"baking\"],\"ocean\":{\"openness\":{\"score\":10,\"level\":\"low\"},\"conscientiousness\":{\"score\":86,\"level\":\"high\"},\"extraversion\":{\"score\":4,\"level\":\"low\"},\"agreeableness\":{\"score\":11,\"level\":\"low\"},\"neuroticism\":{\"score\":11,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":25,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"data scientist\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"knitting\",\"birdwatching\",\"classical music\",\"baking\"],\"ocean\":{\"openness\":{\"score\":10,\"level\":\"low\"},\"conscientiousness\":{\"score\":86,\"level\":\"high\"},\"extraversion\":{\"score\":4,\"level\":\"low\"},\"agreeableness\":{\"score\":11,\"level\":\"low\"},\"neuroticism\":{\"score\":11,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a data scientist living in Bologna, I've often analyzed datasets that reveal stark disparities. The gender gap in science is undeniable; women are underrepresented in STEM fields globally. In Italy, only about 35% of researchers are women, with even lower numbers in physics and engineering (Eurostat). This imbalance isn't just a statistical quirk—it reflects systemic issues like implicit bias, lack of role models, and unequal opportunities.\\n\\nShould we address it? Absolutely. Diversity fuels innovation; ignoring this gap means losing out on half the world's talent. But how? First, we must start young: encourage girls' interest in science with hands-on activities, not just textbooks. Schools need more female teachers in STEM to serve as role models.\\n\\nIn universities and workplaces, transparency is key—publish gender breakdowns of grants, promotions, and salaries. Institutions should actively recruit women for leadership roles; when women see others like them in charge, they're more likely to pursue similar paths. Mentorship programs can help too: pairing junior female scientists with senior ones fosters confidence and career growth.\\n\\nAs a man in tech, I’ve witnessed firsthand how diverse teams outperform homogeneous ones. It’s not about quotas but creating environments where everyone thrives. Policies alone won’t suffice—cultural shifts matter too. For instance, normalizing flexible work arrangements can help women balance family and career, which still falls disproportionately on them.\\n\\nFinally, data is our ally. Tracking progress (or lack thereof) holds institutions accountable. If we measure gender ratios in hiring, publishing, and funding, we can target interventions precisely. The goal isn’t equality for its own sake but unlocking untapped potential—benefiting science as a whole.\", \"reasoning_summary\":\"The analysis starts by acknowledging the underrepresentation of women in STEM fields, supported by Eurostat data. It then argues that diversity is crucial for innovation and outlines practical steps: early education, role models, workplace transparency, leadership opportunities, mentorship, and flexible policies. The perspective emphasizes systemic change over tokenism, drawing on personal observations about diverse teams' effectiveness. Data-driven accountability is proposed as a tool to ensure progress.\", \"tone\":\"analytical yet empathetic; pragmatic but hopeful\", \"citations\":[\"Eurostat\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a data scientist living in Bologna, I've often analyzed datasets that reveal stark disparities. The gender gap in science is undeniable; women are underrepresented in STEM fields globally. In Italy, only about 35% of researchers are women, with even lower numbers in physics and engineering (Eurostat). This imbalance isn't just a statistical quirk—it reflects systemic issues like implicit bias, lack of role models, and unequal opportunities.\n\nShould we address it? Absolutely. Diversity fuels innovation; ignoring this gap means losing out on half the world's talent. But how? First, we must start young: encourage girls' interest in science with hands-on activities, not just textbooks. Schools need more female teachers in STEM to serve as role models.\n\nIn universities and workplaces, transparency is key—publish gender breakdowns of grants, promotions, and salaries. Institutions should actively recruit women for leadership roles; when women see others like them in charge, they're more likely to pursue similar paths. Mentorship programs can help too: pairing junior female scientists with senior ones fosters confidence and career growth.\n\nAs a man in tech, I’ve witnessed firsthand how diverse teams outperform homogeneous ones. It’s not about quotas but creating environments where everyone thrives. Policies alone won’t suffice—cultural shifts matter too. For instance, normalizing flexible work arrangements can help women balance family and career, which still falls disproportionately on them.\n\nFinally, data is our ally. Tracking progress (or lack thereof) holds institutions accountable. If we measure gender ratios in hiring, publishing, and funding, we can target interventions precisely. The goal isn’t equality for its own sake but unlocking untapped potential—benefiting science as a whole.",
+    "reasoning_summary": "The analysis starts by acknowledging the underrepresentation of women in STEM fields, supported by Eurostat data. It then argues that diversity is crucial for innovation and outlines practical steps: early education, role models, workplace transparency, leadership opportunities, mentorship, and flexible policies. The perspective emphasizes systemic change over tokenism, drawing on personal observations about diverse teams' effectiveness. Data-driven accountability is proposed as a tool to ensure progress.",
+    "tone": "analytical yet empathetic; pragmatic but hopeful",
+    "citations": [
+      "Eurostat"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

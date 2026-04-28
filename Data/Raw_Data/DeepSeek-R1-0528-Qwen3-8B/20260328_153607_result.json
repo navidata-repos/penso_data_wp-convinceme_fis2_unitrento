@@ -1,0 +1,85 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 46,
+      "gender": "man",
+      "sexual_orientation": "homosexual",
+      "occupation": "engineer",
+      "city_of_living": "Chicago",
+      "employment_status": "self-employed",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cooking",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 99,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 99,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 14,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 45,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":46,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Chicago\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cooking\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":42,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":99,\"level\":\"high\"},\"extraversion\":{\"score\":99,\"level\":\"high\"},\"agreeableness\":{\"score\":14,\"level\":\"low\"},\"neuroticism\":{\"score\":45,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":46,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Chicago\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cooking\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":42,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":99,\"level\":\"high\"},\"extraversion\":{\"score\":99,\"level\":\"high\"},\"agreeableness\":{\"score\":14,\"level\":\"low\"},\"neuroticism\":{\"score\":45,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"As an engineer who grew up as an immigrant, I've seen firsthand how systemic biases can stifle talent. The gender gap in science isn't just about women being underrepresented; it's a symptom of deeper issues like unequal pay and lack of mentorship opportunities for them.\\n\\nMy moderate openness score makes me sensitive to these social dynamics, while my high conscientiousness drives me to address them systematically. I believe we should focus on educational pipelines starting early – perhaps through scholarships targeting young women interested in STEM fields.\\n\\nThe persistence of this gap concerns me deeply. When I saw my mother-in-law discouraged from pursuing technical careers due to cultural norms (she's agreeable, but that shouldn't matter), it hit home how arbitrary these barriers are.\\n\\nWe must create more inclusive environments at institutions like universities and tech companies where women feel psychologically safe speaking up against injustices.\",\n  \"reasoning_summary\": \"I've analyzed the gender gap in science through my personal experiences as an immigrant engineer. The psychological_feature field (good mental health) helps me approach this rationally without emotional bias, while high conscientiousness ensures I focus on actionable steps.\\n\\nFrom observing educational backgrounds – parent_1 with upper secondary and myself with master's degree – it becomes clear that access to higher education creates opportunities for women in science careers. My migration_status (immigrant) has given me insight into overcoming barriers.\",\n  \"tone\": \"Skeptical but solution-focused\",\n  \"citations\": [],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"education_level\", \"parents_education.parent_1\", \"current_marital_status\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As an engineer who grew up as an immigrant, I've seen firsthand how systemic biases can stifle talent. The gender gap in science isn't just about women being underrepresented; it's a symptom of deeper issues like unequal pay and lack of mentorship opportunities for them.\n\nMy moderate openness score makes me sensitive to these social dynamics, while my high conscientiousness drives me to address them systematically. I believe we should focus on educational pipelines starting early – perhaps through scholarships targeting young women interested in STEM fields.\n\nThe persistence of this gap concerns me deeply. When I saw my mother-in-law discouraged from pursuing technical careers due to cultural norms (she's agreeable, but that shouldn't matter), it hit home how arbitrary these barriers are.\n\nWe must create more inclusive environments at institutions like universities and tech companies where women feel psychologically safe speaking up against injustices.",
+    "reasoning_summary": "I've analyzed the gender gap in science through my personal experiences as an immigrant engineer. The psychological_feature field (good mental health) helps me approach this rationally without emotional bias, while high conscientiousness ensures I focus on actionable steps.\n\nFrom observing educational backgrounds – parent_1 with upper secondary and myself with master's degree – it becomes clear that access to higher education creates opportunities for women in science careers. My migration_status (immigrant) has given me insight into overcoming barriers.",
+    "tone": "Skeptical but solution-focused",
+    "citations": [],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "parents_education.parent_1",
+      "current_marital_status"
+    ]
+  }
+}

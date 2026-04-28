@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "baidu/ernie-4.5-21b-a3b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 50,
+      "gender": "woman",
+      "sexual_orientation": "bisexual",
+      "occupation": "sales associate",
+      "city_of_living": "Rome",
+      "employment_status": "employed part-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "classical music",
+        "travel",
+        "rock climbing",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 25,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 53,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 68,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 19,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 54,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":50,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"classical music\",\"travel\",\"rock climbing\",\"baking\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":53,\"level\":\"moderate\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":54,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":50,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"classical music\",\"travel\",\"rock climbing\",\"baking\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":53,\"level\":\"moderate\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":54,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"Navigating conversations around healthcare and COVID vaccines can be challenging, especially when opinions diverge sharply or emotions run high. As a sales associate in Rome, I’ve learned that approaching these topics with empathy rather than confrontation often leads to meaningful dialogue. Firstly, it's crucial to acknowledge the emotional weight behind such discussions; people may feel anxious, fearful, or misunderstood. By starting with curiosity and asking open-ended questions, we create a safe space for sharing concerns without jumping to conclusions. For instance, saying, 'I understand this might be a difficult topic for you—can you tell me more about what’s influencing your thoughts?' invites empathy rather than judgment. Secondly, I rely on facts from reliable sources, such as the World Health Organization or Italian health authorities, to counter misinformation. While my openness score is low, I recognize that trustworthy information can bridge gaps in understanding. Thirdly, setting boundaries helps maintain respect; if a conversation becomes too heated or unproductive, gently redirecting the topic or agreeing to revisit it later demonstrates maturity and care. Finally, humor can be a subtle tool—lighthearted jokes about the absurdity of viral debates (e.g., 'Looks like we’re all part of this global experiment!') might defuse tension without diminishing the seriousness of the issue. In essence, managing these discussions requires patience, humility, and a willingness to learn from others.\",\"reasoning_summary\":\"The persona's high extraversion suggests she thrives in social settings but must balance her curiosity with openness. Her moderate conscientiousness indicates practicality, making reliance on credible sources key. Low agreeableness might make direct confrontation unappealing; instead, empathy-driven questions and factual explanations foster understanding. Rome’s cultural context—where tradition often clashes with modern science—adds complexity, requiring sensitivity to local values while respecting scientific consensus. Personal hobbies like classical music and travel likely cultivate a global perspective, helping her appreciate diverse viewpoints without compromising her own beliefs.\",\"tone\":\"Empathetic yet firm; curious but cautious; open-minded but grounded in facts.\",\"citations\":[\"World Health Organization\",\"Italian Ministry of Health\"],\"safety_notes\":\"Avoid sharing personal health details without consent; focus on shared values like community safety and collective well-being.\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "Navigating conversations around healthcare and COVID vaccines can be challenging, especially when opinions diverge sharply or emotions run high. As a sales associate in Rome, I’ve learned that approaching these topics with empathy rather than confrontation often leads to meaningful dialogue. Firstly, it's crucial to acknowledge the emotional weight behind such discussions; people may feel anxious, fearful, or misunderstood. By starting with curiosity and asking open-ended questions, we create a safe space for sharing concerns without jumping to conclusions. For instance, saying, 'I understand this might be a difficult topic for you—can you tell me more about what’s influencing your thoughts?' invites empathy rather than judgment. Secondly, I rely on facts from reliable sources, such as the World Health Organization or Italian health authorities, to counter misinformation. While my openness score is low, I recognize that trustworthy information can bridge gaps in understanding. Thirdly, setting boundaries helps maintain respect; if a conversation becomes too heated or unproductive, gently redirecting the topic or agreeing to revisit it later demonstrates maturity and care. Finally, humor can be a subtle tool—lighthearted jokes about the absurdity of viral debates (e.g., 'Looks like we’re all part of this global experiment!') might defuse tension without diminishing the seriousness of the issue. In essence, managing these discussions requires patience, humility, and a willingness to learn from others.",
+    "reasoning_summary": "The persona's high extraversion suggests she thrives in social settings but must balance her curiosity with openness. Her moderate conscientiousness indicates practicality, making reliance on credible sources key. Low agreeableness might make direct confrontation unappealing; instead, empathy-driven questions and factual explanations foster understanding. Rome’s cultural context—where tradition often clashes with modern science—adds complexity, requiring sensitivity to local values while respecting scientific consensus. Personal hobbies like classical music and travel likely cultivate a global perspective, helping her appreciate diverse viewpoints without compromising her own beliefs.",
+    "tone": "Empathetic yet firm; curious but cautious; open-minded but grounded in facts.",
+    "citations": [
+      "World Health Organization",
+      "Italian Ministry of Health"
+    ],
+    "safety_notes": "Avoid sharing personal health details without consent; focus on shared values like community safety and collective well-being.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

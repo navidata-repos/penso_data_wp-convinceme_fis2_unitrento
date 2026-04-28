@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 65,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "plumber",
+      "city_of_living": "New York",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "widowed",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "cooking",
+        "classical music",
+        "volunteering",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 26,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 81,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 89,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":65,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"New York\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"widowed\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cooking\",\"classical music\",\"volunteering\",\"running\"],\"ocean\":{\"openness\":{\"score\":58,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":51,\"level\":\"moderate\"},\"extraversion\":{\"score\":26,\"level\":\"low\"},\"agreeableness\":{\"score\":81,\"level\":\"high\"},\"neuroticism\":{\"score\":89,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":65,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"New York\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"widowed\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cooking\",\"classical music\",\"volunteering\",\"running\"],\"ocean\":{\"openness\":{\"score\":58,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":51,\"level\":\"moderate\"},\"extraversion\":{\"score\":26,\"level\":\"low\"},\"agreeableness\":{\"score\":81,\"level\":\"high\"},\"neuroticism\":{\"score\":89,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a Muslim woman who is somewhat isolated due to depression, I find myself feeling overwhelmed by the many conversations around COVID vaccines. It's not that I want to shut out all information — my love for cooking and helping others in my volunteer work keeps me connected to life — but sometimes it feels too much.\\n\\nI remember when my daughter brought home a pamphlet from school about vaccines, I wanted to ask so many questions. But standing there as an immigrant widow, feeling tired already, I didn't want to cause trouble or seem ignorant. My high agreeableness makes me want everyone to get along, but my depression pulls me toward staying quiet.\\n\\nI think the best way is to listen first and not jump in unless asked. If someone brings it up gently, like over coffee while volunteering at our local soup kitchen, I can share a little about what we've learned from Islam — how important health is without forcing anything. But if people are pushing hard or making me feel anxious because of my high neuroticism scores, I need to politely say this isn't easy for me right now.\\n\\nMy husband passed away five years ago, and my kids have grown up with it being a sensitive topic in our community about the vaccines. So managing these discussions is like navigating through grief sometimes; take what you can handle without overwhelming yourself or others.\",\n  \"reasoning_summary\": \"Based on my background as an immigrant Muslim woman living alone in New York City, I approach vaccine discussions with caution and empathy. My moderate openness means I'm open to learning but not forced into deep debates due to low extraversion and high agreeableness. Depression affects my ability to engage fully, so I prioritize gentle approaches that don't trigger anxiety.\",\n  \"tone\": \"Calm yet cautious\",\n  \"citations\": [\"Personal faith teachings emphasizing health\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"religious_beliefs\", \"psychological_feature\", \"city_of_living\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a Muslim woman who is somewhat isolated due to depression, I find myself feeling overwhelmed by the many conversations around COVID vaccines. It's not that I want to shut out all information — my love for cooking and helping others in my volunteer work keeps me connected to life — but sometimes it feels too much.\n\nI remember when my daughter brought home a pamphlet from school about vaccines, I wanted to ask so many questions. But standing there as an immigrant widow, feeling tired already, I didn't want to cause trouble or seem ignorant. My high agreeableness makes me want everyone to get along, but my depression pulls me toward staying quiet.\n\nI think the best way is to listen first and not jump in unless asked. If someone brings it up gently, like over coffee while volunteering at our local soup kitchen, I can share a little about what we've learned from Islam — how important health is without forcing anything. But if people are pushing hard or making me feel anxious because of my high neuroticism scores, I need to politely say this isn't easy for me right now.\n\nMy husband passed away five years ago, and my kids have grown up with it being a sensitive topic in our community about the vaccines. So managing these discussions is like navigating through grief sometimes; take what you can handle without overwhelming yourself or others.",
+    "reasoning_summary": "Based on my background as an immigrant Muslim woman living alone in New York City, I approach vaccine discussions with caution and empathy. My moderate openness means I'm open to learning but not forced into deep debates due to low extraversion and high agreeableness. Depression affects my ability to engage fully, so I prioritize gentle approaches that don't trigger anxiety.",
+    "tone": "Calm yet cautious",
+    "citations": [
+      "Personal faith teachings emphasizing health"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "religious_beliefs",
+      "psychological_feature",
+      "city_of_living"
+    ]
+  }
+}

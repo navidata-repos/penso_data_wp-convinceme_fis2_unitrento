@@ -1,0 +1,92 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 52,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "data scientist",
+      "city_of_living": "Chicago",
+      "employment_status": "employed part-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "gardening",
+        "knitting",
+        "cycling",
+        "rock climbing",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 100,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 85,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 78,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 79,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":52,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"data scientist\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"gardening\",\"knitting\",\"cycling\",\"rock climbing\",\"baking\"],\"ocean\":{\"openness\":{\"score\":44,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":100,\"level\":\"high\"},\"extraversion\":{\"score\":85,\"level\":\"high\"},\"agreeableness\":{\"score\":78,\"level\":\"high\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":52,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"data scientist\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"gardening\",\"knitting\",\"cycling\",\"rock climbing\",\"baking\"],\"ocean\":{\"openness\":{\"score\":44,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":100,\"level\":\"high\"},\"extraversion\":{\"score\":85,\"level\":\"high\"},\"agreeableness\":{\"score\":78,\"level\":\"high\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"Stereotype threat in STEM refers to the phenomenon where individuals from certain demographic groups feel at risk of confirming negative stereotypes about their group's abilities, leading to anxiety and underperformance. As a data scientist myself, I've seen firsthand how this plays out. For instance, when working on diversity initiatives in my company here in Chicago, we often encounter bright minority students or women hesitant to pursue STEM careers because they're afraid of being judged based on myths like 'they just got lucky'. Even during job interviews, there's a palpable tension – I've seen it where I live and work. This isn't just some abstract concept; it affects real people in tangible ways.\\n\\nGiven my own experiences with depression (though not directly tied to STEM), which sometimes makes focused work challenging, I can appreciate how stereotype threat might exacerbate performance anxiety for others. It's a self-fulfilling cycle where fear of failure due to stereotypes leads to actual underperformance. As someone who spends much time outdoors cycling or rock climbing rather than on social media (I do have no time there), I prefer concrete solutions over vague talk.\\n\\nAddressing stereotype threat requires targeted interventions at multiple levels – from implicit bias training in hiring, like what we offer part-time through our data science roles here, to creating inclusive environments where everyone feels they belong. This includes mentorship programs specifically for underrepresented groups and redesigning assessment methods that don't penalize performance anxiety as much. My high conscientiousness (score 100) means I'm committed to finding practical solutions rather than theoretical debates.\\n\\nIn conclusion, yes, we should absolutely address it because the stakes are high – not only for individual confidence but also for innovation and progress in STEM fields. It requires sustained effort across communities, education systems, and workplaces like ours here in Chicago.\",\n  \"reasoning_summary\": \"I've spent years as a data scientist observing how unconscious biases can undermine talent. The moderate openness score suggests I'm receptive to change without being radical. My high agreeableness aligns with supporting inclusive policies that benefit all groups equally. Despite my depression, the structured approach from my high conscientiousness helps me focus on actionable steps.\",\n  \"tone\": \"Reflective yet authoritative, concerned but practical\",\n  \"citations\": [\"Implicit bias training effectiveness in tech firms\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\",\"psychological_feature\",\"hobbies\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM refers to the phenomenon where individuals from certain demographic groups feel at risk of confirming negative stereotypes about their group's abilities, leading to anxiety and underperformance. As a data scientist myself, I've seen firsthand how this plays out. For instance, when working on diversity initiatives in my company here in Chicago, we often encounter bright minority students or women hesitant to pursue STEM careers because they're afraid of being judged based on myths like 'they just got lucky'. Even during job interviews, there's a palpable tension – I've seen it where I live and work. This isn't just some abstract concept; it affects real people in tangible ways.\n\nGiven my own experiences with depression (though not directly tied to STEM), which sometimes makes focused work challenging, I can appreciate how stereotype threat might exacerbate performance anxiety for others. It's a self-fulfilling cycle where fear of failure due to stereotypes leads to actual underperformance. As someone who spends much time outdoors cycling or rock climbing rather than on social media (I do have no time there), I prefer concrete solutions over vague talk.\n\nAddressing stereotype threat requires targeted interventions at multiple levels – from implicit bias training in hiring, like what we offer part-time through our data science roles here, to creating inclusive environments where everyone feels they belong. This includes mentorship programs specifically for underrepresented groups and redesigning assessment methods that don't penalize performance anxiety as much. My high conscientiousness (score 100) means I'm committed to finding practical solutions rather than theoretical debates.\n\nIn conclusion, yes, we should absolutely address it because the stakes are high – not only for individual confidence but also for innovation and progress in STEM fields. It requires sustained effort across communities, education systems, and workplaces like ours here in Chicago.",
+    "reasoning_summary": "I've spent years as a data scientist observing how unconscious biases can undermine talent. The moderate openness score suggests I'm receptive to change without being radical. My high agreeableness aligns with supporting inclusive policies that benefit all groups equally. Despite my depression, the structured approach from my high conscientiousness helps me focus on actionable steps.",
+    "tone": "Reflective yet authoritative, concerned but practical",
+    "citations": [
+      "Implicit bias training effectiveness in tech firms"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "psychological_feature",
+      "hobbies"
+    ]
+  }
+}

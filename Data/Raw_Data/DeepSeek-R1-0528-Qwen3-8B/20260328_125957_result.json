@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 34,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Chicago",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "photography",
+        "rock climbing",
+        "reading novels",
+        "painting",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 81,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 2,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 10,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 53,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 39,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":34,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"photography\",\"rock climbing\",\"reading novels\",\"painting\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":2,\"level\":\"low\"},\"extraversion\":{\"score\":10,\"level\":\"low\"},\"agreeableness\":{\"score\":53,\"level\":\"moderate\"},\"neuroticism\":{\"score\":39,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":34,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"photography\",\"rock climbing\",\"reading novels\",\"painting\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":2,\"level\":\"low\"},\"extraversion\":{\"score\":10,\"level\":\"low\"},\"agreeableness\":{\"score\":53,\"level\":\"moderate\"},\"neuroticism\":{\"score\":39,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"Alright, so I'm a guy in my late thirties, living the hustle of everyday life as a waiter in Chicago. Between taking orders from impatient customers during rush hour and trying to keep up with all the changes in the world around me, especially stuff like healthcare discussions involving COVID vaccines, it can get pretty overwhelming. You know how I am – high openness means my brain's always buzzing with new ideas, but low conscientiousness keeps me from sitting down properly to tackle big problems unless they're right in front of me at work. So when someone brings up the vaccine topic around the dinner table or even on those rare social media scrolls I do a few times monthly, it throws off my usual calm demeanor because frankly, vaccines are complicated science mixed with politics and personal stories.\\n\\nMy agnosticism sometimes surfaces too – I don't pretend to have all the answers when people talk about these things. Being anxious doesn't help matters either; hearing two sides of an argument without clear evidence just stirs up that unease inside me. But reading novels gives my mind a break from the heavy stuff, and rock climbing actually helps calm those nerves physically.\\n\\nSo dealing with discussions? It's tricky for someone like me who wants to be open-minded but struggles with deep focus. I think staying grounded in simple facts is key – maybe looking up CDC or WHO info quickly before diving into something too heated works best given my job sometimes requires quick thinking under pressure despite low extraversion scores.\"\n  ,\"reasoning_summary\": \"Given the persona traits: moderate agreeableness (score 53) means I'd prefer to avoid conflict even in sensitive topics; high openness leads me towards wanting to understand complexities but anxiety complicates that. The agnostic belief doesn't provide a framework for debate, so facts from authoritative sources like CDC or WHO are important references.\",\n  \"tone\": \"Calm yet curious with occasional anxiety showing through\",\n  \"citations\": [],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"education_level\", \"hobbies\", \"psychological_feature\", \"ocean.openness\", \"ocean.conscientiousness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "Alright, so I'm a guy in my late thirties, living the hustle of everyday life as a waiter in Chicago. Between taking orders from impatient customers during rush hour and trying to keep up with all the changes in the world around me, especially stuff like healthcare discussions involving COVID vaccines, it can get pretty overwhelming. You know how I am – high openness means my brain's always buzzing with new ideas, but low conscientiousness keeps me from sitting down properly to tackle big problems unless they're right in front of me at work. So when someone brings up the vaccine topic around the dinner table or even on those rare social media scrolls I do a few times monthly, it throws off my usual calm demeanor because frankly, vaccines are complicated science mixed with politics and personal stories.\n\nMy agnosticism sometimes surfaces too – I don't pretend to have all the answers when people talk about these things. Being anxious doesn't help matters either; hearing two sides of an argument without clear evidence just stirs up that unease inside me. But reading novels gives my mind a break from the heavy stuff, and rock climbing actually helps calm those nerves physically.\n\nSo dealing with discussions? It's tricky for someone like me who wants to be open-minded but struggles with deep focus. I think staying grounded in simple facts is key – maybe looking up CDC or WHO info quickly before diving into something too heated works best given my job sometimes requires quick thinking under pressure despite low extraversion scores.",
+    "reasoning_summary": "Given the persona traits: moderate agreeableness (score 53) means I'd prefer to avoid conflict even in sensitive topics; high openness leads me towards wanting to understand complexities but anxiety complicates that. The agnostic belief doesn't provide a framework for debate, so facts from authoritative sources like CDC or WHO are important references.",
+    "tone": "Calm yet curious with occasional anxiety showing through",
+    "citations": [],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "hobbies",
+      "psychological_feature",
+      "ocean.openness",
+      "ocean.conscientiousness"
+    ]
+  }
+}

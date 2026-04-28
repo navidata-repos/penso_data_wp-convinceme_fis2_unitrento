@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 34,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Naples",
+      "employment_status": "self-employed",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "rock climbing",
+        "running",
+        "cooking",
+        "painting",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 7,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 11,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 98,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 89,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 5,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":34,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Naples\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"rock climbing\",\"running\",\"cooking\",\"painting\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":11,\"level\":\"low\"},\"extraversion\":{\"score\":98,\"level\":\"high\"},\"agreeableness\":{\"score\":89,\"level\":\"high\"},\"neuroticism\":{\"score\":5,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":34,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Naples\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"rock climbing\",\"running\",\"cooking\",\"painting\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":11,\"level\":\"low\"},\"extraversion\":{\"score\":98,\"level\":\"high\"},\"agreeableness\":{\"score\":89,\"level\":\"high\"},\"neuroticism\":{\"score\":5,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to the underrepresentation of women and other genders in scientific fields, particularly in STEM. This isn't just about numbers; it's a societal imbalance that reflects historical biases. As someone who's curious and observant, I've seen firsthand how stereotypes can discourage people from pursuing science careers.\\n\\nIn my own life, I have a bachelor's degree but work as a barista—perhaps because of the persistent stereotype that women are better suited for service roles or something about the family dynamics in Naples. It feels ironic to be curious and interested in such topics while being confined by these expectations myself.\\n\\nAddressing this gap is crucial because science benefits from diverse perspectives. Women bring unique insights, especially if we consider cultural backgrounds like mine where gender roles are traditionally strong but also evolving due to Christianity's emphasis on compassion and balance.\\n\\nHow? We need education reform that encourages young girls (like my niece or daughter) to explore STEM subjects without fear of stereotypes. And more mentorship programs from people in the field who can show them it’s possible, even with high extraversion levels—wait no, I mean despite low conscientiousness? That part is tricky.\",\n  \"reasoning_summary\": \"I started by defining the gender gap and relating it to my personal experiences as a native-born Italian woman. Then discussed how stereotypes might have affected my own career path or that of others in similar situations.\\n\\nAddressed why diversity matters: different perspectives lead to better outcomes, especially in problem-solving which requires both agreeableness (for collaboration) and low neuroticism (to handle stress).\\n\\nSuggested practical steps: education reform starting early, mentorship programs highlighting successful women with high extraversion traits who can inspire others.\\n\\nAlso considered how my own background—hobbies like football might relate to teamwork skills in science—and psychological features could influence the perspective.\",\n  \"tone\": \"Informative yet personal; curious and engaging but grounded in practical concerns for society.\",\n  \"citations\": [\"Various sources on gender bias in education\"],\n  \"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"education_level\", \"current_marital_status\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the underrepresentation of women and other genders in scientific fields, particularly in STEM. This isn't just about numbers; it's a societal imbalance that reflects historical biases. As someone who's curious and observant, I've seen firsthand how stereotypes can discourage people from pursuing science careers.\n\nIn my own life, I have a bachelor's degree but work as a barista—perhaps because of the persistent stereotype that women are better suited for service roles or something about the family dynamics in Naples. It feels ironic to be curious and interested in such topics while being confined by these expectations myself.\n\nAddressing this gap is crucial because science benefits from diverse perspectives. Women bring unique insights, especially if we consider cultural backgrounds like mine where gender roles are traditionally strong but also evolving due to Christianity's emphasis on compassion and balance.\n\nHow? We need education reform that encourages young girls (like my niece or daughter) to explore STEM subjects without fear of stereotypes. And more mentorship programs from people in the field who can show them it’s possible, even with high extraversion levels—wait no, I mean despite low conscientiousness? That part is tricky.",
+    "reasoning_summary": "I started by defining the gender gap and relating it to my personal experiences as a native-born Italian woman. Then discussed how stereotypes might have affected my own career path or that of others in similar situations.\n\nAddressed why diversity matters: different perspectives lead to better outcomes, especially in problem-solving which requires both agreeableness (for collaboration) and low neuroticism (to handle stress).\n\nSuggested practical steps: education reform starting early, mentorship programs highlighting successful women with high extraversion traits who can inspire others.\n\nAlso considered how my own background—hobbies like football might relate to teamwork skills in science—and psychological features could influence the perspective.",
+    "tone": "Informative yet personal; curious and engaging but grounded in practical concerns for society.",
+    "citations": [
+      "Various sources on gender bias in education"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "current_marital_status",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

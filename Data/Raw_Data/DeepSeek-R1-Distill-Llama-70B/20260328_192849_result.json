@@ -1,0 +1,139 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 24,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "lawyer",
+      "city_of_living": "Chicago",
+      "employment_status": "employed full-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "baking",
+        "yoga",
+        "rock climbing",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 4,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 97,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 79,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 77,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":24,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"lawyer\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"baking\",\"yoga\",\"rock climbing\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":4,\"level\":\"low\"},\"conscientiousness\":{\"score\":97,\"level\":\"high\"},\"extraversion\":{\"score\":79,\"level\":\"high\"},\"agreeableness\":{\"score\":51,\"level\":\"moderate\"},\"neuroticism\":{\"score\":77,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":24,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"lawyer\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"baking\",\"yoga\",\"rock climbing\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":4,\"level\":\"low\"},\"conscientiousness\":{\"score\":97,\"level\":\"high\"},\"extraversion\":{\"score\":79,\"level\":\"high\"},\"agreeableness\":{\"score\":51,\"level\":\"moderate\"},\"neuroticism\":{\"score\":77,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{ \"mode\": \"human\", \"topic\": \"What is the gender gap in science? Should we address it? And how?\", \"persona\": { \"age\": 24, \"gender\": \"man\", \"sexual_orientation\": \"heterosexual\", \"occupation\": \"lawyer\", \"city_of_living\": \"Chicago\", \"employment_status\": \"employed full-time\", \"education_level\": \"master's degree\", \"parents_education\": { \"parent_1\": \"lower secondary\", \"parent_2\": \"master's degree\" }, \"current_marital_status\": \"single\", \"children\": 0, \"migration_status\": \"immigrant\", \"psychological_feature\": \"anxious\", \"religious_beliefs\": \"Christianity\", \"time_onsocialmedia\": \"You spend roughly one hour daily on social media\", \"hobbies\": [ \"baking\", \"yoga\", \"rock climbing\", \"reading novels\" ], \"ocean\": { \"openness\": { \"score\": 4, \"level\": \"low\" }, \"conscientiousness\": { \"score\": 97, \"level\": \"high\" }, \"extraversion\": { \"score\": 79, \"level\": \"high\" }, \"agreeableness\": { \"score\": 51, \"level\": \"moderate\" }, \"neuroticism\": { \"score\": 77, \"level\": \"high\" } } }, \"opinion\": \"The gender gap in science refers to the underrepresentation of women in scientific fields compared to men. This issue is multifaceted, stemming from systemic biases, cultural stereotypes, and lack of support structures. As a lawyer, I have witnessed how legal frameworks can either perpetuate or mitigate such disparities. It is crucial to address this gap not only for fairness but also because diverse perspectives in science lead to more innovative and comprehensive solutions. To tackle this, we should implement mentorship programs, provide equal opportunities for women in educational and professional settings, and challenge societal norms that discourage girls from pursuing STEM careers. Addressing the gender gap is not just about equality; it's about unlocking the full potential of our society's talent pool.\", \"reasoning_summary\": \"The user, a 24-year-old lawyer from Chicago, recognizes the systemic nature of the gender gap in science. His high conscientiousness and extraversion suggest he is proactive and engaged in addressing such issues. His hobbies and high neuroticism indicate a reflective nature, which supports a thorough approach to understanding and solving problems. His Christian beliefs and anxiety may influence his perspective towards social justice and the importance of creating supportive environments. The legal background provides a lens to view the issue through policy and institutional change. His parents' education levels suggest exposure to both working-class and educated influences, possibly broadening his understanding of systemic barriers. His high agreeableness and moderate openness imply a balance between being approachable and somewhat traditional, which may affect his approach to suggesting solutions. His focus on mentorship and equal opportunities aligns with his role in promoting legal equity.\", \"tone\": \"professional yet empathetic\", \"citations\": [\"American Bar Association\", \"National Science Foundation\"], \"safety_notes\": \"none\", \"used_persona_fields\": [\"occupation\", \"city_of_living\", \"education_level\", \"parents_education\", \"psychological_feature\", \"religious_beliefs\", \"hobbies\", \"ocean\"] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 24,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "lawyer",
+      "city_of_living": "Chicago",
+      "employment_status": "employed full-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "baking",
+        "yoga",
+        "rock climbing",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 4,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 97,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 79,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 77,
+          "level": "high"
+        }
+      }
+    },
+    "opinion": "The gender gap in science refers to the underrepresentation of women in scientific fields compared to men. This issue is multifaceted, stemming from systemic biases, cultural stereotypes, and lack of support structures. As a lawyer, I have witnessed how legal frameworks can either perpetuate or mitigate such disparities. It is crucial to address this gap not only for fairness but also because diverse perspectives in science lead to more innovative and comprehensive solutions. To tackle this, we should implement mentorship programs, provide equal opportunities for women in educational and professional settings, and challenge societal norms that discourage girls from pursuing STEM careers. Addressing the gender gap is not just about equality; it's about unlocking the full potential of our society's talent pool.",
+    "reasoning_summary": "The user, a 24-year-old lawyer from Chicago, recognizes the systemic nature of the gender gap in science. His high conscientiousness and extraversion suggest he is proactive and engaged in addressing such issues. His hobbies and high neuroticism indicate a reflective nature, which supports a thorough approach to understanding and solving problems. His Christian beliefs and anxiety may influence his perspective towards social justice and the importance of creating supportive environments. The legal background provides a lens to view the issue through policy and institutional change. His parents' education levels suggest exposure to both working-class and educated influences, possibly broadening his understanding of systemic barriers. His high agreeableness and moderate openness imply a balance between being approachable and somewhat traditional, which may affect his approach to suggesting solutions. His focus on mentorship and equal opportunities aligns with his role in promoting legal equity.",
+    "tone": "professional yet empathetic",
+    "citations": [
+      "American Bar Association",
+      "National Science Foundation"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 54,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "retail worker",
+      "city_of_living": "Milan",
+      "employment_status": "unemployed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "primary school"
+      },
+      "marital_status": "widowed",
+      "children": 1,
+      "migration_status": "native Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "knitting",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 15,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 19,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 76,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 96,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 100,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":54,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Milan\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"knitting\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":19,\"level\":\"low\"},\"extraversion\":{\"score\":76,\"level\":\"high\"},\"agreeableness\":{\"score\":96,\"level\":\"high\"},\"neuroticism\":{\"score\":100,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":54,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Milan\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"knitting\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":19,\"level\":\"low\"},\"extraversion\":{\"score\":76,\"level\":\"high\"},\"agreeableness\":{\"score\":96,\"level\":\"high\"},\"neuroticism\":{\"score\":100,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a 54-year-old man from Milan, unemployed after working in retail, I've seen how life can throw curveballs, like losing my wife and raising a child alone, which makes me think deeply about fairness and support in society. The gender gap in science, from what I've gathered spending hours on social media and being naturally curious, refers to the underrepresentation of women in scientific fields, especially in higher positions like professors or lab leaders, and disparities in pay and recognition compared to men. Growing up with parents who only had primary school education, I value learning but know it's not always easy to access opportunities. In Italy, I've noticed that while more women are entering science, they often face barriers like bias, lack of mentorship, or balancing family responsibilities, which resonates with my own struggles as a widowed father. We should absolutely address this gap because it's not just about fairness; it's about tapping into all talents to solve big problems, from climate change to health crises. My Hindu beliefs teach compassion and equality, and my high agreeableness and neuroticism make me empathetic and anxious about injustice, so I feel strongly that ignoring this gap wastes potential and perpetuates inequality. To fix it, we need practical steps: schools should encourage girls in STEM early, like through hands-on projects, to spark interest. Workplaces must offer flexible hours and parental leave, so women don't have to choose between career and family, something I wish I'd had more support with. Mentorship programs can connect experienced scientists with newcomers, providing guidance I missed in retail. Governments and companies should fund research by women and ensure equal pay, as economic stability matters, especially for someone like me who's unemployed. Social media, which I use a lot, can spread awareness and highlight female scientists' achievements, countering stereotypes. By working together, we can create a more inclusive science community that benefits everyone, just as my hobbies in knitting and gardening remind me that patience and care yield growth.\",\"reasoning_summary\":\"Derived opinion by integrating persona traits: age 54 and life experience (widowed, unemployed) inform perspective on fairness and struggle; high agreeableness (96) and neuroticism (100) drive empathetic, anxious concern for gender inequality; curiosity and social media use provide awareness of the topic; Hindu beliefs emphasize equality; hobbies suggest patience and care; education level and parents' background highlight value of learning despite barriers; extraversion (76) supports advocacy through social engagement; low openness (15) and conscientiousness (19) lead to practical, straightforward solutions rather than abstract ideas. Focused on addressing gap due to wasted talent and societal benefit, with actionable steps like education, workplace policies, mentorship, funding, and media awareness, aligning with persona's real-world concerns.\",\"tone\":\"empathetic, concerned, practical, and conversational, reflecting high agreeableness and neuroticism with a focus on personal experience and social justice\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a 54-year-old man from Milan, unemployed after working in retail, I've seen how life can throw curveballs, like losing my wife and raising a child alone, which makes me think deeply about fairness and support in society. The gender gap in science, from what I've gathered spending hours on social media and being naturally curious, refers to the underrepresentation of women in scientific fields, especially in higher positions like professors or lab leaders, and disparities in pay and recognition compared to men. Growing up with parents who only had primary school education, I value learning but know it's not always easy to access opportunities. In Italy, I've noticed that while more women are entering science, they often face barriers like bias, lack of mentorship, or balancing family responsibilities, which resonates with my own struggles as a widowed father. We should absolutely address this gap because it's not just about fairness; it's about tapping into all talents to solve big problems, from climate change to health crises. My Hindu beliefs teach compassion and equality, and my high agreeableness and neuroticism make me empathetic and anxious about injustice, so I feel strongly that ignoring this gap wastes potential and perpetuates inequality. To fix it, we need practical steps: schools should encourage girls in STEM early, like through hands-on projects, to spark interest. Workplaces must offer flexible hours and parental leave, so women don't have to choose between career and family, something I wish I'd had more support with. Mentorship programs can connect experienced scientists with newcomers, providing guidance I missed in retail. Governments and companies should fund research by women and ensure equal pay, as economic stability matters, especially for someone like me who's unemployed. Social media, which I use a lot, can spread awareness and highlight female scientists' achievements, countering stereotypes. By working together, we can create a more inclusive science community that benefits everyone, just as my hobbies in knitting and gardening remind me that patience and care yield growth.",
+    "reasoning_summary": "Derived opinion by integrating persona traits: age 54 and life experience (widowed, unemployed) inform perspective on fairness and struggle; high agreeableness (96) and neuroticism (100) drive empathetic, anxious concern for gender inequality; curiosity and social media use provide awareness of the topic; Hindu beliefs emphasize equality; hobbies suggest patience and care; education level and parents' background highlight value of learning despite barriers; extraversion (76) supports advocacy through social engagement; low openness (15) and conscientiousness (19) lead to practical, straightforward solutions rather than abstract ideas. Focused on addressing gap due to wasted talent and societal benefit, with actionable steps like education, workplace policies, mentorship, funding, and media awareness, aligning with persona's real-world concerns.",
+    "tone": "empathetic, concerned, practical, and conversational, reflecting high agreeableness and neuroticism with a focus on personal experience and social justice"
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

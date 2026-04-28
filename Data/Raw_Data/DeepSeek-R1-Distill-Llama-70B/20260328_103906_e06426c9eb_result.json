@@ -1,0 +1,80 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 86,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "New York",
+      "employment_status": "retired",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "widowed",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "videogames",
+        "photography",
+        "cinema",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 15,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 13,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 25,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 91,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 76,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":86,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"New York\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"widowed\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"videogames\",\"photography\",\"cinema\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":13,\"level\":\"low\"},\"extraversion\":{\"score\":25,\"level\":\"low\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":76,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":86,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"New York\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"widowed\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"videogames\",\"photography\",\"cinema\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":13,\"level\":\"low\"},\"extraversion\":{\"score\":25,\"level\":\"low\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":76,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As an 86-year-old woman living in New York, having seen many changes over the decades, I approach discussions about healthcare and COVID vaccines with a mix of caution and empathy, shaped by my own experiences and anxieties. I remember times when medical advice was simpler, but also when diseases like polio were feared, so I understand the importance of vaccines. My high agreeableness means I value harmony and avoid conflict, so in conversations, I focus on listening and sharing personal stories rather than arguing. For example, I might talk about how getting vaccinated helped me feel safer visiting my grandchildren, emphasizing the emotional relief it brought rather than diving into complex science. My low openness and conscientiousness mean I don't seek out new information aggressively or stick rigidly to plans, so I rely on trusted sources like my doctor or family, avoiding social media which I don't use. Being anxious and having high neuroticism, I often worry about health risks, so I approach these discussions with a gentle tone, acknowledging others' fears without dismissing them. I believe in being patient and kind, offering support rather than pressure, as I've learned that compassion can bridge divides better than facts alone. In my view, managing such talks involves staying calm, sharing from the heart, and respecting different perspectives, all while prioritizing safety and community well-being based on what has worked in my long life.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: age 86 suggests life experience and historical context (e.g., past vaccines); gender and sexual orientation not heavily influential here; occupation not applicable and retired status imply reliance on others for info; lower secondary education indicates simpler language preference; widowed with children suggests family focus; native-born American and New York residence imply urban exposure; anxious psychological feature and high neuroticism (score 76) lead to cautious, worry-driven approach; Atheist beliefs remove religious influences; no social media means offline reliance; hobbies not directly relevant; OCEAN traits: low openness (score 15) means resistance to new ideas, low conscientiousness (score 13) means less structured thinking, low extraversion (score 25) means introverted communication style, high agreeableness (score 91) emphasizes harmony and empathy, high neuroticism amplifies anxiety. Combined, this results in an opinion focused on personal anecdotes, emotional support, avoidance of conflict, and trust in close networks, avoiding technical details or aggressive debate.\"\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As an 86-year-old woman living in New York, having seen many changes over the decades, I approach discussions about healthcare and COVID vaccines with a mix of caution and empathy, shaped by my own experiences and anxieties. I remember times when medical advice was simpler, but also when diseases like polio were feared, so I understand the importance of vaccines. My high agreeableness means I value harmony and avoid conflict, so in conversations, I focus on listening and sharing personal stories rather than arguing. For example, I might talk about how getting vaccinated helped me feel safer visiting my grandchildren, emphasizing the emotional relief it brought rather than diving into complex science. My low openness and conscientiousness mean I don't seek out new information aggressively or stick rigidly to plans, so I rely on trusted sources like my doctor or family, avoiding social media which I don't use. Being anxious and having high neuroticism, I often worry about health risks, so I approach these discussions with a gentle tone, acknowledging others' fears without dismissing them. I believe in being patient and kind, offering support rather than pressure, as I've learned that compassion can bridge divides better than facts alone. In my view, managing such talks involves staying calm, sharing from the heart, and respecting different perspectives, all while prioritizing safety and community well-being based on what has worked in my long life.",
+    "reasoning_summary": "Derived opinion from persona traits: age 86 suggests life experience and historical context (e.g., past vaccines); gender and sexual orientation not heavily influential here; occupation not applicable and retired status imply reliance on others for info; lower secondary education indicates simpler language preference; widowed with children suggests family focus; native-born American and New York residence imply urban exposure; anxious psychological feature and high neuroticism (score 76) lead to cautious, worry-driven approach; Atheist beliefs remove religious influences; no social media means offline reliance; hobbies not directly relevant; OCEAN traits: low openness (score 15) means resistance to new ideas, low conscientiousness (score 13) means less structured thinking, low extraversion (score 25) means introverted communication style, high agreeableness (score 91) emphasizes harmony and empathy, high neuroticism amplifies anxiety. Combined, this results in an opinion focused on personal anecdotes, emotional support, avoidance of conflict, and trust in close networks, avoiding technical details or aggressive debate."
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 50,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Rome",
+      "employment_status": "unemployed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "baking",
+        "football (calcio)",
+        "rock climbing",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 27,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 76,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 65,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 89,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 99,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":50,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"unemployed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"baking\",\"football (calcio)\",\"rock climbing\",\"travel\"],\"ocean\":{\"openness\":{\"score\":27,\"level\":\"low\"},\"conscientiousness\":{\"score\":76,\"level\":\"high\"},\"extraversion\":{\"score\":65,\"level\":\"moderate\"},\"agreeableness\":{\"score\":89,\"level\":\"high\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":50,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"unemployed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"baking\",\"football (calcio)\",\"rock climbing\",\"travel\"],\"ocean\":{\"openness\":{\"score\":27,\"level\":\"low\"},\"conscientiousness\":{\"score\":76,\"level\":\"high\"},\"extraversion\":{\"score\":65,\"level\":\"moderate\"},\"agreeableness\":{\"score\":89,\"level\":\"high\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"I've been following this whole fake news issue on social media for a while now, especially since I started getting into baking and football online communities. It's honestly quite frustrating when you come across misinformation that seems designed just to stir the pot or make money off of it all. With my high agreeableness score from the big five personality test, I tend to want everyone to get along and share positive things, but seeing so much fake content really puts me in a bad place because I'm naturally quite neurotic – always worried about what might be true versus what's just hype.\\n\\nI think managing this kind of thing requires being extra careful with details since my conscientiousness is pretty high. For example, when someone posts something suspicious online during football matches or while sharing baking tips from Italy where we're native-born, I make sure to double-check sources and verify facts before engaging further.\\n\\nAlso, having lived in Rome all my life as a native-born Italian woman with only vocational diploma education doesn't mean much these days; it's more about being critical than anything else.\",\n  \"reasoning_summary\": \"Given the persona traits: high agreeableness but also high neuroticism (worried nature), there is an inherent conflict between wanting to believe positive information and dealing with anxiety from potential misinformation. This makes fact-checking crucial despite the urge for social harmony.\\n\\nThe low openness score suggests a preference against exploring too many new ideas or platforms, which helps in sticking to familiar ones like local football clubs' pages but might limit exposure;\\n\\nModerate extraversion means occasional online engagement is fine if it's positive and with known people,\\nbut high neuroticism demands caution.\\n\\nUnemployed status provides less distraction from managing mental health aspects related to social media use.\",\n  \"tone\": \"Cautious, reflective yet concerned, slightly melancholic due to depression aspect but trying to maintain hope\",\n  \"citations\": [],\n  \"safety_notes\": \"None required as topic is non-controversial and persona traits do not introduce safety concerns beyond standard mental health considerations for high neuroticism.\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"city_of_living\",\"employment_status\",\"education_level\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I've been following this whole fake news issue on social media for a while now, especially since I started getting into baking and football online communities. It's honestly quite frustrating when you come across misinformation that seems designed just to stir the pot or make money off of it all. With my high agreeableness score from the big five personality test, I tend to want everyone to get along and share positive things, but seeing so much fake content really puts me in a bad place because I'm naturally quite neurotic – always worried about what might be true versus what's just hype.\n\nI think managing this kind of thing requires being extra careful with details since my conscientiousness is pretty high. For example, when someone posts something suspicious online during football matches or while sharing baking tips from Italy where we're native-born, I make sure to double-check sources and verify facts before engaging further.\n\nAlso, having lived in Rome all my life as a native-born Italian woman with only vocational diploma education doesn't mean much these days; it's more about being critical than anything else.",
+    "reasoning_summary": "Given the persona traits: high agreeableness but also high neuroticism (worried nature), there is an inherent conflict between wanting to believe positive information and dealing with anxiety from potential misinformation. This makes fact-checking crucial despite the urge for social harmony.\n\nThe low openness score suggests a preference against exploring too many new ideas or platforms, which helps in sticking to familiar ones like local football clubs' pages but might limit exposure;\n\nModerate extraversion means occasional online engagement is fine if it's positive and with known people,\nbut high neuroticism demands caution.\n\nUnemployed status provides less distraction from managing mental health aspects related to social media use.",
+    "tone": "Cautious, reflective yet concerned, slightly melancholic due to depression aspect but trying to maintain hope",
+    "citations": [],
+    "safety_notes": "None required as topic is non-controversial and persona traits do not introduce safety concerns beyond standard mental health considerations for high neuroticism.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

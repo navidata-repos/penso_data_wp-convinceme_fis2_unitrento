@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 33,
+      "gender": "man",
+      "sexual_orientation": "homosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Lecce",
+      "employment_status": "unemployed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cinema",
+        "photography",
+        "gardening",
+        "birdwatching",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 73,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 26,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 87,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 36,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 18,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":33,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Lecce\",\"employment_status\":\"unemployed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cinema\",\"photography\",\"gardening\",\"birdwatching\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":73,\"level\":\"high\"},\"conscientiousness\":{\"score\":26,\"level\":\"low\"},\"extraversion\":{\"score\":87,\"level\":\"high\"},\"agreeableness\":{\"score\":36,\"level\":\"moderate\"},\"neuroticism\":{\"score\":18,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":33,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Lecce\",\"employment_status\":\"unemployed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cinema\",\"photography\",\"gardening\",\"birdwatching\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":73,\"level\":\"high\"},\"conscientiousness\":{\"score\":26,\"level\":\"low\"},\"extraversion\":{\"score\":87,\"level\":\"high\"},\"agreeableness\":{\"score\":36,\"level\":\"moderate\"},\"neuroticism\":{\"score\":18,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"As someone who spends a good deal of time watching movies and taking photos, I've noticed that sometimes the things people expect from us—whether it’s in art or in science—feel like they carry this invisible weight. It reminds me, sort of, of the pressure when you're trying to capture a perfect shot at dawn; there's so much expectation attached to the moment itself. That feeling is what I think stereotype threat is all about, especially when we talk about STEM fields. Essentially, it’s that anxiety or mental drain that pops up simply because you are reminded of an existing negative stereotype about your group in that field. It’s not really about your ability; it's the fear of confirming a stereotype that slows down your thinking and makes the task much harder than it needs to be. I think we absolutely must address this, because if these kinds of subtle pressures keep holding people back—especially those who are already struggling against systemic odds—we’re just wasting brilliant minds. Addressing it can't just be about telling people they *should* do better; that only increases the pressure. Since I have a high openness and am quite extraverted, my focus tends to be on creating environments that feel open-ended and encouraging rather than punitive. We need systemic changes in how we teach and test, which means moving away from single, high-stakes assessments that can make you feel like your entire worth depends on one moment. Instead, educational institutions should adopt diverse evaluation methods—like project-based learning or collaborative portfolios—that allow people to show their skills in varied ways. Furthermore, the way we talk about science and technology needs a massive overhaul; instead of presenting these fields through narrow lenses that only celebrate certain types of genius (usually imagined as hyper-masculine or purely logical), we need to incorporate narratives that showcase diversity of thought, experience, and creative problem-solving. It’s not enough just to point out the bias; we have to actively build a culture where feeling comfortable being yourself is more valuable than scoring perfectly on an arbitrary test. We could also bring in mentors who come from diverse backgrounds—people whose stories prove that success looks like many things, not just one narrow definition. This whole approach requires a shift in mindset, making the learning process itself feel safe and exploratory, much like exploring a new landscape with my camera lens open to everything I might find.\\n\",\"reasoning_summary\":\"The persona is highly extraverted (87) and very open (73), but has low conscientiousness (26) and low neuroticism (18). They have hobbies like cinema, photography, gardening, birdwatching, and knitting. The tone must be reflective, creative, enthusiastic about new ideas, but slightly unstructured or tangential, drawing metaphors from their interests (photography, art, nature). The core topic is stereotype threat in STEM. I need to explain what it is, argue for addressing it, and suggest concrete solutions that align with an 'open' and 'extraverted' mindset—focusing on environment, culture, narrative change, and diverse methods rather than rigid rules or intense academic pressure (which aligns with low conscientiousness/low neuroticism). The prose must be continuous, descriptive, and at least 250 words.\",\"tone\":\"Reflective, Open-minded, Enthusiastic, Metaphorical\",\"citations\":[\"None\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"hobbies\",\"ocean.openness.score\",\"ocean.extraversion.score\",\"ocean.conscientiousness.score\",\"ocean.neuroticism.score\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As someone who spends a good deal of time watching movies and taking photos, I've noticed that sometimes the things people expect from us—whether it’s in art or in science—feel like they carry this invisible weight. It reminds me, sort of, of the pressure when you're trying to capture a perfect shot at dawn; there's so much expectation attached to the moment itself. That feeling is what I think stereotype threat is all about, especially when we talk about STEM fields. Essentially, it’s that anxiety or mental drain that pops up simply because you are reminded of an existing negative stereotype about your group in that field. It’s not really about your ability; it's the fear of confirming a stereotype that slows down your thinking and makes the task much harder than it needs to be. I think we absolutely must address this, because if these kinds of subtle pressures keep holding people back—especially those who are already struggling against systemic odds—we’re just wasting brilliant minds. Addressing it can't just be about telling people they *should* do better; that only increases the pressure. Since I have a high openness and am quite extraverted, my focus tends to be on creating environments that feel open-ended and encouraging rather than punitive. We need systemic changes in how we teach and test, which means moving away from single, high-stakes assessments that can make you feel like your entire worth depends on one moment. Instead, educational institutions should adopt diverse evaluation methods—like project-based learning or collaborative portfolios—that allow people to show their skills in varied ways. Furthermore, the way we talk about science and technology needs a massive overhaul; instead of presenting these fields through narrow lenses that only celebrate certain types of genius (usually imagined as hyper-masculine or purely logical), we need to incorporate narratives that showcase diversity of thought, experience, and creative problem-solving. It’s not enough just to point out the bias; we have to actively build a culture where feeling comfortable being yourself is more valuable than scoring perfectly on an arbitrary test. We could also bring in mentors who come from diverse backgrounds—people whose stories prove that success looks like many things, not just one narrow definition. This whole approach requires a shift in mindset, making the learning process itself feel safe and exploratory, much like exploring a new landscape with my camera lens open to everything I might find.\n",
+    "reasoning_summary": "The persona is highly extraverted (87) and very open (73), but has low conscientiousness (26) and low neuroticism (18). They have hobbies like cinema, photography, gardening, birdwatching, and knitting. The tone must be reflective, creative, enthusiastic about new ideas, but slightly unstructured or tangential, drawing metaphors from their interests (photography, art, nature). The core topic is stereotype threat in STEM. I need to explain what it is, argue for addressing it, and suggest concrete solutions that align with an 'open' and 'extraverted' mindset—focusing on environment, culture, narrative change, and diverse methods rather than rigid rules or intense academic pressure (which aligns with low conscientiousness/low neuroticism). The prose must be continuous, descriptive, and at least 250 words.",
+    "tone": "Reflective, Open-minded, Enthusiastic, Metaphorical",
+    "citations": [
+      "None"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "hobbies",
+      "ocean.openness.score",
+      "ocean.extraversion.score",
+      "ocean.conscientiousness.score",
+      "ocean.neuroticism.score"
+    ]
+  }
+}

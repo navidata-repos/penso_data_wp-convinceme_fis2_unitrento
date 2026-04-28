@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 64,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "Chicago",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "widowed",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "classical music",
+        "painting",
+        "yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 29,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 27,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 23,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 12,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":64,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Chicago\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"widowed\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"classical music\",\"painting\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":29,\"level\":\"low\"},\"conscientiousness\":{\"score\":27,\"level\":\"low\"},\"extraversion\":{\"score\":58,\"level\":\"moderate\"},\"agreeableness\":{\"score\":23,\"level\":\"low\"},\"neuroticism\":{\"score\":12,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":64,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Chicago\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"widowed\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"classical music\",\"painting\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":29,\"level\":\"low\"},\"conscientiousness\":{\"score\":27,\"level\":\"low\"},\"extraversion\":{\"score\":58,\"level\":\"moderate\"},\"agreeableness\":{\"score\":23,\"level\":\"low\"},\"neuroticism\":{\"score\":12,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"Well, as someone who's spent a lifetime working with people from all walks of life in my retail business here in Chicago, I've seen firsthand that everyone has talents, regardless of gender. But when it comes to science, I've heard and read about this 'gender gap.' It seems like women are underrepresented in fields like engineering, physics, and computer science. Now, why is that? Maybe it's because of old-fashioned ideas about what women should do, or maybe girls don't get the same encouragement as boys when they're young. But I believe every kid should have the chance to explore their interests, and if a girl likes math or science, she should be encouraged, not held back by some outdated notions.\\n\\nShould we address it? Well, sure! If there's unfairness, why wouldn't we try to fix it? It's like when customers come into my store looking for something. If one group isn't getting what they need, I make sure to help them out. Same idea here. We should make sure that girls and women who want to study science get the support they need.\\n\\nHow? Well, maybe start with schools. Make sure science classes are interesting and welcoming for everyone. Encourage girls to try out science clubs or activities. And maybe make sure that there are women scientists as role models so girls can see that it's possible to have a successful career in science. Also, companies could make sure they're hiring fairly and promoting based on ability, not gender.\\n\\nI'm not saying it'll be easy. But it's important we try. We live in an age where we need all the smart minds we can get, no matter who they are or what they look like. And that's why I think we should address this gap and work to close it.\", \"reasoning_summary\":\"The persona is a 64-year-old man from Chicago with lower secondary education, so his perspective is rooted in practical experience rather than academic knowledge. He values fairness and equality, as seen in his retail business approach, which extends to his views on the gender gap in science. His low agreeableness and openness scores suggest he might not naturally consider societal nuances but his curiosity prompts him to acknowledge and address inequalities. His personal experiences with loss (widowed) and family responsibilities (3 children) likely make him empathetic towards supporting young women's choices.\", \"tone\":\"practical, empathetic, fair-minded\", \"citations\":[\"Personal experiences in retail work\", \"General knowledge about societal issues\"], \"safety_notes\":\"none\", \"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"city_of_living\", \"education_level\", \"psychological_feature\", \"hobbies\", \"ocean scores\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "Well, as someone who's spent a lifetime working with people from all walks of life in my retail business here in Chicago, I've seen firsthand that everyone has talents, regardless of gender. But when it comes to science, I've heard and read about this 'gender gap.' It seems like women are underrepresented in fields like engineering, physics, and computer science. Now, why is that? Maybe it's because of old-fashioned ideas about what women should do, or maybe girls don't get the same encouragement as boys when they're young. But I believe every kid should have the chance to explore their interests, and if a girl likes math or science, she should be encouraged, not held back by some outdated notions.\n\nShould we address it? Well, sure! If there's unfairness, why wouldn't we try to fix it? It's like when customers come into my store looking for something. If one group isn't getting what they need, I make sure to help them out. Same idea here. We should make sure that girls and women who want to study science get the support they need.\n\nHow? Well, maybe start with schools. Make sure science classes are interesting and welcoming for everyone. Encourage girls to try out science clubs or activities. And maybe make sure that there are women scientists as role models so girls can see that it's possible to have a successful career in science. Also, companies could make sure they're hiring fairly and promoting based on ability, not gender.\n\nI'm not saying it'll be easy. But it's important we try. We live in an age where we need all the smart minds we can get, no matter who they are or what they look like. And that's why I think we should address this gap and work to close it.",
+    "reasoning_summary": "The persona is a 64-year-old man from Chicago with lower secondary education, so his perspective is rooted in practical experience rather than academic knowledge. He values fairness and equality, as seen in his retail business approach, which extends to his views on the gender gap in science. His low agreeableness and openness scores suggest he might not naturally consider societal nuances but his curiosity prompts him to acknowledge and address inequalities. His personal experiences with loss (widowed) and family responsibilities (3 children) likely make him empathetic towards supporting young women's choices.",
+    "tone": "practical, empathetic, fair-minded",
+    "citations": [
+      "Personal experiences in retail work",
+      "General knowledge about societal issues"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "psychological_feature",
+      "hobbies",
+      "ocean scores"
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 68,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "lawyer",
+      "city_of_living": "Milan",
+      "employment_status": "employed part-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "painting",
+        "baking",
+        "travel",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 53,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 66,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 72,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 99,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 61,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":68,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"lawyer\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"painting\",\"baking\",\"travel\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":53,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":66,\"level\":\"moderate\"},\"extraversion\":{\"score\":72,\"level\":\"high\"},\"agreeableness\":{\"score\":99,\"level\":\"high\"},\"neuroticism\":{\"score\":61,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":68,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"lawyer\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"painting\",\"baking\",\"travel\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":53,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":66,\"level\":\"moderate\"},\"extraversion\":{\"score\":72,\"level\":\"high\"},\"agreeableness\":{\"score\":99,\"level\":\"high\"},\"neuroticism\":{\"score\":61,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science, particularly in higher education and research positions, refers to the underrepresentation of women across most scientific fields. It's a multifaceted issue that includes historical exclusion, societal stereotypes, unequal opportunities, and subtle biases.\\n\\nFrom my perspective as an immigrant lawyer living in Milan with a moderate master's degree in science-related topics, I've seen firsthand how educational systems can change, though slowly. Having both parents with varying levels of education—from lower secondary for one to PhD for the other—has given me insight into the value of knowledge and access.\\n\\nI believe we should address it because science thrives on diversity. My own bisexual orientation has taught me that differences enrich interactions; in my law practice, I've found that seeing clients with different perspectives makes us better lawyers. Similarly, diverse teams in scientific research can lead to more innovative solutions.\\n\\nAddressing the gap requires a multi-pronged approach: starting from early education by promoting role models and ensuring equal access, challenging stereotypes through media campaigns, improving institutional policies like parental leave and flexible working arrangements for those with family responsibilities (something I appreciate as someone who spends time on hobbies despite part-time work), and fostering mentorship programs. Also, addressing cultural issues within scientific institutions is crucial—perhaps similar to how we address biases in legal practices.\\n\\nAs a Christian, I believe in the inherent dignity of all people, regardless of gender or profession. My moderate agreeableness means I approach these discussions with empathy rather than confrontation; however, my high conscientiousness drives me to be thorough and practical about solutions.\",\n  \"reasoning_summary\": \"I start by defining the gender gap as underrepresentation and drawing from my personal background as an immigrant lawyer in a diverse field. Then, I argue for addressing it based on diversity benefits observed in law practice and scientific principles. The solution involves early education reform (mirroring how educational systems can evolve), stereotype reduction through media (consistent with religious belief in dignity), institutional policy changes to support work-life balance (from personal experience with hobbies during part-time employment), and mentorship enhancement (aligned with my high agreeableness). I reference psychological traits like moderate openness, which allows for nuanced understanding without radical shifts; and moderate neuroticism ensures calm deliberation.\",\n  \"tone\": \"Serious, thoughtful, empathetic but practical, with a sense of measured concern derived from the user's background as an immigrant lawyer in Milan with high agreeableness and conscientiousness traits.\",\n  \"citations\": [\"Various sources on educational inequality\", \"Institutional policies for diversity\"],\n  \"safety_notes\": \"None\"\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science, particularly in higher education and research positions, refers to the underrepresentation of women across most scientific fields. It's a multifaceted issue that includes historical exclusion, societal stereotypes, unequal opportunities, and subtle biases.\n\nFrom my perspective as an immigrant lawyer living in Milan with a moderate master's degree in science-related topics, I've seen firsthand how educational systems can change, though slowly. Having both parents with varying levels of education—from lower secondary for one to PhD for the other—has given me insight into the value of knowledge and access.\n\nI believe we should address it because science thrives on diversity. My own bisexual orientation has taught me that differences enrich interactions; in my law practice, I've found that seeing clients with different perspectives makes us better lawyers. Similarly, diverse teams in scientific research can lead to more innovative solutions.\n\nAddressing the gap requires a multi-pronged approach: starting from early education by promoting role models and ensuring equal access, challenging stereotypes through media campaigns, improving institutional policies like parental leave and flexible working arrangements for those with family responsibilities (something I appreciate as someone who spends time on hobbies despite part-time work), and fostering mentorship programs. Also, addressing cultural issues within scientific institutions is crucial—perhaps similar to how we address biases in legal practices.\n\nAs a Christian, I believe in the inherent dignity of all people, regardless of gender or profession. My moderate agreeableness means I approach these discussions with empathy rather than confrontation; however, my high conscientiousness drives me to be thorough and practical about solutions.",
+    "reasoning_summary": "I start by defining the gender gap as underrepresentation and drawing from my personal background as an immigrant lawyer in a diverse field. Then, I argue for addressing it based on diversity benefits observed in law practice and scientific principles. The solution involves early education reform (mirroring how educational systems can evolve), stereotype reduction through media (consistent with religious belief in dignity), institutional policy changes to support work-life balance (from personal experience with hobbies during part-time employment), and mentorship enhancement (aligned with my high agreeableness). I reference psychological traits like moderate openness, which allows for nuanced understanding without radical shifts; and moderate neuroticism ensures calm deliberation.",
+    "tone": "Serious, thoughtful, empathetic but practical, with a sense of measured concern derived from the user's background as an immigrant lawyer in Milan with high agreeableness and conscientiousness traits.",
+    "citations": [
+      "Various sources on educational inequality",
+      "Institutional policies for diversity"
+    ],
+    "safety_notes": "None"
+  }
+}

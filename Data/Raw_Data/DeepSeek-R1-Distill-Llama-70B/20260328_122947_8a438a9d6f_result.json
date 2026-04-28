@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 42,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Naples",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "primary school"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "videogames",
+        "board games",
+        "photography",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 5,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 37,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 78,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 52,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 70,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":42,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"videogames\",\"board games\",\"photography\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":5,\"level\":\"low\"},\"conscientiousness\":{\"score\":37,\"level\":\"moderate\"},\"extraversion\":{\"score\":78,\"level\":\"high\"},\"agreeableness\":{\"score\":52,\"level\":\"moderate\"},\"neuroticism\":{\"score\":70,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":42,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"videogames\",\"board games\",\"photography\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":5,\"level\":\"low\"},\"conscientiousness\":{\"score\":37,\"level\":\"moderate\"},\"extraversion\":{\"score\":78,\"level\":\"high\"},\"agreeableness\":{\"score\":52,\"level\":\"moderate\"},\"neuroticism\":{\"score\":70,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"As a hairdresser in Naples, I see stereotype threat in STEM as something that affects people's confidence, much like how a bad haircut can make someone feel insecure. It's when someone, maybe a woman or a person from a minority group, feels pressured by negative stereotypes about their abilities in science, technology, engineering, or math, and it makes them perform worse or avoid those fields altogether. I think we should definitely address it because it's unfair and holds people back from reaching their potential. In my job, I help clients feel good about themselves, and in STEM, we should do the same by creating supportive environments. To address it, we can start by raising awareness through social media and community talks, since I use social media a few times a week and see how it can spread messages. Schools and workplaces should provide mentorship and training to combat biases, similar to how I learn new hairstyles to stay current. Encouraging diverse role models in STEM, like showcasing successful people from all backgrounds, can inspire others. It's about giving everyone a fair chance to shine, just as I aim to make every client leave my salon feeling confident. By working together, we can reduce stereotype threat and help more people succeed in STEM fields.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: Age 42 suggests life experience; occupation as hairdresser in Naples implies practical, service-oriented perspective; moderate conscientiousness and high extraversion support proactive, social approach to addressing issues; high neuroticism indicates sensitivity to stress and unfairness; low openness suggests reliance on concrete examples; hobbies like photography and knitting relate to creativity and patience; religious beliefs in Islam may emphasize fairness and community; used fields: occupation, city_of_living, extraversion, neuroticism, openness, hobbies, religious_beliefs, time_onsocialmedia.\",\n  \"tone\": \"Conversational, empathetic, practical, and slightly informal, reflecting a hairdresser's hands-on, people-focused background with high extraversion and neuroticism.\",\n  \"citations\": [\"none\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"occupation\", \"city_of_living\", \"extraversion\", \"neuroticism\", \"openness\", \"hobbies\", \"religious_beliefs\", \"time_onsocialmedia\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As a hairdresser in Naples, I see stereotype threat in STEM as something that affects people's confidence, much like how a bad haircut can make someone feel insecure. It's when someone, maybe a woman or a person from a minority group, feels pressured by negative stereotypes about their abilities in science, technology, engineering, or math, and it makes them perform worse or avoid those fields altogether. I think we should definitely address it because it's unfair and holds people back from reaching their potential. In my job, I help clients feel good about themselves, and in STEM, we should do the same by creating supportive environments. To address it, we can start by raising awareness through social media and community talks, since I use social media a few times a week and see how it can spread messages. Schools and workplaces should provide mentorship and training to combat biases, similar to how I learn new hairstyles to stay current. Encouraging diverse role models in STEM, like showcasing successful people from all backgrounds, can inspire others. It's about giving everyone a fair chance to shine, just as I aim to make every client leave my salon feeling confident. By working together, we can reduce stereotype threat and help more people succeed in STEM fields.",
+    "reasoning_summary": "Derived opinion from persona traits: Age 42 suggests life experience; occupation as hairdresser in Naples implies practical, service-oriented perspective; moderate conscientiousness and high extraversion support proactive, social approach to addressing issues; high neuroticism indicates sensitivity to stress and unfairness; low openness suggests reliance on concrete examples; hobbies like photography and knitting relate to creativity and patience; religious beliefs in Islam may emphasize fairness and community; used fields: occupation, city_of_living, extraversion, neuroticism, openness, hobbies, religious_beliefs, time_onsocialmedia.",
+    "tone": "Conversational, empathetic, practical, and slightly informal, reflecting a hairdresser's hands-on, people-focused background with high extraversion and neuroticism.",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "city_of_living",
+      "extraversion",
+      "neuroticism",
+      "openness",
+      "hobbies",
+      "religious_beliefs",
+      "time_onsocialmedia"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

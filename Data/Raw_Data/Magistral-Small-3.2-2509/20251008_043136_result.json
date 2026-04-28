@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 18,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "native Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "travel",
+        "yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 13,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 33,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 56,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 3,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 68,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":18,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"PhD\"},\"marital_status\":\"married\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"travel\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":13,\"level\":\"low\"},\"conscientiousness\":{\"score\":33,\"level\":\"moderate\"},\"extraversion\":{\"score\":56,\"level\":\"moderate\"},\"agreeableness\":{\"score\":3,\"level\":\"low\"},\"neuroticism\":{\"score\":68,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":18,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"PhD\"},\"marital_status\":\"married\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"travel\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":13,\"level\":\"low\"},\"conscientiousness\":{\"score\":33,\"level\":\"moderate\"},\"extraversion\":{\"score\":56,\"level\":\"moderate\"},\"agreeableness\":{\"score\":3,\"level\":\"low\"},\"neuroticism\":{\"score\":68,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"From my perspective, as an 18-year-old woman living in Rome who spends a lot of time on social media, the gender gap in science seems like a big deal. I see it every day, even though I'm not a scientist myself. My parents have both studied a lot, one has a master's degree and the other a PhD, so I know that education is important. But when I look at my friends or people on social media who are interested in science, it seems like there are more men than women. This makes me anxious because I worry that if girls don't see many women in science, they might not think it's for them. I'm not very open to new ideas and can be a bit anxious about things, but this is something that worries me a lot. Science should be for everyone, right? How can we fix this? Maybe we need more role models. I love yoga and travel, both of which are open to anyone regardless of gender. So why isn't science like that? We need to make sure that girls see women in science so they know it's a possibility. Maybe schools could have more female scientists come to talk to us, or we could have more stories on social media about women in science. But I'm not sure how to do this without feeling overwhelmed because the problem is big and I don't have much formal education myself. Still, I think it's important that we try, even if it seems hard at first.\",\"reasoning_summary\":\"The persona has low openness, moderate conscientiousness, moderate extraversion, low agreeableness, and high neuroticism, which suggests that she might feel anxious about big issues like the gender gap in science but still wants to address them. Her background as a barista with no formal education and her atheist beliefs also play into this because she might not see many women in STEM fields around her. Her parents' high levels of education could be a factor that makes her aware of the importance of education, but the discrepancy between their education and hers could make her anxious about scientific fields being out of reach for her. She spends several hours daily on social media, which means she is exposed to many discussions about social issues like this one. Her love for travel and yoga suggests that she values inclusivity and diversity, so the lack of it in science would be concerning to her.\",\"tone\":\"concerned but hopeful, with a touch of anxiety\",\"citations\":[\"UNESCO Institute for Statistics\", \"World Economic Forum\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"biological_sex\",\"gender\",\"city_of_living\",\"time_onsocialmedia\",\"hobbies\",\"ocean\",\"parents_education\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "From my perspective, as an 18-year-old woman living in Rome who spends a lot of time on social media, the gender gap in science seems like a big deal. I see it every day, even though I'm not a scientist myself. My parents have both studied a lot, one has a master's degree and the other a PhD, so I know that education is important. But when I look at my friends or people on social media who are interested in science, it seems like there are more men than women. This makes me anxious because I worry that if girls don't see many women in science, they might not think it's for them. I'm not very open to new ideas and can be a bit anxious about things, but this is something that worries me a lot. Science should be for everyone, right? How can we fix this? Maybe we need more role models. I love yoga and travel, both of which are open to anyone regardless of gender. So why isn't science like that? We need to make sure that girls see women in science so they know it's a possibility. Maybe schools could have more female scientists come to talk to us, or we could have more stories on social media about women in science. But I'm not sure how to do this without feeling overwhelmed because the problem is big and I don't have much formal education myself. Still, I think it's important that we try, even if it seems hard at first.",
+    "reasoning_summary": "The persona has low openness, moderate conscientiousness, moderate extraversion, low agreeableness, and high neuroticism, which suggests that she might feel anxious about big issues like the gender gap in science but still wants to address them. Her background as a barista with no formal education and her atheist beliefs also play into this because she might not see many women in STEM fields around her. Her parents' high levels of education could be a factor that makes her aware of the importance of education, but the discrepancy between their education and hers could make her anxious about scientific fields being out of reach for her. She spends several hours daily on social media, which means she is exposed to many discussions about social issues like this one. Her love for travel and yoga suggests that she values inclusivity and diversity, so the lack of it in science would be concerning to her.",
+    "tone": "concerned but hopeful, with a touch of anxiety",
+    "citations": [
+      "UNESCO Institute for Statistics",
+      "World Economic Forum"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "city_of_living",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean",
+      "parents_education"
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "baidu/ernie-4.5-21b-a3b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 65,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "gardening",
+        "yoga",
+        "birdwatching",
+        "travel",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 70,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 67,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 23,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 77,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 22,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":65,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"gardening\",\"yoga\",\"birdwatching\",\"travel\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":67,\"level\":\"high\"},\"extraversion\":{\"score\":23,\"level\":\"low\"},\"agreeableness\":{\"score\":77,\"level\":\"high\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":65,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"gardening\",\"yoga\",\"birdwatching\",\"travel\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":67,\"level\":\"high\"},\"extraversion\":{\"score\":23,\"level\":\"low\"},\"agreeableness\":{\"score\":77,\"level\":\"high\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"The gender gap in science has been a persistent issue, reflecting systemic biases that hinder equal participation and advancement for women. Historically, scientific disciplines have often been dominated by men, leading to underrepresentation of female voices and perspectives. Today, while progress has been made—more women are earning degrees in STEM fields than ever before—the gap persists in leadership positions, funding opportunities, and recognition within the field. Addressing this issue is crucial not only for social justice but also for fostering innovation and diversity in scientific research. Diverse teams bring varied perspectives that can lead to more comprehensive solutions and creative breakthroughs, ultimately benefiting society as a whole.\",\"reasoning_summary\":\"To begin with, examining historical data reveals the roots of the gender gap, often linked to societal expectations and institutional barriers. Women have faced challenges in accessing education and professional networks, which perpetuates the cycle of underrepresentation. Furthermore, biases and stereotypes can influence hiring practices and evaluations, leading to unequal opportunities for advancement. For instance, studies indicate that female scientists are often judged more harshly on their technical skills compared to their male counterparts, despite equal or superior performance. This disparity not only affects individual career trajectories but also impacts the quality of research output, as diverse teams contribute unique insights. Addressing this requires a multifaceted approach: education reform to encourage and support girls in STEM from an early age; policy changes to promote pay equity and family-friendly work conditions; and cultural shifts that challenge stereotypes and celebrate diversity. Mentorship programs can also play a vital role, providing guidance and opportunities for women to thrive in scientific fields. By addressing both individual and systemic barriers, we can create a more equitable landscape where talent is recognized and nurtured regardless of gender.\",\"tone\":\"Reflective yet determined, reflecting the persona's balanced outlook and openness to positive change.\",\"citations\":[\"National Science Foundation. (2021). Women, Minorities, and Persons with Disabilities in Science and Engineering.\",\"American Association for the Advancement of Science. (2020). Diversity in STEM: The Importance of Inclusion.\"],\"safety_notes\":\"No specific safety notes applicable.\",\"used_persona_fields\":[\"age\", \"gender\", \"sexual_orientation\", \"occupation\", \"city_of_living\", \"education_level\", \"parents_education\", \"current_marital_status\", \"children\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science has been a persistent issue, reflecting systemic biases that hinder equal participation and advancement for women. Historically, scientific disciplines have often been dominated by men, leading to underrepresentation of female voices and perspectives. Today, while progress has been made—more women are earning degrees in STEM fields than ever before—the gap persists in leadership positions, funding opportunities, and recognition within the field. Addressing this issue is crucial not only for social justice but also for fostering innovation and diversity in scientific research. Diverse teams bring varied perspectives that can lead to more comprehensive solutions and creative breakthroughs, ultimately benefiting society as a whole.",
+    "reasoning_summary": "To begin with, examining historical data reveals the roots of the gender gap, often linked to societal expectations and institutional barriers. Women have faced challenges in accessing education and professional networks, which perpetuates the cycle of underrepresentation. Furthermore, biases and stereotypes can influence hiring practices and evaluations, leading to unequal opportunities for advancement. For instance, studies indicate that female scientists are often judged more harshly on their technical skills compared to their male counterparts, despite equal or superior performance. This disparity not only affects individual career trajectories but also impacts the quality of research output, as diverse teams contribute unique insights. Addressing this requires a multifaceted approach: education reform to encourage and support girls in STEM from an early age; policy changes to promote pay equity and family-friendly work conditions; and cultural shifts that challenge stereotypes and celebrate diversity. Mentorship programs can also play a vital role, providing guidance and opportunities for women to thrive in scientific fields. By addressing both individual and systemic barriers, we can create a more equitable landscape where talent is recognized and nurtured regardless of gender.",
+    "tone": "Reflective yet determined, reflecting the persona's balanced outlook and openness to positive change.",
+    "citations": [
+      "National Science Foundation. (2021). Women, Minorities, and Persons with Disabilities in Science and Engineering.",
+      "American Association for the Advancement of Science. (2020). Diversity in STEM: The Importance of Inclusion."
+    ],
+    "safety_notes": "No specific safety notes applicable.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies"
+    ]
+  }
+}

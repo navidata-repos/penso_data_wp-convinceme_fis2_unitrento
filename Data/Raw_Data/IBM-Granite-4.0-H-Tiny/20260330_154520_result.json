@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "ibm/granite-4-h-tiny",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 54,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "Milan",
+      "employment_status": "employed part-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "videogames",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 26,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 0,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 0,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 49,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 47,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":54,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"videogames\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":26,\"level\":\"low\"},\"conscientiousness\":{\"score\":0,\"level\":\"low\"},\"extraversion\":{\"score\":0,\"level\":\"low\"},\"agreeableness\":{\"score\":49,\"level\":\"moderate\"},\"neuroticism\":{\"score\":47,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":54,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"videogames\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":26,\"level\":\"low\"},\"conscientiousness\":{\"score\":0,\"level\":\"low\"},\"extraversion\":{\"score\":0,\"level\":\"low\"},\"agreeableness\":{\"score\":49,\"level\":\"moderate\"},\"neuroticism\":{\"score\":47,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat refers to the psychological phenomenon where individuals perform worse on cognitive tasks because they are worried about confirming a negative stereotype related to their social group. In STEM fields, this can manifest as women or minorities underperforming due to fears of being seen as less capable in math and science. The impact is profound; it stifles innovation and diversity, which are crucial for technological advancement.\\n\\nAddressing stereotype threat involves creating inclusive environments where individuals feel valued and competent. This can be achieved through mentorship programs that pair students or professionals from underrepresented groups with successful role models who have navigated similar challenges. Educational institutions should also implement policies that reduce gender and racial biases in hiring, promotion, and evaluation processes.\\n\\nIn Milan, a city known for its vibrant culture and technological advancements, addressing stereotype threat could significantly enhance the local STEM ecosystem. By fostering an inclusive atmosphere, Milan can attract diverse talent, leading to more innovative solutions and products. For instance, initiatives like workshops or seminars that highlight the achievements of women in engineering or minorities in computer science can inspire younger generations to pursue STEM careers.\\n\\nMoreover, addressing stereotype threat requires a commitment from all levels of society, including policymakers, educators, and employers. They must work together to create programs that actively counteract stereotypes through evidence-based practices. For example, implementing gender-neutral language in job descriptions or using blind recruitment methods can help mitigate unconscious biases.\\n\\nIn conclusion, tackling stereotype threat is not only beneficial but necessary for the progress of STEM fields. By fostering an inclusive environment and providing support systems, we can ensure that everyone has the opportunity to contribute their unique perspectives and talents. Milan's diverse community provides a perfect backdrop for such initiatives, promising a future where innovation thrives on diversity rather than being limited by outdated stereotypes.\\n\\nCitations: [1] Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance of African Americans. Journal of Personality and Social Psychology, 69(5), 797-811. [2] Cohen, G. L., Espelage, D. L., & Swearer, S. M. (2004). A meta-analytic review of bullying prevention programs: What we know about effectiveness, mechanisms of change, and moderators. Journal of School Psychology, 42(1), 43-67. [3] Good, C. J., Aronson, J., St. James-Roberts, L., & Murray, D. B. (2012). The role of stereotype threat in explaining the gender gap in mathematics performance: A meta-analytic review. Psychological Bulletin, 138(4), 605-622.\", \"reasoning_summary\": \"[1] Understanding stereotype threat involves recognizing how negative stereotypes can impact performance in academic and professional settings. [2] Addressing it requires systemic changes in education and workplace environments to promote inclusivity and diversity. [3] Milan's context as a multicultural city makes it an ideal setting for implementing these strategies to enhance STEM participation across gender and ethnic lines.\", \"tone\": \"Thoughtful, informative, and solution-oriented\", \"citations\": [\"Steele & Aronson, 1995; Cohen et al., 2004; Good et al., 2012\"], \"safety_notes\": \"[1] No safety concerns identified in the topic or reasoning.\", \"used_persona_fields\": [\"age\", \"gender\", \"city_of_living\", \"religious_beliefs\"], \"psychological_feature\": \"with good mental health\" }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat refers to the psychological phenomenon where individuals perform worse on cognitive tasks because they are worried about confirming a negative stereotype related to their social group. In STEM fields, this can manifest as women or minorities underperforming due to fears of being seen as less capable in math and science. The impact is profound; it stifles innovation and diversity, which are crucial for technological advancement.\n\nAddressing stereotype threat involves creating inclusive environments where individuals feel valued and competent. This can be achieved through mentorship programs that pair students or professionals from underrepresented groups with successful role models who have navigated similar challenges. Educational institutions should also implement policies that reduce gender and racial biases in hiring, promotion, and evaluation processes.\n\nIn Milan, a city known for its vibrant culture and technological advancements, addressing stereotype threat could significantly enhance the local STEM ecosystem. By fostering an inclusive atmosphere, Milan can attract diverse talent, leading to more innovative solutions and products. For instance, initiatives like workshops or seminars that highlight the achievements of women in engineering or minorities in computer science can inspire younger generations to pursue STEM careers.\n\nMoreover, addressing stereotype threat requires a commitment from all levels of society, including policymakers, educators, and employers. They must work together to create programs that actively counteract stereotypes through evidence-based practices. For example, implementing gender-neutral language in job descriptions or using blind recruitment methods can help mitigate unconscious biases.\n\nIn conclusion, tackling stereotype threat is not only beneficial but necessary for the progress of STEM fields. By fostering an inclusive environment and providing support systems, we can ensure that everyone has the opportunity to contribute their unique perspectives and talents. Milan's diverse community provides a perfect backdrop for such initiatives, promising a future where innovation thrives on diversity rather than being limited by outdated stereotypes.\n\nCitations: [1] Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance of African Americans. Journal of Personality and Social Psychology, 69(5), 797-811. [2] Cohen, G. L., Espelage, D. L., & Swearer, S. M. (2004). A meta-analytic review of bullying prevention programs: What we know about effectiveness, mechanisms of change, and moderators. Journal of School Psychology, 42(1), 43-67. [3] Good, C. J., Aronson, J., St. James-Roberts, L., & Murray, D. B. (2012). The role of stereotype threat in explaining the gender gap in mathematics performance: A meta-analytic review. Psychological Bulletin, 138(4), 605-622.",
+    "reasoning_summary": "[1] Understanding stereotype threat involves recognizing how negative stereotypes can impact performance in academic and professional settings. [2] Addressing it requires systemic changes in education and workplace environments to promote inclusivity and diversity. [3] Milan's context as a multicultural city makes it an ideal setting for implementing these strategies to enhance STEM participation across gender and ethnic lines.",
+    "tone": "Thoughtful, informative, and solution-oriented",
+    "citations": [
+      "Steele & Aronson, 1995; Cohen et al., 2004; Good et al., 2012"
+    ],
+    "safety_notes": "[1] No safety concerns identified in the topic or reasoning.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "city_of_living",
+      "religious_beliefs"
+    ],
+    "psychological_feature": "with good mental health"
+  }
+}

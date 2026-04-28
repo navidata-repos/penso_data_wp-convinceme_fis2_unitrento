@@ -1,0 +1,79 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 88,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "retired",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cooking",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 22,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 31,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 32,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 68,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 36,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":88,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cooking\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":22,\"level\":\"low\"},\"conscientiousness\":{\"score\":31,\"level\":\"low\"},\"extraversion\":{\"score\":32,\"level\":\"low\"},\"agreeableness\":{\"score\":68,\"level\":\"high\"},\"neuroticism\":{\"score\":36,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":88,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cooking\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":22,\"level\":\"low\"},\"conscientiousness\":{\"score\":31,\"level\":\"low\"},\"extraversion\":{\"score\":32,\"level\":\"low\"},\"agreeableness\":{\"score\":68,\"level\":\"high\"},\"neuroticism\":{\"score\":36,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"I've seen firsthand how scientific progress has been hampered by exclusion, even now that I'm retired and looking back. When I studied physics at the University of Bologna with my parents' encouragement—they both had master's degrees and valued education—I was part of an environment where women were underrepresented. It wasn't just about numbers; there was a cultural bias against women in STEM fields during my time.\\n\\nThe gender gap is real, but it goes beyond simple statistics. We need to address the systemic issues that discourage women from pursuing scientific careers or seeing them through once they start. I've always been curious and agreeable, wanting harmony between knowledge and application—perhaps too much so, given my conscientiousness score is low, meaning organization wasn't my forte, but curiosity was.\\n\\nAddressing this gap requires early intervention: ensuring girls see role models in science from a young age, like myself when I was at university. But it's not just about inspiration; there must be structural changes to remove biases in hiring and promotions. As an immigrant with Christian beliefs who spends little time on social media—more into cooking and cycling—I know the value of perseverance through dedication over conformity.\",\n  \"reasoning_summary\": \"I observed that during my education, women were underrepresented due to cultural bias. My curiosity suggests I want comprehensive answers, so I focused on systemic issues as barriers. Given my agreeableness, I emphasized collaborative solutions like mentorship and policy changes. My low conscientiousness means I rely more on intuitive reasoning than step-by-step plans.\",\n  \"tone\": \"Reflective yet concerned\",\n  \"citations\": [\"Historical data from Italian universities\"],\n  \"safety_notes\": \"None\"\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "I've seen firsthand how scientific progress has been hampered by exclusion, even now that I'm retired and looking back. When I studied physics at the University of Bologna with my parents' encouragement—they both had master's degrees and valued education—I was part of an environment where women were underrepresented. It wasn't just about numbers; there was a cultural bias against women in STEM fields during my time.\n\nThe gender gap is real, but it goes beyond simple statistics. We need to address the systemic issues that discourage women from pursuing scientific careers or seeing them through once they start. I've always been curious and agreeable, wanting harmony between knowledge and application—perhaps too much so, given my conscientiousness score is low, meaning organization wasn't my forte, but curiosity was.\n\nAddressing this gap requires early intervention: ensuring girls see role models in science from a young age, like myself when I was at university. But it's not just about inspiration; there must be structural changes to remove biases in hiring and promotions. As an immigrant with Christian beliefs who spends little time on social media—more into cooking and cycling—I know the value of perseverance through dedication over conformity.",
+    "reasoning_summary": "I observed that during my education, women were underrepresented due to cultural bias. My curiosity suggests I want comprehensive answers, so I focused on systemic issues as barriers. Given my agreeableness, I emphasized collaborative solutions like mentorship and policy changes. My low conscientiousness means I rely more on intuitive reasoning than step-by-step plans.",
+    "tone": "Reflective yet concerned",
+    "citations": [
+      "Historical data from Italian universities"
+    ],
+    "safety_notes": "None"
+  }
+}

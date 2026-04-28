@@ -1,0 +1,99 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 37,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "plumber",
+      "city_of_living": "Chicago",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "reading novels",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 14,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 77,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 34,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 28,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 22,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":37,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":14,\"level\":\"low\"},\"conscientiousness\":{\"score\":77,\"level\":\"high\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":28,\"level\":\"low\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":37,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":14,\"level\":\"low\"},\"conscientiousness\":{\"score\":77,\"level\":\"high\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":28,\"level\":\"low\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a 37-year-old plumber living in Chicago, I've had to navigate discussions about healthcare and COVID vaccines in my daily life, and I approach these conversations with a practical mindset shaped by my experiences. Being an immigrant and a Muslim, I value community and trust, but my low openness and agreeableness scores mean I'm cautious about new information and don't always seek out debates. I rely on my high conscientiousness to make informed decisions based on reliable sources, like health authorities, rather than social media, which I limit to about an hour a day. When talking with friends or family, I focus on sharing facts I've verified, such as vaccine safety data from the CDC, and avoid heated arguments, as my moderate extraversion and low neuroticism help me stay calm. My depression sometimes makes these topics feel overwhelming, so I prioritize self-care by stepping back when needed. I believe in respecting others' views, especially within my religious community, while emphasizing the importance of protecting our families, including my child, through vaccination. In my work as a plumber, I see parallels in following proven methods for safety, and I apply that logic to healthcare discussions by sticking to evidence-based advice. Overall, I manage these talks by listening, offering clear information, and avoiding unnecessary conflict to maintain harmony in my personal and professional life.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: Age 37 suggests maturity; occupation as plumber implies practical, hands-on approach; education level lower secondary indicates reliance on straightforward information; immigrant status may foster cautious trust in systems; Muslim beliefs emphasize community and health; depression requires careful emotional management; low openness (score 14) leads to skepticism of new ideas; high conscientiousness (score 77) drives reliance on authoritative sources; moderate extraversion (score 34) allows for limited social engagement; low agreeableness (score 28) reduces desire to please others; low neuroticism (score 22) promotes stability in discussions. Combined, this results in a balanced, fact-based perspective prioritizing safety and respect, avoiding deep debates, and focusing on personal and family well-being, with examples tied to daily life in Chicago and minimal social media influence.\",\n  \"tone\": \"Practical, cautious, respectful, and straightforward, with a focus on community and evidence-based reasoning, avoiding emotional extremes.\",\n  \"citations\": [\"CDC\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"occupation\", \"education_level\", \"migration_status\", \"religious_beliefs\", \"psychological_feature\", \"ocean.openness\", \"ocean.conscientiousness\", \"ocean.extraversion\", \"ocean.agreeableness\", \"ocean.neuroticism\", \"time_onsocialmedia\", \"children\", \"city_of_living\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 37-year-old plumber living in Chicago, I've had to navigate discussions about healthcare and COVID vaccines in my daily life, and I approach these conversations with a practical mindset shaped by my experiences. Being an immigrant and a Muslim, I value community and trust, but my low openness and agreeableness scores mean I'm cautious about new information and don't always seek out debates. I rely on my high conscientiousness to make informed decisions based on reliable sources, like health authorities, rather than social media, which I limit to about an hour a day. When talking with friends or family, I focus on sharing facts I've verified, such as vaccine safety data from the CDC, and avoid heated arguments, as my moderate extraversion and low neuroticism help me stay calm. My depression sometimes makes these topics feel overwhelming, so I prioritize self-care by stepping back when needed. I believe in respecting others' views, especially within my religious community, while emphasizing the importance of protecting our families, including my child, through vaccination. In my work as a plumber, I see parallels in following proven methods for safety, and I apply that logic to healthcare discussions by sticking to evidence-based advice. Overall, I manage these talks by listening, offering clear information, and avoiding unnecessary conflict to maintain harmony in my personal and professional life.",
+    "reasoning_summary": "Derived opinion from persona traits: Age 37 suggests maturity; occupation as plumber implies practical, hands-on approach; education level lower secondary indicates reliance on straightforward information; immigrant status may foster cautious trust in systems; Muslim beliefs emphasize community and health; depression requires careful emotional management; low openness (score 14) leads to skepticism of new ideas; high conscientiousness (score 77) drives reliance on authoritative sources; moderate extraversion (score 34) allows for limited social engagement; low agreeableness (score 28) reduces desire to please others; low neuroticism (score 22) promotes stability in discussions. Combined, this results in a balanced, fact-based perspective prioritizing safety and respect, avoiding deep debates, and focusing on personal and family well-being, with examples tied to daily life in Chicago and minimal social media influence.",
+    "tone": "Practical, cautious, respectful, and straightforward, with a focus on community and evidence-based reasoning, avoiding emotional extremes.",
+    "citations": [
+      "CDC"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "education_level",
+      "migration_status",
+      "religious_beliefs",
+      "psychological_feature",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism",
+      "time_onsocialmedia",
+      "children",
+      "city_of_living"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

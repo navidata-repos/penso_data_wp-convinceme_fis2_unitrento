@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 20,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "Milan",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "travel",
+        "reading novels",
+        "cinema",
+        "photography",
+        "yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 99,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 32,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 32,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 87,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 74,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":20,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"travel\",\"reading novels\",\"cinema\",\"photography\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":99,\"level\":\"high\"},\"conscientiousness\":{\"score\":32,\"level\":\"low\"},\"extraversion\":{\"score\":32,\"level\":\"low\"},\"agreeableness\":{\"score\":87,\"level\":\"high\"},\"neuroticism\":{\"score\":74,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":20,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"travel\",\"reading novels\",\"cinema\",\"photography\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":99,\"level\":\"high\"},\"conscientiousness\":{\"score\":32,\"level\":\"low\"},\"extraversion\":{\"score\":32,\"level\":\"low\"},\"agreeableness\":{\"score\":87,\"level\":\"high\"},\"neuroticism\":{\"score\":74,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"I think that encountering fake content online is something we all have to deal with, especially since I'm someone who uses these platforms occasionally for things like reading about cinema or photography. It's not a big part of my daily life—my girlfriend works in marketing so she deals with it more often—but when I do come across misinformation, it can be unsettling.\\n\\nI believe the best way to handle this is by being skeptical and verifying sources whenever possible. Since I'm only on social media a few times each month, I tend to focus on posts that are relevant to my interests or hobbies. For example, if someone claims expertise in film photography but has zero credibility online, it's easy for me to dismiss their advice.\\n\\nHowever, sometimes fake content can go viral because people want to believe certain things—whether they're politically charged or just misleading about everyday topics like shopping deals. As an agreeable person who values normalcy and truthfulness (given my high agreeableness score), I prefer not spreading such content even if it seems harmless fun.\\n\\nI also try not getting too worked up since my neuroticism isn't extremely high—but being overly critical of fake posts might cause unnecessary stress. So rather than engaging with every dubious claim, I simply ignore them unless they affect something important like job opportunities or family matters (though my parents don't really follow social media).\\n\\nOverall, managing fake content is about staying calm and exercising common sense without letting it ruin one's day.\",\n  \"reasoning_summary\": \"First, acknowledge the user's engagement with the topic despite their minimal time on social media. Then, incorporate their personality traits—high agreeableness meaning a preference for truthfulness but also avoiding confrontation; low conscientiousness suggesting less structure in dealing with online content; high neuroticism indicating some emotional susceptibility to misinformation.\\n\\nDerive that their approach should focus on skepticism and selective engagement rather than comprehensive verification due to limited time. Use examples from hobbies (cinema, photography) where they can apply common sense without deep dives.\",\n  \"tone\": \"Calm but critical of fake content; somewhat skeptical with a touch of normalcy-seeking\",\n  \"citations\": [],\n  \"safety_notes\": \"None reported in this case\",\n  \"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"parents_education\", \"current_marital_status\", \"hobbies\", \"ocean.openness\", \"ocean.conscientiveness\", \"ocean.extroversion\", \"ocean.agreeableness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I think that encountering fake content online is something we all have to deal with, especially since I'm someone who uses these platforms occasionally for things like reading about cinema or photography. It's not a big part of my daily life—my girlfriend works in marketing so she deals with it more often—but when I do come across misinformation, it can be unsettling.\n\nI believe the best way to handle this is by being skeptical and verifying sources whenever possible. Since I'm only on social media a few times each month, I tend to focus on posts that are relevant to my interests or hobbies. For example, if someone claims expertise in film photography but has zero credibility online, it's easy for me to dismiss their advice.\n\nHowever, sometimes fake content can go viral because people want to believe certain things—whether they're politically charged or just misleading about everyday topics like shopping deals. As an agreeable person who values normalcy and truthfulness (given my high agreeableness score), I prefer not spreading such content even if it seems harmless fun.\n\nI also try not getting too worked up since my neuroticism isn't extremely high—but being overly critical of fake posts might cause unnecessary stress. So rather than engaging with every dubious claim, I simply ignore them unless they affect something important like job opportunities or family matters (though my parents don't really follow social media).\n\nOverall, managing fake content is about staying calm and exercising common sense without letting it ruin one's day.",
+    "reasoning_summary": "First, acknowledge the user's engagement with the topic despite their minimal time on social media. Then, incorporate their personality traits—high agreeableness meaning a preference for truthfulness but also avoiding confrontation; low conscientiousness suggesting less structure in dealing with online content; high neuroticism indicating some emotional susceptibility to misinformation.\n\nDerive that their approach should focus on skepticism and selective engagement rather than comprehensive verification due to limited time. Use examples from hobbies (cinema, photography) where they can apply common sense without deep dives.",
+    "tone": "Calm but critical of fake content; somewhat skeptical with a touch of normalcy-seeking",
+    "citations": [],
+    "safety_notes": "None reported in this case",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiveness",
+      "ocean.extroversion",
+      "ocean.agreeableness"
+    ]
+  }
+}

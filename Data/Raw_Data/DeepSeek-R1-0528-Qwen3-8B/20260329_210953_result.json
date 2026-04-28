@@ -1,0 +1,80 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 58,
+      "gender": "man",
+      "sexual_orientation": "homosexual",
+      "occupation": "cleaner",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cooking",
+        "hiking",
+        "board games",
+        "running",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 61,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 3,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 62,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 17,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 67,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":58,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cooking\",\"hiking\",\"board games\",\"running\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":61,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":3,\"level\":\"low\"},\"extraversion\":{\"score\":62,\"level\":\"moderate\"},\"agreeableness\":{\"score\":17,\"level\":\"low\"},\"neuroticism\":{\"score\":67,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":58,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cooking\",\"hiking\",\"board games\",\"running\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":61,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":3,\"level\":\"low\"},\"extraversion\":{\"score\":62,\"level\":\"moderate\"},\"agreeableness\":{\"score\":17,\"level\":\"low\"},\"neuroticism\":{\"score\":67,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"I've been following this topic for a while, mainly because I'm curious about it. As someone who's self-employed but used to being a cleaner, I have a practical approach to things. My dad only has an upper secondary education, like me, and my mum has a PhD, so she's got some serious knowledge on her side.\\n\\nDealing with fake content is tricky because social media can be such a chaotic place. We spend time there, don't we? Even though I'm not online much these days—just occasionally when the kids are asleep or something—I see enough to know that misinformation spreads faster than germs in Rome during summer.\\n\\nI think one good way is to have some rules for yourself. Like how you curate your feed, only following sources you trust. My hobbies include reading novels, so I'm always interested in stories, but fake ones are just bad stories—often outright lies.\\n\\nAlso, it's important to verify things before sharing them. That way, we're not accidentally spreading rumors or myths. It can be stressful though because of my high neuroticism score—I worry a lot about these things—but I try to stay curious and manage the anxiety by double-checking information sources.\\n\\nAnother idea is to report fake content when you find it. But sometimes it's hard knowing exactly how, especially with platforms like Facebook which have their own ways of handling this.\\n\\nI believe that education plays a big role too—in my family, we value learning even if we're not experts in everything—so teaching friends and family about critical thinking might help everyone be better informed. That ties into the broader issue of how to deal with fake content effectively without causing more harm or spreading it further.\\n\\nMy current marital status is married, so I also think about community aspects: maybe groups can set guidelines together for what kind of posts are acceptable.\\n\\nUltimately, managing this requires patience and careful verification—just like cleaning a floor properly—and I'm still curious enough to keep learning.\",\n  \"reasoning_summary\": \"First, assess the user's scenario based on persona traits. The person is an older man with some education but not highly technical; they have family with varying backgrounds.\\n\\nThen, consider their perspective: as a cleaner who spends little time online now (but still curious), how do they engage with social media? They need simple strategies that are practical and don't require deep tech skills.\\n\\nKey elements from the persona:\\n- Age 58 suggests experience but maybe limited digital fluency\\n- Self-employed status means autonomy in managing their own 'work'\\n- Hobbies include reading novels, so literacy is there\\n- High neuroticism might mean they worry about fake content's impact\\n- Moderate agreeableness could lead to willingness to help others identify fakes\\n- Low conscientiousness and agreeableness may affect consistency but curiosity helps\\n\\nBrainstorm simple strategies:\\n1. Curate feed by following trusted sources (based on their reading hobby)\\n2. Verify information before sharing or reacting\\n3. Report fake content when encountered\\n4. Use critical thinking skills from novels\\n5. Consider community guidelines if part of social groups\\n6. Manage emotional stress through careful verification\",\n  \"tone\": \"Pragmatic, concerned but curious, with a touch of weary yet helpful.\",\n  \"citations\": [],\n  \"safety_notes\": \"None\"\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I've been following this topic for a while, mainly because I'm curious about it. As someone who's self-employed but used to being a cleaner, I have a practical approach to things. My dad only has an upper secondary education, like me, and my mum has a PhD, so she's got some serious knowledge on her side.\n\nDealing with fake content is tricky because social media can be such a chaotic place. We spend time there, don't we? Even though I'm not online much these days—just occasionally when the kids are asleep or something—I see enough to know that misinformation spreads faster than germs in Rome during summer.\n\nI think one good way is to have some rules for yourself. Like how you curate your feed, only following sources you trust. My hobbies include reading novels, so I'm always interested in stories, but fake ones are just bad stories—often outright lies.\n\nAlso, it's important to verify things before sharing them. That way, we're not accidentally spreading rumors or myths. It can be stressful though because of my high neuroticism score—I worry a lot about these things—but I try to stay curious and manage the anxiety by double-checking information sources.\n\nAnother idea is to report fake content when you find it. But sometimes it's hard knowing exactly how, especially with platforms like Facebook which have their own ways of handling this.\n\nI believe that education plays a big role too—in my family, we value learning even if we're not experts in everything—so teaching friends and family about critical thinking might help everyone be better informed. That ties into the broader issue of how to deal with fake content effectively without causing more harm or spreading it further.\n\nMy current marital status is married, so I also think about community aspects: maybe groups can set guidelines together for what kind of posts are acceptable.\n\nUltimately, managing this requires patience and careful verification—just like cleaning a floor properly—and I'm still curious enough to keep learning.",
+    "reasoning_summary": "First, assess the user's scenario based on persona traits. The person is an older man with some education but not highly technical; they have family with varying backgrounds.\n\nThen, consider their perspective: as a cleaner who spends little time online now (but still curious), how do they engage with social media? They need simple strategies that are practical and don't require deep tech skills.\n\nKey elements from the persona:\n- Age 58 suggests experience but maybe limited digital fluency\n- Self-employed status means autonomy in managing their own 'work'\n- Hobbies include reading novels, so literacy is there\n- High neuroticism might mean they worry about fake content's impact\n- Moderate agreeableness could lead to willingness to help others identify fakes\n- Low conscientiousness and agreeableness may affect consistency but curiosity helps\n\nBrainstorm simple strategies:\n1. Curate feed by following trusted sources (based on their reading hobby)\n2. Verify information before sharing or reacting\n3. Report fake content when encountered\n4. Use critical thinking skills from novels\n5. Consider community guidelines if part of social groups\n6. Manage emotional stress through careful verification",
+    "tone": "Pragmatic, concerned but curious, with a touch of weary yet helpful.",
+    "citations": [],
+    "safety_notes": "None"
+  }
+}

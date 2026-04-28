@@ -1,0 +1,92 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 51,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "electrician",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "single",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "cinema",
+        "cooking",
+        "cycling",
+        "volunteering",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 80,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 27,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 84,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 46,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":51,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cinema\",\"cooking\",\"cycling\",\"volunteering\",\"baking\"],\"ocean\":{\"openness\":{\"score\":80,\"level\":\"high\"},\"conscientiousness\":{\"score\":27,\"level\":\"low\"},\"extraversion\":{\"score\":84,\"level\":\"high\"},\"agreeableness\":{\"score\":41,\"level\":\"moderate\"},\"neuroticism\":{\"score\":46,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":51,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cinema\",\"cooking\",\"cycling\",\"volunteering\",\"baking\"],\"ocean\":{\"openness\":{\"score\":80,\"level\":\"high\"},\"conscientiousness\":{\"score\":27,\"level\":\"low\"},\"extraversion\":{\"score\":84,\"level\":\"high\"},\"agreeableness\":{\"score\":41,\"level\":\"moderate\"},\"neuroticism\":{\"score\":46,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"When you hear about stereotype threat, what comes to mind is this pressure—this feeling that just being there, trying to do something, means constantly worrying about whether you're going to fail and confirm some bad idea people have already formed. It’s like when I’m out cycling sometimes, and the other riders are all super fit, moving fast. You get that little voice in your head telling you, 'You can't keep up,' even if you know logically you just need a bit more time or maybe a different route. That constant internal pressure is what this threat feels like, only much worse because it’s about who you are and what you're supposed to be good at. In STEM, where things are already complex enough without the added mental load of worrying about your background or identity, that extra weight can really mess with a person’s focus and performance. It’s not just academic; it’s human. Given how much I care about giving back, especially through volunteering—I see so many people struggling to get started in technical fields—I absolutely believe we have to address this. Ignoring it is like trying to fix an electrical fault while ignoring the frayed wires around it; you're only going to hit a bigger problem later on. We need strategies that are practical and focus on making the environment feel safe, not judgmental. One approach I think has real potential is reframing how we teach and test things. Instead of focusing so heavily on proving *if* you belong there—which is what those stereotypes do—we should shift the entire focus to celebrating the process of learning itself. For instance, if we introduce more hands-on, project-based learning that doesn't feel like a high-stakes exam, it can lower that immediate pressure cooker feeling. Furthermore, building community and encouraging mentorship, especially where people from diverse backgrounds can see themselves succeeding in those fields, is crucial. It’s about creating spaces where the goal isn't just to pass a test, but to build competence and confidence together. We need to make sure that when someone walks into a lab or an advanced class, their first feeling isn't anxiety, but curiosity and belonging. That sense of community—that shared effort, like working on a big cooking project with friends—can counteract the corrosive effects of those stereotypes and let people actually show what they can do without being weighed down by external expectations about who they 'should' be in that field.\",\"reasoning_summary\":\"The persona is an electrician (practical background, upper secondary education) who is single, has a high Openness score (80), very high Extraversion (84), and low Conscientiousness (27). He is also psychologically noted as 'depressed' and enjoys hobbies like cycling, cooking, and volunteering. The tone should be earnest, relatable, practical, slightly passionate, and empathetic, reflecting both his hands-on trade background and his underlying emotional sensitivity (depression/volunteering focus). Stereotype threat needs to be explained using analogies related to physical effort or shared experience (cycling, electrical faults) to ground it in a tangible reality. The recommendation ('how') must be actionable and focused on community/environment changes rather than just intellectual concepts, aligning with his practical nature and desire to help others (volunteering).\",\"tone\":\"Earnest, highly empathetic, pragmatic, slightly passionate, using relatable analogies from physical activity or trades.\",\"citations\":[\"N/A\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"occupation\",\"education_level\",\"current_marital_status\",\"migration_status\",\"psychological_feature\",\"hobbies\",\"ocean.openness.score\",\"ocean.extraversion.score\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "When you hear about stereotype threat, what comes to mind is this pressure—this feeling that just being there, trying to do something, means constantly worrying about whether you're going to fail and confirm some bad idea people have already formed. It’s like when I’m out cycling sometimes, and the other riders are all super fit, moving fast. You get that little voice in your head telling you, 'You can't keep up,' even if you know logically you just need a bit more time or maybe a different route. That constant internal pressure is what this threat feels like, only much worse because it’s about who you are and what you're supposed to be good at. In STEM, where things are already complex enough without the added mental load of worrying about your background or identity, that extra weight can really mess with a person’s focus and performance. It’s not just academic; it’s human. Given how much I care about giving back, especially through volunteering—I see so many people struggling to get started in technical fields—I absolutely believe we have to address this. Ignoring it is like trying to fix an electrical fault while ignoring the frayed wires around it; you're only going to hit a bigger problem later on. We need strategies that are practical and focus on making the environment feel safe, not judgmental. One approach I think has real potential is reframing how we teach and test things. Instead of focusing so heavily on proving *if* you belong there—which is what those stereotypes do—we should shift the entire focus to celebrating the process of learning itself. For instance, if we introduce more hands-on, project-based learning that doesn't feel like a high-stakes exam, it can lower that immediate pressure cooker feeling. Furthermore, building community and encouraging mentorship, especially where people from diverse backgrounds can see themselves succeeding in those fields, is crucial. It’s about creating spaces where the goal isn't just to pass a test, but to build competence and confidence together. We need to make sure that when someone walks into a lab or an advanced class, their first feeling isn't anxiety, but curiosity and belonging. That sense of community—that shared effort, like working on a big cooking project with friends—can counteract the corrosive effects of those stereotypes and let people actually show what they can do without being weighed down by external expectations about who they 'should' be in that field.",
+    "reasoning_summary": "The persona is an electrician (practical background, upper secondary education) who is single, has a high Openness score (80), very high Extraversion (84), and low Conscientiousness (27). He is also psychologically noted as 'depressed' and enjoys hobbies like cycling, cooking, and volunteering. The tone should be earnest, relatable, practical, slightly passionate, and empathetic, reflecting both his hands-on trade background and his underlying emotional sensitivity (depression/volunteering focus). Stereotype threat needs to be explained using analogies related to physical effort or shared experience (cycling, electrical faults) to ground it in a tangible reality. The recommendation ('how') must be actionable and focused on community/environment changes rather than just intellectual concepts, aligning with his practical nature and desire to help others (volunteering).",
+    "tone": "Earnest, highly empathetic, pragmatic, slightly passionate, using relatable analogies from physical activity or trades.",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "current_marital_status",
+      "migration_status",
+      "psychological_feature",
+      "hobbies",
+      "ocean.openness.score",
+      "ocean.extraversion.score"
+    ]
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "google/gemma-4-e4b-it",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 27,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "electrician",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "board games",
+        "birdwatching",
+        "travel",
+        "videogames",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 37,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 14,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 53,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":27,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"birdwatching\",\"travel\",\"videogames\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":42,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":42,\"level\":\"moderate\"},\"extraversion\":{\"score\":37,\"level\":\"moderate\"},\"agreeableness\":{\"score\":14,\"level\":\"low\"},\"neuroticism\":{\"score\":53,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":27,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"birdwatching\",\"travel\",\"videogames\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":42,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":42,\"level\":\"moderate\"},\"extraversion\":{\"score\":37,\"level\":\"moderate\"},\"agreeableness\":{\"score\":14,\"level\":\"low\"},\"neuroticism\":{\"score\":53,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":27,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"birdwatching\",\"travel\",\"videogames\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":42,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":42,\"level\":\"moderate\"},\"extraversion\":{\"score\":37,\"level\":\"moderate\"},\"agreeableness\":{\"score\":14,\"level\":\"low\"},\"neuroticism\":{\"score\":53,\"level\":\"moderate\"}}},\"opinion\":\"When I think about these big, complicated things like 'stereotype threat' in science and math, it sounds very academic, something you read about in a book during a quiet travel day. But even though my hands are usually covered in grease fixing circuits, I see how these ideas affect people in my community. Stereotype threat, as I understand it, is that nagging pressure—that feeling of worrying you might confirm a negative idea people already have about your group when you're trying to prove yourself. In STEM, where the idea is that logic and skill should just *be* there, that fear can make someone hesitate, make them second-guess a simple calculation, or just lose their focus when they should be concentrating on the problem itself. It’s like when you’re setting up a complex board game, and you get so worried about making a mistake that you freeze up instead of playing your best move. Should we address it? Absolutely, because if we let that fear stop talented people from even trying, we’re wasting good minds. How do we tackle it? For me, it feels practical. Instead of just talking about the threat, we need to build environments where the threat can’t take hold. This means making the learning process feel less like a high-stakes test and more like a shared project. Maybe by mixing up the group work so that people from different backgrounds are working side-by-side on practical electrical problems, or by focusing on the *process* of discovery rather than just the final, perfect answer. If we frame STEM not as some distant, intimidating fortress of pure intellect, but as a craft—like fixing an engine or charting a bird migration—where everyone contributes their specific strength, then that shadow of stereotype threat loses a lot of its power. It’s about making the space feel safe enough to just *try* and learn, which is something I value whether I'm on the job or reading a good novel.\\n\",\"reasoning_summary\":\"The persona is a 27-year-old woman, an electrician with primary school education, living in Bologna. Her traits suggest a grounded, practical, moderately introspective, and slightly anxious nature (moderate neuroticism, low agreeableness, moderate extraversion). The tone should be down-to-earth, pragmatic, and relatable, linking abstract concepts to tangible, everyday experiences. The response must discuss stereotype threat, advocate for addressing it, and suggest practical solutions. The analogy of board games and practical work (like fixing circuits) aligns with her occupation and hobbies. The reasoning progresses from defining the concept in accessible terms to advocating for action, concluding with solutions rooted in creating safe, process-oriented environments.\\n\",\"tone\":\"Grounded, pragmatic, and relatable\",\"citations\":[\"N/A\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"hobbies\",\"ocean.neuroticism\",\"ocean.agreeableness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 27,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "electrician",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "board games",
+        "birdwatching",
+        "travel",
+        "videogames",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 37,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 14,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 53,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion": "When I think about these big, complicated things like 'stereotype threat' in science and math, it sounds very academic, something you read about in a book during a quiet travel day. But even though my hands are usually covered in grease fixing circuits, I see how these ideas affect people in my community. Stereotype threat, as I understand it, is that nagging pressure—that feeling of worrying you might confirm a negative idea people already have about your group when you're trying to prove yourself. In STEM, where the idea is that logic and skill should just *be* there, that fear can make someone hesitate, make them second-guess a simple calculation, or just lose their focus when they should be concentrating on the problem itself. It’s like when you’re setting up a complex board game, and you get so worried about making a mistake that you freeze up instead of playing your best move. Should we address it? Absolutely, because if we let that fear stop talented people from even trying, we’re wasting good minds. How do we tackle it? For me, it feels practical. Instead of just talking about the threat, we need to build environments where the threat can’t take hold. This means making the learning process feel less like a high-stakes test and more like a shared project. Maybe by mixing up the group work so that people from different backgrounds are working side-by-side on practical electrical problems, or by focusing on the *process* of discovery rather than just the final, perfect answer. If we frame STEM not as some distant, intimidating fortress of pure intellect, but as a craft—like fixing an engine or charting a bird migration—where everyone contributes their specific strength, then that shadow of stereotype threat loses a lot of its power. It’s about making the space feel safe enough to just *try* and learn, which is something I value whether I'm on the job or reading a good novel.\n",
+    "reasoning_summary": "The persona is a 27-year-old woman, an electrician with primary school education, living in Bologna. Her traits suggest a grounded, practical, moderately introspective, and slightly anxious nature (moderate neuroticism, low agreeableness, moderate extraversion). The tone should be down-to-earth, pragmatic, and relatable, linking abstract concepts to tangible, everyday experiences. The response must discuss stereotype threat, advocate for addressing it, and suggest practical solutions. The analogy of board games and practical work (like fixing circuits) aligns with her occupation and hobbies. The reasoning progresses from defining the concept in accessible terms to advocating for action, concluding with solutions rooted in creating safe, process-oriented environments.\n",
+    "tone": "Grounded, pragmatic, and relatable",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "hobbies",
+      "ocean.neuroticism",
+      "ocean.agreeableness"
+    ]
+  }
+}

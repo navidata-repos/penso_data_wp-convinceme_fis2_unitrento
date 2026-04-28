@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 74,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Bologna",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "reading novels",
+        "videogames",
+        "football (calcio)",
+        "painting",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 84,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 0,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 30,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 1,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":74,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"videogames\",\"football (calcio)\",\"painting\",\"baking\"],\"ocean\":{\"openness\":{\"score\":60,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":84,\"level\":\"high\"},\"extraversion\":{\"score\":0,\"level\":\"low\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":1,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":74,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"videogames\",\"football (calcio)\",\"painting\",\"baking\"],\"ocean\":{\"openness\":{\"score\":60,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":84,\"level\":\"high\"},\"extraversion\":{\"score\":0,\"level\":\"low\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":1,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"Stereotype threat, as I understand it from what little I've read on the subject through social media and casual interest in psychology, is when a person feels at risk of confirming a negative stereotype about their group. For instance, if there's a belief that mechanics are not smart or something like that, then someone might feel anxious performing tasks for fear of being judged by others as less capable.\",\n  \"reasoning_summary\": \"Stereotype threat occurs in STEM when individuals face performance situations where the stereotype about their identity group conflicts with desired outcomes. It can affect anyone who belongs to a stereotyped group but particularly concerns me because I've experienced anxiety myself due to societal expectations around my background and occupation. Addressing it is important for fairness, even if some might think it's unnecessary—after all, everyone deserves equal opportunity regardless of where they come from or their family's education levels.\\n\\nFirst, what stereotype threat means: it happens when someone is aware of a negative stereotype relevant to them and the situation demands high performance. I've seen this in my own life; growing up with parents who had different educational backgrounds, but especially since becoming an immigrant mechanic, there might be assumptions about intelligence or capability that don't hold true.\\n\\nThen, should we address it? Yes, because it creates unnecessary stress for people trying to excel. It hinders progress by making individuals doubt themselves when they shouldn't. Moreover, as a person with high conscientiousness and moderate openness (though low on others), I believe addressing such threats allows more people like myself—who are hardworking but might face extra pressure due to background—to focus on the task rather than fear.\\n\\nHow? By creating inclusive environments that challenge stereotypes through education, support systems for underrepresented groups, and by ensuring everyone feels valued. This could involve changing workplace cultures or educational programs in STEM fields to be more welcoming.\",\n  \"tone\": \"Calm and measured with a hint of practicality from the mechanic's background\",\n  \"citations\": [\n    \"Various articles on stereotype threat I've read through Reddit forums\"\n  ],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\n    \"age\", \"gender\", \"occupation\", \"migration_status\", \"parents_education\", \"hobbies\"\n  ]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat, as I understand it from what little I've read on the subject through social media and casual interest in psychology, is when a person feels at risk of confirming a negative stereotype about their group. For instance, if there's a belief that mechanics are not smart or something like that, then someone might feel anxious performing tasks for fear of being judged by others as less capable.",
+    "reasoning_summary": "Stereotype threat occurs in STEM when individuals face performance situations where the stereotype about their identity group conflicts with desired outcomes. It can affect anyone who belongs to a stereotyped group but particularly concerns me because I've experienced anxiety myself due to societal expectations around my background and occupation. Addressing it is important for fairness, even if some might think it's unnecessary—after all, everyone deserves equal opportunity regardless of where they come from or their family's education levels.\n\nFirst, what stereotype threat means: it happens when someone is aware of a negative stereotype relevant to them and the situation demands high performance. I've seen this in my own life; growing up with parents who had different educational backgrounds, but especially since becoming an immigrant mechanic, there might be assumptions about intelligence or capability that don't hold true.\n\nThen, should we address it? Yes, because it creates unnecessary stress for people trying to excel. It hinders progress by making individuals doubt themselves when they shouldn't. Moreover, as a person with high conscientiousness and moderate openness (though low on others), I believe addressing such threats allows more people like myself—who are hardworking but might face extra pressure due to background—to focus on the task rather than fear.\n\nHow? By creating inclusive environments that challenge stereotypes through education, support systems for underrepresented groups, and by ensuring everyone feels valued. This could involve changing workplace cultures or educational programs in STEM fields to be more welcoming.",
+    "tone": "Calm and measured with a hint of practicality from the mechanic's background",
+    "citations": [
+      "Various articles on stereotype threat I've read through Reddit forums"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "migration_status",
+      "parents_education",
+      "hobbies"
+    ]
+  }
+}

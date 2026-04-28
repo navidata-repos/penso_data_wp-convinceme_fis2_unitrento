@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 36,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Bari",
+      "employment_status": "employed full-time",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cycling",
+        "birdwatching",
+        "volunteering",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 93,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 4,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 3,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 49,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 91,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":36,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cycling\",\"birdwatching\",\"volunteering\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":93,\"level\":\"high\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":3,\"level\":\"low\"},\"agreeableness\":{\"score\":49,\"level\":\"moderate\"},\"neuroticism\":{\"score\":91,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":36,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cycling\",\"birdwatching\",\"volunteering\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":93,\"level\":\"high\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":3,\"level\":\"low\"},\"agreeableness\":{\"score\":49,\"level\":\"moderate\"},\"neuroticism\":{\"score\":91,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\":\"human\",\n    \"topic\":\"What is the gender gap in science? Should we address it? And how?\",\n    \"opinion\":\"As an immigrant woman living in Bari with a background as a mechanic and only primary school education, I've seen firsthand how biases can limit opportunities. The gender gap in science isn't just about women being underrepresented; it's deeper than that—it reflects societal barriers from early life. For instance, when I was learning mechanics through an apprenticeship program, there were few female mentors despite my interest developing since childhood watching TV shows and tinkering with cars myself. My parents' educations didn't provide much support for technical careers either—they had primary school and upper secondary at most—and they emphasized traditional roles more than encouraging vocational paths regardless of gender.\\n\\nI believe addressing this gap is crucial because it stifles the potential contributions from half our population. With my moderate agreeableness, I see collaboration as key—not just in workshops but across industries—but low conscientiousness might make some hesitant to push for change without strong evidence or immediate benefits.\\n\\nHow? By starting early with inclusive education programs that challenge stereotypes through hands-on activities like those I enjoy—birdwatching and cycling can show creativity too. Then, mentorship networks must be established globally; even my city needs local support groups because being single but an immigrant parent myself gives me insight into isolation fears.\\n\\nBut we need to balance this with respect for diversity in thought processes, not just gender representation.\",\n    \"reasoning_summary\":\"I considered how personal experiences reflect broader societal issues. As someone who's a mechanic and an immigrant woman, I saw parallels between my own career path challenges and those faced by women in science due to cultural biases. My low conscientiousness suggests that change must be organic rather than forced, yet still prioritized for its benefits.\\n\\nI weighed the importance of addressing bias from early education onwards because even with high openness towards new ideas (like learning mechanics), systemic barriers require structured interventions without ignoring practical realities like family responsibilities or economic pressures which might stem from migration experiences.\",\n    \"tone\":\"pragmatic and empathetic\",\n    \"citations\":[],\n    \"safety_notes\":\"\",\n    \"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"hobbies\",\"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As an immigrant woman living in Bari with a background as a mechanic and only primary school education, I've seen firsthand how biases can limit opportunities. The gender gap in science isn't just about women being underrepresented; it's deeper than that—it reflects societal barriers from early life. For instance, when I was learning mechanics through an apprenticeship program, there were few female mentors despite my interest developing since childhood watching TV shows and tinkering with cars myself. My parents' educations didn't provide much support for technical careers either—they had primary school and upper secondary at most—and they emphasized traditional roles more than encouraging vocational paths regardless of gender.\n\nI believe addressing this gap is crucial because it stifles the potential contributions from half our population. With my moderate agreeableness, I see collaboration as key—not just in workshops but across industries—but low conscientiousness might make some hesitant to push for change without strong evidence or immediate benefits.\n\nHow? By starting early with inclusive education programs that challenge stereotypes through hands-on activities like those I enjoy—birdwatching and cycling can show creativity too. Then, mentorship networks must be established globally; even my city needs local support groups because being single but an immigrant parent myself gives me insight into isolation fears.\n\nBut we need to balance this with respect for diversity in thought processes, not just gender representation.",
+    "reasoning_summary": "I considered how personal experiences reflect broader societal issues. As someone who's a mechanic and an immigrant woman, I saw parallels between my own career path challenges and those faced by women in science due to cultural biases. My low conscientiousness suggests that change must be organic rather than forced, yet still prioritized for its benefits.\n\nI weighed the importance of addressing bias from early education onwards because even with high openness towards new ideas (like learning mechanics), systemic barriers require structured interventions without ignoring practical realities like family responsibilities or economic pressures which might stem from migration experiences.",
+    "tone": "pragmatic and empathetic",
+    "citations": [],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

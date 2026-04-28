@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 29,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "sales associate",
+      "city_of_living": "Philadelphia",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "rock climbing",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 24,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 79,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 8,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":29,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"rock climbing\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":24,\"level\":\"low\"},\"conscientiousness\":{\"score\":50,\"level\":\"moderate\"},\"extraversion\":{\"score\":64,\"level\":\"moderate\"},\"agreeableness\":{\"score\":79,\"level\":\"high\"},\"neuroticism\":{\"score\":8,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":29,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"rock climbing\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":24,\"level\":\"low\"},\"conscientiousness\":{\"score\":50,\"level\":\"moderate\"},\"extraversion\":{\"score\":64,\"level\":\"moderate\"},\"agreeableness\":{\"score\":79,\"level\":\"high\"},\"neuroticism\":{\"score\":8,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As an immigrant woman living in Philadelphia, I've found myself navigating tricky conversations about COVID vaccines quite often. With my lower level of openness at only 24 out of the maximum score, vaccine discussions make me a bit uncomfortable. But because they're so important for public health and safety, especially being from another country where different approaches might have been taken, I try to listen carefully without pushing too many opinions. My high agreeableness means I want everyone to feel heard even if my own views aren't strong on the subject - I'm very aware that people come with diverse experiences given my background as someone who's lived across cultures.\\n\\nOne effective way has been using simple language since my education is only lower secondary, and avoiding technical terms whenever possible. When a friend brings it up after our rock climbing trip last weekend when we were chatting about gyms being safe places again post-pandemic, I respond by saying something like 'I know keeping fit matters more now than ever before pandemic, right?' Then I gently guide towards reliable sources without making anyone feel attacked.\\n\\nGiven my depressed psychological state, sometimes these conversations trigger anxiety for me personally but also empathy because of that; so instead of getting defensive about misinformation online or on social media (which I check just a few times monthly), I prefer to share what experts say from organizations like CDC or WHO. My moderate conscientiousness helps keep track with the facts though my low neuroticism score keeps worries down.\\n\\nI believe in being patient during these discussions because people need time adjusting especially if they're worried about their families back home given my migration status.\",\n  \"reasoning_summary\": \"Starting from the persona's background: An immigrant woman living in Philadelphia, self-employed with lower secondary education. Her psychological feature is depression, which makes vaccine topics sensitive. She has moderate openness and agreeableness but low neuroticism.\\n\\nStep-by-step derivation: First, acknowledge personal comfort level due to low openness score (24). Then emphasize high agreeableness by wanting everyone involved respectfully without pushing opinions. Use simple language based on lower education level (lower secondary) for clarity.\\n\\nCultural context from migration status adds another layer - understanding concerns about other countries' approaches might help empathize better.\\n\\nDepression requires sensitivity in handling personal triggers but should be avoided unless the topic directly relates to it.\\n\\nLow neuroticism means not getting overly anxious or emotional during debates; just rely on facts calmly.\",\n  \"tone\": \"Calm, empathetic and respectful\",\n  \"citations\": [\"CDC\", \"WHO\"],\n  \"safety_notes\": \"\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"migration_status\",\"education_level\",\"psychological_feature\",\"ocean.openness\",\"ocean.agreeableness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As an immigrant woman living in Philadelphia, I've found myself navigating tricky conversations about COVID vaccines quite often. With my lower level of openness at only 24 out of the maximum score, vaccine discussions make me a bit uncomfortable. But because they're so important for public health and safety, especially being from another country where different approaches might have been taken, I try to listen carefully without pushing too many opinions. My high agreeableness means I want everyone to feel heard even if my own views aren't strong on the subject - I'm very aware that people come with diverse experiences given my background as someone who's lived across cultures.\n\nOne effective way has been using simple language since my education is only lower secondary, and avoiding technical terms whenever possible. When a friend brings it up after our rock climbing trip last weekend when we were chatting about gyms being safe places again post-pandemic, I respond by saying something like 'I know keeping fit matters more now than ever before pandemic, right?' Then I gently guide towards reliable sources without making anyone feel attacked.\n\nGiven my depressed psychological state, sometimes these conversations trigger anxiety for me personally but also empathy because of that; so instead of getting defensive about misinformation online or on social media (which I check just a few times monthly), I prefer to share what experts say from organizations like CDC or WHO. My moderate conscientiousness helps keep track with the facts though my low neuroticism score keeps worries down.\n\nI believe in being patient during these discussions because people need time adjusting especially if they're worried about their families back home given my migration status.",
+    "reasoning_summary": "Starting from the persona's background: An immigrant woman living in Philadelphia, self-employed with lower secondary education. Her psychological feature is depression, which makes vaccine topics sensitive. She has moderate openness and agreeableness but low neuroticism.\n\nStep-by-step derivation: First, acknowledge personal comfort level due to low openness score (24). Then emphasize high agreeableness by wanting everyone involved respectfully without pushing opinions. Use simple language based on lower education level (lower secondary) for clarity.\n\nCultural context from migration status adds another layer - understanding concerns about other countries' approaches might help empathize better.\n\nDepression requires sensitivity in handling personal triggers but should be avoided unless the topic directly relates to it.\n\nLow neuroticism means not getting overly anxious or emotional during debates; just rely on facts calmly.",
+    "tone": "Calm, empathetic and respectful",
+    "citations": [
+      "CDC",
+      "WHO"
+    ],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "migration_status",
+      "education_level",
+      "psychological_feature",
+      "ocean.openness",
+      "ocean.agreeableness"
+    ]
+  }
+}

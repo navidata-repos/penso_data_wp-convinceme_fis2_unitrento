@@ -1,0 +1,96 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 34,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "software developer",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "hiking",
+        "knitting",
+        "volunteering",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 53,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 86,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 22,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 9,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 96,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":34,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"hiking\",\"knitting\",\"volunteering\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":53,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":86,\"level\":\"high\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":9,\"level\":\"low\"},\"neuroticism\":{\"score\":96,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":34,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"hiking\",\"knitting\",\"volunteering\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":53,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":86,\"level\":\"high\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":9,\"level\":\"low\"},\"neuroticism\":{\"score\":96,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a software developer living in Philadelphia, I've found that managing conversations around COVID vaccines requires balancing technical knowledge with emotional sensitivity. My anxiety sometimes makes these discussions uncomfortable for me, but being Jewish has given me strong connections to community health traditions. When my children ask questions at school about why some people refuse shots, I try to explain the science clearly while acknowledging their understandable concerns.\\n\\nIn work settings, I prefer using data visualization rather than arguing points - showing infection rates or efficacy studies helps ground discussions in facts when emotions run high. Philadelphia's diverse environment means I encounter many perspectives from immigrant communities where language barriers might compense understanding of medical information.\\n\\nMy low extraversion and agreeableness sometimes make me hesitant to call out misinformation, but my Jewish background emphasizes careful study of texts (like Talmudic discussions) which can help guide vaccine conversations. When people question vaccines based on religious beliefs conflicting with science, I remind myself that many in the Orthodox community actually prioritize vaccination while respecting different viewpoints.\\n\\nThe high conscientiousness from my upbringing means I prepare extensively before such talks - researching CDC guidelines or checking multiple scientific sources takes extra effort but builds credibility. My anxiety sometimes causes me to over-analyze comments online about vaccines (even though I'm on social media just occasionally) so I try to limit engagement there and focus more in person.\\n\\nUltimately, for vaccine discussions at home or work, I find that being prepared yet empathetic works best - using tools like shared documents with statistics while maintaining respect when people disagree based on personal beliefs.\",\n  \"reasoning_summary\": \"As an anxious immigrant woman with a Jewish background, I approach vaccine discussions by grounding them in facts and community traditions. My software development skills inform my preference for data visualization over debate. Moderate openness allows me to consider different perspectives without straying from evidence-based views. High agreeableness balances with anxious tendencies through preparation and respectfulness.\",\n  \"tone\": \"Calm yet concerned, empathetic but authoritative\",\n  \"citations\": [\"Centers for Disease Control and Prevention (CDC)\", \"World Health Organization\"],\n  \"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"current_marital_status\", \"children\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a software developer living in Philadelphia, I've found that managing conversations around COVID vaccines requires balancing technical knowledge with emotional sensitivity. My anxiety sometimes makes these discussions uncomfortable for me, but being Jewish has given me strong connections to community health traditions. When my children ask questions at school about why some people refuse shots, I try to explain the science clearly while acknowledging their understandable concerns.\n\nIn work settings, I prefer using data visualization rather than arguing points - showing infection rates or efficacy studies helps ground discussions in facts when emotions run high. Philadelphia's diverse environment means I encounter many perspectives from immigrant communities where language barriers might compense understanding of medical information.\n\nMy low extraversion and agreeableness sometimes make me hesitant to call out misinformation, but my Jewish background emphasizes careful study of texts (like Talmudic discussions) which can help guide vaccine conversations. When people question vaccines based on religious beliefs conflicting with science, I remind myself that many in the Orthodox community actually prioritize vaccination while respecting different viewpoints.\n\nThe high conscientiousness from my upbringing means I prepare extensively before such talks - researching CDC guidelines or checking multiple scientific sources takes extra effort but builds credibility. My anxiety sometimes causes me to over-analyze comments online about vaccines (even though I'm on social media just occasionally) so I try to limit engagement there and focus more in person.\n\nUltimately, for vaccine discussions at home or work, I find that being prepared yet empathetic works best - using tools like shared documents with statistics while maintaining respect when people disagree based on personal beliefs.",
+    "reasoning_summary": "As an anxious immigrant woman with a Jewish background, I approach vaccine discussions by grounding them in facts and community traditions. My software development skills inform my preference for data visualization over debate. Moderate openness allows me to consider different perspectives without straying from evidence-based views. High agreeableness balances with anxious tendencies through preparation and respectfulness.",
+    "tone": "Calm yet concerned, empathetic but authoritative",
+    "citations": [
+      "Centers for Disease Control and Prevention (CDC)",
+      "World Health Organization"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

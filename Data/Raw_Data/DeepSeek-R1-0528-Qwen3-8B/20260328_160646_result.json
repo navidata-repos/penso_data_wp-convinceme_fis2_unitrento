@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 67,
+      "gender": "woman",
+      "sexual_orientation": "asexual",
+      "occupation": "not applicable",
+      "city_of_living": "Chicago",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "birdwatching",
+        "reading novels",
+        "gardening",
+        "running",
+        "yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 10,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 54,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 63,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":67,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Chicago\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"birdwatching\",\"reading novels\",\"gardening\",\"running\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":10,\"level\":\"low\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":44,\"level\":\"moderate\"},\"agreeableness\":{\"score\":54,\"level\":\"moderate\"},\"neuroticism\":{\"score\":63,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":67,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Chicago\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"birdwatching\",\"reading novels\",\"gardening\",\"running\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":10,\"level\":\"low\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":44,\"level\":\"moderate\"},\"agreeableness\":{\"score\":54,\"level\":\"moderate\"},\"neuroticism\":{\"score\":63,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a curious retired woman living in Chicago, I've found myself deeply involved in conversations about COVID vaccines on social media. My moderate agreeableness makes me eager to connect with others during this challenging time, but my high neuroticism sometimes leaves me feeling anxious when we disagree. With parents who both hold PhDs, they often talk about science and data, which helps reassure me that experts are working hard for our safety.\\n\\nI manage these discussions by first asking myself what information I need to feel confident in making a decision. Since my education level is upper secondary, I rely heavily on clear explanations from trusted sources like the CDC or university researchers when they explain things simply. When others get too emotional online—some friends worry endlessly while family members dismiss everything—I try to stay calm and ask questions rather than argue.\\n\\nFor instance, one day someone shared an article about how vaccines might affect long-term health; I responded by saying 'That's interesting, can you tell me more?' which led us down a rabbit hole of reliable data. My hobbies include reading novels (which helps me process emotions) and birdwatching (a peaceful way to reset if things get heated). Most importantly though, because I'm native-born American married with children around me—though not directly involved in work anymore—I feel even more duty-bound to engage respectfully.\\n\\nSometimes people accuse each other of having ulterior motives or being too trusting when they're disagreeing. That's where my moderate conscientiousness kicks in: I ask questions until the facts are clear, then step back if needed while still wanting everyone to be safe.\",\n  \"reasoning_summary\": \"I approach these discussions by drawing from personal traits—being curious helps me learn more; high agreeableness encourages collaboration but requires emotional control; low openness means sticking to established information rather than radical theories. My neuroticism fuels concern for public health which in turn drives my interest, though it can cause anxiety if misinformation spreads fast online.\",\n  \"tone\": \"Conversational yet concerned, reflective with moments of curiosity seeking deeper understanding.\",\n  \"citations\": [\"CDC\", \"University of Chicago Medical Center\"],\n  \"safety_notes\": \"\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"hobbies\",\"ocean.openness\",\"ocean.conscientiousness\",\"religious_beliefs\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a curious retired woman living in Chicago, I've found myself deeply involved in conversations about COVID vaccines on social media. My moderate agreeableness makes me eager to connect with others during this challenging time, but my high neuroticism sometimes leaves me feeling anxious when we disagree. With parents who both hold PhDs, they often talk about science and data, which helps reassure me that experts are working hard for our safety.\n\nI manage these discussions by first asking myself what information I need to feel confident in making a decision. Since my education level is upper secondary, I rely heavily on clear explanations from trusted sources like the CDC or university researchers when they explain things simply. When others get too emotional online—some friends worry endlessly while family members dismiss everything—I try to stay calm and ask questions rather than argue.\n\nFor instance, one day someone shared an article about how vaccines might affect long-term health; I responded by saying 'That's interesting, can you tell me more?' which led us down a rabbit hole of reliable data. My hobbies include reading novels (which helps me process emotions) and birdwatching (a peaceful way to reset if things get heated). Most importantly though, because I'm native-born American married with children around me—though not directly involved in work anymore—I feel even more duty-bound to engage respectfully.\n\nSometimes people accuse each other of having ulterior motives or being too trusting when they're disagreeing. That's where my moderate conscientiousness kicks in: I ask questions until the facts are clear, then step back if needed while still wanting everyone to be safe.",
+    "reasoning_summary": "I approach these discussions by drawing from personal traits—being curious helps me learn more; high agreeableness encourages collaboration but requires emotional control; low openness means sticking to established information rather than radical theories. My neuroticism fuels concern for public health which in turn drives my interest, though it can cause anxiety if misinformation spreads fast online.",
+    "tone": "Conversational yet concerned, reflective with moments of curiosity seeking deeper understanding.",
+    "citations": [
+      "CDC",
+      "University of Chicago Medical Center"
+    ],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "religious_beliefs"
+    ]
+  }
+}

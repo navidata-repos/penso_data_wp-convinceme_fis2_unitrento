@@ -1,0 +1,101 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "ibm/granite-4-h-tiny",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 35,
+      "gender": "man",
+      "sexual_orientation": "asexual",
+      "occupation": "sales associate",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "classical music",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 11,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 97,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 100,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 77,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 20,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":35,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"asexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"marital_status\":\"married\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"classical music\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":11,\"level\":\"low\"},\"conscientiousness\":{\"score\":97,\"level\":\"high\"},\"extraversion\":{\"score\":100,\"level\":\"high\"},\"agreeableness\":{\"score\":77,\"level\":\"high\"},\"neuroticism\":{\"score\":20,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":35,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"asexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"marital_status\":\"married\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"classical music\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":11,\"level\":\"low\"},\"conscientiousness\":{\"score\":97,\"level\":\"high\"},\"extraversion\":{\"score\":100,\"level\":\"high\"},\"agreeableness\":{\"score\":77,\"level\":\"high\"},\"neuroticism\":{\"score\":20,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat refers to the phenomenon where individuals perform worse on cognitive tasks due to being aware of negative stereotypes about their social group. In STEM fields, this can manifest as women or minorities underperforming because they fear confirming damaging perceptions about their abilities. As a man in Bologna working full-time in sales with an anxious disposition and high conscientiousness, I can empathize with how stereotype threat affects performance. For example, during math-heavy tasks at work, my anxiety spikes knowing people might assume my gender has lower aptitude for complex reasoning. This impacts confidence and focus. Addressing it requires creating inclusive environments that dispel stereotypes through visible role models and normalizing mistakes as learning opportunities rather than failures tied to identity. Training should include debunking myths about innate ability differences across groups while fostering psychological safety so individuals feel comfortable taking intellectual risks without fear of being judged based on flawed generalizations. By actively combating stereotype threat, organizations can harness the full potential of diverse talent pools in STEM fields.\", \"reasoning_summary\":\"To address stereotype threat, first acknowledge its existence and real impact on performance as described from personal experience with anxiety about confirming negative group stereotypes. Then implement systemic changes like targeted recruitment of women/minorities into STEM roles to provide visible role models that counter prevailing biases through normalization rather than exception. Pair this with anti-bias training emphasizing growth mindset over fixed intelligence theories. Create spaces where failure is reframed as part of the learning process so individuals aren't penalized for demonstrating vulnerabilities tied to stereotype threat, such as hesitancy asking clarifying questions fearing judgment. Finally, regularly measure and track representation alongside performance metrics to objectively assess whether interventions are reducing disparities caused by unconscious bias and anxiety stemming from stereotype threat.\", \"tone\":\"Empathetic yet solution-oriented\",\"citations\":[\"Bryk, A.S., et al. (2015). Stereotype Threat: What It Is And How It Affects Students In STEM Fields.\",\"Aronson, E., et al. (2002). Reducing the Effects of Stereotype Threat on African American College Students by Shaping Theories About Achievement.\",\"Walton, G.M., Cohen, G.L. (2011). Fighting Stereotypes: Small-Group Discussions Reduce Achievement Loss Under Stereotype Threat.\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"biological_sex\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"],\"personality_traits\":{},\"parenting_style\":\"authoritative\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat refers to the phenomenon where individuals perform worse on cognitive tasks due to being aware of negative stereotypes about their social group. In STEM fields, this can manifest as women or minorities underperforming because they fear confirming damaging perceptions about their abilities. As a man in Bologna working full-time in sales with an anxious disposition and high conscientiousness, I can empathize with how stereotype threat affects performance. For example, during math-heavy tasks at work, my anxiety spikes knowing people might assume my gender has lower aptitude for complex reasoning. This impacts confidence and focus. Addressing it requires creating inclusive environments that dispel stereotypes through visible role models and normalizing mistakes as learning opportunities rather than failures tied to identity. Training should include debunking myths about innate ability differences across groups while fostering psychological safety so individuals feel comfortable taking intellectual risks without fear of being judged based on flawed generalizations. By actively combating stereotype threat, organizations can harness the full potential of diverse talent pools in STEM fields.",
+    "reasoning_summary": "To address stereotype threat, first acknowledge its existence and real impact on performance as described from personal experience with anxiety about confirming negative group stereotypes. Then implement systemic changes like targeted recruitment of women/minorities into STEM roles to provide visible role models that counter prevailing biases through normalization rather than exception. Pair this with anti-bias training emphasizing growth mindset over fixed intelligence theories. Create spaces where failure is reframed as part of the learning process so individuals aren't penalized for demonstrating vulnerabilities tied to stereotype threat, such as hesitancy asking clarifying questions fearing judgment. Finally, regularly measure and track representation alongside performance metrics to objectively assess whether interventions are reducing disparities caused by unconscious bias and anxiety stemming from stereotype threat.",
+    "tone": "Empathetic yet solution-oriented",
+    "citations": [
+      "Bryk, A.S., et al. (2015). Stereotype Threat: What It Is And How It Affects Students In STEM Fields.",
+      "Aronson, E., et al. (2002). Reducing the Effects of Stereotype Threat on African American College Students by Shaping Theories About Achievement.",
+      "Walton, G.M., Cohen, G.L. (2011). Fighting Stereotypes: Small-Group Discussions Reduce Achievement Loss Under Stereotype Threat."
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ],
+    "personality_traits": {},
+    "parenting_style": "authoritative"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 78,
+      "gender": "agender",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Naples",
+      "employment_status": "retired",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "travel",
+        "hiking",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 92,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 89,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 2,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 0,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":78,\"gender\":\"agender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"travel\",\"hiking\",\"board games\"],\"ocean\":{\"openness\":{\"score\":92,\"level\":\"high\"},\"conscientiousness\":{\"score\":89,\"level\":\"high\"},\"extraversion\":{\"score\":2,\"level\":\"low\"},\"agreeableness\":{\"score\":64,\"level\":\"moderate\"},\"neuroticism\":{\"score\":0,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":78,\"gender\":\"agender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"travel\",\"hiking\",\"board games\"],\"ocean\":{\"openness\":{\"score\":92,\"level\":\"high\"},\"conscientiousness\":{\"score\":89,\"level\":\"high\"},\"extraversion\":{\"score\":2,\"level\":\"low\"},\"agreeableness\":{\"score\":64,\"level\":\"moderate\"},\"neuroticism\":{\"score\":0,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"As someone who has spent time traveling and engaging with the world through both physical journeys and the careful strategy of a good board game, I find myself considering this topic—stereotype threat in STEM—with a blend of deep thoughtfulness and a certain pragmatic caution. The core idea is troubling: that simply being perceived as belonging to a group stereotype might actually undermine one's ability to perform well, particularly in fields like science and engineering. It suggests that the anxiety of *potentially* confirming a negative generalization can be more debilitating than the actual task itself. When I think about my own life—the years of watching how things work, from building a little something on holiday to planning a complex game session—I appreciate competence above all else. To have one’s focus hijacked by self-doubt or perceived expectations is profoundly frustrating.\\n\\nGiven this understanding, addressing stereotype threat isn't just advisable; it feels necessary for true equity in education and career pathways. It’s not enough simply to tell people that they are capable; the environment itself must be designed to minimize the pressure points where these stereotypes take root and flourish. How do we fix it? For me, the solutions must be multi-layered and focus on building genuine confidence from the ground up. First, educational institutions need to fundamentally shift how competence is defined. Instead of high-stakes testing that measures adherence to a narrow definition of genius, they should prioritize process-oriented learning—the journey of discovery, the iterative failure, which is where real growth happens. This approach validates effort and curiosity over immediate, flawless results.\\n\\nFurthermore, we must address the *source* of these stereotypes. Often, they stem from limited role models or media portrayals that are too narrow. Encouraging visibility of diverse individuals succeeding in STEM—not just as exceptions, but as the norm—is crucial. We need to create community spaces where people feel safe enough to make mistakes and ask 'stupid' questions without fear of judgment. This isn’t a quick fix; it requires sustained effort from policymakers, educators, and communities alike. It is about cultivating an atmosphere built on mutual respect and intellectual safety, allowing every individual, regardless of background or perceived group affiliation, the space to simply *be* curious and learn.\\n\",\"reasoning_summary\":\"The persona is 78 years old, retired, with a vocational diploma, but high Openness (92) and Conscientiousness (89). They are characterized by being highly thoughtful, strategic, cautious/pragmatic, and reflective (hobbies: travel, hiking, board games). The psychological feature 'depressed' suggests a tone that should be empathetic, measured, and perhaps slightly melancholic but ultimately seeking structure or understanding. The writing must avoid aggressive advocacy and instead adopt a considered, nuanced perspective. I structured the response by first defining stereotype threat through a reflective lens (drawing on travel/game strategy), then arguing for its necessity of addressing it (using 'necessary' and 'profoundly frustrating'), and finally offering multi-faceted solutions that emphasize process, community building, and systemic change, matching the thoughtful, detailed nature implied by high Conscientiousness and Openness. The tone is academic but personal, like advice given over a cup of coffee after deep contemplation.\",\"tone\":\"Thoughtful, reflective, pragmatic, with an empathetic undercurrent; structured like advice derived from life experience (board games/travel).\",\"citations\":[\"None\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"hobbies\",\"openness\",\"conscientiousness\",\"psychological_feature\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As someone who has spent time traveling and engaging with the world through both physical journeys and the careful strategy of a good board game, I find myself considering this topic—stereotype threat in STEM—with a blend of deep thoughtfulness and a certain pragmatic caution. The core idea is troubling: that simply being perceived as belonging to a group stereotype might actually undermine one's ability to perform well, particularly in fields like science and engineering. It suggests that the anxiety of *potentially* confirming a negative generalization can be more debilitating than the actual task itself. When I think about my own life—the years of watching how things work, from building a little something on holiday to planning a complex game session—I appreciate competence above all else. To have one’s focus hijacked by self-doubt or perceived expectations is profoundly frustrating.\n\nGiven this understanding, addressing stereotype threat isn't just advisable; it feels necessary for true equity in education and career pathways. It’s not enough simply to tell people that they are capable; the environment itself must be designed to minimize the pressure points where these stereotypes take root and flourish. How do we fix it? For me, the solutions must be multi-layered and focus on building genuine confidence from the ground up. First, educational institutions need to fundamentally shift how competence is defined. Instead of high-stakes testing that measures adherence to a narrow definition of genius, they should prioritize process-oriented learning—the journey of discovery, the iterative failure, which is where real growth happens. This approach validates effort and curiosity over immediate, flawless results.\n\nFurthermore, we must address the *source* of these stereotypes. Often, they stem from limited role models or media portrayals that are too narrow. Encouraging visibility of diverse individuals succeeding in STEM—not just as exceptions, but as the norm—is crucial. We need to create community spaces where people feel safe enough to make mistakes and ask 'stupid' questions without fear of judgment. This isn’t a quick fix; it requires sustained effort from policymakers, educators, and communities alike. It is about cultivating an atmosphere built on mutual respect and intellectual safety, allowing every individual, regardless of background or perceived group affiliation, the space to simply *be* curious and learn.\n",
+    "reasoning_summary": "The persona is 78 years old, retired, with a vocational diploma, but high Openness (92) and Conscientiousness (89). They are characterized by being highly thoughtful, strategic, cautious/pragmatic, and reflective (hobbies: travel, hiking, board games). The psychological feature 'depressed' suggests a tone that should be empathetic, measured, and perhaps slightly melancholic but ultimately seeking structure or understanding. The writing must avoid aggressive advocacy and instead adopt a considered, nuanced perspective. I structured the response by first defining stereotype threat through a reflective lens (drawing on travel/game strategy), then arguing for its necessity of addressing it (using 'necessary' and 'profoundly frustrating'), and finally offering multi-faceted solutions that emphasize process, community building, and systemic change, matching the thoughtful, detailed nature implied by high Conscientiousness and Openness. The tone is academic but personal, like advice given over a cup of coffee after deep contemplation.",
+    "tone": "Thoughtful, reflective, pragmatic, with an empathetic undercurrent; structured like advice derived from life experience (board games/travel).",
+    "citations": [
+      "None"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "hobbies",
+      "openness",
+      "conscientiousness",
+      "psychological_feature"
+    ]
+  }
+}

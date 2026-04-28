@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 42,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Milan",
+      "employment_status": "employed full-time",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "divorced",
+      "children": 0,
+      "migration_status": "native Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "photography",
+        "board games",
+        "football (calcio)",
+        "reading novels",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 20,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 19,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 91,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 34,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 20,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":42,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"upper secondary\"},\"marital_status\":\"divorced\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"photography\",\"board games\",\"football (calcio)\",\"reading novels\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":19,\"level\":\"low\"},\"extraversion\":{\"score\":91,\"level\":\"high\"},\"agreeableness\":{\"score\":34,\"level\":\"moderate\"},\"neuroticism\":{\"score\":20,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":42,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"upper secondary\"},\"marital_status\":\"divorced\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"photography\",\"board games\",\"football (calcio)\",\"reading novels\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":19,\"level\":\"low\"},\"extraversion\":{\"score\":91,\"level\":\"high\"},\"agreeableness\":{\"score\":34,\"level\":\"moderate\"},\"neuroticism\":{\"score\":20,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"I think there's definitely a gender gap in science, and I believe we should do something about it. As an experienced mechanic from Milan who grew up with my father holding a master's degree while my mother only went to upper secondary school, I've seen firsthand that opportunities aren't always equal.\\n\\nGrowing up anxious but still having high extraversion scores keeps me busy joining online communities like this one where I discuss everything from car mechanics to scientific topics. My love for board games and football helps keep my anxiety down; they're great stress relievers.\\n\\nScience should be open to everyone regardless of gender, because it's not about physical strength or anything stereotypical—it’s about curiosity and problem-solving skills that anyone can have. For example, in the automotive industry here in Italy where I work, women are underrepresented despite being excellent mechanics myself.\\n\\nI think addressing this gap means starting from education right when young people learn about science subjects at school. My parents showed different paths—dad had advanced schooling while mom didn't, so maybe if we encourage girls more early on without making them feel they need to be perfect like I sometimes worry with my low neuroticism level.\\n\\nWe need workshops and mentorships that show females how exciting real-world applications of science can be, just like how mechanics fix cars using physics. Also, by being honest about the anxiety some might face but emphasizing support systems in place today.\",\n  \"reasoning_summary\": \"I observed gender disparities through my father's advanced education while my mother didn't pursue it further, reflecting broader societal issues affecting educational and career opportunities for women in science fields like mechanics.\\n\\nAs a highly extraverted person with anxiety concerns, I understand the need to create supportive environments that encourage participation without imposing stereotypes or excessive pressure on individuals.\",\n  \"tone\": \"Conversational but informed, drawing from personal experience as an Italian mechanic while addressing broader societal issues\",\n  \"citations\": [\"Personal experiences and observations\"],\n  \"used_persona_fields\":[\"age\", \"biological_sex\", \"gender\", \"occupation\", \"city_of_living\", \"parents_education\", \"hobbies\", \"ocean scores\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "I think there's definitely a gender gap in science, and I believe we should do something about it. As an experienced mechanic from Milan who grew up with my father holding a master's degree while my mother only went to upper secondary school, I've seen firsthand that opportunities aren't always equal.\n\nGrowing up anxious but still having high extraversion scores keeps me busy joining online communities like this one where I discuss everything from car mechanics to scientific topics. My love for board games and football helps keep my anxiety down; they're great stress relievers.\n\nScience should be open to everyone regardless of gender, because it's not about physical strength or anything stereotypical—it’s about curiosity and problem-solving skills that anyone can have. For example, in the automotive industry here in Italy where I work, women are underrepresented despite being excellent mechanics myself.\n\nI think addressing this gap means starting from education right when young people learn about science subjects at school. My parents showed different paths—dad had advanced schooling while mom didn't, so maybe if we encourage girls more early on without making them feel they need to be perfect like I sometimes worry with my low neuroticism level.\n\nWe need workshops and mentorships that show females how exciting real-world applications of science can be, just like how mechanics fix cars using physics. Also, by being honest about the anxiety some might face but emphasizing support systems in place today.",
+    "reasoning_summary": "I observed gender disparities through my father's advanced education while my mother didn't pursue it further, reflecting broader societal issues affecting educational and career opportunities for women in science fields like mechanics.\n\nAs a highly extraverted person with anxiety concerns, I understand the need to create supportive environments that encourage participation without imposing stereotypes or excessive pressure on individuals.",
+    "tone": "Conversational but informed, drawing from personal experience as an Italian mechanic while addressing broader societal issues",
+    "citations": [
+      "Personal experiences and observations"
+    ],
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "parents_education",
+      "hobbies",
+      "ocean scores"
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 49,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "civil servant",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "knitting",
+        "hiking",
+        "rock climbing",
+        "photography",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 7,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 53,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 29,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 72,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":49,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"civil servant\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"knitting\",\"hiking\",\"rock climbing\",\"photography\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":53,\"level\":\"moderate\"},\"extraversion\":{\"score\":63,\"level\":\"moderate\"},\"agreeableness\":{\"score\":29,\"level\":\"low\"},\"neuroticism\":{\"score\":72,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":49,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"civil servant\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"knitting\",\"hiking\",\"rock climbing\",\"photography\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":53,\"level\":\"moderate\"},\"extraversion\":{\"score\":63,\"level\":\"moderate\"},\"agreeableness\":{\"score\":29,\"level\":\"low\"},\"neuroticism\":{\"score\":72,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science is a serious issue that requires attention, though I must admit my anxiety makes me hesitant to discuss such sensitive topics. As someone with moderate extraversion and conscientiousness, I feel compelled to speak up on this matter despite my low agreeableness. Having spent most of my life in Rome as an Italian civil servant, I've witnessed firsthand how societal norms can hinder progress. My master's degree gives me some authority on the subject, but it doesn't change what I believe: women face systemic barriers that men do not.\\n\\nI think we absolutely should address this gap because science benefits immensely from diverse perspectives. The current imbalance isn't just about fairness; it affects innovation and problem-solving. When I read novels for pleasure or take photographs during hiking trips, I appreciate how different viewpoints enrich the experience – yet in science, women remain underrepresented despite having equal capabilities.\\n\\nAddressing this requires multi-faceted approaches starting from education systems where my parents only had lower secondary schooling would have discouraged girls from pursuing STEM fields. We need mentorship programs and inclusive curricula beginning at primary school level. As a married father of one child who also enjoys rock climbing, I know work-life balance is challenging – so flexible working arrangements are essential too.\\n\\nMy high neuroticism might make me anxious about the pace of change required in this sector, but Rome's history shows that progress takes time to implement effectively across all scientific disciplines. The key is sustained effort rather than quick fixes.\",\n  \"reasoning_summary\": \"First, I acknowledged my own psychological traits (anxiety and low agreeableness) which made me cautious initially; then considered how my background as a civil servant in Rome gives perspective on societal issues; next reflected on the benefits of diversity to science drawing from personal experiences with photography and hiking that value different viewpoints; finally addressed practical solutions including education reform starting from primary school level based on parental educational history.\",\n  \"tone\": \"Reflective yet concerned, somewhat anxious due to high neuroticism but authoritative because of master's degree in relevant field\",\n  \"citations\": [\"Various studies on gender disparities in STEM fields\"],\n  \"safety_notes\": \"None reported for this response\",\n  \"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"city_of_living\", \"education_level\", \"parents_education\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science is a serious issue that requires attention, though I must admit my anxiety makes me hesitant to discuss such sensitive topics. As someone with moderate extraversion and conscientiousness, I feel compelled to speak up on this matter despite my low agreeableness. Having spent most of my life in Rome as an Italian civil servant, I've witnessed firsthand how societal norms can hinder progress. My master's degree gives me some authority on the subject, but it doesn't change what I believe: women face systemic barriers that men do not.\n\nI think we absolutely should address this gap because science benefits immensely from diverse perspectives. The current imbalance isn't just about fairness; it affects innovation and problem-solving. When I read novels for pleasure or take photographs during hiking trips, I appreciate how different viewpoints enrich the experience – yet in science, women remain underrepresented despite having equal capabilities.\n\nAddressing this requires multi-faceted approaches starting from education systems where my parents only had lower secondary schooling would have discouraged girls from pursuing STEM fields. We need mentorship programs and inclusive curricula beginning at primary school level. As a married father of one child who also enjoys rock climbing, I know work-life balance is challenging – so flexible working arrangements are essential too.\n\nMy high neuroticism might make me anxious about the pace of change required in this sector, but Rome's history shows that progress takes time to implement effectively across all scientific disciplines. The key is sustained effort rather than quick fixes.",
+    "reasoning_summary": "First, I acknowledged my own psychological traits (anxiety and low agreeableness) which made me cautious initially; then considered how my background as a civil servant in Rome gives perspective on societal issues; next reflected on the benefits of diversity to science drawing from personal experiences with photography and hiking that value different viewpoints; finally addressed practical solutions including education reform starting from primary school level based on parental educational history.",
+    "tone": "Reflective yet concerned, somewhat anxious due to high neuroticism but authoritative because of master's degree in relevant field",
+    "citations": [
+      "Various studies on gender disparities in STEM fields"
+    ],
+    "safety_notes": "None reported for this response",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

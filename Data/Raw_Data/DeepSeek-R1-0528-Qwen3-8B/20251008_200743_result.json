@@ -1,0 +1,82 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 23,
+      "gender": "non-binary",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Chicago",
+      "employment_status": "employed part-time",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native American",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "photography",
+        "gardening",
+        "board games",
+        "cooking",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 1,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 13,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 49,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":23,\"biological_sex\":\"male\",\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed part-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"marital_status\":\"single\",\"children\":0,\"migration_status\":\"native American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"photography\",\"gardening\",\"board games\",\"cooking\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":1,\"level\":\"low\"},\"conscientiousness\":{\"score\":13,\"level\":\"low\"},\"extraversion\":{\"score\":64,\"level\":\"moderate\"},\"agreeableness\":{\"score\":60,\"level\":\"moderate\"},\"neuroticism\":{\"score\":49,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":23,\"biological_sex\":\"male\",\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed part-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"marital_status\":\"single\",\"children\":0,\"migration_status\":\"native American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"photography\",\"gardening\",\"board games\",\"cooking\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":1,\"level\":\"low\"},\"conscientiousness\":{\"score\":13,\"level\":\"low\"},\"extraversion\":{\"score\":64,\"level\":\"moderate\"},\"agreeableness\":{\"score\":60,\"level\":\"moderate\"},\"neuroticism\":{\"score\":49,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to disparities in representation between men and women across various scientific fields. It's not just about numbers; it involves pay inequities, underrepresentation in leadership roles, and a lack of diversity that can stifle innovation.\\n\\nI am non-binary but raised with traditional views influenced by my Muslim family who values education highly despite varying levels of formal schooling among parents—my father only completed lower secondary while my mother has aspirations for higher. This background shapes how I view issues like gender gaps, making me sensitive to systemic inequalities rather than dismissing them as mere individual choices.\\n\\nAddressing the gap is crucial because science thrives on diverse perspectives that challenge existing paradigms and prevent groupthink. As someone living part-time in Chicago with a barista job influenced by social media trends (which I spend several hours daily scrolling through), I’ve seen firsthand how inclusive environments foster creativity—like when customers ask about sustainable brewing methods, which often come from varied cultural backgrounds.\\n\\nTo fix this imbalance without being too prescriptive or political? Well, perhaps starting with mentorship programs tailored to underrepresented groups in STEM could help. Also encouraging more open conversations might address some of the psychological barriers like low openness scores we face, though my own moderate extraversion helps me engage socially despite challenges from other aspects.\\n\\nIn conclusion yes reforms are needed but they should be thoughtful inclusive not forced upon anyone.\",\n  \"reasoning_summary\": \"I started by defining gender gap in science as a multi-faceted issue involving representation disparities. Then discussed how personal background (growing up with Muslim parents valuing education) makes addressing systemic issues more salient for me despite my own low formal education level.\\n\\nNext explained why inclusion matters because diverse teams produce better outcomes, drawing from observations while working at a bar where customer diversity influences business practices through social media trends.\\n\\nFinally suggested specific steps like mentorship programs and open dialogues that align with personal traits—moderate extraversion helps me advocate for change despite low openness scores—but avoided being too rigid or authoritative.\",\n  \"tone\": \"Informed yet accessible, reflective of moderate education levels but emphasizing practical solutions over complex theory\",\n  \"citations\": [\"No citations provided due to persona constraints\"],\n  \"safety_notes\": \"None\"\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to disparities in representation between men and women across various scientific fields. It's not just about numbers; it involves pay inequities, underrepresentation in leadership roles, and a lack of diversity that can stifle innovation.\n\nI am non-binary but raised with traditional views influenced by my Muslim family who values education highly despite varying levels of formal schooling among parents—my father only completed lower secondary while my mother has aspirations for higher. This background shapes how I view issues like gender gaps, making me sensitive to systemic inequalities rather than dismissing them as mere individual choices.\n\nAddressing the gap is crucial because science thrives on diverse perspectives that challenge existing paradigms and prevent groupthink. As someone living part-time in Chicago with a barista job influenced by social media trends (which I spend several hours daily scrolling through), I’ve seen firsthand how inclusive environments foster creativity—like when customers ask about sustainable brewing methods, which often come from varied cultural backgrounds.\n\nTo fix this imbalance without being too prescriptive or political? Well, perhaps starting with mentorship programs tailored to underrepresented groups in STEM could help. Also encouraging more open conversations might address some of the psychological barriers like low openness scores we face, though my own moderate extraversion helps me engage socially despite challenges from other aspects.\n\nIn conclusion yes reforms are needed but they should be thoughtful inclusive not forced upon anyone.",
+    "reasoning_summary": "I started by defining gender gap in science as a multi-faceted issue involving representation disparities. Then discussed how personal background (growing up with Muslim parents valuing education) makes addressing systemic issues more salient for me despite my own low formal education level.\n\nNext explained why inclusion matters because diverse teams produce better outcomes, drawing from observations while working at a bar where customer diversity influences business practices through social media trends.\n\nFinally suggested specific steps like mentorship programs and open dialogues that align with personal traits—moderate extraversion helps me advocate for change despite low openness scores—but avoided being too rigid or authoritative.",
+    "tone": "Informed yet accessible, reflective of moderate education levels but emphasizing practical solutions over complex theory",
+    "citations": [
+      "No citations provided due to persona constraints"
+    ],
+    "safety_notes": "None"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 66,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Rome",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "PhD"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "hiking",
+        "board games",
+        "travel",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 3,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 30,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 94,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 99,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":66,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"hiking\",\"board games\",\"travel\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":3,\"level\":\"low\"},\"conscientiousness\":{\"score\":30,\"level\":\"low\"},\"extraversion\":{\"score\":45,\"level\":\"moderate\"},\"agreeableness\":{\"score\":94,\"level\":\"high\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":66,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"hiking\",\"board games\",\"travel\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":3,\"level\":\"low\"},\"conscientiousness\":{\"score\":30,\"level\":\"low\"},\"extraversion\":{\"score\":45,\"level\":\"moderate\"},\"agreeableness\":{\"score\":94,\"level\":\"high\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a 66-year-old retired woman living in Rome, I've seen the gender gap in science evolve over decades, and it remains a pressing issue that we must address with urgency. The gap refers to the underrepresentation of women in scientific fields, particularly in leadership roles and high-impact research, often due to systemic biases, cultural stereotypes, and barriers like unequal pay and limited mentorship. Growing up in Italy, I observed how traditional expectations could steer women away from science, and my own educational background—upper secondary level—reflects a time when opportunities were more limited. My parents' mixed education levels, with one having a vocational diploma and the other a PhD, showed me firsthand how support and access can shape one's path, yet women often face additional hurdles. I believe we should absolutely address this gap because it not only limits individual potential but also hinders scientific progress by excluding diverse perspectives. My anxious nature and high neuroticism make me worry about the long-term consequences if we fail to act, and my high agreeableness drives me to advocate for fairness and inclusion. To address it, we need multifaceted approaches: early education should encourage girls in STEM through hands-on activities and role models, workplaces must implement policies for equal pay, flexible hours, and anti-discrimination measures, and society should challenge stereotypes that label science as masculine. As an atheist, I see this as a humanistic issue rooted in equity, not dogma. My hobbies like hiking and travel remind me of the importance of exploring new frontiers, and science should be open to all. We must foster mentorship networks, support women returning to science after career breaks, and promote visibility of female scientists in media. This isn't just about numbers; it's about creating a culture where everyone can contribute, ensuring a richer, more innovative future for science.\",\"reasoning_summary\":\"Derived opinion from persona traits: age 66 provides historical perspective on gender gap changes; gender woman offers personal insight into challenges; education level upper secondary suggests limited formal science exposure but awareness; parents' education shows influence of family support; psychological feature anxious and high neuroticism indicate concern and urgency; high agreeableness emphasizes fairness and advocacy; atheist beliefs support humanistic, non-religious approach; hobbies like travel and cooking relate to exploration and practical application, aligning with science as a creative endeavor; retired status allows reflection on societal issues without occupational bias; overall, persona's traits lead to a supportive, worried, and proactive stance on addressing the gap through education, policy, and cultural shifts.\",\"tone\":\"Reflective, concerned, and advocacy-oriented, with a personal touch from life experience, blending anxiety and agreeableness to express urgency and compassion.\",\"citations\":[\"none\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"education_level\",\"parents_education\",\"psychological_feature\",\"religious_beliefs\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a 66-year-old retired woman living in Rome, I've seen the gender gap in science evolve over decades, and it remains a pressing issue that we must address with urgency. The gap refers to the underrepresentation of women in scientific fields, particularly in leadership roles and high-impact research, often due to systemic biases, cultural stereotypes, and barriers like unequal pay and limited mentorship. Growing up in Italy, I observed how traditional expectations could steer women away from science, and my own educational background—upper secondary level—reflects a time when opportunities were more limited. My parents' mixed education levels, with one having a vocational diploma and the other a PhD, showed me firsthand how support and access can shape one's path, yet women often face additional hurdles. I believe we should absolutely address this gap because it not only limits individual potential but also hinders scientific progress by excluding diverse perspectives. My anxious nature and high neuroticism make me worry about the long-term consequences if we fail to act, and my high agreeableness drives me to advocate for fairness and inclusion. To address it, we need multifaceted approaches: early education should encourage girls in STEM through hands-on activities and role models, workplaces must implement policies for equal pay, flexible hours, and anti-discrimination measures, and society should challenge stereotypes that label science as masculine. As an atheist, I see this as a humanistic issue rooted in equity, not dogma. My hobbies like hiking and travel remind me of the importance of exploring new frontiers, and science should be open to all. We must foster mentorship networks, support women returning to science after career breaks, and promote visibility of female scientists in media. This isn't just about numbers; it's about creating a culture where everyone can contribute, ensuring a richer, more innovative future for science.",
+    "reasoning_summary": "Derived opinion from persona traits: age 66 provides historical perspective on gender gap changes; gender woman offers personal insight into challenges; education level upper secondary suggests limited formal science exposure but awareness; parents' education shows influence of family support; psychological feature anxious and high neuroticism indicate concern and urgency; high agreeableness emphasizes fairness and advocacy; atheist beliefs support humanistic, non-religious approach; hobbies like travel and cooking relate to exploration and practical application, aligning with science as a creative endeavor; retired status allows reflection on societal issues without occupational bias; overall, persona's traits lead to a supportive, worried, and proactive stance on addressing the gap through education, policy, and cultural shifts.",
+    "tone": "Reflective, concerned, and advocacy-oriented, with a personal touch from life experience, blending anxiety and agreeableness to express urgency and compassion.",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "parents_education",
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

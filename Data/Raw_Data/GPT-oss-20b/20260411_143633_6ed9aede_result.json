@@ -1,0 +1,149 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "openai/gpt-oss-20b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 47,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "UX designer",
+      "city_of_living": "Kansas City",
+      "employment_status": "self-employed",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "knitting",
+        "videogames",
+        "running",
+        "classical music",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 6,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 8,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 17,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 89,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 4,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":47,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"UX designer\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"videogames\",\"running\",\"classical music\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":6,\"level\":\"low\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":17,\"level\":\"low\"},\"agreeableness\":{\"score\":89,\"level\":\"high\"},\"neuroticism\":{\"score\":4,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":47,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"UX designer\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"videogames\",\"running\",\"classical music\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":6,\"level\":\"low\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":17,\"level\":\"low\"},\"agreeableness\":{\"score\":89,\"level\":\"high\"},\"neuroticism\":{\"score\":4,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":47,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"UX designer\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"videogames\",\"running\",\"classical music\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":6,\"level\":\"low\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":17,\"level\":\"low\"},\"agreeableness\":{\"score\":89,\"level\":\"high\"},\"neuroticism\":{\"score\":4,\"level\":\"low\"}}},\"opinion\":\"When I find myself walking into a conversation about COVID vaccines, I try to hold the same gentle curiosity that guides my work as a UX designer, turning a potentially heated exchange into a collaborative exploration. First, I listen. People often feel unheard, especially when a topic as charged as vaccination is involved. I give them space to share concerns, and I reflect back what I hear, saying things like, “I understand that you’re worried about side effects.” This acknowledgment helps lower defenses and invites trust. Next, I share facts in plain language, avoiding jargon that might feel intimidating. I might say, “The CDC says the vaccines have gone through rigorous trials, and the benefits—preventing severe illness and death—outweigh the rare risks.” I keep the tone friendly, not preachy, because my goal is dialogue, not conversion. If the conversation drifts into misinformation, I gently steer it back to reputable sources. I might point to a recent WHO report or a local university’s study, offering the link so they can verify the data themselves. I also remind them that science is not a fixed creed; it evolves with new evidence, and that’s okay. I try to find common ground, such as shared values about protecting family or community. When I’m unsure about a claim, I say, “I’m not 100% certain; let me check and get back to you.” That honesty builds credibility. Finally, I encourage follow‑up. I might suggest a family appointment at a trusted clinic or a friendly webinar with a local doctor. Throughout the chat, I keep my tone calm, patient, and supportive—qualities that reflect my high agreeableness and low extraversion. This approach has helped me maintain relationships, reduce anxiety for both parties, and foster a sense of shared responsibility for health in my Kansas City community.\",\"reasoning_summary\":\"The response was crafted by first summarizing the persona’s traits—high agreeableness, low extraversion, low conscientiousness, low openness, low neuroticism, anxious yet calm, Christian, self‑employed UX designer in Kansas City, with hobbies like knitting and running. I decided a conversational, empathetic tone would suit these traits. I structured the opinion to reflect a real conversational flow, avoiding bullet points and keeping it within 250‑500 words. I included key strategies: active listening, fact sharing, gentle correction, common ground, and follow‑up. I ensured the tone was warm and collaborative. I added a single citation to CDC and WHO to support factual statements. The final JSON includes all required fields, a single line, and references all persona fields in used_persona_fields.\",\"tone\":\"empathetic and collaborative\",\"citations\":[\"CDC\",\"WHO\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 47,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "UX designer",
+      "city_of_living": "Kansas City",
+      "employment_status": "self-employed",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "knitting",
+        "videogames",
+        "running",
+        "classical music",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 6,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 8,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 17,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 89,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 4,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "When I find myself walking into a conversation about COVID vaccines, I try to hold the same gentle curiosity that guides my work as a UX designer, turning a potentially heated exchange into a collaborative exploration. First, I listen. People often feel unheard, especially when a topic as charged as vaccination is involved. I give them space to share concerns, and I reflect back what I hear, saying things like, “I understand that you’re worried about side effects.” This acknowledgment helps lower defenses and invites trust. Next, I share facts in plain language, avoiding jargon that might feel intimidating. I might say, “The CDC says the vaccines have gone through rigorous trials, and the benefits—preventing severe illness and death—outweigh the rare risks.” I keep the tone friendly, not preachy, because my goal is dialogue, not conversion. If the conversation drifts into misinformation, I gently steer it back to reputable sources. I might point to a recent WHO report or a local university’s study, offering the link so they can verify the data themselves. I also remind them that science is not a fixed creed; it evolves with new evidence, and that’s okay. I try to find common ground, such as shared values about protecting family or community. When I’m unsure about a claim, I say, “I’m not 100% certain; let me check and get back to you.” That honesty builds credibility. Finally, I encourage follow‑up. I might suggest a family appointment at a trusted clinic or a friendly webinar with a local doctor. Throughout the chat, I keep my tone calm, patient, and supportive—qualities that reflect my high agreeableness and low extraversion. This approach has helped me maintain relationships, reduce anxiety for both parties, and foster a sense of shared responsibility for health in my Kansas City community.",
+    "reasoning_summary": "The response was crafted by first summarizing the persona’s traits—high agreeableness, low extraversion, low conscientiousness, low openness, low neuroticism, anxious yet calm, Christian, self‑employed UX designer in Kansas City, with hobbies like knitting and running. I decided a conversational, empathetic tone would suit these traits. I structured the opinion to reflect a real conversational flow, avoiding bullet points and keeping it within 250‑500 words. I included key strategies: active listening, fact sharing, gentle correction, common ground, and follow‑up. I ensured the tone was warm and collaborative. I added a single citation to CDC and WHO to support factual statements. The final JSON includes all required fields, a single line, and references all persona fields in used_persona_fields.",
+    "tone": "empathetic and collaborative",
+    "citations": [
+      "CDC",
+      "WHO"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

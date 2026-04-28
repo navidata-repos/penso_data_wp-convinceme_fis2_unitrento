@@ -1,0 +1,103 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 40,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "board games",
+        "volunteering",
+        "rock climbing",
+        "cooking",
+        "yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 83,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 100,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 77,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":40,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"volunteering\",\"rock climbing\",\"cooking\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":83,\"level\":\"high\"},\"conscientiousness\":{\"score\":60,\"level\":\"moderate\"},\"extraversion\":{\"score\":64,\"level\":\"moderate\"},\"agreeableness\":{\"score\":100,\"level\":\"high\"},\"neuroticism\":{\"score\":77,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":40,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"volunteering\",\"rock climbing\",\"cooking\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":83,\"level\":\"high\"},\"conscientiousness\":{\"score\":60,\"level\":\"moderate\"},\"extraversion\":{\"score\":64,\"level\":\"moderate\"},\"agreeableness\":{\"score\":100,\"level\":\"high\"},\"neuroticism\":{\"score\":77,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a 40-year-old hairdresser living in Naples, married with two children, and a Buddhist with an anxious disposition, I approach discussions about healthcare and COVID vaccines with a blend of personal experience and mindful compassion. In my salon, I hear diverse opinions daily, from clients who are staunchly pro-vaccine to those hesitant due to misinformation or fear. My high agreeableness and openness, coupled with moderate conscientiousness, drive me to listen actively and empathetically, avoiding confrontation. I believe in fostering respectful dialogue by sharing my own journey: getting vaccinated to protect my family, especially my children, and finding peace through Buddhist practices that emphasize non-harm and community well-being. Living in a close-knit city like Naples, where social bonds are strong, I see healthcare as a collective responsibility. My anxiety makes me cautious, so I rely on trusted sources like local health authorities and my doctor, rather than social media, which I use sparingly. I encourage others to seek reliable information and consider how their choices impact vulnerable groups, such as the elderly or immunocompromised. Through volunteering and hobbies like yoga, I've learned that patience and understanding can bridge divides, turning heated debates into constructive conversations focused on shared values of health and safety.\",\"reasoning_summary\":\"Derived opinion from persona traits: age (40) implies life experience; gender (woman) and sexual orientation (homosexual) may influence perspectives on community and inclusivity; occupation (hairdresser) suggests frequent social interactions in Naples, a city with strong social ties; employment status (full-time) and education (vocational diploma) indicate practical, hands-on approach; marital status (married) and children (2) emphasize family protection; migration status (native-born Italian) roots in local culture; psychological feature (anxious) leads to cautiousness; religious beliefs (Buddhism) promote compassion and non-harm; time on social media (few times monthly) reduces exposure to misinformation; hobbies (volunteering, yoga) support empathy and mindfulness; OCEAN traits: high openness (83) encourages acceptance of diverse views, high agreeableness (100) prioritizes harmony, moderate conscientiousness (60) balances responsibility with flexibility, moderate extraversion (64) enables engagement without dominance, high neuroticism (77) increases sensitivity to conflict. Opinion integrates these to advocate for respectful, informed discussions based on personal and community health.\",\"tone\":\"Empathetic, cautious, and community-focused, blending personal reflection with practical advice, avoiding aggression to maintain harmony.\",\"citations\":[\"Local health authorities in Naples\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 40-year-old hairdresser living in Naples, married with two children, and a Buddhist with an anxious disposition, I approach discussions about healthcare and COVID vaccines with a blend of personal experience and mindful compassion. In my salon, I hear diverse opinions daily, from clients who are staunchly pro-vaccine to those hesitant due to misinformation or fear. My high agreeableness and openness, coupled with moderate conscientiousness, drive me to listen actively and empathetically, avoiding confrontation. I believe in fostering respectful dialogue by sharing my own journey: getting vaccinated to protect my family, especially my children, and finding peace through Buddhist practices that emphasize non-harm and community well-being. Living in a close-knit city like Naples, where social bonds are strong, I see healthcare as a collective responsibility. My anxiety makes me cautious, so I rely on trusted sources like local health authorities and my doctor, rather than social media, which I use sparingly. I encourage others to seek reliable information and consider how their choices impact vulnerable groups, such as the elderly or immunocompromised. Through volunteering and hobbies like yoga, I've learned that patience and understanding can bridge divides, turning heated debates into constructive conversations focused on shared values of health and safety.",
+    "reasoning_summary": "Derived opinion from persona traits: age (40) implies life experience; gender (woman) and sexual orientation (homosexual) may influence perspectives on community and inclusivity; occupation (hairdresser) suggests frequent social interactions in Naples, a city with strong social ties; employment status (full-time) and education (vocational diploma) indicate practical, hands-on approach; marital status (married) and children (2) emphasize family protection; migration status (native-born Italian) roots in local culture; psychological feature (anxious) leads to cautiousness; religious beliefs (Buddhism) promote compassion and non-harm; time on social media (few times monthly) reduces exposure to misinformation; hobbies (volunteering, yoga) support empathy and mindfulness; OCEAN traits: high openness (83) encourages acceptance of diverse views, high agreeableness (100) prioritizes harmony, moderate conscientiousness (60) balances responsibility with flexibility, moderate extraversion (64) enables engagement without dominance, high neuroticism (77) increases sensitivity to conflict. Opinion integrates these to advocate for respectful, informed discussions based on personal and community health.",
+    "tone": "Empathetic, cautious, and community-focused, blending personal reflection with practical advice, avoiding aggression to maintain harmony.",
+    "citations": [
+      "Local health authorities in Naples"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

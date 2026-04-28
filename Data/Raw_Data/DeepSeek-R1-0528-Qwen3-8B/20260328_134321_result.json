@@ -1,0 +1,94 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 32,
+      "gender": "woman",
+      "sexual_orientation": "bisexual",
+      "occupation": "mechanic",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "reading novels",
+        "running",
+        "hiking",
+        "volunteering",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 100,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 47,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 49,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 22,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 37,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":32,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"reading novels\",\"running\",\"hiking\",\"volunteering\",\"travel\"],\"ocean\":{\"openness\":{\"score\":100,\"level\":\"high\"},\"conscientiousness\":{\"score\":47,\"level\":\"moderate\"},\"extraversion\":{\"score\":49,\"level\":\"moderate\"},\"agreeableness\":{\"score\":22,\"level\":\"low\"},\"neuroticism\":{\"score\":37,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":32,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"reading novels\",\"running\",\"hiking\",\"volunteering\",\"travel\"],\"ocean\":{\"openness\":{\"score\":100,\"level\":\"high\"},\"conscientiousness\":{\"score\":47,\"level\":\"moderate\"},\"extraversion\":{\"score\":49,\"level\":\"moderate\"},\"agreeableness\":{\"score\":22,\"level\":\"low\"},\"neuroticism\":{\"score\":37,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"How to manage and dealing with fake content on social media.\",\n    \"opinion\": \"As a self-employed mechanic living in Rome, I've had to develop my own methods for handling fake information because I rely heavily on accurate data when working with clients. My anxiety sometimes makes me overly cautious about believing everything online, so that helps somewhat but can also paralyze decision-making if not managed properly. Since I'm bilingual due to being native-born Italian and frequently engage in social media during quality time with my family or while running errands around the workshop, I've learned it's important to verify sources quickly. For instance, when a client posts about car problems without specifics, I tend to be skeptical because from my experiences fixing hundreds of vehicles each week, vague descriptions often hide misinformation.\",\n    \"reasoning_summary\": \"First, acknowledge personal traits like anxiety which might predispose one to careful verification but also could lead to unnecessary worry. Then connect this trait with the profession - as a mechanic relying on accurate information for client issues. Next, consider lifestyle factors such as being native-born Italian affecting bilingual communication skills and balancing work-life through occasional social media use during downtime.\",\n    \"tone\": \"Calm yet practical\",\n    \"citations\": [\"Client testimonials\", \"Automotive forums\"],\n    \"safety_notes\": \"None\",\n    \"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"psychological_feature\",\"time_onsocialmedia\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a self-employed mechanic living in Rome, I've had to develop my own methods for handling fake information because I rely heavily on accurate data when working with clients. My anxiety sometimes makes me overly cautious about believing everything online, so that helps somewhat but can also paralyze decision-making if not managed properly. Since I'm bilingual due to being native-born Italian and frequently engage in social media during quality time with my family or while running errands around the workshop, I've learned it's important to verify sources quickly. For instance, when a client posts about car problems without specifics, I tend to be skeptical because from my experiences fixing hundreds of vehicles each week, vague descriptions often hide misinformation.",
+    "reasoning_summary": "First, acknowledge personal traits like anxiety which might predispose one to careful verification but also could lead to unnecessary worry. Then connect this trait with the profession - as a mechanic relying on accurate information for client issues. Next, consider lifestyle factors such as being native-born Italian affecting bilingual communication skills and balancing work-life through occasional social media use during downtime.",
+    "tone": "Calm yet practical",
+    "citations": [
+      "Client testimonials",
+      "Automotive forums"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "psychological_feature",
+      "time_onsocialmedia"
+    ]
+  }
+}

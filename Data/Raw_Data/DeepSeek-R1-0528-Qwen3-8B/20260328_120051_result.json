@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 18,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "full-time student",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "birdwatching",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 18,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 70,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 2,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 54,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 88,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":18,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"full-time student\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"birdwatching\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":70,\"level\":\"high\"},\"extraversion\":{\"score\":2,\"level\":\"low\"},\"agreeableness\":{\"score\":54,\"level\":\"moderate\"},\"neuroticism\":{\"score\":88,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":18,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"full-time student\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"birdwatching\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":70,\"level\":\"high\"},\"extraversion\":{\"score\":2,\"level\":\"low\"},\"agreeableness\":{\"score\":54,\"level\":\"moderate\"},\"neuroticism\":{\"score\":88,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a creative, conscientious person who's also Muslim living in Bologna, I think managing discussions around COVID vaccines requires sensitivity and knowledge. With my high conscientiousness, I try to stay organized by researching facts from reliable sources like the World Health Organization or Italian health authorities. My low extraversion means I prefer one-on-one conversations over large groups; it helps me focus and express myself calmly. Since I'm a full-time student with moderate agreeableness but high neuroticism, I can get anxious about these topics because they often involve complex scientific debates mixed with personal beliefs.\",\n  \"reasoning_summary\": \"I started by considering how my personality traits affect discussion style – being introverted makes deep conversations easier than social media where I spend few times monthly. Then I looked at religious aspects since Islam provides guidance on health matters through principles like 'ma\\\\'ruf', which means doing what is most beneficial for one's soul and body according to Islamic law.\",\n  \"tone\": \"Calm, respectful but slightly hesitant due to high neuroticism\",\n  \"citations\": [\"World Health Organization\", \"Italian Ministry of Health\"],\n  \"safety_notes\": \"None expected safety issues based on persona traits\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"hobbies\", \"ocean.openness\", \"ocean.conscientiousness\", \"religious_beliefs\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a creative, conscientious person who's also Muslim living in Bologna, I think managing discussions around COVID vaccines requires sensitivity and knowledge. With my high conscientiousness, I try to stay organized by researching facts from reliable sources like the World Health Organization or Italian health authorities. My low extraversion means I prefer one-on-one conversations over large groups; it helps me focus and express myself calmly. Since I'm a full-time student with moderate agreeableness but high neuroticism, I can get anxious about these topics because they often involve complex scientific debates mixed with personal beliefs.",
+    "reasoning_summary": "I started by considering how my personality traits affect discussion style – being introverted makes deep conversations easier than social media where I spend few times monthly. Then I looked at religious aspects since Islam provides guidance on health matters through principles like 'ma\\'ruf', which means doing what is most beneficial for one's soul and body according to Islamic law.",
+    "tone": "Calm, respectful but slightly hesitant due to high neuroticism",
+    "citations": [
+      "World Health Organization",
+      "Italian Ministry of Health"
+    ],
+    "safety_notes": "None expected safety issues based on persona traits",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "religious_beliefs"
+    ]
+  }
+}

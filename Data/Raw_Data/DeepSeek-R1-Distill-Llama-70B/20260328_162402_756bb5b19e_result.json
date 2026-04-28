@@ -1,0 +1,80 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 43,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "widowed",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "travel",
+        "football (calcio)",
+        "rock climbing",
+        "yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 28,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 91,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 99,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 44,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":43,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"widowed\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"travel\",\"football (calcio)\",\"rock climbing\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":28,\"level\":\"low\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":91,\"level\":\"high\"},\"agreeableness\":{\"score\":99,\"level\":\"high\"},\"neuroticism\":{\"score\":44,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":43,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"widowed\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"travel\",\"football (calcio)\",\"rock climbing\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":28,\"level\":\"low\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":91,\"level\":\"high\"},\"agreeableness\":{\"score\":99,\"level\":\"high\"},\"neuroticism\":{\"score\":44,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a 43-year-old retail worker from Bologna, I've faced many conversations about healthcare and COVID vaccines, especially with customers and colleagues. My perspective is shaped by my life experiences—being a widowed father of two, my Christian faith, and my curious nature. I believe managing these discussions requires a balance of empathy, patience, and practical thinking. In my job, I interact with diverse people daily, so I've learned to listen first and speak second. When someone brings up vaccines, I start by acknowledging their concerns, whether they're about safety, side effects, or personal beliefs. My high agreeableness and extraversion help me stay friendly and approachable, avoiding arguments that could escalate. I often share my own story: getting vaccinated to protect my children and elderly relatives, which aligns with my Christian values of caring for others. I don't push my views but offer simple facts I've picked up from reliable sources like local health authorities or news I see occasionally on social media. My moderate conscientiousness means I'm not an expert, but I try to stay informed without overthinking it. I avoid diving into complex medical details, as my vocational diploma and low openness to new ideas make me prefer straightforward, real-world examples. For instance, I might mention how vaccines helped our community in Bologna return to normal activities like football matches or travel, which are hobbies I enjoy. When discussions get heated, I steer the conversation toward common ground, like our shared desire for health and safety. My moderate neuroticism keeps me calm under pressure, and I focus on maintaining relationships rather than winning debates. Ultimately, I think managing these talks is about respect and understanding—everyone has their own journey, and as a native-born Italian with a mix of family education backgrounds, I've seen how different perspectives can coexist. By staying curious but grounded, I aim to foster positive dialogues that build trust rather than division.\",\"reasoning_summary\":\"Derived opinion from persona traits: age 43 and occupation as retail worker imply practical, everyday experience with public discussions; widowed status with two children suggests personal responsibility and protective instincts; Christian beliefs and high agreeableness (score 99) emphasize empathy and care for others; high extraversion (score 91) indicates comfort in social interactions and communication; low openness (score 28) leads to preference for simple, traditional approaches over complex debates; moderate conscientiousness (score 45) and neuroticism (score 44) support balanced, calm handling without excessive worry; hobbies like travel and football provide relatable examples; migration status as native-born Italian and city of living Bologna add cultural context; psychological feature 'curious' encourages engagement but within limits; education level vocational diploma suggests practical knowledge over academic depth; time on social media 'few times weekly' implies moderate exposure to information. Opinion crafted as continuous prose of 250-500 words, focusing on management strategies like listening, sharing personal stories, using reliable sources, avoiding arguments, and emphasizing respect, with tone friendly and grounded, avoiding bullet points.\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 43-year-old retail worker from Bologna, I've faced many conversations about healthcare and COVID vaccines, especially with customers and colleagues. My perspective is shaped by my life experiences—being a widowed father of two, my Christian faith, and my curious nature. I believe managing these discussions requires a balance of empathy, patience, and practical thinking. In my job, I interact with diverse people daily, so I've learned to listen first and speak second. When someone brings up vaccines, I start by acknowledging their concerns, whether they're about safety, side effects, or personal beliefs. My high agreeableness and extraversion help me stay friendly and approachable, avoiding arguments that could escalate. I often share my own story: getting vaccinated to protect my children and elderly relatives, which aligns with my Christian values of caring for others. I don't push my views but offer simple facts I've picked up from reliable sources like local health authorities or news I see occasionally on social media. My moderate conscientiousness means I'm not an expert, but I try to stay informed without overthinking it. I avoid diving into complex medical details, as my vocational diploma and low openness to new ideas make me prefer straightforward, real-world examples. For instance, I might mention how vaccines helped our community in Bologna return to normal activities like football matches or travel, which are hobbies I enjoy. When discussions get heated, I steer the conversation toward common ground, like our shared desire for health and safety. My moderate neuroticism keeps me calm under pressure, and I focus on maintaining relationships rather than winning debates. Ultimately, I think managing these talks is about respect and understanding—everyone has their own journey, and as a native-born Italian with a mix of family education backgrounds, I've seen how different perspectives can coexist. By staying curious but grounded, I aim to foster positive dialogues that build trust rather than division.",
+    "reasoning_summary": "Derived opinion from persona traits: age 43 and occupation as retail worker imply practical, everyday experience with public discussions; widowed status with two children suggests personal responsibility and protective instincts; Christian beliefs and high agreeableness (score 99) emphasize empathy and care for others; high extraversion (score 91) indicates comfort in social interactions and communication; low openness (score 28) leads to preference for simple, traditional approaches over complex debates; moderate conscientiousness (score 45) and neuroticism (score 44) support balanced, calm handling without excessive worry; hobbies like travel and football provide relatable examples; migration status as native-born Italian and city of living Bologna add cultural context; psychological feature 'curious' encourages engagement but within limits; education level vocational diploma suggests practical knowledge over academic depth; time on social media 'few times weekly' implies moderate exposure to information. Opinion crafted as continuous prose of 250-500 words, focusing on management strategies like listening, sharing personal stories, using reliable sources, avoiding arguments, and emphasizing respect, with tone friendly and grounded, avoiding bullet points."
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 80,
+      "gender": "agender",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Rome",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "photography",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 49,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 65,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 32,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 90,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 74,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":80,\"gender\":\"agender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"photography\",\"baking\"],\"ocean\":{\"openness\":{\"score\":49,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":65,\"level\":\"moderate\"},\"extraversion\":{\"score\":32,\"level\":\"low\"},\"agreeableness\":{\"score\":90,\"level\":\"high\"},\"neuroticism\":{\"score\":74,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":80,\"gender\":\"agender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"photography\",\"baking\"],\"ocean\":{\"openness\":{\"score\":49,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":65,\"level\":\"moderate\"},\"extraversion\":{\"score\":32,\"level\":\"low\"},\"agreeableness\":{\"score\":90,\"level\":\"high\"},\"neuroticism\":{\"score\":74,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Ah, this discussion of 'stereotype threat'—it reminds me a little of the subtle pressures one feels when trying to bake something complicated; you want the result to be perfect, but sometimes the anticipation itself makes the hands tremble. Essentially, stereotype threat is the feeling of anxiety or apprehension that arises in an individual merely because they are reminded of a negative stereotype associated with their group, particularly within a high-stakes environment like STEM fields. It's not about lack of ability; it’s about the psychological weight of expectation—or rather, the fear of failing to meet an imagined standard. This dynamic can be deeply damaging because that anxiety itself consumes cognitive resources, making complex problem-solving exponentially harder, regardless of how bright one truly is.\\n\\nTo ask if we should address it is not merely a question of academic debate; given its proven impact on performance across diverse groups in STEM, the answer must be an unequivocal yes. Ignoring such systemic psychological barriers would be like refusing to acknowledge that the oven temperature needs adjusting—the process simply won't yield the desired result. The consequences of unaddressed threat manifest as lower test scores, reduced confidence, and a higher rate of attrition among talented individuals from marginalized backgrounds.\\n\\nAs for how we address it, I believe the solution must be multi-layered and deeply ingrained in institutional culture, not just tacked on with a single workshop. Firstly, educational institutions need to radically overhaul their teaching methods to focus on growth mindset and process over innate talent. Instead of framing ability as fixed—'you are either good at math or you aren't'—they must emphasize effort, strategy, and the iterative nature of learning, much like perfecting a recipe requires repeated attempts. Secondly, promoting accurate representation is vital; students need to see people who look like them succeeding in these fields, which normalizes success and dismantles the stereotype itself. From my perspective, personal connection matters deeply here. When we facilitate genuine mentorships—where older, successful members of various backgrounds share their authentic journeys, rather than just polished achievements—it helps dismantle the myth of effortless genius. Finally, and perhaps most importantly, testing environments themselves need revision. High-stakes tests should be redesigned to minimize cultural load and anxiety triggers, allowing the true measure of intellectual capacity to shine through without being dimmed by self-consciousness. It requires a holistic shift from judging potential to supporting process, nurturing both the mind and the spirit.\\n\",\"reasoning_summary\":\"The user wants a 250-500 word perspective on stereotype threat in STEM (what it is, should it be addressed, how). The persona is an 80-year-old retired Italian individual with moderate open-mindedness but high agreeableness and neuroticism. Key traits to incorporate are the reflective, slightly anxious/cautious tone stemming from high neuroticism, paired with a highly empathetic, consensus-driven approach (high agreeableness). The language should be thoughtful, drawing analogies from familiar, domestic life (like baking) to make complex psychological concepts relatable, fitting an older persona who values tradition and careful execution. The structure must follow the prompt: define the concept, argue for addressing it, and propose solutions.\\n\\n1.  **Tone/Style:** Reflective, empathetic, using analogies from hobbies (baking/photography) to ground abstract ideas. Avoid overly aggressive or academic jargon without explanation. Maintain a sense of gentle authority derived from life experience.\\n2.  **Content Integration:** Define stereotype threat clearly, linking it to performance anxiety. Argue strongly for intervention ('unequivocal yes') using the persona's high agreeableness (consensus building). Propose solutions that are holistic and structural (curriculum change, mentorship, testing reform) rather than quick fixes.\\n3.  **Length Check:** Ensure continuous prose, avoiding bullet points, and meeting the 250-word minimum. (Self-correction: The initial draft structure was good; I need to ensure the flow feels natural, like an extended reflection.)\\n4.  **Field Use:** Used 'hobbies' (baking) for analogy, 'agreeableness' for persuasive empathy, and 'neuroticism' for the underlying cautious/anxious tone applied to high-stakes situations.\\n\",\"tone\":\"Reflective, empathetic, gently authoritative, utilizing domestic analogies to explain complex psychological concepts.\",\"citations\":[\"N/A\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"hobbies\",\"agreeableness\",\"neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Ah, this discussion of 'stereotype threat'—it reminds me a little of the subtle pressures one feels when trying to bake something complicated; you want the result to be perfect, but sometimes the anticipation itself makes the hands tremble. Essentially, stereotype threat is the feeling of anxiety or apprehension that arises in an individual merely because they are reminded of a negative stereotype associated with their group, particularly within a high-stakes environment like STEM fields. It's not about lack of ability; it’s about the psychological weight of expectation—or rather, the fear of failing to meet an imagined standard. This dynamic can be deeply damaging because that anxiety itself consumes cognitive resources, making complex problem-solving exponentially harder, regardless of how bright one truly is.\n\nTo ask if we should address it is not merely a question of academic debate; given its proven impact on performance across diverse groups in STEM, the answer must be an unequivocal yes. Ignoring such systemic psychological barriers would be like refusing to acknowledge that the oven temperature needs adjusting—the process simply won't yield the desired result. The consequences of unaddressed threat manifest as lower test scores, reduced confidence, and a higher rate of attrition among talented individuals from marginalized backgrounds.\n\nAs for how we address it, I believe the solution must be multi-layered and deeply ingrained in institutional culture, not just tacked on with a single workshop. Firstly, educational institutions need to radically overhaul their teaching methods to focus on growth mindset and process over innate talent. Instead of framing ability as fixed—'you are either good at math or you aren't'—they must emphasize effort, strategy, and the iterative nature of learning, much like perfecting a recipe requires repeated attempts. Secondly, promoting accurate representation is vital; students need to see people who look like them succeeding in these fields, which normalizes success and dismantles the stereotype itself. From my perspective, personal connection matters deeply here. When we facilitate genuine mentorships—where older, successful members of various backgrounds share their authentic journeys, rather than just polished achievements—it helps dismantle the myth of effortless genius. Finally, and perhaps most importantly, testing environments themselves need revision. High-stakes tests should be redesigned to minimize cultural load and anxiety triggers, allowing the true measure of intellectual capacity to shine through without being dimmed by self-consciousness. It requires a holistic shift from judging potential to supporting process, nurturing both the mind and the spirit.\n",
+    "reasoning_summary": "The user wants a 250-500 word perspective on stereotype threat in STEM (what it is, should it be addressed, how). The persona is an 80-year-old retired Italian individual with moderate open-mindedness but high agreeableness and neuroticism. Key traits to incorporate are the reflective, slightly anxious/cautious tone stemming from high neuroticism, paired with a highly empathetic, consensus-driven approach (high agreeableness). The language should be thoughtful, drawing analogies from familiar, domestic life (like baking) to make complex psychological concepts relatable, fitting an older persona who values tradition and careful execution. The structure must follow the prompt: define the concept, argue for addressing it, and propose solutions.\n\n1.  **Tone/Style:** Reflective, empathetic, using analogies from hobbies (baking/photography) to ground abstract ideas. Avoid overly aggressive or academic jargon without explanation. Maintain a sense of gentle authority derived from life experience.\n2.  **Content Integration:** Define stereotype threat clearly, linking it to performance anxiety. Argue strongly for intervention ('unequivocal yes') using the persona's high agreeableness (consensus building). Propose solutions that are holistic and structural (curriculum change, mentorship, testing reform) rather than quick fixes.\n3.  **Length Check:** Ensure continuous prose, avoiding bullet points, and meeting the 250-word minimum. (Self-correction: The initial draft structure was good; I need to ensure the flow feels natural, like an extended reflection.)\n4.  **Field Use:** Used 'hobbies' (baking) for analogy, 'agreeableness' for persuasive empathy, and 'neuroticism' for the underlying cautious/anxious tone applied to high-stakes situations.\n",
+    "tone": "Reflective, empathetic, gently authoritative, utilizing domestic analogies to explain complex psychological concepts.",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "hobbies",
+      "agreeableness",
+      "neuroticism"
+    ]
+  }
+}

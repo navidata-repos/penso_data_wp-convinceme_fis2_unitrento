@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "baidu/ernie-4.5-21b-a3b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 87,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Bari",
+      "employment_status": "self-employed",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "widowed",
+      "children": 0,
+      "migration_status": "native Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "travel",
+        "gardening",
+        "birdwatching",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 14,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":87,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"upper secondary\"},\"marital_status\":\"widowed\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"travel\",\"gardening\",\"birdwatching\",\"photography\"],\"ocean\":{\"openness\":{\"score\":51,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":40,\"level\":\"moderate\"},\"agreeableness\":{\"score\":40,\"level\":\"moderate\"},\"neuroticism\":{\"score\":14,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":87,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"upper secondary\"},\"marital_status\":\"widowed\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"travel\",\"gardening\",\"birdwatching\",\"photography\"],\"ocean\":{\"openness\":{\"score\":51,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":40,\"level\":\"moderate\"},\"agreeableness\":{\"score\":40,\"level\":\"moderate\"},\"neuroticism\":{\"score\":14,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in the field of STEM (Science, Technology, Engineering, and Mathematics) is a significant issue that can undermine the performance and well-being of individuals from marginalized groups. This phenomenon occurs when individuals are at risk of confirming negative stereotypes about their own abilities or group membership in relation to a particular task. For instance, a woman or a person of color might feel anxious or doubtful about performing well in STEM fields due to ingrained societal biases and stereotypes. Addressing this threat is crucial for fostering an inclusive environment that allows everyone to contribute fully and succeed based on their own merits rather than external pressures or assumptions. To effectively combat stereotype threat, it's essential to implement both systemic and individual strategies. One approach is providing role models from diverse backgrounds who can inspire confidence and represent the possibilities within STEM careers. Additionally, creating environments that emphasize effort over innate ability (growth mindset) can help reduce anxiety and promote resilience. Educators and employers need to be trained in recognizing and addressing stereotype threat to create a more inclusive atmosphere. For example, encouraging open dialogue about biases and promoting diversity initiatives can make significant strides in mitigating this issue. By acknowledging and actively working against stereotypes, we not only enhance individual performance but also drive innovation by tapping into the full potential of all group members.\",\"reasoning_summary\":\"The persona is a self-employed waiter living in Bari with a bachelor's degree. His moderate openness, conscientiousness, extraversion, agreeableness, and low neuroticism suggest a pragmatic and resilient approach to challenges like stereotype threat. Addressing stereotype threat in STEM involves creating environments that mitigate anxiety about confirming negative stereotypes. By fostering role models from diverse backgrounds and emphasizing growth mindset, we can reduce the pressure associated with these biases. This requires systemic changes such as diversity training and inclusive policies, combined with individual efforts like open communication and mentorship programs. The persona's background indicates a focus on practical solutions over abstract theories, making him well-suited to implement strategies that balance empathy and action.\",\"tone\":\"Pragmatic and Inclusive\",\"citations\":[\"Claude Steele; \\\"Stereotype Threat: A Theory in Need of Empirical Testing\\\"\", \"American Psychological Association\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\", \"education_level\", \"hobbies\", \"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in the field of STEM (Science, Technology, Engineering, and Mathematics) is a significant issue that can undermine the performance and well-being of individuals from marginalized groups. This phenomenon occurs when individuals are at risk of confirming negative stereotypes about their own abilities or group membership in relation to a particular task. For instance, a woman or a person of color might feel anxious or doubtful about performing well in STEM fields due to ingrained societal biases and stereotypes. Addressing this threat is crucial for fostering an inclusive environment that allows everyone to contribute fully and succeed based on their own merits rather than external pressures or assumptions. To effectively combat stereotype threat, it's essential to implement both systemic and individual strategies. One approach is providing role models from diverse backgrounds who can inspire confidence and represent the possibilities within STEM careers. Additionally, creating environments that emphasize effort over innate ability (growth mindset) can help reduce anxiety and promote resilience. Educators and employers need to be trained in recognizing and addressing stereotype threat to create a more inclusive atmosphere. For example, encouraging open dialogue about biases and promoting diversity initiatives can make significant strides in mitigating this issue. By acknowledging and actively working against stereotypes, we not only enhance individual performance but also drive innovation by tapping into the full potential of all group members.",
+    "reasoning_summary": "The persona is a self-employed waiter living in Bari with a bachelor's degree. His moderate openness, conscientiousness, extraversion, agreeableness, and low neuroticism suggest a pragmatic and resilient approach to challenges like stereotype threat. Addressing stereotype threat in STEM involves creating environments that mitigate anxiety about confirming negative stereotypes. By fostering role models from diverse backgrounds and emphasizing growth mindset, we can reduce the pressure associated with these biases. This requires systemic changes such as diversity training and inclusive policies, combined with individual efforts like open communication and mentorship programs. The persona's background indicates a focus on practical solutions over abstract theories, making him well-suited to implement strategies that balance empathy and action.",
+    "tone": "Pragmatic and Inclusive",
+    "citations": [
+      "Claude Steele; \"Stereotype Threat: A Theory in Need of Empirical Testing\"",
+      "American Psychological Association"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "education_level",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

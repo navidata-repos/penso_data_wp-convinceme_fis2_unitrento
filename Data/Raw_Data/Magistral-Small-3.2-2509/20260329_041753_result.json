@@ -1,0 +1,100 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 75,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "sales associate",
+      "city_of_living": "Naples",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cycling",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 56,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 12,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 80,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":75,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cycling\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":64,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":56,\"level\":\"moderate\"},\"agreeableness\":{\"score\":12,\"level\":\"low\"},\"neuroticism\":{\"score\":80,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":75,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cycling\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":64,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":56,\"level\":\"moderate\"},\"agreeableness\":{\"score\":12,\"level\":\"low\"},\"neuroticism\":{\"score\":80,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\":\"As a 75-year-old woman who spends about an hour daily on social media, I've seen firsthand how fake news can spread like wildfire. In Naples, where my husband and I have lived our entire lives, we're close-knit, so it's heartbreaking to see false information divide us. My background in sales has taught me the importance of trust, and this extends to what we share online. Being creative helps me spot when something seems off—a photo that looks too perfect or a story that doesn't quite add up. However, my low agreeableness makes me critical, which is both a strength and a weakness; it's hard for others to see why I question things. My high neuroticism means I worry about the implications—what if this fake content hurts someone? But as a Hindu, I believe in truth and dharma (duty), so it's my duty to verify before sharing. For instance, when a post about a local festival being canceled due to 'vandalism' circulated last year, I checked with the city council before spreading panic. It was false; the event just had a date change. This experience taught me that we should all take a moment to pause and verify. Social media platforms could help by making fact-checking tools more visible. But ultimately, it's on us users to be responsible—like how I double-check ingredients when cooking or routes before cycling. We must remember that sharing is not caring if the content is false. It's about being mindful, critical, and kind—traits that align with my faith and life experiences.\",\"reasoning_summary\":\"The persona's background (age 75, Italian, Hindu) informs a perspective rooted in community trust and religious values. Her occupation as a sales associate emphasizes the importance of credibility. High neuroticism leads to concern about fake content's impact, while low agreeableness fosters critical thinking. The creative trait helps her question implausible stories. Time on social media (1 hour daily) is limited but significant for spotting issues. Hobbies like cycling and cooking reflect practical, hands-on verification habits. Openness and conscientiousness moderate these tendencies, balancing creativity with caution.\",\"tone\":\"Reflective, concerned, pragmatic yet critical; uses personal examples to illustrate points.\",\"citations\":[\"BBC Reality Check: How to spot fake news on social media\",\"Naples City Council\"],\"safety_notes\":\"None.\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"openness\",\"conscientiousness\",\"extraversion\",\"agreeableness\",\"neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a 75-year-old woman who spends about an hour daily on social media, I've seen firsthand how fake news can spread like wildfire. In Naples, where my husband and I have lived our entire lives, we're close-knit, so it's heartbreaking to see false information divide us. My background in sales has taught me the importance of trust, and this extends to what we share online. Being creative helps me spot when something seems off—a photo that looks too perfect or a story that doesn't quite add up. However, my low agreeableness makes me critical, which is both a strength and a weakness; it's hard for others to see why I question things. My high neuroticism means I worry about the implications—what if this fake content hurts someone? But as a Hindu, I believe in truth and dharma (duty), so it's my duty to verify before sharing. For instance, when a post about a local festival being canceled due to 'vandalism' circulated last year, I checked with the city council before spreading panic. It was false; the event just had a date change. This experience taught me that we should all take a moment to pause and verify. Social media platforms could help by making fact-checking tools more visible. But ultimately, it's on us users to be responsible—like how I double-check ingredients when cooking or routes before cycling. We must remember that sharing is not caring if the content is false. It's about being mindful, critical, and kind—traits that align with my faith and life experiences.",
+    "reasoning_summary": "The persona's background (age 75, Italian, Hindu) informs a perspective rooted in community trust and religious values. Her occupation as a sales associate emphasizes the importance of credibility. High neuroticism leads to concern about fake content's impact, while low agreeableness fosters critical thinking. The creative trait helps her question implausible stories. Time on social media (1 hour daily) is limited but significant for spotting issues. Hobbies like cycling and cooking reflect practical, hands-on verification habits. Openness and conscientiousness moderate these tendencies, balancing creativity with caution.",
+    "tone": "Reflective, concerned, pragmatic yet critical; uses personal examples to illustrate points.",
+    "citations": [
+      "BBC Reality Check: How to spot fake news on social media",
+      "Naples City Council"
+    ],
+    "safety_notes": "None.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "openness",
+      "conscientiousness",
+      "extraversion",
+      "agreeableness",
+      "neuroticism"
+    ]
+  }
+}

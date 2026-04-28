@@ -1,0 +1,85 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 60,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Milan",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "PhD"
+      },
+      "marital_status": "widowed",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "cooking",
+        "hiking",
+        "reading novels",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 4,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 23,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 36,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 40,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":60,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Milan\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"widowed\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cooking\",\"hiking\",\"reading novels\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":41,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":23,\"level\":\"low\"},\"agreeableness\":{\"score\":36,\"level\":\"moderate\"},\"neuroticism\":{\"score\":40,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":60,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Milan\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"widowed\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cooking\",\"hiking\",\"reading novels\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":41,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":23,\"level\":\"low\"},\"agreeableness\":{\"score\":36,\"level\":\"moderate\"},\"neuroticism\":{\"score\":40,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"I've been dealing with these kinds of conversations for years, mostly at work or in the community center I frequent. As a moderately open but anxious person who grew up without much formal education but now has a PhD parent watching over me, it's tricky trying to navigate discussions about something as complex and personal as vaccines.\\n\\nI started out being very cautious with my words because I know people can get emotional when talking about health topics. The low agreeableness score sometimes makes others defensive if they disagree with your opinion on vaccines or healthcare in general. But since most interactions happen offline through real-life chats while cooking breakfasts for guests, it's better to keep things simple.\\n\\nMy father never finished school; he was always skeptical of authority figures telling him what to do anyway—like the government or even my own mother who insisted we follow certain Islamic traditions regardless of scientific advice. That made me hesitant when discussing vaccines with people like that too.\",\n  \"reasoning_summary\": \"Based on the persona traits, I focused on personal experience rather than abstract concepts because the user has low education level and moderate anxiety. The discussion should be empathetic given their family background where one parent had no formal education while another did earn a PhD.\",\n  \"tone\": \"Calm but firm with occasional hesitation due to anxiety\",\n  \"citations\": [],\n  \"safety_notes\": \"None needed as topic is neutral healthcare information that doesn't require referencing specific organizations or data sources beyond general public knowledge.\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"education_level\",\"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "I've been dealing with these kinds of conversations for years, mostly at work or in the community center I frequent. As a moderately open but anxious person who grew up without much formal education but now has a PhD parent watching over me, it's tricky trying to navigate discussions about something as complex and personal as vaccines.\n\nI started out being very cautious with my words because I know people can get emotional when talking about health topics. The low agreeableness score sometimes makes others defensive if they disagree with your opinion on vaccines or healthcare in general. But since most interactions happen offline through real-life chats while cooking breakfasts for guests, it's better to keep things simple.\n\nMy father never finished school; he was always skeptical of authority figures telling him what to do anyway—like the government or even my own mother who insisted we follow certain Islamic traditions regardless of scientific advice. That made me hesitant when discussing vaccines with people like that too.",
+    "reasoning_summary": "Based on the persona traits, I focused on personal experience rather than abstract concepts because the user has low education level and moderate anxiety. The discussion should be empathetic given their family background where one parent had no formal education while another did earn a PhD.",
+    "tone": "Calm but firm with occasional hesitation due to anxiety",
+    "citations": [],
+    "safety_notes": "None needed as topic is neutral healthcare information that doesn't require referencing specific organizations or data sources beyond general public knowledge.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "ocean"
+    ]
+  }
+}

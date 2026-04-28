@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 30,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "photography",
+        "football (calcio)",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 56,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 21,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 13,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 19,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 58,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"photography\",\"football (calcio)\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":56,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":21,\"level\":\"low\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":58,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"photography\",\"football (calcio)\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":56,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":21,\"level\":\"low\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":58,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a 30-year-old woman working as a delivery driver in Naples, I see the gender gap in science from a practical, everyday perspective. To me, it's about fewer women in fields like engineering or research compared to men, which I notice when I deliver packages to universities or tech companies—often, the scientists I meet are men. This gap matters because it limits opportunities for women, including myself, who might have wanted to pursue science but faced barriers like stereotypes or lack of support. Growing up with a parent who has a master's degree, I saw education's value, but my own lower secondary education meant I didn't get far in school, and that's part of why I'm in this job. I think we should address the gap because it's unfair and wastes talent; women can contribute just as much to science, and in my Islamic faith, fairness and equality are important. From my hobbies like photography and cinema, I appreciate creativity, and science needs diverse minds to solve problems. To fix it, we need better education for girls early on, more role models in media, and support from families and communities. In Naples, I see some progress, but change is slow. As someone with moderate openness and neuroticism, I worry about these issues but believe small steps can help. We should encourage girls to explore science without pressure, provide scholarships, and ensure workplaces are inclusive. It's not just about numbers; it's about giving everyone a fair chance to follow their passions, whether in science or other fields, and that aligns with my view of a just society.\",\"reasoning_summary\":\"Derived opinion from persona traits: Age 30 and gender woman provide personal relevance to gender issues. Occupation as delivery driver offers a ground-level view of workplace diversity. Education level lower secondary and parents' education (parent_1 master's, parent_2 lower secondary) suggest awareness of educational disparities and family influence. City of living Naples implies cultural context in Italy. Religious beliefs Islam emphasize fairness. Hobbies like photography and cinema relate to creativity and media influence. OCEAN traits: moderate openness supports considering new ideas, low conscientiousness and extraversion indicate less structured or social approach, low agreeableness suggests independent thinking, moderate neuroticism adds concern. Opinion focuses on practical observations, fairness, and incremental solutions, avoiding technical jargon to match persona's background.\",\"tone\":\"Practical, concerned, and grounded in personal experience, with a straightforward and slightly informal style reflecting lower education and everyday life.\",\"citations\":[\"none\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"religious_beliefs\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a 30-year-old woman working as a delivery driver in Naples, I see the gender gap in science from a practical, everyday perspective. To me, it's about fewer women in fields like engineering or research compared to men, which I notice when I deliver packages to universities or tech companies—often, the scientists I meet are men. This gap matters because it limits opportunities for women, including myself, who might have wanted to pursue science but faced barriers like stereotypes or lack of support. Growing up with a parent who has a master's degree, I saw education's value, but my own lower secondary education meant I didn't get far in school, and that's part of why I'm in this job. I think we should address the gap because it's unfair and wastes talent; women can contribute just as much to science, and in my Islamic faith, fairness and equality are important. From my hobbies like photography and cinema, I appreciate creativity, and science needs diverse minds to solve problems. To fix it, we need better education for girls early on, more role models in media, and support from families and communities. In Naples, I see some progress, but change is slow. As someone with moderate openness and neuroticism, I worry about these issues but believe small steps can help. We should encourage girls to explore science without pressure, provide scholarships, and ensure workplaces are inclusive. It's not just about numbers; it's about giving everyone a fair chance to follow their passions, whether in science or other fields, and that aligns with my view of a just society.",
+    "reasoning_summary": "Derived opinion from persona traits: Age 30 and gender woman provide personal relevance to gender issues. Occupation as delivery driver offers a ground-level view of workplace diversity. Education level lower secondary and parents' education (parent_1 master's, parent_2 lower secondary) suggest awareness of educational disparities and family influence. City of living Naples implies cultural context in Italy. Religious beliefs Islam emphasize fairness. Hobbies like photography and cinema relate to creativity and media influence. OCEAN traits: moderate openness supports considering new ideas, low conscientiousness and extraversion indicate less structured or social approach, low agreeableness suggests independent thinking, moderate neuroticism adds concern. Opinion focuses on practical observations, fairness, and incremental solutions, avoiding technical jargon to match persona's background.",
+    "tone": "Practical, concerned, and grounded in personal experience, with a straightforward and slightly informal style reflecting lower education and everyday life.",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

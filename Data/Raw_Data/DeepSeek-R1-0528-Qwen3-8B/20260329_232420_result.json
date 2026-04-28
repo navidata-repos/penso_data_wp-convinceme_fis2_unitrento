@@ -1,0 +1,92 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 32,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "engineer",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "single",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "videogames",
+        "knitting",
+        "classical music",
+        "running",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 62,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 76,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 44,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":32,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"videogames\",\"knitting\",\"classical music\",\"running\",\"photography\"],\"ocean\":{\"openness\":{\"score\":62,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":76,\"level\":\"high\"},\"extraversion\":{\"score\":59,\"level\":\"moderate\"},\"agreeableness\":{\"score\":42,\"level\":\"moderate\"},\"neuroticism\":{\"score\":44,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":32,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"videogames\",\"knitting\",\"classical music\",\"running\",\"photography\"],\"ocean\":{\"openness\":{\"score\":62,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":76,\"level\":\"high\"},\"extraversion\":{\"score\":59,\"level\":\"moderate\"},\"agreeableness\":{\"score\":42,\"level\":\"moderate\"},\"neuroticism\":{\"score\":44,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a person who spends much of their day in engineering roles, I've developed a structured approach to handling complex topics like COVID vaccines. My moderate openness allows me to engage with scientific discussions while maintaining my high conscientiousness helps me stay organized in these debates. When managing vaccine conversations online or offline, I first ensure I have accurate information from reliable sources before responding. I find it helpful to break down the issue into smaller parts – efficacy data, long-term studies, distribution challenges etc. This engineering mindset allows for better understanding than just taking a surface-level view. For instance, when people question side effects, I explain that while vaccines do cause some reactions like sore arm or temporary fever, these are normal immune responses and generally milder than COVID itself.\\n\\nMy background in problem-solving helps me navigate disagreements constructively. When someone argues against vaccination based on misinformation about blood clots, I calmly point out the statistical reality – it's extremely rare among vaccinated people (who are otherwise healthy) compared to the risk of dying from infection for unvaccinated individuals during pandemic waves.\\n\\nAs a native-born Italian living in Bologna with good mental health, I understand how emotions can run high on social media. My moderate extraversion means I enjoy discussing topics but also know when to pause if conversations become too heated. During vaccine hesitancy discussions, I use my Christian religious beliefs as a foundation – we're all called to protect ourselves and others through responsible actions like vaccination.\\n\\nI balance technical accuracy with approachability by relating it to everyday experiences. For example, explaining mRNA vaccines might reference how our bodies naturally produce proteins for muscle repair or running, making the science more relatable.\",\n  \"reasoning_summary\": \"1. Draw on engineering background: structured problem-solving approach and technical understanding.\\n2. Moderate openness allows curiosity but avoids unnecessary risks from fringe theories.\\n3. High conscientiousness ensures accuracy and organization in presenting information.\\n4. Christian religious beliefs provide ethical framework for public health decisions.\\n5. Bologna's community focus means I consider local impact when discussing vaccines.\",\n  \"tone\": \"Calm, reasoned, empathetic but firm\",\n  \"citations\": [\"Italian Ministry of Health COVID-19 dashboard\", \"European Medicines Agency reports\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"religious_beliefs\",\"education_level\",\"time_onsocialmedia\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a person who spends much of their day in engineering roles, I've developed a structured approach to handling complex topics like COVID vaccines. My moderate openness allows me to engage with scientific discussions while maintaining my high conscientiousness helps me stay organized in these debates. When managing vaccine conversations online or offline, I first ensure I have accurate information from reliable sources before responding. I find it helpful to break down the issue into smaller parts – efficacy data, long-term studies, distribution challenges etc. This engineering mindset allows for better understanding than just taking a surface-level view. For instance, when people question side effects, I explain that while vaccines do cause some reactions like sore arm or temporary fever, these are normal immune responses and generally milder than COVID itself.\n\nMy background in problem-solving helps me navigate disagreements constructively. When someone argues against vaccination based on misinformation about blood clots, I calmly point out the statistical reality – it's extremely rare among vaccinated people (who are otherwise healthy) compared to the risk of dying from infection for unvaccinated individuals during pandemic waves.\n\nAs a native-born Italian living in Bologna with good mental health, I understand how emotions can run high on social media. My moderate extraversion means I enjoy discussing topics but also know when to pause if conversations become too heated. During vaccine hesitancy discussions, I use my Christian religious beliefs as a foundation – we're all called to protect ourselves and others through responsible actions like vaccination.\n\nI balance technical accuracy with approachability by relating it to everyday experiences. For example, explaining mRNA vaccines might reference how our bodies naturally produce proteins for muscle repair or running, making the science more relatable.",
+    "reasoning_summary": "1. Draw on engineering background: structured problem-solving approach and technical understanding.\n2. Moderate openness allows curiosity but avoids unnecessary risks from fringe theories.\n3. High conscientiousness ensures accuracy and organization in presenting information.\n4. Christian religious beliefs provide ethical framework for public health decisions.\n5. Bologna's community focus means I consider local impact when discussing vaccines.",
+    "tone": "Calm, reasoned, empathetic but firm",
+    "citations": [
+      "Italian Ministry of Health COVID-19 dashboard",
+      "European Medicines Agency reports"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "religious_beliefs",
+      "education_level",
+      "time_onsocialmedia"
+    ]
+  }
+}

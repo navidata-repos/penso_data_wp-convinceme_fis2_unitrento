@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 30,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "single",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "football (calcio)",
+        "volunteering",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 2,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 79,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 54,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 34,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":30,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"football (calcio)\",\"volunteering\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":79,\"level\":\"high\"},\"agreeableness\":{\"score\":54,\"level\":\"moderate\"},\"neuroticism\":{\"score\":34,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":30,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"football (calcio)\",\"volunteering\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":79,\"level\":\"high\"},\"agreeableness\":{\"score\":54,\"level\":\"moderate\"},\"neuroticism\":{\"score\":34,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Look, when you talk about something like ‘stereotype threat’ in STEM—it sounds super academic and a bit… heavy, honestly. I mean, I spend my time making latte art and occasionally figuring out which video game boss to take on next; the last thing I want is some complicated psychological theory slowing me down. But even if it's just abstract stuff, the general idea makes sense: that when you know there’s an expectation or a stereotype hanging over your head—like thinking certain groups are bad at math or science—it actually messes with how well you perform. It’s like being under pressure before a big football match; instead of focusing on your own game plan, you're worried about what the commentators think, and suddenly you miss an easy pass. That anxiety is what really kills performance. \\n\\nAnd yeah, absolutely, we should address it. Ignoring it is just letting a bad vibe continue to affect people’s chances. Since I'm pretty outgoing and spend time with people (and sometimes volunteering!), I can see how much these kinds of biases hurt community effort. It's not about fixing the people; it's about removing the artificial pressure cooker that society puts them in, whether that’s through biased testing environments or just general cultural assumptions. \\n\\nHow do we tackle it? Well, since my brain isn't built for advanced psych research, I'm going to keep it practical and actionable. First off, we need to make the learning environment feel less like an interrogation and more like a supportive hangout session—like a good coffee spot where everyone feels welcome to chat about whatever. This means changing how STEM is taught; focus on collaborative projects rather than just individual tests that measure one single thing. Second, it’s all about visibility and representation. If kids see people who look like them and come from backgrounds like theirs succeeding in those fields—whether they're scientists, engineers, or even just running a cool tech startup—it normalizes success. It makes the goal feel reachable, not some mythical place only for geniuses. And finally, maybe we need to stop treating intelligence like this single, rigid thing that you either have or you don’t. Recognizing that smarts come in all shapes and sizes, like having different skills for making a great drink versus solving complex equations, can take the pressure off everyone. It's about building confidence first, then building knowledge around it.\\n\\n\",\"reasoning_summary\":\"The persona is an outgoing (Extraversion: 79), creative (Psychological Feature), self-employed barista in Bologna with a vocational diploma. He has low openness but moderate conscientiousness and agreeableness. His interests are social (football, volunteering) and playful (videogames). The tone must be casual, relatable, slightly skeptical of overly academic concepts, but ultimately supportive and action-oriented. I need to translate the abstract topic (Stereotype Threat in STEM) into everyday, practical terms using analogies related to his life (barista work, football, socializing/community involvement). The response must maintain a continuous prose style, avoid jargon where possible, and be at least 250 words long.\",\"tone\":\"Casual, highly empathetic, pragmatic, slightly dismissive of excessive academic complexity but fundamentally supportive of social justice efforts.\",\"citations\":[\"N/A\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"occupation\",\"city_of_living\",\"education_level\",\"psychological_feature\",\"extraversion\",\"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Look, when you talk about something like ‘stereotype threat’ in STEM—it sounds super academic and a bit… heavy, honestly. I mean, I spend my time making latte art and occasionally figuring out which video game boss to take on next; the last thing I want is some complicated psychological theory slowing me down. But even if it's just abstract stuff, the general idea makes sense: that when you know there’s an expectation or a stereotype hanging over your head—like thinking certain groups are bad at math or science—it actually messes with how well you perform. It’s like being under pressure before a big football match; instead of focusing on your own game plan, you're worried about what the commentators think, and suddenly you miss an easy pass. That anxiety is what really kills performance. \n\nAnd yeah, absolutely, we should address it. Ignoring it is just letting a bad vibe continue to affect people’s chances. Since I'm pretty outgoing and spend time with people (and sometimes volunteering!), I can see how much these kinds of biases hurt community effort. It's not about fixing the people; it's about removing the artificial pressure cooker that society puts them in, whether that’s through biased testing environments or just general cultural assumptions. \n\nHow do we tackle it? Well, since my brain isn't built for advanced psych research, I'm going to keep it practical and actionable. First off, we need to make the learning environment feel less like an interrogation and more like a supportive hangout session—like a good coffee spot where everyone feels welcome to chat about whatever. This means changing how STEM is taught; focus on collaborative projects rather than just individual tests that measure one single thing. Second, it’s all about visibility and representation. If kids see people who look like them and come from backgrounds like theirs succeeding in those fields—whether they're scientists, engineers, or even just running a cool tech startup—it normalizes success. It makes the goal feel reachable, not some mythical place only for geniuses. And finally, maybe we need to stop treating intelligence like this single, rigid thing that you either have or you don’t. Recognizing that smarts come in all shapes and sizes, like having different skills for making a great drink versus solving complex equations, can take the pressure off everyone. It's about building confidence first, then building knowledge around it.\n\n",
+    "reasoning_summary": "The persona is an outgoing (Extraversion: 79), creative (Psychological Feature), self-employed barista in Bologna with a vocational diploma. He has low openness but moderate conscientiousness and agreeableness. His interests are social (football, volunteering) and playful (videogames). The tone must be casual, relatable, slightly skeptical of overly academic concepts, but ultimately supportive and action-oriented. I need to translate the abstract topic (Stereotype Threat in STEM) into everyday, practical terms using analogies related to his life (barista work, football, socializing/community involvement). The response must maintain a continuous prose style, avoid jargon where possible, and be at least 250 words long.",
+    "tone": "Casual, highly empathetic, pragmatic, slightly dismissive of excessive academic complexity but fundamentally supportive of social justice efforts.",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "psychological_feature",
+      "extraversion",
+      "hobbies"
+    ]
+  }
+}

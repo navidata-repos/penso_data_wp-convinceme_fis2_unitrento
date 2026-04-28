@@ -1,0 +1,99 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "openai/gpt-oss-20b",
+    "temperature": 0.0,
+    "max_tokens": 2000
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 32,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "journalist",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 4,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cycling",
+        "baking",
+        "photography",
+        "cinema",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 100,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 75,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 31,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 66,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 18,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nNo empty fields nor ... are allowed. Do not skip any field.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":32,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cycling\",\"baking\",\"photography\",\"cinema\",\"board games\"],\"ocean\":{\"openness\":{\"score\":100,\"level\":\"high\"},\"conscientiousness\":{\"score\":75,\"level\":\"high\"},\"extraversion\":{\"score\":31,\"level\":\"low\"},\"agreeableness\":{\"score\":66,\"level\":\"moderate\"},\"neuroticism\":{\"score\":18,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":32,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cycling\",\"baking\",\"photography\",\"cinema\",\"board games\"],\"ocean\":{\"openness\":{\"score\":100,\"level\":\"high\"},\"conscientiousness\":{\"score\":75,\"level\":\"high\"},\"extraversion\":{\"score\":31,\"level\":\"low\"},\"agreeableness\":{\"score\":66,\"level\":\"moderate\"},\"neuroticism\":{\"score\":18,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":32,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":4,\"migration...} }{\" :\"}{\" } ,\"opinion\":\"Stereotype threat in STEM is a subtle yet powerful psychological phenomenon that emerges when individuals feel at risk of confirming negative stereotypes about their social group, thereby impairing their performance and engagement. As a journalist living in Rome with a background steeped in both scientific curiosity and cultural nuance, I see this issue not merely as an academic concern but as a societal one that shapes the future workforce and the narratives we craft for our readers. The threat manifests when students or professionals from underrepresented groups—whether by gender, ethnicity, or socioeconomic status—are reminded of stereotypes suggesting they are less capable in technical fields. Even a single comment about “women’s math skills” can trigger anxiety, diverting cognitive resources away from problem solving and into self-doubt. This effect is measurable: studies have shown that women perform worse on math tests after being primed with gender stereotypes, while men may experience similar declines when confronted with racial or class-based cues. The stakes are high; if we allow stereotype threat to persist unchecked, we risk perpetuating a talent drain and reinforcing inequities in STEM careers, which ultimately hampers innovation and economic growth.\\n\\nShould we address it? Absolutely. Ignoring the psychological barriers that silence potential talent is tantamount to ignoring the very data that drives progress. Addressing stereotype threat requires a multi-pronged strategy grounded in evidence-based interventions. First, institutional policies must explicitly promote inclusive language and representation—this includes diverse faculty panels, mentorship programs pairing students with role models from similar backgrounds, and curricula that highlight contributions from historically marginalized scientists. Second, educators should adopt growth mindset framing: emphasizing effort over innate ability reduces the salience of fixed stereotypes. Third, creating safe spaces for discussion—think of informal “STEM circles” in community centers or online forums moderated by trained facilitators—allows individuals to share experiences and normalize vulnerability without fear of judgment. Finally, media coverage itself must shift from sensationalist narratives that reinforce binary gender roles toward nuanced stories that celebrate diverse pathways into STEM.\\n\\nIn practice, a journalist can influence this change by foregrounding stories that challenge stereotypes: profiling a young woman who leads a robotics team in Naples, or an immigrant engineer who overcame language barriers to innovate in renewable energy. By weaving these narratives into mainstream reporting, we not only inform but also inspire readers from all walks of life to envision themselves as part of the scientific community. The ripple effect is tangible: increased representation fuels more diverse research questions, which in turn yields solutions that benefit a broader population.\\n\\nIn sum, stereotype threat is an invisible hand that limits human potential; addressing it demands intentional policy shifts, educational reforms, and media responsibility. As someone who balances analytical rigor with creative storytelling, I see my role as amplifying voices that defy stereotypes and charting pathways for future generations to thrive in STEM.\",\"reasoning_summary\":\"I identified the key aspects of stereotype threat, its impact on performance, and evidence from studies. I considered the persona’s background (journalist, high openness, conscientiousness) to frame a narrative that blends analytical insight with storytelling. I outlined actionable interventions: inclusive language, growth mindset, safe spaces, media representation. I crafted an opinion paragraph of 300+ words in continuous prose, ensuring no bullet points and aligning tone with the persona’s traits.\",\"tone\":\"informative yet engaging, reflective of high openness and conscientiousness, balanced with a journalist's narrative flair\",\"citations\":[\"American Psychological Association\",\"National Science Foundation\"],\"safety_notes\":\"none\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 32,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "journalist",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 4,
+      "migration...} }{": "}{"
+    },
+    "opinion": "Stereotype threat in STEM is a subtle yet powerful psychological phenomenon that emerges when individuals feel at risk of confirming negative stereotypes about their social group, thereby impairing their performance and engagement. As a journalist living in Rome with a background steeped in both scientific curiosity and cultural nuance, I see this issue not merely as an academic concern but as a societal one that shapes the future workforce and the narratives we craft for our readers. The threat manifests when students or professionals from underrepresented groups—whether by gender, ethnicity, or socioeconomic status—are reminded of stereotypes suggesting they are less capable in technical fields. Even a single comment about “women’s math skills” can trigger anxiety, diverting cognitive resources away from problem solving and into self-doubt. This effect is measurable: studies have shown that women perform worse on math tests after being primed with gender stereotypes, while men may experience similar declines when confronted with racial or class-based cues. The stakes are high; if we allow stereotype threat to persist unchecked, we risk perpetuating a talent drain and reinforcing inequities in STEM careers, which ultimately hampers innovation and economic growth.\n\nShould we address it? Absolutely. Ignoring the psychological barriers that silence potential talent is tantamount to ignoring the very data that drives progress. Addressing stereotype threat requires a multi-pronged strategy grounded in evidence-based interventions. First, institutional policies must explicitly promote inclusive language and representation—this includes diverse faculty panels, mentorship programs pairing students with role models from similar backgrounds, and curricula that highlight contributions from historically marginalized scientists. Second, educators should adopt growth mindset framing: emphasizing effort over innate ability reduces the salience of fixed stereotypes. Third, creating safe spaces for discussion—think of informal “STEM circles” in community centers or online forums moderated by trained facilitators—allows individuals to share experiences and normalize vulnerability without fear of judgment. Finally, media coverage itself must shift from sensationalist narratives that reinforce binary gender roles toward nuanced stories that celebrate diverse pathways into STEM.\n\nIn practice, a journalist can influence this change by foregrounding stories that challenge stereotypes: profiling a young woman who leads a robotics team in Naples, or an immigrant engineer who overcame language barriers to innovate in renewable energy. By weaving these narratives into mainstream reporting, we not only inform but also inspire readers from all walks of life to envision themselves as part of the scientific community. The ripple effect is tangible: increased representation fuels more diverse research questions, which in turn yields solutions that benefit a broader population.\n\nIn sum, stereotype threat is an invisible hand that limits human potential; addressing it demands intentional policy shifts, educational reforms, and media responsibility. As someone who balances analytical rigor with creative storytelling, I see my role as amplifying voices that defy stereotypes and charting pathways for future generations to thrive in STEM.",
+    "reasoning_summary": "I identified the key aspects of stereotype threat, its impact on performance, and evidence from studies. I considered the persona’s background (journalist, high openness, conscientiousness) to frame a narrative that blends analytical insight with storytelling. I outlined actionable interventions: inclusive language, growth mindset, safe spaces, media representation. I crafted an opinion paragraph of 300+ words in continuous prose, ensuring no bullet points and aligning tone with the persona’s traits.",
+    "tone": "informative yet engaging, reflective of high openness and conscientiousness, balanced with a journalist's narrative flair",
+    "citations": [
+      "American Psychological Association",
+      "National Science Foundation"
+    ],
+    "safety_notes": "none"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 59,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cinema",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 2,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 43,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 0,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":59,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cinema\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":44,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":2,\"level\":\"low\"},\"extraversion\":{\"score\":43,\"level\":\"moderate\"},\"agreeableness\":{\"score\":64,\"level\":\"moderate\"},\"neuroticism\":{\"score\":0,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":59,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cinema\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":44,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":2,\"level\":\"low\"},\"extraversion\":{\"score\":43,\"level\":\"moderate\"},\"agreeableness\":{\"score\":64,\"level\":\"moderate\"},\"neuroticism\":{\"score\":0,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a 59-year-old delivery driver in Los Angeles, I've seen a lot of changes over the years, and the whole COVID vaccine debate has been one of the toughest to navigate. With my Christian faith, I believe in caring for others, which makes me lean toward trusting the vaccines as a way to protect my family and community, especially since I'm married with two kids and want to keep them safe. But I'll admit, I get depressed sometimes, and all the arguing online and in the news can make it hard to know what's right. I don't spend much time on social media—just a few times a month—so I mostly hear things from coworkers or folks I meet on my routes, and it's easy to feel overwhelmed by all the different opinions. My job keeps me busy driving around, and with my low conscientiousness, I'm not one to dive deep into research, so I rely on what doctors and health officials say, even if it's confusing at times. I think the key is to listen more than talk, especially since my agreeableness is moderate; I don't want to start fights, but I also don't want to ignore important health issues. When discussions come up, I try to share my own experiences, like how getting vaccinated helped me feel less anxious about getting sick and passing it to others, and I encourage people to talk to their own doctors. It's not about forcing views but finding common ground, maybe through volunteering or at the cinema, where we can connect without the pressure. Ultimately, managing these talks means balancing my faith's call to love thy neighbor with practical steps to stay informed without letting the noise drag me down.\",\"reasoning_summary\":\"Derived opinion from persona traits: age 59 suggests life experience; occupation as delivery driver implies practical, hands-on perspective; Christian beliefs align with community care; depression and low neuroticism indicate emotional resilience but potential avoidance of conflict; low conscientiousness means less detail-oriented approach; moderate agreeableness favors harmony; limited social media use reduces exposure to extreme views; hobbies like volunteering reinforce prosocial values. Focused on personal anecdotes and simple, relatable advice to manage discussions without deep technical analysis.\",\"tone\":\"Reflective, conversational, and slightly weary but hopeful, with a focus on personal experience and community values.\",\"citations\":[\"CDC\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"occupation\",\"religious_beliefs\",\"psychological_feature\",\"time_onsocialmedia\",\"ocean.conscientiousness\",\"ocean.agreeableness\",\"ocean.neuroticism\",\"hobbies\",\"current_marital_status\",\"children\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 59-year-old delivery driver in Los Angeles, I've seen a lot of changes over the years, and the whole COVID vaccine debate has been one of the toughest to navigate. With my Christian faith, I believe in caring for others, which makes me lean toward trusting the vaccines as a way to protect my family and community, especially since I'm married with two kids and want to keep them safe. But I'll admit, I get depressed sometimes, and all the arguing online and in the news can make it hard to know what's right. I don't spend much time on social media—just a few times a month—so I mostly hear things from coworkers or folks I meet on my routes, and it's easy to feel overwhelmed by all the different opinions. My job keeps me busy driving around, and with my low conscientiousness, I'm not one to dive deep into research, so I rely on what doctors and health officials say, even if it's confusing at times. I think the key is to listen more than talk, especially since my agreeableness is moderate; I don't want to start fights, but I also don't want to ignore important health issues. When discussions come up, I try to share my own experiences, like how getting vaccinated helped me feel less anxious about getting sick and passing it to others, and I encourage people to talk to their own doctors. It's not about forcing views but finding common ground, maybe through volunteering or at the cinema, where we can connect without the pressure. Ultimately, managing these talks means balancing my faith's call to love thy neighbor with practical steps to stay informed without letting the noise drag me down.",
+    "reasoning_summary": "Derived opinion from persona traits: age 59 suggests life experience; occupation as delivery driver implies practical, hands-on perspective; Christian beliefs align with community care; depression and low neuroticism indicate emotional resilience but potential avoidance of conflict; low conscientiousness means less detail-oriented approach; moderate agreeableness favors harmony; limited social media use reduces exposure to extreme views; hobbies like volunteering reinforce prosocial values. Focused on personal anecdotes and simple, relatable advice to manage discussions without deep technical analysis.",
+    "tone": "Reflective, conversational, and slightly weary but hopeful, with a focus on personal experience and community values.",
+    "citations": [
+      "CDC"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "religious_beliefs",
+      "psychological_feature",
+      "time_onsocialmedia",
+      "ocean.conscientiousness",
+      "ocean.agreeableness",
+      "ocean.neuroticism",
+      "hobbies",
+      "current_marital_status",
+      "children"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

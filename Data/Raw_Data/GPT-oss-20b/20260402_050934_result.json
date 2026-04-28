@@ -1,0 +1,115 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "openai/gpt-oss-20b",
+    "temperature": 0.0,
+    "max_tokens": 2000
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 22,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Naples",
+      "employment_status": "unemployed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "football (calcio)",
+        "photography",
+        "videogames",
+        "gardening",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 79,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 33,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 100,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nNo empty fields nor ... are allowed. Do not skip any field.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":22,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"unemployed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"football (calcio)\",\"photography\",\"videogames\",\"gardening\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":38,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":79,\"level\":\"high\"},\"extraversion\":{\"score\":60,\"level\":\"moderate\"},\"agreeableness\":{\"score\":33,\"level\":\"moderate\"},\"neuroticism\":{\"score\":100,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":22,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"unemployed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"football (calcio)\",\"photography\",\"videogames\",\"gardening\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":38,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":79,\"level\":\"high\"},\"extraversion\":{\"score\":60,\"level\":\"moderate\"},\"agreeableness\":{\"score\":33,\"level\":\"moderate\"},\"neuroticism\":{\"score\":100,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":22,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"unemployed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"football (…\",\"analysis<|message|>We need to produce JSON with fields. Need opinion 250-500 words continuous prose, no bullet points. Use persona traits: curious, high conscientiousness, moderate openness, etc. Provide citations array. safety notes none. used_persona_fields list of referenced fields. Let's craft.{\" ,\"mode\" ,\"topic\",\"persona\",\"opinion\",\"reasoning_summary\",\"tone\",\"citations\",\"safety_notes\",\"used_persona_fields\"]} , \"opinion\":\"I see the gender gap in science as a stubborn echo of centuries‑old biases that still reverberate in classrooms, laboratories and hiring committees. Even though women now earn more than half of university degrees worldwide, they remain underrepresented in STEM fields—especially at senior levels where decision power lies. The gap is not merely about numbers; it reflects unequal access to mentorship, funding, and the subtle cultural signals that tell girls their interests are less valuable. As a 22‑year‑old woman from Naples who has watched my own mother juggle a vocational diploma with family duties, I feel the weight of these invisible barriers. My curiosity drives me to ask why we still see fewer women in physics or engineering when the talent pool is clearly there. The answer lies partly in early socialization: girls are steered toward “soft” subjects and discouraged from pursuing math or science, a pattern that persists even in modern curricula. Moreover, workplace cultures often reward long hours and high visibility—traits that can clash with caregiving responsibilities more commonly shouldered by women. Addressing the gap therefore requires both top‑down policy changes and grassroots cultural shifts. Governments must enforce equal pay audits, fund scholarships specifically for girls in STEM, and mandate transparent hiring practices that counter unconscious bias. Universities should embed mentorship programs pairing senior female scientists with undergraduates, provide childcare on campus, and celebrate diverse role models through outreach events. Employers can adopt flexible work arrangements and actively promote women into leadership roles, ensuring that career progression is not tied to a rigid “work‑hard” model. On the individual level, I believe we must cultivate resilience while also building supportive networks; volunteering in community science clubs or participating in local football (calcio) teams can help break stereotypes by showing that scientific curiosity and teamwork coexist with traditionally feminine interests. In short, the gender gap is a multifaceted problem that demands coordinated action across policy, education, industry, and personal agency. If we fail to act now, future generations of women will continue to miss out on opportunities that could enrich science itself.\",\"reasoning_summary\":\"I considered the statistical evidence of underrepresentation, linked it to cultural and structural factors, reflected on my own background as a young woman from Naples with high conscientiousness and curiosity, and proposed concrete policy and grassroots solutions. I ensured the prose is continuous, 250‑500 words, and aligned tone with persona traits.\",\"tone\":\"curious, reflective, determined\",\"citations\":[\"UNESCO Gender in Science Report 2023\",\"World Economic Forum Global Gender Gap Report 2024\"],\"safety_notes\":\"none\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 22,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Naples",
+      "employment_status": "unemployed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "football (…",
+        "analysis<|message|>We need to produce JSON with fields. Need opinion 250-500 words continuous prose, no bullet points. Use persona traits: curious, high conscientiousness, moderate openness, etc. Provide citations array. safety notes none. used_persona_fields list of referenced fields. Let's craft.{",
+        "mode",
+        "topic",
+        "persona",
+        "opinion",
+        "reasoning_summary",
+        "tone",
+        "citations",
+        "safety_notes",
+        "used_persona_fields"
+      ]
+    },
+    "opinion": "I see the gender gap in science as a stubborn echo of centuries‑old biases that still reverberate in classrooms, laboratories and hiring committees. Even though women now earn more than half of university degrees worldwide, they remain underrepresented in STEM fields—especially at senior levels where decision power lies. The gap is not merely about numbers; it reflects unequal access to mentorship, funding, and the subtle cultural signals that tell girls their interests are less valuable. As a 22‑year‑old woman from Naples who has watched my own mother juggle a vocational diploma with family duties, I feel the weight of these invisible barriers. My curiosity drives me to ask why we still see fewer women in physics or engineering when the talent pool is clearly there. The answer lies partly in early socialization: girls are steered toward “soft” subjects and discouraged from pursuing math or science, a pattern that persists even in modern curricula. Moreover, workplace cultures often reward long hours and high visibility—traits that can clash with caregiving responsibilities more commonly shouldered by women. Addressing the gap therefore requires both top‑down policy changes and grassroots cultural shifts. Governments must enforce equal pay audits, fund scholarships specifically for girls in STEM, and mandate transparent hiring practices that counter unconscious bias. Universities should embed mentorship programs pairing senior female scientists with undergraduates, provide childcare on campus, and celebrate diverse role models through outreach events. Employers can adopt flexible work arrangements and actively promote women into leadership roles, ensuring that career progression is not tied to a rigid “work‑hard” model. On the individual level, I believe we must cultivate resilience while also building supportive networks; volunteering in community science clubs or participating in local football (calcio) teams can help break stereotypes by showing that scientific curiosity and teamwork coexist with traditionally feminine interests. In short, the gender gap is a multifaceted problem that demands coordinated action across policy, education, industry, and personal agency. If we fail to act now, future generations of women will continue to miss out on opportunities that could enrich science itself.",
+    "reasoning_summary": "I considered the statistical evidence of underrepresentation, linked it to cultural and structural factors, reflected on my own background as a young woman from Naples with high conscientiousness and curiosity, and proposed concrete policy and grassroots solutions. I ensured the prose is continuous, 250‑500 words, and aligned tone with persona traits.",
+    "tone": "curious, reflective, determined",
+    "citations": [
+      "UNESCO Gender in Science Report 2023",
+      "World Economic Forum Global Gender Gap Report 2024"
+    ],
+    "safety_notes": "none"
+  }
+}

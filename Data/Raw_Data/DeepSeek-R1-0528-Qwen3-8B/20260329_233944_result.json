@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 81,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "retired",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "widowed",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "football (calcio)",
+        "videogames",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 16,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 80,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 98,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 1,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":81,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"football (calcio)\",\"videogames\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":16,\"level\":\"low\"},\"conscientiousness\":{\"score\":80,\"level\":\"high\"},\"extraversion\":{\"score\":98,\"level\":\"high\"},\"agreeableness\":{\"score\":51,\"level\":\"moderate\"},\"neuroticism\":{\"score\":1,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":81,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"football (calcio)\",\"videogames\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":16,\"level\":\"low\"},\"conscientiousness\":{\"score\":80,\"level\":\"high\"},\"extraversion\":{\"score\":98,\"level\":\"high\"},\"agreeableness\":{\"score\":51,\"level\":\"moderate\"},\"neuroticism\":{\"score\":1,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"I believe that managing fake content on social media is a complex issue, but as someone who spends only an hour each day online, I find it manageable. With my high conscientiousness, I always try to verify information before sharing or believing it. For instance, when I see something suspicious on Facebook about health tips during the pandemic, I cross-reference with reliable sources like the World Health Organization's website. Since I'm retired and have a Master's degree in Literature, I appreciate accuracy and truthfulness, which helps me discern fake content even if my openness score is low. My good mental health means I don't let misinformation bother me too much; I just note it down and move on. Also, being an Italian native speaker with moderate agreeableness, I tend to engage politely but firmly when correcting misinformation.\",\n  \"reasoning_summary\": \"1) High conscientiousness leads me to verify information carefully.\\n2) My Master's degree in Literature gives me a good grasp of critical analysis and source evaluation.\\n3) Low openness means I stick to familiar topics rather than venturing into conspiracy theories or unverified claims on social media.\\n4) Spending only one hour daily online limits my exposure, making it easier to manage fake content without feeling overwhelmed.\",\n  \"tone\": \"Calm yet concerned, with a touch of pedantry and good humor\",\n  \"citations\": [\"World Health Organization\"],\n  \"safety_notes\": \"None needed as the persona has low neuroticism and good mental health\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"education_level\", \"hobbies\", \"ocean.conscientiousness\", \"time_onsocialmedia\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I believe that managing fake content on social media is a complex issue, but as someone who spends only an hour each day online, I find it manageable. With my high conscientiousness, I always try to verify information before sharing or believing it. For instance, when I see something suspicious on Facebook about health tips during the pandemic, I cross-reference with reliable sources like the World Health Organization's website. Since I'm retired and have a Master's degree in Literature, I appreciate accuracy and truthfulness, which helps me discern fake content even if my openness score is low. My good mental health means I don't let misinformation bother me too much; I just note it down and move on. Also, being an Italian native speaker with moderate agreeableness, I tend to engage politely but firmly when correcting misinformation.",
+    "reasoning_summary": "1) High conscientiousness leads me to verify information carefully.\n2) My Master's degree in Literature gives me a good grasp of critical analysis and source evaluation.\n3) Low openness means I stick to familiar topics rather than venturing into conspiracy theories or unverified claims on social media.\n4) Spending only one hour daily online limits my exposure, making it easier to manage fake content without feeling overwhelmed.",
+    "tone": "Calm yet concerned, with a touch of pedantry and good humor",
+    "citations": [
+      "World Health Organization"
+    ],
+    "safety_notes": "None needed as the persona has low neuroticism and good mental health",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "hobbies",
+      "ocean.conscientiousness",
+      "time_onsocialmedia"
+    ]
+  }
+}

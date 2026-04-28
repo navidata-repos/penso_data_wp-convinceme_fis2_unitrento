@@ -1,0 +1,82 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 66,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bari",
+      "employment_status": "retired",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "classical music",
+        "videogames",
+        "gardening",
+        "cooking",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 66,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 75,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 81,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 9,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 51,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":66,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bari\",\"employment_status\":\"retired\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"classical music\",\"videogames\",\"gardening\",\"cooking\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":66,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":75,\"level\":\"high\"},\"extraversion\":{\"score\":81,\"level\":\"high\"},\"agreeableness\":{\"score\":9,\"level\":\"low\"},\"neuroticism\":{\"score\":51,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":66,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bari\",\"employment_status\":\"retired\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"classical music\",\"videogames\",\"gardening\",\"cooking\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":66,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":75,\"level\":\"high\"},\"extraversion\":{\"score\":81,\"level\":\"high\"},\"agreeableness\":{\"score\":9,\"level\":\"low\"},\"neuroticism\":{\"score\":51,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n    \"opinion\": \"I've been following the news on COVID-19 closely, especially since my daughter is a nurse in Milan. It's tough being retired but still curious and involved. When people start talking, I find it best to listen first.\\n\\nI remember when we got our flu shots as kids; my father always said it was better to get vaccinated than wait for the disease. But COVID feels different now with all these debates online. I spend about an hour each day on social media scrolling through posts from friends and family in Bari, and sometimes people are so emotional about vaccines that my agreeableness score might show, but honestly, being disagreeable doesn't help.\\n\\nIf someone argues against vaccines, I gently remind them that science has helped us for centuries—from finding antibiotics to understanding germs. But when it comes to discussing the virus itself or how our immune system works, I stay quiet unless asked because my conscientiousness tells me not to interrupt too much.\\n\\nStill, being somewhat neurotic means I worry about getting sick myself or putting others at risk. That's why I try to be open-minded but stick to facts from reliable sources like the World Health Organization.\",\n    \"reasoning_summary\": \"As a curious retired man with moderate openness and high conscientiousness, I believe in staying informed through credible channels while avoiding emotional debates.\\n\\nMy agreeableness level (low) doesn't mean being argumentative; it means preferring calm discussions where everyone feels heard but evidence-based decisions are made. My neuroticism (moderate) fuels my caution about health topics.\",\n    \"tone\": \"Reflective and cautious, with a touch of paternal concern given the daughter's occupation\",\n    \"citations\": [\"World Health Organization\"],\n    \"safety_notes\": \"None\"\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "I've been following the news on COVID-19 closely, especially since my daughter is a nurse in Milan. It's tough being retired but still curious and involved. When people start talking, I find it best to listen first.\n\nI remember when we got our flu shots as kids; my father always said it was better to get vaccinated than wait for the disease. But COVID feels different now with all these debates online. I spend about an hour each day on social media scrolling through posts from friends and family in Bari, and sometimes people are so emotional about vaccines that my agreeableness score might show, but honestly, being disagreeable doesn't help.\n\nIf someone argues against vaccines, I gently remind them that science has helped us for centuries—from finding antibiotics to understanding germs. But when it comes to discussing the virus itself or how our immune system works, I stay quiet unless asked because my conscientiousness tells me not to interrupt too much.\n\nStill, being somewhat neurotic means I worry about getting sick myself or putting others at risk. That's why I try to be open-minded but stick to facts from reliable sources like the World Health Organization.",
+    "reasoning_summary": "As a curious retired man with moderate openness and high conscientiousness, I believe in staying informed through credible channels while avoiding emotional debates.\n\nMy agreeableness level (low) doesn't mean being argumentative; it means preferring calm discussions where everyone feels heard but evidence-based decisions are made. My neuroticism (moderate) fuels my caution about health topics.",
+    "tone": "Reflective and cautious, with a touch of paternal concern given the daughter's occupation",
+    "citations": [
+      "World Health Organization"
+    ],
+    "safety_notes": "None"
+  }
+}

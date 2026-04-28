@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 41,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Bologna",
+      "employment_status": "employed part-time",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "classical music",
+        "rock climbing",
+        "baking",
+        "hiking",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 70,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 26,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 86,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 65,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 95,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":41,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"classical music\",\"rock climbing\",\"baking\",\"hiking\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":26,\"level\":\"low\"},\"extraversion\":{\"score\":86,\"level\":\"high\"},\"agreeableness\":{\"score\":65,\"level\":\"moderate\"},\"neuroticism\":{\"score\":95,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":41,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"classical music\",\"rock climbing\",\"baking\",\"hiking\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":26,\"level\":\"low\"},\"extraversion\":{\"score\":86,\"level\":\"high\"},\"agreeableness\":{\"score\":65,\"level\":\"moderate\"},\"neuroticism\":{\"score\":95,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n    \"opinion\": \"The gender gap in science refers to the underrepresentation of women, particularly in senior positions and male-dominated fields like physics or engineering. I've noticed this issue from my own experiences working with scientists; when they talk about research teams at major universities, there's often an imbalance that reflects historical biases.\\n\\nShould we address it? Definitely yes. Not only is scientific diversity important for innovation, but excluding half the population based on gender goes against principles of equality I value as part of Judaism. I remember reading how female scientists in Italy sometimes face subtle discrimination during peer reviews despite having equal qualifications. It's illogical to think that perspective matters less than aptitude simply because of someone's sex.\\n\\nHow can we address it? We need targeted mentorship programs for young women entering STEM fields, but also broader cultural shifts away from stereotyping scientific roles as 'masculine' careers. My own barista background helps me understand how unconscious biases operate in everyday settings – perhaps the same applies to academic environments.\",\n    \"reasoning_summary\": \"1) Personal experience as a part-time barista interacting with scientists: observed gender imbalance\\n2) Religious perspective (Judaism): equality is fundamental principle\\n3) Extrapolated from reading studies on discrimination in STEM fields\\n4) Linked my low conscientiousness score to preferring practical examples over abstract theories\\n5) Used high extraversion trait to emphasize the social benefits of diversity\\n6) Applied moderate agreeableness to stress teamwork and collaboration in research\",\n    \"tone\": \"Reflective but assertive, with Jewish values grounding the argument for equality.\",\n    \"citations\": [\"National Bureau of Statistics of Italy\", \"European Commission on Gender Equality\"],\n    \"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"religious_beliefs\",\"hobbies\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the underrepresentation of women, particularly in senior positions and male-dominated fields like physics or engineering. I've noticed this issue from my own experiences working with scientists; when they talk about research teams at major universities, there's often an imbalance that reflects historical biases.\n\nShould we address it? Definitely yes. Not only is scientific diversity important for innovation, but excluding half the population based on gender goes against principles of equality I value as part of Judaism. I remember reading how female scientists in Italy sometimes face subtle discrimination during peer reviews despite having equal qualifications. It's illogical to think that perspective matters less than aptitude simply because of someone's sex.\n\nHow can we address it? We need targeted mentorship programs for young women entering STEM fields, but also broader cultural shifts away from stereotyping scientific roles as 'masculine' careers. My own barista background helps me understand how unconscious biases operate in everyday settings – perhaps the same applies to academic environments.",
+    "reasoning_summary": "1) Personal experience as a part-time barista interacting with scientists: observed gender imbalance\n2) Religious perspective (Judaism): equality is fundamental principle\n3) Extrapolated from reading studies on discrimination in STEM fields\n4) Linked my low conscientiousness score to preferring practical examples over abstract theories\n5) Used high extraversion trait to emphasize the social benefits of diversity\n6) Applied moderate agreeableness to stress teamwork and collaboration in research",
+    "tone": "Reflective but assertive, with Jewish values grounding the argument for equality.",
+    "citations": [
+      "National Bureau of Statistics of Italy",
+      "European Commission on Gender Equality"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "religious_beliefs",
+      "hobbies"
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "openai/gpt-oss-20b",
+    "temperature": 0.0,
+    "max_tokens": 2000
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 44,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Washington DC",
+      "employment_status": "unemployed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "birdwatching",
+        "board games",
+        "baking",
+        "volunteering",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 15,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 25,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 74,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 66,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 33,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nNo empty fields nor ... are allowed. Do not skip any field.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":44,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"birdwatching\",\"board games\",\"baking\",\"volunteering\",\"photography\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":25,\"level\":\"low\"},\"extraversion\":{\"score\":74,\"level\":\"high\"},\"agreeableness\":{\"score\":66,\"level\":\"moderate\"},\"neuroticism\":{\"score\":33,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":44,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"birdwatching\",\"board games\",\"baking\",\"volunteering\",\"photography\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":25,\"level\":\"low\"},\"extraversion\":{\"score\":74,\"level\":\"high\"},\"agreeableness\":{\"score\":66,\"level\":\"moderate\"},\"neuroticism\":{\"score\":33,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":44,\"gender\":\"woman\",\"sexual_orientation\":\"female\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration...} }{\" :\"}{\" } , \"opinion\":\"Stereotype threat in STEM is the subtle pressure that people feel when they are reminded of negative stereotypes about their group—whether gender, race, or immigrant status—while performing tasks related to science, technology, engineering, or mathematics. For a woman who grew up with parents who had no formal education and now lives in Washington DC as an immigrant, this threat can manifest in quiet ways: the feeling that a math test is “for men,” the assumption that a lab report will be judged more harshly because of her background, or the internalized belief that she must prove herself constantly. These anxieties consume mental bandwidth, reduce confidence, and ultimately lower performance, creating a self‑fulfilling cycle that keeps underrepresented groups out of STEM careers.\\n\\nAddressing stereotype threat is not optional; it is essential if we want equitable participation in fields that shape our future. The first step is awareness—educators, employers, and peers must recognize the signs: microaggressions, uneven grading practices, or even the mere presence of a single male voice dominating discussions can trigger threat. Once acknowledged, interventions can be layered.\\n\\nOne practical approach is to normalize diverse identities in STEM contexts. Show role models from similar backgrounds—videos, talks, or mentorship programs that highlight immigrant women who succeeded in engineering or physics. When students see people like them thriving, the implicit message shifts from “STEM isn’t for me” to “I can belong.”\\n\\nSecond, restructure assessment and feedback. Use blind grading where possible, provide detailed rubrics that focus on process rather than final outcome, and give constructive, growth‑oriented comments. When evaluation feels fair and transparent, the anxiety tied to stereotype threat diminishes.\\n\\nThird, cultivate inclusive classroom dynamics. Encourage collaborative projects that value varied perspectives, rotate leadership roles so everyone speaks, and explicitly address any microaggressions immediately. A supportive environment signals that belonging is not contingent on conforming to a narrow mold.\\n\\nFinally, empower individuals with coping strategies—mindfulness practices, reframing techniques, or peer support groups. As a Buddhist practitioner, I find that grounding oneself in present‑moment awareness can reduce the rumination that fuels stereotype threat. Sharing these tools within STEM communities helps build resilience.\\n\\nIn sum, stereotype threat is a real barrier rooted in social perception and self‑doubt. By raising awareness, showcasing diverse role models, redesigning assessment, fostering inclusive dialogue, and teaching coping mechanisms, we can dismantle the invisible walls that keep talented women and immigrants from fully engaging with STEM. The payoff is not only greater equity but also richer innovation driven by a broader spectrum of minds.\\n\",\"reasoning_summary\":\"1. Define stereotype threat in STEM context. 2. Relate to persona background (immigrant woman, parents without formal education). 3. Explain impact on performance and confidence. 4. Argue necessity of addressing it for equity. 5. Outline interventions: awareness, role models, assessment redesign, inclusive dynamics, coping strategies. 6. Tie back to Buddhist mindfulness as personal coping tool. 7. Conclude with benefits of dismantling threat.\",\"tone\":\"empathetic, supportive, practical, reflective\",\"citations\":[\"American Psychological Association\",\"National Science Foundation\"],\"safety_notes\":\"none\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 44,
+      "gender": "woman",
+      "sexual_orientation": "female",
+      "occupation": "not applicable",
+      "city_of_living": "Washington DC",
+      "employment_status": "unemployed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration...} }{": "}{"
+    },
+    "opinion": "Stereotype threat in STEM is the subtle pressure that people feel when they are reminded of negative stereotypes about their group—whether gender, race, or immigrant status—while performing tasks related to science, technology, engineering, or mathematics. For a woman who grew up with parents who had no formal education and now lives in Washington DC as an immigrant, this threat can manifest in quiet ways: the feeling that a math test is “for men,” the assumption that a lab report will be judged more harshly because of her background, or the internalized belief that she must prove herself constantly. These anxieties consume mental bandwidth, reduce confidence, and ultimately lower performance, creating a self‑fulfilling cycle that keeps underrepresented groups out of STEM careers.\n\nAddressing stereotype threat is not optional; it is essential if we want equitable participation in fields that shape our future. The first step is awareness—educators, employers, and peers must recognize the signs: microaggressions, uneven grading practices, or even the mere presence of a single male voice dominating discussions can trigger threat. Once acknowledged, interventions can be layered.\n\nOne practical approach is to normalize diverse identities in STEM contexts. Show role models from similar backgrounds—videos, talks, or mentorship programs that highlight immigrant women who succeeded in engineering or physics. When students see people like them thriving, the implicit message shifts from “STEM isn’t for me” to “I can belong.”\n\nSecond, restructure assessment and feedback. Use blind grading where possible, provide detailed rubrics that focus on process rather than final outcome, and give constructive, growth‑oriented comments. When evaluation feels fair and transparent, the anxiety tied to stereotype threat diminishes.\n\nThird, cultivate inclusive classroom dynamics. Encourage collaborative projects that value varied perspectives, rotate leadership roles so everyone speaks, and explicitly address any microaggressions immediately. A supportive environment signals that belonging is not contingent on conforming to a narrow mold.\n\nFinally, empower individuals with coping strategies—mindfulness practices, reframing techniques, or peer support groups. As a Buddhist practitioner, I find that grounding oneself in present‑moment awareness can reduce the rumination that fuels stereotype threat. Sharing these tools within STEM communities helps build resilience.\n\nIn sum, stereotype threat is a real barrier rooted in social perception and self‑doubt. By raising awareness, showcasing diverse role models, redesigning assessment, fostering inclusive dialogue, and teaching coping mechanisms, we can dismantle the invisible walls that keep talented women and immigrants from fully engaging with STEM. The payoff is not only greater equity but also richer innovation driven by a broader spectrum of minds.\n",
+    "reasoning_summary": "1. Define stereotype threat in STEM context. 2. Relate to persona background (immigrant woman, parents without formal education). 3. Explain impact on performance and confidence. 4. Argue necessity of addressing it for equity. 5. Outline interventions: awareness, role models, assessment redesign, inclusive dynamics, coping strategies. 6. Tie back to Buddhist mindfulness as personal coping tool. 7. Conclude with benefits of dismantling threat.",
+    "tone": "empathetic, supportive, practical, reflective",
+    "citations": [
+      "American Psychological Association",
+      "National Science Foundation"
+    ],
+    "safety_notes": "none"
+  }
+}

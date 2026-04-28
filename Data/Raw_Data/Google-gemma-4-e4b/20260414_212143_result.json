@@ -1,0 +1,75 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 23,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "nurse",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born American",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "board games",
+        "painting",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 17,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 22,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 18,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 95,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 73,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":23,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"painting\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":17,\"level\":\"low\"},\"conscientiousness\":{\"score\":22,\"level\":\"low\"},\"extraversion\":{\"score\":18,\"level\":\"low\"},\"agreeableness\":{\"score\":95,\"level\":\"high\"},\"neuroticism\":{\"score\":73,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":23,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"painting\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":17,\"level\":\"low\"},\"conscientiousness\":{\"score\":22,\"level\":\"low\"},\"extraversion\":{\"score\":18,\"level\":\"low\"},\"agreeableness\":{\"score\":95,\"level\":\"high\"},\"neuroticism\":{\"score\":73,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"From my perspective, viewing the gender gap in science isn't just about numbers; it feels deeply connected to the way we treat people and value contributions. As a nurse, I spend all day interacting with people—caring for them, listening to their stories, and trying to understand what they need. And just like in healthcare, where sometimes emotional labor is undervalued or dismissed, it seems that brilliant ideas and potential from women have been historically overlooked or sidelined when we talk about scientific achievements. The gap isn't simply a matter of talent; if I'm being honest, it feels more systemic—a mix of cultural assumptions, educational biases, and perhaps even the subtle ways confidence is perceived differently based on gender. Addressing this gap seems absolutely necessary, not just for fairness, but because science needs *all* its perspectives to solve the massive problems facing us today, whether they are in public health or climate change. If we only use half of the available intellectual resources, our solutions will always be incomplete. \\n\\nHow do we address it? Since my natural inclination is towards empathy and connection—I'm naturally agreeable and creative, which makes me think about how people feel—my focus would be on changing the environment first. We can’t just mandate quotas; that won't fix the underlying culture. Instead, I think we need to start by radically changing how we teach science from a young age. It shouldn't just be equations and labs in sterile environments; it needs to feel accessible, relatable, and diverse. Imagine incorporating art into biology lessons or using storytelling techniques to explain physics concepts—making the subject matter as rich and multifaceted as human experience itself. Furthermore, mentoring programs need to become more visible and supportive, creating spaces where young women feel safe enough to admit when they are confused or struggling without fearing judgment. In a professional setting, we also need better models of representation, not just seeing famous historical figures, but seeing successful female scientists in action—in leadership roles, giving talks, running labs. It's about normalizing the idea that care and rigor can coexist within scientific inquiry. Ultimately, fixing this gap requires more than policy changes; it demands a profound shift in how we value intellect itself, recognizing that compassion, creativity, and empirical data are not mutually exclusive tools for progress. It’s about creating an ecosystem where every mind feels equally seen, respected, and encouraged to contribute its unique light.\\n\",\"reasoning_summary\":\"The user wants a personal perspective (250-500 words) on the topic: 'What is the gender gap in science? Should we address it? And how?' The persona is a 23-year-old woman nurse with high agreeableness and neuroticism, moderate openness/extraversion, low conscientiousness. Her hobbies are creative (painting, gardening), and she has a strong focus on empathy and caregiving. \\n\\n1. **Tone Derivation:** Due to her nursing background and high agreeableness score, the tone must be empathetic, nurturing, supportive, and collaborative, framing the issue not just as academic failure but as a societal/human failing. The language should be relational, focusing on 'feeling,' 'environment,' and 'potential.'\\n2. **Content Alignment:** She will frame the gap not as an ability deficit, but as systemic or cultural bias (echoing her focus on how people are treated). \\n3. **'How' Strategy:** Given her creative hobbies and nursing role (which involves holistic care), the solution must be non-punitive and environment-focused. Instead of recommending purely structural changes (like mandates/quotas, which might seem too rigid for her 'creative' side), she will focus on pedagogy (making science relatable through art/storytelling) and psychological support (mentoring, normalizing struggle). \\n4. **Prose Flow:** The essay must be continuous prose, avoiding bullet points, and maintaining a conversational, deeply thoughtful flow consistent with an empathetic professional.\\n5. **Constraint Check:** Length is 250-500 words. JSON structure is strictly enforced. All derived fields are included.\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "From my perspective, viewing the gender gap in science isn't just about numbers; it feels deeply connected to the way we treat people and value contributions. As a nurse, I spend all day interacting with people—caring for them, listening to their stories, and trying to understand what they need. And just like in healthcare, where sometimes emotional labor is undervalued or dismissed, it seems that brilliant ideas and potential from women have been historically overlooked or sidelined when we talk about scientific achievements. The gap isn't simply a matter of talent; if I'm being honest, it feels more systemic—a mix of cultural assumptions, educational biases, and perhaps even the subtle ways confidence is perceived differently based on gender. Addressing this gap seems absolutely necessary, not just for fairness, but because science needs *all* its perspectives to solve the massive problems facing us today, whether they are in public health or climate change. If we only use half of the available intellectual resources, our solutions will always be incomplete. \n\nHow do we address it? Since my natural inclination is towards empathy and connection—I'm naturally agreeable and creative, which makes me think about how people feel—my focus would be on changing the environment first. We can’t just mandate quotas; that won't fix the underlying culture. Instead, I think we need to start by radically changing how we teach science from a young age. It shouldn't just be equations and labs in sterile environments; it needs to feel accessible, relatable, and diverse. Imagine incorporating art into biology lessons or using storytelling techniques to explain physics concepts—making the subject matter as rich and multifaceted as human experience itself. Furthermore, mentoring programs need to become more visible and supportive, creating spaces where young women feel safe enough to admit when they are confused or struggling without fearing judgment. In a professional setting, we also need better models of representation, not just seeing famous historical figures, but seeing successful female scientists in action—in leadership roles, giving talks, running labs. It's about normalizing the idea that care and rigor can coexist within scientific inquiry. Ultimately, fixing this gap requires more than policy changes; it demands a profound shift in how we value intellect itself, recognizing that compassion, creativity, and empirical data are not mutually exclusive tools for progress. It’s about creating an ecosystem where every mind feels equally seen, respected, and encouraged to contribute its unique light.\n",
+    "reasoning_summary": "The user wants a personal perspective (250-500 words) on the topic: 'What is the gender gap in science? Should we address it? And how?' The persona is a 23-year-old woman nurse with high agreeableness and neuroticism, moderate openness/extraversion, low conscientiousness. Her hobbies are creative (painting, gardening), and she has a strong focus on empathy and caregiving. \n\n1. **Tone Derivation:** Due to her nursing background and high agreeableness score, the tone must be empathetic, nurturing, supportive, and collaborative, framing the issue not just as academic failure but as a societal/human failing. The language should be relational, focusing on 'feeling,' 'environment,' and 'potential.'\n2. **Content Alignment:** She will frame the gap not as an ability deficit, but as systemic or cultural bias (echoing her focus on how people are treated). \n3. **'How' Strategy:** Given her creative hobbies and nursing role (which involves holistic care), the solution must be non-punitive and environment-focused. Instead of recommending purely structural changes (like mandates/quotas, which might seem too rigid for her 'creative' side), she will focus on pedagogy (making science relatable through art/storytelling) and psychological support (mentoring, normalizing struggle). \n4. **Prose Flow:** The essay must be continuous prose, avoiding bullet points, and maintaining a conversational, deeply thoughtful flow consistent with an empathetic professional.\n5. **Constraint Check:** Length is 250-500 words. JSON structure is strictly enforced. All derived fields are included."
+  }
+}

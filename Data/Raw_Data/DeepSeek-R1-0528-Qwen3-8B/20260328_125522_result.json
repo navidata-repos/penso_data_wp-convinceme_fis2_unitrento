@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 85,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "retired",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "photography",
+        "yoga",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 82,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 6,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 43,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 7,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 40,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":85,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"photography\",\"yoga\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":82,\"level\":\"high\"},\"conscientiousness\":{\"score\":6,\"level\":\"low\"},\"extraversion\":{\"score\":43,\"level\":\"moderate\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":40,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":85,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"photography\",\"yoga\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":82,\"level\":\"high\"},\"conscientiousness\":{\"score\":6,\"level\":\"low\"},\"extraversion\":{\"score\":43,\"level\":\"moderate\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":40,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"Stereotype threat in STEM, as I understand it from my own experiences and observations, refers to the anxiety experienced by individuals who might be perceived as representing a group that is stereotyped for poor performance in these fields. It's particularly relevant when considering women or minorities, but even without those labels, anyone can experience it if they're aware of negative stereotypes about their demographic group.\\n\\nI've lived long enough to witness many societal shifts, and I believe addressing stereotype threat is crucial because it undermines the very essence of science – which should be based on individual merit rather than preconceived notions. As a retired person with two PhD parents, though my own education was vocational, I can see how these pressures might affect young minds.\\n\\nIn my view, tackling this requires multi-pronged approaches: creating inclusive environments where everyone feels valued beyond their group identity; providing mentorship to build confidence; and perhaps even educational reforms starting from early schooling. It's not just about intelligence but also emotional well-being in academic settings.\",\n  \"reasoning_summary\": \"The topic is about stereotype threat in STEM fields, which occurs when individuals feel at risk of confirming negative stereotypes about their social group during intellectual tasks.\\n\\nI align with this concept because I've seen how awareness of stereotypes can negatively impact performance, even for highly capable people like my own children who have PhDs. My parents are both scientists, and despite being native-born Italian without any particular vulnerability to stereotype threat themselves (given their education), they instilled in me a respect for intellectual work.\\n\\nAs someone with a high openness score but low conscientiousness and agreeableness, I tend to think independently and value creativity – traits that directly help me understand complex issues. My moderate neuroticism means I'm somewhat sensitive to stressors like performance anxiety.\\n\\nStereotype threat is harmful because it can discourage participation in STEM fields based on group identity rather than individual aptitude or interest. Addressing it involves psychological strategies (like building resilience), social changes (more diversity and inclusion), and educational approaches starting from early exposure to positive role models.\",\n  \"tone\": \"Reflective, knowledgeable with a hint of personal connection\",\n  \"citations\": [\"Stereotype Threat: Dominance of Domain-General Factors\", \"The Robert Sternberg Triarchic Ability Model\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"education_level\",\"parents_education\",\"psychological_feature\",\"city_of_living\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM, as I understand it from my own experiences and observations, refers to the anxiety experienced by individuals who might be perceived as representing a group that is stereotyped for poor performance in these fields. It's particularly relevant when considering women or minorities, but even without those labels, anyone can experience it if they're aware of negative stereotypes about their demographic group.\n\nI've lived long enough to witness many societal shifts, and I believe addressing stereotype threat is crucial because it undermines the very essence of science – which should be based on individual merit rather than preconceived notions. As a retired person with two PhD parents, though my own education was vocational, I can see how these pressures might affect young minds.\n\nIn my view, tackling this requires multi-pronged approaches: creating inclusive environments where everyone feels valued beyond their group identity; providing mentorship to build confidence; and perhaps even educational reforms starting from early schooling. It's not just about intelligence but also emotional well-being in academic settings.",
+    "reasoning_summary": "The topic is about stereotype threat in STEM fields, which occurs when individuals feel at risk of confirming negative stereotypes about their social group during intellectual tasks.\n\nI align with this concept because I've seen how awareness of stereotypes can negatively impact performance, even for highly capable people like my own children who have PhDs. My parents are both scientists, and despite being native-born Italian without any particular vulnerability to stereotype threat themselves (given their education), they instilled in me a respect for intellectual work.\n\nAs someone with a high openness score but low conscientiousness and agreeableness, I tend to think independently and value creativity – traits that directly help me understand complex issues. My moderate neuroticism means I'm somewhat sensitive to stressors like performance anxiety.\n\nStereotype threat is harmful because it can discourage participation in STEM fields based on group identity rather than individual aptitude or interest. Addressing it involves psychological strategies (like building resilience), social changes (more diversity and inclusion), and educational approaches starting from early exposure to positive role models.",
+    "tone": "Reflective, knowledgeable with a hint of personal connection",
+    "citations": [
+      "Stereotype Threat: Dominance of Domain-General Factors",
+      "The Robert Sternberg Triarchic Ability Model"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "parents_education",
+      "psychological_feature",
+      "city_of_living"
+    ]
+  }
+}

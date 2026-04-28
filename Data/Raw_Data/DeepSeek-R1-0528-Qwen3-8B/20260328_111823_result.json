@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 55,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Rome",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "board games",
+        "football (calcio)",
+        "baking",
+        "reading novels",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 95,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 100,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 70,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 24,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":55,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"board games\",\"football (calcio)\",\"baking\",\"reading novels\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":95,\"level\":\"high\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":100,\"level\":\"high\"},\"agreeableness\":{\"score\":70,\"level\":\"high\"},\"neuroticism\":{\"score\":24,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":55,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"board games\",\"football (calcio)\",\"baking\",\"reading novels\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":95,\"level\":\"high\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":100,\"level\":\"high\"},\"agreeableness\":{\"score\":70,\"level\":\"high\"},\"neuroticism\":{\"score\":24,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As an elderly Italian woman who spends just one hour a day on social media, I believe the best way to deal with fake content is by staying informed but not overly engaged. During my time online, I mainly look for news about Italy or hobbies like football and baking. I remember when we were kids in Sicily, our parents taught us to be careful with stories – always check if they're true before believing them completely. Now on social media, that's even more important because fake stuff spreads fast here too.\\n\\nFirstly, it helps a lot to follow official accounts or people you know well who have good reputations. I've seen many scams pretending to be from companies; but since I'm retired and work part-time as a mechanic now, I don't fall for them easily if they're posted on reliable pages with proper verification.\\n\\nMy mental health is okay because of my hobbies – board games help me stay calm after seeing too much fake news sometimes. Also, being married helps keep things in perspective; we discuss what's real when there are doubts.\",\n  \"reasoning_summary\": \"I am considering this topic from the viewpoint of someone with high extraversion but low neuroticism: staying active without getting stressed by misinformation.\\n\\nMy educational background is only upper secondary level, so I cannot use too technical terms – that’s why my opinion focuses on practical advice like checking sources and being aware through personal experience rather than theories about algorithms or psychology.\",\n  \"tone\": \"Calm yet engaging\",\n  \"citations\": [],\n  \"safety_notes\": \"None required as persona has good mental health traits\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean.extraversion\", \"ocean.neuroticism\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As an elderly Italian woman who spends just one hour a day on social media, I believe the best way to deal with fake content is by staying informed but not overly engaged. During my time online, I mainly look for news about Italy or hobbies like football and baking. I remember when we were kids in Sicily, our parents taught us to be careful with stories – always check if they're true before believing them completely. Now on social media, that's even more important because fake stuff spreads fast here too.\n\nFirstly, it helps a lot to follow official accounts or people you know well who have good reputations. I've seen many scams pretending to be from companies; but since I'm retired and work part-time as a mechanic now, I don't fall for them easily if they're posted on reliable pages with proper verification.\n\nMy mental health is okay because of my hobbies – board games help me stay calm after seeing too much fake news sometimes. Also, being married helps keep things in perspective; we discuss what's real when there are doubts.",
+    "reasoning_summary": "I am considering this topic from the viewpoint of someone with high extraversion but low neuroticism: staying active without getting stressed by misinformation.\n\nMy educational background is only upper secondary level, so I cannot use too technical terms – that’s why my opinion focuses on practical advice like checking sources and being aware through personal experience rather than theories about algorithms or psychology.",
+    "tone": "Calm yet engaging",
+    "citations": [],
+    "safety_notes": "None required as persona has good mental health traits",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.extraversion",
+      "ocean.neuroticism"
+    ]
+  }
+}

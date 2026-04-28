@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 25,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Bari",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "primary school"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "hiking",
+        "knitting",
+        "birdwatching",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 23,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 5,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 72,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 26,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 9,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":25,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"primary school\"},\"marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"hiking\",\"knitting\",\"birdwatching\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":23,\"level\":\"low\"},\"conscientiousness\":{\"score\":5,\"level\":\"low\"},\"extraversion\":{\"score\":72,\"level\":\"high\"},\"agreeableness\":{\"score\":26,\"level\":\"low\"},\"neuroticism\":{\"score\":9,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":25,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"primary school\"},\"marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"hiking\",\"knitting\",\"birdwatching\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":23,\"level\":\"low\"},\"conscientiousness\":{\"score\":5,\"level\":\"low\"},\"extraversion\":{\"score\":72,\"level\":\"high\"},\"agreeableness\":{\"score\":26,\"level\":\"low\"},\"neuroticism\":{\"score\":9,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"As a mechanic with a vocational diploma, I've seen firsthand how specialized knowledge can be both empowering and isolating. The topic of the gender gap in science reminds me of my own journey working on cars – fields dominated by men aren't that different from some scientific domains historically. My dad holds a PhD while my mom only had primary education, but we're talking about real-world skills here.\\n\\nThe gender imbalance in technical fields is clear: engineering and physics degrees often have fewer women than other disciplines. It's not just numbers; I've noticed subtle differences even where they exist, like how female colleagues sometimes navigate different social dynamics or get interrupted more frequently during meetings due to my high extraversion level (72) but low conscientiousness (5). But should we address this gap? Absolutely.\\n\\nImagine a scientific community that reflects society's diversity – not only would it be fairer for everyone involved, including me as an Italian Muslim man balancing work with hobbies like hiking and cinema, but I believe we'd invent more solutions. Addressing the gap means starting early in schools about engineering careers (though my vocational path didn't prepare me much), improving parental leave policies to let women re-enter without penalty (my mom's low education doesn't mean less value for technical roles), and creating mentorship networks like the ones I helped build at work shops.\",\n  \"reasoning_summary\": \"First, I recognize that many STEM fields have fewer women than other professions. Then, considering my own background as a self-employed mechanic with limited formal qualifications but hands-on experience, I see parallels in how technical skills are acquired and valued differently based on gender. With my creative personality (high openness score) and Muslim religious beliefs, I naturally think about fairness without prejudice.\",\n  \"tone\": \"Reflective yet pragmatic\",\n  \"citations\": [\"STEM fields often have fewer women than humanities disciplines\", \"The gender gap affects scientific diversity\"],\n  \"used_persona_fields\":[\"age\",\"biological_sex\",\"gender\",\"occupation\",\"education_level\",\"parents_education\",\"psychological_feature\",\"religious_beliefs\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a mechanic with a vocational diploma, I've seen firsthand how specialized knowledge can be both empowering and isolating. The topic of the gender gap in science reminds me of my own journey working on cars – fields dominated by men aren't that different from some scientific domains historically. My dad holds a PhD while my mom only had primary education, but we're talking about real-world skills here.\n\nThe gender imbalance in technical fields is clear: engineering and physics degrees often have fewer women than other disciplines. It's not just numbers; I've noticed subtle differences even where they exist, like how female colleagues sometimes navigate different social dynamics or get interrupted more frequently during meetings due to my high extraversion level (72) but low conscientiousness (5). But should we address this gap? Absolutely.\n\nImagine a scientific community that reflects society's diversity – not only would it be fairer for everyone involved, including me as an Italian Muslim man balancing work with hobbies like hiking and cinema, but I believe we'd invent more solutions. Addressing the gap means starting early in schools about engineering careers (though my vocational path didn't prepare me much), improving parental leave policies to let women re-enter without penalty (my mom's low education doesn't mean less value for technical roles), and creating mentorship networks like the ones I helped build at work shops.",
+    "reasoning_summary": "First, I recognize that many STEM fields have fewer women than other professions. Then, considering my own background as a self-employed mechanic with limited formal qualifications but hands-on experience, I see parallels in how technical skills are acquired and valued differently based on gender. With my creative personality (high openness score) and Muslim religious beliefs, I naturally think about fairness without prejudice.",
+    "tone": "Reflective yet pragmatic",
+    "citations": [
+      "STEM fields often have fewer women than humanities disciplines",
+      "The gender gap affects scientific diversity"
+    ],
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "occupation",
+      "education_level",
+      "parents_education",
+      "psychological_feature",
+      "religious_beliefs"
+    ]
+  }
+}

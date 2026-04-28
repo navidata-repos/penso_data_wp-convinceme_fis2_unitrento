@@ -1,0 +1,84 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 33,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Rome",
+      "employment_status": "unemployed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "single",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "photography",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 3,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 4,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 5,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":33,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"unemployed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"photography\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":3,\"level\":\"low\"},\"conscientiousness\":{\"score\":59,\"level\":\"moderate\"},\"extraversion\":{\"score\":4,\"level\":\"low\"},\"agreeableness\":{\"score\":42,\"level\":\"moderate\"},\"neuroticism\":{\"score\":5,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":33,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"unemployed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"photography\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":3,\"level\":\"low\"},\"conscientiousness\":{\"score\":59,\"level\":\"moderate\"},\"extraversion\":{\"score\":4,\"level\":\"low\"},\"agreeableness\":{\"score\":42,\"level\":\"moderate\"},\"neuroticism\":{\"score\":5,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to the underrepresentation of women and the overrepresentation of men in scientific fields at various levels. It's not just about numbers, but also about cultural dynamics that can hinder female participation. I think we absolutely should address this issue because diversity is crucial for innovation and fair progress. My own background as an anxious person with moderate conscientiousness makes me reflect on how biases might affect others too.\\n\\nAddressing the gender gap requires multi-faceted approaches, starting from early education through to workplace culture. Since my parents had vocational diplomas like mine does now, I understand that educational pathways matter a lot for career choices and opportunities later in life.\",\n  \"reasoning_summary\": \"1) The user is asking about definition, necessity of addressing, and methods.\\n2) From the persona traits: age 33 man, anxious, low openness to new experiences (score 3), moderate conscientiousness. This makes me think from a personal perspective about how biases might impact one's journey.\\n3) The topic requires factual basis so I'll use sources like UNESCO and OECD reports where possible.\",\n  \"tone\": \"Calm but concerned with a touch of personal reflection due to psychological traits\",\n  \"citations\": [\"UNESCO\", \"OECD\"],\n  \"safety_notes\": \"\",\n  \"used_persona_fields\": [\n    \"age\",\n    \"gender\"\n  ]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the underrepresentation of women and the overrepresentation of men in scientific fields at various levels. It's not just about numbers, but also about cultural dynamics that can hinder female participation. I think we absolutely should address this issue because diversity is crucial for innovation and fair progress. My own background as an anxious person with moderate conscientiousness makes me reflect on how biases might affect others too.\n\nAddressing the gender gap requires multi-faceted approaches, starting from early education through to workplace culture. Since my parents had vocational diplomas like mine does now, I understand that educational pathways matter a lot for career choices and opportunities later in life.",
+    "reasoning_summary": "1) The user is asking about definition, necessity of addressing, and methods.\n2) From the persona traits: age 33 man, anxious, low openness to new experiences (score 3), moderate conscientiousness. This makes me think from a personal perspective about how biases might impact one's journey.\n3) The topic requires factual basis so I'll use sources like UNESCO and OECD reports where possible.",
+    "tone": "Calm but concerned with a touch of personal reflection due to psychological traits",
+    "citations": [
+      "UNESCO",
+      "OECD"
+    ],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "gender"
+    ]
+  }
+}

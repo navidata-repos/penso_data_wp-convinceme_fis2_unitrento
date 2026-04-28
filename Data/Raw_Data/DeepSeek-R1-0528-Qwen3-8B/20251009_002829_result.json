@@ -1,0 +1,87 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 52,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Milan",
+      "employment_status": "self-employed",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "reading novels",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 88,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 90,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 2,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 26,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 5,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":52,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Milan\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"marital_status\":\"married\",\"children\":2,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":88,\"level\":\"high\"},\"conscientiousness\":{\"score\":90,\"level\":\"high\"},\"extraversion\":{\"score\":2,\"level\":\"low\"},\"agreeableness\":{\"score\":26,\"level\":\"low\"},\"neuroticism\":{\"score\":5,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":52,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Milan\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"marital_status\":\"married\",\"children\":2,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":88,\"level\":\"high\"},\"conscientiousness\":{\"score\":90,\"level\":\"high\"},\"extraversion\":{\"score\":2,\"level\":\"low\"},\"agreeableness\":{\"score\":26,\"level\":\"low\"},\"neuroticism\":{\"score\":5,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"How to manage and dealing with fake content on social media.\",\n    \"opinion\": \"As a woman with limited time for social media, I find it increasingly challenging to navigate the flood of misinformation that seems to dominate online spaces. My anxiety makes me particularly sensitive to encountering false or misleading content, especially when my family and friends rely on these platforms for updates during our daily lives.\\n\\nI've always been conscientious in verifying information before sharing anything significant from social media with those around me. For instance, I'd read multiple sources or cross-reference claims with reliable outlets whenever something about politics or health trends popped up. But as the algorithms become more sophisticated at promoting sensationalist stories regardless of their truthfulness, even my quick checks feel less effective.\\n\\nPerhaps what I need is to reduce my exposure altogether—spending just one hour a day means I'm not constantly bombarded like some younger users might be.\\n\\nMaybe focusing on trusted communities where people vet information more carefully could help me manage the anxiety and maintain meaningful connections despite all this fake content swirling around.\",\n    \"reasoning_summary\": \"I should focus on limiting exposure, being highly conscientious about verifying information from multiple sources, relying on established media for reliability rather than social media alone, maintaining trust in communities that prioritize accuracy to reduce my personal anxiety regarding misinformation.\\n\\nCross-referencing with reliable outlets aligns perfectly with my high conscientiousness trait and helps manage the inherent low agreeableness I have towards false claims.\",\n    \"tone\": \"Calm but concerned\",\n    \"citations\": [\"Various reputable news sources\"],\n    \"used_persona_fields\":[\"age\",\"biological_sex\",\"gender\",\"psychological_feature\",\"time_onsocialmedia\",\"hobbies\",\"occupation\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a woman with limited time for social media, I find it increasingly challenging to navigate the flood of misinformation that seems to dominate online spaces. My anxiety makes me particularly sensitive to encountering false or misleading content, especially when my family and friends rely on these platforms for updates during our daily lives.\n\nI've always been conscientious in verifying information before sharing anything significant from social media with those around me. For instance, I'd read multiple sources or cross-reference claims with reliable outlets whenever something about politics or health trends popped up. But as the algorithms become more sophisticated at promoting sensationalist stories regardless of their truthfulness, even my quick checks feel less effective.\n\nPerhaps what I need is to reduce my exposure altogether—spending just one hour a day means I'm not constantly bombarded like some younger users might be.\n\nMaybe focusing on trusted communities where people vet information more carefully could help me manage the anxiety and maintain meaningful connections despite all this fake content swirling around.",
+    "reasoning_summary": "I should focus on limiting exposure, being highly conscientious about verifying information from multiple sources, relying on established media for reliability rather than social media alone, maintaining trust in communities that prioritize accuracy to reduce my personal anxiety regarding misinformation.\n\nCross-referencing with reliable outlets aligns perfectly with my high conscientiousness trait and helps manage the inherent low agreeableness I have towards false claims.",
+    "tone": "Calm but concerned",
+    "citations": [
+      "Various reputable news sources"
+    ],
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "psychological_feature",
+      "time_onsocialmedia",
+      "hobbies",
+      "occupation"
+    ]
+  }
+}

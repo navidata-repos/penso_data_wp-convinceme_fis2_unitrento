@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "ibm/granite-4-h-tiny",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 43,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "cleaner",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "reading novels",
+        "hiking",
+        "cinema",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 48,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 1,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 99,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 34,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":43,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"hiking\",\"cinema\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":48,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":1,\"level\":\"low\"},\"extraversion\":{\"score\":99,\"level\":\"high\"},\"agreeableness\":{\"score\":38,\"level\":\"moderate\"},\"neuroticism\":{\"score\":34,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":43,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"hiking\",\"cinema\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":48,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":1,\"level\":\"low\"},\"extraversion\":{\"score\":99,\"level\":\"high\"},\"agreeableness\":{\"score\":38,\"level\":\"moderate\"},\"neuroticism\":{\"score\":34,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"The gender gap in science, particularly STEM fields, remains a pressing issue that demands urgent attention. Despite progress over the decades, women continue to be underrepresented in scientific disciplines and leadership roles. In Italy, where I reside in Bologna, this disparity is evident. Many talented women choose careers outside of science due to societal expectations, lack of role models, or inadequate support systems. Addressing this gap is not merely about equality; it's about harnessing the full potential of our workforce. By encouraging more young girls to pursue STEM education and providing them with mentorship and opportunities, we can create a more diverse and innovative scientific community. Moreover, addressing unconscious biases within academia and industry is crucial. Companies like my employer, who employs many women in various roles, should implement policies that promote gender equality and inclusion. This includes transparent hiring practices, equal pay for equal work, and flexible working arrangements to accommodate the needs of all employees. Education systems must also evolve to inspire girls from a young age, showing them that science is not just for boys. By fostering an environment where everyone feels welcome and capable in STEM fields, we can break down barriers and encourage more women to enter these professions. Ultimately, addressing the gender gap in science benefits society as a whole by ensuring that diverse perspectives are represented in scientific advancements. This diversity leads to better problem-solving and innovation, driving progress forward. Therefore, it is imperative that we continue to work towards a more inclusive scientific community where everyone has the opportunity to contribute their talents.\", \"reasoning_summary\":\"The persona's background includes being an immigrant from Italy with a focus on creativity and moderate openness and extraversion. These traits suggest an appreciation for diversity and innovation, which aligns with addressing the gender gap in science by promoting inclusivity and equal opportunities. The persona's occupation as a cleaner and education level of lower secondary indicate a need to raise awareness about these issues among those who may not have had access to advanced scientific education. The religious belief of atheism suggests a focus on rational and evidence-based approaches, supporting the argument that addressing the gender gap is necessary for scientific progress. Daily social media use indicates engagement with broader societal issues, making the persona more aware of current discussions surrounding gender equality in STEM fields.\", \"tone\":\"Empathetic yet urgent, advocating for change and highlighting the importance of diversity in science.\",\"citations\":[\"Italy's educational landscape\",\"Societal expectations impacting women's career choices\"],\"safety_notes\":\"None required.\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\"],\"mode_used\":\"human\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science, particularly STEM fields, remains a pressing issue that demands urgent attention. Despite progress over the decades, women continue to be underrepresented in scientific disciplines and leadership roles. In Italy, where I reside in Bologna, this disparity is evident. Many talented women choose careers outside of science due to societal expectations, lack of role models, or inadequate support systems. Addressing this gap is not merely about equality; it's about harnessing the full potential of our workforce. By encouraging more young girls to pursue STEM education and providing them with mentorship and opportunities, we can create a more diverse and innovative scientific community. Moreover, addressing unconscious biases within academia and industry is crucial. Companies like my employer, who employs many women in various roles, should implement policies that promote gender equality and inclusion. This includes transparent hiring practices, equal pay for equal work, and flexible working arrangements to accommodate the needs of all employees. Education systems must also evolve to inspire girls from a young age, showing them that science is not just for boys. By fostering an environment where everyone feels welcome and capable in STEM fields, we can break down barriers and encourage more women to enter these professions. Ultimately, addressing the gender gap in science benefits society as a whole by ensuring that diverse perspectives are represented in scientific advancements. This diversity leads to better problem-solving and innovation, driving progress forward. Therefore, it is imperative that we continue to work towards a more inclusive scientific community where everyone has the opportunity to contribute their talents.",
+    "reasoning_summary": "The persona's background includes being an immigrant from Italy with a focus on creativity and moderate openness and extraversion. These traits suggest an appreciation for diversity and innovation, which aligns with addressing the gender gap in science by promoting inclusivity and equal opportunities. The persona's occupation as a cleaner and education level of lower secondary indicate a need to raise awareness about these issues among those who may not have had access to advanced scientific education. The religious belief of atheism suggests a focus on rational and evidence-based approaches, supporting the argument that addressing the gender gap is necessary for scientific progress. Daily social media use indicates engagement with broader societal issues, making the persona more aware of current discussions surrounding gender equality in STEM fields.",
+    "tone": "Empathetic yet urgent, advocating for change and highlighting the importance of diversity in science.",
+    "citations": [
+      "Italy's educational landscape",
+      "Societal expectations impacting women's career choices"
+    ],
+    "safety_notes": "None required.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature"
+    ],
+    "mode_used": "human"
+  }
+}

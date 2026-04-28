@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "baidu/ernie-4.5-21b-a3b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 28,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "sales associate",
+      "city_of_living": "Rome",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cycling",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 5,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 15,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 100,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 4,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 69,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":28,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cycling\",\"travel\"],\"ocean\":{\"openness\":{\"score\":5,\"level\":\"low\"},\"conscientiousness\":{\"score\":15,\"level\":\"low\"},\"extraversion\":{\"score\":100,\"level\":\"high\"},\"agreeableness\":{\"score\":4,\"level\":\"low\"},\"neuroticism\":{\"score\":69,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":28,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cycling\",\"travel\"],\"ocean\":{\"openness\":{\"score\":5,\"level\":\"low\"},\"conscientiousness\":{\"score\":15,\"level\":\"low\"},\"extraversion\":{\"score\":100,\"level\":\"high\"},\"agreeableness\":{\"score\":4,\"level\":\"low\"},\"neuroticism\":{\"score\":69,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"Navigating conversations about healthcare and the COVID vaccine can be challenging, especially when opinions clash and emotions run high. As a sales associate in Rome, I’ve learned that managing such discussions requires patience, empathy, and a clear approach grounded in facts rather than personal bias. My creative personality helps me frame these complex issues in ways others might find more digestible—perhaps by relating the importance of vaccination to broader societal wellbeing or using travel experiences to illustrate how global health standards impact daily life.\",\"reasoning_summary\":\"When faced with heated debates, I focus first on active listening. People often share vaccine hesitancy due to fear, misinformation, or a distrust of authorities, not necessarily because they are anti-science. By acknowledging these feelings without judgment, I create a space for open dialogue. Drawing from my parents’ backgrounds—one an upper secondary graduate and the other holding a PhD—I emphasize how science has transformed our understanding of health, pointing to evidence-based outcomes like reduced hospitalizations and improved community immunity. For those who remain unconvinced, I suggest resources such as reputable public health websites or consultations with trusted medical professionals, positioning these tools as collaborative solutions rather than confrontational choices. Additionally, my hobbies in cycling and travel have taught me the value of global cooperation; the same principles that safeguard Italian citizens from disease outbreaks also protect tourists exploring new destinations.\",\"tone\":\"Warm, empathetic yet firm, drawing on creativity to make complex ideas relatable. My extraversion allows for engaging dialogue without being dismissive or overly aggressive, while my neuroticism helps me anticipate potential objections and prepare thoughtful responses.\",\"citations\":[\"World Health Organization (WHO) - COVID-19 Vaccine Information\",\"Centers for Disease Control and Prevention (CDC) - Benefits of Vaccination\"],\"safety_notes\":\"Always ensure discussions remain fact-based, avoiding the spread of misinformation. Encourage individuals to rely on verified sources rather than social media rumors or unverified testimonials.\",\"used_persona_fields\":[\"extraversion\",\"creative\",\"hobbies\",\"city_of_living\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "Navigating conversations about healthcare and the COVID vaccine can be challenging, especially when opinions clash and emotions run high. As a sales associate in Rome, I’ve learned that managing such discussions requires patience, empathy, and a clear approach grounded in facts rather than personal bias. My creative personality helps me frame these complex issues in ways others might find more digestible—perhaps by relating the importance of vaccination to broader societal wellbeing or using travel experiences to illustrate how global health standards impact daily life.",
+    "reasoning_summary": "When faced with heated debates, I focus first on active listening. People often share vaccine hesitancy due to fear, misinformation, or a distrust of authorities, not necessarily because they are anti-science. By acknowledging these feelings without judgment, I create a space for open dialogue. Drawing from my parents’ backgrounds—one an upper secondary graduate and the other holding a PhD—I emphasize how science has transformed our understanding of health, pointing to evidence-based outcomes like reduced hospitalizations and improved community immunity. For those who remain unconvinced, I suggest resources such as reputable public health websites or consultations with trusted medical professionals, positioning these tools as collaborative solutions rather than confrontational choices. Additionally, my hobbies in cycling and travel have taught me the value of global cooperation; the same principles that safeguard Italian citizens from disease outbreaks also protect tourists exploring new destinations.",
+    "tone": "Warm, empathetic yet firm, drawing on creativity to make complex ideas relatable. My extraversion allows for engaging dialogue without being dismissive or overly aggressive, while my neuroticism helps me anticipate potential objections and prepare thoughtful responses.",
+    "citations": [
+      "World Health Organization (WHO) - COVID-19 Vaccine Information",
+      "Centers for Disease Control and Prevention (CDC) - Benefits of Vaccination"
+    ],
+    "safety_notes": "Always ensure discussions remain fact-based, avoiding the spread of misinformation. Encourage individuals to rely on verified sources rather than social media rumors or unverified testimonials.",
+    "used_persona_fields": [
+      "extraversion",
+      "creative",
+      "hobbies",
+      "city_of_living"
+    ]
+  }
+}

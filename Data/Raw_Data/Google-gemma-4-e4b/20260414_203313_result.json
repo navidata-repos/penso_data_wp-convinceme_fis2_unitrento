@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "google/gemma-4-e4b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 30,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "electrician",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "baking",
+        "photography",
+        "cinema",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 25,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 82,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 80,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":30,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"baking\",\"photography\",\"cinema\",\"travel\"],\"ocean\":{\"openness\":{\"score\":35,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":25,\"level\":\"low\"},\"agreeableness\":{\"score\":82,\"level\":\"high\"},\"neuroticism\":{\"score\":80,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":30,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"baking\",\"photography\",\"cinema\",\"travel\"],\"ocean\":{\"openness\":{\"score\":35,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":25,\"level\":\"low\"},\"agreeableness\":{\"score\":82,\"level\":\"high\"},\"neuroticism\":{\"score\":80,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Look, when you're talking about something like 'stereotype threat,' it sounds pretty academic and maybe a little abstract, like the kind of stuff they teach at a university lecture. But honestly, if I translate that into practical terms—the kind of stuff I deal with day in and day out as an electrician—it’s about how pressure affects performance when you feel unprepared or judged. It's not just some theory; it's real-life stress on your focus.\\n\\nBasically, stereotype threat is the anxiety that you might confirm a negative stereotype about a group you belong to. In STEM fields, maybe there are stereotypes about who belongs in those roles—that they have to be naturally genius or something. When students or even professionals feel like they're constantly being measured against an impossible standard or worried about confirming a perceived deficiency, that anxiety eats up all their mental energy. Instead of focusing on solving the circuit problem or mastering the complex calculation, they’re busy worrying: 'Am I going to mess this up? Am I going to prove them right?' That worry is what really tanks performance.\\n\\nShould we address it? Absolutely, yes. Because if you've got people struggling with fundamental work—whether it's wiring a complicated panel or writing code—because of background anxiety, that’s not just bad for the individual; it’s bad for the whole system. It means talented people are leaving fields they could succeed in because the pressure cooker is too intense. \\n\\nAs for how to fix it? I think you have to get practical and build confidence from the ground up. First, education needs to make environments feel safe—like a job site where everyone knows their role and feels comfortable asking questions without being judged. Second, framing matters; instead of telling people what they *should* be, focus on what they *can* achieve by building skills step-by-step. And finally, sometimes you just need to give people a break from the spotlight. Low extraversion combined with high neuroticism makes me naturally anxious about being watched and judged, too. So, creating low-stakes practice environments—where failure is seen as necessary learning, not a character flaw—is key. It's less about 'fixing' the stereotype and more about making sure that when someone needs to perform under pressure, they feel supported enough to actually do their best work without that heavy weight of expectation on their shoulders.\\n\",\"reasoning_summary\":\"The persona is an electrician with a bachelor's degree, who is an immigrant and has high agreeableness (82) but also very high neuroticism (80) and low extraversion (25). The tone should be practical, grounded, cautious, and empathetic. He relates abstract academic concepts (like stereotype threat) to tangible, real-world scenarios (like electrical work or job site pressure). His immigrant background suggests a focus on overcoming systemic barriers and proving oneself. High neuroticism means he is prone to anxiety, so the discussion must acknowledge performance anxiety itself. I used his practical experience (comparing theory to an electrician's job) to frame the concept. The language was kept direct and non-academic where possible, focusing on 'doing' rather than just 'knowing.'\",\"tone\":\"Practical, grounded, anxious but empathetic, highly relatable to physical work/stress situations\",\"citations\":[\"None\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"occupation\",\"education_level\",\"migration_status\",\"psychological_feature\",\"extraversion\",\"neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Look, when you're talking about something like 'stereotype threat,' it sounds pretty academic and maybe a little abstract, like the kind of stuff they teach at a university lecture. But honestly, if I translate that into practical terms—the kind of stuff I deal with day in and day out as an electrician—it’s about how pressure affects performance when you feel unprepared or judged. It's not just some theory; it's real-life stress on your focus.\n\nBasically, stereotype threat is the anxiety that you might confirm a negative stereotype about a group you belong to. In STEM fields, maybe there are stereotypes about who belongs in those roles—that they have to be naturally genius or something. When students or even professionals feel like they're constantly being measured against an impossible standard or worried about confirming a perceived deficiency, that anxiety eats up all their mental energy. Instead of focusing on solving the circuit problem or mastering the complex calculation, they’re busy worrying: 'Am I going to mess this up? Am I going to prove them right?' That worry is what really tanks performance.\n\nShould we address it? Absolutely, yes. Because if you've got people struggling with fundamental work—whether it's wiring a complicated panel or writing code—because of background anxiety, that’s not just bad for the individual; it’s bad for the whole system. It means talented people are leaving fields they could succeed in because the pressure cooker is too intense. \n\nAs for how to fix it? I think you have to get practical and build confidence from the ground up. First, education needs to make environments feel safe—like a job site where everyone knows their role and feels comfortable asking questions without being judged. Second, framing matters; instead of telling people what they *should* be, focus on what they *can* achieve by building skills step-by-step. And finally, sometimes you just need to give people a break from the spotlight. Low extraversion combined with high neuroticism makes me naturally anxious about being watched and judged, too. So, creating low-stakes practice environments—where failure is seen as necessary learning, not a character flaw—is key. It's less about 'fixing' the stereotype and more about making sure that when someone needs to perform under pressure, they feel supported enough to actually do their best work without that heavy weight of expectation on their shoulders.\n",
+    "reasoning_summary": "The persona is an electrician with a bachelor's degree, who is an immigrant and has high agreeableness (82) but also very high neuroticism (80) and low extraversion (25). The tone should be practical, grounded, cautious, and empathetic. He relates abstract academic concepts (like stereotype threat) to tangible, real-world scenarios (like electrical work or job site pressure). His immigrant background suggests a focus on overcoming systemic barriers and proving oneself. High neuroticism means he is prone to anxiety, so the discussion must acknowledge performance anxiety itself. I used his practical experience (comparing theory to an electrician's job) to frame the concept. The language was kept direct and non-academic where possible, focusing on 'doing' rather than just 'knowing.'",
+    "tone": "Practical, grounded, anxious but empathetic, highly relatable to physical work/stress situations",
+    "citations": [
+      "None"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "migration_status",
+      "psychological_feature",
+      "extraversion",
+      "neuroticism"
+    ]
+  }
+}

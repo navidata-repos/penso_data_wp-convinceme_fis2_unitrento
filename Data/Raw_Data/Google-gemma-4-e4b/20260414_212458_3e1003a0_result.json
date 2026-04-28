@@ -1,0 +1,143 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "google/gemma-4-e4b-it",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 71,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "Naples",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "in a relationship",
+      "children": 4,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "cycling",
+        "birdwatching",
+        "football (calcio)",
+        "hiking",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 82,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 90,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 21,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 7,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":71,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Naples\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"cycling\",\"birdwatching\",\"football (calcio)\",\"hiking\",\"painting\"],\"ocean\":{\"openness\":{\"score\":82,\"level\":\"high\"},\"conscientiousness\":{\"score\":90,\"level\":\"high\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":21,\"level\":\"low\"},\"neuroticism\":{\"score\":7,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":71,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Naples\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"cycling\",\"birdwatching\",\"football (calcio)\",\"hiking\",\"painting\"],\"ocean\":{\"openness\":{\"score\":82,\"level\":\"high\"},\"conscientiousness\":{\"score\":90,\"level\":\"high\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":21,\"level\":\"low\"},\"neuroticism\":{\"score\":7,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":71,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Naples\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"cycling\",\"birdwatching\",\"football (calcio)\",\"hiking\",\"painting\"],\"ocean\":{\"openness\":{\"score\":82,\"level\":\"high\"},\"conscientiousness\":{\"score\":90,\"level\":\"high\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":21,\"level\":\"low\"},\"neuroticism\":{\"score\":7,\"level\":\"low\"}}},\"opinion\":\"When I see these reports about stereotype threat in science and math, it makes me feel a little uneasy, especially knowing how much pressure there is on young people these days. It sounds like a heavy thing to carry—the fear of confirming a negative idea about yourself, just by being in the room. For me, who has always been a bit anxious, even in the everyday hustle of running my own small shop here in Naples, I can imagine how crippling that must be for a bright young student trying to learn something complicated. It’s not about lack of smarts; it’s about the worry, the mental weight of expectation or prejudice that drags down their performance, much like a heavy wind on a bicycle ride when you’re trying to hold steady. Absolutely, we must address this. Ignoring it feels like letting injustice slide, and that just doesn't sit right with my sense of fairness. If we want these brilliant young minds, regardless of background, to succeed in those complex STEM fields, we have to chip away at this threat. It requires a gentle, persistent approach, much like when you are tending to a garden or watching the subtle changes in bird migration—you have to observe and nurture. Educators need to create environments where the focus is purely on the problem, not on the person. Normalizing mistakes, framing challenges as opportunities for learning rather than tests of innate ability, and perhaps even allowing for more diverse ways to demonstrate knowledge—not just through a single, high-stakes exam—could help. It’s about building confidence from the ground up, making the learning process feel safe, like a good walk in the hills, rather than a frantic race.\",\"reasoning_summary\":\"The persona is 71, a self-employed retail worker from Naples, with high conscientiousness and high openness, but low agreeableness and moderate anxiety. The tone should be thoughtful, concerned, and earnest, reflecting a grounded Italian sensibility mixed with a desire for fairness. The discussion must address the definition, necessity of addressing, and methods for combating stereotype threat in STEM, using relatable, grounded analogies from her life (cycling, gardening, walking in the hills) to reflect her hobbies and practical nature.\",\"tone\":\"Earnest, grounded, thoughtful, and concerned\",\"citations\":[\"Psychological Research\",\"Educational Theory\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"employment_status\",\"psychological_feature\",\"hobbies\",\"ocean.conscientiousness\",\"ocean.openness\",\"ocean.agreeableness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 71,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "Naples",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "in a relationship",
+      "children": 4,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "cycling",
+        "birdwatching",
+        "football (calcio)",
+        "hiking",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 82,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 90,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 21,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 7,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "When I see these reports about stereotype threat in science and math, it makes me feel a little uneasy, especially knowing how much pressure there is on young people these days. It sounds like a heavy thing to carry—the fear of confirming a negative idea about yourself, just by being in the room. For me, who has always been a bit anxious, even in the everyday hustle of running my own small shop here in Naples, I can imagine how crippling that must be for a bright young student trying to learn something complicated. It’s not about lack of smarts; it’s about the worry, the mental weight of expectation or prejudice that drags down their performance, much like a heavy wind on a bicycle ride when you’re trying to hold steady. Absolutely, we must address this. Ignoring it feels like letting injustice slide, and that just doesn't sit right with my sense of fairness. If we want these brilliant young minds, regardless of background, to succeed in those complex STEM fields, we have to chip away at this threat. It requires a gentle, persistent approach, much like when you are tending to a garden or watching the subtle changes in bird migration—you have to observe and nurture. Educators need to create environments where the focus is purely on the problem, not on the person. Normalizing mistakes, framing challenges as opportunities for learning rather than tests of innate ability, and perhaps even allowing for more diverse ways to demonstrate knowledge—not just through a single, high-stakes exam—could help. It’s about building confidence from the ground up, making the learning process feel safe, like a good walk in the hills, rather than a frantic race.",
+    "reasoning_summary": "The persona is 71, a self-employed retail worker from Naples, with high conscientiousness and high openness, but low agreeableness and moderate anxiety. The tone should be thoughtful, concerned, and earnest, reflecting a grounded Italian sensibility mixed with a desire for fairness. The discussion must address the definition, necessity of addressing, and methods for combating stereotype threat in STEM, using relatable, grounded analogies from her life (cycling, gardening, walking in the hills) to reflect her hobbies and practical nature.",
+    "tone": "Earnest, grounded, thoughtful, and concerned",
+    "citations": [
+      "Psychological Research",
+      "Educational Theory"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "psychological_feature",
+      "hobbies",
+      "ocean.conscientiousness",
+      "ocean.openness",
+      "ocean.agreeableness"
+    ]
+  }
+}

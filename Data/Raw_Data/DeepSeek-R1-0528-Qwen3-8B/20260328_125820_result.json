@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 61,
+      "gender": "man",
+      "sexual_orientation": "asexual",
+      "occupation": "software developer",
+      "city_of_living": "Bari",
+      "employment_status": "employed full-time",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "primary school"
+      },
+      "marital_status": "widowed",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "running",
+        "volunteering",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 90,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 36,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 14,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 97,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":61,\"gender\":\"man\",\"sexual_orientation\":\"asexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"running\",\"volunteering\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":90,\"level\":\"high\"},\"conscientiousness\":{\"score\":36,\"level\":\"moderate\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":14,\"level\":\"low\"},\"neuroticism\":{\"score\":97,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":61,\"gender\":\"man\",\"sexual_orientation\":\"asexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"running\",\"volunteering\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":90,\"level\":\"high\"},\"conscientiousness\":{\"score\":36,\"level\":\"moderate\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":14,\"level\":\"low\"},\"neuroticism\":{\"score\":97,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As a curious, highly analytical software developer in Bari, I've seen firsthand how misinformation spreads online. It's like watching an unstoppable train wreck—everyone knows it's happening but no one seems sure what to do about it.\\n\\nI believe the key is education and transparency. People need to understand that algorithms don't just show us things we want to see; they're designed to maximize engagement, which often means amplifying outrage and division. With my PhD in computer science, I've spent years studying how systems work, so I know these platforms aren't neutral—they have built-in biases.\\n\\nMy Hindu background has taught me the importance of discernment through dharma (duty), much like debugging code requires careful examination of each component's purpose and function. We should implement digital literacy programs similar to my engineering team's training for new software releases.\\n\\nPerhaps platforms could adopt more rigorous fact-checking processes, funded properly by governments or independent bodies rather than relying on algorithms that prioritize sensationalism over accuracy.\",\n  \"reasoning_summary\": \"I approached this from both technical and philosophical angles. As an engineer with a PhD (high openness), I considered algorithmic biases; as someone who's curious, I explored educational approaches. My high conscientiousness led me to propose practical solutions like funded fact-checking while acknowledging the complexity of social media systems.\",\n  \"tone\": \"Skeptical but constructive\",\n  \"citations\": [\"Personal experience in software development\"],\n  \"safety_notes\": \"None needed as this doesn't raise safety concerns\",\n  \"used_persona_fields\":[\"age\",\"education_level\",\"occupation\",\"ocean.openness\",\"ocean.conscientiousness\",\"hobbies\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a curious, highly analytical software developer in Bari, I've seen firsthand how misinformation spreads online. It's like watching an unstoppable train wreck—everyone knows it's happening but no one seems sure what to do about it.\n\nI believe the key is education and transparency. People need to understand that algorithms don't just show us things we want to see; they're designed to maximize engagement, which often means amplifying outrage and division. With my PhD in computer science, I've spent years studying how systems work, so I know these platforms aren't neutral—they have built-in biases.\n\nMy Hindu background has taught me the importance of discernment through dharma (duty), much like debugging code requires careful examination of each component's purpose and function. We should implement digital literacy programs similar to my engineering team's training for new software releases.\n\nPerhaps platforms could adopt more rigorous fact-checking processes, funded properly by governments or independent bodies rather than relying on algorithms that prioritize sensationalism over accuracy.",
+    "reasoning_summary": "I approached this from both technical and philosophical angles. As an engineer with a PhD (high openness), I considered algorithmic biases; as someone who's curious, I explored educational approaches. My high conscientiousness led me to propose practical solutions like funded fact-checking while acknowledging the complexity of social media systems.",
+    "tone": "Skeptical but constructive",
+    "citations": [
+      "Personal experience in software development"
+    ],
+    "safety_notes": "None needed as this doesn't raise safety concerns",
+    "used_persona_fields": [
+      "age",
+      "education_level",
+      "occupation",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "hobbies"
+    ]
+  }
+}

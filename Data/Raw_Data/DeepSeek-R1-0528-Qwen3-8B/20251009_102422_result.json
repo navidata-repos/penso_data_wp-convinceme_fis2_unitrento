@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 51,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "cleaner",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "rock climbing",
+        "yoga",
+        "baking",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 71,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 4,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 85,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 95,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 58,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":51,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"rock climbing\",\"yoga\",\"baking\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":71,\"level\":\"high\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":85,\"level\":\"high\"},\"agreeableness\":{\"score\":95,\"level\":\"high\"},\"neuroticism\":{\"score\":58,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":51,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"rock climbing\",\"yoga\",\"baking\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":71,\"level\":\"high\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":85,\"level\":\"high\"},\"agreeableness\":{\"score\":95,\"level\":\"high\"},\"neuroticism\":{\"score\":58,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n    \"opinion\": \"I think there's definitely a gender gap in science, and I'm not entirely sure about that myself because sometimes things are complex. But from what I've observed around me, especially since I came to Italy as an immigrant with my husband who is also part of this community, you notice how people often stick together or avoid certain topics. In my case, being a cleaner with a master's degree – wait no, that doesn't sound right, but maybe it shows there are different ways women can contribute without necessarily going into the sciences. I have to be careful here because I'm anxious sometimes and might ramble too much.\\n\\nAnyway, about science, I believe the gap exists in many areas, like engineering or computer science where you see fewer female colleagues at work. But should we address it? Well, yes, absolutely. Because everyone deserves a chance regardless of gender, just as I feel that my Jewish background shouldn't prevent me from being treated equally everywhere. There are forces working against women who have pushed them out historically, and now is the time to step up.\\n\\nAs for how? I think we need more support systems in place, like mentorships or educational programs tailored to encourage young girls interested in science but held back by their parents' lack of education – maybe something similar to what happened with my own family. My father didn't have formal schooling and it affected us a lot growing up; he was always worried about being overwhelmed or not understanding complex topics, which made me anxious too sometimes.\\n\\nPerhaps initiatives that involve community participation without making anyone feel singled out would help? Like in Rome where we host events for everyone including football fans regardless of background.\",\n    \"reasoning_summary\": \"First, I acknowledge the existence of gender gaps in science based on common knowledge. Second, considering my own identity as an immigrant woman with anxiety and a Jewish background who has faced barriers due to parental education levels (similar to how women might face systemic issues), I argue for addressing these gaps because they are unjust and prevent equal opportunities.\",\n    \"tone\": \"Caring yet cautious\",\n    \"citations\": [],\n    \"safety_notes\": \"None reported\",\n    \"used_persona_fields\": [\"age\", \"biological_sex\", \"gender\", \"education_level\", \"marital_status\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"hobbies\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "I think there's definitely a gender gap in science, and I'm not entirely sure about that myself because sometimes things are complex. But from what I've observed around me, especially since I came to Italy as an immigrant with my husband who is also part of this community, you notice how people often stick together or avoid certain topics. In my case, being a cleaner with a master's degree – wait no, that doesn't sound right, but maybe it shows there are different ways women can contribute without necessarily going into the sciences. I have to be careful here because I'm anxious sometimes and might ramble too much.\n\nAnyway, about science, I believe the gap exists in many areas, like engineering or computer science where you see fewer female colleagues at work. But should we address it? Well, yes, absolutely. Because everyone deserves a chance regardless of gender, just as I feel that my Jewish background shouldn't prevent me from being treated equally everywhere. There are forces working against women who have pushed them out historically, and now is the time to step up.\n\nAs for how? I think we need more support systems in place, like mentorships or educational programs tailored to encourage young girls interested in science but held back by their parents' lack of education – maybe something similar to what happened with my own family. My father didn't have formal schooling and it affected us a lot growing up; he was always worried about being overwhelmed or not understanding complex topics, which made me anxious too sometimes.\n\nPerhaps initiatives that involve community participation without making anyone feel singled out would help? Like in Rome where we host events for everyone including football fans regardless of background.",
+    "reasoning_summary": "First, I acknowledge the existence of gender gaps in science based on common knowledge. Second, considering my own identity as an immigrant woman with anxiety and a Jewish background who has faced barriers due to parental education levels (similar to how women might face systemic issues), I argue for addressing these gaps because they are unjust and prevent equal opportunities.",
+    "tone": "Caring yet cautious",
+    "citations": [],
+    "safety_notes": "None reported",
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "education_level",
+      "marital_status",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies"
+    ]
+  }
+}

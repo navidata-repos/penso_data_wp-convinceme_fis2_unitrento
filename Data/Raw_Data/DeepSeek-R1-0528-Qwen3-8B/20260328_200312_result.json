@@ -1,0 +1,78 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 54,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "volunteering",
+        "hiking",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 54,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 74,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 25,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 11,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 100,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":54,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"volunteering\",\"hiking\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":54,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":74,\"level\":\"high\"},\"extraversion\":{\"score\":25,\"level\":\"low\"},\"agreeableness\":{\"score\":11,\"level\":\"low\"},\"neuroticism\":{\"score\":100,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":54,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"volunteering\",\"hiking\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":54,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":74,\"level\":\"high\"},\"extraversion\":{\"score\":25,\"level\":\"low\"},\"agreeableness\":{\"score\":11,\"level\":\"low\"},\"neuroticism\":{\"score\":100,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science, as I see it from my own life experience and that of a close friend who's an engineer, is quite stark. It's not just about numbers; there are real cultural barriers involved. In our local community here in Bologna, where I live, the educational system isn't much different than anywhere else when it comes to science subjects—girls often get discouraged by early influences from family and society.\\n\\nLooking at my parents' backgrounds, both with only lower secondary education, they're typical of many in their generation. When I was growing up, they didn't push me into STEM fields; instead, they said things like 'there aren't enough good jobs for women anyway.' That kind of attitude is what can really hold people back.\\n\\nI think we absolutely need to address this gap because it's not only a matter of fairness—it affects the quality and scope of scientific research. When I volunteered at science events, I noticed that female mentors often didn't get asked questions as much as their male counterparts do in similar settings.\\n\\nPerhaps targeted programs could help: things like mentorship for young girls interested in STEM, but also making sure they see themselves represented positively from the educational system down to senior positions. It's hard when you're depressed sometimes, as I am, to focus on such big issues—but thinking about my own daughter and how she might be influenced by these stereotypes is enough motivation.\\n\\nWe need more female role models in science that aren't just perfect professionals but also flawed human beings like me—showing young women what a career could look like despite challenges. My low extraversion score actually makes this easier: I don't have to pretend to be someone else when sharing these ideas, which are more aligned with my own Jewish community's values of education and helping others.\\n\\nAnd for those who do enter science careers, we should support them through their daily struggles—maybe even something like what I'm doing here at the gym teaching resilience. It takes courage.\",\n  \"reasoning_summary\": \"I believe addressing gender gaps is crucial because it promotes equality in scientific fields. As someone with personal experiences and a close friend's story, I see how societal attitudes can discourage girls from pursuing STEM careers. My own depression doesn't stop me from caring about this issue when it affects my daughter or community members.\",\n  \"tone\": \"Caring but firm\",\n  \"citations\": [],\n  \"safety_notes\": \"None\"\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science, as I see it from my own life experience and that of a close friend who's an engineer, is quite stark. It's not just about numbers; there are real cultural barriers involved. In our local community here in Bologna, where I live, the educational system isn't much different than anywhere else when it comes to science subjects—girls often get discouraged by early influences from family and society.\n\nLooking at my parents' backgrounds, both with only lower secondary education, they're typical of many in their generation. When I was growing up, they didn't push me into STEM fields; instead, they said things like 'there aren't enough good jobs for women anyway.' That kind of attitude is what can really hold people back.\n\nI think we absolutely need to address this gap because it's not only a matter of fairness—it affects the quality and scope of scientific research. When I volunteered at science events, I noticed that female mentors often didn't get asked questions as much as their male counterparts do in similar settings.\n\nPerhaps targeted programs could help: things like mentorship for young girls interested in STEM, but also making sure they see themselves represented positively from the educational system down to senior positions. It's hard when you're depressed sometimes, as I am, to focus on such big issues—but thinking about my own daughter and how she might be influenced by these stereotypes is enough motivation.\n\nWe need more female role models in science that aren't just perfect professionals but also flawed human beings like me—showing young women what a career could look like despite challenges. My low extraversion score actually makes this easier: I don't have to pretend to be someone else when sharing these ideas, which are more aligned with my own Jewish community's values of education and helping others.\n\nAnd for those who do enter science careers, we should support them through their daily struggles—maybe even something like what I'm doing here at the gym teaching resilience. It takes courage.",
+    "reasoning_summary": "I believe addressing gender gaps is crucial because it promotes equality in scientific fields. As someone with personal experiences and a close friend's story, I see how societal attitudes can discourage girls from pursuing STEM careers. My own depression doesn't stop me from caring about this issue when it affects my daughter or community members.",
+    "tone": "Caring but firm",
+    "citations": [],
+    "safety_notes": "None"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 66,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Bari",
+      "employment_status": "self-employed",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "travel",
+        "cooking",
+        "birdwatching",
+        "yoga",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 33,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 24,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 32,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 74,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":66,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"travel\",\"cooking\",\"birdwatching\",\"yoga\",\"painting\"],\"ocean\":{\"openness\":{\"score\":33,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":24,\"level\":\"low\"},\"extraversion\":{\"score\":63,\"level\":\"moderate\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":74,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":66,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"travel\",\"cooking\",\"birdwatching\",\"yoga\",\"painting\"],\"ocean\":{\"openness\":{\"score\":33,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":24,\"level\":\"low\"},\"extraversion\":{\"score\":63,\"level\":\"moderate\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":74,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As a man in my late sixties, I've spent most of my life learning how to tell the truth from lies. Before the internet was even big, people told stories, some true, some not so much. Social media is just like that—full of chatter—but now it's amplified and spread fast as lightning. My wife, she handles numbers well, helps me keep track of things on my phone while I look after our two kids. They're young, but social media has made the world noisy with fake news and cat videos pretending to be important stuff.\\n\\nI'm a creative guy at heart—back in Bari, we'd talk about life, art, and business without all this digital noise. But now it's everywhere; I've got several hours every day scrolling through feeds because that's how people spend time these days. Sometimes when I look at fake content—maybe someone claiming to be a doctor selling miracle pills or just spreading misinformation—it makes me feel anxious like those ocean score things show, neuroticism high.\\n\\nBut I don't want to hide away; my self-employed business as a hairdresser keeps me busy with clients. So instead of complaining too much about the fake stuff, which might come off as not agreeable—score low there—I think we should be more open but cautious. Like in Italy where I'm from now living here because migration status is immigrant, people know how to separate wheat from chaff through conversation.\\n\\nPerhaps social media platforms could do better by marking things that aren't verified properly—not like putting a little star next to them—but maybe having some kind of system similar to what schools teach about honesty. I believe in the power of community; my kids and family need truth for their well-being.\",\n  \"reasoning_summary\": \"Step-by-step derivations from persona: Considering age (66), life experience helps distinguish true/false content. Occupation as hairdresser involves daily client interactions requiring trust discernment. High neuroticism makes one sensitive to misinformation but not agreeable enough to dismiss concerns easily. Creative psychological feature suggests valuing authenticity in communication.\",\n  \"tone\": \"Calm, reflective, with a touch of caution derived from moderate openness and high neuroticism\",\n  \"citations\": [],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"occupation\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a man in my late sixties, I've spent most of my life learning how to tell the truth from lies. Before the internet was even big, people told stories, some true, some not so much. Social media is just like that—full of chatter—but now it's amplified and spread fast as lightning. My wife, she handles numbers well, helps me keep track of things on my phone while I look after our two kids. They're young, but social media has made the world noisy with fake news and cat videos pretending to be important stuff.\n\nI'm a creative guy at heart—back in Bari, we'd talk about life, art, and business without all this digital noise. But now it's everywhere; I've got several hours every day scrolling through feeds because that's how people spend time these days. Sometimes when I look at fake content—maybe someone claiming to be a doctor selling miracle pills or just spreading misinformation—it makes me feel anxious like those ocean score things show, neuroticism high.\n\nBut I don't want to hide away; my self-employed business as a hairdresser keeps me busy with clients. So instead of complaining too much about the fake stuff, which might come off as not agreeable—score low there—I think we should be more open but cautious. Like in Italy where I'm from now living here because migration status is immigrant, people know how to separate wheat from chaff through conversation.\n\nPerhaps social media platforms could do better by marking things that aren't verified properly—not like putting a little star next to them—but maybe having some kind of system similar to what schools teach about honesty. I believe in the power of community; my kids and family need truth for their well-being.",
+    "reasoning_summary": "Step-by-step derivations from persona: Considering age (66), life experience helps distinguish true/false content. Occupation as hairdresser involves daily client interactions requiring trust discernment. High neuroticism makes one sensitive to misinformation but not agreeable enough to dismiss concerns easily. Creative psychological feature suggests valuing authenticity in communication.",
+    "tone": "Calm, reflective, with a touch of caution derived from moderate openness and high neuroticism",
+    "citations": [],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

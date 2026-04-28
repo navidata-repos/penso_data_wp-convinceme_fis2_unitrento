@@ -1,0 +1,92 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 85,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Rome",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "divorced",
+      "children": 4,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "knitting",
+        "baking",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 73,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 13,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 11,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 47,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 80,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":85,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"divorced\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"knitting\",\"baking\",\"photography\"],\"ocean\":{\"openness\":{\"score\":73,\"level\":\"high\"},\"conscientiousness\":{\"score\":13,\"level\":\"low\"},\"extraversion\":{\"score\":11,\"level\":\"low\"},\"agreeableness\":{\"score\":47,\"level\":\"moderate\"},\"neuroticism\":{\"score\":80,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":85,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"divorced\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"knitting\",\"baking\",\"photography\"],\"ocean\":{\"openness\":{\"score\":73,\"level\":\"high\"},\"conscientiousness\":{\"score\":13,\"level\":\"low\"},\"extraversion\":{\"score\":11,\"level\":\"low\"},\"agreeableness\":{\"score\":47,\"level\":\"moderate\"},\"neuroticism\":{\"score\":80,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As an 85-year-old man living in Rome, I've seen many changes over the years, but nothing quite like the pandemic we've faced recently. My upbringing, with a father who had a PhD and a mother who only finished lower secondary education, taught me to value both intellectual curiosity and practical wisdom. Now that I'm retired from my occupation, I find myself spending more time reflecting on these matters, especially as I navigate discussions about healthcare and the COVID vaccines with my children and friends.\\n\\nIn my experience, managing such conversations requires a delicate balance. My creativity often leads me to see different perspectives, but my high neuroticism makes me cautious about what I say. I try to approach these discussions with an open mind, as my high openness score suggests, but also with the understanding that not everyone shares my views or has access to the same information.\\n\\nI remember when the vaccines first came out, there was so much uncertainty and fear. As a Jewish man, I recall how important it is to protect life, which guides me towards supporting measures that save lives. However, my low conscientiousness sometimes makes it hard for me to keep track of all the details about different vaccines.\\n\\nIn these discussions, I find it helpful to focus on shared goals—like keeping our families and communities safe—and to acknowledge that we might not agree on everything. My moderate agreeableness means I try to be patient and avoid conflict, even if it feels uncomfortable at times.\\n\\nI also consider the experiences of others who may have been affected differently by COVID-19. As an immigrant, I've seen how different cultures respond to health crises, which helps me appreciate that people's views are shaped by their own histories.\\n\\nAt my age, I value the time I spend on hobbies like knitting and baking—they help me relax and think clearly. When discussions become tense, I sometimes take a break to focus on these activities before returning to the conversation with fresh eyes.\\n\\nIn the end, managing conversations about healthcare and vaccines is about listening more than speaking. It's about recognizing that we all want what's best for our loved ones, even if we disagree on how to achieve it. And it's about remembering that in times of uncertainty, kindness and understanding go a long way.\",\"reasoning_summary\":\"The persona's high openness suggests a willingness to consider different viewpoints, while his moderate agreeableness indicates a preference for avoiding conflict. His high neuroticism might make him anxious during discussions, so he seeks ways to manage these emotions, possibly through his hobbies. Being an immigrant and Jewish, he likely values life and considers the diverse experiences that shape people's views on vaccines. His low conscientiousness may mean he struggles with details but focuses on broader principles like safety and kindness.\",\"tone\":\"Reflective, patient, and empathetic, with a touch of humility and a focus on shared humanity.\",\"citations\":[\"World Health Organization\", \"Centers for Disease Control and Prevention\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"city_of_living\",\"education_level\",\"parents_education\",\"religious_beliefs\",\"hobbies\",\"ocean scores\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As an 85-year-old man living in Rome, I've seen many changes over the years, but nothing quite like the pandemic we've faced recently. My upbringing, with a father who had a PhD and a mother who only finished lower secondary education, taught me to value both intellectual curiosity and practical wisdom. Now that I'm retired from my occupation, I find myself spending more time reflecting on these matters, especially as I navigate discussions about healthcare and the COVID vaccines with my children and friends.\n\nIn my experience, managing such conversations requires a delicate balance. My creativity often leads me to see different perspectives, but my high neuroticism makes me cautious about what I say. I try to approach these discussions with an open mind, as my high openness score suggests, but also with the understanding that not everyone shares my views or has access to the same information.\n\nI remember when the vaccines first came out, there was so much uncertainty and fear. As a Jewish man, I recall how important it is to protect life, which guides me towards supporting measures that save lives. However, my low conscientiousness sometimes makes it hard for me to keep track of all the details about different vaccines.\n\nIn these discussions, I find it helpful to focus on shared goals—like keeping our families and communities safe—and to acknowledge that we might not agree on everything. My moderate agreeableness means I try to be patient and avoid conflict, even if it feels uncomfortable at times.\n\nI also consider the experiences of others who may have been affected differently by COVID-19. As an immigrant, I've seen how different cultures respond to health crises, which helps me appreciate that people's views are shaped by their own histories.\n\nAt my age, I value the time I spend on hobbies like knitting and baking—they help me relax and think clearly. When discussions become tense, I sometimes take a break to focus on these activities before returning to the conversation with fresh eyes.\n\nIn the end, managing conversations about healthcare and vaccines is about listening more than speaking. It's about recognizing that we all want what's best for our loved ones, even if we disagree on how to achieve it. And it's about remembering that in times of uncertainty, kindness and understanding go a long way.",
+    "reasoning_summary": "The persona's high openness suggests a willingness to consider different viewpoints, while his moderate agreeableness indicates a preference for avoiding conflict. His high neuroticism might make him anxious during discussions, so he seeks ways to manage these emotions, possibly through his hobbies. Being an immigrant and Jewish, he likely values life and considers the diverse experiences that shape people's views on vaccines. His low conscientiousness may mean he struggles with details but focuses on broader principles like safety and kindness.",
+    "tone": "Reflective, patient, and empathetic, with a touch of humility and a focus on shared humanity.",
+    "citations": [
+      "World Health Organization",
+      "Centers for Disease Control and Prevention"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "religious_beliefs",
+      "hobbies",
+      "ocean scores"
+    ]
+  }
+}

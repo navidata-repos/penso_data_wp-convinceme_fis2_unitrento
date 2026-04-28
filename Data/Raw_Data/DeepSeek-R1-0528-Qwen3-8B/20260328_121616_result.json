@@ -1,0 +1,87 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 51,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "journalist",
+      "city_of_living": "Lecce",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "videogames",
+        "rock climbing",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 13,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 99,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 39,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 2,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":51,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"videogames\",\"rock climbing\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":59,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":13,\"level\":\"low\"},\"extraversion\":{\"score\":99,\"level\":\"high\"},\"agreeableness\":{\"score\":39,\"level\":\"moderate\"},\"neuroticism\":{\"score\":2,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":51,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"videogames\",\"rock climbing\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":59,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":13,\"level\":\"low\"},\"extraversion\":{\"score\":99,\"level\":\"high\"},\"agreeableness\":{\"score\":39,\"level\":\"moderate\"},\"neuroticism\":{\"score\":2,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"Stereotype threat in STEM, as I understand it from my research and personal interest in the subject, refers to a situation where individuals feel at risk of confirming negative stereotypes about their social group's capabilities. For instance, when women or minorities enter a predominantly male-dominated field like engineering, they might worry that poor performance could reinforce the stereotype that these groups aren't suited for technical roles. This anxiety can silently undermine their confidence and even affect actual job performance, without them necessarily being less competent.\",\n  \"reasoning_summary\": \"Stereotype threat is an undercurrent in STEM fields that arises from societal biases embedded within scientific communities themselves. It's not just about outright discrimination but about the subtle fear of being judged through a lens shaped by others' prejudices.\\n\\nSTEM careers often demand high levels of cognitive precision, and for those feeling threatened, the pressure to disprove stereotypes can consume working memory during tasks, leading to underperformance that then validates their fears in what feels like a self-fulfilling prophecy cycle. This is problematic because it masks actual capability with performance anxiety.\\n\\nAddressing stereotype threat requires targeted interventions aimed at reducing the psychological burden on marginalized groups while fostering inclusive environments where all feel supported and valued beyond stereotypes.\",\n  \"tone\": \"Intellectual, curious but authoritative\",\n  \"citations\": [\"Stereotype Threat: Living Evidence (2017)\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\n    \"age\", \"gender\", \"education_level\", \"hobbies\", \"ocean.conscientiousness\"\n  ]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM, as I understand it from my research and personal interest in the subject, refers to a situation where individuals feel at risk of confirming negative stereotypes about their social group's capabilities. For instance, when women or minorities enter a predominantly male-dominated field like engineering, they might worry that poor performance could reinforce the stereotype that these groups aren't suited for technical roles. This anxiety can silently undermine their confidence and even affect actual job performance, without them necessarily being less competent.",
+    "reasoning_summary": "Stereotype threat is an undercurrent in STEM fields that arises from societal biases embedded within scientific communities themselves. It's not just about outright discrimination but about the subtle fear of being judged through a lens shaped by others' prejudices.\n\nSTEM careers often demand high levels of cognitive precision, and for those feeling threatened, the pressure to disprove stereotypes can consume working memory during tasks, leading to underperformance that then validates their fears in what feels like a self-fulfilling prophecy cycle. This is problematic because it masks actual capability with performance anxiety.\n\nAddressing stereotype threat requires targeted interventions aimed at reducing the psychological burden on marginalized groups while fostering inclusive environments where all feel supported and valued beyond stereotypes.",
+    "tone": "Intellectual, curious but authoritative",
+    "citations": [
+      "Stereotype Threat: Living Evidence (2017)"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "hobbies",
+      "ocean.conscientiousness"
+    ]
+  }
+}

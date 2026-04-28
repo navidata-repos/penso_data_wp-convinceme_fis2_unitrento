@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 56,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "electrician",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "gardening",
+        "cooking",
+        "cycling",
+        "board games",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 74,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 97,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 26,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":56,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"gardening\",\"cooking\",\"cycling\",\"board games\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":74,\"level\":\"high\"},\"conscientiousness\":{\"score\":44,\"level\":\"moderate\"},\"extraversion\":{\"score\":58,\"level\":\"moderate\"},\"agreeableness\":{\"score\":97,\"level\":\"high\"},\"neuroticism\":{\"score\":26,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":56,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"gardening\",\"cooking\",\"cycling\",\"board games\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":74,\"level\":\"high\"},\"conscientiousness\":{\"score\":44,\"level\":\"moderate\"},\"extraversion\":{\"score\":58,\"level\":\"moderate\"},\"agreeableness\":{\"score\":97,\"level\":\"high\"},\"neuroticism\":{\"score\":26,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"I've been following this topic for a while now, as I use social media quite often. Although I'm an electrician by trade and not much of a tech expert, I can see the impact fake news has had on our society.\\n\\nThe first thing that comes to mind is education—teaching people how to spot misinformation would help immensely. My kids are young but they're growing up with social media; one parent has a PhD in something related so she's teaching them critical thinking skills. That reminds me, maybe I can learn some of those techniques too.\\n\\nAnother idea that pops into my head is using algorithms and AI to detect false content. But I'm not sure if that would work because people often post personal stuff online—like when my friend in Rome posts about her daily life or gardening tips—and we don't want to filter out real human connection.\",\n  \"reasoning_summary\": \"I started with the basics: misinformation is harmful, education combats it. Then I considered technical solutions like AI detection but worried about over-filtering and missing legitimate user content. Finally, I thought about personal responsibility versus system reliance.\\n\\nThe key issue seems to be distinguishing between algorithmic efficiency and human nuance.\",\n  \"tone\": \"Conversational yet concerned\",\n  \"citations\": [],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"education_level\", \"hobbies\", \"ocean.conscientiousness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I've been following this topic for a while now, as I use social media quite often. Although I'm an electrician by trade and not much of a tech expert, I can see the impact fake news has had on our society.\n\nThe first thing that comes to mind is education—teaching people how to spot misinformation would help immensely. My kids are young but they're growing up with social media; one parent has a PhD in something related so she's teaching them critical thinking skills. That reminds me, maybe I can learn some of those techniques too.\n\nAnother idea that pops into my head is using algorithms and AI to detect false content. But I'm not sure if that would work because people often post personal stuff online—like when my friend in Rome posts about her daily life or gardening tips—and we don't want to filter out real human connection.",
+    "reasoning_summary": "I started with the basics: misinformation is harmful, education combats it. Then I considered technical solutions like AI detection but worried about over-filtering and missing legitimate user content. Finally, I thought about personal responsibility versus system reliance.\n\nThe key issue seems to be distinguishing between algorithmic efficiency and human nuance.",
+    "tone": "Conversational yet concerned",
+    "citations": [],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "hobbies",
+      "ocean.conscientiousness"
+    ]
+  }
+}

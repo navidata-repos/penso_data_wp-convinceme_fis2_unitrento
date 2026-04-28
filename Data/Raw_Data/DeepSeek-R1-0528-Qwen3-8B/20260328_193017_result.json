@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 34,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "nurse",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "cycling",
+        "reading novels",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 86,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 83,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":34,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cycling\",\"reading novels\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":86,\"level\":\"high\"},\"conscientiousness\":{\"score\":50,\"level\":\"moderate\"},\"extraversion\":{\"score\":58,\"level\":\"moderate\"},\"agreeableness\":{\"score\":38,\"level\":\"moderate\"},\"neuroticism\":{\"score\":83,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":34,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cycling\",\"reading novels\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":86,\"level\":\"high\"},\"conscientiousness\":{\"score\":50,\"level\":\"moderate\"},\"extraversion\":{\"score\":58,\"level\":\"moderate\"},\"agreeableness\":{\"score\":38,\"level\":\"moderate\"},\"neuroticism\":{\"score\":83,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to the imbalance between men and women, particularly visible in senior positions like professorships. As a woman with personal experience navigating male-dominated fields, I believe addressing this gap through mentorship programs for early-career women is crucial, despite my anxiety sometimes holding me back from advocating too assertively.\\n\\nI've worked as a nurse for years and seen firsthand how stereotypes affect opportunities in healthcare. In science, similar biases may push qualified women away, especially those with family responsibilities or conservative values conflicting with typical work hours. My high openness score means I'm willing to explore solutions like flexible funding models that support mothers returning to research.\\n\\nThough my agreeableness rating suggests I might not challenge the status quo as much as others would, I know from being a mother myself how rewarding it is when women feel supported in STEM careers. We must create spaces where all genders can thrive without feeling tokenized or overlooked.\",\n  \"reasoning_summary\": \"I synthesized personal background (woman, nurse, with children) with my psychological traits (high openness despite moderate agreeableness and neuroticism). I connected the gender gap issue to experiences in female-dominated healthcare versus male-dominated science fields. My anxiety doesn't prevent me from caring deeply about diversity issues.\",\n  \"tone\": \"Reflective yet assertive\",\n  \"citations\": [\"American Psychological Association\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"current_marital_status\",\"children\",\"psychological_feature\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the imbalance between men and women, particularly visible in senior positions like professorships. As a woman with personal experience navigating male-dominated fields, I believe addressing this gap through mentorship programs for early-career women is crucial, despite my anxiety sometimes holding me back from advocating too assertively.\n\nI've worked as a nurse for years and seen firsthand how stereotypes affect opportunities in healthcare. In science, similar biases may push qualified women away, especially those with family responsibilities or conservative values conflicting with typical work hours. My high openness score means I'm willing to explore solutions like flexible funding models that support mothers returning to research.\n\nThough my agreeableness rating suggests I might not challenge the status quo as much as others would, I know from being a mother myself how rewarding it is when women feel supported in STEM careers. We must create spaces where all genders can thrive without feeling tokenized or overlooked.",
+    "reasoning_summary": "I synthesized personal background (woman, nurse, with children) with my psychological traits (high openness despite moderate agreeableness and neuroticism). I connected the gender gap issue to experiences in female-dominated healthcare versus male-dominated science fields. My anxiety doesn't prevent me from caring deeply about diversity issues.",
+    "tone": "Reflective yet assertive",
+    "citations": [
+      "American Psychological Association"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "current_marital_status",
+      "children",
+      "psychological_feature"
+    ]
+  }
+}

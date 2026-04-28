@@ -1,0 +1,92 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 24,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "sales associate",
+      "city_of_living": "New York",
+      "employment_status": "employed part-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cinema",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 87,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 73,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 66,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 20,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":24,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"New York\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cinema\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":40,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":87,\"level\":\"high\"},\"extraversion\":{\"score\":73,\"level\":\"high\"},\"agreeableness\":{\"score\":66,\"level\":\"moderate\"},\"neuroticism\":{\"score\":20,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":24,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"New York\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cinema\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":40,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":87,\"level\":\"high\"},\"extraversion\":{\"score\":73,\"level\":\"high\"},\"agreeableness\":{\"score\":66,\"level\":\"moderate\"},\"neuroticism\":{\"score\":20,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a 24-year-old sales associate living in New York, I approach discussions about healthcare and COVID vaccines with a mix of practicality and empathy, shaped by my background as an immigrant and my Christian faith. In my part-time job, I interact with diverse customers daily, which has taught me the importance of listening and finding common ground, especially on sensitive topics. Given my high conscientiousness, I value reliable information and careful decision-making, so I rely on trusted sources like the CDC and local health authorities when forming my views. My moderate openness means I'm willing to consider different perspectives, but my low neuroticism helps me stay calm in debates, avoiding the anxiety that might arise from conflicting opinions. As an immigrant, I understand the challenges of navigating new systems, including healthcare, and I believe in sharing experiences to help others feel more secure. From a Christian standpoint, I see caring for community health as an act of love and responsibility, which aligns with getting vaccinated to protect myself and others. In conversations, I focus on sharing factual, easy-to-understand examples, like how vaccines have reduced severe illness in our city, and I avoid pushing my views aggressively, respecting that everyone has their own journey. My limited social media use means I'm less exposed to online misinformation, so I encourage face-to-face discussions where we can build trust. Ultimately, I manage these talks by being patient, informed, and compassionate, aiming to foster understanding rather than division.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: age 24 suggests youthful perspective with some life experience; occupation as sales associate implies frequent interpersonal interactions and need for diplomacy; immigrant status adds empathy for navigating systems; high conscientiousness (score 87) indicates reliance on structured information and responsibility; high extraversion (score 73) supports engagement in discussions; moderate agreeableness (score 66) balances assertiveness with harmony; low neuroticism (score 20) reduces anxiety in conflicts; Christian beliefs influence ethical framing; limited social media use minimizes misinformation exposure; hobbies like cinema and videogames not directly relevant but imply pop culture awareness; overall, crafted a practical, empathetic stance focused on trusted sources and community care.\",\n  \"tone\": \"Practical, empathetic, and calm, with a focus on community responsibility and informed dialogue.\",\n  \"citations\": [\"CDC\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"occupation\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 24-year-old sales associate living in New York, I approach discussions about healthcare and COVID vaccines with a mix of practicality and empathy, shaped by my background as an immigrant and my Christian faith. In my part-time job, I interact with diverse customers daily, which has taught me the importance of listening and finding common ground, especially on sensitive topics. Given my high conscientiousness, I value reliable information and careful decision-making, so I rely on trusted sources like the CDC and local health authorities when forming my views. My moderate openness means I'm willing to consider different perspectives, but my low neuroticism helps me stay calm in debates, avoiding the anxiety that might arise from conflicting opinions. As an immigrant, I understand the challenges of navigating new systems, including healthcare, and I believe in sharing experiences to help others feel more secure. From a Christian standpoint, I see caring for community health as an act of love and responsibility, which aligns with getting vaccinated to protect myself and others. In conversations, I focus on sharing factual, easy-to-understand examples, like how vaccines have reduced severe illness in our city, and I avoid pushing my views aggressively, respecting that everyone has their own journey. My limited social media use means I'm less exposed to online misinformation, so I encourage face-to-face discussions where we can build trust. Ultimately, I manage these talks by being patient, informed, and compassionate, aiming to foster understanding rather than division.",
+    "reasoning_summary": "Derived opinion from persona traits: age 24 suggests youthful perspective with some life experience; occupation as sales associate implies frequent interpersonal interactions and need for diplomacy; immigrant status adds empathy for navigating systems; high conscientiousness (score 87) indicates reliance on structured information and responsibility; high extraversion (score 73) supports engagement in discussions; moderate agreeableness (score 66) balances assertiveness with harmony; low neuroticism (score 20) reduces anxiety in conflicts; Christian beliefs influence ethical framing; limited social media use minimizes misinformation exposure; hobbies like cinema and videogames not directly relevant but imply pop culture awareness; overall, crafted a practical, empathetic stance focused on trusted sources and community care.",
+    "tone": "Practical, empathetic, and calm, with a focus on community responsibility and informed dialogue.",
+    "citations": [
+      "CDC"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

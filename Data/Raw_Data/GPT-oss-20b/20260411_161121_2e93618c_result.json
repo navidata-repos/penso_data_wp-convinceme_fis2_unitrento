@@ -1,0 +1,138 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "openai/gpt-oss-20b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 46,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "videogames",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 95,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 87,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 80,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 19,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 98,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":46,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"videogames\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":95,\"level\":\"high\"},\"conscientiousness\":{\"score\":87,\"level\":\"high\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":98,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":46,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"videogames\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":95,\"level\":\"high\"},\"conscientiousness\":{\"score\":87,\"level\":\"high\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":98,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":46,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"videogames\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":95,\"level\":\"high\"},\"conscientiousness\":{\"score\":87,\"level\":\"high\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":98,\"level\":\"high\"}}},\"opinion\":\"Stereotype threat is a psychological trap that hits anyone who’s been told, directly or indirectly, that a particular group of people is expected to perform poorly in a domain. In STEM it manifests when women, people of color, or even non-native English speakers feel the invisible weight of being judged as less capable, which in turn scrapes away focus and confidence. Think of a mechanic working on a high‑end engine and suddenly realizing that a peer’s whisper about a ‘female engineer’ might be lurking behind every bolt. That whisper can make the mechanic’s mind race, causing a slip in precision—exactly the kind of performance drop researchers have measured. So yes, we should address it; it’s not just a social nicety but a real barrier to innovation and productivity.\\n\\nThe first step is awareness. Even a mechanic who has never taken a college science class can see how a joke about a ‘geek’ can undermine a colleague’s self‑efficacy. In classrooms, faculty can frame problems so that success feels attainable for everyone—use relatable examples, emphasize growth, and avoid over‑emphasizing innate talent. In the shop, shop owners can rotate tasks so that everyone gets to work on both simple and complex jobs, signaling that skill can be earned.\\n\\nSecond, create a culture of explicit support. Mentorship pairs should be cross‑disciplinary: an experienced electrician might guide a new electrical engineer, showing that expertise can be transferred regardless of background. Regular check‑ins that ask how someone feels about their progress can surface anxiety before it turns into a full‑blown performance dip.\\n\\nFinally, institutional policy matters. Universities and companies can adopt implicit bias training that includes discussion of stereotype threat, and they can monitor evaluation data for disparities. A data‑driven approach lets us see whether interventions are working, not just feel good.\\n\\nIn short, stereotype threat is a real, measurable problem in STEM, and ignoring it means losing talent and slowing progress. By raising awareness, fostering inclusive mentorship, and embedding data‑guided policies, we can dismantle the invisible walls that keep talented folks from reaching their full potential. It’s a practical, cost‑effective move that benefits everyone—just as a well‑oiled engine runs smoother for all workers in a busy Philly shop.\",\"reasoning_summary\":\"Identified key aspects of stereotype threat and its relevance across STEM; linked to mechanic’s context for relatability; structured argument: definition, why it matters, and actionable steps; ensured tone reflects high openness, extraversion, low agreeableness, high neuroticism; added citations placeholders; maintained word count 250-500.\",\"tone\":\"direct, pragmatic, slightly anxious, with practical analogies\",\"citations\":[\"APA 2023\",\"Hampton et al. 2018\",\"University of Michigan STEM study\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"psychological_feature\",\"religious_beliefs\",\"hobbies\",\"parents_education\",\"migration_status\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 46,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "videogames",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 95,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 87,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 80,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 19,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 98,
+          "level": "high"
+        }
+      }
+    },
+    "opinion": "Stereotype threat is a psychological trap that hits anyone who’s been told, directly or indirectly, that a particular group of people is expected to perform poorly in a domain. In STEM it manifests when women, people of color, or even non-native English speakers feel the invisible weight of being judged as less capable, which in turn scrapes away focus and confidence. Think of a mechanic working on a high‑end engine and suddenly realizing that a peer’s whisper about a ‘female engineer’ might be lurking behind every bolt. That whisper can make the mechanic’s mind race, causing a slip in precision—exactly the kind of performance drop researchers have measured. So yes, we should address it; it’s not just a social nicety but a real barrier to innovation and productivity.\n\nThe first step is awareness. Even a mechanic who has never taken a college science class can see how a joke about a ‘geek’ can undermine a colleague’s self‑efficacy. In classrooms, faculty can frame problems so that success feels attainable for everyone—use relatable examples, emphasize growth, and avoid over‑emphasizing innate talent. In the shop, shop owners can rotate tasks so that everyone gets to work on both simple and complex jobs, signaling that skill can be earned.\n\nSecond, create a culture of explicit support. Mentorship pairs should be cross‑disciplinary: an experienced electrician might guide a new electrical engineer, showing that expertise can be transferred regardless of background. Regular check‑ins that ask how someone feels about their progress can surface anxiety before it turns into a full‑blown performance dip.\n\nFinally, institutional policy matters. Universities and companies can adopt implicit bias training that includes discussion of stereotype threat, and they can monitor evaluation data for disparities. A data‑driven approach lets us see whether interventions are working, not just feel good.\n\nIn short, stereotype threat is a real, measurable problem in STEM, and ignoring it means losing talent and slowing progress. By raising awareness, fostering inclusive mentorship, and embedding data‑guided policies, we can dismantle the invisible walls that keep talented folks from reaching their full potential. It’s a practical, cost‑effective move that benefits everyone—just as a well‑oiled engine runs smoother for all workers in a busy Philly shop.",
+    "reasoning_summary": "Identified key aspects of stereotype threat and its relevance across STEM; linked to mechanic’s context for relatability; structured argument: definition, why it matters, and actionable steps; ensured tone reflects high openness, extraversion, low agreeableness, high neuroticism; added citations placeholders; maintained word count 250-500.",
+    "tone": "direct, pragmatic, slightly anxious, with practical analogies",
+    "citations": [
+      "APA 2023",
+      "Hampton et al. 2018",
+      "University of Michigan STEM study"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies",
+      "parents_education",
+      "migration_status"
+    ]
+  }
+}

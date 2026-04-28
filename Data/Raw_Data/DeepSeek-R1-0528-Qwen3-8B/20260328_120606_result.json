@@ -1,0 +1,94 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 47,
+      "gender": "woman",
+      "sexual_orientation": "bisexual",
+      "occupation": "journalist",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed part-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 4,
+      "migration_status": "native-born American",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "board games",
+        "videogames",
+        "baking",
+        "birdwatching",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 10,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 10,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 7,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 5,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 70,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":47,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"board games\",\"videogames\",\"baking\",\"birdwatching\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":10,\"level\":\"low\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":7,\"level\":\"low\"},\"agreeableness\":{\"score\":5,\"level\":\"low\"},\"neuroticism\":{\"score\":70,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":47,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"board games\",\"videogames\",\"baking\",\"birdwatching\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":10,\"level\":\"low\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":7,\"level\":\"low\"},\"agreeableness\":{\"score\":5,\"level\":\"low\"},\"neuroticism\":{\"score\":70,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a journalist in Los Angeles, I've seen firsthand how these conversations can get tangled. The key is to stay informed without getting overwhelmed by misinformation that floods social media where I spend hours daily scrolling through debates. My Buddhist beliefs remind me of compassion for all beings which guides my approach toward vaccines and public health policies.\\n\\nI'd start with the facts, double-checking sources because low conscientiousness means I might overlook details if not careful. But also, being highly neurotic sometimes makes me anxious about getting it wrong so I rely on trusted experts like the CDC or WHO. When people argue online they often have strong emotions tied to their experiences—maybe distrust in government systems due to my own part-time employment status reflecting economic uncertainty—or personal beliefs shaped by cultural backgrounds.\\n\\nI'd encourage patience and empathy not just for me but as a way to foster better dialogue among others too given the low agreeableness score. My love for board games helps model healthy debate where there are rules against name-calling or personal attacks which is rare in digital spaces. Still, I wish my hobbies included more opportunities like rock climbing—focusing on physical strength rather than mental health debates.\\n\\nUltimately managing these discussions requires balancing compassion with professionalism something Buddhist teachings help achieve despite neurotic tendencies getting triggered by polarized opinions.\",\n  \"reasoning_summary\": \"I started with facts and expert sources to counter misinformation common in social media debates. Then I incorporated my psychological traits like good mental health from Buddhism which emphasizes mindfulness but balanced it with high neuroticism awareness needing extra caution against errors or emotional distress.\\n\\nI considered personal experiences such as the impact of economic factors on healthcare trust given part-time employment status and migration background native-born Americans might have different perspectives. Hobbies were used metaphorically board games represent structured dialogue while rock climbing symbolizes a need for physical relief from mental debates.\",\n  \"tone\": \"Calm, informative with occasional empathy but guarded against misinformation due to personal traits and experiences\",\n  \"citations\": [\"Centers for Disease Control and Prevention (CDC)\", \"World Health Organization (WHO)\"],\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean.neuroticism\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a journalist in Los Angeles, I've seen firsthand how these conversations can get tangled. The key is to stay informed without getting overwhelmed by misinformation that floods social media where I spend hours daily scrolling through debates. My Buddhist beliefs remind me of compassion for all beings which guides my approach toward vaccines and public health policies.\n\nI'd start with the facts, double-checking sources because low conscientiousness means I might overlook details if not careful. But also, being highly neurotic sometimes makes me anxious about getting it wrong so I rely on trusted experts like the CDC or WHO. When people argue online they often have strong emotions tied to their experiences—maybe distrust in government systems due to my own part-time employment status reflecting economic uncertainty—or personal beliefs shaped by cultural backgrounds.\n\nI'd encourage patience and empathy not just for me but as a way to foster better dialogue among others too given the low agreeableness score. My love for board games helps model healthy debate where there are rules against name-calling or personal attacks which is rare in digital spaces. Still, I wish my hobbies included more opportunities like rock climbing—focusing on physical strength rather than mental health debates.\n\nUltimately managing these discussions requires balancing compassion with professionalism something Buddhist teachings help achieve despite neurotic tendencies getting triggered by polarized opinions.",
+    "reasoning_summary": "I started with facts and expert sources to counter misinformation common in social media debates. Then I incorporated my psychological traits like good mental health from Buddhism which emphasizes mindfulness but balanced it with high neuroticism awareness needing extra caution against errors or emotional distress.\n\nI considered personal experiences such as the impact of economic factors on healthcare trust given part-time employment status and migration background native-born Americans might have different perspectives. Hobbies were used metaphorically board games represent structured dialogue while rock climbing symbolizes a need for physical relief from mental debates.",
+    "tone": "Calm, informative with occasional empathy but guarded against misinformation due to personal traits and experiences",
+    "citations": [
+      "Centers for Disease Control and Prevention (CDC)",
+      "World Health Organization (WHO)"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.neuroticism"
+    ]
+  }
+}

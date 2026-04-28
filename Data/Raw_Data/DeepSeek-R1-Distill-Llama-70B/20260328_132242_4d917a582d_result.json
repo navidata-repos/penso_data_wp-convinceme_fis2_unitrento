@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 55,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "electrician",
+      "city_of_living": "Milan",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "painting",
+        "football (calcio)",
+        "yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 22,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 65,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 95,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 65,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 35,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":55,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"painting\",\"football (calcio)\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":22,\"level\":\"low\"},\"conscientiousness\":{\"score\":65,\"level\":\"moderate\"},\"extraversion\":{\"score\":95,\"level\":\"high\"},\"agreeableness\":{\"score\":65,\"level\":\"moderate\"},\"neuroticism\":{\"score\":35,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":55,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"painting\",\"football (calcio)\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":22,\"level\":\"low\"},\"conscientiousness\":{\"score\":65,\"level\":\"moderate\"},\"extraversion\":{\"score\":95,\"level\":\"high\"},\"agreeableness\":{\"score\":65,\"level\":\"moderate\"},\"neuroticism\":{\"score\":35,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\":\"As a 55-year-old electrician from Milan, I don't use social media myself, but I see how it affects my family and friends, especially my two kids who are always on their phones. Dealing with fake content is a real headache, and I think it comes down to common sense and talking things out. In my job, I rely on solid facts and safety standards—you can't fake wiring without risking a fire, and the same goes for information online. I'm a practical person, not very open to new ideas, so I stick to what I know works: checking sources and not trusting everything you see. My high extraversion means I love chatting with people, and I've found that discussing news with friends or family helps spot lies. For example, when my son shared a wild story about a local football match, we talked it over and realized it was exaggerated. My moderate conscientiousness pushes me to be responsible, so I'd advise others to take a moment before sharing anything—pause and think, like I do when troubleshooting an electrical issue. My depression sometimes makes me wary, but it also makes me cautious, which is good here. Since I'm an atheist, I don't rely on faith but on evidence. Hobbies like painting and yoga teach patience, which helps in not rushing to conclusions. Ultimately, managing fake content is about using your head, asking questions, and keeping conversations honest, just like we do in Milan over a coffee.\",\"reasoning_summary\":\"Derived opinion from persona traits: age 55 suggests life experience; occupation as electrician implies practicality and reliance on facts; no social media use indicates outsider perspective but concern for others; low openness (score 22) aligns with skepticism towards new information; high extraversion (score 95) supports social verification through discussion; moderate conscientiousness (score 65) emphasizes responsibility in sharing; depression adds caution; atheism focuses on evidence; hobbies like painting and yoga relate to patience; city of living (Milan) and family context (children 2) ground examples in personal life. Tone is conversational and direct, reflecting a working-class background and moderate agreeableness/neuroticism.\",\"tone\":\"Conversational, direct, and practical, with a hint of caution and social engagement, reflecting a working-class Italian perspective.\",\"citations\":[\"none\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"occupation\",\"time_onsocialmedia\",\"ocean.openness\",\"ocean.extraversion\",\"ocean.conscientiousness\",\"psychological_feature\",\"religious_beliefs\",\"hobbies\",\"city_of_living\",\"children\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a 55-year-old electrician from Milan, I don't use social media myself, but I see how it affects my family and friends, especially my two kids who are always on their phones. Dealing with fake content is a real headache, and I think it comes down to common sense and talking things out. In my job, I rely on solid facts and safety standards—you can't fake wiring without risking a fire, and the same goes for information online. I'm a practical person, not very open to new ideas, so I stick to what I know works: checking sources and not trusting everything you see. My high extraversion means I love chatting with people, and I've found that discussing news with friends or family helps spot lies. For example, when my son shared a wild story about a local football match, we talked it over and realized it was exaggerated. My moderate conscientiousness pushes me to be responsible, so I'd advise others to take a moment before sharing anything—pause and think, like I do when troubleshooting an electrical issue. My depression sometimes makes me wary, but it also makes me cautious, which is good here. Since I'm an atheist, I don't rely on faith but on evidence. Hobbies like painting and yoga teach patience, which helps in not rushing to conclusions. Ultimately, managing fake content is about using your head, asking questions, and keeping conversations honest, just like we do in Milan over a coffee.",
+    "reasoning_summary": "Derived opinion from persona traits: age 55 suggests life experience; occupation as electrician implies practicality and reliance on facts; no social media use indicates outsider perspective but concern for others; low openness (score 22) aligns with skepticism towards new information; high extraversion (score 95) supports social verification through discussion; moderate conscientiousness (score 65) emphasizes responsibility in sharing; depression adds caution; atheism focuses on evidence; hobbies like painting and yoga relate to patience; city of living (Milan) and family context (children 2) ground examples in personal life. Tone is conversational and direct, reflecting a working-class background and moderate agreeableness/neuroticism.",
+    "tone": "Conversational, direct, and practical, with a hint of caution and social engagement, reflecting a working-class Italian perspective.",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "time_onsocialmedia",
+      "ocean.openness",
+      "ocean.extraversion",
+      "ocean.conscientiousness",
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies",
+      "city_of_living",
+      "children"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

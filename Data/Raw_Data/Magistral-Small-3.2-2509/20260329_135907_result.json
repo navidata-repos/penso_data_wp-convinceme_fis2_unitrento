@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 39,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Milan",
+      "employment_status": "employed part-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "travel",
+        "reading novels",
+        "baking",
+        "board games",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 85,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 98,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 6,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 91,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 65,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":39,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"travel\",\"reading novels\",\"baking\",\"board games\",\"running\"],\"ocean\":{\"openness\":{\"score\":85,\"level\":\"high\"},\"conscientiousness\":{\"score\":98,\"level\":\"high\"},\"extraversion\":{\"score\":6,\"level\":\"low\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":65,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":39,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"travel\",\"reading novels\",\"baking\",\"board games\",\"running\"],\"ocean\":{\"openness\":{\"score\":85,\"level\":\"high\"},\"conscientiousness\":{\"score\":98,\"level\":\"high\"},\"extraversion\":{\"score\":6,\"level\":\"low\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":65,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"As a hairdresser in Milan with four children, my world is far removed from the laboratories and lecture halls of STEM fields. Yet, as someone who values openness and conscientiousness, I find myself deeply concerned about the barriers that stereotype threat presents in these areas. Stereotype threat, simply put, is the fear of confirming a negative stereotype about one's group. For instance, women might worry about being seen as less competent in math or science due to societal perceptions. This fear can be so powerful that it hinders performance and discourages pursuit of STEM careers.\\n\\nI believe we must address this issue because everyone deserves the chance to pursue their passions without unnecessary obstacles. One way to tackle it is through education, both within schools and society at large. Teachers and parents should emphasize the importance of meritocracy and challenge stereotypes. For example, highlighting successful women in STEM could help dispel myths and inspire young girls.\\n\\nAdditionally, fostering inclusive environments where diversity is celebrated can mitigate stereotype threat. This means encouraging open dialogues about these issues and ensuring that everyone feels valued. In my own small way, I might not be a scientist, but as a parent, I can nurture an environment where my children see beyond stereotypes. Perhaps the next generation will grow up in a world where their capabilities are judged solely on their merits.\\n\\nIn conclusion, stereotype threat is a real and damaging phenomenon that warrants our attention. By promoting awareness, challenging biases, and fostering inclusivity, we can create a more equitable landscape for STEM fields.\", \"reasoning_summary\":\"1. Definition of stereotype threat and its impact in STEM fields.\\n2. Personal belief in the importance of addressing this issue due to values of openness and conscientiousness.\\n3. Strategies such as education and inclusive environments to combat stereotype threat.\\n4. Emphasis on the role parents and teachers play in shaping perceptions.\\n5. Vision for a future where merit is valued over stereotypes.\", \"tone\":\"Empathetic, concerned, yet hopeful; reflects a balance of agreeableness and conscientiousness with a focus on practical solutions and personal responsibility.\", \"citations\":[\"Steele, C. M., & Aronson, J. (1995). Stereotype Threat and the Intellectual Test Performance of African Americans. Journal of Experimental Psychology: General.\"], \"safety_notes\":\"None\", \"used_persona_fields\":[\"occupation\",\"city_of_living\",\"children\",\"hobbies\",\"openness\",\"conscientiousness\",\"agreeableness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As a hairdresser in Milan with four children, my world is far removed from the laboratories and lecture halls of STEM fields. Yet, as someone who values openness and conscientiousness, I find myself deeply concerned about the barriers that stereotype threat presents in these areas. Stereotype threat, simply put, is the fear of confirming a negative stereotype about one's group. For instance, women might worry about being seen as less competent in math or science due to societal perceptions. This fear can be so powerful that it hinders performance and discourages pursuit of STEM careers.\n\nI believe we must address this issue because everyone deserves the chance to pursue their passions without unnecessary obstacles. One way to tackle it is through education, both within schools and society at large. Teachers and parents should emphasize the importance of meritocracy and challenge stereotypes. For example, highlighting successful women in STEM could help dispel myths and inspire young girls.\n\nAdditionally, fostering inclusive environments where diversity is celebrated can mitigate stereotype threat. This means encouraging open dialogues about these issues and ensuring that everyone feels valued. In my own small way, I might not be a scientist, but as a parent, I can nurture an environment where my children see beyond stereotypes. Perhaps the next generation will grow up in a world where their capabilities are judged solely on their merits.\n\nIn conclusion, stereotype threat is a real and damaging phenomenon that warrants our attention. By promoting awareness, challenging biases, and fostering inclusivity, we can create a more equitable landscape for STEM fields.",
+    "reasoning_summary": "1. Definition of stereotype threat and its impact in STEM fields.\n2. Personal belief in the importance of addressing this issue due to values of openness and conscientiousness.\n3. Strategies such as education and inclusive environments to combat stereotype threat.\n4. Emphasis on the role parents and teachers play in shaping perceptions.\n5. Vision for a future where merit is valued over stereotypes.",
+    "tone": "Empathetic, concerned, yet hopeful; reflects a balance of agreeableness and conscientiousness with a focus on practical solutions and personal responsibility.",
+    "citations": [
+      "Steele, C. M., & Aronson, J. (1995). Stereotype Threat and the Intellectual Test Performance of African Americans. Journal of Experimental Psychology: General."
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "occupation",
+      "city_of_living",
+      "children",
+      "hobbies",
+      "openness",
+      "conscientiousness",
+      "agreeableness"
+    ]
+  }
+}

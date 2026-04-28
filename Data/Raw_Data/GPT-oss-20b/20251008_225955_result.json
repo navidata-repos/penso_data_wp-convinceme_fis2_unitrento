@@ -1,0 +1,131 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "chatgptoss-20b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 35,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Naples",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "widowed",
+      "children": 5,
+      "migration_status": "native Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "gardening",
+        "travel",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 82,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 56,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 80,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 20,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":35,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Naples\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"widowed\",\"children\":5,\"migration_status\":\"native Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"gardening\",\"travel\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":82,\"level\":\"high\"},\"conscientiousness\":{\"score\":56,\"level\":\"moderate\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":64,\"level\":\"moderate\"},\"neuroticism\":{\"score\":20,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":35,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Naples\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"widowed\",\"children\":5,\"migration_status\":\"native Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"gardening\",\"travel\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":82,\"level\":\"high\"},\"conscientiousness\":{\"score\":56,\"level\":\"moderate\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":64,\"level\":\"moderate\"},\"neuroticism\":{\"score\":20,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "<|channel|>final <|constrain|>JSON<|message|>{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":35,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Naples\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"widowed\",\"children\":5,\"migration_status\":\"native Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"gardening\",\"travel\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":82,\"level\":\"high\"},\"conscientiousness\":{\"score\":56,\"level\":\"moderate\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":64,\"level\":\"moderate\"},\"neuroticism\":{\"score\":20,\"level\":\"low\"}}},\"opinion\":\"The gender gap in science is a persistent disparity that shows up in enrollment, career progression and recognition. In Italy, for instance, women earn only about 30 % of the PhD degrees in STEM fields, and they are under‑represented in senior research positions and editorial boards. The roots are cultural: from early schooling where girls receive less encouragement in math and physics to workplace norms that reward long hours over flexibility—an environment that clashes with family responsibilities, which many women juggle.\\n\\nAddressing the gap is not just a matter of fairness; it’s an economic imperative. Diverse teams generate more patents, higher publication impact and better problem‑solving capacity. A study by McKinsey found that companies in the top quartile for gender diversity outperformed those in the bottom quartile by 15 % on profitability.\\n\\nPractical solutions begin with mentorship programs that pair junior female scientists with senior role models—an approach that aligns well with my own experience as a trainer who mentors clients toward goals. Institutions should also implement transparent hiring and promotion criteria, offer flexible working arrangements, and actively counter unconscious bias through training workshops.\\n\\nAt the grassroots level, schools can host STEM clubs where girls see women in science as accessible role models; community outreach from universities to local high schools is essential. Funding agencies might earmark grants for projects led by women or mixed‑gender teams, ensuring that financial incentives reinforce inclusivity.\\n\\nIn short, tackling the gender gap requires a multi‑layered strategy: policy reforms, cultural change, and targeted support systems—all of which can be championed by individuals in every field, including fitness training, where empowerment and goal setting are everyday themes.\",\"reasoning_summary\":\"Identified key facts about gender gap prevalence, economic impact, root causes; linked to persona’s background (trainer, mentor role); proposed actionable steps at institutional and community levels; crafted narrative aligning with creative, high openness, extroverted tone; ensured word count 250-500 words\",\"tone\":\"creative, energetic, supportive, pragmatic\",\"citations\":[\"McKinsey & Company, Women in the Workplace 2023\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"occupation\",\"psychological_feature\",\"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 35,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Naples",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "widowed",
+      "children": 5,
+      "migration_status": "native Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "gardening",
+        "travel",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 82,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 56,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 80,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 20,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "The gender gap in science is a persistent disparity that shows up in enrollment, career progression and recognition. In Italy, for instance, women earn only about 30 % of the PhD degrees in STEM fields, and they are under‑represented in senior research positions and editorial boards. The roots are cultural: from early schooling where girls receive less encouragement in math and physics to workplace norms that reward long hours over flexibility—an environment that clashes with family responsibilities, which many women juggle.\n\nAddressing the gap is not just a matter of fairness; it’s an economic imperative. Diverse teams generate more patents, higher publication impact and better problem‑solving capacity. A study by McKinsey found that companies in the top quartile for gender diversity outperformed those in the bottom quartile by 15 % on profitability.\n\nPractical solutions begin with mentorship programs that pair junior female scientists with senior role models—an approach that aligns well with my own experience as a trainer who mentors clients toward goals. Institutions should also implement transparent hiring and promotion criteria, offer flexible working arrangements, and actively counter unconscious bias through training workshops.\n\nAt the grassroots level, schools can host STEM clubs where girls see women in science as accessible role models; community outreach from universities to local high schools is essential. Funding agencies might earmark grants for projects led by women or mixed‑gender teams, ensuring that financial incentives reinforce inclusivity.\n\nIn short, tackling the gender gap requires a multi‑layered strategy: policy reforms, cultural change, and targeted support systems—all of which can be championed by individuals in every field, including fitness training, where empowerment and goal setting are everyday themes.",
+    "reasoning_summary": "Identified key facts about gender gap prevalence, economic impact, root causes; linked to persona’s background (trainer, mentor role); proposed actionable steps at institutional and community levels; crafted narrative aligning with creative, high openness, extroverted tone; ensured word count 250-500 words",
+    "tone": "creative, energetic, supportive, pragmatic",
+    "citations": [
+      "McKinsey & Company, Women in the Workplace 2023"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "psychological_feature",
+      "hobbies"
+    ]
+  }
+}

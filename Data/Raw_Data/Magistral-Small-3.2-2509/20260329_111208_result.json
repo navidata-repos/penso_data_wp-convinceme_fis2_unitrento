@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 65,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "carpenter",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "widowed",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "running",
+        "rock climbing",
+        "football (calcio)",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 48,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 7,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 32,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 44,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":65,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"rock climbing\",\"football (calcio)\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":48,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":50,\"level\":\"moderate\"},\"extraversion\":{\"score\":7,\"level\":\"low\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":44,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":65,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"rock climbing\",\"football (calcio)\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":48,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":50,\"level\":\"moderate\"},\"extraversion\":{\"score\":7,\"level\":\"low\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":44,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"As a carpenter who's spent most of his life building and fixing things, I've always believed that the world can be divided into two kinds: those who see the glass half full and those who see it as an opportunity to make something better. But when it comes to stereotype threat in STEM, it's not about being optimistic or pessimistic; it's about recognizing a problem that stifles potential. Stereotype threat is like a shadow looming over someone who doesn't fit the 'typical' mold for science, technology, engineering, or math—be they women, minorities, or anyone else society might subconsciously expect to fail. It's that little voice in your head saying, 'Maybe they're right,' when you hit a snag on a project. I've seen this in my own life; my daughter, who's bright as a button, once confided that she felt out of place in her engineering classes. She feared that one bad grade would confirm the stereotype that women aren't cut out for it. It's not right, and it's certainly not helpful. We should address this because every time someone checks themselves at the door of STEM due to these fears, we lose a perspective, an idea, or maybe even a solution to a problem the world needs to solve. How? Well, I'm no psychologist, but I know what works in my workshop: open communication and support. Universities and workplaces can start by fostering environments where everyone feels welcome and valued. Mentorship programs could pair up young professionals with experienced ones from similar backgrounds who've overcome these same hurdles. Also, we need to challenge the stereotypes head-on—highlighting role models who defy them and celebrating diversity as a strength rather than an exception. And for those feeling the weight of the threat? Remember that your worth isn't measured by someone else's expectations. You might stumble; everyone does. But if you're passionate, you'll keep going, and that persistence is half the battle in any field, STEM or otherwise.\",\"reasoning_summary\":\"The carpenter persona draws on personal experience to understand stereotype threat as a silent barrier, using his daughter's experience to illustrate its impact. He advocates for addressing it due to the loss of potential it causes and suggests practical solutions like mentorship, open communication, and role models to combat it, emphasizing resilience and self-worth.\",\"tone\":\"practical, empathetic, and slightly philosophical with a touch of gruffness typical of a seasoned carpenter\",\"citations\":[\"Claude Steele's work on stereotype threat\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"occupation\",\"education_level\",\"psychological_feature\",\"hobbies\",\"ocean (openness, conscientiousness)\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As a carpenter who's spent most of his life building and fixing things, I've always believed that the world can be divided into two kinds: those who see the glass half full and those who see it as an opportunity to make something better. But when it comes to stereotype threat in STEM, it's not about being optimistic or pessimistic; it's about recognizing a problem that stifles potential. Stereotype threat is like a shadow looming over someone who doesn't fit the 'typical' mold for science, technology, engineering, or math—be they women, minorities, or anyone else society might subconsciously expect to fail. It's that little voice in your head saying, 'Maybe they're right,' when you hit a snag on a project. I've seen this in my own life; my daughter, who's bright as a button, once confided that she felt out of place in her engineering classes. She feared that one bad grade would confirm the stereotype that women aren't cut out for it. It's not right, and it's certainly not helpful. We should address this because every time someone checks themselves at the door of STEM due to these fears, we lose a perspective, an idea, or maybe even a solution to a problem the world needs to solve. How? Well, I'm no psychologist, but I know what works in my workshop: open communication and support. Universities and workplaces can start by fostering environments where everyone feels welcome and valued. Mentorship programs could pair up young professionals with experienced ones from similar backgrounds who've overcome these same hurdles. Also, we need to challenge the stereotypes head-on—highlighting role models who defy them and celebrating diversity as a strength rather than an exception. And for those feeling the weight of the threat? Remember that your worth isn't measured by someone else's expectations. You might stumble; everyone does. But if you're passionate, you'll keep going, and that persistence is half the battle in any field, STEM or otherwise.",
+    "reasoning_summary": "The carpenter persona draws on personal experience to understand stereotype threat as a silent barrier, using his daughter's experience to illustrate its impact. He advocates for addressing it due to the loss of potential it causes and suggests practical solutions like mentorship, open communication, and role models to combat it, emphasizing resilience and self-worth.",
+    "tone": "practical, empathetic, and slightly philosophical with a touch of gruffness typical of a seasoned carpenter",
+    "citations": [
+      "Claude Steele's work on stereotype threat"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "psychological_feature",
+      "hobbies",
+      "ocean (openness, conscientiousness)"
+    ]
+  }
+}

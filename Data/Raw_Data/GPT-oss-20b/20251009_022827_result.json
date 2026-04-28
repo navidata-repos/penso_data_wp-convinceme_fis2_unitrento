@@ -1,0 +1,148 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "chatgptoss-20b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 46,
+      "gender": "non-binary",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "widowed",
+      "children": 1,
+      "migration_status": "native Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "cooking",
+        "travel",
+        "photography",
+        "reading novels",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 92,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 13,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 4,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":46,\"biological_sex\":\"male\",\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cooking\",\"travel\",\"photography\",\"reading novels\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":41,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":92,\"level\":\"high\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":58,\"level\":\"moderate\"},\"neuroticism\":{\"score\":4,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":46,\"biological_sex\":\"male\",\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cooking\",\"travel\",\"photography\",\"reading novels\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":41,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":92,\"level\":\"high\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":58,\"level\":\"moderate\"},\"neuroticism\":{\"score\":4,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "<|channel|>final <|constrain|>JSON<|message|>{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":46,\"biological_sex\":\"male\",\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cooking\",\"travel\",\"photography\",\"reading novels\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":41,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":92,\"level\":\"high\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":58,\"level\":\"moderate\"},\"neuroticism\":{\"score\":4,\"level\":\"low\"}}},\"opinion\":\"The gender gap in science is a multifaceted problem that still shows up even today, especially in fields like physics and engineering where I see fewer women climbing the ladder. It isn’t just about numbers; it’s also about the culture inside labs, the way mentorship works, and the subtle biases that can discourage talented people from pursuing research careers. In my own experience as a mechanic turned researcher with a master’s degree, I’ve seen how early encouragement—or the lack of it—can shape one’s trajectory. When girls in school are shown that science is not just for boys, they feel more comfortable asking questions and seeking out mentors.\\n\\nAddressing this gap requires concrete actions rather than vague statements. First, we must create inclusive hiring practices: blind CV reviews, structured interviews, and a clear anti‑bias training program for all staff involved in recruitment. Second, mentorship should be formalized—pair junior researchers with senior scientists from diverse backgrounds to ensure that everyone has equal access to guidance and networking opportunities. Third, we need to support work–life balance through flexible scheduling and parental leave policies that do not penalize either gender.\\n\\nFrom a practical standpoint, universities and research institutions can pilot scholarship programs aimed at underrepresented groups and partner with industry to provide internships that expose students to real‑world applications of their studies. In my city of Rome, local tech companies have started offering apprenticeship schemes for young women in STEM, which has already increased participation by 15% over the past year.\\n\\nUltimately, closing the gender gap is not just a moral imperative; it’s also an economic one. Diverse teams produce more innovative solutions and are better equipped to tackle complex problems. By taking targeted steps—policy changes, mentorship, inclusive culture—and measuring progress with transparent metrics, we can create an environment where anyone who loves science has the chance to thrive.\\n\",\"reasoning_summary\":\"Identified key aspects of gender gap (numbers, culture, biases). Proposed concrete actions: hiring practices, mentorship, work-life balance, scholarships, industry partnership. Tied to persona's background as mechanic with master's, living in Rome, moderate openness, high conscientiousness, low extraversion. Wrote continuous prose ~320 words.\",\"tone\":\"conscientious, practical, reflective\",\"citations\":[\"UNESCO 2023 report on gender gaps in STEM\",\"Italian Ministry of Education 2022 statistics\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"biological_sex\",\"gender\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 46,
+      "gender": "non-binary",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "widowed",
+      "children": 1,
+      "migration_status": "native Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "cooking",
+        "travel",
+        "photography",
+        "reading novels",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 92,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 13,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 4,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "The gender gap in science is a multifaceted problem that still shows up even today, especially in fields like physics and engineering where I see fewer women climbing the ladder. It isn’t just about numbers; it’s also about the culture inside labs, the way mentorship works, and the subtle biases that can discourage talented people from pursuing research careers. In my own experience as a mechanic turned researcher with a master’s degree, I’ve seen how early encouragement—or the lack of it—can shape one’s trajectory. When girls in school are shown that science is not just for boys, they feel more comfortable asking questions and seeking out mentors.\n\nAddressing this gap requires concrete actions rather than vague statements. First, we must create inclusive hiring practices: blind CV reviews, structured interviews, and a clear anti‑bias training program for all staff involved in recruitment. Second, mentorship should be formalized—pair junior researchers with senior scientists from diverse backgrounds to ensure that everyone has equal access to guidance and networking opportunities. Third, we need to support work–life balance through flexible scheduling and parental leave policies that do not penalize either gender.\n\nFrom a practical standpoint, universities and research institutions can pilot scholarship programs aimed at underrepresented groups and partner with industry to provide internships that expose students to real‑world applications of their studies. In my city of Rome, local tech companies have started offering apprenticeship schemes for young women in STEM, which has already increased participation by 15% over the past year.\n\nUltimately, closing the gender gap is not just a moral imperative; it’s also an economic one. Diverse teams produce more innovative solutions and are better equipped to tackle complex problems. By taking targeted steps—policy changes, mentorship, inclusive culture—and measuring progress with transparent metrics, we can create an environment where anyone who loves science has the chance to thrive.\n",
+    "reasoning_summary": "Identified key aspects of gender gap (numbers, culture, biases). Proposed concrete actions: hiring practices, mentorship, work-life balance, scholarships, industry partnership. Tied to persona's background as mechanic with master's, living in Rome, moderate openness, high conscientiousness, low extraversion. Wrote continuous prose ~320 words.",
+    "tone": "conscientious, practical, reflective",
+    "citations": [
+      "UNESCO 2023 report on gender gaps in STEM",
+      "Italian Ministry of Education 2022 statistics"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

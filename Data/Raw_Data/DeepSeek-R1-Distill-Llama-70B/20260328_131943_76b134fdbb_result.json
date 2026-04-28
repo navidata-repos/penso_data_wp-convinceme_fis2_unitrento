@@ -1,0 +1,100 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 28,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Washington DC",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "board games",
+        "yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 9,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 67,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 56,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 90,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 42,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":28,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"board games\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":9,\"level\":\"low\"},\"conscientiousness\":{\"score\":67,\"level\":\"high\"},\"extraversion\":{\"score\":56,\"level\":\"moderate\"},\"agreeableness\":{\"score\":90,\"level\":\"high\"},\"neuroticism\":{\"score\":42,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":28,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"board games\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":9,\"level\":\"low\"},\"conscientiousness\":{\"score\":67,\"level\":\"high\"},\"extraversion\":{\"score\":56,\"level\":\"moderate\"},\"agreeableness\":{\"score\":90,\"level\":\"high\"},\"neuroticism\":{\"score\":42,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a 28-year-old barista in Washington DC, self-employed and raising a child while in a relationship, I approach discussions about healthcare and COVID vaccines with a blend of practicality and empathy, shaped by my Christian faith and daily interactions in a diverse city. My low openness score means I tend to stick to established information and trusted sources, like the CDC or my local clinic, rather than exploring fringe theories. This conscientiousness, with a high score, drives me to be thorough in understanding vaccine safety and efficacy, ensuring I make informed decisions for my family's health. In conversations, I prioritize listening and finding common ground, thanks to my high agreeableness, which helps de-escalate tensions when opinions differ. For instance, at the coffee shop, I've encountered customers with varying views; I focus on sharing my own experiences, such as getting vaccinated to protect my child and elderly relatives, without pushing others. My moderate extraversion allows me to engage comfortably in these talks, while my curiosity leads me to ask questions to better understand others' perspectives, even if I don't always agree. I limit my social media use to about an hour daily, avoiding echo chambers and seeking balanced updates from reputable health organizations. My hobbies, like board games and yoga, remind me of the importance of patience and calm in discussions, preventing heated arguments. Ultimately, I believe managing these conversations involves respecting individual choices, emphasizing community well-being, and relying on credible guidance to navigate the complexities of healthcare decisions.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: age 28 and occupation as barista imply practical, daily-life focus; self-employment and child suggest responsibility in health decisions; low openness (score 9) indicates reliance on trusted sources like CDC; high conscientiousness (score 67) leads to thorough research on vaccines; high agreeableness (score 90) promotes empathetic, non-confrontational dialogue; moderate extraversion (score 56) enables comfortable engagement; curiosity drives inquiry into others' views; Christian beliefs influence ethical considerations; limited social media use avoids misinformation; hobbies support calm discussion management; overall, tone is respectful and community-oriented.\",\n  \"tone\": \"Respectful, empathetic, practical, community-focused, and calm, reflecting high agreeableness and conscientiousness with a touch of curiosity.\",\n  \"citations\": [\"CDC\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"occupation\", \"employment_status\", \"children\", \"current_marital_status\", \"city_of_living\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean.openness\", \"ocean.conscientiousness\", \"ocean.extraversion\", \"ocean.agreeableness\", \"ocean.neuroticism\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 28-year-old barista in Washington DC, self-employed and raising a child while in a relationship, I approach discussions about healthcare and COVID vaccines with a blend of practicality and empathy, shaped by my Christian faith and daily interactions in a diverse city. My low openness score means I tend to stick to established information and trusted sources, like the CDC or my local clinic, rather than exploring fringe theories. This conscientiousness, with a high score, drives me to be thorough in understanding vaccine safety and efficacy, ensuring I make informed decisions for my family's health. In conversations, I prioritize listening and finding common ground, thanks to my high agreeableness, which helps de-escalate tensions when opinions differ. For instance, at the coffee shop, I've encountered customers with varying views; I focus on sharing my own experiences, such as getting vaccinated to protect my child and elderly relatives, without pushing others. My moderate extraversion allows me to engage comfortably in these talks, while my curiosity leads me to ask questions to better understand others' perspectives, even if I don't always agree. I limit my social media use to about an hour daily, avoiding echo chambers and seeking balanced updates from reputable health organizations. My hobbies, like board games and yoga, remind me of the importance of patience and calm in discussions, preventing heated arguments. Ultimately, I believe managing these conversations involves respecting individual choices, emphasizing community well-being, and relying on credible guidance to navigate the complexities of healthcare decisions.",
+    "reasoning_summary": "Derived opinion from persona traits: age 28 and occupation as barista imply practical, daily-life focus; self-employment and child suggest responsibility in health decisions; low openness (score 9) indicates reliance on trusted sources like CDC; high conscientiousness (score 67) leads to thorough research on vaccines; high agreeableness (score 90) promotes empathetic, non-confrontational dialogue; moderate extraversion (score 56) enables comfortable engagement; curiosity drives inquiry into others' views; Christian beliefs influence ethical considerations; limited social media use avoids misinformation; hobbies support calm discussion management; overall, tone is respectful and community-oriented.",
+    "tone": "Respectful, empathetic, practical, community-focused, and calm, reflecting high agreeableness and conscientiousness with a touch of curiosity.",
+    "citations": [
+      "CDC"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "employment_status",
+      "children",
+      "current_marital_status",
+      "city_of_living",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

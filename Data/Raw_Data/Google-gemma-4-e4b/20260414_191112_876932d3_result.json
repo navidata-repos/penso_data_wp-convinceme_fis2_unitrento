@@ -1,0 +1,137 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "google/gemma-4-e4b-it",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 48,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "engineer",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "birdwatching",
+        "classical music",
+        "yoga",
+        "videogames",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 22,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 7,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 3,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":48,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"birdwatching\",\"classical music\",\"yoga\",\"videogames\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":38,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":42,\"level\":\"moderate\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":3,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":48,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"birdwatching\",\"classical music\",\"yoga\",\"videogames\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":38,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":42,\"level\":\"moderate\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":3,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":48,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"birdwatching\",\"classical music\",\"yoga\",\"videogames\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":38,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":42,\"level\":\"moderate\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":3,\"level\":\"low\"}}},\"opinion\":\"As an engineer who has navigated the often intensely competitive and sometimes rigidly structured environment of technical fields, I find the concept of stereotype threat to be a deeply pertinent, if disheartening, piece of social science. At its core, stereotype threat describes the anxiety experienced by individuals from a group that is negatively stereotyped regarding a particular ability—in this case, STEM aptitude—when they are in situations where that stereotype is relevant. For someone with a background like mine, where the pressure to perform is constant, the internal monologue that whispers, 'I might not belong here,' fueled by external societal narratives, is a very real cognitive load. It’s not just about lacking knowledge; it’s about the extra mental bandwidth consumed by the fear of confirming a negative generalization about one's group. Given the systemic issues that perpetuate these stereotypes, I believe addressing this is not merely a matter of social nicety, but a crucial engineering problem in the design of equitable educational and professional systems. The anxiety itself is a performance inhibitor, and from a systems perspective, that's a failure state we must correct. Addressing it requires a multi-pronged, deliberate approach. We cannot simply wish the threat away. First, in educational settings, we need to actively de-stereotype the field; this means showcasing diverse, successful figures—women, people of color, individuals from varied socioeconomic backgrounds—who excel in engineering and science, moving beyond the narrow, often privileged archetype. Second, and perhaps more practically for someone who values structured solutions, we need to alter the testing and assessment environments. Instead of high-stakes, singular tests that carry immense weight, we should implement more iterative, low-stakes assessment methods that prioritize process, growth, and mastery over a single point score. Finally, fostering a culture of psychological safety, much like the mindful presence I seek in yoga or the focused concentration required for classical music, allows individuals to engage with the material without the paralyzing fear of public failure. This isn't about coddling; it's about optimizing the human element within the technical process, recognizing that anxiety is a variable we can, and must, engineer out of the equation for genuine innovation to flourish.\",\"reasoning_summary\":\"The persona is a highly educated, conscientious, and slightly anxious engineer from Naples. The tone should be analytical, pragmatic, and thoughtful, reflecting a problem-solver's perspective, but tempered by the awareness of psychological pressures (anxiety). The response must define stereotype threat in STEM, assert the necessity of addressing it (as a systemic failure), and propose actionable, structured solutions (like an engineer would). The language should be continuous prose, avoiding lists, and maintaining a sophisticated, slightly reserved yet passionate tone suitable for a seasoned professional.\",\"tone\":\"Analytical, pragmatic, thoughtful, and conscientiously concerned\",\"citations\":[\"N/A\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"occupation\",\"education_level\",\"psychological_feature\",\"hobbies\",\"ocean.conscientiousness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 48,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "engineer",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "birdwatching",
+        "classical music",
+        "yoga",
+        "videogames",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 22,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 7,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 3,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "As an engineer who has navigated the often intensely competitive and sometimes rigidly structured environment of technical fields, I find the concept of stereotype threat to be a deeply pertinent, if disheartening, piece of social science. At its core, stereotype threat describes the anxiety experienced by individuals from a group that is negatively stereotyped regarding a particular ability—in this case, STEM aptitude—when they are in situations where that stereotype is relevant. For someone with a background like mine, where the pressure to perform is constant, the internal monologue that whispers, 'I might not belong here,' fueled by external societal narratives, is a very real cognitive load. It’s not just about lacking knowledge; it’s about the extra mental bandwidth consumed by the fear of confirming a negative generalization about one's group. Given the systemic issues that perpetuate these stereotypes, I believe addressing this is not merely a matter of social nicety, but a crucial engineering problem in the design of equitable educational and professional systems. The anxiety itself is a performance inhibitor, and from a systems perspective, that's a failure state we must correct. Addressing it requires a multi-pronged, deliberate approach. We cannot simply wish the threat away. First, in educational settings, we need to actively de-stereotype the field; this means showcasing diverse, successful figures—women, people of color, individuals from varied socioeconomic backgrounds—who excel in engineering and science, moving beyond the narrow, often privileged archetype. Second, and perhaps more practically for someone who values structured solutions, we need to alter the testing and assessment environments. Instead of high-stakes, singular tests that carry immense weight, we should implement more iterative, low-stakes assessment methods that prioritize process, growth, and mastery over a single point score. Finally, fostering a culture of psychological safety, much like the mindful presence I seek in yoga or the focused concentration required for classical music, allows individuals to engage with the material without the paralyzing fear of public failure. This isn't about coddling; it's about optimizing the human element within the technical process, recognizing that anxiety is a variable we can, and must, engineer out of the equation for genuine innovation to flourish.",
+    "reasoning_summary": "The persona is a highly educated, conscientious, and slightly anxious engineer from Naples. The tone should be analytical, pragmatic, and thoughtful, reflecting a problem-solver's perspective, but tempered by the awareness of psychological pressures (anxiety). The response must define stereotype threat in STEM, assert the necessity of addressing it (as a systemic failure), and propose actionable, structured solutions (like an engineer would). The language should be continuous prose, avoiding lists, and maintaining a sophisticated, slightly reserved yet passionate tone suitable for a seasoned professional.",
+    "tone": "Analytical, pragmatic, thoughtful, and conscientiously concerned",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "psychological_feature",
+      "hobbies",
+      "ocean.conscientiousness"
+    ]
+  }
+}

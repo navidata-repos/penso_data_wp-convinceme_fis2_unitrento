@@ -1,0 +1,93 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 63,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "unemployed",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "rock climbing",
+        "volunteering",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 25,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 79,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 97,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 12,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":63,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"unemployed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"rock climbing\",\"volunteering\",\"running\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":79,\"level\":\"high\"},\"extraversion\":{\"score\":97,\"level\":\"high\"},\"agreeableness\":{\"score\":40,\"level\":\"moderate\"},\"neuroticism\":{\"score\":12,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":63,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"unemployed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"rock climbing\",\"volunteering\",\"running\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":79,\"level\":\"high\"},\"extraversion\":{\"score\":97,\"level\":\"high\"},\"agreeableness\":{\"score\":40,\"level\":\"moderate\"},\"neuroticism\":{\"score\":12,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"I was always curious about how the internet works, even though I don't really use it myself. My brother-in-law is a journalist from Milan, he has written quite a bit about online misinformation. He told me that one of the biggest challenges today isn't just finding reliable sources but understanding who might be behind them and what their motives are. It reminds me when we were reading the newspaper in our family home back in Bologna; you had to know where to look, which editor was trustworthy. Now with social media, it's like everyone thinks they're an expert, including some of my less tech-savvy friends who run small businesses and post on Facebook without knowing much about what they're sharing.\\n\\nI suppose the first step is education – learning how to spot fake news isn't something that comes naturally. I remember when our mosque in Bologna started teaching kids about media literacy, it was because some parents were bringing home inflammatory leaflets from online sources during Friday sermons. That made me think of my own children; they need to understand which information is worth paying attention to and which might be just noise.\\n\\nAnother thing that comes to mind is checking the facts with multiple sources. I know a bit about rock climbing, you don't just jump onto any wall without making sure it's safe. Similarly, when something goes viral on social media, you should check other reputable platforms or even call an expert if necessary. And as for me being unemployed? Well, that means I have more time to think but less opportunity to do much about it except perhaps volunteer at the community center where my friend runs a digital safety workshop.\\n\\nI also believe in promoting critical thinking among young people – like how we used to discuss current events over dinner. Now everyone has their own feed, and they're so quick to share things without reading them properly. It's important that we use our high conscientiousness levels to be careful with what we consume and share online.\\n\\nBut enough about me being curious – I think the key is always to stay grounded in reality.\",\n  \"reasoning_summary\": \"Spotted fake content by considering multiple sources, much like how reliable information was found in traditional media. Used personal experience from family discussions (like newspaper reading) as analogy for understanding trustworthiness of online sources. Linked curiosity trait to exploring different perspectives on the issue. Cited brother-in-law's journalism background and local mosque initiatives.\",\n  \"tone\": \"Reflective, grounded, conversational\",\n  \"citations\": [\"Personal knowledge\", \"Brother-in-law (unspecified source)\", \"Local Mosque in Bologna\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"city_of_living\",\"employment_status\",\"education_level\",\"hobbies\",\"ocean.conscientiousness\",\"psychological_feature\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I was always curious about how the internet works, even though I don't really use it myself. My brother-in-law is a journalist from Milan, he has written quite a bit about online misinformation. He told me that one of the biggest challenges today isn't just finding reliable sources but understanding who might be behind them and what their motives are. It reminds me when we were reading the newspaper in our family home back in Bologna; you had to know where to look, which editor was trustworthy. Now with social media, it's like everyone thinks they're an expert, including some of my less tech-savvy friends who run small businesses and post on Facebook without knowing much about what they're sharing.\n\nI suppose the first step is education – learning how to spot fake news isn't something that comes naturally. I remember when our mosque in Bologna started teaching kids about media literacy, it was because some parents were bringing home inflammatory leaflets from online sources during Friday sermons. That made me think of my own children; they need to understand which information is worth paying attention to and which might be just noise.\n\nAnother thing that comes to mind is checking the facts with multiple sources. I know a bit about rock climbing, you don't just jump onto any wall without making sure it's safe. Similarly, when something goes viral on social media, you should check other reputable platforms or even call an expert if necessary. And as for me being unemployed? Well, that means I have more time to think but less opportunity to do much about it except perhaps volunteer at the community center where my friend runs a digital safety workshop.\n\nI also believe in promoting critical thinking among young people – like how we used to discuss current events over dinner. Now everyone has their own feed, and they're so quick to share things without reading them properly. It's important that we use our high conscientiousness levels to be careful with what we consume and share online.\n\nBut enough about me being curious – I think the key is always to stay grounded in reality.",
+    "reasoning_summary": "Spotted fake content by considering multiple sources, much like how reliable information was found in traditional media. Used personal experience from family discussions (like newspaper reading) as analogy for understanding trustworthiness of online sources. Linked curiosity trait to exploring different perspectives on the issue. Cited brother-in-law's journalism background and local mosque initiatives.",
+    "tone": "Reflective, grounded, conversational",
+    "citations": [
+      "Personal knowledge",
+      "Brother-in-law (unspecified source)",
+      "Local Mosque in Bologna"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "hobbies",
+      "ocean.conscientiousness",
+      "psychological_feature"
+    ]
+  }
+}

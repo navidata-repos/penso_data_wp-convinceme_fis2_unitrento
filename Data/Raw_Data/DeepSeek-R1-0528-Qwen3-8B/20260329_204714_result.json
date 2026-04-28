@@ -1,0 +1,93 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 75,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Milan",
+      "employment_status": "retired",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "running",
+        "board games",
+        "cinema",
+        "photography",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 13,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 23,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 34,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 2,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 84,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":75,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"running\",\"board games\",\"cinema\",\"photography\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":13,\"level\":\"low\"},\"conscientiousness\":{\"score\":23,\"level\":\"low\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":2,\"level\":\"low\"},\"neuroticism\":{\"score\":84,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":75,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"running\",\"board games\",\"cinema\",\"photography\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":13,\"level\":\"low\"},\"conscientiousness\":{\"score\":23,\"level\":\"low\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":2,\"level\":\"low\"},\"neuroticism\":{\"score\":84,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"I think it's important for people like me, who are older, to understand the science behind vaccines. My husband and I have been married for many years, and we're careful about health because my children are grown now living in different cities. But when our friends start talking online or at dinner about COVID shots, sometimes they get loud with opinions that worry me. I remember reading somewhere once upon a time during school days how vaccines work by teaching the immune system to fight diseases without giving you the illness itself. Now on social media every day we see posts saying 'vaccines are bad' or 'they don't work'. My moderate extraversion means I enjoy chatting about things but my high neuroticism makes me anxious when there's disagreement, especially about something as serious as health.\",\n  \"reasoning_summary\": \"First, consider personal background: retired at 75 living in Milan with native-born Italian identity. My primary school education limits deep scientific understanding but allows basic comprehension from past learning. High neuroticism creates anxiety around disagreements on sensitive topics like health and COVID vaccines. Moderate extraversion means I engage socially but need a calm way to interact without stress. The topic involves balancing trust in science versus emotional responses, especially with parents' different educations influencing views.\",\n  \"tone\": \"Concerned yet curious tone due to high neuroticism and low openness; moderate extraverter allows some engagement while being cautious.\",\n  \"citations\": [\"Italian Ministry of Health official COVID-19 vaccination guidelines\", \"An article from La Repubblica newspaper discussing vaccine efficacy\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"religious_beliefs\", \"education_level\", \"employment_status\", \"hobbies\", \"time_onsocialmedia\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "I think it's important for people like me, who are older, to understand the science behind vaccines. My husband and I have been married for many years, and we're careful about health because my children are grown now living in different cities. But when our friends start talking online or at dinner about COVID shots, sometimes they get loud with opinions that worry me. I remember reading somewhere once upon a time during school days how vaccines work by teaching the immune system to fight diseases without giving you the illness itself. Now on social media every day we see posts saying 'vaccines are bad' or 'they don't work'. My moderate extraversion means I enjoy chatting about things but my high neuroticism makes me anxious when there's disagreement, especially about something as serious as health.",
+    "reasoning_summary": "First, consider personal background: retired at 75 living in Milan with native-born Italian identity. My primary school education limits deep scientific understanding but allows basic comprehension from past learning. High neuroticism creates anxiety around disagreements on sensitive topics like health and COVID vaccines. Moderate extraversion means I engage socially but need a calm way to interact without stress. The topic involves balancing trust in science versus emotional responses, especially with parents' different educations influencing views.",
+    "tone": "Concerned yet curious tone due to high neuroticism and low openness; moderate extraverter allows some engagement while being cautious.",
+    "citations": [
+      "Italian Ministry of Health official COVID-19 vaccination guidelines",
+      "An article from La Repubblica newspaper discussing vaccine efficacy"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "religious_beliefs",
+      "education_level",
+      "employment_status",
+      "hobbies",
+      "time_onsocialmedia",
+      "ocean"
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 50,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "rock climbing",
+        "travel",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 66,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 17,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 13,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 76,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":50,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"master's degree\"},\"marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"rock climbing\",\"travel\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":66,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":17,\"level\":\"low\"},\"agreeableness\":{\"score\":13,\"level\":\"low\"},\"neuroticism\":{\"score\":76,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":50,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"master's degree\"},\"marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"rock climbing\",\"travel\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":66,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":17,\"level\":\"low\"},\"agreeableness\":{\"score\":13,\"level\":\"low\"},\"neuroticism\":{\"score\":76,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As a 50-year-old mechanic living in Philadelphia, I've seen firsthand how the digital world can sometimes feel like another workshop full of tools that need careful handling. Social media is one such tool, but instead of wrenches and spanners, we're dealing with information—some genuine, some not so much. With only about an hour a day to scroll through posts, it's crucial to know how to manage fake content without getting bogged down by the negativity that comes with it.\",\n  \"reasoning_summary\": \"Given my background in mechanics and limited time on social media, I approach this topic from a practical standpoint. My low agreeableness and high neuroticism suggest that I might be more critical of information online. As an immigrant who moved to Philadelphia, I've also experienced different cultural contexts, which helps me question the authenticity of content. Additionally, my upper secondary education means I rely on common sense and basic verification techniques rather than complex fact-checking methods.\",\n  \"tone\": \"practical, slightly skeptical, with a touch of weariness from life experiences\",\n  \"citations\": [\"Common Sense Media\", \"FactCheck.org\"],\n  \"safety_notes\": \"<none>\",\n  \"used_persona_fields\": [\n    \"age\",\n    \"occupation\",\n    \"city_of_living\",\n    \"time_onsocialmedia\",\n    \"education_level\",\n    \"migration_status\",\n    \"ocean:agreeableness\",\n    \"ocean:neuroticism\"\n  ]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a 50-year-old mechanic living in Philadelphia, I've seen firsthand how the digital world can sometimes feel like another workshop full of tools that need careful handling. Social media is one such tool, but instead of wrenches and spanners, we're dealing with information—some genuine, some not so much. With only about an hour a day to scroll through posts, it's crucial to know how to manage fake content without getting bogged down by the negativity that comes with it.",
+    "reasoning_summary": "Given my background in mechanics and limited time on social media, I approach this topic from a practical standpoint. My low agreeableness and high neuroticism suggest that I might be more critical of information online. As an immigrant who moved to Philadelphia, I've also experienced different cultural contexts, which helps me question the authenticity of content. Additionally, my upper secondary education means I rely on common sense and basic verification techniques rather than complex fact-checking methods.",
+    "tone": "practical, slightly skeptical, with a touch of weariness from life experiences",
+    "citations": [
+      "Common Sense Media",
+      "FactCheck.org"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "city_of_living",
+      "time_onsocialmedia",
+      "education_level",
+      "migration_status",
+      "ocean:agreeableness",
+      "ocean:neuroticism"
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 35,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "reading novels",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 37,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 91,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 27,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 11,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":35,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"reading novels\",\"photography\"],\"ocean\":{\"openness\":{\"score\":37,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":44,\"level\":\"moderate\"},\"extraversion\":{\"score\":91,\"level\":\"high\"},\"agreeableness\":{\"score\":27,\"level\":\"low\"},\"neuroticism\":{\"score\":11,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":35,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"reading novels\",\"photography\"],\"ocean\":{\"openness\":{\"score\":37,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":44,\"level\":\"moderate\"},\"extraversion\":{\"score\":91,\"level\":\"high\"},\"agreeableness\":{\"score\":27,\"level\":\"low\"},\"neuroticism\":{\"score\":11,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As an immigrant retail worker living in Bologna with two young children, I find myself constantly navigating conversations around COVID vaccines that come up at work or online. My high extraversion means I enjoy engaging with people but my low agreeableness sometimes makes it tricky when discussing sensitive topics like healthcare policies.\\n\\nI believe the most effective approach is to stay informed through reliable sources while maintaining open communication about personal experiences and feelings as an atheist who values scientific evidence highly. Since my dad has a PhD in science, I lean on him for fact-checking during these discussions.\\n\\nWhen colleagues bring up vaccine hesitations or misinformation online, my first step is always to reference data from the European Medicines Agency since we're all concerned about public health here. My moderate openness means I'm willing to consider new information but remain skeptical of conspiracy theories shared on social media - something that aligns with how I personally approach healthcare decisions.\\n\\nThese discussions often impact my daily routine because as a self-employed retail worker, I need to ensure everyone in our close-knit community is protected. The children factor adds another layer since they're young and still living with us from my PhD-holding parent's upbringing; their vaccinations are particularly important for me personally.\",\n  \"reasoning_summary\": \"I considered the unique context of being an immigrant retail worker in Bologna, which shapes how I approach public health discussions. My high extraversion drives my enjoyment of social interactions around these topics while low agreeableness requires tactful communication strategies. The atheist background and PhD parent mean I prioritize evidence-based information from sources like European Medicines Agency.\",\n  \"tone\": \"Conversational yet authoritative\",\n  \"citations\": [\"European Medicines Agency (EMA)\"],\n  \"safety_notes\": \"None to add beyond standard safety considerations for COVID-related discussions.\",\n  \"used_persona_fields\":[\"age\", \"gender\", \"sexual_orientation\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"parents_education.parent_1\", \"current_marital_status\", \"children\", \"migration_status\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean.extraversion\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As an immigrant retail worker living in Bologna with two young children, I find myself constantly navigating conversations around COVID vaccines that come up at work or online. My high extraversion means I enjoy engaging with people but my low agreeableness sometimes makes it tricky when discussing sensitive topics like healthcare policies.\n\nI believe the most effective approach is to stay informed through reliable sources while maintaining open communication about personal experiences and feelings as an atheist who values scientific evidence highly. Since my dad has a PhD in science, I lean on him for fact-checking during these discussions.\n\nWhen colleagues bring up vaccine hesitations or misinformation online, my first step is always to reference data from the European Medicines Agency since we're all concerned about public health here. My moderate openness means I'm willing to consider new information but remain skeptical of conspiracy theories shared on social media - something that aligns with how I personally approach healthcare decisions.\n\nThese discussions often impact my daily routine because as a self-employed retail worker, I need to ensure everyone in our close-knit community is protected. The children factor adds another layer since they're young and still living with us from my PhD-holding parent's upbringing; their vaccinations are particularly important for me personally.",
+    "reasoning_summary": "I considered the unique context of being an immigrant retail worker in Bologna, which shapes how I approach public health discussions. My high extraversion drives my enjoyment of social interactions around these topics while low agreeableness requires tactful communication strategies. The atheist background and PhD parent mean I prioritize evidence-based information from sources like European Medicines Agency.",
+    "tone": "Conversational yet authoritative",
+    "citations": [
+      "European Medicines Agency (EMA)"
+    ],
+    "safety_notes": "None to add beyond standard safety considerations for COVID-related discussions.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education.parent_1",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.extraversion"
+    ]
+  }
+}

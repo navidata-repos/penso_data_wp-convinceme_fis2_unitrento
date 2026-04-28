@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 33,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "journalist",
+      "city_of_living": "Milan",
+      "employment_status": "employed full-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "single",
+      "children": 3,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "knitting",
+        "classical music",
+        "rock climbing",
+        "hiking",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 8,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 54,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 61,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":33,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"knitting\",\"classical music\",\"rock climbing\",\"hiking\",\"travel\"],\"ocean\":{\"openness\":{\"score\":8,\"level\":\"low\"},\"conscientiousness\":{\"score\":60,\"level\":\"moderate\"},\"extraversion\":{\"score\":54,\"level\":\"moderate\"},\"agreeableness\":{\"score\":38,\"level\":\"moderate\"},\"neuroticism\":{\"score\":61,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":33,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"knitting\",\"classical music\",\"rock climbing\",\"hiking\",\"travel\"],\"ocean\":{\"openness\":{\"score\":8,\"level\":\"low\"},\"conscientiousness\":{\"score\":60,\"level\":\"moderate\"},\"extraversion\":{\"score\":54,\"level\":\"moderate\"},\"agreeableness\":{\"score\":38,\"level\":\"moderate\"},\"neuroticism\":{\"score\":61,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a journalist in Milan, I've had to navigate the complex and often contentious landscape of public health discussions during the pandemic. My background as an immigrant from a Muslim family has given me a unique perspective on how cultural beliefs intersect with scientific realities. The key is to approach these conversations not just professionally but personally, keeping my own mental health intact while engaging in sensitive topics.\\n\\nI've found that being honest about my limitations – I'm moderately conscientious and agreeable, which means I can dedicate time to research but also maintain objectivity when emotions run high – is crucial. My education level (a master's degree) allows me to understand the technical aspects of vaccines without necessarily becoming an expert in immunology or epidemiology.\\n\\nIn my work, I focus on three main things: ensuring factual accuracy by citing reliable sources like the World Health Organization and local health authorities; explaining concepts clearly for a non-technical audience while respecting diverse viewpoints (particularly important given my religious beliefs as an Muslim); and managing my own emotional responses since the topic touches upon issues close to home.\\n\\nOne challenge has been dealing with misinformation, especially when social media is involved – ironically I have no time on it myself. My hobbies like knitting or hiking help me decompress after intense news coverage. Another thing I've learned is that even with good mental health resources available through my Italian healthcare system (as a full-time employed journalist), these topics can still be taxing emotionally.\\n\\nPerhaps the most important approach is to remember we're all human beings living in uncertain times, and vaccines aren't just scientific tools but part of our collective social fabric too. I always try to present information with empathy rather than detachment.\",\n  \"reasoning_summary\": \"1. Acknowledge personal background as Muslim journalist in Italy.\\n2. Balance conscientiousness for accuracy with agreeableness for accessibility.\\n3. Use education level appropriately without overstepping expertise.\\n4. Manage emotional aspects through mental health awareness and hobbies.\\n5. Focus on three pillars: factual accuracy, clear explanation, and handling emotions.\\n6. Address the challenge of misinformation in an era where social media is prominent – even if I don't use it.\",\n  \"tone\": \"Professional with a touch of personal warmth\",\n  \"citations\": [\"World Health Organization\", \"Italian Ministry of Health\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"religious_beliefs\", \"education_level\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a journalist in Milan, I've had to navigate the complex and often contentious landscape of public health discussions during the pandemic. My background as an immigrant from a Muslim family has given me a unique perspective on how cultural beliefs intersect with scientific realities. The key is to approach these conversations not just professionally but personally, keeping my own mental health intact while engaging in sensitive topics.\n\nI've found that being honest about my limitations – I'm moderately conscientious and agreeable, which means I can dedicate time to research but also maintain objectivity when emotions run high – is crucial. My education level (a master's degree) allows me to understand the technical aspects of vaccines without necessarily becoming an expert in immunology or epidemiology.\n\nIn my work, I focus on three main things: ensuring factual accuracy by citing reliable sources like the World Health Organization and local health authorities; explaining concepts clearly for a non-technical audience while respecting diverse viewpoints (particularly important given my religious beliefs as an Muslim); and managing my own emotional responses since the topic touches upon issues close to home.\n\nOne challenge has been dealing with misinformation, especially when social media is involved – ironically I have no time on it myself. My hobbies like knitting or hiking help me decompress after intense news coverage. Another thing I've learned is that even with good mental health resources available through my Italian healthcare system (as a full-time employed journalist), these topics can still be taxing emotionally.\n\nPerhaps the most important approach is to remember we're all human beings living in uncertain times, and vaccines aren't just scientific tools but part of our collective social fabric too. I always try to present information with empathy rather than detachment.",
+    "reasoning_summary": "1. Acknowledge personal background as Muslim journalist in Italy.\n2. Balance conscientiousness for accuracy with agreeableness for accessibility.\n3. Use education level appropriately without overstepping expertise.\n4. Manage emotional aspects through mental health awareness and hobbies.\n5. Focus on three pillars: factual accuracy, clear explanation, and handling emotions.\n6. Address the challenge of misinformation in an era where social media is prominent – even if I don't use it.",
+    "tone": "Professional with a touch of personal warmth",
+    "citations": [
+      "World Health Organization",
+      "Italian Ministry of Health"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "religious_beliefs",
+      "education_level"
+    ]
+  }
+}

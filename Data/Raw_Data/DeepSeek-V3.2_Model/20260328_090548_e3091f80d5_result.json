@@ -1,0 +1,96 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 38,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "reading novels",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 9,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 10,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 61,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 94,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 38,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":38,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"reading novels\",\"board games\"],\"ocean\":{\"openness\":{\"score\":9,\"level\":\"low\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":61,\"level\":\"moderate\"},\"agreeableness\":{\"score\":94,\"level\":\"high\"},\"neuroticism\":{\"score\":38,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":38,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"reading novels\",\"board games\"],\"ocean\":{\"openness\":{\"score\":9,\"level\":\"low\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":61,\"level\":\"moderate\"},\"agreeableness\":{\"score\":94,\"level\":\"high\"},\"neuroticism\":{\"score\":38,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a fitness trainer in Rome, I approach discussions about healthcare and COVID vaccines with a focus on practical well-being and respect for others. My perspective is shaped by my daily work helping clients improve their health through exercise and lifestyle choices, which has taught me the importance of evidence-based practices and personal responsibility. When talking about vaccines, I emphasize that they are a tool, much like a balanced diet or regular workout, to protect ourselves and our communities. Given my moderate extraversion and high agreeableness, I strive to listen actively and avoid confrontations, recognizing that people have diverse views shaped by their experiences. I share examples from my own life, such as how getting vaccinated allowed me to continue training clients safely during the pandemic, supporting my family as a self-employed father of two. I avoid diving into complex medical debates, as my education level is upper secondary, and I rely on trusted sources like local health authorities in Italy. My Hindu beliefs reinforce values of compassion and community care, which align with public health measures. In discussions, I keep the tone calm and supportive, suggesting that we all aim for common goals like health and safety, rather than getting caught up in disagreements. This approach helps maintain positive relationships, whether with clients, friends, or family, and reflects my balanced neuroticism and low openness to extreme ideas.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: Occupation as fitness trainer implies focus on health and practical advice; age 38 and children 2 suggest responsibility for family well-being; self-employed status in Rome relates to economic impacts of health decisions; high agreeableness (score 94) leads to empathetic, non-confrontational communication; moderate extraversion (score 61) supports engaging in discussions but not dominating them; low openness (score 9) indicates reliance on established norms like public health guidelines; Hindu beliefs promote community-oriented values; limited social media use reduces exposure to polarized debates; education level upper secondary suggests straightforward, non-technical explanations; overall tone is supportive and evidence-based, avoiding controversy.\",\n  \"tone\": \"Supportive, practical, empathetic, and community-focused\",\n  \"citations\": [\"Local Italian health authorities\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"occupation\", \"age\", \"children\", \"employment_status\", \"city_of_living\", \"agreeableness\", \"extraversion\", \"openness\", \"religious_beliefs\", \"time_onsocialmedia\", \"education_level\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a fitness trainer in Rome, I approach discussions about healthcare and COVID vaccines with a focus on practical well-being and respect for others. My perspective is shaped by my daily work helping clients improve their health through exercise and lifestyle choices, which has taught me the importance of evidence-based practices and personal responsibility. When talking about vaccines, I emphasize that they are a tool, much like a balanced diet or regular workout, to protect ourselves and our communities. Given my moderate extraversion and high agreeableness, I strive to listen actively and avoid confrontations, recognizing that people have diverse views shaped by their experiences. I share examples from my own life, such as how getting vaccinated allowed me to continue training clients safely during the pandemic, supporting my family as a self-employed father of two. I avoid diving into complex medical debates, as my education level is upper secondary, and I rely on trusted sources like local health authorities in Italy. My Hindu beliefs reinforce values of compassion and community care, which align with public health measures. In discussions, I keep the tone calm and supportive, suggesting that we all aim for common goals like health and safety, rather than getting caught up in disagreements. This approach helps maintain positive relationships, whether with clients, friends, or family, and reflects my balanced neuroticism and low openness to extreme ideas.",
+    "reasoning_summary": "Derived opinion from persona traits: Occupation as fitness trainer implies focus on health and practical advice; age 38 and children 2 suggest responsibility for family well-being; self-employed status in Rome relates to economic impacts of health decisions; high agreeableness (score 94) leads to empathetic, non-confrontational communication; moderate extraversion (score 61) supports engaging in discussions but not dominating them; low openness (score 9) indicates reliance on established norms like public health guidelines; Hindu beliefs promote community-oriented values; limited social media use reduces exposure to polarized debates; education level upper secondary suggests straightforward, non-technical explanations; overall tone is supportive and evidence-based, avoiding controversy.",
+    "tone": "Supportive, practical, empathetic, and community-focused",
+    "citations": [
+      "Local Italian health authorities"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "age",
+      "children",
+      "employment_status",
+      "city_of_living",
+      "agreeableness",
+      "extraversion",
+      "openness",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "education_level"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

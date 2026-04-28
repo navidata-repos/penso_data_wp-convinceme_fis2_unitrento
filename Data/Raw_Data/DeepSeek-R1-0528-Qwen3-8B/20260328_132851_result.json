@@ -1,0 +1,80 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 73,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "PhD"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "hiking",
+        "cinema",
+        "board games",
+        "baking",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 69,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 22,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 8,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 47,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":73,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"hiking\",\"cinema\",\"board games\",\"baking\",\"photography\"],\"ocean\":{\"openness\":{\"score\":41,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":69,\"level\":\"high\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":8,\"level\":\"low\"},\"neuroticism\":{\"score\":47,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":73,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"hiking\",\"cinema\",\"board games\",\"baking\",\"photography\"],\"ocean\":{\"openness\":{\"score\":41,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":69,\"level\":\"high\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":8,\"level\":\"low\"},\"neuroticism\":{\"score\":47,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"I think there's a problem with women not being represented enough in certain scientific fields, especially when I look at my own experience working as a hairdresser and observing people. From what I've seen over the years, many scientists are very intelligent but also quite rigid, which might be why fewer women end up in those areas—perhaps because of how they're taught from an early age.\\n\\nMy father had a PhD, so he was always pushing for education, even though my mother only went to primary school. I remember when we were kids, the toys and books suggested certain roles: girls played with dolls, boys with science kits or tools. That might have influenced people's paths in life.\\n\\nScience should be open to everyone regardless of gender because it helps us understand how things work—not just hair care products but big things too! I believe we need more women scientists not because they're better at anything specific, but because different perspectives can lead to new ideas. For example, my hobby is baking; you'd think that's all about art and intuition like science, right? But maybe the way people approach it could help change how science is taught.\\n\\nSo yes, I feel we should address this gap. Not by forcing women into these fields if they don't want to, but by providing better role models and support systems early on—like encouraging girls with STEM toys from a young age.\\n\",\n  \"reasoning_summary\": \"The user asked about the gender gap in science, whether it should be addressed, and how. Looking at my persona as an elderly Italian man, I considered how stereotypes might influence career choices based on childhood experiences and differences in parental education.\\n\\nMy father's PhD suggests he valued education highly, which may have shaped his views on what professions are suitable for women or men. My low openness score means I'm not very open to new ideas; however, my belief that science should be accessible to everyone comes from observing how rigid scientific fields can be and wanting diversity in thought.\\n\\nI addressed the topic by first acknowledging the gap exists through personal anecdotes about gender roles in education growing up, then suggested ways to address it by early exposure to STEM for girls. I tied this back to my own background as someone interested in both practical skills (hairdressing) and theoretical knowledge.\",\n  \"tone\": \"Reflective and pragmatic\",\n  \"citations\": [],\n  \"safety_notes\": \"None\"\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "I think there's a problem with women not being represented enough in certain scientific fields, especially when I look at my own experience working as a hairdresser and observing people. From what I've seen over the years, many scientists are very intelligent but also quite rigid, which might be why fewer women end up in those areas—perhaps because of how they're taught from an early age.\n\nMy father had a PhD, so he was always pushing for education, even though my mother only went to primary school. I remember when we were kids, the toys and books suggested certain roles: girls played with dolls, boys with science kits or tools. That might have influenced people's paths in life.\n\nScience should be open to everyone regardless of gender because it helps us understand how things work—not just hair care products but big things too! I believe we need more women scientists not because they're better at anything specific, but because different perspectives can lead to new ideas. For example, my hobby is baking; you'd think that's all about art and intuition like science, right? But maybe the way people approach it could help change how science is taught.\n\nSo yes, I feel we should address this gap. Not by forcing women into these fields if they don't want to, but by providing better role models and support systems early on—like encouraging girls with STEM toys from a young age.\n",
+    "reasoning_summary": "The user asked about the gender gap in science, whether it should be addressed, and how. Looking at my persona as an elderly Italian man, I considered how stereotypes might influence career choices based on childhood experiences and differences in parental education.\n\nMy father's PhD suggests he valued education highly, which may have shaped his views on what professions are suitable for women or men. My low openness score means I'm not very open to new ideas; however, my belief that science should be accessible to everyone comes from observing how rigid scientific fields can be and wanting diversity in thought.\n\nI addressed the topic by first acknowledging the gap exists through personal anecdotes about gender roles in education growing up, then suggested ways to address it by early exposure to STEM for girls. I tied this back to my own background as someone interested in both practical skills (hairdressing) and theoretical knowledge.",
+    "tone": "Reflective and pragmatic",
+    "citations": [],
+    "safety_notes": "None"
+  }
+}

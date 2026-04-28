@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 32,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "accountant",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cycling",
+        "rock climbing",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 26,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 16,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":32,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"accountant\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cycling\",\"rock climbing\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":58,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":26,\"level\":\"low\"},\"extraversion\":{\"score\":38,\"level\":\"moderate\"},\"agreeableness\":{\"score\":38,\"level\":\"moderate\"},\"neuroticism\":{\"score\":16,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":32,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"accountant\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cycling\",\"rock climbing\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":58,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":26,\"level\":\"low\"},\"extraversion\":{\"score\":38,\"level\":\"moderate\"},\"agreeableness\":{\"score\":38,\"level\":\"moderate\"},\"neuroticism\":{\"score\":16,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"I've been thinking about this a lot lately, especially since I run my own accounting business from home in Bologna. You know, as an accountant who's self-employed but still uses social media for networking and staying informed, I find myself constantly tripping over misinformation or outright fake stuff online.\\n\\nMy anxiety makes me extra sensitive to inconsistencies – like when someone posts about tax reforms that don't match what I've read in official publications. But being moderately conscientious doesn't mean I'm rigid; it actually helps me analyze situations step by step, even though my low neuroticism keeps the panic at bay.\\n\\nOne approach is media literacy training tailored for adults but presented in an engaging way. My city's vibrant community events might inspire how online content could be vetted – think of combining peer reviews with public participation models to tackle fake news.\\n\\nAnother idea involves leveraging technology: AI algorithms can help filter out obvious disinformation, just like accounting software catches errors before they become big problems for my clients' books. But I'm not too technical since my openness score is moderate; however, understanding the basics helps me communicate better with developers if needed.\\n\\nI also believe in fostering critical thinking among users through interactive workshops or online modules, similar to how we teach financial literacy here in Italy.\",\n  \"reasoning_summary\": \"1. Based on personal experience as an accountant and self-employed individual dealing with real-world consequences of misinformation.\\n2. Considering the moderate openness trait allows for balanced perspectives that aren't overly technical nor dismissive.\\n3. Anxiety helps in maintaining a calm, analytical approach without emotional escalation.\\n4. Extraversion at moderate level supports networking but not to an overwhelming degree given low agreeableness.\",\n  \"tone\": \"Calm and measured with hints of personal engagement\",\n  \"citations\": [\"Various online sources on digital literacy\"],\n  \"used_persona_fields\":[\"age\", \"gender\", \"sexual_orientation\", \"occupation\", \"employment_status\", \"education_level\", \"current_marital_status\", \"hobbies\", \"ocean.neuroticism\", \"ocean.openness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I've been thinking about this a lot lately, especially since I run my own accounting business from home in Bologna. You know, as an accountant who's self-employed but still uses social media for networking and staying informed, I find myself constantly tripping over misinformation or outright fake stuff online.\n\nMy anxiety makes me extra sensitive to inconsistencies – like when someone posts about tax reforms that don't match what I've read in official publications. But being moderately conscientious doesn't mean I'm rigid; it actually helps me analyze situations step by step, even though my low neuroticism keeps the panic at bay.\n\nOne approach is media literacy training tailored for adults but presented in an engaging way. My city's vibrant community events might inspire how online content could be vetted – think of combining peer reviews with public participation models to tackle fake news.\n\nAnother idea involves leveraging technology: AI algorithms can help filter out obvious disinformation, just like accounting software catches errors before they become big problems for my clients' books. But I'm not too technical since my openness score is moderate; however, understanding the basics helps me communicate better with developers if needed.\n\nI also believe in fostering critical thinking among users through interactive workshops or online modules, similar to how we teach financial literacy here in Italy.",
+    "reasoning_summary": "1. Based on personal experience as an accountant and self-employed individual dealing with real-world consequences of misinformation.\n2. Considering the moderate openness trait allows for balanced perspectives that aren't overly technical nor dismissive.\n3. Anxiety helps in maintaining a calm, analytical approach without emotional escalation.\n4. Extraversion at moderate level supports networking but not to an overwhelming degree given low agreeableness.",
+    "tone": "Calm and measured with hints of personal engagement",
+    "citations": [
+      "Various online sources on digital literacy"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "employment_status",
+      "education_level",
+      "current_marital_status",
+      "hobbies",
+      "ocean.neuroticism",
+      "ocean.openness"
+    ]
+  }
+}

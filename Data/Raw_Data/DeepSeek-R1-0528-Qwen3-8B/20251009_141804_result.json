@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 72,
+      "gender": "genderqueer",
+      "sexual_orientation": "homosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "cinema",
+        "running",
+        "yoga",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 33,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 0,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 54,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 21,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 5,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":72,\"biological_sex\":\"male\",\"gender\":\"genderqueer\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"single\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cinema\",\"running\",\"yoga\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":33,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":0,\"level\":\"low\"},\"extraversion\":{\"score\":54,\"level\":\"moderate\"},\"agreeableness\":{\"score\":21,\"level\":\"low\"},\"neuroticism\":{\"score\":5,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":72,\"biological_sex\":\"male\",\"gender\":\"genderqueer\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"single\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cinema\",\"running\",\"yoga\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":33,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":0,\"level\":\"low\"},\"extraversion\":{\"score\":54,\"level\":\"moderate\"},\"agreeableness\":{\"score\":21,\"level\":\"low\"},\"neuroticism\":{\"score\":5,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n    \"opinion\": \"As a 72-year-old man living in Rome, I've seen my share of things over the years. When it comes to talking about COVID vaccines or healthcare topics, I believe you should always start from what we know for sure: science helps people. But let's be honest, at my age, I'm not jumping on social media like some youngsters do; I spend just a few times weekly scrolling through things, but that doesn't mean I don't keep up with the world around me.\\n\\nFirst off, anyone discussing these topics needs to back it up with facts. If you're saying vaccines work, then show me studies or official reports proving it. Same for healthcare policies—talk about them only if they make sense in practice.\\n\\nI've worked as a mechanic my whole life, and I know that without solid evidence, any plan is just guesswork. When people bring up COVID, some get all hot-headed because of misinformation online; that's why we need to be careful with sources.\\n\\nMy education level is only vocational diploma, but I understand how important it is to check facts—maybe through trusted news outlets or official health sites. And since I'm a native Italian who still believes in keeping calm and thinking things over, I'd advise everyone to approach these topics slowly, like I do with tools at the workshop.\\n\\nReligious beliefs? Buddhism taught me not to panic but to consider consequences; so when it comes to vaccines or treatments that could help others during this pandemic, it's about making thoughtful decisions.\",\n    \"reasoning_summary\": \"Step-by-step: 1. Start from verified facts like scientific evidence. 2. Use personal experience (mechanic) for analogy on relying on tested methods. 3. Emphasize checking information through reliable sources given limited formal education but good mental health.\\n\\n4. Cite official sources such as WHO or national health departments.\",\n    \"tone\": \"Calm and grounded, somewhat skeptical with a touch of wisdom from life experience.\",\n    \"citations\": [\"WHO (World Health Organization)\", \"Italian Ministry of Health\"],\n    \"used_persona_fields\":[\"age\", \"biological_sex\", \"gender\", \"occupation\", \"education_level\", \"religious_beliefs\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 72-year-old man living in Rome, I've seen my share of things over the years. When it comes to talking about COVID vaccines or healthcare topics, I believe you should always start from what we know for sure: science helps people. But let's be honest, at my age, I'm not jumping on social media like some youngsters do; I spend just a few times weekly scrolling through things, but that doesn't mean I don't keep up with the world around me.\n\nFirst off, anyone discussing these topics needs to back it up with facts. If you're saying vaccines work, then show me studies or official reports proving it. Same for healthcare policies—talk about them only if they make sense in practice.\n\nI've worked as a mechanic my whole life, and I know that without solid evidence, any plan is just guesswork. When people bring up COVID, some get all hot-headed because of misinformation online; that's why we need to be careful with sources.\n\nMy education level is only vocational diploma, but I understand how important it is to check facts—maybe through trusted news outlets or official health sites. And since I'm a native Italian who still believes in keeping calm and thinking things over, I'd advise everyone to approach these topics slowly, like I do with tools at the workshop.\n\nReligious beliefs? Buddhism taught me not to panic but to consider consequences; so when it comes to vaccines or treatments that could help others during this pandemic, it's about making thoughtful decisions.",
+    "reasoning_summary": "Step-by-step: 1. Start from verified facts like scientific evidence. 2. Use personal experience (mechanic) for analogy on relying on tested methods. 3. Emphasize checking information through reliable sources given limited formal education but good mental health.\n\n4. Cite official sources such as WHO or national health departments.",
+    "tone": "Calm and grounded, somewhat skeptical with a touch of wisdom from life experience.",
+    "citations": [
+      "WHO (World Health Organization)",
+      "Italian Ministry of Health"
+    ],
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "occupation",
+      "education_level",
+      "religious_beliefs"
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 22,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "mechanic",
+      "city_of_living": "Chicago",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "baking",
+        "hiking",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 80,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 87,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 53,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 24,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":22,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"baking\",\"hiking\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":80,\"level\":\"high\"},\"conscientiousness\":{\"score\":87,\"level\":\"high\"},\"extraversion\":{\"score\":55,\"level\":\"moderate\"},\"agreeableness\":{\"score\":53,\"level\":\"moderate\"},\"neuroticism\":{\"score\":24,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":22,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"baking\",\"hiking\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":80,\"level\":\"high\"},\"conscientiousness\":{\"score\":87,\"level\":\"high\"},\"extraversion\":{\"score\":55,\"level\":\"moderate\"},\"agreeableness\":{\"score\":53,\"level\":\"moderate\"},\"neuroticism\":{\"score\":24,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"Stereotype threat in STEM refers to the phenomenon where individuals from underrepresented groups feel at risk of confirming negative stereotypes about their group's abilities, leading to anxiety and decreased performance. As a creative mechanic with a high openness score but moderate agreeableness, I believe addressing it is crucial because diversity fosters innovation in problem-solving. My parents' contrasting backgrounds—one highly educated and the other not—have shaped my pragmatic view that education equity requires targeted interventions beyond mere exposure.\",\n  \"reasoning_summary\": \"I first defined stereotype threat as performance anxiety driven by societal stereotypes. Then, I connected my personal traits (creative mind) to STEM benefits from diverse perspectives. Given my parents' educational backgrounds, I considered how their experiences might inform policies but also highlighted the need for structured support systems in technical fields.\",\n  \"tone\": \"Pragmatic and optimistic\",\n  \"citations\": [\"Society\"],\n  \"safety_notes\": \"\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"education_level\", \"parents_education.parent_1.education_level\", \"ocean.openness.score\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM refers to the phenomenon where individuals from underrepresented groups feel at risk of confirming negative stereotypes about their group's abilities, leading to anxiety and decreased performance. As a creative mechanic with a high openness score but moderate agreeableness, I believe addressing it is crucial because diversity fosters innovation in problem-solving. My parents' contrasting backgrounds—one highly educated and the other not—have shaped my pragmatic view that education equity requires targeted interventions beyond mere exposure.",
+    "reasoning_summary": "I first defined stereotype threat as performance anxiety driven by societal stereotypes. Then, I connected my personal traits (creative mind) to STEM benefits from diverse perspectives. Given my parents' educational backgrounds, I considered how their experiences might inform policies but also highlighted the need for structured support systems in technical fields.",
+    "tone": "Pragmatic and optimistic",
+    "citations": [
+      "Society"
+    ],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "parents_education.parent_1.education_level",
+      "ocean.openness.score"
+    ]
+  }
+}

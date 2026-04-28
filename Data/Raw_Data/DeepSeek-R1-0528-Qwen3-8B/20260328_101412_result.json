@@ -1,0 +1,83 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 28,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "cleaner",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "reading novels",
+        "baking",
+        "painting",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 95,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 83,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 11,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 83,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 18,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":28,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"baking\",\"painting\",\"running\"],\"ocean\":{\"openness\":{\"score\":95,\"level\":\"high\"},\"conscientiousness\":{\"score\":83,\"level\":\"high\"},\"extraversion\":{\"score\":11,\"level\":\"low\"},\"agreeableness\":{\"score\":83,\"level\":\"high\"},\"neuroticism\":{\"score\":18,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":28,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"reading novels\",\"baking\",\"painting\",\"running\"],\"ocean\":{\"openness\":{\"score\":95,\"level\":\"high\"},\"conscientiousness\":{\"score\":83,\"level\":\"high\"},\"extraversion\":{\"score\":11,\"level\":\"low\"},\"agreeableness\":{\"score\":83,\"level\":\"high\"},\"neuroticism\":{\"score\":18,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"Based on my background as a person who is highly conscientious, agreeable, and low in extraversion, I believe that managing discussions about something complex like healthcare can be challenging. Growing up with parents where one has only primary education while the other has a bachelor's degree might have given me a more limited perspective compared to others. However, my high openness score from the Big Five test suggests I'm always eager to learn new things even if they're complicated.\\n\\nWhen dealing with COVID vaccine topics online or in person - something I do regularly through social media as part of my work - I tend to approach it cautiously because low extraversion means big crowds discussing sensitive matters can be overwhelming. But being agreeable helps me stay polite even when faced with misinformation from people who might not have the best intentions.\\n\\nI think the key is to listen first, then share what you know. As a cleaner working full-time in Bologna, I don't get specialized training on vaccines but my normal psychological functioning allows for straightforward conversations without unnecessary drama.\",\n  \"reasoning_summary\": \"My high conscientiousness makes me detail-oriented and careful with information sharing; agreeableness helps maintain respectful dialogue even with opposing views; low extraversion requires me to take breaks after intense discussions. Despite only primary school education, I've developed ways to engage through listening first and then explaining clearly based on what I understand.\",\n  \"tone\": \"Calm, informative\",\n  \"citations\": [],\n  \"safety_notes\": \"None applicable here\",\n  \"used_persona_fields\": [\"education_level\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "Based on my background as a person who is highly conscientious, agreeable, and low in extraversion, I believe that managing discussions about something complex like healthcare can be challenging. Growing up with parents where one has only primary education while the other has a bachelor's degree might have given me a more limited perspective compared to others. However, my high openness score from the Big Five test suggests I'm always eager to learn new things even if they're complicated.\n\nWhen dealing with COVID vaccine topics online or in person - something I do regularly through social media as part of my work - I tend to approach it cautiously because low extraversion means big crowds discussing sensitive matters can be overwhelming. But being agreeable helps me stay polite even when faced with misinformation from people who might not have the best intentions.\n\nI think the key is to listen first, then share what you know. As a cleaner working full-time in Bologna, I don't get specialized training on vaccines but my normal psychological functioning allows for straightforward conversations without unnecessary drama.",
+    "reasoning_summary": "My high conscientiousness makes me detail-oriented and careful with information sharing; agreeableness helps maintain respectful dialogue even with opposing views; low extraversion requires me to take breaks after intense discussions. Despite only primary school education, I've developed ways to engage through listening first and then explaining clearly based on what I understand.",
+    "tone": "Calm, informative",
+    "citations": [],
+    "safety_notes": "None applicable here",
+    "used_persona_fields": [
+      "education_level",
+      "ocean"
+    ]
+  }
+}

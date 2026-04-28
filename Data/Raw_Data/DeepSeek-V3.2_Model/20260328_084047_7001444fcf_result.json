@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 50,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cycling",
+        "knitting",
+        "board games",
+        "travel",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 34,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 72,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 52,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 33,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":50,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cycling\",\"knitting\",\"board games\",\"travel\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":34,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":72,\"level\":\"high\"},\"extraversion\":{\"score\":42,\"level\":\"moderate\"},\"agreeableness\":{\"score\":52,\"level\":\"moderate\"},\"neuroticism\":{\"score\":33,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":50,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cycling\",\"knitting\",\"board games\",\"travel\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":34,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":72,\"level\":\"high\"},\"extraversion\":{\"score\":42,\"level\":\"moderate\"},\"agreeableness\":{\"score\":52,\"level\":\"moderate\"},\"neuroticism\":{\"score\":33,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a 50-year-old barista in Los Angeles, I've seen a lot of life from behind the counter, serving coffee to all kinds of people, including scientists and students. The gender gap in science, from what I gather from customers and the little I see online during my hour of social media, is that women are often underrepresented in fields like engineering or physics, and they might face biases or fewer opportunities compared to men. I think we should address it because it's about fairness—everyone deserves a shot based on their skills, not their gender. My Christian beliefs teach me to treat others with kindness and equality, and as a single dad with one child, I want my kid to grow up in a world where they're judged by their character, not stereotypes. From my own experience, working hard as a barista with a lower secondary education, I know how tough it can be to get ahead, and I wouldn't want anyone held back unfairly. To fix this, we need to start early by encouraging girls in school to explore science, maybe through hands-on activities or mentors. In workplaces, companies should ensure equal pay and support for women, like flexible hours for parents. As someone who enjoys hobbies like cycling and cooking, I see how diverse interests can lead to new ideas, so promoting inclusivity in science could spark more innovation. It's not about pushing anyone out but making room for everyone.\",\"reasoning_summary\":\"Derived opinion from persona: age 50 suggests life experience, occupation as barista implies practical, everyday perspective; education level lower secondary indicates limited formal knowledge but reliance on observations; religious beliefs Christianity and psychological feature depressed influence a compassionate, fairness-focused view; hobbies like travel and cooking suggest openness to diverse ideas; OCEAN traits: high conscientiousness (score 72) leads to structured, responsible approach, moderate openness (score 34) allows for consideration of change but not radical; used persona fields: age, occupation, education_level, religious_beliefs, psychological_feature, hobbies, ocean. Opinion crafted as continuous prose, avoiding bullet points, aligning tone with persona's background—conversational, grounded, and empathetic, focusing on fairness and practical solutions.\",\"tone\":\"conversational, grounded, empathetic, practical\",\"citations\":[\"none\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"occupation\",\"education_level\",\"religious_beliefs\",\"psychological_feature\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a 50-year-old barista in Los Angeles, I've seen a lot of life from behind the counter, serving coffee to all kinds of people, including scientists and students. The gender gap in science, from what I gather from customers and the little I see online during my hour of social media, is that women are often underrepresented in fields like engineering or physics, and they might face biases or fewer opportunities compared to men. I think we should address it because it's about fairness—everyone deserves a shot based on their skills, not their gender. My Christian beliefs teach me to treat others with kindness and equality, and as a single dad with one child, I want my kid to grow up in a world where they're judged by their character, not stereotypes. From my own experience, working hard as a barista with a lower secondary education, I know how tough it can be to get ahead, and I wouldn't want anyone held back unfairly. To fix this, we need to start early by encouraging girls in school to explore science, maybe through hands-on activities or mentors. In workplaces, companies should ensure equal pay and support for women, like flexible hours for parents. As someone who enjoys hobbies like cycling and cooking, I see how diverse interests can lead to new ideas, so promoting inclusivity in science could spark more innovation. It's not about pushing anyone out but making room for everyone.",
+    "reasoning_summary": "Derived opinion from persona: age 50 suggests life experience, occupation as barista implies practical, everyday perspective; education level lower secondary indicates limited formal knowledge but reliance on observations; religious beliefs Christianity and psychological feature depressed influence a compassionate, fairness-focused view; hobbies like travel and cooking suggest openness to diverse ideas; OCEAN traits: high conscientiousness (score 72) leads to structured, responsible approach, moderate openness (score 34) allows for consideration of change but not radical; used persona fields: age, occupation, education_level, religious_beliefs, psychological_feature, hobbies, ocean. Opinion crafted as continuous prose, avoiding bullet points, aligning tone with persona's background—conversational, grounded, and empathetic, focusing on fairness and practical solutions.",
+    "tone": "conversational, grounded, empathetic, practical",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "education_level",
+      "religious_beliefs",
+      "psychological_feature",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

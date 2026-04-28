@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 30,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "software developer",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "videogames",
+        "volunteering",
+        "cycling",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 19,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 22,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 13,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 31,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 65,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"videogames\",\"volunteering\",\"cycling\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":19,\"level\":\"low\"},\"conscientiousness\":{\"score\":22,\"level\":\"low\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":31,\"level\":\"low\"},\"neuroticism\":{\"score\":65,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"videogames\",\"volunteering\",\"cycling\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":19,\"level\":\"low\"},\"conscientiousness\":{\"score\":22,\"level\":\"low\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":31,\"level\":\"low\"},\"neuroticism\":{\"score\":65,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As a software developer in my late twenties living in Washington DC, I've found myself increasingly frustrated by the sheer volume of fake content flooding platforms like Twitter and Facebook. It's not just misleading posts or deepfakes; even everyday users falling for scams make it feel chaotic at times. My creativity keeps me interested in exploring tech innovations, but seeing people get duped feels wasteful when they could be engaging with meaningful projects.\\n\\nI think the key lies in empowering individuals without overstepping personal boundaries—my own one-hour daily limit means I focus on verifying sources quickly rather than spending hours vetting everything. This approach aligns with my moderate neuroticism; I'm cautious but not paralyzed by it, which suits me since my father's vocational diploma background taught practical skills over theoretical debate.\\n\\nPlatforms should do more to flag inconsistencies algorithmically—something I'd love to implement given my coding knowledge—but that might be too technical for now. Instead, I rely on community moderation tools and follow reliable accounts like news outlets or experts in AI ethics.\",\n  \"reasoning_summary\": \"I started by analyzing how my personal traits as a software developer shape my perspective. Then I considered the cultural context of being a native-born American with a moderate openness to experience living here—places like DC offer diverse viewpoints.\\n\\nNext, I mapped those traits against common strategies for dealing with fake content: verifying sources quickly (aligned with my low conscientiousness and agreeableness scores meaning I don't overthink everything), using platform tools effectively rather than deep analysis.\\n\\nMy moderate neuroticism influences me to be careful but not anxious about misinformation affecting my daily life. Also, being single without children allows flexibility in managing online time stressfully.\",\n  \"tone\": \"Observational with a hint of mild exasperation\",\n  \"citations\": [\"Twitter\", \"Facebook\"],\n  \"safety_notes\": \"None needed as the topic is neutral and focuses on personal strategies for dealing with fake content. Platforms are mentioned by name only in context of examples, not sources.\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"time_onsocialmedia\", \"hobbies\", \"ocean.openness\", \"ocean.conscientely\", \"ocean.extraversion\", \"ocean.agreeableness\", \"ocean.neuroticism\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a software developer in my late twenties living in Washington DC, I've found myself increasingly frustrated by the sheer volume of fake content flooding platforms like Twitter and Facebook. It's not just misleading posts or deepfakes; even everyday users falling for scams make it feel chaotic at times. My creativity keeps me interested in exploring tech innovations, but seeing people get duped feels wasteful when they could be engaging with meaningful projects.\n\nI think the key lies in empowering individuals without overstepping personal boundaries—my own one-hour daily limit means I focus on verifying sources quickly rather than spending hours vetting everything. This approach aligns with my moderate neuroticism; I'm cautious but not paralyzed by it, which suits me since my father's vocational diploma background taught practical skills over theoretical debate.\n\nPlatforms should do more to flag inconsistencies algorithmically—something I'd love to implement given my coding knowledge—but that might be too technical for now. Instead, I rely on community moderation tools and follow reliable accounts like news outlets or experts in AI ethics.",
+    "reasoning_summary": "I started by analyzing how my personal traits as a software developer shape my perspective. Then I considered the cultural context of being a native-born American with a moderate openness to experience living here—places like DC offer diverse viewpoints.\n\nNext, I mapped those traits against common strategies for dealing with fake content: verifying sources quickly (aligned with my low conscientiousness and agreeableness scores meaning I don't overthink everything), using platform tools effectively rather than deep analysis.\n\nMy moderate neuroticism influences me to be careful but not anxious about misinformation affecting my daily life. Also, being single without children allows flexibility in managing online time stressfully.",
+    "tone": "Observational with a hint of mild exasperation",
+    "citations": [
+      "Twitter",
+      "Facebook"
+    ],
+    "safety_notes": "None needed as the topic is neutral and focuses on personal strategies for dealing with fake content. Platforms are mentioned by name only in context of examples, not sources.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientely",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism"
+    ]
+  }
+}

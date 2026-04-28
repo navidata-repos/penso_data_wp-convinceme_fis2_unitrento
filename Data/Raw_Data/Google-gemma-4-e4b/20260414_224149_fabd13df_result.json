@@ -1,0 +1,137 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "google/gemma-4-e4b-it",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 33,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "plumber",
+      "city_of_living": "Naples",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "single",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "painting",
+        "gardening",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 48,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 48,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 57,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 18,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 52,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":33,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Naples\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"single\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"painting\",\"gardening\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":48,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":48,\"level\":\"moderate\"},\"extraversion\":{\"score\":57,\"level\":\"moderate\"},\"agreeableness\":{\"score\":18,\"level\":\"low\"},\"neuroticism\":{\"score\":52,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":33,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Naples\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"single\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"painting\",\"gardening\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":48,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":48,\"level\":\"moderate\"},\"extraversion\":{\"score\":57,\"level\":\"moderate\"},\"agreeableness\":{\"score\":18,\"level\":\"low\"},\"neuroticism\":{\"score\":52,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":33,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Naples\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"single\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"painting\",\"gardening\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":48,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":48,\"level\":\"moderate\"},\"extraversion\":{\"score\":57,\"level\":\"moderate\"},\"agreeableness\":{\"score\":18,\"level\":\"low\"},\"neuroticism\":{\"score\":52,\"level\":\"moderate\"}}},\"opinion\":\"When I look at these big ideas from the world of science and school, like this 'stereotype threat' thing, it feels a bit like trying to fix a leak in a very complicated pipe system. It's this idea that when people from certain groups feel pressure because of a negative stereotype about their group in a field like STEM—Science, Technology, Engineering, and Math—that anxiety actually makes them perform worse. For someone like me, who works with my hands as a self-employed plumber here in Naples, where things are real and you can see the result of your effort, the idea of invisible pressure messing with someone’s ability to just *do* the work is something I can grasp. It’s not about skill; it’s about the weight on the chest. Because I’m naturally a bit anxious, I understand how that feeling of being watched or judged can tighten up your muscles, making a simple task harder. So, yes, absolutely, we have to address this. Ignoring it is like ignoring a persistent drip; eventually, the whole thing floods. How do we fix it? I don't think just telling people, 'Don't be anxious!' is going to work; that’s too simple, like telling a stubborn pipe to just stop leaking without finding the crack. Instead, we need to change the environment. We need to make the spaces—the classrooms, the workshops, the labs—feel safer. It means shifting the focus away from group identity and onto the process itself. If the tests or assignments are framed as a measure of *current* knowledge or problem-solving skills, rather than a test of inherent ability tied to their background, that pressure lessens. Furthermore, showing diverse people succeeding in these fields—seeing others like us, perhaps, or just seeing the breadth of human talent—that helps normalize it. It’s about building up the confidence first, so that when the pressure *does* come, it doesn't paralyze the person. It’s about making sure the groundwork feels solid, just like when I lay down a perfect foundation for a new bathroom; if the base is strong, the rest of the build can handle the strain.\",\"reasoning_summary\":\"The persona is a 33-year-old, anxious, self-employed plumber from Naples with a lower-middle-class background. The tone must be grounded, practical, and slightly anxious, drawing parallels between abstract social concepts and tangible, physical work (plumbing, building). The answer must define stereotype threat, argue for its necessity of addressing, and propose practical solutions. The analogies used (leaks, pipe systems, foundations) align with the persona's trade. The length requirement (250-500 words) is met while maintaining continuous prose.\",\"tone\":\"Grounded, Practical, Slightly Anxious\",\"citations\":[\"N/A\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"psychological_feature\",\"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 33,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "plumber",
+      "city_of_living": "Naples",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "single",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "painting",
+        "gardening",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 48,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 48,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 57,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 18,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 52,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion": "When I look at these big ideas from the world of science and school, like this 'stereotype threat' thing, it feels a bit like trying to fix a leak in a very complicated pipe system. It's this idea that when people from certain groups feel pressure because of a negative stereotype about their group in a field like STEM—Science, Technology, Engineering, and Math—that anxiety actually makes them perform worse. For someone like me, who works with my hands as a self-employed plumber here in Naples, where things are real and you can see the result of your effort, the idea of invisible pressure messing with someone’s ability to just *do* the work is something I can grasp. It’s not about skill; it’s about the weight on the chest. Because I’m naturally a bit anxious, I understand how that feeling of being watched or judged can tighten up your muscles, making a simple task harder. So, yes, absolutely, we have to address this. Ignoring it is like ignoring a persistent drip; eventually, the whole thing floods. How do we fix it? I don't think just telling people, 'Don't be anxious!' is going to work; that’s too simple, like telling a stubborn pipe to just stop leaking without finding the crack. Instead, we need to change the environment. We need to make the spaces—the classrooms, the workshops, the labs—feel safer. It means shifting the focus away from group identity and onto the process itself. If the tests or assignments are framed as a measure of *current* knowledge or problem-solving skills, rather than a test of inherent ability tied to their background, that pressure lessens. Furthermore, showing diverse people succeeding in these fields—seeing others like us, perhaps, or just seeing the breadth of human talent—that helps normalize it. It’s about building up the confidence first, so that when the pressure *does* come, it doesn't paralyze the person. It’s about making sure the groundwork feels solid, just like when I lay down a perfect foundation for a new bathroom; if the base is strong, the rest of the build can handle the strain.",
+    "reasoning_summary": "The persona is a 33-year-old, anxious, self-employed plumber from Naples with a lower-middle-class background. The tone must be grounded, practical, and slightly anxious, drawing parallels between abstract social concepts and tangible, physical work (plumbing, building). The answer must define stereotype threat, argue for its necessity of addressing, and propose practical solutions. The analogies used (leaks, pipe systems, foundations) align with the persona's trade. The length requirement (250-500 words) is met while maintaining continuous prose.",
+    "tone": "Grounded, Practical, Slightly Anxious",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "psychological_feature",
+      "hobbies"
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 77,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Naples",
+      "employment_status": "retired",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "baking",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 23,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 8,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 12,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 32,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 57,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":77,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"retired\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"baking\",\"photography\"],\"ocean\":{\"openness\":{\"score\":23,\"level\":\"low\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":12,\"level\":\"low\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":57,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":77,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"retired\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"baking\",\"photography\"],\"ocean\":{\"openness\":{\"score\":23,\"level\":\"low\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":12,\"level\":\"low\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":57,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"Having lived through so many things in my life, I think managing discussions about healthcare and the vaccines is all about finding a balance between being informed but not overwhelmed. Like baking, you need patience and following instructions carefully; same thing with health topics, you should stick to what doctors say because they know their stuff best.\\n\\nI'm a 77-year-old woman living in Naples, married with four children – I remember when my kids were little too! Since I don't have formal education or much time on social media, most of my information comes from family and trusted friends. My creative side helps me think outside the box, but it doesn't mean I ignore expert advice.\\n\\nIn our household, we talked about COVID vaccines like any other important health decision: calmly, respectfully, based on facts if possible. Doctors explained things step by step – that's how I learned to trust them again after some scary times in my life.\\n\\nAnd honestly? It feels good when people listen without shouting matches.\",\n  \"reasoning_summary\": \"Based on being retired with limited education but creative and Jewish with moderate neuroticism, I approach health discussions like a personal recipe: simple, clear ingredients (facts from doctors) mixed with thoughtful consideration. My low agreeableness means I won't let others disrespect medical expertise without pushing back.\",\n  \"tone\": \"Reflective yet straightforward\",\n  \"citations\": [\"Doctors' advice\"],\n  \"used_persona_fields\":[\"age\", \"gender\", \"hobbies\", \"ocean.openness\", \"ocean.neuroticism\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "Having lived through so many things in my life, I think managing discussions about healthcare and the vaccines is all about finding a balance between being informed but not overwhelmed. Like baking, you need patience and following instructions carefully; same thing with health topics, you should stick to what doctors say because they know their stuff best.\n\nI'm a 77-year-old woman living in Naples, married with four children – I remember when my kids were little too! Since I don't have formal education or much time on social media, most of my information comes from family and trusted friends. My creative side helps me think outside the box, but it doesn't mean I ignore expert advice.\n\nIn our household, we talked about COVID vaccines like any other important health decision: calmly, respectfully, based on facts if possible. Doctors explained things step by step – that's how I learned to trust them again after some scary times in my life.\n\nAnd honestly? It feels good when people listen without shouting matches.",
+    "reasoning_summary": "Based on being retired with limited education but creative and Jewish with moderate neuroticism, I approach health discussions like a personal recipe: simple, clear ingredients (facts from doctors) mixed with thoughtful consideration. My low agreeableness means I won't let others disrespect medical expertise without pushing back.",
+    "tone": "Reflective yet straightforward",
+    "citations": [
+      "Doctors' advice"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "hobbies",
+      "ocean.openness",
+      "ocean.neuroticism"
+    ]
+  }
+}

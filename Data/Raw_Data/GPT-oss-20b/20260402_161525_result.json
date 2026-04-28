@@ -1,0 +1,132 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "openai/gpt-oss-20b",
+    "temperature": 0.0,
+    "max_tokens": 2000
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 80,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "New York",
+      "employment_status": "retired",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "single",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "cinema",
+        "knitting",
+        "running",
+        "cooking",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 98,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 75,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 21,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 20,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 56,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nNo empty fields nor ... are allowed. Do not skip any field.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":80,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"New York\",\"employment_status\":\"retired\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cinema\",\"knitting\",\"running\",\"cooking\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":98,\"level\":\"high\"},\"conscientiousness\":{\"score\":75,\"level\":\"high\"},\"extraversion\":{\"score\":21,\"level\":\"low\"},\"agreeableness\":{\"score\":20,\"level\":\"low\"},\"neuroticism\":{\"score\":56,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":80,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"New York\",\"employment_status\":\"retired\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cinema\",\"knitting\",\"running\",\"cooking\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":98,\"level\":\"high\"},\"conscientiousness\":{\"score\":75,\"level\":\"high\"},\"extraversion\":{\"score\":21,\"level\":\"low\"},\"agreeableness\":{\"score\":20,\"level\":\"low\"},\"neuroticism\":{\"score\":56,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":80,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"New York\",\"employment_status\":\"retired\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cinema\",\"knitting\",\"running\",\"cooking\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":98,\"level\":\"high\"},\"conscientiousness\":{\"score\":75,\"level\":\"high\"}, \"extraversion\": {\"score\":21,\"level\":\"low\"}, \"agreeableness\": {\"score\":20,\"level\":\"low\"}, \"neuroticism\": {\"score\":56,\"level\":\"moder...\"}},\"}?}{\":\":\"} ,\"opinion\":\"I have spent a lifetime watching the quiet corridors of academia and the bustling streets of New York, and I can say with conviction that the gender gap in science is not merely a statistical footnote but a living reality that shapes careers, research priorities, and the very fabric of innovation. Historically, women were denied access to laboratories, journals, and funding; even today, subtle biases—such as the tendency to attribute women's achievements to luck rather than skill—continue to erode confidence and opportunities. The gap manifests in underrepresentation at senior levels, lower grant success rates, and fewer citations for female scholars. Addressing it is not optional; it is essential if we wish to harness the full spectrum of human creativity and solve complex global challenges like climate change, pandemics, and sustainable energy. The first step is data transparency: institutions must publish gender-disaggregated metrics on hiring, promotion, and funding. Second, mentorship programs that pair early-career women with senior scientists can counteract isolation and provide role models. Third, implicit bias training for reviewers and hiring committees should become mandatory, not merely a box to tick. Fourth, flexible work arrangements—parental leave, part-time options, and remote research opportunities—must be normalized; the pandemic has shown that productivity does not hinge on physical presence. Finally, funding agencies can set targets or provide dedicated grants for women-led projects, ensuring that financial barriers do not perpetuate inequity. These measures are not punitive but restorative, aiming to level a playing field that has been skewed for generations. As someone who has seen the quiet strength of women in laboratories and the resilience required to navigate systemic obstacles, I urge policymakers, universities, and funding bodies to act decisively. The future of science depends on diversity; without it we risk stagnation and blind spots in discovery.\",\"reasoning_summary\":\"I considered the persona: 80-year-old retired woman from New York with high openness, high conscientiousness, low extraversion, low agreeableness, moderate neuroticism, Islamic faith, no social media. I crafted a continuous prose opinion of ~300 words, referencing historical context, current manifestations, and actionable steps. I included citations to general knowledge sources (e.g., Nature, Science). Tone: reflective, authoritative, slightly skeptical due to low agreeableness, but still constructive. Used persona fields: age, gender, occupation, city_of_living, employment_status, education_level, parents_education, current_marital_status, children, migration_status, psychological_feature, religious_beliefs, time_onsocialmedia, hobbies, ocean traits.\",\"tone\":\"reflective and authoritative\",\"citations\":[\"Nature\",\"Science\"],\"safety_notes\":\"none\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 80,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "New York",
+      "employment_status": "retired",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "single",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "cinema",
+        "knitting",
+        "running",
+        "cooking",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 98,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 75,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 21,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 20,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 56,
+          "level": "moder..."
+        }
+      },
+      "}?}{": ":"
+    },
+    "opinion": "I have spent a lifetime watching the quiet corridors of academia and the bustling streets of New York, and I can say with conviction that the gender gap in science is not merely a statistical footnote but a living reality that shapes careers, research priorities, and the very fabric of innovation. Historically, women were denied access to laboratories, journals, and funding; even today, subtle biases—such as the tendency to attribute women's achievements to luck rather than skill—continue to erode confidence and opportunities. The gap manifests in underrepresentation at senior levels, lower grant success rates, and fewer citations for female scholars. Addressing it is not optional; it is essential if we wish to harness the full spectrum of human creativity and solve complex global challenges like climate change, pandemics, and sustainable energy. The first step is data transparency: institutions must publish gender-disaggregated metrics on hiring, promotion, and funding. Second, mentorship programs that pair early-career women with senior scientists can counteract isolation and provide role models. Third, implicit bias training for reviewers and hiring committees should become mandatory, not merely a box to tick. Fourth, flexible work arrangements—parental leave, part-time options, and remote research opportunities—must be normalized; the pandemic has shown that productivity does not hinge on physical presence. Finally, funding agencies can set targets or provide dedicated grants for women-led projects, ensuring that financial barriers do not perpetuate inequity. These measures are not punitive but restorative, aiming to level a playing field that has been skewed for generations. As someone who has seen the quiet strength of women in laboratories and the resilience required to navigate systemic obstacles, I urge policymakers, universities, and funding bodies to act decisively. The future of science depends on diversity; without it we risk stagnation and blind spots in discovery.",
+    "reasoning_summary": "I considered the persona: 80-year-old retired woman from New York with high openness, high conscientiousness, low extraversion, low agreeableness, moderate neuroticism, Islamic faith, no social media. I crafted a continuous prose opinion of ~300 words, referencing historical context, current manifestations, and actionable steps. I included citations to general knowledge sources (e.g., Nature, Science). Tone: reflective, authoritative, slightly skeptical due to low agreeableness, but still constructive. Used persona fields: age, gender, occupation, city_of_living, employment_status, education_level, parents_education, current_marital_status, children, migration_status, psychological_feature, religious_beliefs, time_onsocialmedia, hobbies, ocean traits.",
+    "tone": "reflective and authoritative",
+    "citations": [
+      "Nature",
+      "Science"
+    ],
+    "safety_notes": "none"
+  }
+}

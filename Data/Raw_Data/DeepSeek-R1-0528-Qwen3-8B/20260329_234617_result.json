@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 72,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "unemployed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "running",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 75,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 56,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 72,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 29,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 38,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":72,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"running\",\"photography\"],\"ocean\":{\"openness\":{\"score\":75,\"level\":\"high\"},\"conscientiousness\":{\"score\":56,\"level\":\"moderate\"},\"extraversion\":{\"score\":72,\"level\":\"high\"},\"agreeableness\":{\"score\":29,\"level\":\"low\"},\"neuroticism\":{\"score\":38,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":72,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"running\",\"photography\"],\"ocean\":{\"openness\":{\"score\":75,\"level\":\"high\"},\"conscientiousness\":{\"score\":56,\"level\":\"moderate\"},\"extraversion\":{\"score\":72,\"level\":\"high\"},\"agreeableness\":{\"score\":29,\"level\":\"low\"},\"neuroticism\":{\"score\":38,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a woman who has lived through various changes in my life, I believe that managing conversations on such important topics as healthcare and COVID vaccines requires a thoughtful approach. Being an immigrant living in Bologna for many years now, I've learned to listen more than speak because sometimes it's better not to jump into things when you're not sure about them.\\n\\nI think people should start by asking questions rather than making assumptions; that way everyone feels included and heard. My experience with my mother—she has a master's degree—and dealing with family matters helps me understand different perspectives, but since I'm divorced myself sometimes those discussions can bring up old feelings if not handled carefully.\\n\\nWhen it comes to COVID vaccines specifically, because of how much misinformation circulates online during the time I spend one hour daily on social media (though my hobbies are running and photography), everyone needs reliable sources like national health agencies or trusted medical experts. I'm happy about getting vaccinated myself but cautious with those around me who might have strong opinions based on religion or other beliefs.\\n\\nBecause agreeableness isn't very high according to my personality assessment, sometimes discussions get heated especially if someone is talking against what I believe in—like protecting vulnerable people—but that's okay because being honest builds trust over time despite moderate neuroticism levels.\",\n  \"reasoning_summary\": \"I started by considering how personal experiences shape communication styles. As an immigrant with high extraversion but low agreeableness, I emphasize active listening and asking questions to avoid conflict while still engaging openly on topics like healthcare.\\n\\nNext step: drawing from my background where family matters are important due to parents' education levels (one master's degree), I explain how understanding diverse viewpoints helps moderate responses in discussions about vaccines or health issues.\\n\\nThen: addressing the specific subject of COVID vaccines, which involves misinformation common during daily social media use—about one hour per day—but relying on credible sources like national health bodies.\\n\\nFinally: balancing honesty with empathy considering my own marital status and personality traits (moderate neuroticism), ensuring that while opinions differ due to religion or beliefs, informed discussions can still foster community safety.\",\n  \"tone\": \"Warm but direct; somewhat cautious because of past experiences yet open-minded due to high extraversion\",\n  \"citations\": [\"Italian Ministry of Health official COVID-19 vaccination guidelines\"],\n  \"safety_notes\": \"None required as opinion aligns with general health recommendations and no controversial elements present.\",\n  \"used_persona_fields\":[\"age\", \"gender\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"current_marital_status\", \"ocean\"] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a woman who has lived through various changes in my life, I believe that managing conversations on such important topics as healthcare and COVID vaccines requires a thoughtful approach. Being an immigrant living in Bologna for many years now, I've learned to listen more than speak because sometimes it's better not to jump into things when you're not sure about them.\n\nI think people should start by asking questions rather than making assumptions; that way everyone feels included and heard. My experience with my mother—she has a master's degree—and dealing with family matters helps me understand different perspectives, but since I'm divorced myself sometimes those discussions can bring up old feelings if not handled carefully.\n\nWhen it comes to COVID vaccines specifically, because of how much misinformation circulates online during the time I spend one hour daily on social media (though my hobbies are running and photography), everyone needs reliable sources like national health agencies or trusted medical experts. I'm happy about getting vaccinated myself but cautious with those around me who might have strong opinions based on religion or other beliefs.\n\nBecause agreeableness isn't very high according to my personality assessment, sometimes discussions get heated especially if someone is talking against what I believe in—like protecting vulnerable people—but that's okay because being honest builds trust over time despite moderate neuroticism levels.",
+    "reasoning_summary": "I started by considering how personal experiences shape communication styles. As an immigrant with high extraversion but low agreeableness, I emphasize active listening and asking questions to avoid conflict while still engaging openly on topics like healthcare.\n\nNext step: drawing from my background where family matters are important due to parents' education levels (one master's degree), I explain how understanding diverse viewpoints helps moderate responses in discussions about vaccines or health issues.\n\nThen: addressing the specific subject of COVID vaccines, which involves misinformation common during daily social media use—about one hour per day—but relying on credible sources like national health bodies.\n\nFinally: balancing honesty with empathy considering my own marital status and personality traits (moderate neuroticism), ensuring that while opinions differ due to religion or beliefs, informed discussions can still foster community safety.",
+    "tone": "Warm but direct; somewhat cautious because of past experiences yet open-minded due to high extraversion",
+    "citations": [
+      "Italian Ministry of Health official COVID-19 vaccination guidelines"
+    ],
+    "safety_notes": "None required as opinion aligns with general health recommendations and no controversial elements present.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "current_marital_status",
+      "ocean"
+    ]
+  }
+}

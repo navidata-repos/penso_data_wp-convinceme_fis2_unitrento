@@ -1,0 +1,94 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 83,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "engineer",
+      "city_of_living": "Bari",
+      "employment_status": "self-employed",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "baking",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 85,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 95,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 39,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 69,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 6,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":83,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"baking\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":85,\"level\":\"high\"},\"conscientiousness\":{\"score\":95,\"level\":\"high\"},\"extraversion\":{\"score\":39,\"level\":\"moderate\"},\"agreeableness\":{\"score\":69,\"level\":\"high\"},\"neuroticism\":{\"score\":6,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":83,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"baking\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":85,\"level\":\"high\"},\"conscientiousness\":{\"score\":95,\"level\":\"high\"},\"extraversion\":{\"score\":39,\"level\":\"moderate\"},\"agreeableness\":{\"score\":69,\"level\":\"high\"},\"neuroticism\":{\"score\":6,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As an 83-year-old engineer from Bari, I've witnessed the gender gap in science firsthand over my long career. The gap refers to the underrepresentation of women in scientific fields, from education to leadership roles, often due to historical biases, societal expectations, and structural barriers. In my time, I saw few female colleagues in engineering, and while progress has been made, disparities persist in areas like STEM enrollment, research funding, and career advancement. From my Christian perspective, I believe in fairness and equality, and addressing this gap is a moral imperative to ensure everyone can contribute their talents. My high conscientiousness drives me to value systematic solutions, and I think we should address it through practical steps. First, we need early education initiatives that encourage girls in science, like hands-on workshops and mentorship programs, to build confidence and interest. Second, workplaces must implement policies for equal pay, flexible hours, and anti-discrimination measures, which I've seen benefit families in my own experience as a married father. Third, promoting female role models in media and academia can shift perceptions, something I've observed through my hobby of cinema, where representation matters. As a self-employed engineer, I've learned that diverse teams foster innovation, and closing this gap isn't just about justice—it's about enhancing scientific progress for all. While my depression sometimes clouds my outlook, I remain hopeful that with concerted effort, we can create a more inclusive scientific community, drawing on my Italian heritage of valuing community and hard work.\",\"reasoning_summary\":\"Derived opinion from persona traits: age (83) provides historical perspective on gender gap changes; occupation (engineer) offers firsthand experience in male-dominated field; religious beliefs (Christianity) and agreeableness (high) support moral stance for addressing gap; conscientiousness (high) leads to structured solutions; hobbies (cinema) inform role of media; marital status and children relate to family-friendly policies; depression adds cautious hope; overall tone is reflective, practical, and community-oriented, avoiding extreme views.\",\"tone\":\"reflective, practical, and community-oriented, with a mix of historical insight and cautious optimism, avoiding overly emotional or confrontational language.\",\"citations\":[\"personal experience\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"occupation\",\"religious_beliefs\",\"ocean.conscientiousness\",\"ocean.agreeableness\",\"hobbies\",\"current_marital_status\",\"children\",\"psychological_feature\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As an 83-year-old engineer from Bari, I've witnessed the gender gap in science firsthand over my long career. The gap refers to the underrepresentation of women in scientific fields, from education to leadership roles, often due to historical biases, societal expectations, and structural barriers. In my time, I saw few female colleagues in engineering, and while progress has been made, disparities persist in areas like STEM enrollment, research funding, and career advancement. From my Christian perspective, I believe in fairness and equality, and addressing this gap is a moral imperative to ensure everyone can contribute their talents. My high conscientiousness drives me to value systematic solutions, and I think we should address it through practical steps. First, we need early education initiatives that encourage girls in science, like hands-on workshops and mentorship programs, to build confidence and interest. Second, workplaces must implement policies for equal pay, flexible hours, and anti-discrimination measures, which I've seen benefit families in my own experience as a married father. Third, promoting female role models in media and academia can shift perceptions, something I've observed through my hobby of cinema, where representation matters. As a self-employed engineer, I've learned that diverse teams foster innovation, and closing this gap isn't just about justice—it's about enhancing scientific progress for all. While my depression sometimes clouds my outlook, I remain hopeful that with concerted effort, we can create a more inclusive scientific community, drawing on my Italian heritage of valuing community and hard work.",
+    "reasoning_summary": "Derived opinion from persona traits: age (83) provides historical perspective on gender gap changes; occupation (engineer) offers firsthand experience in male-dominated field; religious beliefs (Christianity) and agreeableness (high) support moral stance for addressing gap; conscientiousness (high) leads to structured solutions; hobbies (cinema) inform role of media; marital status and children relate to family-friendly policies; depression adds cautious hope; overall tone is reflective, practical, and community-oriented, avoiding extreme views.",
+    "tone": "reflective, practical, and community-oriented, with a mix of historical insight and cautious optimism, avoiding overly emotional or confrontational language.",
+    "citations": [
+      "personal experience"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "religious_beliefs",
+      "ocean.conscientiousness",
+      "ocean.agreeableness",
+      "hobbies",
+      "current_marital_status",
+      "children",
+      "psychological_feature"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 24,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "cycling",
+        "cooking",
+        "reading novels",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 7,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 13,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 84,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":24,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cycling\",\"cooking\",\"reading novels\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":13,\"level\":\"low\"},\"neuroticism\":{\"score\":84,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":24,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cycling\",\"cooking\",\"reading novels\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":13,\"level\":\"low\"},\"neuroticism\":{\"score\":84,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As a mechanic in Rome, I spend most of my time under the hood, but when I do scroll through social media, I see how fake news spreads like an oil spill. My dad, a PhD, always taught me to question things, while my mom never finished school. This contrast makes me think that everyone, no matter their education, can fall for false information if they're not careful. Being creative helps me spot when something feels off, but my low agreeableness means I don't just accept what others say—I check it out. Social media platforms need to be more like well-maintained engines: transparent, with clear filters and fact-checking features that work. Users should also take a page from mechanics—question everything, look for the source, and if something smells fishy, dig deeper. It's not about being paranoid, but being smart. We all have a role in cleaning up this mess.\",\n  \"reasoning_summary\": \"The persona is a creative mechanic with high neuroticism, making him cautious and questioning. His low openness to new ideas and experiences means he relies on facts, while his low agreeableness makes him critical of others' claims. The contrast between his parents' education levels highlights the need for tools that work for everyone.\",\n  \"tone\": \"Direct, practical, and slightly skeptical with a touch of humor.\",\n  \"citations\": [\"Personal experience\", \"Parental influences\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\n    \"age\",\n    \"occupation\",\n    \"city_of_living\",\n    \"parents_education\",\n    \"psychological_feature\",\n    \"ocean\",\n    \"time_onsocialmedia\"\n  ]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a mechanic in Rome, I spend most of my time under the hood, but when I do scroll through social media, I see how fake news spreads like an oil spill. My dad, a PhD, always taught me to question things, while my mom never finished school. This contrast makes me think that everyone, no matter their education, can fall for false information if they're not careful. Being creative helps me spot when something feels off, but my low agreeableness means I don't just accept what others say—I check it out. Social media platforms need to be more like well-maintained engines: transparent, with clear filters and fact-checking features that work. Users should also take a page from mechanics—question everything, look for the source, and if something smells fishy, dig deeper. It's not about being paranoid, but being smart. We all have a role in cleaning up this mess.",
+    "reasoning_summary": "The persona is a creative mechanic with high neuroticism, making him cautious and questioning. His low openness to new ideas and experiences means he relies on facts, while his low agreeableness makes him critical of others' claims. The contrast between his parents' education levels highlights the need for tools that work for everyone.",
+    "tone": "Direct, practical, and slightly skeptical with a touch of humor.",
+    "citations": [
+      "Personal experience",
+      "Parental influences"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "city_of_living",
+      "parents_education",
+      "psychological_feature",
+      "ocean",
+      "time_onsocialmedia"
+    ]
+  }
+}

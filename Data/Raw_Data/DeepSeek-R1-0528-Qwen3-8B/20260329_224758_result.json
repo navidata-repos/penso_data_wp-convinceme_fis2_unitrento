@@ -1,0 +1,101 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 25,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "volunteering",
+        "yoga",
+        "photography",
+        "baking",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 10,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 3,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 100,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 58,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":25,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"volunteering\",\"yoga\",\"photography\",\"baking\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":64,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":3,\"level\":\"low\"},\"agreeableness\":{\"score\":100,\"level\":\"high\"},\"neuroticism\":{\"score\":58,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":25,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"volunteering\",\"yoga\",\"photography\",\"baking\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":64,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":3,\"level\":\"low\"},\"agreeableness\":{\"score\":100,\"level\":\"high\"},\"neuroticism\":{\"score\":58,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\":\"human\",\n  \"topic\":\"How to manage and dealing with fake content on social media.\",\n  \"opinion\":\"As a mechanic who spends several hours daily scrolling through social media, I've seen my fair share of misinformation. It's frustrating when you see something about car repairs that seems off—like the time I encountered an article claiming you can fix your transmission at home with household items. My dad has a PhD in engineering, so he could probably explain why that’s nonsense within minutes, but it doesn’t stop fake content from bothering me. I guess because my agreeableness score is high (agreeing to disagree isn't really my thing), I find myself wanting to call out these things even when they're just harmless memes or jokes. But with my low conscientiousness and neuroticism, I tend to get overwhelmed by the sheer volume of fake stuff online, which can make me feel anxious about what’s real versus fake.\\n\\nTo deal with this, I’ve learned that turning off notifications helps because it cuts down on the constant barrage from my phone. And when I do see something suspicious, like an ad for miracle engine oil or a viral video claiming to show how your car is haunted by fake content, I try not to fall into the trap of sharing it impulsively—my low extraversion actually works in this case because I’m not as eager to engage with people online. It’s more about curating my feed myself now; I follow pages like Auto Mechanic Daily and occasionally check out some forums where mechanics discuss real problems.\\n\\nAnother thing that helps is focusing on what matters: fixing cars, helping people get back on the road again. My hobbies include volunteering at a local car boot sale (which requires some openness to deal with people), so I’m used to being practical rather than getting lost in drama or fake news.\\n\\nI suppose dealing with fake content online isn’t much different from diagnosing an engine problem—it takes patience, skepticism, and sometimes ignoring the symptoms entirely.\",\n  \"reasoning_summary\":\"The user is a native-born American mechanic who spends several hours daily on social media. Based on their high agreeableness but low conscientiousness and neuroticism scores (from the Big Five personality traits), they feel strongly when encountering fake content yet are prone to anxiety over it due to its prevalence.\\n\\nThey cope by reducing exposure through notification controls, practicing skepticism when engaging with suspicious posts or ads (especially common in their field where misinformation about car repairs is frequent), and focusing on real-world tasks like fixing cars. Their hobbies include volunteering at a local car boot sale, which reinforces practical thinking.\",\n  \"tone\":\"Calm but slightly skeptical\",\n  \"citations\":[],\n  \"safety_notes\":\"\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean.openness\",\"ocean.conscientiousness\",\"ocean.extraversion\",\"ocean.agreeableness\",\"ocean.neuroticism\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a mechanic who spends several hours daily scrolling through social media, I've seen my fair share of misinformation. It's frustrating when you see something about car repairs that seems off—like the time I encountered an article claiming you can fix your transmission at home with household items. My dad has a PhD in engineering, so he could probably explain why that’s nonsense within minutes, but it doesn’t stop fake content from bothering me. I guess because my agreeableness score is high (agreeing to disagree isn't really my thing), I find myself wanting to call out these things even when they're just harmless memes or jokes. But with my low conscientiousness and neuroticism, I tend to get overwhelmed by the sheer volume of fake stuff online, which can make me feel anxious about what’s real versus fake.\n\nTo deal with this, I’ve learned that turning off notifications helps because it cuts down on the constant barrage from my phone. And when I do see something suspicious, like an ad for miracle engine oil or a viral video claiming to show how your car is haunted by fake content, I try not to fall into the trap of sharing it impulsively—my low extraversion actually works in this case because I’m not as eager to engage with people online. It’s more about curating my feed myself now; I follow pages like Auto Mechanic Daily and occasionally check out some forums where mechanics discuss real problems.\n\nAnother thing that helps is focusing on what matters: fixing cars, helping people get back on the road again. My hobbies include volunteering at a local car boot sale (which requires some openness to deal with people), so I’m used to being practical rather than getting lost in drama or fake news.\n\nI suppose dealing with fake content online isn’t much different from diagnosing an engine problem—it takes patience, skepticism, and sometimes ignoring the symptoms entirely.",
+    "reasoning_summary": "The user is a native-born American mechanic who spends several hours daily on social media. Based on their high agreeableness but low conscientiousness and neuroticism scores (from the Big Five personality traits), they feel strongly when encountering fake content yet are prone to anxiety over it due to its prevalence.\n\nThey cope by reducing exposure through notification controls, practicing skepticism when engaging with suspicious posts or ads (especially common in their field where misinformation about car repairs is frequent), and focusing on real-world tasks like fixing cars. Their hobbies include volunteering at a local car boot sale, which reinforces practical thinking.",
+    "tone": "Calm but slightly skeptical",
+    "citations": [],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism"
+    ]
+  }
+}

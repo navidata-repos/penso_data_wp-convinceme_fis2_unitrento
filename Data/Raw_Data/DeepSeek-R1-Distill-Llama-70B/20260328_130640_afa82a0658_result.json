@@ -1,0 +1,94 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 63,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "unemployed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "running",
+        "photography",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 78,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 20,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 22,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 6,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":63,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"photography\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":63,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":78,\"level\":\"high\"},\"extraversion\":{\"score\":20,\"level\":\"low\"},\"agreeableness\":{\"score\":22,\"level\":\"low\"},\"neuroticism\":{\"score\":6,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":63,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"unemployed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"photography\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":63,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":78,\"level\":\"high\"},\"extraversion\":{\"score\":20,\"level\":\"low\"},\"agreeableness\":{\"score\":22,\"level\":\"low\"},\"neuroticism\":{\"score\":6,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM refers to the psychological pressure individuals face when they are at risk of confirming negative stereotypes about their social group, such as women or minorities being less capable in science, technology, engineering, and mathematics. This can lead to anxiety, reduced performance, and disengagement from these fields, even among highly talented people. As a 63-year-old immigrant woman living in Bologna, married with four children, and having an anxious disposition, I see this issue through a personal lens. My own experiences of moving to a new country and navigating different expectations have taught me how subtle biases can undermine confidence and achievement. I believe we must address stereotype threat because it not only harms individuals but also limits diversity and innovation in STEM, which are crucial for solving global challenges. To combat it, we should start with education and awareness in schools and workplaces, ensuring that stereotypes are openly discussed and debunked. Mentorship programs can provide support and role models for underrepresented groups, helping to build resilience and a sense of belonging. Additionally, fostering inclusive environments where everyone feels valued, regardless of background, is essential. As someone with moderate openness and high conscientiousness, I value structured approaches and continuous learning, so I advocate for policies that promote equity, such as bias training and diverse hiring practices. While my low extraversion and agreeableness mean I may not be outspoken in large groups, I believe in taking quiet, determined actions, like encouraging my children and peers to pursue their interests without fear of judgment. Ultimately, addressing stereotype threat requires a collective effort to create a more just and productive society, where everyone can contribute their best to STEM fields.\",\"reasoning_summary\":\"Derived opinion by analyzing persona traits: age 63 suggests life experience and perspective on social issues; gender woman and migration status immigrant imply potential firsthand insight into stereotypes; anxious psychological feature relates to understanding stress impacts; high conscientiousness indicates valuing systematic solutions; low extraversion and agreeableness suggest a reserved but firm stance; moderate openness supports balanced views. Topic understanding: stereotype threat defined as performance anxiety due to stereotypes, particularly in STEM. Opinion formed: address it to promote fairness and innovation, with methods like education, mentorship, and inclusivity. Tone set: reflective and practical, aligning with persona's background and traits.\",\"tone\":\"reflective, practical, and determined\",\"citations\":[\"none\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"migration_status\",\"psychological_feature\",\"ocean.openness\",\"ocean.conscientiousness\",\"ocean.extraversion\",\"ocean.agreeableness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM refers to the psychological pressure individuals face when they are at risk of confirming negative stereotypes about their social group, such as women or minorities being less capable in science, technology, engineering, and mathematics. This can lead to anxiety, reduced performance, and disengagement from these fields, even among highly talented people. As a 63-year-old immigrant woman living in Bologna, married with four children, and having an anxious disposition, I see this issue through a personal lens. My own experiences of moving to a new country and navigating different expectations have taught me how subtle biases can undermine confidence and achievement. I believe we must address stereotype threat because it not only harms individuals but also limits diversity and innovation in STEM, which are crucial for solving global challenges. To combat it, we should start with education and awareness in schools and workplaces, ensuring that stereotypes are openly discussed and debunked. Mentorship programs can provide support and role models for underrepresented groups, helping to build resilience and a sense of belonging. Additionally, fostering inclusive environments where everyone feels valued, regardless of background, is essential. As someone with moderate openness and high conscientiousness, I value structured approaches and continuous learning, so I advocate for policies that promote equity, such as bias training and diverse hiring practices. While my low extraversion and agreeableness mean I may not be outspoken in large groups, I believe in taking quiet, determined actions, like encouraging my children and peers to pursue their interests without fear of judgment. Ultimately, addressing stereotype threat requires a collective effort to create a more just and productive society, where everyone can contribute their best to STEM fields.",
+    "reasoning_summary": "Derived opinion by analyzing persona traits: age 63 suggests life experience and perspective on social issues; gender woman and migration status immigrant imply potential firsthand insight into stereotypes; anxious psychological feature relates to understanding stress impacts; high conscientiousness indicates valuing systematic solutions; low extraversion and agreeableness suggest a reserved but firm stance; moderate openness supports balanced views. Topic understanding: stereotype threat defined as performance anxiety due to stereotypes, particularly in STEM. Opinion formed: address it to promote fairness and innovation, with methods like education, mentorship, and inclusivity. Tone set: reflective and practical, aligning with persona's background and traits.",
+    "tone": "reflective, practical, and determined",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "migration_status",
+      "psychological_feature",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

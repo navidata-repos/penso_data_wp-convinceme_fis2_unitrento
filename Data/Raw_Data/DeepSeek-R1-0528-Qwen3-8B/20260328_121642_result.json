@@ -1,0 +1,87 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 37,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Milan",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "volunteering",
+        "cinema",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 3,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 67,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 74,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 80,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 85,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":37,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"volunteering\",\"cinema\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":3,\"level\":\"low\"},\"conscientiousness\":{\"score\":67,\"level\":\"high\"},\"extraversion\":{\"score\":74,\"level\":\"high\"},\"agreeableness\":{\"score\":80,\"level\":\"high\"},\"neuroticism\":{\"score\":85,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":37,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"volunteering\",\"cinema\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":3,\"level\":\"low\"},\"conscientiousness\":{\"score\":67,\"level\":\"high\"},\"extraversion\":{\"score\":74,\"level\":\"high\"},\"agreeableness\":{\"score\":80,\"level\":\"high\"},\"neuroticism\":{\"score\":85,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a Hindu immigrant who has lived in Milan for many years, I've seen firsthand how misinformation can spread like wildfire on social media. With my high agreeableness and conscientiousness scores, I believe strongly in fostering respectful dialogue while being prepared to back my views with facts.\\n\\nI often encounter people questioning vaccine safety or efficacy during casual chats at work – especially those who grew up during India's polio eradication campaigns where misinformation was rampant before vaccines became widely available. As an anxious parent of three, I want everyone to stay healthy without causing unnecessary panic either. My low openness score makes me prefer practical information over abstract debates.\\n\\nIn these situations, I start by sharing what reliable data sources are best (like official Italian health sites), then explain the science simply – breaking down how mRNA vaccines work or why herd immunity matters for vulnerable groups in our community. When someone brings up vaccine side effects from memes, I gently correct them using my baccalaureate knowledge plus facts from WHO reports.\\n\\nBut being a high extraversion person working closely with families daily means I don't just drop facts; I try to build empathy through stories – like how proper vaccination allowed my son's daycare to stay open during the pandemic. My anxious nature actually helps me assess risks carefully before responding, though sometimes it paralyzes me.\\n\\nI must mention that as someone who regularly spends time on social media, I'm acutely aware of how quickly myths spread in viral posts. My high neuroticism makes these conversations stressful for me personally, but professionally speaking – yes, vaccines have been crucial to keeping our community safe during tough times.\",\n  \"reasoning_summary\": \"I approached this by combining my personal experiences as an immigrant parent with professional psychology traits: first, acknowledging the anxiety around vaccine misinformation; then leveraging high agreeableness and conscientiousness for constructive dialogue; using extraversion through storytelling techniques while relying on neuroticism's careful assessment to validate claims. The low openness suggests a preference for concrete examples over theoretical debates.\",\n  \"tone\": \"Calm but firm with empathetic undertones\",\n  \"citations\": [\"WHO COVID-19 Resources\", \"Italian Ministry of Health official statements\"],\n  \"used_persona_fields\": [\"age:37\",\"gender:woman\",\"religious_beliefs:Hinduism\",\"hobbies:volunteering (for context on community health)\",\"ocean scores especially agreeableness and conscientiousness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a Hindu immigrant who has lived in Milan for many years, I've seen firsthand how misinformation can spread like wildfire on social media. With my high agreeableness and conscientiousness scores, I believe strongly in fostering respectful dialogue while being prepared to back my views with facts.\n\nI often encounter people questioning vaccine safety or efficacy during casual chats at work – especially those who grew up during India's polio eradication campaigns where misinformation was rampant before vaccines became widely available. As an anxious parent of three, I want everyone to stay healthy without causing unnecessary panic either. My low openness score makes me prefer practical information over abstract debates.\n\nIn these situations, I start by sharing what reliable data sources are best (like official Italian health sites), then explain the science simply – breaking down how mRNA vaccines work or why herd immunity matters for vulnerable groups in our community. When someone brings up vaccine side effects from memes, I gently correct them using my baccalaureate knowledge plus facts from WHO reports.\n\nBut being a high extraversion person working closely with families daily means I don't just drop facts; I try to build empathy through stories – like how proper vaccination allowed my son's daycare to stay open during the pandemic. My anxious nature actually helps me assess risks carefully before responding, though sometimes it paralyzes me.\n\nI must mention that as someone who regularly spends time on social media, I'm acutely aware of how quickly myths spread in viral posts. My high neuroticism makes these conversations stressful for me personally, but professionally speaking – yes, vaccines have been crucial to keeping our community safe during tough times.",
+    "reasoning_summary": "I approached this by combining my personal experiences as an immigrant parent with professional psychology traits: first, acknowledging the anxiety around vaccine misinformation; then leveraging high agreeableness and conscientiousness for constructive dialogue; using extraversion through storytelling techniques while relying on neuroticism's careful assessment to validate claims. The low openness suggests a preference for concrete examples over theoretical debates.",
+    "tone": "Calm but firm with empathetic undertones",
+    "citations": [
+      "WHO COVID-19 Resources",
+      "Italian Ministry of Health official statements"
+    ],
+    "used_persona_fields": [
+      "age:37",
+      "gender:woman",
+      "religious_beliefs:Hinduism",
+      "hobbies:volunteering (for context on community health)",
+      "ocean scores especially agreeableness and conscientiousness"
+    ]
+  }
+}

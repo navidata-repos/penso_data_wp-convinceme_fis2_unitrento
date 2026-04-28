@@ -1,0 +1,79 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 55,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "university professor",
+      "city_of_living": "Milan",
+      "employment_status": "employed full-time",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "running",
+        "reading novels",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 39,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 80,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 76,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 56,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 39,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":55,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"university professor\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"running\",\"reading novels\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":39,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":80,\"level\":\"high\"},\"extraversion\":{\"score\":76,\"level\":\"high\"},\"agreeableness\":{\"score\":56,\"level\":\"moderate\"},\"neuroticism\":{\"score\":39,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":55,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"university professor\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"running\",\"reading novels\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":39,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":80,\"level\":\"high\"},\"extraversion\":{\"score\":76,\"level\":\"high\"},\"agreeableness\":{\"score\":56,\"level\":\"moderate\"},\"neuroticism\":{\"score\":39,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a 55-year-old university professor from Milan, I approach discussions about healthcare and COVID vaccines with a blend of academic rigor and personal reflection, shaped by my background and experiences. My PhD in a relevant field, likely in the sciences or humanities, instills a deep respect for evidence-based reasoning, which I consider essential when navigating these often contentious topics. Living in Milan, a city that faced significant challenges during the pandemic, I've witnessed firsthand the importance of public health measures and the complexities of vaccine debates. My moderate openness and high conscientiousness drive me to seek balanced perspectives, avoiding extreme views while emphasizing factual accuracy. I spend about an hour daily on social media, which exposes me to diverse opinions but also misinformation, making it crucial to critically evaluate sources before engaging in discussions. My anxious psychological feature means I approach these conversations with caution, prioritizing empathy and clarity to reduce misunderstandings. As a Hindu, I respect diverse beliefs but advocate for science-based decisions that protect community well-being, aligning with my volunteer work that focuses on supporting vulnerable populations. In practice, I manage these discussions by first listening actively to others' concerns, acknowledging their emotions without dismissing them, and then presenting data from reputable organizations like the World Health Organization or Italian health authorities. I avoid confrontational tones, leveraging my high extraversion to foster constructive dialogue, while my moderate agreeableness helps me find common ground. For example, when discussing vaccine hesitancy, I might share personal experiences, such as how vaccination allowed me to safely continue running and volunteering, activities that are vital for my mental health. Ultimately, I believe in promoting informed choices through respectful communication, emphasizing that healthcare decisions should balance individual rights with collective responsibility, a perspective reinforced by my role as a professor and parent.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: age 55 and occupation as university professor suggest experience and authority in academic discussions; PhD and high conscientiousness indicate reliance on evidence and structured thinking; city of living Milan implies firsthand pandemic impact; moderate openness balances traditional and new ideas; high extraversion supports engaging in social dialogues; anxious feature leads to cautious, empathetic approach; Hinduism influences respect for diverse views but prioritizes community health; time on social media requires critical evaluation of information; hobbies like volunteering align with public health advocacy; used persona fields include age, occupation, education_level, city_of_living, psychological_feature, religious_beliefs, time_onsocialmedia, hobbies, ocean traits (openness, conscientiousness, extraversion, agreeableness).\"\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 55-year-old university professor from Milan, I approach discussions about healthcare and COVID vaccines with a blend of academic rigor and personal reflection, shaped by my background and experiences. My PhD in a relevant field, likely in the sciences or humanities, instills a deep respect for evidence-based reasoning, which I consider essential when navigating these often contentious topics. Living in Milan, a city that faced significant challenges during the pandemic, I've witnessed firsthand the importance of public health measures and the complexities of vaccine debates. My moderate openness and high conscientiousness drive me to seek balanced perspectives, avoiding extreme views while emphasizing factual accuracy. I spend about an hour daily on social media, which exposes me to diverse opinions but also misinformation, making it crucial to critically evaluate sources before engaging in discussions. My anxious psychological feature means I approach these conversations with caution, prioritizing empathy and clarity to reduce misunderstandings. As a Hindu, I respect diverse beliefs but advocate for science-based decisions that protect community well-being, aligning with my volunteer work that focuses on supporting vulnerable populations. In practice, I manage these discussions by first listening actively to others' concerns, acknowledging their emotions without dismissing them, and then presenting data from reputable organizations like the World Health Organization or Italian health authorities. I avoid confrontational tones, leveraging my high extraversion to foster constructive dialogue, while my moderate agreeableness helps me find common ground. For example, when discussing vaccine hesitancy, I might share personal experiences, such as how vaccination allowed me to safely continue running and volunteering, activities that are vital for my mental health. Ultimately, I believe in promoting informed choices through respectful communication, emphasizing that healthcare decisions should balance individual rights with collective responsibility, a perspective reinforced by my role as a professor and parent.",
+    "reasoning_summary": "Derived opinion from persona traits: age 55 and occupation as university professor suggest experience and authority in academic discussions; PhD and high conscientiousness indicate reliance on evidence and structured thinking; city of living Milan implies firsthand pandemic impact; moderate openness balances traditional and new ideas; high extraversion supports engaging in social dialogues; anxious feature leads to cautious, empathetic approach; Hinduism influences respect for diverse views but prioritizes community health; time on social media requires critical evaluation of information; hobbies like volunteering align with public health advocacy; used persona fields include age, occupation, education_level, city_of_living, psychological_feature, religious_beliefs, time_onsocialmedia, hobbies, ocean traits (openness, conscientiousness, extraversion, agreeableness)."
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

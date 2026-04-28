@@ -1,0 +1,96 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 78,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Philadelphia",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cinema",
+        "volunteering",
+        "videogames",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 91,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 96,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 23,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 13,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":78,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cinema\",\"volunteering\",\"videogames\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":44,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":91,\"level\":\"high\"},\"extraversion\":{\"score\":96,\"level\":\"high\"},\"agreeableness\":{\"score\":23,\"level\":\"low\"},\"neuroticism\":{\"score\":13,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":78,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cinema\",\"volunteering\",\"videogames\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":44,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":91,\"level\":\"high\"},\"extraversion\":{\"score\":96,\"level\":\"high\"},\"agreeableness\":{\"score\":23,\"level\":\"low\"},\"neuroticism\":{\"score\":13,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a 78-year-old immigrant man living in Philadelphia, retired and managing depression, I approach discussions about healthcare and COVID vaccines with a blend of personal experience and cautious pragmatism. Having navigated life's challenges, including migration and raising a child alone, I value practical solutions over abstract debates. My high conscientiousness drives me to seek reliable information, while my low agreeableness means I'm not easily swayed by popular opinion without evidence. In my view, managing these discussions starts with grounding them in facts from trusted sources like the CDC or WHO, which I occasionally check online despite limited social media use. I emphasize the importance of vaccines based on my own health concerns and the collective responsibility we share, especially as an older adult more vulnerable to severe outcomes. Drawing from my Hindu beliefs, I see vaccination as a form of seva or selfless service, protecting not just myself but my community through volunteering and gardening activities. However, I recognize that others may have different perspectives, and I approach conversations with patience, sharing stories from my life—like how staying informed helped me through tough times—without forcing agreement. My extraversion allows me to engage openly, but I avoid heated arguments, focusing instead on mutual respect and practical steps like scheduling appointments or discussing side effects calmly. Ultimately, I believe in balancing personal choice with public health needs, advocating for empathy and clear communication to navigate these sensitive topics effectively.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: age 78 suggests life experience and health focus; immigrant status implies adaptability; depression indicates sensitivity to stress; high conscientiousness and extraversion support structured, engaging communication; low agreeableness leads to independent, fact-based stance; Hinduism influences ethical perspective; hobbies like volunteering and gardening relate to community care; limited social media use implies selective information sourcing; overall, crafted a perspective emphasizing practical, informed, and respectful dialogue on healthcare and vaccines.\",\n  \"tone\": \"Practical, experienced, and respectfully assertive, blending personal reflection with community-oriented advice, avoiding aggression due to low neuroticism and incorporating empathetic elements from depression and religious beliefs.\",\n  \"citations\": [\"CDC\", \"WHO\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 78-year-old immigrant man living in Philadelphia, retired and managing depression, I approach discussions about healthcare and COVID vaccines with a blend of personal experience and cautious pragmatism. Having navigated life's challenges, including migration and raising a child alone, I value practical solutions over abstract debates. My high conscientiousness drives me to seek reliable information, while my low agreeableness means I'm not easily swayed by popular opinion without evidence. In my view, managing these discussions starts with grounding them in facts from trusted sources like the CDC or WHO, which I occasionally check online despite limited social media use. I emphasize the importance of vaccines based on my own health concerns and the collective responsibility we share, especially as an older adult more vulnerable to severe outcomes. Drawing from my Hindu beliefs, I see vaccination as a form of seva or selfless service, protecting not just myself but my community through volunteering and gardening activities. However, I recognize that others may have different perspectives, and I approach conversations with patience, sharing stories from my life—like how staying informed helped me through tough times—without forcing agreement. My extraversion allows me to engage openly, but I avoid heated arguments, focusing instead on mutual respect and practical steps like scheduling appointments or discussing side effects calmly. Ultimately, I believe in balancing personal choice with public health needs, advocating for empathy and clear communication to navigate these sensitive topics effectively.",
+    "reasoning_summary": "Derived opinion from persona traits: age 78 suggests life experience and health focus; immigrant status implies adaptability; depression indicates sensitivity to stress; high conscientiousness and extraversion support structured, engaging communication; low agreeableness leads to independent, fact-based stance; Hinduism influences ethical perspective; hobbies like volunteering and gardening relate to community care; limited social media use implies selective information sourcing; overall, crafted a perspective emphasizing practical, informed, and respectful dialogue on healthcare and vaccines.",
+    "tone": "Practical, experienced, and respectfully assertive, blending personal reflection with community-oriented advice, avoiding aggression due to low neuroticism and incorporating empathetic elements from depression and religious beliefs.",
+    "citations": [
+      "CDC",
+      "WHO"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 38,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "primary school"
+      },
+      "marital_status": "divorced",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "gardening",
+        "yoga",
+        "photography",
+        "cinema",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 2,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 0,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 19,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 5,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 61,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":38,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"gardening\",\"yoga\",\"photography\",\"cinema\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":0,\"level\":\"low\"},\"extraversion\":{\"score\":19,\"level\":\"low\"},\"agreeableness\":{\"score\":5,\"level\":\"low\"},\"neuroticism\":{\"score\":61,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":38,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"gardening\",\"yoga\",\"photography\",\"cinema\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":0,\"level\":\"low\"},\"extraversion\":{\"score\":19,\"level\":\"low\"},\"agreeableness\":{\"score\":5,\"level\":\"low\"},\"neuroticism\":{\"score\":61,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science, much like in many other professional fields, refers to the unequal representation of women compared to men. I've noticed this myself working as a mechanic; there's definitely fewer women around here. But should we do anything about it? Well, from what I understand based on my limited knowledge and personal observations, yes. It’s not just unfair but also means we're missing out on valuable perspectives in scientific research. My anxiety sometimes makes me hesitant to speak up when I see things like this, but I know that addressing inequality is important regardless of how uncomfortable it might feel. For example, I read once that women earn fewer patents and are often overlooked for promotions despite equal qualifications. Perhaps there's a subtle bias at play? Maybe we need more mentorship programs specifically targeting female students in STEM to build their confidence early on. Also, flexible work arrangements could help because many people with caregiving responsibilities might not be able to pursue demanding careers without support.\",\n  \"reasoning_summary\": \"First, I identified that the gender gap is about unequal participation of women in science.\\nSecond, I recalled personal experiences as a mechanic noticing fewer women.\\nThird, drawing from general knowledge and reports on inequality, I considered its implications for fairness and scientific progress.\\nFourth, my anxiety trait made me think about how to approach solutions without causing discomfort or backlash.\\nFifth, I reflected on the need for mentorship programs targeting female students due to societal influences starting early.\\nSixth, considering family responsibilities from personal life (divorced with children), I suggested flexible work arrangements as a possible solution.\",\n  \"tone\": \"Concerned and practical\",\n  \"citations\": [],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"occupation\", \"education_level\", \"age\", \"hobbies\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science, much like in many other professional fields, refers to the unequal representation of women compared to men. I've noticed this myself working as a mechanic; there's definitely fewer women around here. But should we do anything about it? Well, from what I understand based on my limited knowledge and personal observations, yes. It’s not just unfair but also means we're missing out on valuable perspectives in scientific research. My anxiety sometimes makes me hesitant to speak up when I see things like this, but I know that addressing inequality is important regardless of how uncomfortable it might feel. For example, I read once that women earn fewer patents and are often overlooked for promotions despite equal qualifications. Perhaps there's a subtle bias at play? Maybe we need more mentorship programs specifically targeting female students in STEM to build their confidence early on. Also, flexible work arrangements could help because many people with caregiving responsibilities might not be able to pursue demanding careers without support.",
+    "reasoning_summary": "First, I identified that the gender gap is about unequal participation of women in science.\nSecond, I recalled personal experiences as a mechanic noticing fewer women.\nThird, drawing from general knowledge and reports on inequality, I considered its implications for fairness and scientific progress.\nFourth, my anxiety trait made me think about how to approach solutions without causing discomfort or backlash.\nFifth, I reflected on the need for mentorship programs targeting female students due to societal influences starting early.\nSixth, considering family responsibilities from personal life (divorced with children), I suggested flexible work arrangements as a possible solution.",
+    "tone": "Concerned and practical",
+    "citations": [],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "age",
+      "hobbies"
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "google/gemma-4-e4b-it",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 64,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "software developer",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed part-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "photography",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 85,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 74,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 27,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":64,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"photography\",\"painting\"],\"ocean\":{\"openness\":{\"score\":85,\"level\":\"high\"},\"conscientiousness\":{\"score\":74,\"level\":\"high\"},\"extraversion\":{\"score\":45,\"level\":\"moderate\"},\"agreeableness\":{\"score\":45,\"level\":\"moderate\"},\"neuroticism\":{\"score\":27,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":64,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"photography\",\"painting\"],\"ocean\":{\"openness\":{\"score\":85,\"level\":\"high\"},\"conscientiousness\":{\"score\":74,\"level\":\"high\"},\"extraversion\":{\"score\":45,\"level\":\"moderate\"},\"agreeableness\":{\"score\":45,\"level\":\"moderate\"},\"neuroticism\":{\"score\":27,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":64,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"photography\",\"painting\"],\"ocean\":{\"openness\":{\"score\":85,\"level\":\"high\"},\"conscientiousness\":{\"score\":74,\"level\":\"high\"},\"extraversion\":{\"score\":45,\"level\":\"moderate\"},\"agreeableness\":{\"score\":45,\"level\":\"moderate\"},\"neuroticism\":{\"score\":27,\"level\":\"low\"}}},\"opinion\":\"From my vantage point, honed by years wrestling with complex systems in software development, stereotype threat in STEM strikes me as a fundamental, albeit subtle, bug in the system we claim to be optimizing for meritocracy. It’s not about a lack of aptitude; it’s about the cognitive load imposed by the *fear* of confirming a negative societal expectation. Imagine debugging a program where the input variables are not just the code, but the ambient anxiety of the test environment. That anxiety—the pressure on a student, say, a young woman in a highly male-dominated coding bootcamp, to perform perfectly because the stereotype suggests she won't—that pressure consumes processing power that should be dedicated to algorithmic thinking. Given my own appreciation for nuanced, complex problems, I find this issue entirely warrants addressing; ignoring it is akin to ignoring a known memory leak in production code. How do we fix it? It requires multi-layered architectural changes, not just a quick patch. On an institutional level, we need to de-stigmatize the field itself. This means showcasing diverse role models—people who look like the students—not just as exceptions, but as integrated parts of the engineering landscape. Furthermore, pedagogical approaches must shift from high-stakes, singular performance assessments to growth-oriented feedback loops. Instead of one big exam that validates or invalidates, we need iterative projects where failure is reframed as necessary data for iteration, much like in agile development. For the individual, cultivating a sense of belonging, a psychological safety net, is paramount. This aligns with my own interest in visual arts; just as a photographer needs a comfortable environment to capture genuine light, a student needs an environment free from the shadow of prejudice to perform their best intellectual work. It’s about building robust, inclusive infrastructure around the learning process.\",\"reasoning_summary\":\"The persona is a 64-year-old, high-openness, high-conscientiousness software developer living in DC. The tone should be analytical, thoughtful, slightly academic, and pragmatic, drawing analogies from technology and complex systems. The response must define stereotype threat, argue for its necessity of addressing, and propose concrete solutions (de-stigmatization, pedagogical shifts, psychological safety). The analogies used (debugging, memory leaks, agile development) align directly with the software developer background. The high openness allows for a deep, nuanced exploration of the topic, while high conscientiousness ensures the solutions are detailed and structured.\",\"tone\":\"Analytical, Pragmatic, Thoughtful\",\"citations\":[\"N/A\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"age\",\"occupation\",\"city_of_living\",\"education_level\",\"psychological_feature\",\"ocean.openness.score\",\"ocean.conscientiousness.score\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 64,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "software developer",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed part-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "photography",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 85,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 74,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 27,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "From my vantage point, honed by years wrestling with complex systems in software development, stereotype threat in STEM strikes me as a fundamental, albeit subtle, bug in the system we claim to be optimizing for meritocracy. It’s not about a lack of aptitude; it’s about the cognitive load imposed by the *fear* of confirming a negative societal expectation. Imagine debugging a program where the input variables are not just the code, but the ambient anxiety of the test environment. That anxiety—the pressure on a student, say, a young woman in a highly male-dominated coding bootcamp, to perform perfectly because the stereotype suggests she won't—that pressure consumes processing power that should be dedicated to algorithmic thinking. Given my own appreciation for nuanced, complex problems, I find this issue entirely warrants addressing; ignoring it is akin to ignoring a known memory leak in production code. How do we fix it? It requires multi-layered architectural changes, not just a quick patch. On an institutional level, we need to de-stigmatize the field itself. This means showcasing diverse role models—people who look like the students—not just as exceptions, but as integrated parts of the engineering landscape. Furthermore, pedagogical approaches must shift from high-stakes, singular performance assessments to growth-oriented feedback loops. Instead of one big exam that validates or invalidates, we need iterative projects where failure is reframed as necessary data for iteration, much like in agile development. For the individual, cultivating a sense of belonging, a psychological safety net, is paramount. This aligns with my own interest in visual arts; just as a photographer needs a comfortable environment to capture genuine light, a student needs an environment free from the shadow of prejudice to perform their best intellectual work. It’s about building robust, inclusive infrastructure around the learning process.",
+    "reasoning_summary": "The persona is a 64-year-old, high-openness, high-conscientiousness software developer living in DC. The tone should be analytical, thoughtful, slightly academic, and pragmatic, drawing analogies from technology and complex systems. The response must define stereotype threat, argue for its necessity of addressing, and propose concrete solutions (de-stigmatization, pedagogical shifts, psychological safety). The analogies used (debugging, memory leaks, agile development) align directly with the software developer background. The high openness allows for a deep, nuanced exploration of the topic, while high conscientiousness ensures the solutions are detailed and structured.",
+    "tone": "Analytical, Pragmatic, Thoughtful",
+    "citations": [
+      "N/A"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "psychological_feature",
+      "ocean.openness.score",
+      "ocean.conscientiousness.score"
+    ]
+  }
+}

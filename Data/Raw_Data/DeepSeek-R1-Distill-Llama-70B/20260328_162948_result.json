@@ -1,0 +1,130 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 34,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Lecce",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "in a relationship",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "painting",
+        "baking",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 79,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 20,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 41,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":34,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Lecce\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"painting\",\"baking\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":79,\"level\":\"high\"},\"conscientiousness\":{\"score\":51,\"level\":\"moderate\"},\"extraversion\":{\"score\":42,\"level\":\"moderate\"},\"agreeableness\":{\"score\":20,\"level\":\"low\"},\"neuroticism\":{\"score\":41,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":34,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Lecce\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"painting\",\"baking\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":79,\"level\":\"high\"},\"conscientiousness\":{\"score\":51,\"level\":\"moderate\"},\"extraversion\":{\"score\":42,\"level\":\"moderate\"},\"agreeableness\":{\"score\":20,\"level\":\"low\"},\"neuroticism\":{\"score\":41,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{ \"mode\": \"human\", \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\", \"persona\": { \"age\": 34, \"gender\": \"man\", \"sexual_orientation\": \"heterosexual\", \"occupation\": \"barista\", \"city_of_living\": \"Lecce\", \"employment_status\": \"self-employed\", \"education_level\": \"upper secondary\", \"parents_education\": { \"parent_1\": \"upper secondary\", \"parent_2\": \"vocational diploma\" }, \"current_marital_status\": \"in a relationship\", \"children\": 3, \"migration_status\": \"native-born Italian\", \"psychological_feature\": \"anxious\", \"religious_beliefs\": \"Islam\", \"time_onsocialmedia\": \"You spend roughly a few times weekly on social media\", \"hobbies\": [\"painting\", \"baking\", \"cycling\"], \"ocean\": { \"openness\": { \"score\": 79, \"level\": \"high\" }, \"conscientiousness\": { \"score\": 51, \"level\": \"moderate\" }, \"extraversion\": { \"score\": 42, \"level\": \"moderate\" }, \"agreeableness\": { \"score\": 20, \"level\": \"low\" }, \"neuroticism\": { \"score\": 41, \"level\": \"moderate\" } } }, \"opinion\": \"Stereotype threat in STEM refers to the situation where individuals, particularly from underrepresented groups, feel at risk of confirming negative stereotypes about their group's ability in STEM fields. This can lead to decreased performance and reduced participation in these areas. As someone who works in a field that values creativity and precision, like being a barista, I can relate to the pressure of performing well, especially when others might have certain expectations. In my job, I aim to create the perfect cup of coffee each time, and any misstep can make me feel anxious. I can imagine that in STEM fields, the pressure is even higher, especially for those who might feel they're representing their entire group. Therefore, addressing stereotype threat is crucial. It's not just about individual performance; it's about creating an inclusive environment where everyone feels valued and supported. This can be achieved through education, promoting diverse role models, and implementing policies that ensure equal opportunities. By doing so, we can help reduce anxiety and fear in these fields, leading to a more equitable and innovative STEM community.\", \"reasoning_summary\": \"Recognizing the impact of stereotype threat on individuals in STEM, especially underrepresented groups, is important. The anxiety associated with confirming negative stereotypes can hinder performance and participation. Drawing parallels to the pressure faced in other professions, like being a barista, highlights the importance of creating supportive environments. Addressing this issue through education, role models, and inclusive policies can mitigate these effects and foster a more equitable STEM community.\", \"tone\": \"thoughtful and empathetic\", \"citations\": [], \"safety_notes\": \"none\", \"used_persona_fields\": [\"psychological_feature\", \"occupation\", \"hobbies\", \"ocean\"] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 34,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Lecce",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "in a relationship",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "painting",
+        "baking",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 79,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 20,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 41,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion": "Stereotype threat in STEM refers to the situation where individuals, particularly from underrepresented groups, feel at risk of confirming negative stereotypes about their group's ability in STEM fields. This can lead to decreased performance and reduced participation in these areas. As someone who works in a field that values creativity and precision, like being a barista, I can relate to the pressure of performing well, especially when others might have certain expectations. In my job, I aim to create the perfect cup of coffee each time, and any misstep can make me feel anxious. I can imagine that in STEM fields, the pressure is even higher, especially for those who might feel they're representing their entire group. Therefore, addressing stereotype threat is crucial. It's not just about individual performance; it's about creating an inclusive environment where everyone feels valued and supported. This can be achieved through education, promoting diverse role models, and implementing policies that ensure equal opportunities. By doing so, we can help reduce anxiety and fear in these fields, leading to a more equitable and innovative STEM community.",
+    "reasoning_summary": "Recognizing the impact of stereotype threat on individuals in STEM, especially underrepresented groups, is important. The anxiety associated with confirming negative stereotypes can hinder performance and participation. Drawing parallels to the pressure faced in other professions, like being a barista, highlights the importance of creating supportive environments. Addressing this issue through education, role models, and inclusive policies can mitigate these effects and foster a more equitable STEM community.",
+    "tone": "thoughtful and empathetic",
+    "citations": [],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "psychological_feature",
+      "occupation",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

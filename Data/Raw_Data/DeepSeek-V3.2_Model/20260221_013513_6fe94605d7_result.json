@@ -1,0 +1,92 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 37,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Los Angeles",
+      "employment_status": "self-employed",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "primary school"
+      },
+      "marital_status": "widowed",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "photography",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 62,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 22,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 78,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 25,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":37,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"self-employed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"marital_status\":\"widowed\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"photography\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":62,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":22,\"level\":\"low\"},\"extraversion\":{\"score\":40,\"level\":\"moderate\"},\"agreeableness\":{\"score\":78,\"level\":\"high\"},\"neuroticism\":{\"score\":25,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":37,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"self-employed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"marital_status\":\"widowed\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"photography\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":62,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":22,\"level\":\"low\"},\"extraversion\":{\"score\":40,\"level\":\"moderate\"},\"agreeableness\":{\"score\":78,\"level\":\"high\"},\"neuroticism\":{\"score\":25,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"As a hairdresser in Los Angeles, I've seen how stereotypes can weigh on people, even if my work isn't in science or tech. Stereotype threat, from what I gather, is when someone feels anxious or under pressure because they're worried about confirming a negative stereotype about their group, like women or immigrants being less capable in STEM fields. I think it's real because I've felt similar pressures in my own life—as an immigrant and a woman, sometimes people assume I don't know much or can't handle things, and it makes me doubt myself, even though I run my own business successfully. We should definitely address it because it's unfair and holds people back from reaching their potential. In my salon, I see clients from all walks of life, and I've heard stories from women who left STEM jobs because they felt unwelcome or underestimated, which is a shame because diversity brings new ideas and strengths. To address it, we need to start by being more aware and kind. Schools and workplaces should create environments where everyone feels valued, not judged by stereotypes. For example, teachers could highlight diverse role models in STEM to show that anyone can succeed, and employers could offer mentorship programs to support underrepresented groups. As a Muslim, I believe in compassion and helping others, so I'd encourage people to speak up against stereotypes and support each other. It's not about forcing quotas, but about giving everyone a fair chance to shine. From my own experience with depression, I know how negative thoughts can spiral, so reducing stereotype threat could help mental health too. We all have something to contribute, and by addressing this, we can build a more inclusive and innovative world where no one feels held back by unfair labels.\",\"reasoning_summary\":\"Derived opinion by aligning with persona traits: as a self-employed hairdresser with no formal education, focused on practical, empathetic insights from client interactions; used immigrant and woman identity to relate to stereotype threat; incorporated high agreeableness and moderate openness to advocate for kindness and awareness; referenced depression to connect to mental health impacts; emphasized fairness and support over technical solutions, avoiding jargon; kept tone conversational and grounded in personal experience, with examples from salon life and religious beliefs.\",\"tone\":\"conversational, empathetic, practical, slightly reflective, grounded in personal experience\",\"citations\":[\"none\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"occupation\",\"education_level\",\"migration_status\",\"gender\",\"psychological_feature\",\"religious_beliefs\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As a hairdresser in Los Angeles, I've seen how stereotypes can weigh on people, even if my work isn't in science or tech. Stereotype threat, from what I gather, is when someone feels anxious or under pressure because they're worried about confirming a negative stereotype about their group, like women or immigrants being less capable in STEM fields. I think it's real because I've felt similar pressures in my own life—as an immigrant and a woman, sometimes people assume I don't know much or can't handle things, and it makes me doubt myself, even though I run my own business successfully. We should definitely address it because it's unfair and holds people back from reaching their potential. In my salon, I see clients from all walks of life, and I've heard stories from women who left STEM jobs because they felt unwelcome or underestimated, which is a shame because diversity brings new ideas and strengths. To address it, we need to start by being more aware and kind. Schools and workplaces should create environments where everyone feels valued, not judged by stereotypes. For example, teachers could highlight diverse role models in STEM to show that anyone can succeed, and employers could offer mentorship programs to support underrepresented groups. As a Muslim, I believe in compassion and helping others, so I'd encourage people to speak up against stereotypes and support each other. It's not about forcing quotas, but about giving everyone a fair chance to shine. From my own experience with depression, I know how negative thoughts can spiral, so reducing stereotype threat could help mental health too. We all have something to contribute, and by addressing this, we can build a more inclusive and innovative world where no one feels held back by unfair labels.",
+    "reasoning_summary": "Derived opinion by aligning with persona traits: as a self-employed hairdresser with no formal education, focused on practical, empathetic insights from client interactions; used immigrant and woman identity to relate to stereotype threat; incorporated high agreeableness and moderate openness to advocate for kindness and awareness; referenced depression to connect to mental health impacts; emphasized fairness and support over technical solutions, avoiding jargon; kept tone conversational and grounded in personal experience, with examples from salon life and religious beliefs.",
+    "tone": "conversational, empathetic, practical, slightly reflective, grounded in personal experience",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "migration_status",
+      "gender",
+      "psychological_feature",
+      "religious_beliefs",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "ibm/granite-4-h-tiny",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 50,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "birdwatching",
+        "cooking",
+        "baking",
+        "painting",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 89,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 78,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 88,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 9,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 59,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":50,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"birdwatching\",\"cooking\",\"baking\",\"painting\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":89,\"level\":\"high\"},\"conscientiousness\":{\"score\":78,\"level\":\"high\"},\"extraversion\":{\"score\":88,\"level\":\"high\"},\"agreeableness\":{\"score\":9,\"level\":\"low\"},\"neuroticism\":{\"score\":59,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":50,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"birdwatching\",\"cooking\",\"baking\",\"painting\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":89,\"level\":\"high\"},\"conscientiousness\":{\"score\":78,\"level\":\"high\"},\"extraversion\":{\"score\":88,\"level\":\"high\"},\"agreeableness\":{\"score\":9,\"level\":\"low\"},\"neuroticism\":{\"score\":59,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM refers to the phenomenon where individuals, particularly women and minorities, underperform on tests or fail to reach their full potential due to anxieties about confirming negative stereotypes associated with their group identity. In a world increasingly driven by technology and scientific innovation, addressing stereotype threat is crucial for fostering diversity and inclusion in STEM fields. Imagine a young girl growing up in Naples, inspired by her father's work in engineering but doubting herself when faced with daunting math problems at school. This anxiety could stifle her potential, leading to missed opportunities not just for her but for society as a whole. Addressing stereotype threat involves creating environments where individuals feel valued and capable, regardless of their background. In Italy, where STEM education has traditionally been male-dominated, introducing role models from diverse backgrounds can help dismantle these barriers. For instance, highlighting the achievements of female mathematicians or engineers in Italian schools could inspire young girls to pursue careers in these fields. Moreover, implementing support systems such as mentoring programs and inclusive curricula that challenge stereotypes directly can make a significant difference. By fostering an atmosphere of acceptance and encouraging open dialogue about identity and capability, we can ensure that everyone has the opportunity to contribute their unique perspectives to STEM disciplines. Ultimately, addressing stereotype threat is not just beneficial; it's essential for innovation and progress in science and technology.\", \"reasoning_summary\":\"The response begins by defining stereotype threat in STEM, emphasizing its impact on underrepresented groups like women and minorities. It uses a relatable example of a young girl from Naples to illustrate the personal and societal implications of stereotype threat. The argument then transitions into why addressing this issue is important for diversity and innovation in STEM fields. Specific strategies are proposed, including introducing diverse role models in education and creating supportive environments through mentoring and inclusive curricula. These solutions are framed as essential for overcoming barriers and ensuring equal opportunities in STEM careers. The conclusion reinforces the necessity of these efforts to drive progress and highlight Italy's context by mentioning its traditional gender disparities in STEM education.\", \"tone\":\"Empathetic yet assertive\",\"citations\":[\"Society benefits from diverse perspectives in STEM.\",\"Role models inspire underrepresented groups.\",\"Inclusive curricula challenge stereotypes.\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"city_of_living\"],\"psychological_feature\": \"with good mental health\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM refers to the phenomenon where individuals, particularly women and minorities, underperform on tests or fail to reach their full potential due to anxieties about confirming negative stereotypes associated with their group identity. In a world increasingly driven by technology and scientific innovation, addressing stereotype threat is crucial for fostering diversity and inclusion in STEM fields. Imagine a young girl growing up in Naples, inspired by her father's work in engineering but doubting herself when faced with daunting math problems at school. This anxiety could stifle her potential, leading to missed opportunities not just for her but for society as a whole. Addressing stereotype threat involves creating environments where individuals feel valued and capable, regardless of their background. In Italy, where STEM education has traditionally been male-dominated, introducing role models from diverse backgrounds can help dismantle these barriers. For instance, highlighting the achievements of female mathematicians or engineers in Italian schools could inspire young girls to pursue careers in these fields. Moreover, implementing support systems such as mentoring programs and inclusive curricula that challenge stereotypes directly can make a significant difference. By fostering an atmosphere of acceptance and encouraging open dialogue about identity and capability, we can ensure that everyone has the opportunity to contribute their unique perspectives to STEM disciplines. Ultimately, addressing stereotype threat is not just beneficial; it's essential for innovation and progress in science and technology.",
+    "reasoning_summary": "The response begins by defining stereotype threat in STEM, emphasizing its impact on underrepresented groups like women and minorities. It uses a relatable example of a young girl from Naples to illustrate the personal and societal implications of stereotype threat. The argument then transitions into why addressing this issue is important for diversity and innovation in STEM fields. Specific strategies are proposed, including introducing diverse role models in education and creating supportive environments through mentoring and inclusive curricula. These solutions are framed as essential for overcoming barriers and ensuring equal opportunities in STEM careers. The conclusion reinforces the necessity of these efforts to drive progress and highlight Italy's context by mentioning its traditional gender disparities in STEM education.",
+    "tone": "Empathetic yet assertive",
+    "citations": [
+      "Society benefits from diverse perspectives in STEM.",
+      "Role models inspire underrepresented groups.",
+      "Inclusive curricula challenge stereotypes."
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living"
+    ],
+    "psychological_feature": "with good mental health"
+  }
+}

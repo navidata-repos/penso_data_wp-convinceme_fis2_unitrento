@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 22,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Bari",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "primary school"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "football (calcio)",
+        "gardening",
+        "knitting",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 57,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 88,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 19,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 86,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":22,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"football (calcio)\",\"gardening\",\"knitting\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":57,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":88,\"level\":\"high\"},\"extraversion\":{\"score\":19,\"level\":\"low\"},\"agreeableness\":{\"score\":63,\"level\":\"moderate\"},\"neuroticism\":{\"score\":86,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":22,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Bari\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"football (calcio)\",\"gardening\",\"knitting\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":57,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":88,\"level\":\"high\"},\"extraversion\":{\"score\":19,\"level\":\"low\"},\"agreeableness\":{\"score\":63,\"level\":\"moderate\"},\"neuroticism\":{\"score\":86,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with fake content on social media.\",\n  \"opinion\": \"As someone who uses social media for both personal connections and professional purposes, I've found myself increasingly frustrated by the sheer amount of fake content that circulates online. It's like being surrounded by digital clutter where misinformation can spread faster than truth itself.\\n\\nI grew up in a small town near Bari with strict parental guidance - my father has a master's degree from university and was always emphasizing education over hearsay, while my mother only went to primary school but understood the value of critical thinking for common sense. That background gives me an edge when evaluating fitness claims online; I'm naturally skeptical towards anything that sounds too good to be true.\\n\\nNow as a self-employed fitness trainer trying to build her brand on Instagram and Facebook without spending more than an hour daily there (I prefer focusing my time elsewhere), the fake content about miracle diets or fad exercises is particularly annoying. It's not just funny when people post these questionable things, but it can also be dangerous if taken seriously.\\n\\nMy moderate openness score means I'm open to learning about new fitness techniques, but my high conscientiousness makes me cautious and analytical towards any information that seems too viral or lacking proper citation in peer-reviewed journals.\\n\\nThe constant anxiety from this fake content is something many people don't realize - it's like walking through a minefield where one wrong step could lead to serious health implications based on unreliable advice.\",\n  \"reasoning_summary\": \"I approach the topic of managing fake fitness content with skepticism due to my background in critical thinking. My high conscientiousness drives me towards analytical methods and verification practices. The moderate openness keeps me adaptable but cautious about trends without proper validation.\\n\\nMy daily social media use is limited, allowing me time for personal hobbies like gardening or knitting which help manage the anxiety from online misinformation. I draw on my upbringing where education was emphasized over casual hearsay.\",\n  \"tone\": \"Calm and analytical with occasional frustration\",\n  \"citations\": [\"Fitness professionals' guidelines\", \"Social media research\"],\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"education_level\", \"parents_education.parent_1\", \"ocean.openness.level\", \"ocean.conscientiousness.score\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As someone who uses social media for both personal connections and professional purposes, I've found myself increasingly frustrated by the sheer amount of fake content that circulates online. It's like being surrounded by digital clutter where misinformation can spread faster than truth itself.\n\nI grew up in a small town near Bari with strict parental guidance - my father has a master's degree from university and was always emphasizing education over hearsay, while my mother only went to primary school but understood the value of critical thinking for common sense. That background gives me an edge when evaluating fitness claims online; I'm naturally skeptical towards anything that sounds too good to be true.\n\nNow as a self-employed fitness trainer trying to build her brand on Instagram and Facebook without spending more than an hour daily there (I prefer focusing my time elsewhere), the fake content about miracle diets or fad exercises is particularly annoying. It's not just funny when people post these questionable things, but it can also be dangerous if taken seriously.\n\nMy moderate openness score means I'm open to learning about new fitness techniques, but my high conscientiousness makes me cautious and analytical towards any information that seems too viral or lacking proper citation in peer-reviewed journals.\n\nThe constant anxiety from this fake content is something many people don't realize - it's like walking through a minefield where one wrong step could lead to serious health implications based on unreliable advice.",
+    "reasoning_summary": "I approach the topic of managing fake fitness content with skepticism due to my background in critical thinking. My high conscientiousness drives me towards analytical methods and verification practices. The moderate openness keeps me adaptable but cautious about trends without proper validation.\n\nMy daily social media use is limited, allowing me time for personal hobbies like gardening or knitting which help manage the anxiety from online misinformation. I draw on my upbringing where education was emphasized over casual hearsay.",
+    "tone": "Calm and analytical with occasional frustration",
+    "citations": [
+      "Fitness professionals' guidelines",
+      "Social media research"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "parents_education.parent_1",
+      "ocean.openness.level",
+      "ocean.conscientiousness.score"
+    ]
+  }
+}

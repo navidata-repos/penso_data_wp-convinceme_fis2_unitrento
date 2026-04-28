@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 75,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "New York",
+      "employment_status": "retired",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "primary school"
+      },
+      "marital_status": "widowed",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cooking",
+        "board games",
+        "football (calcio)",
+        "painting",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 93,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 18,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 56,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 88,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 53,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":75,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"New York\",\"employment_status\":\"retired\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cooking\",\"board games\",\"football (calcio)\",\"painting\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":93,\"level\":\"high\"},\"conscientiousness\":{\"score\":18,\"level\":\"low\"},\"extraversion\":{\"score\":56,\"level\":\"moderate\"},\"agreeableness\":{\"score\":88,\"level\":\"high\"},\"neuroticism\":{\"score\":53,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":75,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"New York\",\"employment_status\":\"retired\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cooking\",\"board games\",\"football (calcio)\",\"painting\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":93,\"level\":\"high\"},\"conscientiousness\":{\"score\":18,\"level\":\"low\"},\"extraversion\":{\"score\":56,\"level\":\"moderate\"},\"agreeableness\":{\"score\":88,\"level\":\"high\"},\"neuroticism\":{\"score\":53,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"How to manage and dealing with fake content on social media.\",\n    \"opinion\": \"As a retired woman with a master's degree, I've spent many years observing the world around me. Social media has been an interesting addition in my life since I started using it occasionally about six months ago. Dealing with fake content reminds me of how easily misinformation can spread, even among people who think they're being careful. My high openness score makes me curious to learn more, and while agreeableness is strong, sometimes harsh truth needs to be told.\\n\\nFirst off, I believe the best way to manage this is by trusting my own judgment. I've always been taught that if something seems too good or too bad to be true, it probably isn't. With over 50 years behind me, from my time teaching history in Europe and now living as an immigrant in America after my husband passed away, I know the value of critical thinking.\\n\\nMy daughter actually helped me set up a Facebook account because she's tech-savvy. Sometimes when something looks suspicious, like that recent story about COVID-19 treatments, I cross-reference with reliable sources—like official government websites or news outlets I trust. Having moderate neuroticism means I do worry sometimes, especially after seeing how fake posts can cause panic among my friends.\\n\\nI also appreciate being part of a community through social media groups focused on cooking and board games; these are genuine interests that bring people together positively. But when it comes to political or health misinformation, it's like dealing with ghosts from another land—always lingering but hard to catch.\",\n    \"reasoning_summary\": \"1. Drawing upon lifelong experience in education and personal life.\\n2. Leveraging moderate level of tech use (a few times monthly) without deep immersion.\\n3. Using high agreeableness trait to approach solutions with kindness.\\n4. Combining curiosity (high openness) with critical thinking skills from history background.\\n5. Managing emotional response through selective engagement and trusted sources.\",\n    \"tone\": \"Calm, reflective, with a touch of nostalgia mixed with straightforward advice.\",\n    \"citations\": [\"Personal experience in teaching history\", \"Facebook usage by daughter\"],\n    \"used_persona_fields\":[\"age\",\"gender\",\"education_level\",\"time_onsocialmedia\",\"ocean.openness\",\"ocean.agreeableness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a retired woman with a master's degree, I've spent many years observing the world around me. Social media has been an interesting addition in my life since I started using it occasionally about six months ago. Dealing with fake content reminds me of how easily misinformation can spread, even among people who think they're being careful. My high openness score makes me curious to learn more, and while agreeableness is strong, sometimes harsh truth needs to be told.\n\nFirst off, I believe the best way to manage this is by trusting my own judgment. I've always been taught that if something seems too good or too bad to be true, it probably isn't. With over 50 years behind me, from my time teaching history in Europe and now living as an immigrant in America after my husband passed away, I know the value of critical thinking.\n\nMy daughter actually helped me set up a Facebook account because she's tech-savvy. Sometimes when something looks suspicious, like that recent story about COVID-19 treatments, I cross-reference with reliable sources—like official government websites or news outlets I trust. Having moderate neuroticism means I do worry sometimes, especially after seeing how fake posts can cause panic among my friends.\n\nI also appreciate being part of a community through social media groups focused on cooking and board games; these are genuine interests that bring people together positively. But when it comes to political or health misinformation, it's like dealing with ghosts from another land—always lingering but hard to catch.",
+    "reasoning_summary": "1. Drawing upon lifelong experience in education and personal life.\n2. Leveraging moderate level of tech use (a few times monthly) without deep immersion.\n3. Using high agreeableness trait to approach solutions with kindness.\n4. Combining curiosity (high openness) with critical thinking skills from history background.\n5. Managing emotional response through selective engagement and trusted sources.",
+    "tone": "Calm, reflective, with a touch of nostalgia mixed with straightforward advice.",
+    "citations": [
+      "Personal experience in teaching history",
+      "Facebook usage by daughter"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "time_onsocialmedia",
+      "ocean.openness",
+      "ocean.agreeableness"
+    ]
+  }
+}

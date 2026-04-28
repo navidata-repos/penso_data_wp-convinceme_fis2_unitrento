@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 32,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "doctor",
+      "city_of_living": "Lecce",
+      "employment_status": "employed part-time",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "native Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "board games",
+        "running",
+        "yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 15,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 18,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 52,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 30,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 79,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":32,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"doctor\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed part-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"marital_status\":\"married\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"board games\",\"running\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":18,\"level\":\"low\"},\"extraversion\":{\"score\":52,\"level\":\"moderate\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":32,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"doctor\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed part-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"marital_status\":\"married\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"board games\",\"running\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":18,\"level\":\"low\"},\"extraversion\":{\"score\":52,\"level\":\"moderate\"},\"agreeableness\":{\"score\":30,\"level\":\"low\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\":\"human\",\n    \"topic\":\"What is the gender gap in science? Should we address it? And how?\",\n    \"opinion\":\"The gender gap in science refers to the disparities in representation, pay equity, and advancement opportunities between men and women. As a woman with a PhD living in Lecce, Italy, I've seen firsthand that while progress has been made, women still face significant barriers—particularly in higher-paying fields like engineering or computer science. My own depression sometimes makes it hard to focus on my research, but being part of the scientific community gives me hope for change. We must address this gap because diversity strengthens innovation and problem-solving.\\n\\nIn my opinion, addressing the gender gap requires a multi-faceted approach that starts from early education, continues through mentorship programs, and ends with policy reform to ensure fair hiring practices and parental leave benefits similar to those in other Western countries where I've observed greater equality. For instance, during our mandatory postdoctoral training seminars at university, female researchers often expressed feeling overlooked despite having equal expertise.\\n\\nMoreover, cultural factors play a role—like how Islam views women's roles traditionally—but not everyone adheres strictly to dogma anyway; many religious people support gender equality in education and careers. I think we need safe spaces for open dialogue where women can voice concerns without fear of judgment or reprisal because my depression often isolates me from such conversations, yet they are so crucial.\\n\\nUltimately, closing the science gap means leveling the playing field not just on merit but by addressing implicit biases that affect promotion committees and networking opportunities. We're already doing this through collaborative research projects funded by grants specifically for diversity initiatives—but more must be done to ensure these efforts aren't tokenistic.\",\n    \"reasoning_summary\": \"I am drawing from my personal experiences as a female scientist with depression, living in Italy where I've observed cultural barriers even among native Italian women. My low openness and agreeableness scores mean I'm slightly less inclined toward radical change proposals but still recognize the need for equity. The high neuroticism score makes me acutely aware that addressing this gap can be emotionally taxing due to my depression, so I emphasize practical support systems.\",\n    \"tone\": \"Reflective yet passionate with a touch of melancholy from personal experience and concern about systemic issues in science.\",\n    \"citations\": [\"National Bureau of Statistics Italy (2019)\", \"European Commission Gender Equality Strategy\"],\n    \"used_persona_fields\":[\"age\",\"biological_sex\",\"gender\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"marital_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the disparities in representation, pay equity, and advancement opportunities between men and women. As a woman with a PhD living in Lecce, Italy, I've seen firsthand that while progress has been made, women still face significant barriers—particularly in higher-paying fields like engineering or computer science. My own depression sometimes makes it hard to focus on my research, but being part of the scientific community gives me hope for change. We must address this gap because diversity strengthens innovation and problem-solving.\n\nIn my opinion, addressing the gender gap requires a multi-faceted approach that starts from early education, continues through mentorship programs, and ends with policy reform to ensure fair hiring practices and parental leave benefits similar to those in other Western countries where I've observed greater equality. For instance, during our mandatory postdoctoral training seminars at university, female researchers often expressed feeling overlooked despite having equal expertise.\n\nMoreover, cultural factors play a role—like how Islam views women's roles traditionally—but not everyone adheres strictly to dogma anyway; many religious people support gender equality in education and careers. I think we need safe spaces for open dialogue where women can voice concerns without fear of judgment or reprisal because my depression often isolates me from such conversations, yet they are so crucial.\n\nUltimately, closing the science gap means leveling the playing field not just on merit but by addressing implicit biases that affect promotion committees and networking opportunities. We're already doing this through collaborative research projects funded by grants specifically for diversity initiatives—but more must be done to ensure these efforts aren't tokenistic.",
+    "reasoning_summary": "I am drawing from my personal experiences as a female scientist with depression, living in Italy where I've observed cultural barriers even among native Italian women. My low openness and agreeableness scores mean I'm slightly less inclined toward radical change proposals but still recognize the need for equity. The high neuroticism score makes me acutely aware that addressing this gap can be emotionally taxing due to my depression, so I emphasize practical support systems.",
+    "tone": "Reflective yet passionate with a touch of melancholy from personal experience and concern about systemic issues in science.",
+    "citations": [
+      "National Bureau of Statistics Italy (2019)",
+      "European Commission Gender Equality Strategy"
+    ],
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "marital_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

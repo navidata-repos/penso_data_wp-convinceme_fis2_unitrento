@@ -1,0 +1,93 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "mistralai/magistral-small-2509",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 35,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "carpenter",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "divorced",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "painting",
+        "cycling",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 16,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 34,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 34,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 88,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 93,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":35,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"marital_status\":\"divorced\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"painting\",\"cycling\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":16,\"level\":\"low\"},\"conscientiousness\":{\"score\":34,\"level\":\"moderate\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":88,\"level\":\"high\"},\"neuroticism\":{\"score\":93,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":35,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"marital_status\":\"divorced\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"painting\",\"cycling\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":16,\"level\":\"low\"},\"conscientiousness\":{\"score\":34,\"level\":\"moderate\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":88,\"level\":\"high\"},\"neuroticism\":{\"score\":93,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"From my perspective, the gender gap in science is a real and pressing issue that needs to be addressed. As someone who has seen both sides of the education spectrum—my father having only basic education while my mother achieved a PhD—I understand that opportunities should not be limited by one's gender. In Italy, where I live now in Bologna, the situation might seem better than some other places, but it still exists. For instance, fields like engineering and physics have traditionally been male-dominated, which can discourage young women from pursuing them. This is a shame because diversity brings different perspectives that can drive innovation.\\n\\nAddressing this gap should not be about quotas or forcing people into fields they are not interested in. Instead, it's about providing equal opportunities and encouraging girls to explore their interests without bias. Schools could play a big role by offering more hands-on science experiences for all students, regardless of gender. In my experience as a carpenter, I've seen that practical skills can be just as important as theoretical knowledge. Maybe the same approach could work in science—making it more accessible and less intimidating.\\n\\nAdditionally, the culture within scientific fields needs to change. There should be zero tolerance for discrimination or harassment, which can drive women away from these fields. Role models and mentors can also help by showing that success is possible regardless of gender. It's not just a problem for women; it's a problem for society as a whole because we miss out on potential talent and ideas.\\n\\nIn conclusion, the gender gap in science should be addressed through equal opportunities, cultural change, and role models—all without resorting to forced measures that can backfire. It's a complex issue but one worth tackling for the benefit of everyone.\", \"reasoning_summary\":\"The persona is a 35-year-old male immigrant living in Bologna with low openness (16), moderate conscientiousness (34) and extraversion (34), high agreeableness (88), and high neuroticism (93). His background—including having one parent with basic education and another with a PhD, being divorced, self-employed as a carpenter, and not using social media—suggests he values practicality, hard work, and fairness. He likely sees the gender gap in science as a lack of equal opportunities and believes that solutions should be fair and practical. His high agreeableness and neuroticism may make him empathetic to marginalized groups while his low openness could lead him to prefer proven methods over radical changes. The religious background (Islam) may influence his views on fairness and equality, but he does not seem dogmatic about it.\", \"tone\":\"Practical, fair-minded, and somewhat cautious; avoids extreme positions or quick fixes. Speaks from experience and values practical solutions.\", \"citations\":[\"UNESCO report on gender gap in science\",\"Italian Ministry of Education data on STEM fields\"], \"safety_notes\":\"None\", \"used_persona_fields\":[\"age\",\"biological_sex\",\"gender\",\"education_level\",\"parents_education\",\"city_of_living\",\"occupation\",\"migration_status\",\"religious_beliefs\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "From my perspective, the gender gap in science is a real and pressing issue that needs to be addressed. As someone who has seen both sides of the education spectrum—my father having only basic education while my mother achieved a PhD—I understand that opportunities should not be limited by one's gender. In Italy, where I live now in Bologna, the situation might seem better than some other places, but it still exists. For instance, fields like engineering and physics have traditionally been male-dominated, which can discourage young women from pursuing them. This is a shame because diversity brings different perspectives that can drive innovation.\n\nAddressing this gap should not be about quotas or forcing people into fields they are not interested in. Instead, it's about providing equal opportunities and encouraging girls to explore their interests without bias. Schools could play a big role by offering more hands-on science experiences for all students, regardless of gender. In my experience as a carpenter, I've seen that practical skills can be just as important as theoretical knowledge. Maybe the same approach could work in science—making it more accessible and less intimidating.\n\nAdditionally, the culture within scientific fields needs to change. There should be zero tolerance for discrimination or harassment, which can drive women away from these fields. Role models and mentors can also help by showing that success is possible regardless of gender. It's not just a problem for women; it's a problem for society as a whole because we miss out on potential talent and ideas.\n\nIn conclusion, the gender gap in science should be addressed through equal opportunities, cultural change, and role models—all without resorting to forced measures that can backfire. It's a complex issue but one worth tackling for the benefit of everyone.",
+    "reasoning_summary": "The persona is a 35-year-old male immigrant living in Bologna with low openness (16), moderate conscientiousness (34) and extraversion (34), high agreeableness (88), and high neuroticism (93). His background—including having one parent with basic education and another with a PhD, being divorced, self-employed as a carpenter, and not using social media—suggests he values practicality, hard work, and fairness. He likely sees the gender gap in science as a lack of equal opportunities and believes that solutions should be fair and practical. His high agreeableness and neuroticism may make him empathetic to marginalized groups while his low openness could lead him to prefer proven methods over radical changes. The religious background (Islam) may influence his views on fairness and equality, but he does not seem dogmatic about it.",
+    "tone": "Practical, fair-minded, and somewhat cautious; avoids extreme positions or quick fixes. Speaks from experience and values practical solutions.",
+    "citations": [
+      "UNESCO report on gender gap in science",
+      "Italian Ministry of Education data on STEM fields"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "education_level",
+      "parents_education",
+      "city_of_living",
+      "occupation",
+      "migration_status",
+      "religious_beliefs",
+      "ocean"
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 80,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Milan",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "primary school"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "reading novels",
+        "cooking",
+        "board games",
+        "photography",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 18,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 46,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 22,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 32,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 81,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":80,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"reading novels\",\"cooking\",\"board games\",\"photography\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":46,\"level\":\"moderate\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":81,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":80,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"reading novels\",\"cooking\",\"board games\",\"photography\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":46,\"level\":\"moderate\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":32,\"level\":\"low\"},\"neuroticism\":{\"score\":81,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n    \"mode\": \"human\",\n    \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n    \"opinion\": \"I've always found it difficult to keep up with all the talk around modern medicine, especially something like COVID-19 vaccines that cause so much discussion. Being 80 years old, my perspective is shaped by a lifetime of seeing health challenges in our family and community back in Italy, but not having access to university-level understanding means I rely on simpler sources. My personality traits show high neuroticism - I'm naturally anxious anyway - while being low agreeableness doesn't necessarily stop me from listening if the other person is respectful.\\n\\nWhen faced with such discussions today, I try to approach them cautiously because my depression makes it easy for me to become overwhelmed by negative information. It's been helpful though that during retirement years we have access via local library computers or friends' Wi-Fi connections - but reading novels gives more mental peace than endless debates does.\\n\\nI believe in finding common ground, like how vaccines help protect others including those who are vulnerable because of my Buddhist beliefs which emphasize interconnectedness. If someone wants to discuss this topic properly with me, they should start by acknowledging that confusion is normal even among educated people; maybe suggest checking reliable news outlets rather than deep scientific papers since I only have upper secondary education.\",\n    \"reasoning_summary\": \"I considered how age influences perspective and access to information sources.\\n\\nMy high neuroticism means anxiety can interfere with processing complex topics calmly, so I need simpler explanations.\\n\\nLow agreeableness doesn't prevent engagement if respectful but requires careful handling of emotional responses.\\n\\nDepression complicates discussions as it lowers tolerance for stress-inducing content;\\n\\nRetired status limits my ability to seek deeper information without support from others or community resources.\\n\\nBuddhist religious beliefs naturally incline me towards concepts like interconnectedness which align with vaccine efficacy arguments against resistance based on fear.\\n\\nEducation level means relying more on layman explanations than academic ones in managing these discussions effectively.\",\n    \"tone\": \"Slightly hesitant but clear, somewhat melancholic due to depression and low energy levels\",\n    \"citations\": [\"Italian National Health Service (Agenzia del Farmaco)\"],\n    \"used_persona_fields\": [\"age\", \"psychological_feature\", \"religious_beliefs\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "I've always found it difficult to keep up with all the talk around modern medicine, especially something like COVID-19 vaccines that cause so much discussion. Being 80 years old, my perspective is shaped by a lifetime of seeing health challenges in our family and community back in Italy, but not having access to university-level understanding means I rely on simpler sources. My personality traits show high neuroticism - I'm naturally anxious anyway - while being low agreeableness doesn't necessarily stop me from listening if the other person is respectful.\n\nWhen faced with such discussions today, I try to approach them cautiously because my depression makes it easy for me to become overwhelmed by negative information. It's been helpful though that during retirement years we have access via local library computers or friends' Wi-Fi connections - but reading novels gives more mental peace than endless debates does.\n\nI believe in finding common ground, like how vaccines help protect others including those who are vulnerable because of my Buddhist beliefs which emphasize interconnectedness. If someone wants to discuss this topic properly with me, they should start by acknowledging that confusion is normal even among educated people; maybe suggest checking reliable news outlets rather than deep scientific papers since I only have upper secondary education.",
+    "reasoning_summary": "I considered how age influences perspective and access to information sources.\n\nMy high neuroticism means anxiety can interfere with processing complex topics calmly, so I need simpler explanations.\n\nLow agreeableness doesn't prevent engagement if respectful but requires careful handling of emotional responses.\n\nDepression complicates discussions as it lowers tolerance for stress-inducing content;\n\nRetired status limits my ability to seek deeper information without support from others or community resources.\n\nBuddhist religious beliefs naturally incline me towards concepts like interconnectedness which align with vaccine efficacy arguments against resistance based on fear.\n\nEducation level means relying more on layman explanations than academic ones in managing these discussions effectively.",
+    "tone": "Slightly hesitant but clear, somewhat melancholic due to depression and low energy levels",
+    "citations": [
+      "Italian National Health Service (Agenzia del Farmaco)"
+    ],
+    "used_persona_fields": [
+      "age",
+      "psychological_feature",
+      "religious_beliefs"
+    ]
+  }
+}

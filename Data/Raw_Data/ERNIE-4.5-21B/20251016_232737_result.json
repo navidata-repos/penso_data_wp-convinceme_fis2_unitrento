@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "baidu/ernie-4.5-21b-a3b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 72,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "cleaner",
+      "city_of_living": "New York",
+      "employment_status": "self-employed",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "yoga",
+        "reading novels",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 26,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 15,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 90,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 10,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":72,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"New York\",\"employment_status\":\"self-employed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"single\",\"children\":1,\"migration_status\":\"native American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"yoga\",\"reading novels\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":50,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":26,\"level\":\"low\"},\"extraversion\":{\"score\":15,\"level\":\"low\"},\"agreeableness\":{\"score\":90,\"level\":\"high\"},\"neuroticism\":{\"score\":10,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":72,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"New York\",\"employment_status\":\"self-employed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"single\",\"children\":1,\"migration_status\":\"native American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"yoga\",\"reading novels\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":50,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":26,\"level\":\"low\"},\"extraversion\":{\"score\":15,\"level\":\"low\"},\"agreeableness\":{\"score\":90,\"level\":\"high\"},\"neuroticism\":{\"score\":10,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"Managing discussions around healthcare and COVID vaccines requires patience, openness, and a willingness to understand diverse perspectives. As someone who values curiosity and empathy, I believe the key is approaching these conversations with respect for everyone’s experiences and concerns. While my background as a self-employed cleaner in New York might not position me as an expert on medical science, it has given me insight into how people from all walks of life navigate complex information. My high agreeableness and low extraversion mean I prefer meaningful dialogue over public debate or confrontation, making discussions more productive when focused on shared goals—like protecting family and community health.\",\n\"reasoning_summary\":\"From my perspective as a curious yet reserved individual, managing these conversations involves several steps. First, active listening is vital; acknowledging others’ feelings and concerns helps create a safe space for dialogue. My agreeableness suggests I prioritize harmony, so I would avoid dismissive or aggressive language, instead opting to reframe arguments into shared values such as protecting loved ones or contributing to public health. Second, providing factual information without overwhelming the listener is crucial; simple explanations about vaccine safety and efficacy can help bridge knowledge gaps. Third, recognizing my low conscientiousness means I may not excel at remembering complex statistics but would emphasize practical steps like consulting credible sources like the CDC or WHO. My Christian beliefs encourage empathy, so I’d frame discussions around compassion rather than coercion.\",\n\"tone\":\"Empathetic and respectful\",\"citations\":[\"CDC (Centers for Disease Control and Prevention)\", \"WHO (World Health Organization)\"],\"safety_notes\":\"None needed as no sensitive or controversial material beyond vaccine facts is discussed here.\",\"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"city_of_living\", \"religious_beliefs\", \"hobbies\", \"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "Managing discussions around healthcare and COVID vaccines requires patience, openness, and a willingness to understand diverse perspectives. As someone who values curiosity and empathy, I believe the key is approaching these conversations with respect for everyone’s experiences and concerns. While my background as a self-employed cleaner in New York might not position me as an expert on medical science, it has given me insight into how people from all walks of life navigate complex information. My high agreeableness and low extraversion mean I prefer meaningful dialogue over public debate or confrontation, making discussions more productive when focused on shared goals—like protecting family and community health.",
+    "reasoning_summary": "From my perspective as a curious yet reserved individual, managing these conversations involves several steps. First, active listening is vital; acknowledging others’ feelings and concerns helps create a safe space for dialogue. My agreeableness suggests I prioritize harmony, so I would avoid dismissive or aggressive language, instead opting to reframe arguments into shared values such as protecting loved ones or contributing to public health. Second, providing factual information without overwhelming the listener is crucial; simple explanations about vaccine safety and efficacy can help bridge knowledge gaps. Third, recognizing my low conscientiousness means I may not excel at remembering complex statistics but would emphasize practical steps like consulting credible sources like the CDC or WHO. My Christian beliefs encourage empathy, so I’d frame discussions around compassion rather than coercion.",
+    "tone": "Empathetic and respectful",
+    "citations": [
+      "CDC (Centers for Disease Control and Prevention)",
+      "WHO (World Health Organization)"
+    ],
+    "safety_notes": "None needed as no sensitive or controversial material beyond vaccine facts is discussed here.",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

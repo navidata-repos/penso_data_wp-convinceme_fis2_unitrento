@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 35,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "carpenter",
+      "city_of_living": "Bologna",
+      "employment_status": "employed part-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "yoga",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 20,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 13,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 62,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 5,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 84,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":35,\"biological_sex\":\"female\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"yoga\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":13,\"level\":\"low\"},\"extraversion\":{\"score\":62,\"level\":\"moderate\"},\"agreeableness\":{\"score\":5,\"level\":\"low\"},\"neuroticism\":{\"score\":84,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":35,\"biological_sex\":\"female\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"yoga\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":13,\"level\":\"low\"},\"extraversion\":{\"score\":62,\"level\":\"moderate\"},\"agreeableness\":{\"score\":5,\"level\":\"low\"},\"neuroticism\":{\"score\":84,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n  \"opinion\": \"As a 35-year-old carpenter living in Bologna, I've never worked in STEM fields, but I see how stereotypes can mess with people's heads from my own life. Stereotype threat, from what I gather, is when someone feels pressured or anxious because they're worried about confirming a negative stereotype about their group, like women or minorities being bad at math or science. It's not about actual ability but the fear of being judged, which can make people underperform or avoid certain paths altogether. I think we should definitely address it because it's unfair and holds people back from opportunities they might excel at. In my job, I've seen how assumptions about gender roles can limit who gets hired for certain tasks, even though skill matters more. To tackle stereotype threat, we need to create environments where everyone feels valued and judged on their merits, not stereotypes. This could mean more inclusive education and training programs that challenge biases, support networks for underrepresented groups, and raising awareness so people understand the impact of their words and actions. It's about giving everyone a fair shot, which benefits society by tapping into diverse talents. Personally, with my high neuroticism, I know how stress can affect performance, so I empathize with those facing this threat. Addressing it aligns with my values from volunteering and yoga, which focus on well-being and community support.\",\n  \"reasoning_summary\": \"Derived opinion by aligning with persona traits: age 35 and occupation as carpenter provide a practical, non-academic perspective; low openness and conscientiousness suggest a straightforward, less detail-oriented view; moderate extraversion and low agreeableness imply a direct, opinionated tone; high neuroticism adds emotional emphasis on stress and fairness; hobbies like yoga and volunteering influence a focus on well-being and community; education level and background limit technical depth but allow for relatable examples from daily life; used persona fields include age, occupation, education_level, hobbies, ocean scores (openness, conscientiousness, extraversion, agreeableness, neuroticism), and migration_status for context.\",\n  \"tone\": \"Direct, practical, slightly emotional, and opinionated, with a focus on fairness and personal experience rather than academic detail.\",\n  \"citations\": [\"none\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"occupation\", \"education_level\", \"hobbies\", \"ocean.openness\", \"ocean.conscientiousness\", \"ocean.extraversion\", \"ocean.agreeableness\", \"ocean.neuroticism\", \"migration_status\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As a 35-year-old carpenter living in Bologna, I've never worked in STEM fields, but I see how stereotypes can mess with people's heads from my own life. Stereotype threat, from what I gather, is when someone feels pressured or anxious because they're worried about confirming a negative stereotype about their group, like women or minorities being bad at math or science. It's not about actual ability but the fear of being judged, which can make people underperform or avoid certain paths altogether. I think we should definitely address it because it's unfair and holds people back from opportunities they might excel at. In my job, I've seen how assumptions about gender roles can limit who gets hired for certain tasks, even though skill matters more. To tackle stereotype threat, we need to create environments where everyone feels valued and judged on their merits, not stereotypes. This could mean more inclusive education and training programs that challenge biases, support networks for underrepresented groups, and raising awareness so people understand the impact of their words and actions. It's about giving everyone a fair shot, which benefits society by tapping into diverse talents. Personally, with my high neuroticism, I know how stress can affect performance, so I empathize with those facing this threat. Addressing it aligns with my values from volunteering and yoga, which focus on well-being and community support.",
+    "reasoning_summary": "Derived opinion by aligning with persona traits: age 35 and occupation as carpenter provide a practical, non-academic perspective; low openness and conscientiousness suggest a straightforward, less detail-oriented view; moderate extraversion and low agreeableness imply a direct, opinionated tone; high neuroticism adds emotional emphasis on stress and fairness; hobbies like yoga and volunteering influence a focus on well-being and community; education level and background limit technical depth but allow for relatable examples from daily life; used persona fields include age, occupation, education_level, hobbies, ocean scores (openness, conscientiousness, extraversion, agreeableness, neuroticism), and migration_status for context.",
+    "tone": "Direct, practical, slightly emotional, and opinionated, with a focus on fairness and personal experience rather than academic detail.",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "education_level",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism",
+      "migration_status"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 42,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Lecce",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "gardening",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 20,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 85,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 24,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":42,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"gardening\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":59,\"level\":\"moderate\"},\"extraversion\":{\"score\":85,\"level\":\"high\"},\"agreeableness\":{\"score\":60,\"level\":\"moderate\"},\"neuroticism\":{\"score\":24,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":42,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"gardening\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":59,\"level\":\"moderate\"},\"extraversion\":{\"score\":85,\"level\":\"high\"},\"agreeableness\":{\"score\":60,\"level\":\"moderate\"},\"neuroticism\":{\"score\":24,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"As an individual with a lived experience shaped by my background as an immigrant woman working in hospitality, I view the gender gap in science through a lens of personal and societal observation. Having worked long hours as a waitress while raising one child on my own for years, I've seen firsthand how systemic inequalities can affect women's choices early on—perhaps pushing them towards people-oriented jobs like mine rather than fields requiring intense focus or risk-taking that might be perceived more favorably in certain contexts.\\n\\nThe gender gap is real: not just about numbers but about the cultural assumptions that steer girls away from STEM subjects during formative years. Even with my parents—one providing vocational skills, the other an academic master's degree—I noticed how societal stereotypes influenced which subjects were encouraged or valued differently at home and in school. My father’s advanced education might have offered some exposure to scientific thinking, but I doubt it fully compensated for external pressures.\\n\\nAddressing this gap is crucial because science shapes our world; leaving half the population underrepresented means we're missing out on diverse perspectives that could lead to breakthroughs or more equitable solutions. But how? By implementing support systems starting from primary education—mentorship programs, inclusive curricula—and by challenging unconscious biases in hiring and promotion within institutions where I've seen immigrant women like myself struggle with recognition despite equal qualifications.\\n\\nI'm anxious but also conscientious enough to advocate for change. Perhaps my high extraversion helps me speak up about these issues even when they aren't directly impacting my day-to-day job as a waitress, though the anxiety makes it challenging—I need concrete steps that are collaborative and evidence-based rather than abstract debates.\",\n  \"reasoning_summary\": \"1) Observing personal experiences in immigration and employment: As an immigrant woman with limited formal education but full-time work experience, I see how societal expectations can push women away from demanding fields like science.\\n2) Analyzing parental influence: My father has a master's degree, yet the gap remains due to broader cultural factors that override individual exposure.\\n3) Addressing gender gaps as crucial for innovation and equity in society.\",\n  \"tone\": \"Reflective, concerned but practical\",\n  \"citations\": [],\n  \"safety_notes\": \"None\"\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As an individual with a lived experience shaped by my background as an immigrant woman working in hospitality, I view the gender gap in science through a lens of personal and societal observation. Having worked long hours as a waitress while raising one child on my own for years, I've seen firsthand how systemic inequalities can affect women's choices early on—perhaps pushing them towards people-oriented jobs like mine rather than fields requiring intense focus or risk-taking that might be perceived more favorably in certain contexts.\n\nThe gender gap is real: not just about numbers but about the cultural assumptions that steer girls away from STEM subjects during formative years. Even with my parents—one providing vocational skills, the other an academic master's degree—I noticed how societal stereotypes influenced which subjects were encouraged or valued differently at home and in school. My father’s advanced education might have offered some exposure to scientific thinking, but I doubt it fully compensated for external pressures.\n\nAddressing this gap is crucial because science shapes our world; leaving half the population underrepresented means we're missing out on diverse perspectives that could lead to breakthroughs or more equitable solutions. But how? By implementing support systems starting from primary education—mentorship programs, inclusive curricula—and by challenging unconscious biases in hiring and promotion within institutions where I've seen immigrant women like myself struggle with recognition despite equal qualifications.\n\nI'm anxious but also conscientious enough to advocate for change. Perhaps my high extraversion helps me speak up about these issues even when they aren't directly impacting my day-to-day job as a waitress, though the anxiety makes it challenging—I need concrete steps that are collaborative and evidence-based rather than abstract debates.",
+    "reasoning_summary": "1) Observing personal experiences in immigration and employment: As an immigrant woman with limited formal education but full-time work experience, I see how societal expectations can push women away from demanding fields like science.\n2) Analyzing parental influence: My father has a master's degree, yet the gap remains due to broader cultural factors that override individual exposure.\n3) Addressing gender gaps as crucial for innovation and equity in society.",
+    "tone": "Reflective, concerned but practical",
+    "citations": [],
+    "safety_notes": "None"
+  }
+}

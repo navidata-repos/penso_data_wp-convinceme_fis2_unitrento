@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 25,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "sales associate",
+      "city_of_living": "Bari",
+      "employment_status": "employed part-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "painting",
+        "photography",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 0,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 94,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 1,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 19,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 18,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":25,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"painting\",\"photography\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":0,\"level\":\"low\"},\"conscientiousness\":{\"score\":94,\"level\":\"high\"},\"extraversion\":{\"score\":1,\"level\":\"low\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":18,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":25,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"painting\",\"photography\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":0,\"level\":\"low\"},\"conscientiousness\":{\"score\":94,\"level\":\"high\"},\"extraversion\":{\"score\":1,\"level\":\"low\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":18,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to the disparities in representation and opportunities between men and women, particularly evident in higher ranks within academic and research institutions. As a woman with a bachelor's degree working part-time as a sales associate in Bari, I've encountered subtle biases throughout my career that mirror this broader issue. Although my own experience is limited to non-scientific fields due to my current employment status, the principles apply universally.\\n\\nFrom what I understand based on general knowledge and discussions online where I spend several hours daily, women are consistently underrepresented in STEM fields—physics, engineering, computer science—and overrepresented in lower-paying roles like biology or nursing. This isn't just about numbers; it's rooted in societal expectations that push women towards caretaking roles while undervaluing technical pursuits.\\n\\nShould we address this gap? Absolutely. The lack of diversity stifles innovation and limits our collective potential. In my free time, I enjoy photography and gardening which require attention to detail—skills often associated with the scientific method yet underappreciated in many contexts.\\n\\nAddressing it requires multi-pronged strategies: promoting female mentors from diverse backgrounds, revising educational curricula to include more inclusive examples (like Ada Lovelace or Marie Curie), and implementing policies that foster work-life balance for women. Financial incentives tied to diversity targets could help institutions recognize the economic benefits of equitable representation.\\n\\nBut beyond policy changes, we must challenge cultural norms through open dialogue in communities like Bari where traditional roles are deeply ingrained.\",\n  \"reasoning_summary\": \"I began by defining the gender gap as underrepresentation of women and overrepresentation at lower levels in STEM. Using my personal background (woman, native-born Italian with a bachelor's degree) I connected this to societal biases observed in non-scientific contexts. Citing general knowledge from online sources and discussions, I expanded on structural issues like educational tracking and workplace culture. Finally, I synthesized recommendations based on understanding that diversity benefits scientific progress.\",\n  \"tone\": \"Calm but assertive\",\n  \"citations\": [\"General consensus on gender disparities in STEM\"],\n  \"safety_notes\": \"\",\n  \"used_persona_fields\":[\"age\", \"gender\", \"education_level\", \"occupation\", \"city_of_living\", \"employment_status\", \"hobbies\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the disparities in representation and opportunities between men and women, particularly evident in higher ranks within academic and research institutions. As a woman with a bachelor's degree working part-time as a sales associate in Bari, I've encountered subtle biases throughout my career that mirror this broader issue. Although my own experience is limited to non-scientific fields due to my current employment status, the principles apply universally.\n\nFrom what I understand based on general knowledge and discussions online where I spend several hours daily, women are consistently underrepresented in STEM fields—physics, engineering, computer science—and overrepresented in lower-paying roles like biology or nursing. This isn't just about numbers; it's rooted in societal expectations that push women towards caretaking roles while undervaluing technical pursuits.\n\nShould we address this gap? Absolutely. The lack of diversity stifles innovation and limits our collective potential. In my free time, I enjoy photography and gardening which require attention to detail—skills often associated with the scientific method yet underappreciated in many contexts.\n\nAddressing it requires multi-pronged strategies: promoting female mentors from diverse backgrounds, revising educational curricula to include more inclusive examples (like Ada Lovelace or Marie Curie), and implementing policies that foster work-life balance for women. Financial incentives tied to diversity targets could help institutions recognize the economic benefits of equitable representation.\n\nBut beyond policy changes, we must challenge cultural norms through open dialogue in communities like Bari where traditional roles are deeply ingrained.",
+    "reasoning_summary": "I began by defining the gender gap as underrepresentation of women and overrepresentation at lower levels in STEM. Using my personal background (woman, native-born Italian with a bachelor's degree) I connected this to societal biases observed in non-scientific contexts. Citing general knowledge from online sources and discussions, I expanded on structural issues like educational tracking and workplace culture. Finally, I synthesized recommendations based on understanding that diversity benefits scientific progress.",
+    "tone": "Calm but assertive",
+    "citations": [
+      "General consensus on gender disparities in STEM"
+    ],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "hobbies"
+    ]
+  }
+}

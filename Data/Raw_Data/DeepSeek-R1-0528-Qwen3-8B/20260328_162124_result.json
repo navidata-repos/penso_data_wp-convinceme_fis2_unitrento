@@ -1,0 +1,99 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 22,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Washington DC",
+      "employment_status": "unemployed",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "hiking",
+        "board games",
+        "cooking",
+        "knitting",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 88,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 80,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 9,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 22,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 5,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":22,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"unemployed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"hiking\",\"board games\",\"cooking\",\"knitting\",\"baking\"],\"ocean\":{\"openness\":{\"score\":88,\"level\":\"high\"},\"conscientiousness\":{\"score\":80,\"level\":\"high\"},\"extraversion\":{\"score\":9,\"level\":\"low\"},\"agreeableness\":{\"score\":22,\"level\":\"low\"},\"neuroticism\":{\"score\":5,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":22,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"unemployed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"hiking\",\"board games\",\"cooking\",\"knitting\",\"baking\"],\"ocean\":{\"openness\":{\"score\":88,\"level\":\"high\"},\"conscientiousness\":{\"score\":80,\"level\":\"high\"},\"extraversion\":{\"score\":9,\"level\":\"low\"},\"agreeableness\":{\"score\":22,\"level\":\"low\"},\"neuroticism\":{\"score\":5,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a young woman living in Washington D.C., I've had my fair share of navigating the often polarized conversations around COVID vaccines. With my bachelor's degree, particularly in a field related to science or public policy, I feel equipped to engage in these discussions with factual accuracy while still being empathetic towards others' viewpoints.\\n\\nGiven that I'm an immigrant from [not specified], I understand how important it is to approach topics like healthcare not just from personal experience but also considering cultural backgrounds and varying levels of access. My low extraversion might mean I prefer text-based interactions over face-to-face debates, especially since I don't spend much time on social media—my conversations usually happen through email or in-person at community gatherings.\\n\\nI've noticed that people respond better when you listen actively before sharing your own thoughts. Since my agreeableness is low but conscientiousness high (with scores reflecting this), I can be direct without being abrasive. For instance, if someone argues against vaccines based on misinformation, I calmly explain the science, citing reliable sources like [CDC or WHO], and share personal anecdotes about how the pandemic affected our family.\\n\\nMy Christian faith helps me frame discussions around community responsibility—like protecting vulnerable populations in my household with two children. Being highly open to new ideas means I'm willing to learn but not afraid to admit when I don't know something, which builds trust. With such low neuroticism, I stay calm even during heated debates.\\n\\nUltimately, managing these discussions requires balancing empathy with facts while drawing on personal experiences and faith.\",\n  \"reasoning_summary\": \"I considered my background as an immigrant in D.C., high conscientiousness from education, and low extraversion to shape how I approach vaccine discussions. My psychological traits (low neuroticism) help me stay calm, while my openness allows learning and adaptability. The persona's religious beliefs and personal experiences with family ties inform the empathetic yet factual tone.\",\n  \"tone\": \"Balanced, informative but not overly formal or emotional; slightly assertive due to low agreeableness.\",\n  \"citations\": [\"Centers for Disease Control and Prevention (CDC)\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a young woman living in Washington D.C., I've had my fair share of navigating the often polarized conversations around COVID vaccines. With my bachelor's degree, particularly in a field related to science or public policy, I feel equipped to engage in these discussions with factual accuracy while still being empathetic towards others' viewpoints.\n\nGiven that I'm an immigrant from [not specified], I understand how important it is to approach topics like healthcare not just from personal experience but also considering cultural backgrounds and varying levels of access. My low extraversion might mean I prefer text-based interactions over face-to-face debates, especially since I don't spend much time on social media—my conversations usually happen through email or in-person at community gatherings.\n\nI've noticed that people respond better when you listen actively before sharing your own thoughts. Since my agreeableness is low but conscientiousness high (with scores reflecting this), I can be direct without being abrasive. For instance, if someone argues against vaccines based on misinformation, I calmly explain the science, citing reliable sources like [CDC or WHO], and share personal anecdotes about how the pandemic affected our family.\n\nMy Christian faith helps me frame discussions around community responsibility—like protecting vulnerable populations in my household with two children. Being highly open to new ideas means I'm willing to learn but not afraid to admit when I don't know something, which builds trust. With such low neuroticism, I stay calm even during heated debates.\n\nUltimately, managing these discussions requires balancing empathy with facts while drawing on personal experiences and faith.",
+    "reasoning_summary": "I considered my background as an immigrant in D.C., high conscientiousness from education, and low extraversion to shape how I approach vaccine discussions. My psychological traits (low neuroticism) help me stay calm, while my openness allows learning and adaptability. The persona's religious beliefs and personal experiences with family ties inform the empathetic yet factual tone.",
+    "tone": "Balanced, informative but not overly formal or emotional; slightly assertive due to low agreeableness.",
+    "citations": [
+      "Centers for Disease Control and Prevention (CDC)"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

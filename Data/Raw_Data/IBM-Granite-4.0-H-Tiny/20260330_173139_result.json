@@ -1,0 +1,100 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "ibm/granite-4-h-tiny",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 90,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Philadelphia",
+      "employment_status": "retired",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "widowed",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cinema",
+        "cycling",
+        "reading novels",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 2,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 4,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 8,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 87,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 43,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":90,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"retired\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cinema\",\"cycling\",\"reading novels\",\"running\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":8,\"level\":\"low\"},\"agreeableness\":{\"score\":87,\"level\":\"high\"},\"neuroticism\":{\"score\":43,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":90,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"retired\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cinema\",\"cycling\",\"reading novels\",\"running\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":8,\"level\":\"low\"},\"agreeableness\":{\"score\":87,\"level\":\"high\"},\"neuroticism\":{\"score\":43,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a 90-year-old woman who has lived through significant changes in medical practices, I believe managing conversations around healthcare and COVID vaccines requires a blend of respect, patience, and empathy. Growing up during the polio epidemic and witnessing the introduction of life-saving vaccines like measles and polio taught me the importance of vaccination. Despite my age, I remain vigilant about health information, often spending an hour daily on social media to stay informed. My educational background in health-related subjects and having parents with advanced degrees have equipped me with critical thinking skills necessary for navigating complex healthcare discussions.\\n\\nIn today's polarized environment, it is crucial to approach these conversations with an open mind. I advocate for a dialogue that respects differing viewpoints while emphasizing the importance of evidence-based medicine. For instance, when discussing COVID vaccines, I encourage exploring various perspectives through reputable sources such as the CDC or WHO. My religious beliefs, deeply rooted in Christianity, guide me towards compassion and community support, principles that align well with promoting public health measures like vaccination.\\n\\nLiving in Philadelphia, a city known for its vibrant healthcare sector, I have seen firsthand how advancements in medical science can save lives. My retired status allows me to engage more actively in these discussions, whether it's through family conversations or online forums. My hobbies, including cinema and cycling, often lead to impromptu debates about current health topics with friends and neighbors. Running has also given me a unique perspective on how physical activity can complement medical advice for overall well-being.\\n\\nIn conclusion, managing healthcare discussions requires a balance of respect for individual choices while promoting the benefits of evidence-based practices. As someone who values lifelong learning and community engagement, I believe fostering open dialogues is essential in addressing concerns around vaccines and other healthcare measures. By sharing personal experiences and encouraging critical thinking, we can build a more informed society capable of making decisions that prioritize health without compromising on ethical considerations.\",\"reasoning_summary\":\"The persona's age and life experiences have shaped her perspective on healthcare, emphasizing the importance of evidence-based practices and respectful dialogue. Her educational background and current social media habits enable her to stay informed about health topics. Religious beliefs and hobbies further enrich her ability to engage in meaningful conversations around sensitive subjects like COVID vaccines. The summary reflects how these factors contribute to a nuanced understanding of managing discussions on healthcare.\",\"tone\":\"Thoughtful and empathetic\",\"citations\":[\"CDC\",\"WHO\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 90-year-old woman who has lived through significant changes in medical practices, I believe managing conversations around healthcare and COVID vaccines requires a blend of respect, patience, and empathy. Growing up during the polio epidemic and witnessing the introduction of life-saving vaccines like measles and polio taught me the importance of vaccination. Despite my age, I remain vigilant about health information, often spending an hour daily on social media to stay informed. My educational background in health-related subjects and having parents with advanced degrees have equipped me with critical thinking skills necessary for navigating complex healthcare discussions.\n\nIn today's polarized environment, it is crucial to approach these conversations with an open mind. I advocate for a dialogue that respects differing viewpoints while emphasizing the importance of evidence-based medicine. For instance, when discussing COVID vaccines, I encourage exploring various perspectives through reputable sources such as the CDC or WHO. My religious beliefs, deeply rooted in Christianity, guide me towards compassion and community support, principles that align well with promoting public health measures like vaccination.\n\nLiving in Philadelphia, a city known for its vibrant healthcare sector, I have seen firsthand how advancements in medical science can save lives. My retired status allows me to engage more actively in these discussions, whether it's through family conversations or online forums. My hobbies, including cinema and cycling, often lead to impromptu debates about current health topics with friends and neighbors. Running has also given me a unique perspective on how physical activity can complement medical advice for overall well-being.\n\nIn conclusion, managing healthcare discussions requires a balance of respect for individual choices while promoting the benefits of evidence-based practices. As someone who values lifelong learning and community engagement, I believe fostering open dialogues is essential in addressing concerns around vaccines and other healthcare measures. By sharing personal experiences and encouraging critical thinking, we can build a more informed society capable of making decisions that prioritize health without compromising on ethical considerations.",
+    "reasoning_summary": "The persona's age and life experiences have shaped her perspective on healthcare, emphasizing the importance of evidence-based practices and respectful dialogue. Her educational background and current social media habits enable her to stay informed about health topics. Religious beliefs and hobbies further enrich her ability to engage in meaningful conversations around sensitive subjects like COVID vaccines. The summary reflects how these factors contribute to a nuanced understanding of managing discussions on healthcare.",
+    "tone": "Thoughtful and empathetic",
+    "citations": [
+      "CDC",
+      "WHO"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

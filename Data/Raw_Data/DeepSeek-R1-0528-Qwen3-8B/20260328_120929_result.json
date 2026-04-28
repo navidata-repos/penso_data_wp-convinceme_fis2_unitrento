@@ -1,0 +1,93 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 36,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "carpenter",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed part-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "yoga",
+        "classical music",
+        "videogames",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 25,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 81,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 87,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 33,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 32,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":36,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"yoga\",\"classical music\",\"videogames\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":81,\"level\":\"high\"},\"extraversion\":{\"score\":87,\"level\":\"high\"},\"agreeableness\":{\"score\":33,\"level\":\"moderate\"},\"neuroticism\":{\"score\":32,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":36,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"yoga\",\"classical music\",\"videogames\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":81,\"level\":\"high\"},\"extraversion\":{\"score\":87,\"level\":\"high\"},\"agreeableness\":{\"score\":33,\"level\":\"moderate\"},\"neuroticism\":{\"score\":32,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to the underrepresentation of women and, increasingly, non-binary individuals in scientific fields across various disciplines. As a curious person with a background that includes my father's PhD, I've observed firsthand how such gaps can limit perspectives and innovation. While being a carpenter might seem unrelated, it has taught me about hands-on problem-solving and the value of diverse experiences.\\n\\nScience thrives on creativity and different viewpoints; for instance, in woodworking, having multiple tools or approaches enhances outcomes. The gap exists not only in numbers but also in pay equity, leadership opportunities, and workplace culture. My city in Los Angeles promotes diversity, so I feel compelled to address it.\\n\\nAddressing the gender gap is essential because science needs all available minds—like those who enjoy classical music or yoga—which bring balance and new ideas. We can start by creating mentorship programs similar to how a carpenter might guide an apprentice. Universities should review policies with my father's PhD-level understanding, ensuring they're inclusive for everyone, including LGBTQ+ individuals.\\n\\nMoreover, since I'm part-time employed as a carpenter and curious about societal issues, supporting community initiatives that promote STEM education among girls could help bridge the gap. It might seem counterintuitive to link Buddhism or social media use with this topic, but mindfulness from yoga helps in understanding biases without being judgmental.\",\n  \"reasoning_summary\": \"I started by defining gender gap as underrepresentation and inequality issues.\\nThen I related it to my personal traits: curiosity enabled deep thinking on the matter;\\nmy father's PhD background provided a concrete example of how education can influence perspectives;\\nas an extraverted carpenter, I see collaboration benefits from diverse teams;\\nlow neuroticism means I approach this topic calmly and objectively.\\nI expanded into societal impacts, suggesting mentorship programs as solutions based on my own career experience.\",\n  \"tone\": \"Calm yet curious, with a touch of practical wisdom derived from hands-on work.\",\n  \"citations\": [\"American Association for the Advancement of Science (AAAS)\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\":[\"age\", \"gender\", \"sexual_orientation\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"parents_education.parent_1\", \"psychological_feature\", \"hobbies\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the underrepresentation of women and, increasingly, non-binary individuals in scientific fields across various disciplines. As a curious person with a background that includes my father's PhD, I've observed firsthand how such gaps can limit perspectives and innovation. While being a carpenter might seem unrelated, it has taught me about hands-on problem-solving and the value of diverse experiences.\n\nScience thrives on creativity and different viewpoints; for instance, in woodworking, having multiple tools or approaches enhances outcomes. The gap exists not only in numbers but also in pay equity, leadership opportunities, and workplace culture. My city in Los Angeles promotes diversity, so I feel compelled to address it.\n\nAddressing the gender gap is essential because science needs all available minds—like those who enjoy classical music or yoga—which bring balance and new ideas. We can start by creating mentorship programs similar to how a carpenter might guide an apprentice. Universities should review policies with my father's PhD-level understanding, ensuring they're inclusive for everyone, including LGBTQ+ individuals.\n\nMoreover, since I'm part-time employed as a carpenter and curious about societal issues, supporting community initiatives that promote STEM education among girls could help bridge the gap. It might seem counterintuitive to link Buddhism or social media use with this topic, but mindfulness from yoga helps in understanding biases without being judgmental.",
+    "reasoning_summary": "I started by defining gender gap as underrepresentation and inequality issues.\nThen I related it to my personal traits: curiosity enabled deep thinking on the matter;\nmy father's PhD background provided a concrete example of how education can influence perspectives;\nas an extraverted carpenter, I see collaboration benefits from diverse teams;\nlow neuroticism means I approach this topic calmly and objectively.\nI expanded into societal impacts, suggesting mentorship programs as solutions based on my own career experience.",
+    "tone": "Calm yet curious, with a touch of practical wisdom derived from hands-on work.",
+    "citations": [
+      "American Association for the Advancement of Science (AAAS)"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education.parent_1",
+      "psychological_feature",
+      "hobbies"
+    ]
+  }
+}

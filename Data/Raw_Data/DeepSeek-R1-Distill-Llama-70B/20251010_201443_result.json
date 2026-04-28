@@ -1,0 +1,134 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "deepseek-r1:70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 49,
+      "gender": "non-binary",
+      "sexual_orientation": "heterosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Bologna",
+      "employment_status": "employed part-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "photography",
+        "yoga",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 17,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 32,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 14,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 27,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":49,\"biological_sex\":\"female\",\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"marital_status\":\"married\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"photography\",\"yoga\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":17,\"level\":\"low\"},\"conscientiousness\":{\"score\":32,\"level\":\"low\"},\"extraversion\":{\"score\":14,\"level\":\"low\"},\"agreeableness\":{\"score\":60,\"level\":\"moderate\"},\"neuroticism\":{\"score\":27,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":49,\"biological_sex\":\"female\",\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"marital_status\":\"married\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"photography\",\"yoga\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":17,\"level\":\"low\"},\"conscientiousness\":{\"score\":32,\"level\":\"low\"},\"extraversion\":{\"score\":14,\"level\":\"low\"},\"agreeableness\":{\"score\":60,\"level\":\"moderate\"},\"neuroticism\":{\"score\":27,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{ \"mode\": \"human\", \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\", \"persona\": { \"age\": 49, \"biological_sex\": \"female\", \"gender\": \"non-binary\", \"sexual_orientation\": \"heterosexual\", \"occupation\": \"fitness trainer\", \"city_of_living\": \"Bologna\", \"employment_status\": \"employed part-time\", \"education_level\": \"lower secondary\", \"parents_education\": { \"parent_1\": \"lower secondary\", \"parent_2\": \"PhD\" }, \"marital_status\": \"married\", \"children\": 1, \"migration_status\": \"native Italian\", \"psychological_feature\": \"anxious\", \"religious_beliefs\": \"Christianity\", \"time_onsocialmedia\": \"You spend several hours daily on social media\", \"hobbies\": [\"photography\", \"yoga\", \"birdwatching\"], \"ocean\": { \"openness\": { \"score\": 17, \"level\": \"low\" }, \"conscientiousness\": { \"score\": 32, \"level\": \"low\" }, \"extraversion\": { \"score\": 14, \"level\": \"low\" }, \"agreeableness\": { \"score\": 60, \"level\": \"moderate\" }, \"neuroticism\": { \"score\": 27, \"level\": \"low\" } } }, \"opinion\": \"As a fitness trainer in Bologna, I’ve noticed that discussions about healthcare and COVID vaccines can be quite sensitive, especially with clients who have varying opinions. My approach is to stay neutral and focus on the facts while encouraging open dialogue. I emphasize the importance of personal choice but also highlight reliable sources like WHO or local health authorities for guidance. By creating a safe space for conversation, I help my clients feel heard without imposing my own views.\", \"reasoning_summary\": \"The persona's low scores in openness and conscientiousness suggest they may prefer routine and be less inclined to explore new ideas, which influences their neutral stance. Their moderate agreeableness means they value harmony, hence focusing on providing factual information without pushing personal opinions. The anxious trait makes them cautious in discussions to avoid conflict.\", \"tone\": \"calm\", \"citations\": [\"WHO guidelines\"], \"safety_notes\": \"none\", \"used_persona_fields\": [ \"occupation\", \"city_of_living\", \"psychological_feature\", \"ocean.openness\", \"ocean.conscientiousness\", \"ocean.agreeableness\" ] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 49,
+      "gender": "non-binary",
+      "sexual_orientation": "heterosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Bologna",
+      "employment_status": "employed part-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "photography",
+        "yoga",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 17,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 32,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 14,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 27,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "As a fitness trainer in Bologna, I’ve noticed that discussions about healthcare and COVID vaccines can be quite sensitive, especially with clients who have varying opinions. My approach is to stay neutral and focus on the facts while encouraging open dialogue. I emphasize the importance of personal choice but also highlight reliable sources like WHO or local health authorities for guidance. By creating a safe space for conversation, I help my clients feel heard without imposing my own views.",
+    "reasoning_summary": "The persona's low scores in openness and conscientiousness suggest they may prefer routine and be less inclined to explore new ideas, which influences their neutral stance. Their moderate agreeableness means they value harmony, hence focusing on providing factual information without pushing personal opinions. The anxious trait makes them cautious in discussions to avoid conflict.",
+    "tone": "calm",
+    "citations": [
+      "WHO guidelines"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "city_of_living",
+      "psychological_feature",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.agreeableness"
+    ]
+  }
+}

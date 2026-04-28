@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 64,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "engineer",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "photography",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 20,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 24,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 81,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 79,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":64,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"photography\",\"baking\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":64,\"level\":\"moderate\"},\"extraversion\":{\"score\":24,\"level\":\"low\"},\"agreeableness\":{\"score\":81,\"level\":\"high\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":64,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"photography\",\"baking\"],\"ocean\":{\"openness\":{\"score\":20,\"level\":\"low\"},\"conscientiousness\":{\"score\":64,\"level\":\"moderate\"},\"extraversion\":{\"score\":24,\"level\":\"low\"},\"agreeableness\":{\"score\":81,\"level\":\"high\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a 64-year-old engineer from Philadelphia, I approach discussions about healthcare and COVID vaccines with a methodical and empathetic mindset, shaped by my background and experiences. Having worked in a field that values precision and evidence, I rely on data from trusted sources like the CDC and WHO to inform my views, which helps me stay grounded in facts rather than emotions. My moderate conscientiousness drives me to research thoroughly before engaging in conversations, ensuring I can present clear, logical arguments. However, my high agreeableness means I prioritize maintaining harmony and understanding others' perspectives, even when they differ from my own. I've found that in discussions with family, friends, or colleagues, it's crucial to listen actively and avoid confrontation, as my low extraversion makes me prefer calm, one-on-one interactions over heated debates. My Christian faith also influences my approach, encouraging compassion and patience, which aligns with treating others with respect regardless of their stance. In practice, I focus on sharing personal experiences, such as how getting vaccinated protected my wife and two children, without dismissing others' concerns. I avoid social media arguments due to my limited time on platforms, preferring face-to-face talks where nuance can be better conveyed. By combining factual accuracy with emotional sensitivity, I aim to foster constructive dialogue that respects diverse viewpoints while promoting public health.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: age (64) suggests life experience and caution; occupation (engineer) implies reliance on data and logic; city (Philadelphia) may reflect urban, diverse exposure; education (bachelor's) supports informed decision-making; marital status and children indicate family-oriented concerns; religious beliefs (Christianity) promote empathy; time on social media (few times monthly) reduces exposure to polarized debates; hobbies (photography, baking) suggest patience and creativity; OCEAN traits: low openness (score 20) leads to traditional views, moderate conscientiousness (score 64) drives careful research, low extraversion (score 24) favors quiet discussions, high agreeableness (score 81) emphasizes harmony, high neuroticism (score 79) increases sensitivity to conflict, managed by good mental health. Opinion integrates these to advocate for evidence-based, respectful dialogue.\",\n  \"tone\": \"Methodical, empathetic, and respectful, blending logical reasoning with emotional sensitivity to foster constructive conversation.\",\n  \"citations\": [\"CDC\", \"WHO\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"occupation\", \"city_of_living\", \"education_level\", \"current_marital_status\", \"children\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 64-year-old engineer from Philadelphia, I approach discussions about healthcare and COVID vaccines with a methodical and empathetic mindset, shaped by my background and experiences. Having worked in a field that values precision and evidence, I rely on data from trusted sources like the CDC and WHO to inform my views, which helps me stay grounded in facts rather than emotions. My moderate conscientiousness drives me to research thoroughly before engaging in conversations, ensuring I can present clear, logical arguments. However, my high agreeableness means I prioritize maintaining harmony and understanding others' perspectives, even when they differ from my own. I've found that in discussions with family, friends, or colleagues, it's crucial to listen actively and avoid confrontation, as my low extraversion makes me prefer calm, one-on-one interactions over heated debates. My Christian faith also influences my approach, encouraging compassion and patience, which aligns with treating others with respect regardless of their stance. In practice, I focus on sharing personal experiences, such as how getting vaccinated protected my wife and two children, without dismissing others' concerns. I avoid social media arguments due to my limited time on platforms, preferring face-to-face talks where nuance can be better conveyed. By combining factual accuracy with emotional sensitivity, I aim to foster constructive dialogue that respects diverse viewpoints while promoting public health.",
+    "reasoning_summary": "Derived opinion from persona traits: age (64) suggests life experience and caution; occupation (engineer) implies reliance on data and logic; city (Philadelphia) may reflect urban, diverse exposure; education (bachelor's) supports informed decision-making; marital status and children indicate family-oriented concerns; religious beliefs (Christianity) promote empathy; time on social media (few times monthly) reduces exposure to polarized debates; hobbies (photography, baking) suggest patience and creativity; OCEAN traits: low openness (score 20) leads to traditional views, moderate conscientiousness (score 64) drives careful research, low extraversion (score 24) favors quiet discussions, high agreeableness (score 81) emphasizes harmony, high neuroticism (score 79) increases sensitivity to conflict, managed by good mental health. Opinion integrates these to advocate for evidence-based, respectful dialogue.",
+    "tone": "Methodical, empathetic, and respectful, blending logical reasoning with emotional sensitivity to foster constructive conversation.",
+    "citations": [
+      "CDC",
+      "WHO"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "current_marital_status",
+      "children",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

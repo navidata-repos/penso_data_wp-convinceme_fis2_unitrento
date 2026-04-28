@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 58,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Kansas City",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "cinema",
+        "rock climbing",
+        "knitting",
+        "hiking",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 29,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 39,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 33,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 2,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":58,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cinema\",\"rock climbing\",\"knitting\",\"hiking\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":29,\"level\":\"low\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":39,\"level\":\"moderate\"},\"agreeableness\":{\"score\":33,\"level\":\"moderate\"},\"neuroticism\":{\"score\":2,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":58,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cinema\",\"rock climbing\",\"knitting\",\"hiking\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":29,\"level\":\"low\"},\"conscientiousness\":{\"score\":45,\"level\":\"moderate\"},\"extraversion\":{\"score\":39,\"level\":\"moderate\"},\"agreeableness\":{\"score\":33,\"level\":\"moderate\"},\"neuroticism\":{\"score\":2,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to the underrepresentation of women, particularly in senior positions and certain fields like physics or engineering. I've seen this firsthand while working as a waiter; customers often ask about my career change from what was probably a STEM field to service industry jobs. It's interesting how society assumes scientists are mostly men – that stereotype is just ridiculous! My dad has a master's degree, so he could definitely explain some of this, but I don't think he had the same experiences growing up as we do now. As an older person curious about these topics and with low neuroticism, I believe addressing it makes sense because science needs diverse perspectives to be truly innovative. We're missing out on half the population's potential when you consider how many brilliant minds aren't fully utilized in labs or classrooms.\",\n  \"reasoning_summary\": \"I observed that my father holds a master's degree but didn't receive one himself, which highlights educational disparities. As an older woman with moderate openness and conscientiousness, I've seen career changes over time influenced by societal expectations about gender roles, especially in fields like science where women are underrepresented according to studies on the topic. My curiosity drives me to explore this issue further despite my low neuroticism preventing excessive worry.\",\n  \"tone\": \"Reflective, curious yet calm and reasoned\",\n  \"citations\": [\"Various scientific journals studying gender disparities\"],\n  \"used_persona_fields\":[\"age\",\"gender\",\"education_level\",\"occupation\",\"ocean:openness\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the underrepresentation of women, particularly in senior positions and certain fields like physics or engineering. I've seen this firsthand while working as a waiter; customers often ask about my career change from what was probably a STEM field to service industry jobs. It's interesting how society assumes scientists are mostly men – that stereotype is just ridiculous! My dad has a master's degree, so he could definitely explain some of this, but I don't think he had the same experiences growing up as we do now. As an older person curious about these topics and with low neuroticism, I believe addressing it makes sense because science needs diverse perspectives to be truly innovative. We're missing out on half the population's potential when you consider how many brilliant minds aren't fully utilized in labs or classrooms.",
+    "reasoning_summary": "I observed that my father holds a master's degree but didn't receive one himself, which highlights educational disparities. As an older woman with moderate openness and conscientiousness, I've seen career changes over time influenced by societal expectations about gender roles, especially in fields like science where women are underrepresented according to studies on the topic. My curiosity drives me to explore this issue further despite my low neuroticism preventing excessive worry.",
+    "tone": "Reflective, curious yet calm and reasoned",
+    "citations": [
+      "Various scientific journals studying gender disparities"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "occupation",
+      "ocean:openness"
+    ]
+  }
+}

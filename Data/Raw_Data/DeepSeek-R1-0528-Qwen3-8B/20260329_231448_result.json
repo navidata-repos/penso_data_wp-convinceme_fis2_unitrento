@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 30,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "translator",
+      "city_of_living": "Milan",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cycling",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 90,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 84,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 0,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":30,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"translator\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cycling\",\"painting\"],\"ocean\":{\"openness\":{\"score\":64,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":90,\"level\":\"high\"},\"agreeableness\":{\"score\":84,\"level\":\"high\"},\"neuroticism\":{\"score\":0,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":30,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"translator\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cycling\",\"painting\"],\"ocean\":{\"openness\":{\"score\":64,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":90,\"level\":\"high\"},\"agreeableness\":{\"score\":84,\"level\":\"high\"},\"neuroticism\":{\"score\":0,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As an immigrant living in Milan, I've found myself constantly navigating conversations about healthcare and COVID vaccines. My curiosity drives me to engage deeply with these topics, especially since my parents both hold advanced degrees – a Master's and a PhD – which gives me confidence that I can handle complex subjects like this. Given my high extraversion and agreeableness scores, I enjoy connecting with people through social media, where I spend about an hour daily discussing everything from the science behind vaccines to personal anecdotes about getting vaccinated.\\n\\nI believe managing these discussions requires a balanced approach that respects both scientific facts and cultural sensitivities, as my Islamic background adds another layer. For instance, when explaining vaccine efficacy or safety data during translation work, I always ensure it's clear yet compassionate – understanding how misinformation can be particularly harmful in diverse communities like ours.\\n\\nMy moderate openness allows me to acknowledge uncertainties while still seeking knowledge about new developments. I often share resources from reliable health organizations, ensuring my contributions align with evidence-based approaches rather than personal opinions.\",\n  \"reasoning_summary\": \"First, I considered the user's curiosity trait, which motivates deep engagement in topics. Then, their high extraversion and agreeableness suggest a preference for collaborative dialogue over confrontation. The Islamic religious beliefs may influence perspectives on preventative health measures. The daily social media use indicates that online communication is an important context for discussion management.\",\n  \"tone\": \"Calm, informative, empathetic\",\n  \"citations\": [\"World Health Organization\", \"Italian National Institute of Health\"],\n  \"safety_notes\": \"None\",\n  \"used_persona_fields\": [\"age\",\"gender\",\"occupation\",\"city_of_living\",\"religious_beliefs\",\"time_onsocialmedia\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As an immigrant living in Milan, I've found myself constantly navigating conversations about healthcare and COVID vaccines. My curiosity drives me to engage deeply with these topics, especially since my parents both hold advanced degrees – a Master's and a PhD – which gives me confidence that I can handle complex subjects like this. Given my high extraversion and agreeableness scores, I enjoy connecting with people through social media, where I spend about an hour daily discussing everything from the science behind vaccines to personal anecdotes about getting vaccinated.\n\nI believe managing these discussions requires a balanced approach that respects both scientific facts and cultural sensitivities, as my Islamic background adds another layer. For instance, when explaining vaccine efficacy or safety data during translation work, I always ensure it's clear yet compassionate – understanding how misinformation can be particularly harmful in diverse communities like ours.\n\nMy moderate openness allows me to acknowledge uncertainties while still seeking knowledge about new developments. I often share resources from reliable health organizations, ensuring my contributions align with evidence-based approaches rather than personal opinions.",
+    "reasoning_summary": "First, I considered the user's curiosity trait, which motivates deep engagement in topics. Then, their high extraversion and agreeableness suggest a preference for collaborative dialogue over confrontation. The Islamic religious beliefs may influence perspectives on preventative health measures. The daily social media use indicates that online communication is an important context for discussion management.",
+    "tone": "Calm, informative, empathetic",
+    "citations": [
+      "World Health Organization",
+      "Italian National Institute of Health"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "religious_beliefs",
+      "time_onsocialmedia"
+    ]
+  }
+}

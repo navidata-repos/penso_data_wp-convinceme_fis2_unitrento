@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 29,
+      "gender": "transgender",
+      "sexual_orientation": "bisexual",
+      "occupation": "sales associate",
+      "city_of_living": "Bari",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "hiking",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 93,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 20,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 5,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 21,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 25,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":29,\"biological_sex\":\"male\",\"gender\":\"transgender\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"no formal education\"},\"marital_status\":\"married\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"hiking\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":93,\"level\":\"high\"},\"conscientiousness\":{\"score\":20,\"level\":\"low\"},\"extraversion\":{\"score\":5,\"level\":\"low\"},\"agreeableness\":{\"score\":21,\"level\":\"low\"},\"neuroticism\":{\"score\":25,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":29,\"biological_sex\":\"male\",\"gender\":\"transgender\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"no formal education\"},\"marital_status\":\"married\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"hiking\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":93,\"level\":\"high\"},\"conscientiousness\":{\"score\":20,\"level\":\"low\"},\"extraversion\":{\"score\":5,\"level\":\"low\"},\"agreeableness\":{\"score\":21,\"level\":\"low\"},\"neuroticism\":{\"score\":25,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"opinion\": \"The gender gap in science refers to the imbalance between men and women in scientific fields, particularly at senior levels. It's not just about numbers but also representation across various disciplines. As a transgender person with limited formal education, I come from an unconventional background yet I'm creative and curious—qualities often underestimated by societal norms.\\n\\nI believe we should address it because diversity fuels innovation; history shows that different perspectives lead to better solutions. For example, during my time working part-time in sales while raising a child with my partner, I've seen firsthand how rigid systems exclude people who don't fit traditional molds. My own journey as someone navigating gender identities outside the binary has taught me that institutions must be flexible and inclusive.\\n\\nAddressing this requires starting early: educational programs should encourage girls to pursue STEM from primary school onwards, but we can't ignore the systemic barriers like pay inequity or lack of role models for women in academia. I also think quotas might help initially until inclusion becomes organic.\",\n  \"reasoning_summary\": \"First, define gender gap as imbalance in representation and opportunities.\\nSecond, argue that my personal background (transgender, lower education) gives me insight into how marginalization works.\\nThird, connect creativity with the need for diverse problem-solving approaches.\\nFourth, suggest educational reforms as a starting point but acknowledge systemic issues require ongoing policy changes.\",\n  \"tone\": \"Passionate yet grounded, slightly formal due to topic seriousness but inject personal story to keep it relatable\",\n  \"citations\": [\"Various sources on gender bias in academia\"],\n  \"safety_notes\": \"None needed—topic is neutral and based on widely accepted data\",\n  \"used_persona_fields\":[\"age\",\"biological_sex\",\"gender\",\"psychological_feature\",\"time_onsocialmedia\"] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science refers to the imbalance between men and women in scientific fields, particularly at senior levels. It's not just about numbers but also representation across various disciplines. As a transgender person with limited formal education, I come from an unconventional background yet I'm creative and curious—qualities often underestimated by societal norms.\n\nI believe we should address it because diversity fuels innovation; history shows that different perspectives lead to better solutions. For example, during my time working part-time in sales while raising a child with my partner, I've seen firsthand how rigid systems exclude people who don't fit traditional molds. My own journey as someone navigating gender identities outside the binary has taught me that institutions must be flexible and inclusive.\n\nAddressing this requires starting early: educational programs should encourage girls to pursue STEM from primary school onwards, but we can't ignore the systemic barriers like pay inequity or lack of role models for women in academia. I also think quotas might help initially until inclusion becomes organic.",
+    "reasoning_summary": "First, define gender gap as imbalance in representation and opportunities.\nSecond, argue that my personal background (transgender, lower education) gives me insight into how marginalization works.\nThird, connect creativity with the need for diverse problem-solving approaches.\nFourth, suggest educational reforms as a starting point but acknowledge systemic issues require ongoing policy changes.",
+    "tone": "Passionate yet grounded, slightly formal due to topic seriousness but inject personal story to keep it relatable",
+    "citations": [
+      "Various sources on gender bias in academia"
+    ],
+    "safety_notes": "None needed—topic is neutral and based on widely accepted data",
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "psychological_feature",
+      "time_onsocialmedia"
+    ]
+  }
+}

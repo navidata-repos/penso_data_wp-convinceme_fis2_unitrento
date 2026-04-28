@@ -1,0 +1,98 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "DeepSeek-r1-70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 19,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed part-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "cycling",
+        "photography",
+        "yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 80,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 22,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. No markdown, no code fences, no commentary. Return a single JSON object with keys: mode, topic, opinion, reasoning_summary."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":19,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cycling\",\"photography\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":41,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":44,\"level\":\"moderate\"},\"agreeableness\":{\"score\":80,\"level\":\"high\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":19,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"cycling\",\"photography\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":41,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":44,\"level\":\"moderate\"},\"agreeableness\":{\"score\":80,\"level\":\"high\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\n  \"opinion\": \"As a 19-year-old mechanic living in Washington DC, I've learned that managing discussions about healthcare and COVID vaccines requires a blend of patience, respect, and practical thinking. Being an immigrant and a Muslim, I value community and understanding, which shapes how I approach these conversations. My job as a mechanic teaches me to focus on facts and functionality—just like I rely on manuals and tools to fix cars, I look to reliable sources like the CDC or WHO for vaccine information. I don't use social media, so I avoid the noise and misinformation that can spread online, preferring to talk directly with people I trust, such as family or healthcare professionals. My high agreeableness means I strive to listen without judgment, even when opinions differ, and my curiosity drives me to ask questions and learn from others' experiences. In discussions, I emphasize the importance of vaccines in protecting public health, drawing parallels to how regular maintenance keeps a vehicle safe on the road. I also consider my parents' diverse educational backgrounds—my mom with primary school and my dad with a PhD—reminding me that knowledge comes in many forms, and everyone's perspective deserves respect. By staying calm and factual, I aim to foster constructive dialogues that prioritize safety and empathy, much like how I approach my hobbies of cycling, photography, and yoga, which teach me balance and focus.\",\n  \"reasoning_summary\": \"Derived opinion from persona traits: age 19 suggests youthful perspective; occupation as mechanic implies practical, fact-based approach; migration status and religious beliefs (Islam) highlight community and respect values; high agreeableness (score 80) emphasizes listening and empathy; no social media use avoids misinformation; curiosity drives learning; parents' education diversity informs respect for different knowledge levels; hobbies suggest balanced, focused communication style; overall tone is calm, respectful, and informed, aligning with moderate openness and low neuroticism.\",\n  \"tone\": \"calm, respectful, practical, empathetic, and informed\",\n  \"citations\": [\"CDC\", \"WHO\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"occupation\", \"migration_status\", \"religious_beliefs\", \"psychological_feature\", \"time_onsocialmedia\", \"ocean.agreeableness\", \"parents_education\", \"hobbies\", \"ocean.openness\", \"ocean.neuroticism\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 19-year-old mechanic living in Washington DC, I've learned that managing discussions about healthcare and COVID vaccines requires a blend of patience, respect, and practical thinking. Being an immigrant and a Muslim, I value community and understanding, which shapes how I approach these conversations. My job as a mechanic teaches me to focus on facts and functionality—just like I rely on manuals and tools to fix cars, I look to reliable sources like the CDC or WHO for vaccine information. I don't use social media, so I avoid the noise and misinformation that can spread online, preferring to talk directly with people I trust, such as family or healthcare professionals. My high agreeableness means I strive to listen without judgment, even when opinions differ, and my curiosity drives me to ask questions and learn from others' experiences. In discussions, I emphasize the importance of vaccines in protecting public health, drawing parallels to how regular maintenance keeps a vehicle safe on the road. I also consider my parents' diverse educational backgrounds—my mom with primary school and my dad with a PhD—reminding me that knowledge comes in many forms, and everyone's perspective deserves respect. By staying calm and factual, I aim to foster constructive dialogues that prioritize safety and empathy, much like how I approach my hobbies of cycling, photography, and yoga, which teach me balance and focus.",
+    "reasoning_summary": "Derived opinion from persona traits: age 19 suggests youthful perspective; occupation as mechanic implies practical, fact-based approach; migration status and religious beliefs (Islam) highlight community and respect values; high agreeableness (score 80) emphasizes listening and empathy; no social media use avoids misinformation; curiosity drives learning; parents' education diversity informs respect for different knowledge levels; hobbies suggest balanced, focused communication style; overall tone is calm, respectful, and informed, aligning with moderate openness and low neuroticism.",
+    "tone": "calm, respectful, practical, empathetic, and informed",
+    "citations": [
+      "CDC",
+      "WHO"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "migration_status",
+      "religious_beliefs",
+      "psychological_feature",
+      "time_onsocialmedia",
+      "ocean.agreeableness",
+      "parents_education",
+      "hobbies",
+      "ocean.openness",
+      "ocean.neuroticism"
+    ]
+  },
+  "parse_meta": {
+    "parse_ok": true,
+    "parse_error": null
+  }
+}

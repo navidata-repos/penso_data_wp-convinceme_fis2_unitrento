@@ -1,0 +1,138 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "llama3.3:70b",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 24,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "PhD"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "travel",
+        "cooking",
+        "baking",
+        "videogames",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 85,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 1,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 3,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":24,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"travel\",\"cooking\",\"baking\",\"videogames\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":64,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":85,\"level\":\"high\"},\"extraversion\":{\"score\":1,\"level\":\"low\"},\"agreeableness\":{\"score\":41,\"level\":\"moderate\"},\"neuroticism\":{\"score\":3,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":24,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"travel\",\"cooking\",\"baking\",\"videogames\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":64,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":85,\"level\":\"high\"},\"extraversion\":{\"score\":1,\"level\":\"low\"},\"agreeableness\":{\"score\":41,\"level\":\"moderate\"},\"neuroticism\":{\"score\":3,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":24,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"travel\",\"cooking\",\"baking\",\"videogames\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":64,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":85,\"level\":\"high\"},\"extraversion\":{\"score\":1,\"level\":\"low\"},\"agreeableness\":{\"score\":41,\"level\":\"moderate\"},\"neuroticism\":{\"score\":3,\"level\":\"low\"}}},\"opinion\":\"As a young woman from Bologna, I've often found myself thinking about how people perceive me in the context of STEM. I know I'm not the only one. Stereotype threat is a real thing, and it's a significant barrier to women and other underrepresented groups in science, technology, engineering, and mathematics. It's the feeling of being judged, of being seen as not belonging, of being expected to fail. It's a weight that's always there, lurking in the back of your mind, making you doubt yourself and your abilities. It's like being in a room full of people who are all speaking a language you don't understand, and you're the only one who's struggling to keep up. It's exhausting. But, we can't just leave it there. We have to address it. We have to create a culture that's inclusive, that encourages people to take risks, to ask questions, to explore. We need to provide support systems, mentorship programs, and resources that help people overcome the fear of being judged. We need to talk about it, to raise awareness, to educate people about the impact of stereotype threat. We need to create a safe space where people feel comfortable being themselves, where they can be vulnerable without being judged. It's not an easy task, but it's one we must undertake. We owe it to ourselves, to our communities, and to the future of STEM. I believe that if we work together, we can create a more inclusive and supportive environment, where everyone feels valued and empowered to succeed. And that's the only way we'll truly move forward. As a curious and open-minded person, I know that by addressing stereotype threat, we'll not only be helping women and underrepresented groups but also creating a more innovative and creative workforce. It's a win-win situation. I know that by working together, we can create a brighter future for everyone, regardless of their background or identity. We just need to be willing to take the first step, to be brave enough to initiate the conversation, and to be patient enough to see the change happen. It's not going to be easy, but it's worth it. And that's what I believe.\", \"reasoning_summary\":\"The reasoning behind addressing stereotype threat in STEM is that it's a significant barrier to women and underrepresented groups, and it can have a detrimental impact on their participation and success in the field. By creating a culture that's inclusive, providing support systems, and raising awareness, we can help people overcome the fear of being judged and feel more comfortable being themselves. This can lead to a more innovative and creative workforce, and ultimately, it's a win-win situation for everyone. The reasoning is based on the idea that by addressing stereotype threat, we can create a more equitable and just environment, where everyone has the opportunity to succeed. This requires a willingness to take the first step, to be brave enough to initiate the conversation, and to be patient enough to see the change happen. It's not going to be easy, but it's worth it.\", \"tone\":\"Curious, open-minded, and passionate\", \"citations\":[\"Stereotype Threat: Theory, Research, and Developmental Applications\"  ],\"used_persona_fields\":[\"gender\",\"psychological_feature\",\"migration_status\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 24,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "PhD"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "travel",
+        "cooking",
+        "baking",
+        "videogames",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 85,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 1,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 3,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "As a young woman from Bologna, I've often found myself thinking about how people perceive me in the context of STEM. I know I'm not the only one. Stereotype threat is a real thing, and it's a significant barrier to women and other underrepresented groups in science, technology, engineering, and mathematics. It's the feeling of being judged, of being seen as not belonging, of being expected to fail. It's a weight that's always there, lurking in the back of your mind, making you doubt yourself and your abilities. It's like being in a room full of people who are all speaking a language you don't understand, and you're the only one who's struggling to keep up. It's exhausting. But, we can't just leave it there. We have to address it. We have to create a culture that's inclusive, that encourages people to take risks, to ask questions, to explore. We need to provide support systems, mentorship programs, and resources that help people overcome the fear of being judged. We need to talk about it, to raise awareness, to educate people about the impact of stereotype threat. We need to create a safe space where people feel comfortable being themselves, where they can be vulnerable without being judged. It's not an easy task, but it's one we must undertake. We owe it to ourselves, to our communities, and to the future of STEM. I believe that if we work together, we can create a more inclusive and supportive environment, where everyone feels valued and empowered to succeed. And that's the only way we'll truly move forward. As a curious and open-minded person, I know that by addressing stereotype threat, we'll not only be helping women and underrepresented groups but also creating a more innovative and creative workforce. It's a win-win situation. I know that by working together, we can create a brighter future for everyone, regardless of their background or identity. We just need to be willing to take the first step, to be brave enough to initiate the conversation, and to be patient enough to see the change happen. It's not going to be easy, but it's worth it. And that's what I believe.",
+    "reasoning_summary": "The reasoning behind addressing stereotype threat in STEM is that it's a significant barrier to women and underrepresented groups, and it can have a detrimental impact on their participation and success in the field. By creating a culture that's inclusive, providing support systems, and raising awareness, we can help people overcome the fear of being judged and feel more comfortable being themselves. This can lead to a more innovative and creative workforce, and ultimately, it's a win-win situation for everyone. The reasoning is based on the idea that by addressing stereotype threat, we can create a more equitable and just environment, where everyone has the opportunity to succeed. This requires a willingness to take the first step, to be brave enough to initiate the conversation, and to be patient enough to see the change happen. It's not going to be easy, but it's worth it.",
+    "tone": "Curious, open-minded, and passionate",
+    "citations": [
+      "Stereotype Threat: Theory, Research, and Developmental Applications"
+    ],
+    "used_persona_fields": [
+      "gender",
+      "psychological_feature",
+      "migration_status",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}
