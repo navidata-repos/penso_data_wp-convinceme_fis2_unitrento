@@ -96,12 +96,18 @@ ERNIE-4.5-21B-A3B-Thinking-LLM
 
 ```
 Structure of the repository:.
+PENSO_Data_WP-ConvinceMe_FIS2_UniTrento/
 ├── Code/
-│
-├── Data pooling dashboard/
-│
-├── ProcessedData_ConstraintsFixes/
-│   ├── Data_visualization/
+├── Data/
+│   ├── Processed_Data/
+│   │   ├── Data_visualization/
+│   │   │   └── [19 LLM folders]
+│   │   ├── EdgeList/
+│   │   │   └── [19 LLM folders, some with PKL_version_of_edgelists/]
+│   │   ├── Hypothesis_Testing/
+│   │   │   └── [19 LLM folders]
+│   │   └── TFMN_EmoA_stats/
+│   └── Raw_Data/
 │   │   ├── Claude_Sonnet_4.5/
 │   │   ├── DeepSeek-R1-0528-Qwen3-8B/
 │   │   ├── DeepSeek-R1-Distill-Llama-70B/
@@ -121,69 +127,9 @@ Structure of the repository:.
 │   │   ├── Qwen3-30B-A3B-Instruct-2507/
 │   │   ├── Qwen3-4b-2507/
 │   │   └── Qwen4b_Think/
-│   │
-│   ├── EdgeList/
-│   │   ├── Claude_Sonnet_4.5/
-│   │   ├── DeepSeek-R1-0528-Qwen3-8B/
-│   │   ├── DeepSeek-R1-Distill-Llama-70B/
-│   │   ├── DeepSeek-V3.2_Model/
-│   │   ├── ERNIE-4.5-21B/
-│   │   ├── Google-gemma-4-e4b/
-│   │   ├── GPT-oss-20b/
-│   │   ├── IBM-Granite-4.0-H-Tiny/
-│   │   ├── LiquidAI-LFM2-1.2B/
-│   │   ├── Llama-2-7b-hf/
-│   │   ├── llama3.3-70b/
-│   │   ├── Magistral-Small-3.2-2509/
-│   │   ├── Mistral-small-4-0-26-03/
-│   │   ├── Phi-4-mini-instruct/
-│   │   ├── Phi-4-reasoning-plus/
-│   │   ├── Qwen3-30B-A3B-Instruct-2507/
-│   │   ├── qwen3-4b-2507/
-│   │   ├── Qwen4b_Think/
-│   │   └── ERNIE-4.5-21B-A3B-Thinking-LLM/
-│   │
-│   ├── Hypothesis_Testing/
-│   │   ├── Claude_Sonnet_4.5/
-│   │   ├── DeepSeek-R1-0528-Qwen3-8B/
-│   │   ├── DeepSeek-R1-Distill-Llama-70B/
-│   │   ├── DeepSeek-V3.2_Model/
-│   │   ├── ERNIE-4.5-21B/
-│   │   ├── Google-gemma-4-e4b/
-│   │   ├── GPT-oss-20b/
-│   │   ├── IBM-Granite-4.0-H-Tiny/
-│   │   ├── LiquidAI-LFM2-1.2B/
-│   │   ├── Llama-2-7b-hf/
-│   │   ├── llama3.3-70b/
-│   │   ├── Magistral-Small-3.2-2509/
-│   │   ├── Mistral-small-4-0-26-03/
-│   │   ├── Phi-4-mini-instruct/
-│   │   ├── Phi-4-reasoning-plus/
-│   │   ├── Qwen3-30B-A3B-Instruct-2507/
-│   │   ├── qwen3-4b-2507/
-│   │   ├── Qwen4b_Think/
-│   │   └── ERNIE-4.5-21B-A3B-Thinking-LLM/
-│   │
-│   └── TFMN_EmoA_stats/
-│
-└── RawData_LLM_persona_ConstraintsFixed/
-    ├── Claude_Sonnet_4.5/
-    ├── DeepSeek-R1-0528-Qwen3-8B/
-    ├── DeepSeek-R1-Distill-Llama-70B/
-    ├── DeepSeek-V3.2_Model/
-    ├── ERNIE-4.5-21B/
-    ├── Google-gemma-4-e4b/
-    ├── GPT-oss-20b/
-    ├── IBM-Granite-4.0-H-Tiny/
-    ├── LiquidAI-LFM2-1.2B/
-    ├── Llama-2-7b-hf/
-    ├── llama3.3-70b/
-    ├── Magistral-Small-3.2-2509/
-    ├── Mistral-small-4-0-26-03/
-    ├── Phi-4-mini-instruct/
-    ├── Phi-4-reasoning-plus/
-    ├── Qwen3-30B-A3B-Instruct-2507/
-    ├── qwen3-4b-2507/
-    ├── Qwen4b_Think/
-    └── ERNIE-4.5-21B-A3B-Thinking-LLM/
+└── Data Pooling System/
+
+
+
+
 ```
