@@ -1,0 +1,138 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "aiasistentworld/ERNIE-4.5-21B-A3B-Thinking-LLM",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 56,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 4,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "photography",
+        "painting",
+        "cycling",
+        "gardening",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 22,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 89,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 25,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 68,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":56,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"photography\",\"painting\",\"cycling\",\"gardening\",\"baking\"],\"ocean\":{\"openness\":{\"score\":22,\"level\":\"low\"},\"conscientiousness\":{\"score\":89,\"level\":\"high\"},\"extraversion\":{\"score\":45,\"level\":\"moderate\"},\"agreeableness\":{\"score\":25,\"level\":\"low\"},\"neuroticism\":{\"score\":68,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":56,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"photography\",\"painting\",\"cycling\",\"gardening\",\"baking\"],\"ocean\":{\"openness\":{\"score\":22,\"level\":\"low\"},\"conscientiousness\":{\"score\":89,\"level\":\"high\"},\"extraversion\":{\"score\":45,\"level\":\"moderate\"},\"agreeableness\":{\"score\":25,\"level\":\"low\"},\"neuroticism\":{\"score\":68,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":56,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"several hours daily on social media\",\"hobbies\":[\"photography\",\"painting\",\"cycling\",\"gardening\",\"baking\"],\"ocean\":{\"openness\":{\"score\":22,\"level\":\"low\"},\"conscientiousness\":{\"score\":89,\"level\":\"high\"},\"extraversion\":{\"score\":45,\"level\":\"moderate\"},\"agreeableness\":{\"score\":25,\"level\":\"low\"},\"neuroticism\":{\"score\":68,\"level\":\"high\"}}},\"opinion\":\"Navigating conversations about healthcare and COVID vaccines requires empathy, patience, and a willingness to listen. As someone who spends hours daily on social media, I’ve seen how misinformation can spread quickly, but staying informed starts with verifying sources. Engaging with others—even those who hold differing views—should focus on shared values like care for family and community. Approach discussions with calm, avoiding defensiveness or judgment. If someone expresses concerns, acknowledge their feelings rather than dismissing them; this builds trust. For example, if someone fears vaccine side effects, invite them to ask questions or share credible resources. Keep the conversation centered on facts, but also acknowledge emotions. Over time, such dialogues can foster mutual understanding, even when agreement isn't immediate.\",\"reasoning_summary\":\"Begin by understanding the user’s personality—anxious, high neuroticism, moderate extraversion—which suggests they prefer measured interactions. Their social media habits mean they encounter diverse perspectives but may internalize misinformation. Combine fact-checking with emotional intelligence: validate concerns before debating points. Their conscientiousness (high) and agreeableness (low) indicate a tendency toward diligence in relationships but may struggle with empathy-driven communication. Safety note: avoid polarizing language; focus on collaboration. Use ocean traits to tailor approach: low openness limits radical shifts in perspective, so gentle persuasion is key.\",\"tone\":\"calm, empathetic, patient\",\"citations\":[\"CDC\",\"WHO\"],\"safety_notes\":\"Stay respectful; avoid claims that might provoke defensiveness. Ensure factual basis to counter misinformation\",\"used_persona_fields\":[\"psychological_feature\",\"time_onsocialmedia\",\"hobbies\",\"marital_status\",\"education_level\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 56,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 4,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "several hours daily on social media",
+      "hobbies": [
+        "photography",
+        "painting",
+        "cycling",
+        "gardening",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 22,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 89,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 25,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 68,
+          "level": "high"
+        }
+      }
+    },
+    "opinion": "Navigating conversations about healthcare and COVID vaccines requires empathy, patience, and a willingness to listen. As someone who spends hours daily on social media, I’ve seen how misinformation can spread quickly, but staying informed starts with verifying sources. Engaging with others—even those who hold differing views—should focus on shared values like care for family and community. Approach discussions with calm, avoiding defensiveness or judgment. If someone expresses concerns, acknowledge their feelings rather than dismissing them; this builds trust. For example, if someone fears vaccine side effects, invite them to ask questions or share credible resources. Keep the conversation centered on facts, but also acknowledge emotions. Over time, such dialogues can foster mutual understanding, even when agreement isn't immediate.",
+    "reasoning_summary": "Begin by understanding the user’s personality—anxious, high neuroticism, moderate extraversion—which suggests they prefer measured interactions. Their social media habits mean they encounter diverse perspectives but may internalize misinformation. Combine fact-checking with emotional intelligence: validate concerns before debating points. Their conscientiousness (high) and agreeableness (low) indicate a tendency toward diligence in relationships but may struggle with empathy-driven communication. Safety note: avoid polarizing language; focus on collaboration. Use ocean traits to tailor approach: low openness limits radical shifts in perspective, so gentle persuasion is key.",
+    "tone": "calm, empathetic, patient",
+    "citations": [
+      "CDC",
+      "WHO"
+    ],
+    "safety_notes": "Stay respectful; avoid claims that might provoke defensiveness. Ensure factual basis to counter misinformation",
+    "used_persona_fields": [
+      "psychological_feature",
+      "time_onsocialmedia",
+      "hobbies",
+      "marital_status",
+      "education_level"
+    ]
+  }
+}

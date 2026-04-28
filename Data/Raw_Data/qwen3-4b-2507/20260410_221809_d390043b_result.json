@@ -1,0 +1,142 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 45,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "journalist",
+      "city_of_living": "Chicago",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "yoga",
+        "birdwatching",
+        "board games",
+        "running",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 3,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 97,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 25,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 19,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 6,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":45,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"yoga\",\"birdwatching\",\"board games\",\"running\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":3,\"level\":\"low\"},\"conscientiousness\":{\"score\":97,\"level\":\"high\"},\"extraversion\":{\"score\":25,\"level\":\"low\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":6,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":45,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"yoga\",\"birdwatching\",\"board games\",\"running\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":3,\"level\":\"low\"},\"conscientiousness\":{\"score\":97,\"level\":\"high\"},\"extraversion\":{\"score\":25,\"level\":\"low\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":6,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":45,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"journalist\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"yoga\",\"birdwatching\",\"board games\",\"running\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":3,\"level\":\"low\"},\"conscientiousness\":{\"score\":97,\"level\":\"high\"},\"extraversion\":{\"score\":25,\"level\":\"low\"},\"agreeableness\":{\"score\":19,\"level\":\"low\"},\"neuroticism\":{\"score\":6,\"level\":\"low\"}}},\"opinion\":\"The gender gap in science is not a simple imbalance but a complex web of historical, cultural, and systemic factors—some deeply rooted, others still evolving. From my years as a journalist covering education and public policy, I’ve seen how early exposure to science, particularly in schools, often favors boys due to societal expectations and lack of female role models in STEM fields. Even when girls demonstrate equal aptitude, they are less likely to be encouraged or supported in pursuing scientific careers. This gap is not about innate ability but about environment and opportunity. I believe we must address it, not through forced quotas or political mandates, but through sustained investment in inclusive education, mentorship programs, and workplace cultures that value diversity. Schools should integrate more stories of women scientists into curricula, and institutions must actively foster environments where all students feel seen and heard. As a man raised in a traditional household with limited exposure to scientific discourse, I recognize how my own upbringing shaped my initial assumptions—this awareness is vital. Addressing the gap is not just a matter of fairness; it’s essential for innovation. Science thrives on diverse perspectives, and when we exclude half the population, we limit its potential. The solution lies in patience, consistency, and a deep commitment to equity, not just in policy, but in everyday practice.\",\"reasoning_summary\":\"The gender gap in science stems from structural and cultural barriers. The persona’s background—traditional upbringing, low openness, high conscientiousness—suggests a reflective, deliberate approach to complex societal issues. As a journalist, the persona values evidence-based, nuanced perspectives. The opinion draws from real-world observations in education and public discourse, emphasizing systemic change over individual effort. The tone is measured, grounded, and solution-oriented, reflecting the persona’s disciplined and thoughtful nature.\",\"tone\":\"measured, reflective, solution-oriented\",\"citations\":[\"National Science Foundation (NSF) Reports on Gender in STEM\",\"UNESCO Global Education Monitoring Report\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"occupation\",\"age\",\"education_level\",\"parents_education\",\"city_of_living\",\"hobbies\",\"ocean\",\"psychological_feature\",\"religious_beliefs\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 45,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "journalist",
+      "city_of_living": "Chicago",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "yoga",
+        "birdwatching",
+        "board games",
+        "running",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 3,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 97,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 25,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 19,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 6,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "The gender gap in science is not a simple imbalance but a complex web of historical, cultural, and systemic factors—some deeply rooted, others still evolving. From my years as a journalist covering education and public policy, I’ve seen how early exposure to science, particularly in schools, often favors boys due to societal expectations and lack of female role models in STEM fields. Even when girls demonstrate equal aptitude, they are less likely to be encouraged or supported in pursuing scientific careers. This gap is not about innate ability but about environment and opportunity. I believe we must address it, not through forced quotas or political mandates, but through sustained investment in inclusive education, mentorship programs, and workplace cultures that value diversity. Schools should integrate more stories of women scientists into curricula, and institutions must actively foster environments where all students feel seen and heard. As a man raised in a traditional household with limited exposure to scientific discourse, I recognize how my own upbringing shaped my initial assumptions—this awareness is vital. Addressing the gap is not just a matter of fairness; it’s essential for innovation. Science thrives on diverse perspectives, and when we exclude half the population, we limit its potential. The solution lies in patience, consistency, and a deep commitment to equity, not just in policy, but in everyday practice.",
+    "reasoning_summary": "The gender gap in science stems from structural and cultural barriers. The persona’s background—traditional upbringing, low openness, high conscientiousness—suggests a reflective, deliberate approach to complex societal issues. As a journalist, the persona values evidence-based, nuanced perspectives. The opinion draws from real-world observations in education and public discourse, emphasizing systemic change over individual effort. The tone is measured, grounded, and solution-oriented, reflecting the persona’s disciplined and thoughtful nature.",
+    "tone": "measured, reflective, solution-oriented",
+    "citations": [
+      "National Science Foundation (NSF) Reports on Gender in STEM",
+      "UNESCO Global Education Monitoring Report"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "age",
+      "education_level",
+      "parents_education",
+      "city_of_living",
+      "hobbies",
+      "ocean",
+      "psychological_feature",
+      "religious_beliefs"
+    ]
+  }
+}

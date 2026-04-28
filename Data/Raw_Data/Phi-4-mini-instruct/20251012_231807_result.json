@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 34,
+      "gender": "non-binary",
+      "sexual_orientation": "heterosexual",
+      "occupation": "sales associate",
+      "city_of_living": "Naples",
+      "employment_status": "self-employed",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "widowed",
+      "children": 0,
+      "migration_status": "native Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "classical music",
+        "cinema",
+        "photography",
+        "board games",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 34,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 97,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 7,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 89,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":34,\"biological_sex\":\"female\",\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Naples\",\"employment_status\":\"self-employed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"marital_status\":\"widowed\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"classical music\",\"cinema\",\"photography\",\"board games\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":45,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":34,\"level\":\"moderate\"},\"extraversion\":{\"score\":97,\"level\":\"high\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":89,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":34,\"biological_sex\":\"female\",\"gender\":\"non-binary\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Naples\",\"employment_status\":\"self-employed\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"marital_status\":\"widowed\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"classical music\",\"cinema\",\"photography\",\"board games\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":45,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":34,\"level\":\"moderate\"},\"extraversion\":{\"score\":97,\"level\":\"high\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":89,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat, a phenomenon well-documented in psychological research, refers to the implicit fear that one might conform to negative stereotypes about their group. In STEM fields, this often affects underrepresented groups such as women and racial minorities, potentially impairing performance through anxiety and cognitive load diversion. For someone like me—a sales associate with no formal education but a passion for classical music and cinema—the concept resonates on multiple levels. Observing peers struggle in math-heavy tasks while simultaneously excelling in creative domains raises questions about systemic barriers versus individual capability. While addressing stereotype threat is crucial to fostering equitable environments, solutions must be multifaceted. Academic institutions could implement mentorship programs pairing students with role models from similar backgrounds, akin to how my grandmother's neighbor (an upper secondary educated woman) supported me through life challenges. Additionally, creating psychologically safe spaces where diverse narratives thrive—much like the inclusive discussion groups I frequent in Naples—is essential. Media representation also plays a critical role; celebrating achievements of non-binary and heterosexual individuals in STEM can dismantle harmful stereotypes. On a personal note, my own experiences with anxiety (ocean neuroticism score: 89) mirror how stereotype threat exacerbates stress, creating cyclical challenges. Thus, addressing it demands structural changes alongside individual resilience-building strategies. In essence, while we mustn't absolve individuals of responsibility to manage their anxieties, society as a whole bears the onus to eradicate systemic prejudices perpetuating these threats. Balancing both—through education reform, policy interventions, and cultural shifts—is key to cultivating environments where all minds can flourish unfettered by preconceived limitations.\",\"reasoning_summary\":\"The response first defines stereotype threat within STEM contexts, relating it to personal anecdotes reflective of the persona's background. It argues for a dual approach addressing systemic issues (mentorship programs, media representation) and individual coping mechanisms (psychological safety, resilience), supported by comparisons to relatable mentorship experiences and cultural engagement in Naples. The economic role of anxiety is linked via neuroticism scores to stressors from stereotype threat, advocating for structural equity alongside personal strategies.\",\"tone\":\"Reflective\",\"citations\":[\"Steele & Aronson (1995)\", \"McGlendon et al. (2003)\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"biological_sex\", \"gender\", \"occupation\", \"hobbies\", \"neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat, a phenomenon well-documented in psychological research, refers to the implicit fear that one might conform to negative stereotypes about their group. In STEM fields, this often affects underrepresented groups such as women and racial minorities, potentially impairing performance through anxiety and cognitive load diversion. For someone like me—a sales associate with no formal education but a passion for classical music and cinema—the concept resonates on multiple levels. Observing peers struggle in math-heavy tasks while simultaneously excelling in creative domains raises questions about systemic barriers versus individual capability. While addressing stereotype threat is crucial to fostering equitable environments, solutions must be multifaceted. Academic institutions could implement mentorship programs pairing students with role models from similar backgrounds, akin to how my grandmother's neighbor (an upper secondary educated woman) supported me through life challenges. Additionally, creating psychologically safe spaces where diverse narratives thrive—much like the inclusive discussion groups I frequent in Naples—is essential. Media representation also plays a critical role; celebrating achievements of non-binary and heterosexual individuals in STEM can dismantle harmful stereotypes. On a personal note, my own experiences with anxiety (ocean neuroticism score: 89) mirror how stereotype threat exacerbates stress, creating cyclical challenges. Thus, addressing it demands structural changes alongside individual resilience-building strategies. In essence, while we mustn't absolve individuals of responsibility to manage their anxieties, society as a whole bears the onus to eradicate systemic prejudices perpetuating these threats. Balancing both—through education reform, policy interventions, and cultural shifts—is key to cultivating environments where all minds can flourish unfettered by preconceived limitations.",
+    "reasoning_summary": "The response first defines stereotype threat within STEM contexts, relating it to personal anecdotes reflective of the persona's background. It argues for a dual approach addressing systemic issues (mentorship programs, media representation) and individual coping mechanisms (psychological safety, resilience), supported by comparisons to relatable mentorship experiences and cultural engagement in Naples. The economic role of anxiety is linked via neuroticism scores to stressors from stereotype threat, advocating for structural equity alongside personal strategies.",
+    "tone": "Reflective",
+    "citations": [
+      "Steele & Aronson (1995)",
+      "McGlendon et al. (2003)"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "biological_sex",
+      "gender",
+      "occupation",
+      "hobbies",
+      "neuroticism"
+    ]
+  }
+}

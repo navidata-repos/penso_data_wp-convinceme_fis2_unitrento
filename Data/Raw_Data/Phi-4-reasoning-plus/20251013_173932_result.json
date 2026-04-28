@@ -1,0 +1,75 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 42,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "school teacher",
+      "city_of_living": "Los Angeles",
+      "employment_status": "self-employed",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native American",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "cooking",
+        "travel",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 95,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 67,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 91,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 52,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":42,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"self-employed\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"married\",\"children\":1,\"migration_status\":\"native American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"cooking\",\"travel\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":95,\"level\":\"high\"},\"conscientiousness\":{\"score\":63,\"level\":\"moderate\"},\"extraversion\":{\"score\":67,\"level\":\"high\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":52,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":42,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"self-employed\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"married\",\"children\":1,\"migration_status\":\"native American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"cooking\",\"travel\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":95,\"level\":\"high\"},\"conscientiousness\":{\"score\":63,\"level\":\"moderate\"},\"extraversion\":{\"score\":67,\"level\":\"high\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":52,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a school teacher in Los Angeles, I've seen firsthand how heated these topics can become. It's important to approach such discussions from a position of informed empathy and critical thinking, balancing facts with respect for diverse views. My background—having spent years in education, research, and active social media engagement—shapes my perspective on how we navigate the complexities of healthcare dialogues, especially around COVID vaccines. I believe that knowledge is our best ally; ensuring that everyone has access to reliable information from credible sources like WHO or CDC can help demystify misconceptions. At the same time, it's crucial to maintain a respectful tone, recognizing that people’s beliefs and fears are often rooted in personal experiences. I’ve found that asking open-ended questions rather than making assumptions helps foster understanding. For instance, if someone expresses vaccine hesitancy, listening actively can reveal underlying concerns—whether they stem from misinformation or genuine health worries. This approach aligns with my natural agreeableness, which drives me to seek common ground and build consensus. Additionally, the high openness trait in my personality encourages an exploratory dialogue where multiple perspectives are considered. I’ve also seen that clear communication is key: breaking down complex scientific data into relatable terms can bridge gaps between experts and laypersons alike. In classroom settings or casual discussions, I often share stories from my travels and cooking experiences to illustrate the benefits of diverse viewpoints, emphasizing how shared human values can guide us through uncertainties. Overall, managing these conversations requires patience, an unwavering commitment to facts, and a compassionate approach that acknowledges each individual's unique context. It’s not just about convincing others but rather creating a safe space for dialogue where informed decisions can be made collaboratively. This balanced method—rooted in education, empathy, and evidence—is something I strive to embody both professionally and personally.\",\"reasoning_summary\":\"We need an answer from the persona provided (a school teacher with PhD living in Los Angeles, self-employed, etc.). The topic is how to manage discussions about healthcare and COVID vaccines. We need a continuous prose answer of at least 250 words and up to 500 words. Use tone and examples aligning with the background and traits: a school teacher, highly educated (PhD), open-minded (openness score high), agreeable (very high agreeableness) and moderately neurotic. She is an atheist, native American, self-employed teacher in Los Angeles. Her hobbies include cooking, travel, hiking. Her time on social media is several hours daily. We need to provide the answer as JSON with keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The final answer is a single-line JSON object with no markdown formatting and only one line. It must be exactly as per the required structure example provided (the given JSON object structure). Must produce the answer in one line JSON text. We need to ensure that it's continuous prose not bullet points. So I'll produce an output similar to: {\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a school teacher in Los Angeles, I've seen firsthand how heated these topics can become. It's important to approach such discussions from a position of informed empathy and critical thinking, balancing facts with respect for diverse views. My background—having spent years in education, research, and active social media engagement—shapes my perspective on how we navigate the complexities of healthcare dialogues, especially around COVID vaccines. I believe that knowledge is our best ally; ensuring that everyone has access to reliable information from credible sources like WHO or CDC can help demystify misconceptions. At the same time, it's crucial to maintain a respectful tone, recognizing that people’s beliefs and fears are often rooted in personal experiences. I’ve found that asking open-ended questions rather than making assumptions helps foster understanding. For instance, if someone expresses vaccine hesitancy, listening actively can reveal underlying concerns—whether they stem from misinformation or genuine health worries. This approach aligns with my natural agreeableness, which drives me to seek common ground and build consensus. Additionally, the high openness trait in my personality encourages an exploratory dialogue where multiple perspectives are considered. I’ve also seen that clear communication is key: breaking down complex scientific data into relatable terms can bridge gaps between experts and laypersons alike. In classroom settings or casual discussions, I often share stories from my travels and cooking experiences to illustrate the benefits of diverse viewpoints, emphasizing how shared human values can guide us through uncertainties. Overall, managing these conversations requires patience, an unwavering commitment to facts, and a compassionate approach that acknowledges each individual's unique context. It’s not just about convincing others but rather creating a safe space for dialogue where informed decisions can be made collaboratively. This balanced method—rooted in education, empathy, and evidence—is something I strive to embody both professionally and personally.",
+    "reasoning_summary": "We need an answer from the persona provided (a school teacher with PhD living in Los Angeles, self-employed, etc.). The topic is how to manage discussions about healthcare and COVID vaccines. We need a continuous prose answer of at least 250 words and up to 500 words. Use tone and examples aligning with the background and traits: a school teacher, highly educated (PhD), open-minded (openness score high), agreeable (very high agreeableness) and moderately neurotic. She is an atheist, native American, self-employed teacher in Los Angeles. Her hobbies include cooking, travel, hiking. Her time on social media is several hours daily. We need to provide the answer as JSON with keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The final answer is a single-line JSON object with no markdown formatting and only one line. It must be exactly as per the required structure example provided (the given JSON object structure). Must produce the answer in one line JSON text. We need to ensure that it's continuous prose not bullet points. So I'll produce an output similar to: {"
+  }
+}

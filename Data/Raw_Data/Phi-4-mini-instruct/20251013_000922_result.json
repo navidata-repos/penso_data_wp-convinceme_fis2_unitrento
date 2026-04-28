@@ -1,0 +1,96 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 84,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "plumber",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "travel",
+        "gardening",
+        "rock climbing",
+        "birdwatching",
+        "yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 81,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 92,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":84,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"married\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"travel\",\"gardening\",\"rock climbing\",\"birdwatching\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":40,\"level\":\"moderate\"},\"neuroticism\":{\"score\":92,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":84,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"married\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"travel\",\"gardening\",\"rock climbing\",\"birdwatching\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":50,\"level\":\"moderate\"},\"agreeableness\":{\"score\":40,\"level\":\"moderate\"},\"neuroticism\":{\"score\":92,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a 84-year-old man rooted in practical wisdom from Bologna, my approach to navigating conversations around healthcare—especially the maze of COVID-19 vaccines—is shaped by decades as a self-employed plumber. Precision matters; I liken each discussion turn to checking pipes: look for leaks (misinformation) with a reliable wrench (trusted sources like WHO or local doctors). Balance respect and clarity; listen actively, akin to sensing subtle shifts in water flow. My hobbies—travel’s open mind, gardening patience, rock climbing focus—all teach me the value of preparation before engagement. I advocate discussing these topics over a hearty meal where perspectives can simmer truthfully. Above all, trust data like trusted plumbing manuals: factual, uncolored by fear or profit. With my moderate extraversion and agreeableness tempered by neuroticism’s caution (neuroticism at 92—I admit worry), encourage safe choices through shared community consensus. In summary: seek verified sources, foster open dialogue with empathy, prioritize health like preserving a well-built structure.\",\"reasoning_summary\":\"Begin by drawing parallels between plumbing diagnostics and evaluating information. Emphasize active listening akin to troubleshooting pipes. Highlight the role of communal meals in fostering discussion. Stress reliance on factual data as one would trust manuals. Balance personal traits—moderate extraversion, agreeableness, neurotic caution—in approaching sensitive topics. Conclude with actionable steps: verify sources, empathic dialogue, and community consensus.\",\"tone\":\"Reflective\",\"tone_explanation\":\"Patient and methodical, mirroring the careful trade of plumbing and gardening hobbies.\",\"citations':['WHO','local healthcare providers'], \" :\" } Wait, no. The output must be a single-line JSON object with no extra text, etc. Let me re-read instructions: Return ONLY a single-line JSON object, with no extra text, no markdown, no comments. Structure example provided. So the answer should strictly follow that structure. Also note that in reasoning_summary, it says \" , \"used_persona_fields\":[\"biological_sex\", \"age\"],\" etc. But careful to include all required fields. Let me produce properly: Single-line JSON object with keys mode, topic, opinion (text), reasoning_summary, tone, citations list, safety_notes string, used_ persona fields list array if any. So final answer must be a single line in quotes json format. I need output only the code block without markdown formatting? The instructions say by default no markdown formatting unless requested; but given example shows triple backticks python style? Actually it's text: \":{\", probably just return plain JSON as string inside {\" : \"}. I'll produce final answer accordingly. Use double-quotes for json object, keys mode, topic, opinion, reasoning_summary, tone, citations (as array), safety_notes, used_ persona fields list. Tone explanation field is not required in the example? The sample shows 'tone_explanation' but instructions say to include only provided structure: \" , \"citations\": [\" ...\", \"\"] , \"safety_notes\" : \"\", \"used_persona_fields\" : [ ] } , \"opinion:\" : \"... text ...\" , \"reasoning_summary:\" : \"...\" , \"mode :\" : \" human etc. So I'll produce final answer accordingly.</think>{\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a 84-year-old man rooted in practical wisdom from Bologna, my approach to navigating conversations around healthcare—especially the maze of COVID-19 vaccines—is shaped by decades as a self-employed plumber. Precision matters; I liken each discussion turn to checking pipes: look for leaks (misinformation) with a reliable wrench (trusted sources like WHO or local doctors). Balance respect and clarity; listen actively, akin to sensing subtle shifts in water flow. My hobbies—travel’s open mind, gardening patience, rock climbing focus—all teach me the value of preparation before engagement. I advocate discussing these topics over a hearty meal where perspectives can simmer truthfully. Above all, trust data like trusted plumbing manuals: factual, uncolored by fear or profit. With my moderate extraversion and agreeableness tempered by neuroticism’s caution (neuroticism at 92—I admit worry), encourage safe choices through shared community consensus. In summary: seek verified sources, foster open dialogue with empathy, prioritize health like preserving a well-built structure.",
+    "reasoning_summary": "Begin by drawing parallels between plumbing diagnostics and evaluating information. Emphasize active listening akin to troubleshooting pipes. Highlight the role of communal meals in fostering discussion. Stress reliance on factual data as one would trust manuals. Balance personal traits—moderate extraversion, agreeableness, neurotic caution—in approaching sensitive topics. Conclude with actionable steps: verify sources, empathic dialogue, and community consensus.",
+    "tone": "Reflective",
+    "tone_explanation": "Patient and methodical, mirroring the careful trade of plumbing and gardening hobbies.",
+    "citations':['WHO','local healthcare providers'], ": " } Wait, no. The output must be a single-line JSON object with no extra text, etc. Let me re-read instructions: Return ONLY a single-line JSON object, with no extra text, no markdown, no comments. Structure example provided. So the answer should strictly follow that structure. Also note that in reasoning_summary, it says ",
+    "used_persona_fields": [
+      "biological_sex",
+      "age"
+    ],
+    " etc. But careful to include all required fields. Let me produce properly: Single-line JSON object with keys mode, topic, opinion (text), reasoning_summary, tone, citations list, safety_notes string, used_ persona fields list array if any. So final answer must be a single line in quotes json format. I need output only the code block without markdown formatting? The instructions say by default no markdown formatting unless requested; but given example shows triple backticks python style? Actually it's text: ": {
+      ", probably just return plain JSON as string inside {": "}. I'll produce final answer accordingly. Use double-quotes for json object, keys mode, topic, opinion, reasoning_summary, tone, citations (as array), safety_notes, used_ persona fields list. Tone explanation field is not required in the example? The sample shows 'tone_explanation' but instructions say to include only provided structure: ",
+      "citations": [
+        " ...",
+        ""
+      ],
+      "safety_notes": "",
+      "used_persona_fields": []
+    },
+    "opinion:": "... text ...",
+    "reasoning_summary:": "...",
+    "mode :": " human etc. So I'll produce final answer accordingly.</think>{"
+  }
+}

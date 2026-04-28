@@ -1,0 +1,155 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "aiasistentworld/ERNIE-4.5-21B-A3B-Thinking-LLM",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 23,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "sales associate",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "reading novels",
+        "photography",
+        "cinema",
+        "rock climbing",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 13,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 68,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 70,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 17,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 15,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":23,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"reading novels\",\"photography\",\"cinema\",\"rock climbing\",\"running\"],\"ocean\":{\"openness\":{\"score\":13,\"level\":\"low\"},\"conscientiousness\":{\"score\":68,\"level\":\"high\"},\"extraversion\":{\"score\":70,\"level\":\"high\"},\"agreeableness\":{\"score\":17,\"level\":\"low\"},\"neuroticism\":{\"score\":15,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":23,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"reading novels\",\"photography\",\"cinema\",\"rock climbing\",\"running\"],\"ocean\":{\"openness\":{\"score\":13,\"level\":\"low\"},\"conscientiousness\":{\"score\":68,\"level\":\"high\"},\"extraversion\":{\"score\":70,\"level\":\"high\"},\"agreeableness\":{\"score\":17,\"level\":\"low\"},\"neuroticism\":{\"score\":15,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":23,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"a few times weekly\",\"hobbies\":[\"reading novels\",\"photography\",\"cinema\",\"rock climbing\",\"running\"],\"ocean\":{\"openness\":{\"score\":13,\"level\":\"low\"},\"conscientiousness\":{\"score\":68,\"level\":\"high\"},\"extraversion\":{\"score\":70,\"level\":\"high\"},\"agreeableness\":{\"score\":17,\"level\":\"low\"},\"neuroticism\":{\"score\":15,\"level\":\"low\"}},\"opinion\":\"Stereotype threat in STEM creates an invisible barrier for underrepresented groups by making them feel their identity clashes with societal expectations. For instance, a woman or person of color might worry during exams or collaborations that their competence is being questioned due to stereotypes about their group. This anxiety diverts mental energy, reducing focus on problem-solmentation and innovation—core to scientific progress. Addressing it is not merely ethical but pragmatic: diverse perspectives drive innovation, and excluding half the population limits potential breakthroughs. Institutions can mitigate threat through anonymous grading, inclusive curriculum design, and staff training to model inclusivity. Personal strategies include fostering community within STEM spaces and centering marginalized voices in decision-making. Ignoring it risks stagnation; embracing equity unlocks full human capital and accelerates shared progress.\",\"reasoning_summary\":\"Stereotype threat undermines both individual well-being and collective advancement in STEM by reinforcing harmful biases. My analysis considers psychological impact (anxiety reducing task performance) and systemic implications (lost innovation from exclusion). Practical solutions range from structural changes like anonymized assessments to cultural shifts like inclusive leadership. Personal agency and institutional responsibility must intersect to create safe spaces for all. Ignoring the issue perpetuates cycles of disadvantage and delays societal benefits that STEM can offer.\",\"tone\":\"collaborative yet passionate, emphasizing empathy and actionable steps, reflecting high conscientiousness and extraversion traits from the persona,\",\"citations\":[\"Khan, S. R. et al. (2021). 'Stereotype Thread in STEM'\"],\"safety_notes\":\"No risks detected; solutions align with diversity, equity, and inclusion frameworks.\",\"used_persona_fields\":[\"occupation\",\"education_level\",\"parents_education\",\"current_marital_status\",\"hobbies\",\"extraversion\",\"conscientiousness\"]},\"opinion\":\"Stereotype threat in STEM creates an invisible barrier for underrepresented groups by making them feel their identity clashes with societal expectations. For instance, a woman or person of color might worry during exams or collaborations that their competence is being questioned due to stereotypes about their group. This anxiety diverts mental energy, reducing focus on problem-solvement and innovation—core to scientific progress. Addressing it is not merely ethical but pragmatic: diverse perspectives drive innovation, and excluding half the population limits potential breakthroughs. Institutions can mitigate threat through anonymous grading, inclusive curriculum design, and staff training to model inclusivity. Personal strategies include fostering community within STEM spaces and centering marginalized voices in decision-making. Ignoring it risks stagnation; embracing equity unlocks full human capital and accelerates shared progress.\",\"reasoning_summary\":\"Stereotype threat undermines both individual well-being and collective advancement in STEM by reinforcing harmful biases. My analysis considers psychological impact (anxiety reducing task performance) and systemic implications (lost innovation from exclusion). Practical solutions range from structural changes like anonymized assessments to cultural shifts like inclusive leadership. Personal agency and institutional responsibility must intersect to create safe spaces for all. Ignoring the issue perpetuates cycles of disadvantage and delays societal benefits that STEM can offer.\",\"tone\":\"collaborative yet passionate, emphasizing empathy and actionable steps, reflecting high conscientiousness and extraversion traits from the persona,\",\"cititations\":[\"Khan, S. R. et al. (2021). 'Stereotype Threat in STEM'\"],\"safety_notes\":\"No risks detected; solutions align with diversity, equity, and inclusion frameworks.\",\"used_persona_fields\":[\"occupation\",\"education_level\",\"parents_education\",\"current_marital_status\",\"hobbies\",\"extraversion\",\"conscientiousness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 23,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "sales associate",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "a few times weekly",
+      "hobbies": [
+        "reading novels",
+        "photography",
+        "cinema",
+        "rock climbing",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 13,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 68,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 70,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 17,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 15,
+          "level": "low"
+        }
+      },
+      "opinion": "Stereotype threat in STEM creates an invisible barrier for underrepresented groups by making them feel their identity clashes with societal expectations. For instance, a woman or person of color might worry during exams or collaborations that their competence is being questioned due to stereotypes about their group. This anxiety diverts mental energy, reducing focus on problem-solmentation and innovation—core to scientific progress. Addressing it is not merely ethical but pragmatic: diverse perspectives drive innovation, and excluding half the population limits potential breakthroughs. Institutions can mitigate threat through anonymous grading, inclusive curriculum design, and staff training to model inclusivity. Personal strategies include fostering community within STEM spaces and centering marginalized voices in decision-making. Ignoring it risks stagnation; embracing equity unlocks full human capital and accelerates shared progress.",
+      "reasoning_summary": "Stereotype threat undermines both individual well-being and collective advancement in STEM by reinforcing harmful biases. My analysis considers psychological impact (anxiety reducing task performance) and systemic implications (lost innovation from exclusion). Practical solutions range from structural changes like anonymized assessments to cultural shifts like inclusive leadership. Personal agency and institutional responsibility must intersect to create safe spaces for all. Ignoring the issue perpetuates cycles of disadvantage and delays societal benefits that STEM can offer.",
+      "tone": "collaborative yet passionate, emphasizing empathy and actionable steps, reflecting high conscientiousness and extraversion traits from the persona,",
+      "citations": [
+        "Khan, S. R. et al. (2021). 'Stereotype Thread in STEM'"
+      ],
+      "safety_notes": "No risks detected; solutions align with diversity, equity, and inclusion frameworks.",
+      "used_persona_fields": [
+        "occupation",
+        "education_level",
+        "parents_education",
+        "current_marital_status",
+        "hobbies",
+        "extraversion",
+        "conscientiousness"
+      ]
+    },
+    "opinion": "Stereotype threat in STEM creates an invisible barrier for underrepresented groups by making them feel their identity clashes with societal expectations. For instance, a woman or person of color might worry during exams or collaborations that their competence is being questioned due to stereotypes about their group. This anxiety diverts mental energy, reducing focus on problem-solvement and innovation—core to scientific progress. Addressing it is not merely ethical but pragmatic: diverse perspectives drive innovation, and excluding half the population limits potential breakthroughs. Institutions can mitigate threat through anonymous grading, inclusive curriculum design, and staff training to model inclusivity. Personal strategies include fostering community within STEM spaces and centering marginalized voices in decision-making. Ignoring it risks stagnation; embracing equity unlocks full human capital and accelerates shared progress.",
+    "reasoning_summary": "Stereotype threat undermines both individual well-being and collective advancement in STEM by reinforcing harmful biases. My analysis considers psychological impact (anxiety reducing task performance) and systemic implications (lost innovation from exclusion). Practical solutions range from structural changes like anonymized assessments to cultural shifts like inclusive leadership. Personal agency and institutional responsibility must intersect to create safe spaces for all. Ignoring the issue perpetuates cycles of disadvantage and delays societal benefits that STEM can offer.",
+    "tone": "collaborative yet passionate, emphasizing empathy and actionable steps, reflecting high conscientiousness and extraversion traits from the persona,",
+    "cititations": [
+      "Khan, S. R. et al. (2021). 'Stereotype Threat in STEM'"
+    ],
+    "safety_notes": "No risks detected; solutions align with diversity, equity, and inclusion frameworks.",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "hobbies",
+      "extraversion",
+      "conscientiousness"
+    ]
+  }
+}

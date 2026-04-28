@@ -1,0 +1,137 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "aiasistentworld/ERNIE-4.5-21B-A3B-Thinking-LLM",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 45,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "New York",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "knitting",
+        "hiking",
+        "rock climbing",
+        "cooking",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 78,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 43,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 69,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":45,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"knitting\",\"hiking\",\"rock climbing\",\"cooking\",\"board games\"],\"ocean\":{\"openness\":{\"score\":78,\"level\":\"high\"},\"conscientiousness\":{\"score\":51,\"level\":\"moderate\"},\"extraversion\":{\"score\":43,\"level\":\"moderate\"},\"agreeableness\":{\"score\":51,\"level\":\"moderate\"},\"neuroticism\":{\"score\":69,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":45,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"knitting\",\"hiking\",\"rock climbing\",\"cooking\",\"board games\"],\"ocean\":{\"openness\":{\"score\":78,\"level\":\"high\"},\"conscientiousness\":{\"score\":51,\"level\":\"moderate\"},\"extraversion\":{\"score\":43,\"level\":\"moderate\"},\"agreeableness\":{\"score\":51,\"level\":\"moderate\"},\"neuroticism\":{\"score\":69,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":45,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"a few times monthly on social media\",\"hobbies\":[\"knitting\",\"hiking\",\"rock climbing\",\"cooking\",\"board games\"],\"ocean\":{\"openness\":{\"score\":78,\"level\":\"high\"},\"conscientiousness\":{\"score\":51,\"level\":\"moderate\"},\"extraversion\":{\"score\":43,\"level\":\"moderate\"},\"agreeableness\":{\"score\":51,\"level\":\"moderate\"},\"neuroticism\":{\"score\":69,\"level\":\"high\"}}},\"opinion\":\"The gender gap in science is an urgent issue that demands attention not just for equity but for the advancement of humanity. While men and women often enter scientific fields with equal potential, systemic barriers emerge—from unequal access to education and resources to subtle biases in hiring and promotion. For instance, women in STEM face the 'leaky pipeline' phenomenon, where they are more likely to drop out of academic or professional trajectories due to combined pressures of caregiving, discrimination, and stereotype threat. Addressing this requires both systemic reform and individual advocacy. Institutions must prioritize inclusive policies like flexible work arrangements, mentorship programs for underrepresented groups, and transparent evaluation systems to reduce bias. At the same time, individuals—including those in everyday roles like retail—can challenge gender stereotypes by acknowledging scientists’ diversity beyond gender norms, supporting colleagues regardless of gender, and promoting inclusivity in their communities. Personally, I’ve seen the impact when inclusive practices are embedded in workplaces; for example, teams with gender-balanced leadership often foster creativity and collaboration, leading to more innovative outcomes. By valuing diverse perspectives, we not only close the gap but also enhance problem-solving, benefiting everyone—including customers from marginalized groups. Science thrives when it reflects the full spectrum of human experience, and addressing the gender gap is not just fair but essential for progress.\",\"reasoning_summary\":\"First, I recognize the gender gap in science stems from systemic barriers like the leaky pipeline and unconscious bias, contrasted with equal initial entry rates. Next, I argue that addressing it involves institutional reforms—flexible policies, mentorship, and bias training—alongside individual actions like challenging stereotypes. I then link inclusivity to innovation and community benefit, using my New York experience to show how gender-balanced teams enhance collaboration. Finally, I emphasize that science’s relevance depends on diverse voices, making equity both moral and practical.\",\"tone\":\"compassionate, analytical, pragmatic\",\"citations\":[\"U.S. Department of Education studies on gender disparities in STEM\",\"Harvard Business Review on inclusive leadership\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"parents_education\",\"current_marital_status\",\"city_of_living\",\"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 45,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "New York",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "a few times monthly on social media",
+      "hobbies": [
+        "knitting",
+        "hiking",
+        "rock climbing",
+        "cooking",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 78,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 43,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 69,
+          "level": "high"
+        }
+      }
+    },
+    "opinion": "The gender gap in science is an urgent issue that demands attention not just for equity but for the advancement of humanity. While men and women often enter scientific fields with equal potential, systemic barriers emerge—from unequal access to education and resources to subtle biases in hiring and promotion. For instance, women in STEM face the 'leaky pipeline' phenomenon, where they are more likely to drop out of academic or professional trajectories due to combined pressures of caregiving, discrimination, and stereotype threat. Addressing this requires both systemic reform and individual advocacy. Institutions must prioritize inclusive policies like flexible work arrangements, mentorship programs for underrepresented groups, and transparent evaluation systems to reduce bias. At the same time, individuals—including those in everyday roles like retail—can challenge gender stereotypes by acknowledging scientists’ diversity beyond gender norms, supporting colleagues regardless of gender, and promoting inclusivity in their communities. Personally, I’ve seen the impact when inclusive practices are embedded in workplaces; for example, teams with gender-balanced leadership often foster creativity and collaboration, leading to more innovative outcomes. By valuing diverse perspectives, we not only close the gap but also enhance problem-solving, benefiting everyone—including customers from marginalized groups. Science thrives when it reflects the full spectrum of human experience, and addressing the gender gap is not just fair but essential for progress.",
+    "reasoning_summary": "First, I recognize the gender gap in science stems from systemic barriers like the leaky pipeline and unconscious bias, contrasted with equal initial entry rates. Next, I argue that addressing it involves institutional reforms—flexible policies, mentorship, and bias training—alongside individual actions like challenging stereotypes. I then link inclusivity to innovation and community benefit, using my New York experience to show how gender-balanced teams enhance collaboration. Finally, I emphasize that science’s relevance depends on diverse voices, making equity both moral and practical.",
+    "tone": "compassionate, analytical, pragmatic",
+    "citations": [
+      "U.S. Department of Education studies on gender disparities in STEM",
+      "Harvard Business Review on inclusive leadership"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "parents_education",
+      "current_marital_status",
+      "city_of_living",
+      "hobbies"
+    ]
+  }
+}

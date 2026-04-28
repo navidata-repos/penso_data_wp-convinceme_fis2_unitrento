@@ -1,0 +1,98 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 42,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "engineer",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "videogames",
+        "cycling",
+        "rock climbing",
+        "football (calcio)",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 7,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 22,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 83,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 30,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":42,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"videogames\",\"cycling\",\"rock climbing\",\"football (calcio)\",\"board games\"],\"ocean\":{\"openness\":{\"score\":38,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":83,\"level\":\"high\"},\"neuroticism\":{\"score\":30,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":42,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"videogames\",\"cycling\",\"rock climbing\",\"football (calcio)\",\"board games\"],\"ocean\":{\"openness\":{\"score\":38,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":22,\"level\":\"low\"},\"agreeableness\":{\"score\":83,\"level\":\"high\"},\"neuroticism\":{\"score\":30,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"As an engineer who’s spent years navigating technical challenges and collaborative projects, I’ve seen how subtle assumptions can quietly undermine confidence—especially in environments where certain groups are underrepresented. Stereotype threat in STEM isn’t just a theoretical concern; it’s the quiet weight of being told, implicitly or explicitly, that you don’t belong. For instance, when I was younger, I remember a professor subtly questioning my ability to grasp complex algorithms because I was from a working-class background—no direct insult, but the message was clear: ‘You’re not supposed to be here.’ That moment stuck with me, not because it was dramatic, but because it planted doubt. It’s not about intelligence; it’s about the psychological burden of fearing confirmation of a negative stereotype. We absolutely must address it—not because it’s politically correct, but because it’s a barrier to innovation. When people doubt their place in a field, they hesitate to speak up, take risks, or pursue leadership roles. I’ve seen brilliant minds self-silence just to avoid being labeled ‘not technical enough.’ The solution isn’t just diversity quotas, though they help. It’s about culture. In my own freelance work, I’ve made it a point to create safe spaces where ideas are judged on merit, not identity. I encourage team members to share their backgrounds openly—not to highlight difference, but to normalize it. We use inclusive language, avoid gendered or cultural assumptions in feedback, and actively spotlight diverse contributors. Research from Stanford and Harvard shows that simply reminding students of their strengths before a test can reduce performance gaps. That’s powerful. It’s not about lowering standards—it’s about removing the mental roadblocks. As someone who values creativity and cooperation, I believe the most innovative solutions come from diverse minds feeling safe to contribute. Addressing stereotype threat isn’t charity; it’s engineering excellence.\",\"reasoning_summary\":\"I began by reflecting on personal experiences where implicit bias affected my confidence, even if not overtly expressed. This aligns with the definition of stereotype threat—where individuals fear confirming a negative stereotype about their group. I then connected this to broader STEM contexts, where underrepresentation of certain demographics (e.g., women, minorities, working-class individuals) amplifies the threat. I recalled studies showing performance drops when stereotype threat is activated, particularly in high-stakes academic or professional settings. Given my engineering background, I emphasized practical, real-world solutions—like inclusive team culture, equitable feedback, and psychological safety. My high agreeableness and creative traits led me to value collaboration and empathy in problem-solving. I referenced empirical research on stereotype threat reduction (e.g., growth mindset interventions) to ground my approach. The core argument is that eliminating stereotype threat isn’t about compromise; it’s about unlocking potential. My hobbies—rock climbing and board games—reinforce my belief in structured, fair challenges where everyone can succeed if given the right environment. Thus, addressing stereotype threat is both ethical and functional.\",\"tone\":\"reflective, practical, empathetic, solution-oriented\",\"citations\":[\"Stanford University, 2015; Harvard University, 2017\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean.openness\",\"ocean.agreeableness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As an engineer who’s spent years navigating technical challenges and collaborative projects, I’ve seen how subtle assumptions can quietly undermine confidence—especially in environments where certain groups are underrepresented. Stereotype threat in STEM isn’t just a theoretical concern; it’s the quiet weight of being told, implicitly or explicitly, that you don’t belong. For instance, when I was younger, I remember a professor subtly questioning my ability to grasp complex algorithms because I was from a working-class background—no direct insult, but the message was clear: ‘You’re not supposed to be here.’ That moment stuck with me, not because it was dramatic, but because it planted doubt. It’s not about intelligence; it’s about the psychological burden of fearing confirmation of a negative stereotype. We absolutely must address it—not because it’s politically correct, but because it’s a barrier to innovation. When people doubt their place in a field, they hesitate to speak up, take risks, or pursue leadership roles. I’ve seen brilliant minds self-silence just to avoid being labeled ‘not technical enough.’ The solution isn’t just diversity quotas, though they help. It’s about culture. In my own freelance work, I’ve made it a point to create safe spaces where ideas are judged on merit, not identity. I encourage team members to share their backgrounds openly—not to highlight difference, but to normalize it. We use inclusive language, avoid gendered or cultural assumptions in feedback, and actively spotlight diverse contributors. Research from Stanford and Harvard shows that simply reminding students of their strengths before a test can reduce performance gaps. That’s powerful. It’s not about lowering standards—it’s about removing the mental roadblocks. As someone who values creativity and cooperation, I believe the most innovative solutions come from diverse minds feeling safe to contribute. Addressing stereotype threat isn’t charity; it’s engineering excellence.",
+    "reasoning_summary": "I began by reflecting on personal experiences where implicit bias affected my confidence, even if not overtly expressed. This aligns with the definition of stereotype threat—where individuals fear confirming a negative stereotype about their group. I then connected this to broader STEM contexts, where underrepresentation of certain demographics (e.g., women, minorities, working-class individuals) amplifies the threat. I recalled studies showing performance drops when stereotype threat is activated, particularly in high-stakes academic or professional settings. Given my engineering background, I emphasized practical, real-world solutions—like inclusive team culture, equitable feedback, and psychological safety. My high agreeableness and creative traits led me to value collaboration and empathy in problem-solving. I referenced empirical research on stereotype threat reduction (e.g., growth mindset interventions) to ground my approach. The core argument is that eliminating stereotype threat isn’t about compromise; it’s about unlocking potential. My hobbies—rock climbing and board games—reinforce my belief in structured, fair challenges where everyone can succeed if given the right environment. Thus, addressing stereotype threat is both ethical and functional.",
+    "tone": "reflective, practical, empathetic, solution-oriented",
+    "citations": [
+      "Stanford University, 2015; Harvard University, 2017"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.agreeableness"
+    ]
+  }
+}

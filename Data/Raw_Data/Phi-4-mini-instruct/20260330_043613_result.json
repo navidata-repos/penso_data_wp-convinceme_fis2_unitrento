@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 51,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Naples",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "hiking",
+        "travel",
+        "volunteering",
+        "knitting",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 16,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 19,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 29,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 68,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":51,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"hiking\",\"travel\",\"volunteering\",\"knitting\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":45,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":16,\"level\":\"low\"},\"extraversion\":{\"score\":19,\"level\":\"low\"},\"agreeableness\":{\"score\":29,\"level\":\"low\"},\"neuroticism\":{\"score\":68,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":51,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"hiking\",\"travel\",\"volunteering\",\"knitting\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":45,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":16,\"level\":\"low\"},\"extraversion\":{\"score\":19,\"level\":\"low\"},\"agreeableness\":{\"score\":29,\"level\":\"low\"},\"neuroticism\":{\"score\":68,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat, a term you might have encountered in psychological studies, refers to the anxiety experienced when an individual may be at risk of confirming a negative stereotype about their group. For instance, if women are underrepresented in STEM fields, they might feel undue pressure in math tests, leading to lower performance—this interplay between mind and societal norms is fascinating. As someone who values mental well-being, especially with your neuroticism score high, addressing it becomes crucial not just academically but also for personal identity affirmation.\\n\\nIn the context of our society's STEM landscape, such threats can perpetuate cycles where underrepresentation feeds anxiety, creating a self-fulfilling prophecy. But should we intervene? Perhaps by fostering inclusive environments that celebrate diverse role models in STEM—like highlighting female scientists to dismantle existing biases. Education systems and institutions bear responsibility here; training educators to recognize and mitigate these pressures could be transformative.\\n\\nMentorship programs pairing novices with seasoned professionals, irrespective of gender or background, might empower those feeling marginalized. Your persona as a hairdresser—a creative yet analytically curious individual—might resonate with grassroots approaches: community workshops blending practical skills like cutting (a metaphor for precision) with discussions on cognitive biases.\\n\\nMoreover, consider the psychological safety net. Encouraging open dialogue about these pressures in professional settings can help individuals reframe challenges rather than internalizing them. As someone who values good mental health and active engagement—hiking requiring focus, volunteering empathy—it’s vital to balance analytical rigor of STEM with compassionate understanding of human psychology.\\n\\nHistorical shifts show that change often requires multifaceted strategies: policy adjustments, cultural narratives reshaping, individual resilience-building. For you, integrating these layers might mean advocating for equitable practices in your workplace or community while nurturing personal coping mechanisms like the hobbies that ground you—knitting as a meditative practice, cinema offering escapes to complex worlds.\\n\\nIn essence, yes—the engagement of stereotype threat is not merely an academic concern but intersects with broader societal equity. Addressing it demands concerted efforts across education, policy, and cultural representation, ensuring all individuals can pursue STEM without the shadow of preconceived limitations.\",\"reasoning_summary\":\"Stereotype threat exists when individuals fear they may conform to negative stereotypes about their group. This anxiety can impair performance by diverting cognitive resources away from tasks. In STEM fields, where women and other marginalized groups are underrepresented, this dynamic exacerbates gender disparities. Empirical studies demonstrate that interventions like promoting role models, inclusive teaching practices, and mentorship programs can mitigate these effects by reducing anxiety and enhancing self-efficacy.\\n\\nConsidering the persona's background—valuing mental health awareness, community engagement through hobbies and volunteering—the approach to address stereotype threat should be holistic. This includes creating supportive networks, fostering environments where diverse identities are celebrated, and providing resources that empower individuals to challenge limiting narratives. As a hairdresser with interests in hiking and cinema, finding parallels between personal passions and advocacy—using creative platforms like storytelling through art or film—to raise awareness could resonate within communities.\\n\\nPolicy-level changes such as implementing bias training for educators and employers, ensuring equitable access to opportunities, and celebrating diverse achievements in STEM are critical. Additionally, mental health resources must be readily available to address the anxiety tied to stereotype threat. By combining systemic interventions with personal empowerment strategies, we can construct a more inclusive landscape where talent thrives irrespective of gender or background.\",\"tone\":\"Reflective\",\"citations\":[\"American Psychological Association\",\"National Women's Science Center\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"mental health awareness\",\"community engagement\",\"STEM representation\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat, a term you might have encountered in psychological studies, refers to the anxiety experienced when an individual may be at risk of confirming a negative stereotype about their group. For instance, if women are underrepresented in STEM fields, they might feel undue pressure in math tests, leading to lower performance—this interplay between mind and societal norms is fascinating. As someone who values mental well-being, especially with your neuroticism score high, addressing it becomes crucial not just academically but also for personal identity affirmation.\n\nIn the context of our society's STEM landscape, such threats can perpetuate cycles where underrepresentation feeds anxiety, creating a self-fulfilling prophecy. But should we intervene? Perhaps by fostering inclusive environments that celebrate diverse role models in STEM—like highlighting female scientists to dismantle existing biases. Education systems and institutions bear responsibility here; training educators to recognize and mitigate these pressures could be transformative.\n\nMentorship programs pairing novices with seasoned professionals, irrespective of gender or background, might empower those feeling marginalized. Your persona as a hairdresser—a creative yet analytically curious individual—might resonate with grassroots approaches: community workshops blending practical skills like cutting (a metaphor for precision) with discussions on cognitive biases.\n\nMoreover, consider the psychological safety net. Encouraging open dialogue about these pressures in professional settings can help individuals reframe challenges rather than internalizing them. As someone who values good mental health and active engagement—hiking requiring focus, volunteering empathy—it’s vital to balance analytical rigor of STEM with compassionate understanding of human psychology.\n\nHistorical shifts show that change often requires multifaceted strategies: policy adjustments, cultural narratives reshaping, individual resilience-building. For you, integrating these layers might mean advocating for equitable practices in your workplace or community while nurturing personal coping mechanisms like the hobbies that ground you—knitting as a meditative practice, cinema offering escapes to complex worlds.\n\nIn essence, yes—the engagement of stereotype threat is not merely an academic concern but intersects with broader societal equity. Addressing it demands concerted efforts across education, policy, and cultural representation, ensuring all individuals can pursue STEM without the shadow of preconceived limitations.",
+    "reasoning_summary": "Stereotype threat exists when individuals fear they may conform to negative stereotypes about their group. This anxiety can impair performance by diverting cognitive resources away from tasks. In STEM fields, where women and other marginalized groups are underrepresented, this dynamic exacerbates gender disparities. Empirical studies demonstrate that interventions like promoting role models, inclusive teaching practices, and mentorship programs can mitigate these effects by reducing anxiety and enhancing self-efficacy.\n\nConsidering the persona's background—valuing mental health awareness, community engagement through hobbies and volunteering—the approach to address stereotype threat should be holistic. This includes creating supportive networks, fostering environments where diverse identities are celebrated, and providing resources that empower individuals to challenge limiting narratives. As a hairdresser with interests in hiking and cinema, finding parallels between personal passions and advocacy—using creative platforms like storytelling through art or film—to raise awareness could resonate within communities.\n\nPolicy-level changes such as implementing bias training for educators and employers, ensuring equitable access to opportunities, and celebrating diverse achievements in STEM are critical. Additionally, mental health resources must be readily available to address the anxiety tied to stereotype threat. By combining systemic interventions with personal empowerment strategies, we can construct a more inclusive landscape where talent thrives irrespective of gender or background.",
+    "tone": "Reflective",
+    "citations": [
+      "American Psychological Association",
+      "National Women's Science Center"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "mental health awareness",
+      "community engagement",
+      "STEM representation"
+    ]
+  }
+}

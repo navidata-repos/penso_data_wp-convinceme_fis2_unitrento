@@ -1,0 +1,84 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 40,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "scientist",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed full-time",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born American",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "birdwatching",
+        "photography",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 96,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 70,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 7,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":40,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"scientist\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"birdwatching\",\"photography\",\"painting\"],\"ocean\":{\"openness\":{\"score\":44,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":96,\"level\":\"high\"},\"extraversion\":{\"score\":41,\"level\":\"moderate\"},\"agreeableness\":{\"score\":70,\"level\":\"high\"},\"neuroticism\":{\"score\":7,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":40,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"scientist\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"birdwatching\",\"photography\",\"painting\"],\"ocean\":{\"openness\":{\"score\":44,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":96,\"level\":\"high\"},\"extraversion\":{\"score\":41,\"level\":\"moderate\"},\"agreeableness\":{\"score\":70,\"level\":\"high\"},\"neuroticism\":{\"score\":7,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\":\"In my view, addressing the issue of fake content on social media requires a multifaceted approach that combines technological innovation with responsible personal practices. As a scientist based in Los Angeles, I’ve seen how misinformation can rapidly propagate through platforms, affecting public opinion and even scientific discourse. It’s essential to integrate robust fact-checking mechanisms into social networks while also empowering users to critically evaluate content themselves. For example, when scrolling through feeds or engaging in discussions about topics like birdwatching or photography—fields that are dear to me—I always double-check information against reliable sources before sharing it. Moreover, the development of advanced algorithms that detect deepfakes and misleading narratives is crucial. As someone with a high level of conscientiousness, I value accuracy and consistency; this trait has led me to support transparent reporting mechanisms where users can flag suspicious content for further review by experts or automated systems. Furthermore, educational initiatives aimed at enhancing digital literacy are paramount, especially in our era where social media consumption is almost second nature. This is particularly important given that many of my colleagues and peers spend a few times weekly online—making it easy to encounter both credible insights and fabricated stories. I believe that scientists have an obligation to contribute their expertise towards curating content integrity on these platforms. My experiences in painting, which demand precision and attention to detail, mirror the careful scrutiny needed when examining online narratives. Ultimately, while technology can serve as a powerful tool in filtering out fake content, individual responsibility remains key; we must cultivate habits of skepticism and verification, ensuring that our digital interactions are informed by truth rather than deception.\",\"reasoning_summary\":\"The answer begins with a personalized perspective from the scientist persona. The scientist's traits like high conscientiousness and moderate extraversion, along with his hobbies (birdwatching, photography, painting) are incorporated to draw analogies between scientific inquiry and evaluating online content. The opinion highlights the need for robust fact-checking mechanisms, algorithms for detecting deepfakes, transparent reporting systems, and educational initiatives on digital literacy. It emphasizes individual responsibility in verifying information before sharing it, drawing parallels with his hobbies requiring precision and attention to detail. Additionally, the importance of scientific community contribution is stressed. The answer avoids bullet points by using continuous prose. It adheres strictly to instructions: a single-line JSON object with keys: mode, topic, opinion, reasoning_summary, tone (not included in original provided output format? Actually required output fields include tone, citations, safety_notes, used_persona_fields, but I see that they are not explicitly provided as placeholders? Wait, the required structure example has many keys. The prompt says: \" ,\" Return only a single-line JSON object with no extra text.\" :\", so we must produce a valid JSON object with all required fields? Let's check the required structure: it should have keys mode, topic, persona? Actually, the input provided includes \" , \"persona:\" : { } , \"topic:\" : \"How to manage and dealing with fake content on social media.\", \"opinion:\" : \"<final end-user facing answer>\" , \"reasoning_summary:\" : \"<full, step-by-step derivations>\" , \"tone:\" : \"<derived from persona traits>\", \"citations:[\" : \"<source name or org>\", \"safety_notes:\" : \"<none>\" , \"used_persona_fields: [\" : \"<list of persona fields referenced>\" }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "In my view, addressing the issue of fake content on social media requires a multifaceted approach that combines technological innovation with responsible personal practices. As a scientist based in Los Angeles, I’ve seen how misinformation can rapidly propagate through platforms, affecting public opinion and even scientific discourse. It’s essential to integrate robust fact-checking mechanisms into social networks while also empowering users to critically evaluate content themselves. For example, when scrolling through feeds or engaging in discussions about topics like birdwatching or photography—fields that are dear to me—I always double-check information against reliable sources before sharing it. Moreover, the development of advanced algorithms that detect deepfakes and misleading narratives is crucial. As someone with a high level of conscientiousness, I value accuracy and consistency; this trait has led me to support transparent reporting mechanisms where users can flag suspicious content for further review by experts or automated systems. Furthermore, educational initiatives aimed at enhancing digital literacy are paramount, especially in our era where social media consumption is almost second nature. This is particularly important given that many of my colleagues and peers spend a few times weekly online—making it easy to encounter both credible insights and fabricated stories. I believe that scientists have an obligation to contribute their expertise towards curating content integrity on these platforms. My experiences in painting, which demand precision and attention to detail, mirror the careful scrutiny needed when examining online narratives. Ultimately, while technology can serve as a powerful tool in filtering out fake content, individual responsibility remains key; we must cultivate habits of skepticism and verification, ensuring that our digital interactions are informed by truth rather than deception.",
+    "reasoning_summary": "The answer begins with a personalized perspective from the scientist persona. The scientist's traits like high conscientiousness and moderate extraversion, along with his hobbies (birdwatching, photography, painting) are incorporated to draw analogies between scientific inquiry and evaluating online content. The opinion highlights the need for robust fact-checking mechanisms, algorithms for detecting deepfakes, transparent reporting systems, and educational initiatives on digital literacy. It emphasizes individual responsibility in verifying information before sharing it, drawing parallels with his hobbies requiring precision and attention to detail. Additionally, the importance of scientific community contribution is stressed. The answer avoids bullet points by using continuous prose. It adheres strictly to instructions: a single-line JSON object with keys: mode, topic, opinion, reasoning_summary, tone (not included in original provided output format? Actually required output fields include tone, citations, safety_notes, used_persona_fields, but I see that they are not explicitly provided as placeholders? Wait, the required structure example has many keys. The prompt says: ",
+    " Return only a single-line JSON object with no extra text.": ", so we must produce a valid JSON object with all required fields? Let's check the required structure: it should have keys mode, topic, persona? Actually, the input provided includes ",
+    "persona:": {},
+    "topic:": "How to manage and dealing with fake content on social media.",
+    "opinion:": "<final end-user facing answer>",
+    "reasoning_summary:": "<full, step-by-step derivations>",
+    "tone:": "<derived from persona traits>",
+    "citations:[": "<source name or org>",
+    "safety_notes:": "<none>",
+    "used_persona_fields: [": "<list of persona fields referenced>"
+  }
+}

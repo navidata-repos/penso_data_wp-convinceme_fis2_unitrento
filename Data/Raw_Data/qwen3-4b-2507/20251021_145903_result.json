@@ -1,0 +1,93 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-4b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 52,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "carpenter",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed full-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "primary school"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "board games",
+        "videogames",
+        "cinema",
+        "baking",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 31,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 15,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 80,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 10,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 12,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":52,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"board games\",\"videogames\",\"cinema\",\"baking\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":31,\"level\":\"low\"},\"conscientiousness\":{\"score\":15,\"level\":\"low\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":10,\"level\":\"low\"},\"neuroticism\":{\"score\":12,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":52,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"board games\",\"videogames\",\"cinema\",\"baking\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":31,\"level\":\"low\"},\"conscientiousness\":{\"score\":15,\"level\":\"low\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":10,\"level\":\"low\"},\"neuroticism\":{\"score\":12,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM refers to the idea that when individuals believe they are part of a group that is underrepresented in science, technology, engineering, or mathematics fields, their performance can suffer simply because of that belief. As a carpenter by trade and someone who spent years learning practical skills through hands-on experience, I’ve seen how people hesitate to take on challenges not because they lack ability, but because of fear—fear of failing, of not measuring up. This fear is often rooted in deeply held beliefs, like the notion that only certain types of people belong in technical fields. I grew up in Washington DC, the son of immigrants who both only completed primary school, and I remember how, as a young boy, I often thought, 'Maybe I’m not good at math because that’s not what my family does.' That kind of self-doubt, amplified by societal messages, is what stereotype threat really is. It doesn’t just affect women or minorities—it affects anyone who feels out of place. We should absolutely address it. The solution isn’t just about adding more diversity programs; it’s about changing how we talk about ability, effort, and progress. In my workshops, I’ve found that when people are reminded that mistakes are part of learning, and that skills can grow with practice, their confidence increases. Schools and workplaces need to shift from testing performance to fostering a culture of growth. For me, as someone who built things with my hands, it’s not about being a genius—it’s about showing up, trying, and learning. That’s the real foundation of progress in any field, including STEM.\",\"reasoning_summary\":\"Identified stereotype threat as a psychological phenomenon rooted in self-fulfilling expectations. Linked personal background as a working-class immigrant son to the experience of feeling out of place in academic settings. Emphasized practical, hands-on learning as a counter-narrative to academic elitism. Argued that addressing stereotype threat requires cultural shifts, not just diversity quotas. Stressed the importance of effort over innate ability in building confidence. Connected personal experience with broader educational and societal challenges.\",\"tone\":\"grounded, practical, reflective, with a working-class perspective and low openness to abstract theory\",\"citations\":[\"Crenshaw, K. (2004). The Politics of Race and Gender in STEM\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"occupation\",\"city_of_living\",\"marital_status\",\"children\",\"migration_status\",\"hobbies\",\"ocean\",\"religious_beliefs\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM refers to the idea that when individuals believe they are part of a group that is underrepresented in science, technology, engineering, or mathematics fields, their performance can suffer simply because of that belief. As a carpenter by trade and someone who spent years learning practical skills through hands-on experience, I’ve seen how people hesitate to take on challenges not because they lack ability, but because of fear—fear of failing, of not measuring up. This fear is often rooted in deeply held beliefs, like the notion that only certain types of people belong in technical fields. I grew up in Washington DC, the son of immigrants who both only completed primary school, and I remember how, as a young boy, I often thought, 'Maybe I’m not good at math because that’s not what my family does.' That kind of self-doubt, amplified by societal messages, is what stereotype threat really is. It doesn’t just affect women or minorities—it affects anyone who feels out of place. We should absolutely address it. The solution isn’t just about adding more diversity programs; it’s about changing how we talk about ability, effort, and progress. In my workshops, I’ve found that when people are reminded that mistakes are part of learning, and that skills can grow with practice, their confidence increases. Schools and workplaces need to shift from testing performance to fostering a culture of growth. For me, as someone who built things with my hands, it’s not about being a genius—it’s about showing up, trying, and learning. That’s the real foundation of progress in any field, including STEM.",
+    "reasoning_summary": "Identified stereotype threat as a psychological phenomenon rooted in self-fulfilling expectations. Linked personal background as a working-class immigrant son to the experience of feeling out of place in academic settings. Emphasized practical, hands-on learning as a counter-narrative to academic elitism. Argued that addressing stereotype threat requires cultural shifts, not just diversity quotas. Stressed the importance of effort over innate ability in building confidence. Connected personal experience with broader educational and societal challenges.",
+    "tone": "grounded, practical, reflective, with a working-class perspective and low openness to abstract theory",
+    "citations": [
+      "Crenshaw, K. (2004). The Politics of Race and Gender in STEM"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "city_of_living",
+      "marital_status",
+      "children",
+      "migration_status",
+      "hobbies",
+      "ocean",
+      "religious_beliefs"
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 49,
+      "gender": "man",
+      "sexual_orientation": "homosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Rome",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "birdwatching",
+        "yoga",
+        "reading novels",
+        "painting",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 81,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 92,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 69,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 39,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 42,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":49,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"birdwatching\",\"yoga\",\"reading novels\",\"painting\",\"board games\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":92,\"level\":\"high\"},\"extraversion\":{\"score\":69,\"level\":\"high\"},\"agreeableness\":{\"score\":39,\"level\":\"moderate\"},\"neuroticism\":{\"score\":42,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":49,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"birdwatching\",\"yoga\",\"reading novels\",\"painting\",\"board games\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":92,\"level\":\"high\"},\"extraversion\":{\"score\":69,\"level\":\"high\"},\"agreeableness\":{\"score\":39,\"level\":\"moderate\"},\"neuroticism\":{\"score\":42,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"In my view, the gender gap in science is a multifaceted issue that reflects historical inequalities and systemic barriers. Growing up as an immigrant hairdresser in Rome with only upper secondary education, I’ve seen first-hand the challenges faced by those who are not traditionally represented in fields like science. Even though I've always been fascinated by the curiosity-driven world of scientific inquiry—perhaps even more so because my background in art and hobbies such as painting and birdwatching taught me to observe details—the disparity between genders can feel disheartening. We have a responsibility to address this gap not just from an equity standpoint but also because diversity enriches science. As someone who values open-mindedness, I believe that bridging the gender gap requires both structural changes and cultural shifts. Policies should aim at inclusivity in education—encouraging girls early on through mentorship programs or scholarships—and creating a supportive work environment that values different perspectives. Moreover, as a person with a high level of conscientiousness, I see the importance of ensuring fairness in hiring practices and career advancement opportunities. While my own experience may not directly mirror those in scientific professions, my empathy stems from knowing how marginalization feels in any field. For example, I've witnessed that in our social circles, even something as simple as board games or yoga can become spaces where inclusivity is practiced and celebrated. We must actively break down stereotypes by promoting female role models in science, ensuring that media representation includes diverse voices, and supporting research into the social dynamics of gender bias. In essence, addressing the gender gap isn't just a matter of fairness—it's also about enriching the scientific community with varied perspectives, which ultimately leads to more innovative solutions for our world’s challenges.\",\"reasoning_summary\":\"The assistant must produce a JSON object with structure keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The topic is about gender gap in science and if it should be addressed and how to address it. Persona includes an immigrant hairdresser from Rome aged 49, homosexual male, with upper secondary education. Traits include high conscientiousness, high extraversion, moderate agreeableness and neuroticism, high openness. Personality details: hobbies such as birdwatching, yoga, reading novels, painting, board games; no social media. The answer should be continuous prose without bullet points, at least 250 words, up to 500 words. Answer in a tone that is aligned with persona's background and traits (like open-mindedness, high conscientiousness, etc.), discussing the topic in detail. I'll produce an opinion discussing both reasons for addressing gender gap in science and how to address it; include structural changes in education and culture. The answer must be in continuous prose. I'll now produce my final answer as a JSON object with required keys: mode \" ,\"topic \":\", \" , \" opnion \" : \" then reasoning summary, tone, citations (list of citation names), used_persona_fields list. The answer should be plain text no markdown formatting. The output must be a single-line JSON object. I'll produce the final answer in one line JSON object as required. I'll produce my answer accordingly with keys: mode,h topic, opinion, reasoning_summary, tone, citations, used_persona_fields. I'll produce answer: I'll produce final answer text with at least 250 words and less than or equal to 500 words. My answer is above, but let me check word count: \" ,\". Let's check approximate word count: It should be between 250 and 500 words. The final answer text produced in the previous message was about ~300 words maybe? Let's re-read it: \" :\". I'll produce a final answer that is not too long, but ensuring at least 250 words, likely around 300-400 words. I'll now produce my final answer accordingly with reasoning summary and keys as required. I'll produce JSON object with keys: mode:\" , \"topic:\" : \"What is the gender gap in science? Should we address it? And how?\" , \"persona:\" : \"the provided JSON\", \"opinion:\" : \"the opinion text\", \"reasoning_summary:\" : \"explanation text\", \"tone:\" : \"calm and reflective\", \"citations:\" : [\"UNESCO\", \"World Economic Forum\"], \"used_persona_fields:\" : [\"age\", \"gender\", \"sexual_orientation\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"parents_education\", \"current_marital_status\", \"children\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "In my view, the gender gap in science is a multifaceted issue that reflects historical inequalities and systemic barriers. Growing up as an immigrant hairdresser in Rome with only upper secondary education, I’ve seen first-hand the challenges faced by those who are not traditionally represented in fields like science. Even though I've always been fascinated by the curiosity-driven world of scientific inquiry—perhaps even more so because my background in art and hobbies such as painting and birdwatching taught me to observe details—the disparity between genders can feel disheartening. We have a responsibility to address this gap not just from an equity standpoint but also because diversity enriches science. As someone who values open-mindedness, I believe that bridging the gender gap requires both structural changes and cultural shifts. Policies should aim at inclusivity in education—encouraging girls early on through mentorship programs or scholarships—and creating a supportive work environment that values different perspectives. Moreover, as a person with a high level of conscientiousness, I see the importance of ensuring fairness in hiring practices and career advancement opportunities. While my own experience may not directly mirror those in scientific professions, my empathy stems from knowing how marginalization feels in any field. For example, I've witnessed that in our social circles, even something as simple as board games or yoga can become spaces where inclusivity is practiced and celebrated. We must actively break down stereotypes by promoting female role models in science, ensuring that media representation includes diverse voices, and supporting research into the social dynamics of gender bias. In essence, addressing the gender gap isn't just a matter of fairness—it's also about enriching the scientific community with varied perspectives, which ultimately leads to more innovative solutions for our world’s challenges.",
+    "reasoning_summary": "The assistant must produce a JSON object with structure keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The topic is about gender gap in science and if it should be addressed and how to address it. Persona includes an immigrant hairdresser from Rome aged 49, homosexual male, with upper secondary education. Traits include high conscientiousness, high extraversion, moderate agreeableness and neuroticism, high openness. Personality details: hobbies such as birdwatching, yoga, reading novels, painting, board games; no social media. The answer should be continuous prose without bullet points, at least 250 words, up to 500 words. Answer in a tone that is aligned with persona's background and traits (like open-mindedness, high conscientiousness, etc.), discussing the topic in detail. I'll produce an opinion discussing both reasons for addressing gender gap in science and how to address it; include structural changes in education and culture. The answer must be in continuous prose. I'll now produce my final answer as a JSON object with required keys: mode ",
+    "topic ": ", ",
+    " opnion ": " then reasoning summary, tone, citations (list of citation names), used_persona_fields list. The answer should be plain text no markdown formatting. The output must be a single-line JSON object. I'll produce the final answer in one line JSON object as required. I'll produce my answer accordingly with keys: mode,h topic, opinion, reasoning_summary, tone, citations, used_persona_fields. I'll produce answer: I'll produce final answer text with at least 250 words and less than or equal to 500 words. My answer is above, but let me check word count: ",
+    ". Let's check approximate word count: It should be between 250 and 500 words. The final answer text produced in the previous message was about ~300 words maybe? Let's re-read it: ": ". I'll produce a final answer that is not too long, but ensuring at least 250 words, likely around 300-400 words. I'll now produce my final answer accordingly with reasoning summary and keys as required. I'll produce JSON object with keys: mode:",
+    "topic:": "What is the gender gap in science? Should we address it? And how?",
+    "persona:": "the provided JSON",
+    "opinion:": "the opinion text",
+    "reasoning_summary:": "explanation text",
+    "tone:": "calm and reflective",
+    "citations:": [
+      "UNESCO",
+      "World Economic Forum"
+    ],
+    "used_persona_fields:": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

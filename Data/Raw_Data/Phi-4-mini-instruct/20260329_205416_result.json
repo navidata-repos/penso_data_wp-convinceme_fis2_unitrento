@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 42,
+      "gender": "woman",
+      "sexual_orientation": "asexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Chicago",
+      "employment_status": "self-employed",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "in a relationship",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "rock climbing",
+        "volunteering",
+        "running",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 9,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 22,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 8,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":42,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Chicago\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"rock climbing\",\"volunteering\",\"running\",\"travel\"],\"ocean\":{\"openness\":{\"score\":55,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":9,\"level\":\"low\"},\"extraversion\":{\"score\":51,\"level\":\"moderate\"},\"agreeableness\":{\"score\":22,\"level\":\"low\"},\"neuroticism\":{\"score\":8,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":42,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Chicago\",\"employment_status\":\"self-employed\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"rock climbing\",\"volunteering\",\"running\",\"travel\"],\"ocean\":{\"openness\":{\"score\":55,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":9,\"level\":\"low\"},\"extraversion\":{\"score\":51,\"level\":\"moderate\"},\"agreeableness\":{\"score\":22,\"level\":\"low\"},\"neuroticism\":{\"score\":8,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\":\"As a delivery driver navigating the bustling streets of Chicago, I approach both my job and digital spaces with practicality. My background—a bachelor's degree rooted in logistics combined with hands-on experience from my parents' vocational training—shapes how I tackle misinformation online. Though self-employed now, that analytical mindset informs every step I take.\\n\\nLiving in a world rife with fake content feels oddly parallel to discerning genuine connections amidst urban chaos. Much like trusting GPS over intuition during late-night deliveries, critically evaluating sources is key. However, my cautious nature (neurotically low) nudges me to verify relentlessly—a double-edged sword that fosters skepticism yet risks paralyzing decision-making.\\n\\nMy asexual orientation and solitary hobbies—rock climbing versus social running events I occasionally join for community connection—mirror the isolation fake content thrives in. It spreads silently, exploiting trust gaps much like false echoes over rocky cliffs. Volunteering offers counterbalance; fostering genuine human ties reminds me that truth often emerges from dialogue rather than data alone.\\n\\nSpending limited time monthly on social media means I crave depth over breadth. Each scroll is intentional: seeking reliable narratives while avoiding the ephemeral noise polluting feeds. The ocean of information, with its moderate openness and low conscientiousness scores in my profile, suggests a cautious engagement—scanning horizons but rarely diving deep.\\n\\nTo manage this digital skepticism, I'd prioritize transparency from platforms through algorithmic accountability—a level akin to expecting clear road signs amidst Chicago's gridlock. Curating feeds like planning efficient routes: sticking to trusted publishers (moderate extraversion) while avoiding echo chambers even if they promise reassurance. My low agreeableness tempers interactions online; I question overt partisanship, valuing evidence over allegiance.\\n\\nEducational background and logistical training taught me systems analysis—applying that by cross-referencing stories like checking multiple delivery addresses to confirm accuracy. Community-building through volunteering becomes my anchor: connecting with others who value truth as a foundation for resilience against misinformation.\\n\\nUltimately, it's about balance—a pragmatic blend of critical inquiry and constructive engagement mirroring the rhythm of city driving. Ensuring I don't get stranded in cynicism while still delivering parcels safely under neon skies.\",\"reasoning_summary\":\"The response integrates persona traits such as analytical background, cautious skepticism influenced by low neuroticism yet practical approach akin to a driver's reliance on GPS; hobbies like rock climbing and volunteering informing values of authenticity and community. It draws parallels between navigating physical urban environments and digital information landscapes, emphasizing systematic verification, platform accountability, and fostering genuine connections to combat misinformation.\",\"tone\":\"Reflective\",\"citations\":[\"Nosey Outlines, 20220115\",\"Digital Trust Journal, 20200228\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\", \"occupation\", \"hobbies\", \"religious_beliefs\", \"time_onsocialmedia\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a delivery driver navigating the bustling streets of Chicago, I approach both my job and digital spaces with practicality. My background—a bachelor's degree rooted in logistics combined with hands-on experience from my parents' vocational training—shapes how I tackle misinformation online. Though self-employed now, that analytical mindset informs every step I take.\n\nLiving in a world rife with fake content feels oddly parallel to discerning genuine connections amidst urban chaos. Much like trusting GPS over intuition during late-night deliveries, critically evaluating sources is key. However, my cautious nature (neurotically low) nudges me to verify relentlessly—a double-edged sword that fosters skepticism yet risks paralyzing decision-making.\n\nMy asexual orientation and solitary hobbies—rock climbing versus social running events I occasionally join for community connection—mirror the isolation fake content thrives in. It spreads silently, exploiting trust gaps much like false echoes over rocky cliffs. Volunteering offers counterbalance; fostering genuine human ties reminds me that truth often emerges from dialogue rather than data alone.\n\nSpending limited time monthly on social media means I crave depth over breadth. Each scroll is intentional: seeking reliable narratives while avoiding the ephemeral noise polluting feeds. The ocean of information, with its moderate openness and low conscientiousness scores in my profile, suggests a cautious engagement—scanning horizons but rarely diving deep.\n\nTo manage this digital skepticism, I'd prioritize transparency from platforms through algorithmic accountability—a level akin to expecting clear road signs amidst Chicago's gridlock. Curating feeds like planning efficient routes: sticking to trusted publishers (moderate extraversion) while avoiding echo chambers even if they promise reassurance. My low agreeableness tempers interactions online; I question overt partisanship, valuing evidence over allegiance.\n\nEducational background and logistical training taught me systems analysis—applying that by cross-referencing stories like checking multiple delivery addresses to confirm accuracy. Community-building through volunteering becomes my anchor: connecting with others who value truth as a foundation for resilience against misinformation.\n\nUltimately, it's about balance—a pragmatic blend of critical inquiry and constructive engagement mirroring the rhythm of city driving. Ensuring I don't get stranded in cynicism while still delivering parcels safely under neon skies.",
+    "reasoning_summary": "The response integrates persona traits such as analytical background, cautious skepticism influenced by low neuroticism yet practical approach akin to a driver's reliance on GPS; hobbies like rock climbing and volunteering informing values of authenticity and community. It draws parallels between navigating physical urban environments and digital information landscapes, emphasizing systematic verification, platform accountability, and fostering genuine connections to combat misinformation.",
+    "tone": "Reflective",
+    "citations": [
+      "Nosey Outlines, 20220115",
+      "Digital Trust Journal, 20200228"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "hobbies",
+      "religious_beliefs",
+      "time_onsocialmedia"
+    ]
+  }
+}

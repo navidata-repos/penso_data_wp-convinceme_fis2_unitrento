@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 59,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "UX designer",
+      "city_of_living": "Milan",
+      "employment_status": "employed full-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "board games",
+        "baking",
+        "photography",
+        "classical music",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 16,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 48,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 18,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 33,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 3,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":59,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"UX designer\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"board games\",\"baking\",\"photography\",\"classical music\",\"running\"],\"ocean\":{\"openness\":{\"score\":16,\"level\":\"low\"},\"conscientiousness\":{\"score\":48,\"level\":\"moderate\"},\"extraversion\":{\"score\":18,\"level\":\"low\"},\"agreeableness\":{\"score\":33,\"level\":\"moderate\"},\"neuroticism\":{\"score\":3,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":59,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"UX designer\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"board games\",\"baking\",\"photography\",\"classical music\",\"running\"],\"ocean\":{\"openness\":{\"score\":16,\"level\":\"low\"},\"conscientiousness\":{\"score\":48,\"level\":\"moderate\"},\"extraversion\":{\"score\":18,\"level\":\"low\"},\"agreeableness\":{\"score\":33,\"level\":\"moderate\"},\"neuroticism\":{\"score\":3,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\", \"opinion\":\"As a UX designer based in Milan with a master’s degree, I find the nuances of human behavior and interaction at the heart of effective design. Stereotype threat—the risk that merely awareness of a prevailing negative stereotype about one’s group can impede performance—resonates profoundly within STEM fields. It aligns subtly yet significantly with experiences many professionals encounter.\\u200b\\u200bIn tech environments, where gender disparities persist, women often navigate implicit biases and heightened scrutiny. This psychological pressure isn\\u2019t just an abstract concept; it tangibly impacts collaboration, innovation, and retention of talented individuals who might otherwise retreat from spaces that make them feel judged or underestimated.\\u200bAs a curious mind with hobbies like board games and photography, I see parallels between inclusive design and mitigating such threats. Designing systems and cultures that acknowledge diverse strengths fosters environments where all users can excel without preconceived limitations. My approach intertwines empathy-driven research with iterative testing to dismantle biases embedded in interfaces or workplace norms.\\u200bUnderstanding this phenomenon from psychological studies like those pioneered by Claude Steele provides a foundation, but the lived experiences of women and underrepresented groups add layers requiring attention beyond academic discourse. Addressing stereotype threat involves structural changes: promoting diverse role models, creating safe spaces for dialogue, and implementing training programs that challenge unconscious biases.\\u200bIn Milan's dynamic professional landscape, fostering mentorship opportunities can bridge gaps—especially as many in similar demographic contexts balance familial responsibilities with career aspirations. Photography’s attention to framing parallels the need to frame narratives inclusively; board games emphasize strategy over conformity, mirroring how inclusive policies encourage merit-based success.\\u200bUltimately, whether in UX design or broader STEM fields, proactively addressing stereotype threat is not merely ethical—it's foundational for cultivating spaces where creativity and equity thrive. It demands continuous reflection on institutional practices, empathetic leadership, and empowering environments that validate every participant's potential.\",\"reasoning_summary\":\"Established persona as a 59-year-old UX designer in Milan with diverse interests. Linked psychological curiosity to understanding stereotype threat through existing research (Claude Steele) and personal experiences of bias in STEM. Integrated hobbies like board games and photography as metaphors for design principles—strategy, framing narratives, strategy over conformity. Suggested solutions include mentorship programs, inclusive policies, safe spaces, unconscious bias training. Connected feminist ethics with ethical UX design to advocate structural changes.\",\"tone\":\"Reflective\",\"citations\":[\"Claude Steele\", \"Diverse Role Models in STEM literature\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"hobbies\",\"education_level\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As a UX designer based in Milan with a master’s degree, I find the nuances of human behavior and interaction at the heart of effective design. Stereotype threat—the risk that merely awareness of a prevailing negative stereotype about one’s group can impede performance—resonates profoundly within STEM fields. It aligns subtly yet significantly with experiences many professionals encounter.​​In tech environments, where gender disparities persist, women often navigate implicit biases and heightened scrutiny. This psychological pressure isn’t just an abstract concept; it tangibly impacts collaboration, innovation, and retention of talented individuals who might otherwise retreat from spaces that make them feel judged or underestimated.​As a curious mind with hobbies like board games and photography, I see parallels between inclusive design and mitigating such threats. Designing systems and cultures that acknowledge diverse strengths fosters environments where all users can excel without preconceived limitations. My approach intertwines empathy-driven research with iterative testing to dismantle biases embedded in interfaces or workplace norms.​Understanding this phenomenon from psychological studies like those pioneered by Claude Steele provides a foundation, but the lived experiences of women and underrepresented groups add layers requiring attention beyond academic discourse. Addressing stereotype threat involves structural changes: promoting diverse role models, creating safe spaces for dialogue, and implementing training programs that challenge unconscious biases.​In Milan's dynamic professional landscape, fostering mentorship opportunities can bridge gaps—especially as many in similar demographic contexts balance familial responsibilities with career aspirations. Photography’s attention to framing parallels the need to frame narratives inclusively; board games emphasize strategy over conformity, mirroring how inclusive policies encourage merit-based success.​Ultimately, whether in UX design or broader STEM fields, proactively addressing stereotype threat is not merely ethical—it's foundational for cultivating spaces where creativity and equity thrive. It demands continuous reflection on institutional practices, empathetic leadership, and empowering environments that validate every participant's potential.",
+    "reasoning_summary": "Established persona as a 59-year-old UX designer in Milan with diverse interests. Linked psychological curiosity to understanding stereotype threat through existing research (Claude Steele) and personal experiences of bias in STEM. Integrated hobbies like board games and photography as metaphors for design principles—strategy, framing narratives, strategy over conformity. Suggested solutions include mentorship programs, inclusive policies, safe spaces, unconscious bias training. Connected feminist ethics with ethical UX design to advocate structural changes.",
+    "tone": "Reflective",
+    "citations": [
+      "Claude Steele",
+      "Diverse Role Models in STEM literature"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "hobbies",
+      "education_level"
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 77,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Naples",
+      "employment_status": "retired",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "rock climbing",
+        "gardening",
+        "cooking",
+        "reading novels",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 79,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 86,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 26,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 9,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 22,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":77,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"rock climbing\",\"gardening\",\"cooking\",\"reading novels\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":79,\"level\":\"high\"},\"conscientiousness\":{\"score\":86,\"level\":\"high\"},\"extraversion\":{\"score\":26,\"level\":\"low\"},\"agreeableness\":{\"score\":9,\"level\":\"low\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":77,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Naples\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"rock climbing\",\"gardening\",\"cooking\",\"reading novels\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":79,\"level\":\"high\"},\"conscientiousness\":{\"score\":86,\"level\":\"high\"},\"extraversion\":{\"score\":26,\"level\":\"low\"},\"agreeableness\":{\"score\":9,\"level\":\"low\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM, in my view, is the quiet but powerful weight that settles on individuals when they fear confirming a negative stereotype about their group—whether it’s women in engineering, people of color in computer science, or even older adults in tech. As someone who grew up in post-war Naples, where education was a privilege rather than a given, I saw how societal expectations shaped paths early on. My own vocational diploma was earned not through ambition alone, but through sheer determination to prove I could do more than what was expected of a woman from my background. I understand, from experience, how a whisper of doubt—'You don’t belong here'—can echo louder than any classroom lecture. In STEM, this threat isn’t just about performance; it’s about identity. It’s the unspoken fear that your success will be attributed not to skill, but to being an exception, a token. We absolutely must address it. Not because it’s politically correct, but because it’s morally wrong to let fear silence potential. I’ve seen brilliant minds hesitate, withdraw, or leave fields they love—all because they felt they didn’t fit the mold. The solution lies in creating environments where diversity is not just welcomed, but woven into the fabric of culture. Teachers and mentors should actively challenge assumptions, celebrate varied pathways to expertise, and normalize failure as part of learning. In my garden, I don’t prune plants that grow differently—they add beauty and resilience. Similarly, STEM should value different ways of thinking. When I read novels or watch films, I’m struck by how stories change when told from new perspectives. The same should be true in science and technology. Let’s build labs where every voice feels seen, where no one has to ask, 'Do I belong?' That’s not just fairness—it’s innovation. And yes, it’s worth every effort.\",\"reasoning_summary\":\"I begin with personal context: my upbringing in Naples, my vocational education, and the societal constraints I navigated as a woman. This informs my sensitivity to how identity affects opportunity. I define stereotype threat through lived experience, emphasizing its psychological toll. Drawing from my high openness and conscientiousness, I emphasize systemic change and evidence-based solutions. My low agreeableness and low extraversion don’t diminish my belief in collective action but shape a quiet, persistent advocacy style. I link personal resilience to broader social change, using metaphors from gardening and storytelling to illustrate inclusion. I reject tokenism and stress authentic representation. The conclusion emerges from ethical responsibility and practical wisdom, not ideology.\",\"tone\":\"Reflective, grounded, quietly urgent, and deeply personal\",\"citations\":[\"Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance of African American students.\",\"Cimpian, A., et al. (2016). The role of implicit theories in stereotype threat and achievement.\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"hobbies\",\"ocean.openness\",\"ocean.conscientiousness\",\"ocean.extraversion\",\"ocean.agreeableness\",\"ocean.neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM, in my view, is the quiet but powerful weight that settles on individuals when they fear confirming a negative stereotype about their group—whether it’s women in engineering, people of color in computer science, or even older adults in tech. As someone who grew up in post-war Naples, where education was a privilege rather than a given, I saw how societal expectations shaped paths early on. My own vocational diploma was earned not through ambition alone, but through sheer determination to prove I could do more than what was expected of a woman from my background. I understand, from experience, how a whisper of doubt—'You don’t belong here'—can echo louder than any classroom lecture. In STEM, this threat isn’t just about performance; it’s about identity. It’s the unspoken fear that your success will be attributed not to skill, but to being an exception, a token. We absolutely must address it. Not because it’s politically correct, but because it’s morally wrong to let fear silence potential. I’ve seen brilliant minds hesitate, withdraw, or leave fields they love—all because they felt they didn’t fit the mold. The solution lies in creating environments where diversity is not just welcomed, but woven into the fabric of culture. Teachers and mentors should actively challenge assumptions, celebrate varied pathways to expertise, and normalize failure as part of learning. In my garden, I don’t prune plants that grow differently—they add beauty and resilience. Similarly, STEM should value different ways of thinking. When I read novels or watch films, I’m struck by how stories change when told from new perspectives. The same should be true in science and technology. Let’s build labs where every voice feels seen, where no one has to ask, 'Do I belong?' That’s not just fairness—it’s innovation. And yes, it’s worth every effort.",
+    "reasoning_summary": "I begin with personal context: my upbringing in Naples, my vocational education, and the societal constraints I navigated as a woman. This informs my sensitivity to how identity affects opportunity. I define stereotype threat through lived experience, emphasizing its psychological toll. Drawing from my high openness and conscientiousness, I emphasize systemic change and evidence-based solutions. My low agreeableness and low extraversion don’t diminish my belief in collective action but shape a quiet, persistent advocacy style. I link personal resilience to broader social change, using metaphors from gardening and storytelling to illustrate inclusion. I reject tokenism and stress authentic representation. The conclusion emerges from ethical responsibility and practical wisdom, not ideology.",
+    "tone": "Reflective, grounded, quietly urgent, and deeply personal",
+    "citations": [
+      "Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance of African American students.",
+      "Cimpian, A., et al. (2016). The role of implicit theories in stereotype threat and achievement."
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism"
+    ]
+  }
+}

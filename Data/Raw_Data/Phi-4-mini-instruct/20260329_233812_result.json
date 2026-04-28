@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 31,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "Milan",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cinema",
+        "volunteering",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 47,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 68,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 82,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 22,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":31,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Milan\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cinema\",\"volunteering\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":38,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":47,\"level\":\"moderate\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":82,\"level\":\"high\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":31,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Milan\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cinema\",\"volunteering\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":38,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":47,\"level\":\"moderate\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":82,\"level\":\"high\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat, a term you might have encountered in academic circles, refers to the anxiety experienced when an individual may be prone to confirming a negative stereotype about their group. This phenomenon can disproportionately affect underrepresented groups in Science, Technology, Engineering, and Mathematics (STEM) fields. As someone curious with interests spanning cinema, volunteering, and knitting—a persona hinting at diverse yet unassuming intellectual pursuits—it's natural to question its relevance beyond scholarly discussions.\\n\\nConsider the retail worker juggling multiple responsibilities; encountering such psychological stress could diminish performance subtly but persistently. Should we intervene? Absolutely, though not through top-down mandates alone. Education systems in Milan or elsewhere must weave awareness into curricula sensitively and inclusively. Mentorship programs pairing aspiring young women with STEM professionals can challenge ingrained biases.\\n\\nCinema often reflects societal issues; why not leverage storytelling to depict individuals overcoming stereotype threat? Volunteering opportunities that engage diverse groups in collaborative projects could also dismantle prejudices organically.\\n\\nyour curiosity, a trait we see reflected in your hobbies and participatory approach on social media, suggests you value proactive learning. Embrace it by engaging with content from varied sources, amplifying marginalized voices. As self-employed individuals thrive through autonomy, fostering environments where neuroticism is low yet openness to experience remains high can catalyze innovation.\\n\\nHindu philosophical tenets emphasizing harmony and balance could inspire frameworks addressing stereotype threat—promoting inner resilience while nurturing communal support networks. Your ocean model scores indicate agreeableness and extraversion thriving alongside moderate conscientiousness; perhaps a balanced approach combining individual initiative with collective empathy is optimal.\\n\\nacknowledging biases at parental levels, from primary education to higher degrees, underscores the systemic nature of this issue. By addressing stereotype threat, we champion equity—ensuring that potential isn't stifled by prejudgment, allowing every curious mind in STEM to thrive unencumbered.\",\"reasoning_summary\":\"Explored definition of stereotype threat and its disproportionate impact on underrepresented groups in STEM. Considered interventions through education, mentorship, inclusive curricula, and societal engagement via cinema and volunteering. Highlighted the role of personal curiosity and autonomy in fostering innovation. Suggested leveraging philosophical principles for holistic frameworks. Connected systemic factors to individual experiences.\",\"tone\":\"Reflective and inquisitive yet optimistic\",\"citations\":[\"Stereotype Threat Literature\", \"Educational Psychology\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"curious\", \"self-employed\", \"Hinduism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat, a term you might have encountered in academic circles, refers to the anxiety experienced when an individual may be prone to confirming a negative stereotype about their group. This phenomenon can disproportionately affect underrepresented groups in Science, Technology, Engineering, and Mathematics (STEM) fields. As someone curious with interests spanning cinema, volunteering, and knitting—a persona hinting at diverse yet unassuming intellectual pursuits—it's natural to question its relevance beyond scholarly discussions.\n\nConsider the retail worker juggling multiple responsibilities; encountering such psychological stress could diminish performance subtly but persistently. Should we intervene? Absolutely, though not through top-down mandates alone. Education systems in Milan or elsewhere must weave awareness into curricula sensitively and inclusively. Mentorship programs pairing aspiring young women with STEM professionals can challenge ingrained biases.\n\nCinema often reflects societal issues; why not leverage storytelling to depict individuals overcoming stereotype threat? Volunteering opportunities that engage diverse groups in collaborative projects could also dismantle prejudices organically.\n\nyour curiosity, a trait we see reflected in your hobbies and participatory approach on social media, suggests you value proactive learning. Embrace it by engaging with content from varied sources, amplifying marginalized voices. As self-employed individuals thrive through autonomy, fostering environments where neuroticism is low yet openness to experience remains high can catalyze innovation.\n\nHindu philosophical tenets emphasizing harmony and balance could inspire frameworks addressing stereotype threat—promoting inner resilience while nurturing communal support networks. Your ocean model scores indicate agreeableness and extraversion thriving alongside moderate conscientiousness; perhaps a balanced approach combining individual initiative with collective empathy is optimal.\n\nacknowledging biases at parental levels, from primary education to higher degrees, underscores the systemic nature of this issue. By addressing stereotype threat, we champion equity—ensuring that potential isn't stifled by prejudgment, allowing every curious mind in STEM to thrive unencumbered.",
+    "reasoning_summary": "Explored definition of stereotype threat and its disproportionate impact on underrepresented groups in STEM. Considered interventions through education, mentorship, inclusive curricula, and societal engagement via cinema and volunteering. Highlighted the role of personal curiosity and autonomy in fostering innovation. Suggested leveraging philosophical principles for holistic frameworks. Connected systemic factors to individual experiences.",
+    "tone": "Reflective and inquisitive yet optimistic",
+    "citations": [
+      "Stereotype Threat Literature",
+      "Educational Psychology"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "curious",
+      "self-employed",
+      "Hinduism"
+    ]
+  }
+}

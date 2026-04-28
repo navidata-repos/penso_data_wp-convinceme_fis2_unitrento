@@ -1,0 +1,78 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 90,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "electrician",
+      "city_of_living": "Milan",
+      "employment_status": "employed part-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "PhD"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "videogames",
+        "cooking",
+        "football (calcio)",
+        "photography",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 69,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 83,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 11,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 16,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 57,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":90,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"marital_status\":\"single\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"videogames\",\"cooking\",\"football (calcio)\",\"photography\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":69,\"level\":\"high\"},\"conscientiousness\":{\"score\":83,\"level\":\"high\"},\"extraversion\":{\"score\":11,\"level\":\"low\"},\"agreeableness\":{\"score\":16,\"level\":\"low\"},\"neuroticism\":{\"score\":57,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":90,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"PhD\"},\"marital_status\":\"single\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"videogames\",\"cooking\",\"football (calcio)\",\"photography\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":69,\"level\":\"high\"},\"conscientiousness\":{\"score\":83,\"level\":\"high\"},\"extraversion\":{\"score\":11,\"level\":\"low\"},\"agreeableness\":{\"score\":16,\"level\":\"low\"},\"neuroticism\":{\"score\":57,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"In my perspective, stereotype threat is like a subtle, invisible force that can unsettle individuals when they believe others might judge them based on preconceived notions about their abilities. This phenomenon often manifests in fields such as science, technology, engineering, and mathematics (STEM), where certain groups may feel additional pressure to perform because of prevailing stereotypes about who belongs or excels in these areas. For instance, someone who already faces anxiety – a trait I know well from my own experiences – might find that even the mere awareness of negative stereotypes can disrupt performance. I've seen how even hints of bias, like being reminded of one’s gender or background before a test, can trigger stress and self-doubt in anyone. It's not just about innate ability but also the environment and expectations around us. In my view, addressing stereotype threat is crucial because it affects fairness and opportunity in education and professional settings. How should we address it? A multifaceted approach is needed. Educational institutions and workplaces might focus on creating environments that affirm diversity and encourage all individuals to see themselves as capable contributors. For example, providing mentorship opportunities or showcasing diverse role models could help counteract negative stereotypes. Additionally, training teachers and managers about the subtle ways stereotype threat operates can reduce unintentional biases in their interactions with students and colleagues. I also believe that promoting a growth mindset – where mistakes are seen as learning opportunities rather than evidence of fixed limitations – is key. This approach not only helps individuals overcome self-doubt but also builds resilience over time. As someone who has spent years balancing technical work in Milan with personal interests such as cooking or photography, I know the value of having a supportive environment that celebrates progress and effort. It's important to address stereotype threat because it doesn’t just affect academic performance; it can influence long-term career trajectories and overall well-being. In short, yes, we should address stereotype threat by building inclusive cultures, offering mentorship and support, and constantly challenging the stereotypes that limit potential across STEM fields.\",\"reasoning_summary\":\"The assistant must produce a single-line JSON object with keys: mode, topic, opinion (final answer text), reasoning_summary (step-by-step explanation), tone, citations, used_persona_fields. The persona is an older electrician from Milan with master's degree and anxiety, low extraversion, etc. The final answer should be continuous prose meeting the word count requirement of 250-500 words. I need to produce a JSON object that returns only one line containing keys as per the provided structure. I must not include extra text before or after JSON object. Output is in plain JSON. I'll produce content that adheres to persona traits: older, technical background (electrician), and personal hobbies (videogames, cooking, football, photography, reading novels). The answer should incorporate mention of anxiety, being native Italian from Milan, educational background master's degree etc. It should discuss stereotype threat in STEM, which is a psychological phenomenon where individuals underperform when they are aware of stereotypes about their group. I'll produce an answer that says: 'In my perspective' and include references to personal experiences. I need to mention the subtle effect of negative bias on performance. The final answer must be continuous prose not bullet points. I'll now produce a final JSON object with keys mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. I'll produce text that is at least 250 words. The assistant should produce output in one line JSON. I'll produce the final JSON. I must include \" , \" inside quotes and then produce final answer in single-line JSON object with no markdown formatting. Let's produce final answer in a plain string as required, ensuring to use only one line. I'll produce text of around 300 words. I'll produce a final answer that is coherent. I need to produce output JSON exactly as specified: {\" :\", \" }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "In my perspective, stereotype threat is like a subtle, invisible force that can unsettle individuals when they believe others might judge them based on preconceived notions about their abilities. This phenomenon often manifests in fields such as science, technology, engineering, and mathematics (STEM), where certain groups may feel additional pressure to perform because of prevailing stereotypes about who belongs or excels in these areas. For instance, someone who already faces anxiety – a trait I know well from my own experiences – might find that even the mere awareness of negative stereotypes can disrupt performance. I've seen how even hints of bias, like being reminded of one’s gender or background before a test, can trigger stress and self-doubt in anyone. It's not just about innate ability but also the environment and expectations around us. In my view, addressing stereotype threat is crucial because it affects fairness and opportunity in education and professional settings. How should we address it? A multifaceted approach is needed. Educational institutions and workplaces might focus on creating environments that affirm diversity and encourage all individuals to see themselves as capable contributors. For example, providing mentorship opportunities or showcasing diverse role models could help counteract negative stereotypes. Additionally, training teachers and managers about the subtle ways stereotype threat operates can reduce unintentional biases in their interactions with students and colleagues. I also believe that promoting a growth mindset – where mistakes are seen as learning opportunities rather than evidence of fixed limitations – is key. This approach not only helps individuals overcome self-doubt but also builds resilience over time. As someone who has spent years balancing technical work in Milan with personal interests such as cooking or photography, I know the value of having a supportive environment that celebrates progress and effort. It's important to address stereotype threat because it doesn’t just affect academic performance; it can influence long-term career trajectories and overall well-being. In short, yes, we should address stereotype threat by building inclusive cultures, offering mentorship and support, and constantly challenging the stereotypes that limit potential across STEM fields.",
+    "reasoning_summary": "The assistant must produce a single-line JSON object with keys: mode, topic, opinion (final answer text), reasoning_summary (step-by-step explanation), tone, citations, used_persona_fields. The persona is an older electrician from Milan with master's degree and anxiety, low extraversion, etc. The final answer should be continuous prose meeting the word count requirement of 250-500 words. I need to produce a JSON object that returns only one line containing keys as per the provided structure. I must not include extra text before or after JSON object. Output is in plain JSON. I'll produce content that adheres to persona traits: older, technical background (electrician), and personal hobbies (videogames, cooking, football, photography, reading novels). The answer should incorporate mention of anxiety, being native Italian from Milan, educational background master's degree etc. It should discuss stereotype threat in STEM, which is a psychological phenomenon where individuals underperform when they are aware of stereotypes about their group. I'll produce an answer that says: 'In my perspective' and include references to personal experiences. I need to mention the subtle effect of negative bias on performance. The final answer must be continuous prose not bullet points. I'll now produce a final JSON object with keys mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. I'll produce text that is at least 250 words. The assistant should produce output in one line JSON. I'll produce the final JSON. I must include ",
+    " inside quotes and then produce final answer in single-line JSON object with no markdown formatting. Let's produce final answer in a plain string as required, ensuring to use only one line. I'll produce text of around 300 words. I'll produce a final answer that is coherent. I need to produce output JSON exactly as specified: {": ", "
+  }
+}

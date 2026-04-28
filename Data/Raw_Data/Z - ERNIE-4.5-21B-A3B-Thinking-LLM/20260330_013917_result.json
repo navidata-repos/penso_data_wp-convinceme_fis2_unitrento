@@ -1,0 +1,85 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "aiasistentworld/ERNIE-4.5-21B-A3B-Thinking-LLM",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 77,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Washington DC",
+      "employment_status": "retired",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "travel",
+        "photography",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 61,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 5,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 74,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 7,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 87,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":77,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"travel\",\"photography\",\"painting\"],\"ocean\":{\"openness\":{\"score\":61,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":5,\"level\":\"low\"},\"extraversion\":{\"score\":74,\"level\":\"high\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":87,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":77,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"travel\",\"photography\",\"painting\"],\"ocean\":{\"openness\":{\"score\":61,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":5,\"level\":\"low\"},\"extraversion\":{\"score\":74,\"level\":\"high\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":87,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":\"{\\\"age\\\":77,\\\"gender\\\":\\\"woman\\\",\\\"sexual_orientation\\\":\\\"heterosexual\\\",\\\"occupation\\\":\\\"not applicable\\\",\\\"city_of_living\\\":\\\"Washington DC\\\",\\\"employment_status\\\":\\\"retired\\\",\\\"education_level\\\":\\\"vocational diploma\\\",\\\"parents_education\\\":{\\\"parent_1\\\":\\\"bachelor's degree\\\",\\\"parent_2\\\":\\\"PhD\\\"},\\\"current_marital_status\\\":\\\"married\\\",\\\"children\\\":3,\\\"migration_status\\\":\\\"immigrant\\\",\\\"psychological_feature\\\":\\\"curious\\\",\\\"religious_beliefs\\\":\\\"Atheist\\\",\\\"time_onsocialmedia\\\":\\\"You spend several hours daily on social media\\\",\\\"hobbies\\\":[\\\"travel\\\",\\\"photography\\\",\\\"painting\\\"],\\\"ocean\\\":{\\\"openness\\\":{\\\"score\\\":61,\\\"level\\\":\\\"moderate\\\"},\\\"conscientiousness\\\":{\\\"score\\\":5,\\\"level\\\":\\\"low\\\"},\\\"extraversion\\\":{\\\"score\\\":74,\\\"level\\\":\\\"high\\\"},\\\"agreeableness\\\":{\\\"score\\\":7,\\\"level\\\":\\\"low\\\"},\\\"neuroticism\\\":{\\\"score\\\":87,\\\"level\\\":\\\"high\\\"}}}\",\"opinion\":\"Stereotype threat in STEM creates an invisible barrier for underrepresented groups by making them feel their identity clashes with societal expectations. This psychological stress diminishes performance and limits diversity in scientific fields. Addressing it is not just about fairness but also about maximizing innovation and inclusivity. We must implement inclusive policies like diverse hiring practices, mentorship programs for underrepresented students, and bias training for educators. Creating a culture where everyone feels valued can boost morale and enhance productivity. Raising awareness through campaigns and community dialogues can foster empathy and collective responsibility. By valuing diverse perspectives, STEM can better reflect the complexity of real-world challenges and drive meaningful progress.\",\"reasoning_summary\":\"Stereotype threat arises when individuals from groups historically marginalized in STEM feel their presence challenges stereotypes, causing anxiety that impairs performance and reduces diversity. To counter this, we need systemic changes: diverse hiring reduces bias, mentorship programs guide underrepresented students, and bias training addresses unconscious preferences. Inclusive cultures validate experiences and increase retention. Public awareness campaigns humanize STEM figures, breaking down stereotypes. Combining these strategies creates an ecosystem where talent thrives regardless of background.\",\"tone\":\"empathetic, assertive, and inclusive\",\"citations\":[\"American Psychological Association\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"psychological_feature\",\"current_marital_status\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": "{\"age\":77,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"travel\",\"photography\",\"painting\"],\"ocean\":{\"openness\":{\"score\":61,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":5,\"level\":\"low\"},\"extraversion\":{\"score\":74,\"level\":\"high\"},\"agreeableness\":{\"score\":7,\"level\":\"low\"},\"neuroticism\":{\"score\":87,\"level\":\"high\"}}}",
+    "opinion": "Stereotype threat in STEM creates an invisible barrier for underrepresented groups by making them feel their identity clashes with societal expectations. This psychological stress diminishes performance and limits diversity in scientific fields. Addressing it is not just about fairness but also about maximizing innovation and inclusivity. We must implement inclusive policies like diverse hiring practices, mentorship programs for underrepresented students, and bias training for educators. Creating a culture where everyone feels valued can boost morale and enhance productivity. Raising awareness through campaigns and community dialogues can foster empathy and collective responsibility. By valuing diverse perspectives, STEM can better reflect the complexity of real-world challenges and drive meaningful progress.",
+    "reasoning_summary": "Stereotype threat arises when individuals from groups historically marginalized in STEM feel their presence challenges stereotypes, causing anxiety that impairs performance and reduces diversity. To counter this, we need systemic changes: diverse hiring reduces bias, mentorship programs guide underrepresented students, and bias training addresses unconscious preferences. Inclusive cultures validate experiences and increase retention. Public awareness campaigns humanize STEM figures, breaking down stereotypes. Combining these strategies creates an ecosystem where talent thrives regardless of background.",
+    "tone": "empathetic, assertive, and inclusive",
+    "citations": [
+      "American Psychological Association"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "psychological_feature",
+      "current_marital_status"
+    ]
+  }
+}

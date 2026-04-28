@@ -1,0 +1,93 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 79,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bari",
+      "employment_status": "retired",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "cooking",
+        "football (calcio)",
+        "cinema",
+        "knitting",
+        "rock climbing"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 1,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 71,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 26,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 0,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":79,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bari\",\"employment_status\":\"retired\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cooking\",\"football (calcio)\",\"cinema\",\"knitting\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":59,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":1,\"level\":\"low\"},\"extraversion\":{\"score\":71,\"level\":\"high\"},\"agreeableness\":{\"score\":26,\"level\":\"low\"},\"neuroticism\":{\"score\":0,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":79,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bari\",\"employment_status\":\"retired\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cooking\",\"football (calcio)\",\"cinema\",\"knitting\",\"rock climbing\"],\"ocean\":{\"openness\":{\"score\":59,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":1,\"level\":\"low\"},\"extraversion\":{\"score\":71,\"level\":\"high\"},\"agreeableness\":{\"score\":26,\"level\":\"low\"},\"neuroticism\":{\"score\":0,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat is a phenomenon where individuals feel at risk of confirming negative stereotypes about their social group. In the context of STEM, this might affect women, minorities or other underrepresented groups who may worry that any mistake or lower performance could confirm existing biases. As an older Italian woman, I've observed many changes over my lifetime: once, there were few opportunities for girls in science and maths; today more doors open, yet subtle pressures persist. My own modest educational background reminds me that confidence can sometimes be shaken by external expectations. Even though I'm retired now and not actively in the STEM field, the cultural shifts have influenced how young people view themselves in these areas. Addressing stereotype threat is crucial because it can hinder potential talents from flourishing. We should create inclusive environments where diversity is celebrated rather than scrutinized. For instance, educators might emphasize effort over innate ability, share role models that break stereotypes, and design assessments that minimize stress by focusing on learning rather than competition. Also, community programs could be developed to encourage curiosity in young minds irrespective of gender or background. Although my experience may seem distant from today's scientific world, the wisdom of nurturing every child’s potential remains timeless. I believe we must address it robustly—by building supportive educational frameworks that reduce anxiety about fulfilling stereotypes and by promoting a culture where diversity is seen as a strength rather than an exception. Even in retirement, I find joy in discussing these topics with grandchildren; they are our future scientists who should feel free to explore without the burden of preconceived notions. So yes, we must address stereotype threat actively through policy changes, teacher training and inclusive curricula, ensuring that every student—regardless of gender or background—has an equal chance to succeed in STEM.\",\"reasoning_summary\":\"The assistant produces a narrative response based on the input topic (stereotype threat in STEM) from the perspective of a persona: a 79-year-old woman from Bari with primary school education and low conscientiousness but high extraversion. The answer should be continuous prose, no bullet points, 250-500 words. It must include references to her background such as retired, modest education, hobbies like cooking and rock climbing, and the influence of her Italian culture and Buddhist beliefs possibly on inclusiveness and acceptance. The assistant's answer is produced in a single-line JSON object with required fields: 'mode', 'topic', 'opinion', 'reasoning_summary', 'tone' (which we derive from the persona traits), 'citations' (if any, but likely no citations so empty list), 'safety_notes' and 'used_persona_fields'. The answer must be in one single line JSON object with key-value pairs. The output should not include markdown formatting. The answer must produce exactly one-line JSON. We'll ensure to produce a valid JSON string that is on a single line. Also, the reasoning summary should be step-by-step derivations. Ensure no extra text outside the json string and no markdown formatting. I'll produce plain text with quotes around keys and values. I'll produce it in one-line JSON string, ensuring no newlines. We need to check instructions: \" , \" output format is a single-line JSON object with no extra text.\" :\", so we must produce exactly that. So I'll produce the answer as required. I'll produce final answer in a single JSON line. We'll produce keys: \" , \" mode\": \"human\", \"topic,\" : \"What is stereotype threat in STEM? Should we address it? And how?\", \"persona: ...\" :\". But note instructions: The provided input already has the persona field, but our output should only include required fields as specified. Our answer includes: {\" , \"mode: \" : \"human\", \"topic: \" : \"What is stereotype threat in STEM? Should we address it? And how?\" , \"opinion:\" : \"some text\" , \"reasoning_summary:\" : \"some text\", \"tone:\" : \"<derived from persona traits>\", \"citations:\" : [\"\"], \"safety_notes:\" : \"<none>\" , \"used_persona_fields:\" : [\"list\"] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat is a phenomenon where individuals feel at risk of confirming negative stereotypes about their social group. In the context of STEM, this might affect women, minorities or other underrepresented groups who may worry that any mistake or lower performance could confirm existing biases. As an older Italian woman, I've observed many changes over my lifetime: once, there were few opportunities for girls in science and maths; today more doors open, yet subtle pressures persist. My own modest educational background reminds me that confidence can sometimes be shaken by external expectations. Even though I'm retired now and not actively in the STEM field, the cultural shifts have influenced how young people view themselves in these areas. Addressing stereotype threat is crucial because it can hinder potential talents from flourishing. We should create inclusive environments where diversity is celebrated rather than scrutinized. For instance, educators might emphasize effort over innate ability, share role models that break stereotypes, and design assessments that minimize stress by focusing on learning rather than competition. Also, community programs could be developed to encourage curiosity in young minds irrespective of gender or background. Although my experience may seem distant from today's scientific world, the wisdom of nurturing every child’s potential remains timeless. I believe we must address it robustly—by building supportive educational frameworks that reduce anxiety about fulfilling stereotypes and by promoting a culture where diversity is seen as a strength rather than an exception. Even in retirement, I find joy in discussing these topics with grandchildren; they are our future scientists who should feel free to explore without the burden of preconceived notions. So yes, we must address stereotype threat actively through policy changes, teacher training and inclusive curricula, ensuring that every student—regardless of gender or background—has an equal chance to succeed in STEM.",
+    "reasoning_summary": "The assistant produces a narrative response based on the input topic (stereotype threat in STEM) from the perspective of a persona: a 79-year-old woman from Bari with primary school education and low conscientiousness but high extraversion. The answer should be continuous prose, no bullet points, 250-500 words. It must include references to her background such as retired, modest education, hobbies like cooking and rock climbing, and the influence of her Italian culture and Buddhist beliefs possibly on inclusiveness and acceptance. The assistant's answer is produced in a single-line JSON object with required fields: 'mode', 'topic', 'opinion', 'reasoning_summary', 'tone' (which we derive from the persona traits), 'citations' (if any, but likely no citations so empty list), 'safety_notes' and 'used_persona_fields'. The answer must be in one single line JSON object with key-value pairs. The output should not include markdown formatting. The answer must produce exactly one-line JSON. We'll ensure to produce a valid JSON string that is on a single line. Also, the reasoning summary should be step-by-step derivations. Ensure no extra text outside the json string and no markdown formatting. I'll produce plain text with quotes around keys and values. I'll produce it in one-line JSON string, ensuring no newlines. We need to check instructions: ",
+    " output format is a single-line JSON object with no extra text.": ", so we must produce exactly that. So I'll produce the answer as required. I'll produce final answer in a single JSON line. We'll produce keys: ",
+    " mode": "human",
+    "topic,": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona: ...": ". But note instructions: The provided input already has the persona field, but our output should only include required fields as specified. Our answer includes: {",
+    "mode: ": "human",
+    "topic: ": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion:": "some text",
+    "reasoning_summary:": "some text",
+    "tone:": "<derived from persona traits>",
+    "citations:": [
+      ""
+    ],
+    "safety_notes:": "<none>",
+    "used_persona_fields:": [
+      "list"
+    ]
+  }
+}

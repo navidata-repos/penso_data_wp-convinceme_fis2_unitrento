@@ -1,0 +1,96 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 35,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "mechanic",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "rock climbing",
+        "hiking",
+        "classical music",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 12,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 75,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 88,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 93,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":35,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"rock climbing\",\"hiking\",\"classical music\",\"painting\"],\"ocean\":{\"openness\":{\"score\":12,\"level\":\"low\"},\"conscientiousness\":{\"score\":75,\"level\":\"high\"},\"extraversion\":{\"score\":88,\"level\":\"high\"},\"agreeableness\":{\"score\":40,\"level\":\"moderate\"},\"neuroticism\":{\"score\":93,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":35,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"rock climbing\",\"hiking\",\"classical music\",\"painting\"],\"ocean\":{\"openness\":{\"score\":12,\"level\":\"low\"},\"conscientiousness\":{\"score\":75,\"level\":\"high\"},\"extraversion\":{\"score\":88,\"level\":\"high\"},\"agreeableness\":{\"score\":40,\"level\":\"moderate\"},\"neuroticism\":{\"score\":93,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\":\"As a mechanic from Rome, I find the world of social media both intriguing and a bit overwhelming. With only a few times weekly spent scrolling through feeds, it’s easy to see why fake content can be such a thorn in one's side. In my work as a mechanic, precision and reliability are paramount – traits that also inform how I approach online information. When dealing with fake content, I believe the first step is verifying sources. Just like ensuring a car part is genuine before installation, checking for trusted sources or cross-referencing facts is essential. Often, I turn to established news outlets or official announcements rather than relying solely on viral posts. Moreover, as someone who appreciates the clarity of classical music and the physical challenge of rock climbing, I value truth and authenticity in all aspects of life. In a world where fake content spreads like wildfire, it's crucial to be discerning; if something seems too sensational or inconsistent with established facts, it’s wise to treat it with caution. Educating oneself about digital literacy is another important measure. Like reading manuals to understand the intricacies of an engine, learning how algorithms work and recognizing bias can help one navigate social media more confidently. Additionally, engaging in discussions with peers – much like brainstorming a new repair technique – can expose one to diverse viewpoints and help separate fact from fiction. I also find that reducing screen time and focusing on hobbies such as hiking or painting allows me to clear my mind and approach content with a fresh perspective. Ultimately, managing fake content requires a blend of skepticism, continuous learning, and open dialogue. By applying the same principles of thoroughness and attention to detail that guide my mechanical work, I can better sift through online misinformation and make informed decisions. It's about building a mental toolkit similar to my physical toolset: verify before you trust, stay curious yet cautious, and always be ready to question what you see on social media.\",\"reasoning_summary\":\"The answer is written as continuous prose in one paragraph style; the user requested topic: fake content management on social media. Persona details used: mechanic from Rome, full-time employed, Italian native. Personality traits: curious, extraverted, neuroticism high, and hobbies include rock climbing and classical music which are used as analogies for truth seeking. Steps included verifying sources, being cautious, reducing screen time. Also, the answer includes discussion of digital literacy akin to reading manuals in mechanical work. It is written as continuous prose. The output matches JSON structure: with keys mode, topic, opinion, reasoning_summary, tone (we need to add tone), citations (none provided), used_persona_fields list. We must produce a single-line JSON object with no extra text. So I'll fill the required structure. The answer should have at least 250 words but less than 500 words. Our answer is around 300-350 words, which fits. Then I need to add \",\" after each field as key-value pairs. Also, we must include keys: mode, topic, opinion, reasoning_summary, tone, citations (I can leave it empty), used_persona_fields referencing the fields that were used. For example, in our answer, we used age, gender, occupation, city_of_living, psychological_feature, hobbies and ocean personality traits maybe. Let's check instructions: \" :\", The required structure: {\" ,\" ...} exactly as example provided. It says: \" :\". We need to produce a single-line JSON object with no extra text. So I'll produce one line JSON that is valid (with proper escaping if necessary). Also, the output must be in one line. I'll check that our answer is a continuous prose piece and it's more than 250 words. Let me count words: \" ,\" etc. We have roughly 300+ words, which fits the criteria. I must produce JSON with keys exactly as required. The keys are: mode (value \":\", value is the provided mode), topic (provided by input?), persona (but we don't include persona here? Actually the structure in example includes a \",\" and \" :\". Wait let me re-read instructions: It says \" ,\" output format: Return ONLY a single-line JSON object with no extra text. There's required structure example: {\" :\", etc. So I need to produce an answer that has keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The \" ,\" field is not required? The provided structure example includes keys: mode, topic, persona, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. But our instructions said produce output with keys: \" :\". Wait re-read the question: It says \" ,\" OUTPUT FORMAT (STRICT): Return ONLY a single-line JSON object, with no extra text, no markdown, no comments. Here is the required structure example (values are placeholders): { \" :\", \" ,\" etc } So our answer should be in that format but note that we need to include keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. Also check if safety_notes needed? The provided sample structure includes safety_notes and used_persona_fields as keys. But our instructions says: \" :\", so I must produce JSON with keys exactly from the sample structure: The sample structure is: {\" ,\"topic:\":\", \" , \"persona:\" : { }, \"opinion:\" : \"<final answer>\", \"reasoning_summary:\" : \"<full derivations>\", \"tone:\" : \"<derived tone>\", \"citations:\" : [\"<source name>\"], \"safety_notes:\" : \"<none>\", \"used_persona_fields:\" : [\"<list of persona fields referenced>\"] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a mechanic from Rome, I find the world of social media both intriguing and a bit overwhelming. With only a few times weekly spent scrolling through feeds, it’s easy to see why fake content can be such a thorn in one's side. In my work as a mechanic, precision and reliability are paramount – traits that also inform how I approach online information. When dealing with fake content, I believe the first step is verifying sources. Just like ensuring a car part is genuine before installation, checking for trusted sources or cross-referencing facts is essential. Often, I turn to established news outlets or official announcements rather than relying solely on viral posts. Moreover, as someone who appreciates the clarity of classical music and the physical challenge of rock climbing, I value truth and authenticity in all aspects of life. In a world where fake content spreads like wildfire, it's crucial to be discerning; if something seems too sensational or inconsistent with established facts, it’s wise to treat it with caution. Educating oneself about digital literacy is another important measure. Like reading manuals to understand the intricacies of an engine, learning how algorithms work and recognizing bias can help one navigate social media more confidently. Additionally, engaging in discussions with peers – much like brainstorming a new repair technique – can expose one to diverse viewpoints and help separate fact from fiction. I also find that reducing screen time and focusing on hobbies such as hiking or painting allows me to clear my mind and approach content with a fresh perspective. Ultimately, managing fake content requires a blend of skepticism, continuous learning, and open dialogue. By applying the same principles of thoroughness and attention to detail that guide my mechanical work, I can better sift through online misinformation and make informed decisions. It's about building a mental toolkit similar to my physical toolset: verify before you trust, stay curious yet cautious, and always be ready to question what you see on social media.",
+    "reasoning_summary": "The answer is written as continuous prose in one paragraph style; the user requested topic: fake content management on social media. Persona details used: mechanic from Rome, full-time employed, Italian native. Personality traits: curious, extraverted, neuroticism high, and hobbies include rock climbing and classical music which are used as analogies for truth seeking. Steps included verifying sources, being cautious, reducing screen time. Also, the answer includes discussion of digital literacy akin to reading manuals in mechanical work. It is written as continuous prose. The output matches JSON structure: with keys mode, topic, opinion, reasoning_summary, tone (we need to add tone), citations (none provided), used_persona_fields list. We must produce a single-line JSON object with no extra text. So I'll fill the required structure. The answer should have at least 250 words but less than 500 words. Our answer is around 300-350 words, which fits. Then I need to add ",
+    " after each field as key-value pairs. Also, we must include keys: mode, topic, opinion, reasoning_summary, tone, citations (I can leave it empty), used_persona_fields referencing the fields that were used. For example, in our answer, we used age, gender, occupation, city_of_living, psychological_feature, hobbies and ocean personality traits maybe. Let's check instructions: ": ", The required structure: {",
+    " ...} exactly as example provided. It says: ": ". We need to produce a single-line JSON object with no extra text. So I'll produce one line JSON that is valid (with proper escaping if necessary). Also, the output must be in one line. I'll check that our answer is a continuous prose piece and it's more than 250 words. Let me count words: ",
+    " etc. We have roughly 300+ words, which fits the criteria. I must produce JSON with keys exactly as required. The keys are: mode (value ": ", value is the provided mode), topic (provided by input?), persona (but we don't include persona here? Actually the structure in example includes a ",
+    " and ": ". Wait let me re-read instructions: It says ",
+    " output format: Return ONLY a single-line JSON object with no extra text. There's required structure example: {": ", etc. So I need to produce an answer that has keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The ",
+    " field is not required? The provided structure example includes keys: mode, topic, persona, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. But our instructions said produce output with keys: ": ". Wait re-read the question: It says ",
+    " OUTPUT FORMAT (STRICT): Return ONLY a single-line JSON object, with no extra text, no markdown, no comments. Here is the required structure example (values are placeholders): { ": ", ",
+    " etc } So our answer should be in that format but note that we need to include keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. Also check if safety_notes needed? The provided sample structure includes safety_notes and used_persona_fields as keys. But our instructions says: ": ", so I must produce JSON with keys exactly from the sample structure: The sample structure is: {",
+    "topic:": ", ",
+    "persona:": {},
+    "opinion:": "<final answer>",
+    "reasoning_summary:": "<full derivations>",
+    "tone:": "<derived tone>",
+    "citations:": [
+      "<source name>"
+    ],
+    "safety_notes:": "<none>",
+    "used_persona_fields:": [
+      "<list of persona fields referenced>"
+    ]
+  }
+}

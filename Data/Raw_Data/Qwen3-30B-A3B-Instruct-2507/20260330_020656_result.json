@@ -1,0 +1,94 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 31,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "sales associate",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "board games",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 9,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 7,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 77,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 30,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":31,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"board games\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":9,\"level\":\"low\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":55,\"level\":\"moderate\"},\"agreeableness\":{\"score\":77,\"level\":\"high\"},\"neuroticism\":{\"score\":30,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":31,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"board games\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":9,\"level\":\"low\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":55,\"level\":\"moderate\"},\"agreeableness\":{\"score\":77,\"level\":\"high\"},\"neuroticism\":{\"score\":30,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"The gender gap in science isn't just about numbers—it's about stories, silence, and the invisible barriers that keep brilliant minds from speaking up. As a woman who grew up in Rome, raised three children, and works as a self-employed sales associate with only a lower secondary education, I’ve seen how society often dismisses women’s voices, especially when they’re not in traditional 'smart' roles. Yet, I’ve also seen how curiosity and intelligence don’t care about diplomas or titles. Still, in science—where data and facts are king—women are still too often the exceptions, not the norm. I’ve scrolled through social media for hours, and while I see viral videos of male scientists winning Nobel prizes, I rarely see women like me represented in those spaces. That matters. It shapes what girls think they can become. Yes, we must address this gap—not just to 'fix' imbalance, but because science needs all kinds of minds to solve real-world problems. When only one kind of person thinks, we risk missing solutions. How? Start early. Schools should show girls that science isn’t just for lab coats and equations—it’s for asking why the sky is blue, why plants grow, why people hurt each other. Celebrate female scientists not just on International Women’s Day, but every day. Make classrooms inclusive, and hire mentors who look like the students. And let’s stop acting like passion for science is a male trait. My kids love puzzles, experiments, and games—why not encourage that in girls from day one? It’s not about lowering standards. It’s about opening doors that were never meant to be closed. The gap exists because of history, bias, and silence. But change starts when we refuse to look away.\",\"reasoning_summary\":\"The user’s persona highlights lived experience as a woman with limited formal education but strong emotional intelligence and social awareness. Her low openness and conscientiousness scores suggest she values personal connection over abstract systems, while her high agreeableness reflects empathy and a desire for fairness. Her depression and social media use indicate she seeks meaning and validation online, making her sensitive to representation. She observes gender imbalance in science through media consumption and personal experience. Her opinion stems from recognizing systemic exclusion and the need for inclusive education, empathy, and visibility. She believes change is possible through early encouragement and representation. Her perspective is shaped by her role as a mother, her identity as a woman, and her emotional engagement with social narratives.\",\"tone\":\"Reflective, empathetic, grounded in lived experience\",\"citations\":[\"UNESCO Science Report: The Race for Intelligence\",\"National Science Foundation (NSF) Gender Gap Reports\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"children\",\"psychological_feature\",\"time_onsocialmedia\",\"hobbies\",\"ocean.agreeableness\",\"ocean.neuroticism\",\"ocean.extraversion\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science isn't just about numbers—it's about stories, silence, and the invisible barriers that keep brilliant minds from speaking up. As a woman who grew up in Rome, raised three children, and works as a self-employed sales associate with only a lower secondary education, I’ve seen how society often dismisses women’s voices, especially when they’re not in traditional 'smart' roles. Yet, I’ve also seen how curiosity and intelligence don’t care about diplomas or titles. Still, in science—where data and facts are king—women are still too often the exceptions, not the norm. I’ve scrolled through social media for hours, and while I see viral videos of male scientists winning Nobel prizes, I rarely see women like me represented in those spaces. That matters. It shapes what girls think they can become. Yes, we must address this gap—not just to 'fix' imbalance, but because science needs all kinds of minds to solve real-world problems. When only one kind of person thinks, we risk missing solutions. How? Start early. Schools should show girls that science isn’t just for lab coats and equations—it’s for asking why the sky is blue, why plants grow, why people hurt each other. Celebrate female scientists not just on International Women’s Day, but every day. Make classrooms inclusive, and hire mentors who look like the students. And let’s stop acting like passion for science is a male trait. My kids love puzzles, experiments, and games—why not encourage that in girls from day one? It’s not about lowering standards. It’s about opening doors that were never meant to be closed. The gap exists because of history, bias, and silence. But change starts when we refuse to look away.",
+    "reasoning_summary": "The user’s persona highlights lived experience as a woman with limited formal education but strong emotional intelligence and social awareness. Her low openness and conscientiousness scores suggest she values personal connection over abstract systems, while her high agreeableness reflects empathy and a desire for fairness. Her depression and social media use indicate she seeks meaning and validation online, making her sensitive to representation. She observes gender imbalance in science through media consumption and personal experience. Her opinion stems from recognizing systemic exclusion and the need for inclusive education, empathy, and visibility. She believes change is possible through early encouragement and representation. Her perspective is shaped by her role as a mother, her identity as a woman, and her emotional engagement with social narratives.",
+    "tone": "Reflective, empathetic, grounded in lived experience",
+    "citations": [
+      "UNESCO Science Report: The Race for Intelligence",
+      "National Science Foundation (NSF) Gender Gap Reports"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "children",
+      "psychological_feature",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.agreeableness",
+      "ocean.neuroticism",
+      "ocean.extraversion"
+    ]
+  }
+}

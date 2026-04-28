@@ -1,0 +1,105 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 68,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "not applicable",
+      "city_of_living": "Milan",
+      "employment_status": "retired",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "cycling",
+        "photography",
+        "classical music",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 83,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 74,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 14,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 28,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":68,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cycling\",\"photography\",\"classical music\",\"baking\"],\"ocean\":{\"openness\":{\"score\":83,\"level\":\"high\"},\"conscientiousness\":{\"score\":74,\"level\":\"high\"},\"extraversion\":{\"score\":55,\"level\":\"moderate\"},\"agreeableness\":{\"score\":14,\"level\":\"low\"},\"neuroticism\":{\"score\":28,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":68,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"cycling\",\"photography\",\"classical music\",\"baking\"],\"ocean\":{\"openness\":{\"score\":83,\"level\":\"high\"},\"conscientiousness\":{\"score\":74,\"level\":\"high\"},\"extraversion\":{\"score\":55,\"level\":\"moderate\"},\"agreeableness\":{\"score\":14,\"level\":\"low\"},\"neuroticism\":{\"score\":28,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"The gender gap in science isn’t just a statistical imbalance—it’s a silent echo of centuries of exclusion, woven into the very fabric of how knowledge has been produced and valued. As someone who grew up in a modest household, with my mother barely literate and my father working long hours in a factory, I learned early that opportunity wasn’t handed out equally. I never went to school beyond primary level, yet I taught myself through books, music, and the quiet observation of life—photography taught me to see patterns, baking taught me precision, and cycling through the hills around Milan gave me a sense of rhythm in chaos. That same curiosity, that same hunger to understand, is not confined to any gender. Yet, in science, women have long been treated as anomalies, their contributions minimized or erased. I’ve seen this in the way female pioneers like Rosalind Franklin were sidelined, or how today, women in STEM still face subtle barriers: fewer mentorships, lower pay, less recognition. Should we address it? Of course. Not out of political correctness, but because science is meant to uncover truth, and truth thrives in diversity. When only one kind of mind shapes research, we miss perspectives, questions, and solutions. The way forward isn’t quotas or tokenism, but systemic change: inclusive hiring practices, transparent promotion criteria, mentorship networks led by both genders, and a cultural shift that values collaboration over competition. We must also challenge the myth that science is 'neutral'—it reflects the biases of those who do it. As a retired man who once worked with my hands and now finds meaning in the stillness of a photograph or the harmony of a violin, I know that intelligence wears many faces. Let’s stop asking whether women belong in science, and start asking what science has lost by not letting them lead.\",\"reasoning_summary\":\"The persona's background—lack of formal education, immigrant roots, high openness and conscientiousness, low agreeableness—suggests a self-taught, reflective, and intellectually curious individual who values authenticity and depth. His hobbies (photography, classical music, baking) indicate an appreciation for precision, beauty, and pattern, aligning with scientific thinking. His low agreeableness and high openness reflect a critical, independent mindset. He draws from personal experience of marginalization and self-education to argue that science must be inclusive not for ideology, but for truth. His Hinduism, with its emphasis on interconnectedness and multiple paths to truth, supports a pluralistic view of knowledge. The reasoning progresses from lived experience to systemic critique, then to actionable solutions, grounded in equity as a necessity for progress.\",\"tone\":\"reflective, introspective, subtly defiant, rooted in lived experience\",\"citations\":[\"National Science Foundation (NSF) reports on gender disparities in STEM\",\"UNESCO Science Report\",\"Rosalind Franklin's legacy and recognition in molecular biology\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean.openness\",\"ocean.conscientiousness\",\"ocean.extraversion\",\"ocean.agreeableness\",\"ocean.neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science isn’t just a statistical imbalance—it’s a silent echo of centuries of exclusion, woven into the very fabric of how knowledge has been produced and valued. As someone who grew up in a modest household, with my mother barely literate and my father working long hours in a factory, I learned early that opportunity wasn’t handed out equally. I never went to school beyond primary level, yet I taught myself through books, music, and the quiet observation of life—photography taught me to see patterns, baking taught me precision, and cycling through the hills around Milan gave me a sense of rhythm in chaos. That same curiosity, that same hunger to understand, is not confined to any gender. Yet, in science, women have long been treated as anomalies, their contributions minimized or erased. I’ve seen this in the way female pioneers like Rosalind Franklin were sidelined, or how today, women in STEM still face subtle barriers: fewer mentorships, lower pay, less recognition. Should we address it? Of course. Not out of political correctness, but because science is meant to uncover truth, and truth thrives in diversity. When only one kind of mind shapes research, we miss perspectives, questions, and solutions. The way forward isn’t quotas or tokenism, but systemic change: inclusive hiring practices, transparent promotion criteria, mentorship networks led by both genders, and a cultural shift that values collaboration over competition. We must also challenge the myth that science is 'neutral'—it reflects the biases of those who do it. As a retired man who once worked with my hands and now finds meaning in the stillness of a photograph or the harmony of a violin, I know that intelligence wears many faces. Let’s stop asking whether women belong in science, and start asking what science has lost by not letting them lead.",
+    "reasoning_summary": "The persona's background—lack of formal education, immigrant roots, high openness and conscientiousness, low agreeableness—suggests a self-taught, reflective, and intellectually curious individual who values authenticity and depth. His hobbies (photography, classical music, baking) indicate an appreciation for precision, beauty, and pattern, aligning with scientific thinking. His low agreeableness and high openness reflect a critical, independent mindset. He draws from personal experience of marginalization and self-education to argue that science must be inclusive not for ideology, but for truth. His Hinduism, with its emphasis on interconnectedness and multiple paths to truth, supports a pluralistic view of knowledge. The reasoning progresses from lived experience to systemic critique, then to actionable solutions, grounded in equity as a necessity for progress.",
+    "tone": "reflective, introspective, subtly defiant, rooted in lived experience",
+    "citations": [
+      "National Science Foundation (NSF) reports on gender disparities in STEM",
+      "UNESCO Science Report",
+      "Rosalind Franklin's legacy and recognition in molecular biology"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism"
+    ]
+  }
+}

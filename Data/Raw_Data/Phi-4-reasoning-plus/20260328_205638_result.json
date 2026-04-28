@@ -1,0 +1,83 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 33,
+      "gender": "man",
+      "sexual_orientation": "homosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Milan",
+      "employment_status": "unemployed",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "running",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 80,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 26,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 99,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":33,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"unemployed\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":45,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":80,\"level\":\"high\"},\"extraversion\":{\"score\":51,\"level\":\"moderate\"},\"agreeableness\":{\"score\":26,\"level\":\"low\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":33,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"unemployed\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"running\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":45,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":80,\"level\":\"high\"},\"extraversion\":{\"score\":51,\"level\":\"moderate\"},\"agreeableness\":{\"score\":26,\"level\":\"low\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\":\"In today's digital era, the proliferation of fake content on social media platforms is a challenge that can easily overwhelm one's mental equilibrium, especially when you're already navigating personal battles like depression. As someone from Milan who spends only a few times weekly on social media, I've observed how these platforms are rife with misleading posts and manipulated truths. It takes discernment to sift through the noise, but my background as a native-born Italian with primary school education shapes a more cautious approach; I rely on trusted sources rather than the viral content that often seems too sensational. My hobbies of running and birdwatching remind me that stepping away from digital noise is vital—immersing oneself in nature offers clarity and respite. Although I might not be highly open to novel ideas, my high conscientiousness drives me to verify information before accepting it as fact. In dealing with fake content, I prefer a systematic approach: first, cross-check facts with established news outlets or scientific sources; second, engage critically by questioning the intent behind the post; and third, limit exposure by curating feeds that prioritize authenticity over sensationalism. It's also important to recognize that the algorithms fueling these platforms often amplify emotionally charged content—given my own experiences with high neuroticism, I am more susceptible to stress when encountering inflammatory material. Therefore, setting boundaries on time spent online is crucial. For instance, rather than scrolling endlessly during moments of vulnerability, I might focus on physical activities like running or birdwatching to ground myself in the present reality. Additionally, leveraging fact-checking tools and community feedback can help filter out disinformation. Even though my agreeableness may be low, meaning that I tend to be less trusting of others' intentions, I believe in engaging with content critically rather than dismissively. This critical engagement involves not just questioning what is being said but also reflecting on how it affects my mental state. Ultimately, managing fake content isn't just about protecting oneself from external falsehoods—it's also an exercise in self-care. By actively choosing to engage only with reliable sources and taking regular breaks from social media, one can maintain a healthier mental space. In summary, the key is to cultivate digital literacy, trust verified information, and maintain a balanced approach to consumption, while always prioritizing mental well-being over the chaotic noise of unverified online content.\",\"reasoning_summary\":\"The answer must be produced in a single-line JSON object with the exact structure required: mode human, topic about fake content on social media. The output includes opinion text (250-500 words) and reasoning summary. The answer must align tone and examples with the persona's background provided: 33-year-old man, homosexual, unemployed, living in Milan, primary school education, depressed, religious beliefs Hinduism, spends few times weekly on social media, hobbies running and birdwatching, ocean scores moderate for openness, high for conscientiousness, moderate extraversion, low agreeableness, high neuroticism. The answer should discuss the topic of fake content management, linking to mental health issues, self-care, fact-checking, curated feeds, etc. It must be continuous prose and avoid bullet points. Provide final answer in single-line JSON object with keys: mode, topic, opinion, reasoning_summary, tone (derived from persona traits), citations (empty if none), safety_notes (none) and used_persona_fields listing which fields were referenced. The answer should not include markdown formatting. Use plain text output as a single line JSON string. I'll produce final answer in a single-line JSON object with no extra spaces at beginning or end, but must be careful to produce valid JSON with proper quotes around keys and values. We'll produce the answer in one line containing all required keys. The tone should reflect the persona's depressed state, cautious nature due to high neuroticism, and low agreeableness, but also a bit of hopefulness from his hobbies. I'll mention that he is cautious about fake content on social media, verifying facts from trusted sources, etc. I must produce exactly 1 line JSON object with keys: mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. The answer's opinion text must be at least 250 words and up to 500 words. I'll produce one that is around 350 words maybe. I'll try to mention the persona details as integrated references. Let me produce final answer in a single JSON object with no markdown formatting. We'll produce a single-line JSON output containing our keys. The structure required: {\" , \"mode \":\"human\", \"topic \":\"How to manage and dealing with fake content on social media.\", \"persona \":\"{...}\", \"opinion \":\"...\", \"reasoning_summary \":\"...\", \"tone \":\"...\", \"citations \":\"...\", \"safety_notes \":\"...\", \"used_persona_fields \":\"...\" }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "In today's digital era, the proliferation of fake content on social media platforms is a challenge that can easily overwhelm one's mental equilibrium, especially when you're already navigating personal battles like depression. As someone from Milan who spends only a few times weekly on social media, I've observed how these platforms are rife with misleading posts and manipulated truths. It takes discernment to sift through the noise, but my background as a native-born Italian with primary school education shapes a more cautious approach; I rely on trusted sources rather than the viral content that often seems too sensational. My hobbies of running and birdwatching remind me that stepping away from digital noise is vital—immersing oneself in nature offers clarity and respite. Although I might not be highly open to novel ideas, my high conscientiousness drives me to verify information before accepting it as fact. In dealing with fake content, I prefer a systematic approach: first, cross-check facts with established news outlets or scientific sources; second, engage critically by questioning the intent behind the post; and third, limit exposure by curating feeds that prioritize authenticity over sensationalism. It's also important to recognize that the algorithms fueling these platforms often amplify emotionally charged content—given my own experiences with high neuroticism, I am more susceptible to stress when encountering inflammatory material. Therefore, setting boundaries on time spent online is crucial. For instance, rather than scrolling endlessly during moments of vulnerability, I might focus on physical activities like running or birdwatching to ground myself in the present reality. Additionally, leveraging fact-checking tools and community feedback can help filter out disinformation. Even though my agreeableness may be low, meaning that I tend to be less trusting of others' intentions, I believe in engaging with content critically rather than dismissively. This critical engagement involves not just questioning what is being said but also reflecting on how it affects my mental state. Ultimately, managing fake content isn't just about protecting oneself from external falsehoods—it's also an exercise in self-care. By actively choosing to engage only with reliable sources and taking regular breaks from social media, one can maintain a healthier mental space. In summary, the key is to cultivate digital literacy, trust verified information, and maintain a balanced approach to consumption, while always prioritizing mental well-being over the chaotic noise of unverified online content.",
+    "reasoning_summary": "The answer must be produced in a single-line JSON object with the exact structure required: mode human, topic about fake content on social media. The output includes opinion text (250-500 words) and reasoning summary. The answer must align tone and examples with the persona's background provided: 33-year-old man, homosexual, unemployed, living in Milan, primary school education, depressed, religious beliefs Hinduism, spends few times weekly on social media, hobbies running and birdwatching, ocean scores moderate for openness, high for conscientiousness, moderate extraversion, low agreeableness, high neuroticism. The answer should discuss the topic of fake content management, linking to mental health issues, self-care, fact-checking, curated feeds, etc. It must be continuous prose and avoid bullet points. Provide final answer in single-line JSON object with keys: mode, topic, opinion, reasoning_summary, tone (derived from persona traits), citations (empty if none), safety_notes (none) and used_persona_fields listing which fields were referenced. The answer should not include markdown formatting. Use plain text output as a single line JSON string. I'll produce final answer in a single-line JSON object with no extra spaces at beginning or end, but must be careful to produce valid JSON with proper quotes around keys and values. We'll produce the answer in one line containing all required keys. The tone should reflect the persona's depressed state, cautious nature due to high neuroticism, and low agreeableness, but also a bit of hopefulness from his hobbies. I'll mention that he is cautious about fake content on social media, verifying facts from trusted sources, etc. I must produce exactly 1 line JSON object with keys: mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. The answer's opinion text must be at least 250 words and up to 500 words. I'll produce one that is around 350 words maybe. I'll try to mention the persona details as integrated references. Let me produce final answer in a single JSON object with no markdown formatting. We'll produce a single-line JSON output containing our keys. The structure required: {",
+    "mode ": "human",
+    "topic ": "How to manage and dealing with fake content on social media.",
+    "persona ": "{...}",
+    "opinion ": "...",
+    "reasoning_summary ": "...",
+    "tone ": "...",
+    "citations ": "...",
+    "safety_notes ": "...",
+    "used_persona_fields ": "..."
+  }
+}

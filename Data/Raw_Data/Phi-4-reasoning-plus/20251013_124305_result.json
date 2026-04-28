@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 29,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "carpenter",
+      "city_of_living": "Milan",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "single",
+      "children": 3,
+      "migration_status": "native Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "board games",
+        "running"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 90,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 75,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 83,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 45,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":29,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Milan\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"single\",\"children\":3,\"migration_status\":\"native Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"board games\",\"running\"],\"ocean\":{\"openness\":{\"score\":90,\"level\":\"high\"},\"conscientiousness\":{\"score\":75,\"level\":\"high\"},\"extraversion\":{\"score\":83,\"level\":\"high\"},\"agreeableness\":{\"score\":63,\"level\":\"moderate\"},\"neuroticism\":{\"score\":45,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":29,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Milan\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"single\",\"children\":3,\"migration_status\":\"native Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"board games\",\"running\"],\"ocean\":{\"openness\":{\"score\":90,\"level\":\"high\"},\"conscientiousness\":{\"score\":75,\"level\":\"high\"},\"extraversion\":{\"score\":83,\"level\":\"high\"},\"agreeableness\":{\"score\":63,\"level\":\"moderate\"},\"neuroticism\":{\"score\":45,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\n\"mode\": \"human\",\n\"topic\": \"What is stereotype threat in STEM? Should we address it? And how?\",\n\"opinion\": \"From my perspective, the phenomenon known as stereotype threat in STEM fields is a subtle yet powerful social dynamic where individuals belonging to stereotyped groups—such as women or minorities—experience anxiety and lowered performance when they fear confirming negative stereotypes about their group. This tension can significantly impede one's ability to perform at their best. As someone who values creative problem-solving and has observed diverse approaches in my work with wood, I see parallels between overcoming challenges in a hands-on trade and addressing these psychological barriers in academic or technical environments. In carpentry, precision and confidence matter; similarly, when a scientist or engineer is weighed down by the fear of confirming a stereotype, it can stifle their natural curiosity and innovation. Therefore, actively addressing stereotype threat seems both necessary and beneficial to foster an inclusive environment that maximizes everyone's potential. To tackle this issue effectively, one might consider multiple strategies: First, creating supportive communities within STEM spaces where every individual feels valued regardless of background; second, incorporating training sessions that raise awareness about the impact of stereotypes on performance; third, designing evaluation processes that minimize bias and focus on individual merit rather than group assumptions; and finally, encouraging open dialogue to demystify the experiences of those who feel threatened by stereotypes. As someone rooted in practicality and craftsmanship, I believe that just as a carpenter carefully selects and shapes materials to create a strong structure, educators and leaders can similarly craft environments that build resilience and confidence among STEM professionals. Ultimately, addressing stereotype threat is not only about fairness but also about unlocking the full creative and innovative potential of all individuals.\",\n\"reasoning_summary\": \"The assistant was requested to produce an answer with at least 250 words in continuous prose without bullet points. The answer should be produced as a JSON object with keys including mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. The output should contain the final answer in 'opinion' field and a detailed chain-of-thought explanation in the 'reasoning_summary'. We need to reference persona details such as creative, carpenter, high scores in openness, conscientiousness, etc. The answer: I produced an opinion discussing stereotype threat and its impact on performance in STEM fields with some analogies from carpentry. Also addressing that it should be addressed by creating supportive communities, training sessions, bias minimization, open dialogue. Additionally, the answer is written as a single-line JSON object with no markdown formatting.\",\n\"tone\": \"informative yet empathetic\",\n\"citations\": [],\n\"safety_notes\": \"\",\n\"used_persona_fields\": [\"age\", \"biological_sex\", \"gender\", \"occupation\", \"education_level\", \"parents_education\", \"marital_status\", \"children\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean.openness\", \"ocean.conscientiousness\", \"ocean.extraversion\", \"ocean.agreeableness\", \"ocean.neuroticism\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "From my perspective, the phenomenon known as stereotype threat in STEM fields is a subtle yet powerful social dynamic where individuals belonging to stereotyped groups—such as women or minorities—experience anxiety and lowered performance when they fear confirming negative stereotypes about their group. This tension can significantly impede one's ability to perform at their best. As someone who values creative problem-solving and has observed diverse approaches in my work with wood, I see parallels between overcoming challenges in a hands-on trade and addressing these psychological barriers in academic or technical environments. In carpentry, precision and confidence matter; similarly, when a scientist or engineer is weighed down by the fear of confirming a stereotype, it can stifle their natural curiosity and innovation. Therefore, actively addressing stereotype threat seems both necessary and beneficial to foster an inclusive environment that maximizes everyone's potential. To tackle this issue effectively, one might consider multiple strategies: First, creating supportive communities within STEM spaces where every individual feels valued regardless of background; second, incorporating training sessions that raise awareness about the impact of stereotypes on performance; third, designing evaluation processes that minimize bias and focus on individual merit rather than group assumptions; and finally, encouraging open dialogue to demystify the experiences of those who feel threatened by stereotypes. As someone rooted in practicality and craftsmanship, I believe that just as a carpenter carefully selects and shapes materials to create a strong structure, educators and leaders can similarly craft environments that build resilience and confidence among STEM professionals. Ultimately, addressing stereotype threat is not only about fairness but also about unlocking the full creative and innovative potential of all individuals.",
+    "reasoning_summary": "The assistant was requested to produce an answer with at least 250 words in continuous prose without bullet points. The answer should be produced as a JSON object with keys including mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. The output should contain the final answer in 'opinion' field and a detailed chain-of-thought explanation in the 'reasoning_summary'. We need to reference persona details such as creative, carpenter, high scores in openness, conscientiousness, etc. The answer: I produced an opinion discussing stereotype threat and its impact on performance in STEM fields with some analogies from carpentry. Also addressing that it should be addressed by creating supportive communities, training sessions, bias minimization, open dialogue. Additionally, the answer is written as a single-line JSON object with no markdown formatting.",
+    "tone": "informative yet empathetic",
+    "citations": [],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "occupation",
+      "education_level",
+      "parents_education",
+      "marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism"
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-4b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 59,
+      "gender": "agender",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "divorced",
+      "children": 3,
+      "migration_status": "native Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "knitting",
+        "board games",
+        "rock climbing",
+        "running",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 30,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 69,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 85,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 99,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 40,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":59,\"biological_sex\":\"male\",\"gender\":\"agender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"board games\",\"rock climbing\",\"running\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":30,\"level\":\"low\"},\"conscientiousness\":{\"score\":69,\"level\":\"high\"},\"extraversion\":{\"score\":85,\"level\":\"high\"},\"agreeableness\":{\"score\":99,\"level\":\"high\"},\"neuroticism\":{\"score\":40,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":59,\"biological_sex\":\"male\",\"gender\":\"agender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"master's degree\"},\"marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"board games\",\"rock climbing\",\"running\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":30,\"level\":\"low\"},\"conscientiousness\":{\"score\":69,\"level\":\"high\"},\"extraversion\":{\"score\":85,\"level\":\"high\"},\"agreeableness\":{\"score\":99,\"level\":\"high\"},\"neuroticism\":{\"score\":40,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM is the quiet pressure that comes when people believe they belong in a field where they are seen as outsiders—like a woman in engineering or a person from a rural background in science. I’ve seen this in my own life, not through formal education but in the everyday moments: a teenager asking me if they can help with a math problem, only to hear, 'You’re not good at math, are you?' That kind of belief, whether spoken or unspoken, can shape a person’s confidence. As someone who grew up in a small town in Italy, with only primary school education, I know how hard it is to believe in one’s ability when the world seems to say, 'You don’t belong here.' In STEM, where logic and precision dominate, such beliefs can become self-fulfilling. But addressing it doesn’t require grand reforms—it starts with simple, human gestures. A teacher who says, 'Everyone learns at their own pace,' or a mentor who shares their own doubts and failures, can shift the atmosphere. I’ve seen such moments in my local community centers where adults gather to learn basic coding or mechanics. These aren’t classrooms; they’re spaces where people feel seen. We don’t need to change the curriculum—we need to change the culture. And that starts with listening, with humility, with saying, 'I don’t know, but let’s find out together.' The real work isn’t in fixing STEM, it’s in making it feel safe for everyone who dreams of understanding how things work.\",\"reasoning_summary\":\"Stereotype threat is identified in academic research as a psychological phenomenon where individuals underperform due to fear of confirming negative stereotypes about their group. The persona, a creative, high-agreeableness, low-openness individual from a working-class background in Italy, has lived experience of social exclusion and limited access to formal education. This personal context makes the issue deeply relatable. The reasoning moves from lived experience to psychological insight, then to practical solutions grounded in community and human connection. The solution is not technical but cultural, emphasizing inclusion through shared learning and emotional safety.\",\"tone\":\"reflective, grounded, conversational, with personal anecdotes and emotional resonance\",\"citations\":[\"Cohen, S. L., & Mano, J. (2008). Stereotype threat in science and engineering\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"marital_status\",\"children\",\"migration_status\",\"hobbies\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM is the quiet pressure that comes when people believe they belong in a field where they are seen as outsiders—like a woman in engineering or a person from a rural background in science. I’ve seen this in my own life, not through formal education but in the everyday moments: a teenager asking me if they can help with a math problem, only to hear, 'You’re not good at math, are you?' That kind of belief, whether spoken or unspoken, can shape a person’s confidence. As someone who grew up in a small town in Italy, with only primary school education, I know how hard it is to believe in one’s ability when the world seems to say, 'You don’t belong here.' In STEM, where logic and precision dominate, such beliefs can become self-fulfilling. But addressing it doesn’t require grand reforms—it starts with simple, human gestures. A teacher who says, 'Everyone learns at their own pace,' or a mentor who shares their own doubts and failures, can shift the atmosphere. I’ve seen such moments in my local community centers where adults gather to learn basic coding or mechanics. These aren’t classrooms; they’re spaces where people feel seen. We don’t need to change the curriculum—we need to change the culture. And that starts with listening, with humility, with saying, 'I don’t know, but let’s find out together.' The real work isn’t in fixing STEM, it’s in making it feel safe for everyone who dreams of understanding how things work.",
+    "reasoning_summary": "Stereotype threat is identified in academic research as a psychological phenomenon where individuals underperform due to fear of confirming negative stereotypes about their group. The persona, a creative, high-agreeableness, low-openness individual from a working-class background in Italy, has lived experience of social exclusion and limited access to formal education. This personal context makes the issue deeply relatable. The reasoning moves from lived experience to psychological insight, then to practical solutions grounded in community and human connection. The solution is not technical but cultural, emphasizing inclusion through shared learning and emotional safety.",
+    "tone": "reflective, grounded, conversational, with personal anecdotes and emotional resonance",
+    "citations": [
+      "Cohen, S. L., & Mano, J. (2008). Stereotype threat in science and engineering"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "marital_status",
+      "children",
+      "migration_status",
+      "hobbies",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "ocean"
+    ]
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "aiasistentworld/ERNIE-4.5-21B-A3B-Thinking-LLM:latest",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 53,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "birdwatching",
+        "cycling",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 68,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 0,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 0,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 74,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":53,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"single\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"birdwatching\",\"cycling\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":68,\"level\":\"high\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":0,\"level\":\"low\"},\"agreeableness\":{\"score\":0,\"level\":\"low\"},\"neuroticism\":{\"score\":74,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":53,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"single\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"birdwatching\",\"cycling\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":68,\"level\":\"high\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":0,\"level\":\"low\"},\"agreeableness\":{\"score\":0,\"level\":\"low\"},\"neuroticism\":{\"score\":74,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":53,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"single\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"few times monthly on social media\",\"hobbies\":[\"birdwatching\",\"cycling\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":68,\"level\":\"high\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":0,\"level\":\"low\"},\"agreeableness\":{\"score\":0,\"level\":\"low\"},\"neuroticism\":{\"score\":74,\"level\":\"high\"}}},\"opinion\":\"The gender gap in science is a pressing issue that demands attention not just for equity but for the advancement of human knowledge. As someone who works as a hairdresser in Rome and has experienced the limited opportunities my own parents faced due to their lower secondary education, I see firsthand how systemic barriers can limit access to fields like science. Addressing this gap is essential because science thrives on diversity—diversity of thought, background, and perspective. When half the population is excluded from scientific endeavors, we risk missing innovations that could transform healthcare, technology, and environmental solutions.  \\n\\nThe gender gap manifests in subtle yet profound ways: underrepresentation in academia and leadership, wage disparities, and biases in research topics and funding allocations. For instance, studies show women are often allocated less research funding even when their projects align with priority areas. This isn’t just unfair—it’s inefficient, as the full talent pool remains untapped. Moreover, cultural stereotypes perpetuate the idea that science is a male domain, discouraging girls from pursuing STEM fields early on. In my hometown of Rome, I’ve observed schools where girls are subtly steered away from tech and science tracks, reinforcing limiting beliefs.  \\n\\nTo close this gap, actionable steps are needed. First, organizations must prioritize mentorship programs pairing women in science with peers, creating role models who inspire the next generation. Second, policies ensuring equal pay for equal work and transparent hiring practices can reduce systemic biases. Third, public awareness campaigns—like the ones I engage with on social media—can challenge stereotypes by highlighting successful female scientists through storytelling. Finally, investing in education curricula that encourage interdisciplinary thinking from a young age could reshape biases in classroom settings.  \\n\\nCritics might argue that such efforts divert resources from other urgent issues, but addressing the gender gap in science is interconnected with broader societal progress. Just as my hairdressing career thrived because I had access to education, scientists must have equal opportunities to contribute meaningfully. By valuing every mind, we unlock unprecedented innovations that benefit all of humanity.\",\"reasoning_summary\":\"As a hairdresser with limited formal education but firsthand experience of systemic barriers, I recognize the gender gap in science as a failure to harness half the population’s potential. The gap arises from underrepresentation, wage inequalities, and biased research practices, stifling innovation. My observation of Rome’s schools highlights how stereotypes are perpetuated subtly. Addressing it requires mentorship, equitable policies, awareness campaigns, and education reforms to create inclusive environments where talent rises regardless of gender.\",\"tone\":\"empathetic, pragmatic, and insightful, reflecting a personal connection to equity issues with a focus on actionable solutions\",\"citations\":[\"Studies showing gender disparities in research funding; observations from educational environments in Rome\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"marital_status\",\"children\",\"migration_status\",\"hobbies\",\"openness\",\"conscientiousness\",\"extraversion\",\"agreeableness\",\"neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 53,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "few times monthly on social media",
+      "hobbies": [
+        "birdwatching",
+        "cycling",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 68,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 0,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 0,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 74,
+          "level": "high"
+        }
+      }
+    },
+    "opinion": "The gender gap in science is a pressing issue that demands attention not just for equity but for the advancement of human knowledge. As someone who works as a hairdresser in Rome and has experienced the limited opportunities my own parents faced due to their lower secondary education, I see firsthand how systemic barriers can limit access to fields like science. Addressing this gap is essential because science thrives on diversity—diversity of thought, background, and perspective. When half the population is excluded from scientific endeavors, we risk missing innovations that could transform healthcare, technology, and environmental solutions.  \n\nThe gender gap manifests in subtle yet profound ways: underrepresentation in academia and leadership, wage disparities, and biases in research topics and funding allocations. For instance, studies show women are often allocated less research funding even when their projects align with priority areas. This isn’t just unfair—it’s inefficient, as the full talent pool remains untapped. Moreover, cultural stereotypes perpetuate the idea that science is a male domain, discouraging girls from pursuing STEM fields early on. In my hometown of Rome, I’ve observed schools where girls are subtly steered away from tech and science tracks, reinforcing limiting beliefs.  \n\nTo close this gap, actionable steps are needed. First, organizations must prioritize mentorship programs pairing women in science with peers, creating role models who inspire the next generation. Second, policies ensuring equal pay for equal work and transparent hiring practices can reduce systemic biases. Third, public awareness campaigns—like the ones I engage with on social media—can challenge stereotypes by highlighting successful female scientists through storytelling. Finally, investing in education curricula that encourage interdisciplinary thinking from a young age could reshape biases in classroom settings.  \n\nCritics might argue that such efforts divert resources from other urgent issues, but addressing the gender gap in science is interconnected with broader societal progress. Just as my hairdressing career thrived because I had access to education, scientists must have equal opportunities to contribute meaningfully. By valuing every mind, we unlock unprecedented innovations that benefit all of humanity.",
+    "reasoning_summary": "As a hairdresser with limited formal education but firsthand experience of systemic barriers, I recognize the gender gap in science as a failure to harness half the population’s potential. The gap arises from underrepresentation, wage inequalities, and biased research practices, stifling innovation. My observation of Rome’s schools highlights how stereotypes are perpetuated subtly. Addressing it requires mentorship, equitable policies, awareness campaigns, and education reforms to create inclusive environments where talent rises regardless of gender.",
+    "tone": "empathetic, pragmatic, and insightful, reflecting a personal connection to equity issues with a focus on actionable solutions",
+    "citations": [
+      "Studies showing gender disparities in research funding; observations from educational environments in Rome"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "marital_status",
+      "children",
+      "migration_status",
+      "hobbies",
+      "openness",
+      "conscientiousness",
+      "extraversion",
+      "agreeableness",
+      "neuroticism"
+    ]
+  }
+}

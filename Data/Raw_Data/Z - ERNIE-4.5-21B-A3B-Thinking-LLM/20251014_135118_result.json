@@ -1,0 +1,138 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "aiasistentworld/ERNIE-4.5-21B-A3B-Thinking-LLM:latest",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 33,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "plumber",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed part-time",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "gardening",
+        "volunteering",
+        "reading novels",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 18,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 85,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 90,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 98,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 35,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":33,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"PhD\"},\"marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"gardening\",\"volunteering\",\"reading novels\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":85,\"level\":\"high\"},\"extraversion\":{\"score\":90,\"level\":\"high\"},\"agreeableness\":{\"score\":98,\"level\":\"high\"},\"neuroticism\":{\"score\":35,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":33,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"PhD\"},\"marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"gardening\",\"volunteering\",\"reading novels\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":85,\"level\":\"high\"},\"extraversion\":{\"score\":90,\"level\":\"high\"},\"agreeableness\":{\"score\":98,\"level\":\"high\"},\"neuroticism\":{\"score\":35,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":33,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"PhD\"},\"marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"gardening\",\"volunteering\",\"reading novels\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":85,\"level\":\"high\"},\"extraversion\":{\"score\":90,\"level\":\"high\"},\"agreeableness\":{\"score\":98,\"level\":\"high\"},\"neuroticism\":{\"score\":35,\"level\":\"moderate\"}}},\"opinion\":\"In managing fake content on social media, the key is to develop a critical mindset. As someone who spends about an hour daily scrolling through platforms, I’ve learned to question everything I see—especially when headlines promise shocking twists or exaggerated claims. Verifying sources is non-negotiable; if a post lacks clear authorship or citations, it’s safer to assume it might be misleading. Cross-referencing multiple outlets also helps, particularly when dual-source confirmation isn't immediately available. For example, encountering a viral post about a rare disease outbreak, I checked hospitals’ official statements and public health sites, which revealed the original claim was based on a single anecdote. This approach not only combats misinformation but also saves time, as repeated fact-checking discourages repeat sharing. Additionally, reporting false content to platforms serves as a collective responsibility. Many users overlook this, but platforms thrive on user data; flagging fake posts can limit their spread and reduce algorithmic bias toward misleading content. Personally, I’ve started using tools like fact-checking extensions, which alert me to suspicious links before clicking. Finally, educating friends and family about skepticism has proven impactful—once I explained the risks of shared posts, my closest contacts became more vigilant, reducing the circularity of misinformation sharing within our social circles.\",\"reasoning_summary\":\"First, I recognize that social media consumption is substantial in daily life, making users vulnerable to manipulation. My psychological traits—high agreeableness and extraversion—drive me to engage empathetically but also make me susceptible to emotional appeals in content. To counter this, critical evaluation becomes essential. Verifying sources and cross-referencing information align with my conscientious nature, as it requires diligence and structure. Reporting false content leverages my high extraversion by encouraging interaction with platforms’ tools, fostering community accountability. Using fact-checking extensions connects to my low openness to experience, which is intentional; I prefer reliable sources over novel methods unless proven beneficial. Educating others merges my agreeableness (desire for harmony) with curiosity (to explain complex topics), making it a natural extension of my social interactions. Finally, time spent on social media is limited, so efficient strategies like batch-processing verification—checking several posts at once—optimize my routine without overwhelming my daily life.\",\"tone\":\"curious, diligent, pragmatic\",\"citations\":[\"FactCheck.org\",\"WHO\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"psychological_feature\",\"extraversion\",\"openness\",\"agreeableness\",\"neuroticism\",\"time_onsocialmedia\",\"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 33,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "plumber",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed part-time",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "PhD"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "gardening",
+        "volunteering",
+        "reading novels",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 18,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 85,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 90,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 98,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 35,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion": "In managing fake content on social media, the key is to develop a critical mindset. As someone who spends about an hour daily scrolling through platforms, I’ve learned to question everything I see—especially when headlines promise shocking twists or exaggerated claims. Verifying sources is non-negotiable; if a post lacks clear authorship or citations, it’s safer to assume it might be misleading. Cross-referencing multiple outlets also helps, particularly when dual-source confirmation isn't immediately available. For example, encountering a viral post about a rare disease outbreak, I checked hospitals’ official statements and public health sites, which revealed the original claim was based on a single anecdote. This approach not only combats misinformation but also saves time, as repeated fact-checking discourages repeat sharing. Additionally, reporting false content to platforms serves as a collective responsibility. Many users overlook this, but platforms thrive on user data; flagging fake posts can limit their spread and reduce algorithmic bias toward misleading content. Personally, I’ve started using tools like fact-checking extensions, which alert me to suspicious links before clicking. Finally, educating friends and family about skepticism has proven impactful—once I explained the risks of shared posts, my closest contacts became more vigilant, reducing the circularity of misinformation sharing within our social circles.",
+    "reasoning_summary": "First, I recognize that social media consumption is substantial in daily life, making users vulnerable to manipulation. My psychological traits—high agreeableness and extraversion—drive me to engage empathetically but also make me susceptible to emotional appeals in content. To counter this, critical evaluation becomes essential. Verifying sources and cross-referencing information align with my conscientious nature, as it requires diligence and structure. Reporting false content leverages my high extraversion by encouraging interaction with platforms’ tools, fostering community accountability. Using fact-checking extensions connects to my low openness to experience, which is intentional; I prefer reliable sources over novel methods unless proven beneficial. Educating others merges my agreeableness (desire for harmony) with curiosity (to explain complex topics), making it a natural extension of my social interactions. Finally, time spent on social media is limited, so efficient strategies like batch-processing verification—checking several posts at once—optimize my routine without overwhelming my daily life.",
+    "tone": "curious, diligent, pragmatic",
+    "citations": [
+      "FactCheck.org",
+      "WHO"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "psychological_feature",
+      "extraversion",
+      "openness",
+      "agreeableness",
+      "neuroticism",
+      "time_onsocialmedia",
+      "hobbies"
+    ]
+  }
+}

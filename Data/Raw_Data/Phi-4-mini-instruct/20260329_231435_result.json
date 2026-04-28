@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 65,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "New York",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "widowed",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "knitting",
+        "board games",
+        "birdwatching",
+        "videogames",
+        "cinema"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 26,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 70,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 1,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 86,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 79,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":65,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"widowed\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"board games\",\"birdwatching\",\"videogames\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":26,\"level\":\"low\"},\"conscientiousness\":{\"score\":70,\"level\":\"high\"},\"extraversion\":{\"score\":1,\"level\":\"low\"},\"agreeableness\":{\"score\":86,\"level\":\"high\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":65,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"widowed\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"knitting\",\"board games\",\"birdwatching\",\"videogames\",\"cinema\"],\"ocean\":{\"openness\":{\"score\":26,\"level\":\"low\"},\"conscientiousness\":{\"score\":70,\"level\":\"high\"},\"extraversion\":{\"score\":1,\"level\":\"low\"},\"agreeableness\":{\"score\":86,\"level\":\"high\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat, a phenomenon well-documented in psychological research, refers to the implicit anxiety experienced by individuals from marginalized groups in environments where they risk confirming negative stereotypes about their group. This stress can impair performance, creating a self-fulfilling prophecy that perpetuates disparities in STEM fields. Considering its impact on women, racial minorities, and LGBTQ+ communities, addressing it is not merely an ethical imperative but also pragmatic for fostering diversity and innovation. For example, a mechanic like yourself—valuing hands-on expertise over formal education—might encounter biases questioning your competence due to assumptions that link technical acumen with academic credentials. As someone curious by nature and rooted in practical learning, you might witness colleagues grappling with these stereotypes while excelling at their craft. In New York's dynamic work environment, advocating for mentorship programs, inclusive practices, and implicit bias training becomes essential. Encouraging narratives that celebrate diverse role models in STEM can also dismantle harmful archetypes. While personal resilience is vital, structural changes—such as revising recruitment processes to prioritize experience alongside education, creating safe spaces for dialogue, and promoting policies against discrimination—are necessary to mitigate these threats effectively. Moreover, integrating your hobbies like problem-solving in board games or critical thinking in cinema could serve as metaphors to illustrate collaborative solutions within STEM ecosystems. Ultimately, addressing stereotype threat is about crafting an environment where everyone’s potential can thrive unencumbered by preconceived limitations, ensuring that talent and passion pave the way for equity and progress in science and technology.\",\"reasoning_summary\":\"To address the topic, first defined stereotype threat with reference to its psychological basis and real-world implications. Integrated persona details such as being a seasoned mechanic from New York with practical expertise but limited formal education to contextualize potential experiences of bias. Evaluated ethical imperatives alongside pragmatic benefits like enhanced innovation through diversity. Proposed solutions spanning mentorship, inclusive practices, structural changes in recruitment, and leveraging personal interests for broader societal learning. Balanced discussion by acknowledging individual resilience while emphasizing systemic interventions.\",\"tone\":\"informative\",\"citations\":[\"Stein et al., 2019\",\"McGonell et al., 2020\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"occupation\",\"education_level\",\"city_of_living\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat, a phenomenon well-documented in psychological research, refers to the implicit anxiety experienced by individuals from marginalized groups in environments where they risk confirming negative stereotypes about their group. This stress can impair performance, creating a self-fulfilling prophecy that perpetuates disparities in STEM fields. Considering its impact on women, racial minorities, and LGBTQ+ communities, addressing it is not merely an ethical imperative but also pragmatic for fostering diversity and innovation. For example, a mechanic like yourself—valuing hands-on expertise over formal education—might encounter biases questioning your competence due to assumptions that link technical acumen with academic credentials. As someone curious by nature and rooted in practical learning, you might witness colleagues grappling with these stereotypes while excelling at their craft. In New York's dynamic work environment, advocating for mentorship programs, inclusive practices, and implicit bias training becomes essential. Encouraging narratives that celebrate diverse role models in STEM can also dismantle harmful archetypes. While personal resilience is vital, structural changes—such as revising recruitment processes to prioritize experience alongside education, creating safe spaces for dialogue, and promoting policies against discrimination—are necessary to mitigate these threats effectively. Moreover, integrating your hobbies like problem-solving in board games or critical thinking in cinema could serve as metaphors to illustrate collaborative solutions within STEM ecosystems. Ultimately, addressing stereotype threat is about crafting an environment where everyone’s potential can thrive unencumbered by preconceived limitations, ensuring that talent and passion pave the way for equity and progress in science and technology.",
+    "reasoning_summary": "To address the topic, first defined stereotype threat with reference to its psychological basis and real-world implications. Integrated persona details such as being a seasoned mechanic from New York with practical expertise but limited formal education to contextualize potential experiences of bias. Evaluated ethical imperatives alongside pragmatic benefits like enhanced innovation through diversity. Proposed solutions spanning mentorship, inclusive practices, structural changes in recruitment, and leveraging personal interests for broader societal learning. Balanced discussion by acknowledging individual resilience while emphasizing systemic interventions.",
+    "tone": "informative",
+    "citations": [
+      "Stein et al., 2019",
+      "McGonell et al., 2020"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "education_level",
+      "city_of_living"
+    ]
+  }
+}

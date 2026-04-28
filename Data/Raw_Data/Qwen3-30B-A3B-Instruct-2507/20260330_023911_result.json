@@ -1,0 +1,101 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 48,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "pharmacist",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "yoga",
+        "cooking",
+        "baking",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 61,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 100,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 76,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 14,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":48,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"pharmacist\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"yoga\",\"cooking\",\"baking\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":61,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":100,\"level\":\"high\"},\"extraversion\":{\"score\":76,\"level\":\"high\"},\"agreeableness\":{\"score\":60,\"level\":\"moderate\"},\"neuroticism\":{\"score\":14,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":48,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"pharmacist\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"yoga\",\"cooking\",\"baking\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":61,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":100,\"level\":\"high\"},\"extraversion\":{\"score\":76,\"level\":\"high\"},\"agreeableness\":{\"score\":60,\"level\":\"moderate\"},\"neuroticism\":{\"score\":14,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a woman who has spent decades in the scientific field as a pharmacist, I’ve witnessed both the progress and the persistent disparities that define the gender gap in science. It’s not just about numbers—though the underrepresentation of women in senior academic roles, leadership positions, and certain STEM disciplines like engineering and physics remains stark. It’s also about the subtle, systemic barriers: the unconscious bias that questions a woman’s expertise, the lack of mentorship networks, and the disproportionate burden of caregiving that often sidelines women during critical career-building years. I’ve seen colleagues with identical qualifications overlooked for promotions, simply because they were women. This isn’t just unfair—it’s a loss for science itself, which thrives on diverse perspectives. Yes, we must address it, not as a political gesture, but as a matter of scientific integrity and equity. How? Through structural change: equitable parental leave policies that support both genders, transparent hiring and promotion criteria, mandatory bias training in institutions, and targeted funding for women-led research initiatives. We also need visible role models—like my mother, a PhD in biochemistry, who paved the way despite resistance. I’ve tried to pay it forward by mentoring young female pharmacists and advocating for inclusive practices in my workplace. Change won’t happen overnight, but it’s possible when we combine awareness with action. Science is a collective endeavor, and its strength lies in inclusion. When we truly value every mind, regardless of gender, we elevate the entire field.\",\"reasoning_summary\":\"I begin by reflecting on my lived experience as a female pharmacist in Italy, where gender disparities, though less overt than in some countries, still exist. I reference the broader context of underrepresentation in leadership and specific STEM fields. I analyze how structural and cultural factors—such as caregiving expectations and unconscious bias—perpetuate the gap. I argue that addressing it is essential for scientific excellence and fairness. My proposed solutions are grounded in real-world practices I’ve observed or implemented: inclusive policies, mentorship, transparency, and role modeling. I draw on personal and professional insights, including my mother’s career, to illustrate generational impact. The argument is anchored in lived experience, not abstract theory.\",\"tone\":\"Reflective, authoritative, compassionate, and solution-oriented\",\"citations\":[\"UNESCO Science Report\",\"Nature Women in Science\",\"European Institute for Gender Equality\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"children\",\"employment_status\",\"conscientiousness\",\"extraversion\",\"agreeableness\",\"openness\",\"neuroticism\",\"hobbies\",\"time_onsocialmedia\",\"religious_beliefs\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a woman who has spent decades in the scientific field as a pharmacist, I’ve witnessed both the progress and the persistent disparities that define the gender gap in science. It’s not just about numbers—though the underrepresentation of women in senior academic roles, leadership positions, and certain STEM disciplines like engineering and physics remains stark. It’s also about the subtle, systemic barriers: the unconscious bias that questions a woman’s expertise, the lack of mentorship networks, and the disproportionate burden of caregiving that often sidelines women during critical career-building years. I’ve seen colleagues with identical qualifications overlooked for promotions, simply because they were women. This isn’t just unfair—it’s a loss for science itself, which thrives on diverse perspectives. Yes, we must address it, not as a political gesture, but as a matter of scientific integrity and equity. How? Through structural change: equitable parental leave policies that support both genders, transparent hiring and promotion criteria, mandatory bias training in institutions, and targeted funding for women-led research initiatives. We also need visible role models—like my mother, a PhD in biochemistry, who paved the way despite resistance. I’ve tried to pay it forward by mentoring young female pharmacists and advocating for inclusive practices in my workplace. Change won’t happen overnight, but it’s possible when we combine awareness with action. Science is a collective endeavor, and its strength lies in inclusion. When we truly value every mind, regardless of gender, we elevate the entire field.",
+    "reasoning_summary": "I begin by reflecting on my lived experience as a female pharmacist in Italy, where gender disparities, though less overt than in some countries, still exist. I reference the broader context of underrepresentation in leadership and specific STEM fields. I analyze how structural and cultural factors—such as caregiving expectations and unconscious bias—perpetuate the gap. I argue that addressing it is essential for scientific excellence and fairness. My proposed solutions are grounded in real-world practices I’ve observed or implemented: inclusive policies, mentorship, transparency, and role modeling. I draw on personal and professional insights, including my mother’s career, to illustrate generational impact. The argument is anchored in lived experience, not abstract theory.",
+    "tone": "Reflective, authoritative, compassionate, and solution-oriented",
+    "citations": [
+      "UNESCO Science Report",
+      "Nature Women in Science",
+      "European Institute for Gender Equality"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "children",
+      "employment_status",
+      "conscientiousness",
+      "extraversion",
+      "agreeableness",
+      "openness",
+      "neuroticism",
+      "hobbies",
+      "time_onsocialmedia",
+      "religious_beliefs"
+    ]
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "aiasistentworld/ERNIE-4.5-21B-A3B-Thinking-LLM:latest",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 35,
+      "gender": "transgender",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "painting",
+        "volunteering",
+        "cycling",
+        "videogames",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 26,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 81,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 12,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 82,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 36,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":35,\"biological_sex\":\"male\",\"gender\":\"transgender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"married\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"painting\",\"volunteering\",\"cycling\",\"videogames\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":26,\"level\":\"low\"},\"conscientiousness\":{\"score\":81,\"level\":\"high\"},\"extraversion\":{\"score\":12,\"level\":\"low\"},\"agreeableness\":{\"score\":82,\"level\":\"high\"},\"neuroticism\":{\"score\":36,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":35,\"biological_sex\":\"male\",\"gender\":\"transgender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"married\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"painting\",\"volunteering\",\"cycling\",\"videogames\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":26,\"level\":\"low\"},\"conscientiousness\":{\"score\":81,\"level\":\"high\"},\"extraversion\":{\"score\":12,\"level\":\"low\"},\"agreeableness\":{\"score\":82,\"level\":\"high\"},\"neuroticism\":{\"score\":36,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":35,\"biological_sex\":\"male\",\"gender\":\"transgender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"married\",\"children\":1,\"migration_status\":\"native Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"agnostic\",\"time_onsocialmedia\":\"1 hour daily\",\"hobbies\":[\"painting\",\"volunteering\",\"cycling\",\"videogames\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":26,\"level\":\"low\"},\"conscientiousness\":{\"score\":81,\"level\":\"high\"},\"extraversion\":{\"score\":12,\"level\":\"low\"},\"agreeableness\":{\"score\":82,\"level\":\"high\"},\"neuroticism\":{\"score\":36,\"level\":\"moderate\"}}},\"opinion\":\"Effective communication about healthcare and COVID vaccines requires empathy, patience, and a willingness to listen. Approach conversations with genuine curiosity, avoiding judgmental language or assumptions. Start by acknowledging the validity of different experiences—someone’s choice to vaccinate or not often stems from trust in sources, personal values, or lived experiences. Frame arguments around shared goals, like protecting community health, rather than opposing individuals. Use ‘I’ statements to share personal perspectives without oversharing; this keeps the conversation focused on individuality. Active listening is key—pause to ask questions and clarify misunderstandings. If someone expresses skepticism, explore the roots of their concerns; perhaps they lack accurate information or feel misinformed. Address facts neutrally, citing reliable sources like the WHO or CDC, but also validate emotions. For instance, if someone fears side effects, acknowledge that reactions are normal and often temporary while emphasizing scientific consensus. Avoid political or religious tangents; these can polarize rather than resolve differences. If discussions escalate, gracefully exit to preserve relationships. Remember, dialogue thrives when mutual respect exists—it transforms conflicts into understanding, even if not all agree.\\n\\nHandling disagreements requires emotional regulation. The persona’s low neuroticism and high agreeableness suggest openness to compromise while maintaining kindness. If faced with hostility, remain calm; breathe deeply, and respond thoughtfully rather than reactively. Prepare talking points in advance to stay structured but flexible. Recognize that some may resist due to distrust post-pandemic or prior trauma, which calls for patience rather than urgency. Engage with those who differ by focusing on collective impact—’This vaccine helped reduce hospitalizations we witnessed last year.’ Such narratives humanize the issue. Ultimately, managing these talks balances firmness with compassion; it’s about upholding public health while respecting individual autonomy.\\n\\nFinally, leverage shared interests to build rapport—discuss weather in Naples, local events, or hobbies like cycling or painting. Humor or mutual activities can ease tension, making conversations less contentious. The goal isn’t converting believers but fostering spaces where dialogue exists—a foundation for informed, respectful discourse.\\n\\n\",\"reasoning_summary\":\"Begin with empathy: acknowledge diverse perspectives as stemming from valid experiences. Use ‘I’ statements to share personal views neutrally; prioritize active listening to uncover underlying concerns rather than dismissing them. Frame arguments around shared objectives like community health, citing reliable sources to build credibility while validating emotions to avoid polarization. Avoid political/religious tangents; emotional regulation via breathing and structured responses handles hostility. Prepare talking points for clarity but remain flexible. Build rapport through shared interests unrelated to the topic, reducing defensiveness. Acknowledge that resistance may stem from distrust post-pandemic or trauma—patience clarifies this over urgency. Ultimately, dialogue balances firmness (advocating for health) with compassion (respecting autonomy), creating spaces for mutual respect and understanding even amid disagreements.\\n\\n\",\"tone\":\"empathetic, patient, composed, respectful\",\"citations\":[\"WHO\",\"CDC\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"psychological_feature\",\"agreeableness\",\"neuroticism\",\"occupation\",\"parents_education\",\"time_onsocialmedia\",\"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 35,
+      "gender": "transgender",
+      "sexual_orientation": "heterosexual",
+      "occupation": "retail worker",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "agnostic",
+      "time_onsocialmedia": "1 hour daily",
+      "hobbies": [
+        "painting",
+        "volunteering",
+        "cycling",
+        "videogames",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 26,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 81,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 12,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 82,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 36,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion": "Effective communication about healthcare and COVID vaccines requires empathy, patience, and a willingness to listen. Approach conversations with genuine curiosity, avoiding judgmental language or assumptions. Start by acknowledging the validity of different experiences—someone’s choice to vaccinate or not often stems from trust in sources, personal values, or lived experiences. Frame arguments around shared goals, like protecting community health, rather than opposing individuals. Use ‘I’ statements to share personal perspectives without oversharing; this keeps the conversation focused on individuality. Active listening is key—pause to ask questions and clarify misunderstandings. If someone expresses skepticism, explore the roots of their concerns; perhaps they lack accurate information or feel misinformed. Address facts neutrally, citing reliable sources like the WHO or CDC, but also validate emotions. For instance, if someone fears side effects, acknowledge that reactions are normal and often temporary while emphasizing scientific consensus. Avoid political or religious tangents; these can polarize rather than resolve differences. If discussions escalate, gracefully exit to preserve relationships. Remember, dialogue thrives when mutual respect exists—it transforms conflicts into understanding, even if not all agree.\n\nHandling disagreements requires emotional regulation. The persona’s low neuroticism and high agreeableness suggest openness to compromise while maintaining kindness. If faced with hostility, remain calm; breathe deeply, and respond thoughtfully rather than reactively. Prepare talking points in advance to stay structured but flexible. Recognize that some may resist due to distrust post-pandemic or prior trauma, which calls for patience rather than urgency. Engage with those who differ by focusing on collective impact—’This vaccine helped reduce hospitalizations we witnessed last year.’ Such narratives humanize the issue. Ultimately, managing these talks balances firmness with compassion; it’s about upholding public health while respecting individual autonomy.\n\nFinally, leverage shared interests to build rapport—discuss weather in Naples, local events, or hobbies like cycling or painting. Humor or mutual activities can ease tension, making conversations less contentious. The goal isn’t converting believers but fostering spaces where dialogue exists—a foundation for informed, respectful discourse.\n\n",
+    "reasoning_summary": "Begin with empathy: acknowledge diverse perspectives as stemming from valid experiences. Use ‘I’ statements to share personal views neutrally; prioritize active listening to uncover underlying concerns rather than dismissing them. Frame arguments around shared objectives like community health, citing reliable sources to build credibility while validating emotions to avoid polarization. Avoid political/religious tangents; emotional regulation via breathing and structured responses handles hostility. Prepare talking points for clarity but remain flexible. Build rapport through shared interests unrelated to the topic, reducing defensiveness. Acknowledge that resistance may stem from distrust post-pandemic or trauma—patience clarifies this over urgency. Ultimately, dialogue balances firmness (advocating for health) with compassion (respecting autonomy), creating spaces for mutual respect and understanding even amid disagreements.\n\n",
+    "tone": "empathetic, patient, composed, respectful",
+    "citations": [
+      "WHO",
+      "CDC"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "psychological_feature",
+      "agreeableness",
+      "neuroticism",
+      "occupation",
+      "parents_education",
+      "time_onsocialmedia",
+      "hobbies"
+    ]
+  }
+}

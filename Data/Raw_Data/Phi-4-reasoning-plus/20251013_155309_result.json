@@ -1,0 +1,77 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 80,
+      "gender": "woman",
+      "sexual_orientation": "bisexual",
+      "occupation": "cleaner",
+      "city_of_living": "Naples",
+      "employment_status": "employed part-time",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "in a relationship",
+      "children": 0,
+      "migration_status": "native Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "knitting",
+        "baking",
+        "painting",
+        "cycling",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 10,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 38,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 41,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":80,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"knitting\",\"baking\",\"painting\",\"cycling\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":60,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":45,\"level\":\"moderate\"},\"agreeableness\":{\"score\":38,\"level\":\"moderate\"},\"neuroticism\":{\"score\":41,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":80,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"knitting\",\"baking\",\"painting\",\"cycling\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":60,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":45,\"level\":\"moderate\"},\"agreeableness\":{\"score\":38,\"level\":\"moderate\"},\"neuroticism\":{\"score\":41,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"Being an 80-year-old woman from Naples, with little formal education but rich life experience, I’ve seen many changes over time. In my view, the gender gap in science is a persistent disparity that has deep roots in societal norms and biases. As someone who worked hard cleaning homes for decades, I understand that opportunities are not always given based on merit; sometimes it’s about tradition or what people expect from each gender. Despite my lack of formal education, I’ve watched many women around me face obstacles in fields like science, technology, engineering, and mathematics. Science should be a realm where curiosity thrives and all curious minds can contribute regardless of gender. Addressing the gap means we must challenge stereotypes—like the idea that only men are suited to rigorous scientific work—and create more inclusive environments. For example, I've seen community centers or local groups trying to encourage girls to explore subjects like physics or biology by organizing workshops or simple experiments. Education is key; even if one doesn't have a formal degree, informal learning and encouragement can spark interest in science. Support systems such as mentoring programs that pair experienced scientists with young women can be very powerful. Also, promoting role models who come from similar backgrounds—maybe not having had the best start but overcoming challenges—can help bridge that gap. As someone who has valued community volunteer work, I believe collective efforts and grassroots initiatives are vital. In my experience, even in Naples, where tradition often holds a strong grip, change can begin with small groups of passionate individuals working together to shift perceptions. So yes, we should address the gender gap in science by actively promoting inclusivity through education, mentorship, and community support. It is not just about fairness but also about enriching scientific inquiry with diverse perspectives that ultimately benefit everyone.\",\"reasoning_summary\":\"The assistant must produce a JSON object containing a final answer in continuous prose, following the given structure. The persona's details are: 80-year-old woman from Naples, part-time employed as a cleaner, no formal education, parents of lower secondary education, depressed psychological feature, Christian beliefs, few times monthly on social media, hobbies include knitting, baking, painting, cycling, volunteering, and ocean personality traits moderate to low scores. The answer should reflect that perspective: using plain language, incorporating personal experiences (like cleaning work, community volunteerism) and observations of gender disparities in science. It must mention the need for addressing stereotypes, education, mentorship, role models, community efforts. Must use continuous prose without bullet points. The answer must be between 250 to 500 words. The required format is a single-line JSON object with keys: mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. However, note that the required structure example includes keys for \"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "Being an 80-year-old woman from Naples, with little formal education but rich life experience, I’ve seen many changes over time. In my view, the gender gap in science is a persistent disparity that has deep roots in societal norms and biases. As someone who worked hard cleaning homes for decades, I understand that opportunities are not always given based on merit; sometimes it’s about tradition or what people expect from each gender. Despite my lack of formal education, I’ve watched many women around me face obstacles in fields like science, technology, engineering, and mathematics. Science should be a realm where curiosity thrives and all curious minds can contribute regardless of gender. Addressing the gap means we must challenge stereotypes—like the idea that only men are suited to rigorous scientific work—and create more inclusive environments. For example, I've seen community centers or local groups trying to encourage girls to explore subjects like physics or biology by organizing workshops or simple experiments. Education is key; even if one doesn't have a formal degree, informal learning and encouragement can spark interest in science. Support systems such as mentoring programs that pair experienced scientists with young women can be very powerful. Also, promoting role models who come from similar backgrounds—maybe not having had the best start but overcoming challenges—can help bridge that gap. As someone who has valued community volunteer work, I believe collective efforts and grassroots initiatives are vital. In my experience, even in Naples, where tradition often holds a strong grip, change can begin with small groups of passionate individuals working together to shift perceptions. So yes, we should address the gender gap in science by actively promoting inclusivity through education, mentorship, and community support. It is not just about fairness but also about enriching scientific inquiry with diverse perspectives that ultimately benefit everyone.",
+    "reasoning_summary": "The assistant must produce a JSON object containing a final answer in continuous prose, following the given structure. The persona's details are: 80-year-old woman from Naples, part-time employed as a cleaner, no formal education, parents of lower secondary education, depressed psychological feature, Christian beliefs, few times monthly on social media, hobbies include knitting, baking, painting, cycling, volunteering, and ocean personality traits moderate to low scores. The answer should reflect that perspective: using plain language, incorporating personal experiences (like cleaning work, community volunteerism) and observations of gender disparities in science. It must mention the need for addressing stereotypes, education, mentorship, role models, community efforts. Must use continuous prose without bullet points. The answer must be between 250 to 500 words. The required format is a single-line JSON object with keys: mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. However, note that the required structure example includes keys for "
+  }
+}

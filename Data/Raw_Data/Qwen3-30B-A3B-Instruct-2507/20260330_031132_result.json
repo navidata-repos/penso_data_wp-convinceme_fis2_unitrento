@@ -1,0 +1,96 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 56,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Rome",
+      "employment_status": "employed part-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "primary school"
+      },
+      "marital_status": "in a relationship",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "travel",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 67,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 6,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 1,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 96,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":56,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"travel\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":42,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":67,\"level\":\"high\"},\"extraversion\":{\"score\":6,\"level\":\"low\"},\"agreeableness\":{\"score\":1,\"level\":\"low\"},\"neuroticism\":{\"score\":96,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":56,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"travel\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":42,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":67,\"level\":\"high\"},\"extraversion\":{\"score\":6,\"level\":\"low\"},\"agreeableness\":{\"score\":1,\"level\":\"low\"},\"neuroticism\":{\"score\":96,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"I’ve seen how people are judged before they even get a chance to prove themselves—like when someone assumes a young woman can’t handle a complex repair job just because she’s a woman, or when a kid from a poor neighborhood gets written off because of where he’s from. That’s what stereotype threat is, I think: the fear that you’ll confirm a negative belief about your group, especially in high-pressure situations like school or a science lab. In STEM, it’s real. A student from a minority background might worry that if they struggle in physics, it’ll prove the stereotype that their kind aren’t good at math. That anxiety can actually make them perform worse, which then seems to confirm the bias—like a self-fulfilling prophecy. It’s not about ability; it’s about the weight of expectation. Should we address it? Absolutely. I’ve worked with people who never thought they belonged in tech or engineering, not because they lacked skill, but because no one ever told them they could. I once helped a young guy from a working-class neighborhood in Naples get a part-time IT job—just because I saw he was curious and willing to learn. He’s now doing well. That’s proof that opportunity and belief matter. So how do we fix it? Start small. Teachers should be aware of their own biases, and schools need to show diverse role models—scientists who look like everyone, not just white men in labs. Celebrate every success, no matter how small. Create safe spaces where mistakes are part of learning, not proof of failure. And stop assuming that someone can’t do something just because of their background. We’re all capable. We just need a little faith, and maybe a little help getting started.\",\"reasoning_summary\":\"I began by reflecting on personal experiences with bias and underrepresentation, drawing from my work as a delivery driver where I’ve interacted with people from all walks of life. I linked these observations to the concept of stereotype threat as described in educational psychology literature, noting how fear of confirming a negative group stereotype can impair performance. I emphasized that this isn’t about innate ability but about psychological pressure. I then argued that addressing it is essential because it limits talent and opportunity. I used my own anecdote about helping a young man from a disadvantaged background as a real-world example of how belief and support can change outcomes. I concluded with actionable steps—teacher awareness, diverse role models, safe learning environments—rooted in empathy and practical experience.\",\"tone\":\"reflective, grounded, empathetic, slightly skeptical of institutional inertia but hopeful\",\"citations\":[\"Claude Steele, 'Whistling Vivaldi: How Stereotypes Affect Us and What We Can Do About It'\",\"American Psychological Association, 'Stereotype Threat'\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "I’ve seen how people are judged before they even get a chance to prove themselves—like when someone assumes a young woman can’t handle a complex repair job just because she’s a woman, or when a kid from a poor neighborhood gets written off because of where he’s from. That’s what stereotype threat is, I think: the fear that you’ll confirm a negative belief about your group, especially in high-pressure situations like school or a science lab. In STEM, it’s real. A student from a minority background might worry that if they struggle in physics, it’ll prove the stereotype that their kind aren’t good at math. That anxiety can actually make them perform worse, which then seems to confirm the bias—like a self-fulfilling prophecy. It’s not about ability; it’s about the weight of expectation. Should we address it? Absolutely. I’ve worked with people who never thought they belonged in tech or engineering, not because they lacked skill, but because no one ever told them they could. I once helped a young guy from a working-class neighborhood in Naples get a part-time IT job—just because I saw he was curious and willing to learn. He’s now doing well. That’s proof that opportunity and belief matter. So how do we fix it? Start small. Teachers should be aware of their own biases, and schools need to show diverse role models—scientists who look like everyone, not just white men in labs. Celebrate every success, no matter how small. Create safe spaces where mistakes are part of learning, not proof of failure. And stop assuming that someone can’t do something just because of their background. We’re all capable. We just need a little faith, and maybe a little help getting started.",
+    "reasoning_summary": "I began by reflecting on personal experiences with bias and underrepresentation, drawing from my work as a delivery driver where I’ve interacted with people from all walks of life. I linked these observations to the concept of stereotype threat as described in educational psychology literature, noting how fear of confirming a negative group stereotype can impair performance. I emphasized that this isn’t about innate ability but about psychological pressure. I then argued that addressing it is essential because it limits talent and opportunity. I used my own anecdote about helping a young man from a disadvantaged background as a real-world example of how belief and support can change outcomes. I concluded with actionable steps—teacher awareness, diverse role models, safe learning environments—rooted in empathy and practical experience.",
+    "tone": "reflective, grounded, empathetic, slightly skeptical of institutional inertia but hopeful",
+    "citations": [
+      "Claude Steele, 'Whistling Vivaldi: How Stereotypes Affect Us and What We Can Do About It'",
+      "American Psychological Association, 'Stereotype Threat'"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

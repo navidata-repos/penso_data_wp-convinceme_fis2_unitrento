@@ -1,0 +1,100 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 43,
+      "gender": "man",
+      "sexual_orientation": "asexual",
+      "occupation": "software developer",
+      "city_of_living": "Chicago",
+      "employment_status": "self-employed",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "painting",
+        "yoga",
+        "reading novels",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 17,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 96,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 7,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 79,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 49,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":43,\"gender\":\"man\",\"sexual_orientation\":\"asexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Chicago\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"painting\",\"yoga\",\"reading novels\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":17,\"level\":\"low\"},\"conscientiousness\":{\"score\":96,\"level\":\"high\"},\"extraversion\":{\"score\":7,\"level\":\"low\"},\"agreeableness\":{\"score\":79,\"level\":\"high\"},\"neuroticism\":{\"score\":49,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":43,\"gender\":\"man\",\"sexual_orientation\":\"asexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Chicago\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"painting\",\"yoga\",\"reading novels\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":17,\"level\":\"low\"},\"conscientiousness\":{\"score\":96,\"level\":\"high\"},\"extraversion\":{\"score\":7,\"level\":\"low\"},\"agreeableness\":{\"score\":79,\"level\":\"high\"},\"neuroticism\":{\"score\":49,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM isn't just a theoretical concern—it's a lived experience, one I've observed both in myself and in colleagues, especially as an immigrant software developer in Chicago. It refers to the anxiety or concern that individuals from marginalized groups may feel when they fear confirming a negative stereotype about their group—such as the belief that women or people of certain ethnicities aren't as capable in math or programming. This anxiety can impair performance, even when someone is highly competent. I’ve seen brilliant engineers, particularly those from underrepresented backgrounds, second-guess their abilities during technical interviews or team meetings, not because they lack skill, but because they’re subconsciously aware of the stereotypes that could be used to dismiss them. This is especially true in environments where diversity is low and cultural norms favor a narrow archetype of the 'ideal' coder. We absolutely must address it, not just because it’s fair, but because it’s a systemic waste of talent. When people are distracted by fear of being judged based on identity rather than merit, innovation stagnates. One effective way to mitigate it is through inclusive hiring practices—structured interviews with clear, objective criteria, and diverse hiring panels. Another is fostering psychological safety: creating spaces where mistakes are seen as learning opportunities, not indictments of ability. I’ve personally found that when teams openly acknowledge biases and celebrate different ways of thinking—whether it’s through varied problem-solving styles or cultural perspectives—the whole group performs better. As a self-employed developer, I also prioritize building client relationships based on trust and competence, not assumptions. Ultimately, addressing stereotype threat isn’t about lowering standards—it’s about ensuring that everyone, regardless of background, has the chance to thrive on equal footing. When we do, the field as a whole becomes more innovative, resilient, and human.\",\"reasoning_summary\":\"Stereotype threat is rooted in social psychology, particularly in the work of Claude Steele. It manifests when individuals feel at risk of confirming a negative stereotype about their group, leading to performance anxiety. In STEM, this disproportionately affects women, racial minorities, and immigrants—groups often stereotyped as less competent in technical fields. As a software developer with a master’s degree and experience in both corporate and freelance settings, I’ve observed this in real-world contexts: interviews where candidates from underrepresented groups appear hesitant despite high qualifications, or team dynamics where contributions from certain individuals are overlooked. The consequences are measurable: reduced participation, higher attrition, and lost innovation. Addressing it requires systemic change—structured evaluation processes, inclusive team cultures, and leadership that actively challenges bias. My own experience as an immigrant and a self-employed professional has made me sensitive to how assumptions about competence can affect professional outcomes. The goal isn't to change individuals, but to redesign environments so that no one has to perform under the weight of stereotype. Evidence from research shows that simple interventions—like affirming values or highlighting diverse role models—can reduce the impact of stereotype threat. By embedding these practices into hiring, education, and workplace culture, we create ecosystems where talent is judged on merit, not identity.\",\"tone\":\"Reflective, practical, grounded in lived experience, with a focus on systemic fairness and technical integrity\",\"citations\":[\"Steele, C. M. (1997). A threat in the air: How stereotypes shape intellectual identity and performance.\",\"Cimpian, A., et al. (2016). The impact of stereotype threat on women in STEM\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM isn't just a theoretical concern—it's a lived experience, one I've observed both in myself and in colleagues, especially as an immigrant software developer in Chicago. It refers to the anxiety or concern that individuals from marginalized groups may feel when they fear confirming a negative stereotype about their group—such as the belief that women or people of certain ethnicities aren't as capable in math or programming. This anxiety can impair performance, even when someone is highly competent. I’ve seen brilliant engineers, particularly those from underrepresented backgrounds, second-guess their abilities during technical interviews or team meetings, not because they lack skill, but because they’re subconsciously aware of the stereotypes that could be used to dismiss them. This is especially true in environments where diversity is low and cultural norms favor a narrow archetype of the 'ideal' coder. We absolutely must address it, not just because it’s fair, but because it’s a systemic waste of talent. When people are distracted by fear of being judged based on identity rather than merit, innovation stagnates. One effective way to mitigate it is through inclusive hiring practices—structured interviews with clear, objective criteria, and diverse hiring panels. Another is fostering psychological safety: creating spaces where mistakes are seen as learning opportunities, not indictments of ability. I’ve personally found that when teams openly acknowledge biases and celebrate different ways of thinking—whether it’s through varied problem-solving styles or cultural perspectives—the whole group performs better. As a self-employed developer, I also prioritize building client relationships based on trust and competence, not assumptions. Ultimately, addressing stereotype threat isn’t about lowering standards—it’s about ensuring that everyone, regardless of background, has the chance to thrive on equal footing. When we do, the field as a whole becomes more innovative, resilient, and human.",
+    "reasoning_summary": "Stereotype threat is rooted in social psychology, particularly in the work of Claude Steele. It manifests when individuals feel at risk of confirming a negative stereotype about their group, leading to performance anxiety. In STEM, this disproportionately affects women, racial minorities, and immigrants—groups often stereotyped as less competent in technical fields. As a software developer with a master’s degree and experience in both corporate and freelance settings, I’ve observed this in real-world contexts: interviews where candidates from underrepresented groups appear hesitant despite high qualifications, or team dynamics where contributions from certain individuals are overlooked. The consequences are measurable: reduced participation, higher attrition, and lost innovation. Addressing it requires systemic change—structured evaluation processes, inclusive team cultures, and leadership that actively challenges bias. My own experience as an immigrant and a self-employed professional has made me sensitive to how assumptions about competence can affect professional outcomes. The goal isn't to change individuals, but to redesign environments so that no one has to perform under the weight of stereotype. Evidence from research shows that simple interventions—like affirming values or highlighting diverse role models—can reduce the impact of stereotype threat. By embedding these practices into hiring, education, and workplace culture, we create ecosystems where talent is judged on merit, not identity.",
+    "tone": "Reflective, practical, grounded in lived experience, with a focus on systemic fairness and technical integrity",
+    "citations": [
+      "Steele, C. M. (1997). A threat in the air: How stereotypes shape intellectual identity and performance.",
+      "Cimpian, A., et al. (2016). The impact of stereotype threat on women in STEM"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

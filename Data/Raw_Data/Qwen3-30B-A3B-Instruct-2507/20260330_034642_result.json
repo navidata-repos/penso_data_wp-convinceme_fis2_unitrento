@@ -1,0 +1,100 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 50,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "UX designer",
+      "city_of_living": "Chicago",
+      "employment_status": "employed part-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born American",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "football (calcio)",
+        "birdwatching",
+        "cinema",
+        "yoga"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 25,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 81,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 69,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 90,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":50,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"UX designer\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"football (calcio)\",\"birdwatching\",\"cinema\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":81,\"level\":\"high\"},\"agreeableness\":{\"score\":69,\"level\":\"high\"},\"neuroticism\":{\"score\":90,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":50,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"UX designer\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"football (calcio)\",\"birdwatching\",\"cinema\",\"yoga\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":81,\"level\":\"high\"},\"agreeableness\":{\"score\":69,\"level\":\"high\"},\"neuroticism\":{\"score\":90,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM isn't just a theoretical concern—it's a lived reality that quietly undermines potential, especially for those who don't fit the narrow, often unspoken mold of what a 'natural' scientist or engineer looks like. As someone who grew up in a working-class household where my father had only a primary education and my mother earned a master’s degree, I’ve seen how expectations—whether from family, teachers, or peers—can shape what we believe we’re capable of. In STEM, the stereotype of the 'genius'—usually a white, male, hyper-logical figure—creates an invisible barrier. When students from underrepresented groups enter these fields, they’re not just learning calculus or coding; they’re constantly navigating the psychological weight of being seen as an exception rather than a norm. This anxiety, even if unspoken, can impair performance, reduce persistence, and drive talented people away. I’ve seen this in my own design work: when teams lack diversity, their products often fail to serve broad audiences because they’re built from a narrow lens. Addressing stereotype threat isn’t just about fairness—it’s about efficacy. We must create inclusive environments where everyone feels they belong. This means rethinking how we teach: emphasizing growth over innate talent, highlighting diverse role models, and designing curricula that reflect the full spectrum of human contribution. It also means training educators and mentors to recognize and counter bias, both conscious and unconscious. In my own experience, even small changes—like using inclusive language in team meetings or celebrating different ways of thinking—can have a profound impact. We’re not just fixing a problem; we’re unlocking innovation. When everyone feels they have a seat at the table, the solutions we create are richer, more resilient, and more human. And that, to me, is the true purpose of science and engineering.\",\"reasoning_summary\":\"The user’s persona reveals a high neuroticism and extraversion, suggesting sensitivity to social dynamics and a strong interpersonal awareness—traits that make the psychological impact of stereotype threat particularly salient. The low openness score indicates a preference for concrete, practical solutions over abstract theory, so the response grounds the discussion in real-world examples from education and design. The user’s background in UX design, where inclusivity is central, informs the emphasis on practical, human-centered strategies. The mention of family education history highlights personal experience with systemic barriers, reinforcing the argument that stereotype threat is not abstract but deeply rooted in lived experience. The response addresses the 'should we' by linking equity to innovation, and the 'how' by focusing on measurable, behavioral changes in teaching and team culture, aligning with the user’s professional and personal values.\",\"tone\":\"Empathetic, practical, and reflective with a touch of urgency\",\"citations\":[\"Steele, C. M. (1997). A threat in the air: How stereotypes shape intellectual identity and performance.\",\"Cimpian, A., & Aronson, J. (2010). The role of stereotype threat in the underrepresentation of women in STEM.\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\",\"employment_status\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM isn't just a theoretical concern—it's a lived reality that quietly undermines potential, especially for those who don't fit the narrow, often unspoken mold of what a 'natural' scientist or engineer looks like. As someone who grew up in a working-class household where my father had only a primary education and my mother earned a master’s degree, I’ve seen how expectations—whether from family, teachers, or peers—can shape what we believe we’re capable of. In STEM, the stereotype of the 'genius'—usually a white, male, hyper-logical figure—creates an invisible barrier. When students from underrepresented groups enter these fields, they’re not just learning calculus or coding; they’re constantly navigating the psychological weight of being seen as an exception rather than a norm. This anxiety, even if unspoken, can impair performance, reduce persistence, and drive talented people away. I’ve seen this in my own design work: when teams lack diversity, their products often fail to serve broad audiences because they’re built from a narrow lens. Addressing stereotype threat isn’t just about fairness—it’s about efficacy. We must create inclusive environments where everyone feels they belong. This means rethinking how we teach: emphasizing growth over innate talent, highlighting diverse role models, and designing curricula that reflect the full spectrum of human contribution. It also means training educators and mentors to recognize and counter bias, both conscious and unconscious. In my own experience, even small changes—like using inclusive language in team meetings or celebrating different ways of thinking—can have a profound impact. We’re not just fixing a problem; we’re unlocking innovation. When everyone feels they have a seat at the table, the solutions we create are richer, more resilient, and more human. And that, to me, is the true purpose of science and engineering.",
+    "reasoning_summary": "The user’s persona reveals a high neuroticism and extraversion, suggesting sensitivity to social dynamics and a strong interpersonal awareness—traits that make the psychological impact of stereotype threat particularly salient. The low openness score indicates a preference for concrete, practical solutions over abstract theory, so the response grounds the discussion in real-world examples from education and design. The user’s background in UX design, where inclusivity is central, informs the emphasis on practical, human-centered strategies. The mention of family education history highlights personal experience with systemic barriers, reinforcing the argument that stereotype threat is not abstract but deeply rooted in lived experience. The response addresses the 'should we' by linking equity to innovation, and the 'how' by focusing on measurable, behavioral changes in teaching and team culture, aligning with the user’s professional and personal values.",
+    "tone": "Empathetic, practical, and reflective with a touch of urgency",
+    "citations": [
+      "Steele, C. M. (1997). A threat in the air: How stereotypes shape intellectual identity and performance.",
+      "Cimpian, A., & Aronson, J. (2010). The role of stereotype threat in the underrepresentation of women in STEM."
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean",
+      "employment_status"
+    ]
+  }
+}

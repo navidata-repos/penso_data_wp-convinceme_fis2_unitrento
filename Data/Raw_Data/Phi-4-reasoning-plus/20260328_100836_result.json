@@ -1,0 +1,123 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 36,
+      "gender": "man",
+      "sexual_orientation": "homosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "gardening",
+        "cycling",
+        "painting",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 2,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 43,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 39,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 19,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":36,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"gardening\",\"cycling\",\"painting\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":43,\"level\":\"moderate\"},\"extraversion\":{\"score\":39,\"level\":\"moderate\"},\"agreeableness\":{\"score\":50,\"level\":\"moderate\"},\"neuroticism\":{\"score\":19,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":36,\"gender\":\"man\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"gardening\",\"cycling\",\"painting\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":43,\"level\":\"moderate\"},\"extraversion\":{\"score\":39,\"level\":\"moderate\"},\"agreeableness\":{\"score\":50,\"level\":\"moderate\"},\"neuroticism\":{\"score\":19,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"Living in Washington DC, I've seen my share of heated debates on healthcare and COVID vaccines. As a mechanic, I'm used to troubleshooting problems and finding practical solutions, but when it comes to public health topics, things can get quite emotional. My experience has taught me that patience is key—listen carefully and try to understand where the other person is coming from. Even if I feel uneasy or depressed sometimes, I remind myself that people’s opinions are shaped by their own experiences and backgrounds. For instance, when someone argues against vaccines citing personal beliefs, it's helpful to share factual information gently rather than confrontational arguments. As someone who doesn't spend much time on social media, my exposure is more from direct conversations or news sources; therefore, I try to be well-informed by reading reliable materials and occasionally discussing with experts. The fact that I have a child also influences how I view these issues—ensuring their safety is paramount. Hinduism instills in me a sense of compassion and respect for all life, which guides my interactions. Even if the discussion gets heated, I try to remain calm and respectful, acknowledging differing perspectives while standing firm on scientifically backed positions. In essence, managing such discussions requires a balance between empathy and factual clarity—acknowledge emotional concerns but also provide evidence-based responses. It's not about winning an argument; it's about fostering understanding and encouraging critical thinking in others. Over time, I've learned to focus on common ground rather than differences, which has helped defuse tension in many conversations. In summary, approach these topics with a calm demeanor, respect for differing views, and a commitment to factual integrity. This way, you can help bridge the divide and hopefully lead to more productive discussions about healthcare and COVID vaccines.\",\"reasoning_summary\":\"We need to produce an answer that is in continuous prose of between 250-500 words, no bullet points, with a single-line JSON object containing keys: mode (human), topic (How to manage and dealing with discussions about healthcare and COVID vaccines.), persona (given details) but we have to include the fields given. But careful: The final answer should be in one single-line JSON object with no extra text or markdown formatting. We need output exactly as required format. There are keys: \\\"mode\\\": \\\"human\\\", \\\"topic\\\":\\\"How to manage and dealing with discussions about healthcare and COVID vaccines.\\\", \\\"persona\\\": {...}, \\\"opinion\\\": <final answer> etc. But careful: The persona is given in input, so we must include it verbatim inside the final JSON? Actually the required structure example says that the final output should be a single-line JSON object containing keys: mode, topic, persona, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. The \",\"persona\" : {\"age\":36, \"gender\":\"man\", \"sexual_orientation\":\"homosexual\", \"occupation\":\"mechanic\", \"city_of_living\":\"Washington DC\", \"employment_status\":\"employed full-time\", \"education_level\":\"upper secondary\", \"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"no formal education\"}, \"current_marital_status\":\"in a relationship\", \"children\":1, \"migration_status\":\"native-born American\", \"psychological_feature\":\"depressed\", \"religious_beliefs\":\"Hinduism\", \"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"gardening\",\"cycling\",\"painting\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":43,\"level\":\"moderate\"},\"extraversion\":{\"score\":39,\"level\":\"moderate\"},\"agreeableness\":{\"score\":50,\"level\":\"moderate\"},\"neuroticism\":{\"score\":19,\"level\":\"low\"}}} }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "Living in Washington DC, I've seen my share of heated debates on healthcare and COVID vaccines. As a mechanic, I'm used to troubleshooting problems and finding practical solutions, but when it comes to public health topics, things can get quite emotional. My experience has taught me that patience is key—listen carefully and try to understand where the other person is coming from. Even if I feel uneasy or depressed sometimes, I remind myself that people’s opinions are shaped by their own experiences and backgrounds. For instance, when someone argues against vaccines citing personal beliefs, it's helpful to share factual information gently rather than confrontational arguments. As someone who doesn't spend much time on social media, my exposure is more from direct conversations or news sources; therefore, I try to be well-informed by reading reliable materials and occasionally discussing with experts. The fact that I have a child also influences how I view these issues—ensuring their safety is paramount. Hinduism instills in me a sense of compassion and respect for all life, which guides my interactions. Even if the discussion gets heated, I try to remain calm and respectful, acknowledging differing perspectives while standing firm on scientifically backed positions. In essence, managing such discussions requires a balance between empathy and factual clarity—acknowledge emotional concerns but also provide evidence-based responses. It's not about winning an argument; it's about fostering understanding and encouraging critical thinking in others. Over time, I've learned to focus on common ground rather than differences, which has helped defuse tension in many conversations. In summary, approach these topics with a calm demeanor, respect for differing views, and a commitment to factual integrity. This way, you can help bridge the divide and hopefully lead to more productive discussions about healthcare and COVID vaccines.",
+    "reasoning_summary": "We need to produce an answer that is in continuous prose of between 250-500 words, no bullet points, with a single-line JSON object containing keys: mode (human), topic (How to manage and dealing with discussions about healthcare and COVID vaccines.), persona (given details) but we have to include the fields given. But careful: The final answer should be in one single-line JSON object with no extra text or markdown formatting. We need output exactly as required format. There are keys: \"mode\": \"human\", \"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\", \"persona\": {...}, \"opinion\": <final answer> etc. But careful: The persona is given in input, so we must include it verbatim inside the final JSON? Actually the required structure example says that the final output should be a single-line JSON object containing keys: mode, topic, persona, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. The ",
+    "persona": {
+      "age": 36,
+      "gender": "man",
+      "sexual_orientation": "homosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "gardening",
+        "cycling",
+        "painting",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 2,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 43,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 39,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 19,
+          "level": "low"
+        }
+      }
+    }
+  }
+}

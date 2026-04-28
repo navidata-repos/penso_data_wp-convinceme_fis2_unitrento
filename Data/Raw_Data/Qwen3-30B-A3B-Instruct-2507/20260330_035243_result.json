@@ -1,0 +1,102 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 66,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "sales associate",
+      "city_of_living": "Los Angeles",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "hiking",
+        "running",
+        "rock climbing",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 18,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 48,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 80,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 91,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 6,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":66,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"hiking\",\"running\",\"rock climbing\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":48,\"level\":\"moderate\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":6,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":66,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"hiking\",\"running\",\"rock climbing\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":48,\"level\":\"moderate\"},\"extraversion\":{\"score\":80,\"level\":\"high\"},\"agreeableness\":{\"score\":91,\"level\":\"high\"},\"neuroticism\":{\"score\":6,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM refers to the anxiety or concern that individuals from marginalized groups may feel when they fear confirming a negative stereotype about their group—like the idea that women or people of color aren't as capable in science or math. I’ve seen this play out in subtle ways, even in everyday conversations. I remember once, at a community event, a young Black woman was asked, 'You’re in engineering? That’s surprising—most people in that field aren’t like you.' Her smile faded. She didn’t say much after that. That moment stuck with me. It wasn’t about her skill—it was about the weight of expectation. We absolutely must address it. If we don’t, we lose talent, innovation, and the very idea of fairness. When someone feels they’re being judged not for their work but for their identity, their performance suffers, even if they’re brilliant. I believe change starts with awareness. Teachers, mentors, and leaders need to actively challenge assumptions. A simple 'I’m glad you’re here' or 'Your perspective matters' can go a long way. I’ve volunteered with youth programs in Los Angeles, and I’ve seen how just one supportive adult can make a kid believe they belong in STEM. We also need diverse role models—people who look like the students in the classroom. Representation matters. Schools and companies should audit their environments to ensure inclusivity isn’t just a slogan. It should be woven into policies, hiring, and classroom culture. I’m not an expert, but I’ve lived through enough moments of doubt and exclusion—both as a man who didn’t go to college and as someone who’s felt invisible at times—to know that when people feel seen and respected, they thrive. It’s not about lowering standards. It’s about removing the invisible barriers that keep people from reaching their full potential. If we want real progress in science and technology, we need everyone at the table. Not just a few, but all of us.\",\"reasoning_summary\":\"I began by defining stereotype threat based on common understanding and personal observations. I reflected on my own life—being a self-employed sales associate with limited formal education but strong values of fairness and community. My high agreeableness and extraversion made me sensitive to social dynamics, especially in group settings. My religious beliefs (Islam) emphasize justice and dignity for all, reinforcing the moral imperative to address inequity. My hobbies—hiking, running, volunteering—reflect a deep connection to community and personal growth. I recalled real-life moments, like the Black woman at the event, to ground the abstract concept in lived experience. I connected these observations to the broader impact on STEM diversity and innovation. I argued that addressing stereotype threat isn’t about lowering standards but about creating inclusive environments. I emphasized practical steps: mentorship, representation, and policy audits. My conclusion stems from a blend of personal empathy, observed social patterns, and ethical conviction rooted in my beliefs and life experiences.\",\"tone\":\"compassionate, reflective, grounded in lived experience, with quiet conviction\",\"citations\":[\"American Psychological Association\",\"National Science Foundation\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean.openness\",\"ocean.conscientiousness\",\"ocean.extraversion\",\"ocean.agreeableness\",\"ocean.neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM refers to the anxiety or concern that individuals from marginalized groups may feel when they fear confirming a negative stereotype about their group—like the idea that women or people of color aren't as capable in science or math. I’ve seen this play out in subtle ways, even in everyday conversations. I remember once, at a community event, a young Black woman was asked, 'You’re in engineering? That’s surprising—most people in that field aren’t like you.' Her smile faded. She didn’t say much after that. That moment stuck with me. It wasn’t about her skill—it was about the weight of expectation. We absolutely must address it. If we don’t, we lose talent, innovation, and the very idea of fairness. When someone feels they’re being judged not for their work but for their identity, their performance suffers, even if they’re brilliant. I believe change starts with awareness. Teachers, mentors, and leaders need to actively challenge assumptions. A simple 'I’m glad you’re here' or 'Your perspective matters' can go a long way. I’ve volunteered with youth programs in Los Angeles, and I’ve seen how just one supportive adult can make a kid believe they belong in STEM. We also need diverse role models—people who look like the students in the classroom. Representation matters. Schools and companies should audit their environments to ensure inclusivity isn’t just a slogan. It should be woven into policies, hiring, and classroom culture. I’m not an expert, but I’ve lived through enough moments of doubt and exclusion—both as a man who didn’t go to college and as someone who’s felt invisible at times—to know that when people feel seen and respected, they thrive. It’s not about lowering standards. It’s about removing the invisible barriers that keep people from reaching their full potential. If we want real progress in science and technology, we need everyone at the table. Not just a few, but all of us.",
+    "reasoning_summary": "I began by defining stereotype threat based on common understanding and personal observations. I reflected on my own life—being a self-employed sales associate with limited formal education but strong values of fairness and community. My high agreeableness and extraversion made me sensitive to social dynamics, especially in group settings. My religious beliefs (Islam) emphasize justice and dignity for all, reinforcing the moral imperative to address inequity. My hobbies—hiking, running, volunteering—reflect a deep connection to community and personal growth. I recalled real-life moments, like the Black woman at the event, to ground the abstract concept in lived experience. I connected these observations to the broader impact on STEM diversity and innovation. I argued that addressing stereotype threat isn’t about lowering standards but about creating inclusive environments. I emphasized practical steps: mentorship, representation, and policy audits. My conclusion stems from a blend of personal empathy, observed social patterns, and ethical conviction rooted in my beliefs and life experiences.",
+    "tone": "compassionate, reflective, grounded in lived experience, with quiet conviction",
+    "citations": [
+      "American Psychological Association",
+      "National Science Foundation"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism"
+    ]
+  }
+}

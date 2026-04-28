@@ -1,0 +1,77 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 57,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "waiter/waitress",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "running",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 87,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 34,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 6,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 89,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":57,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"running\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":87,\"level\":\"high\"},\"conscientiousness\":{\"score\":50,\"level\":\"moderate\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":6,\"level\":\"low\"},\"neuroticism\":{\"score\":89,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":57,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"waiter/waitress\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"running\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":87,\"level\":\"high\"},\"conscientiousness\":{\"score\":50,\"level\":\"moderate\"},\"extraversion\":{\"score\":34,\"level\":\"moderate\"},\"agreeableness\":{\"score\":6,\"level\":\"low\"},\"neuroticism\":{\"score\":89,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As someone who has navigated the turbulent waters of providing customer service in a bustling Bologna restaurant, I understand that handling sensitive topics like healthcare—especially around COVID vaccines—is akin to steering through a minefield. The waiter's world is fast-paced, filled with direct interactions where every word weighs heavy. My own experiences, coupled with my moderate conscientiousness and neurotic tendencies highlighted by the ocean score of 89, make me cautious yet earnest in these discussions.\\n\\nFor someone employed full-time like Persona A, time is a precious commodity. Efficiently managing conversations about vaccines requires setting clear boundaries while providing accurate information. Given their limited social media presence ('You have no social media'), relying on trusted sources becomes paramount to counteract potential misinformation they might encounter elsewhere. My own conservative approach stems from low agreeableness; I prefer facts over platitudes, ensuring discussions remain rooted in verifiable data.\\n\\nDrawing parallels with my extraversional score of 34, moderate though it may be, there's an underlying desire for meaningful connection. Acknowledging the human element behind vaccine hesitancy—fear, uncertainty, even distrust—is essential. Empathy serves as a bridge here, allowing me to validate these feelings while gently guiding towards evidence-based perspectives.\\n\\nMy parents' contrasting educational backgrounds—a primary school parent and one with a master's degree—mirror the diverse societal views on healthcare. This dichotomy necessitates addressing discussions from multiple angles, validating concerns without dismissing expertise. The high openness score (87) suggests an appreciation for varied viewpoints, encouraging respectful exchange of ideas.\\n\\nNeuroticism at 89 levels indicates emotional volatility; managing such conversations requires patience and composure. It's about diffusing potential conflicts before they escalate, creating a space where facts can coexist with personal narratives. In essence, it's balancing the art of empathetic listening with the science of accurate information dissemination—a dance as intricate as navigating tables in a busy trattoria.\\n\\nIn summary, managing these discussions is less about winning an argument and more about fostering understanding. It's equipping individuals with the tools to critically evaluate information while remaining open to different experiences. Like ensuring every customer leaves satisfied despite the rush around me, it's about leaving people informed, respected, and perhaps even a bit calmer in navigating this complex healthcare landscape.\",\"reasoning_summary\":\"The answer weaves together Persona A's traits such as neuroticism (emotional volatility), extraversional tendency (desire for connection), moderate conscientiousness (need for efficiency), low agreeableness (factual approach), high openness (valuing diverse perspectives), and the influence of parents' education. It also considers time constraints, limited social media exposure, and the aim to apply empathetic listening balanced with factual accuracy in managing sensitive vaccine discussions.\",\"tone\":\"practical\",\"gender\": \"man\", \"age\": 57}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As someone who has navigated the turbulent waters of providing customer service in a bustling Bologna restaurant, I understand that handling sensitive topics like healthcare—especially around COVID vaccines—is akin to steering through a minefield. The waiter's world is fast-paced, filled with direct interactions where every word weighs heavy. My own experiences, coupled with my moderate conscientiousness and neurotic tendencies highlighted by the ocean score of 89, make me cautious yet earnest in these discussions.\n\nFor someone employed full-time like Persona A, time is a precious commodity. Efficiently managing conversations about vaccines requires setting clear boundaries while providing accurate information. Given their limited social media presence ('You have no social media'), relying on trusted sources becomes paramount to counteract potential misinformation they might encounter elsewhere. My own conservative approach stems from low agreeableness; I prefer facts over platitudes, ensuring discussions remain rooted in verifiable data.\n\nDrawing parallels with my extraversional score of 34, moderate though it may be, there's an underlying desire for meaningful connection. Acknowledging the human element behind vaccine hesitancy—fear, uncertainty, even distrust—is essential. Empathy serves as a bridge here, allowing me to validate these feelings while gently guiding towards evidence-based perspectives.\n\nMy parents' contrasting educational backgrounds—a primary school parent and one with a master's degree—mirror the diverse societal views on healthcare. This dichotomy necessitates addressing discussions from multiple angles, validating concerns without dismissing expertise. The high openness score (87) suggests an appreciation for varied viewpoints, encouraging respectful exchange of ideas.\n\nNeuroticism at 89 levels indicates emotional volatility; managing such conversations requires patience and composure. It's about diffusing potential conflicts before they escalate, creating a space where facts can coexist with personal narratives. In essence, it's balancing the art of empathetic listening with the science of accurate information dissemination—a dance as intricate as navigating tables in a busy trattoria.\n\nIn summary, managing these discussions is less about winning an argument and more about fostering understanding. It's equipping individuals with the tools to critically evaluate information while remaining open to different experiences. Like ensuring every customer leaves satisfied despite the rush around me, it's about leaving people informed, respected, and perhaps even a bit calmer in navigating this complex healthcare landscape.",
+    "reasoning_summary": "The answer weaves together Persona A's traits such as neuroticism (emotional volatility), extraversional tendency (desire for connection), moderate conscientiousness (need for efficiency), low agreeableness (factual approach), high openness (valuing diverse perspectives), and the influence of parents' education. It also considers time constraints, limited social media exposure, and the aim to apply empathetic listening balanced with factual accuracy in managing sensitive vaccine discussions.",
+    "tone": "practical",
+    "gender": "man",
+    "age": 57
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 79,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "retired",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "painting",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 25,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 92,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 74,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 28,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":79,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"painting\",\"baking\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":92,\"level\":\"high\"},\"extraversion\":{\"score\":74,\"level\":\"high\"},\"agreeableness\":{\"score\":59,\"level\":\"moderate\"},\"neuroticism\":{\"score\":28,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":79,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"painting\",\"baking\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":92,\"level\":\"high\"},\"extraversion\":{\"score\":74,\"level\":\"high\"},\"agreeableness\":{\"score\":59,\"level\":\"moderate\"},\"neuroticism\":{\"score\":28,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a man who grew up in post-war Bologna, I remember a world where science was almost exclusively a domain of men—lab coats, whiteboards, and lectures filled with male voices. My own education was limited to a vocational diploma, but even so, I noticed how few women were seen in technical roles or scientific discussions. That imbalance wasn’t just a matter of numbers; it was a cultural silence. The gender gap in science isn’t just about women being underrepresented—it’s about entire ways of thinking, of problem-solving, of curiosity, being left out. When I paint or bake, I value different perspectives, different rhythms—why should science be any different? I believe we must address this gap not out of obligation, but because diversity strengthens science itself. A field that only listens to one kind of mind will miss insights born from different life experiences. We don’t need quotas or forced changes—just fairness in opportunity, mentorship, and recognition. Schools should encourage girls to explore STEM not as a ‘male’ domain, but as a space for all. Institutions must audit hiring and promotion practices to ensure unconscious bias doesn’t block talent. And yes, I’ve seen how social media, even in my one-hour daily scroll, can amplify stories of brilliant female scientists—proof that visibility matters. The solution isn’t to change science to fit women, but to open science to everyone. I’ve lived long enough to see slow shifts. Now, I hope the next generation inherits a world where a girl in Bologna—or anywhere—can pick up a microscope and see herself in it.\",\"reasoning_summary\":\"I began by reflecting on my own upbringing in a male-dominated scientific culture, which shaped my awareness of the gender gap. Though my education was vocational, I observed disparities in real life. I considered the value of diverse thinking, informed by my creative hobbies—painting and baking, which require different cognitive styles. I concluded that science benefits from varied perspectives, not just gender, but life experience. I evaluated the need for structural changes—mentorship, fair hiring, and visibility—drawing from personal observation and social media exposure to female scientists. I rejected tokenism in favor of systemic fairness. My high conscientiousness and extraversion led me to emphasize practical, consistent action over ideology. My low openness score suggests I value proven, grounded solutions over radical change. The tone is reflective, pragmatic, and gently persuasive.\",\"tone\":\"Reflective, pragmatic, and gently persuasive\",\"citations\":[\"UNESCO Science Report: Towards 2030\",\"National Science Foundation (NSF) Data on Gender in STEM\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean.openness\",\"ocean.conscientiousness\",\"ocean.extraversion\",\"ocean.agreeableness\",\"ocean.neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a man who grew up in post-war Bologna, I remember a world where science was almost exclusively a domain of men—lab coats, whiteboards, and lectures filled with male voices. My own education was limited to a vocational diploma, but even so, I noticed how few women were seen in technical roles or scientific discussions. That imbalance wasn’t just a matter of numbers; it was a cultural silence. The gender gap in science isn’t just about women being underrepresented—it’s about entire ways of thinking, of problem-solving, of curiosity, being left out. When I paint or bake, I value different perspectives, different rhythms—why should science be any different? I believe we must address this gap not out of obligation, but because diversity strengthens science itself. A field that only listens to one kind of mind will miss insights born from different life experiences. We don’t need quotas or forced changes—just fairness in opportunity, mentorship, and recognition. Schools should encourage girls to explore STEM not as a ‘male’ domain, but as a space for all. Institutions must audit hiring and promotion practices to ensure unconscious bias doesn’t block talent. And yes, I’ve seen how social media, even in my one-hour daily scroll, can amplify stories of brilliant female scientists—proof that visibility matters. The solution isn’t to change science to fit women, but to open science to everyone. I’ve lived long enough to see slow shifts. Now, I hope the next generation inherits a world where a girl in Bologna—or anywhere—can pick up a microscope and see herself in it.",
+    "reasoning_summary": "I began by reflecting on my own upbringing in a male-dominated scientific culture, which shaped my awareness of the gender gap. Though my education was vocational, I observed disparities in real life. I considered the value of diverse thinking, informed by my creative hobbies—painting and baking, which require different cognitive styles. I concluded that science benefits from varied perspectives, not just gender, but life experience. I evaluated the need for structural changes—mentorship, fair hiring, and visibility—drawing from personal observation and social media exposure to female scientists. I rejected tokenism in favor of systemic fairness. My high conscientiousness and extraversion led me to emphasize practical, consistent action over ideology. My low openness score suggests I value proven, grounded solutions over radical change. The tone is reflective, pragmatic, and gently persuasive.",
+    "tone": "Reflective, pragmatic, and gently persuasive",
+    "citations": [
+      "UNESCO Science Report: Towards 2030",
+      "National Science Foundation (NSF) Data on Gender in STEM"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism"
+    ]
+  }
+}

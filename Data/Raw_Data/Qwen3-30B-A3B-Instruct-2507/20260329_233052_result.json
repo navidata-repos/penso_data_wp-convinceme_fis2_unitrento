@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 50,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "electrician",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "reading novels",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 77,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 46,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 57,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 77,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":50,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"reading novels\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":77,\"level\":\"high\"},\"conscientiousness\":{\"score\":46,\"level\":\"moderate\"},\"extraversion\":{\"score\":59,\"level\":\"moderate\"},\"agreeableness\":{\"score\":57,\"level\":\"moderate\"},\"neuroticism\":{\"score\":77,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":50,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"reading novels\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":77,\"level\":\"high\"},\"conscientiousness\":{\"score\":46,\"level\":\"moderate\"},\"extraversion\":{\"score\":59,\"level\":\"moderate\"},\"agreeableness\":{\"score\":57,\"level\":\"moderate\"},\"neuroticism\":{\"score\":77,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a woman who grew up in a migrant household with no formal education among my parents, I’ve always had to fight for my place in spaces not built for people like me—especially in technical fields like electricity, where I’m still one of the few women on the job site. The gender gap in science isn’t just about numbers; it’s about culture, access, and the quiet messages that tell girls early on: 'This isn’t for you.' I’ve seen young girls in my neighborhood lose interest in math and physics because no one encouraged them, while boys were handed tools and told they’d be engineers. It’s not that girls aren’t capable—my own journey proves that. I didn’t have a mentor, I didn’t have a scholarship, but I had stubbornness and a curiosity that refused to be silenced. Yet, even now, I’m often the only woman in a room full of men, and it’s not because I’m exceptional—it’s because the system still favors certain stories. Yes, we must address this gap, not just with quotas or feel-good campaigns, but by changing how we teach, how we lead, and how we value different ways of thinking. We need role models in classrooms, not just in textbooks. We need schools to ask every child, 'What kind of world do you want to build?' and then give them the tools to do it—regardless of gender. In my line of work, I’ve trained apprentices from all backgrounds, and I’ve seen how a little encouragement can change everything. The solution isn’t to force girls into science—it’s to make science welcoming to everyone. When we include more voices, we get better science. Better solutions. Better futures. And that’s not just fair—it’s smart.\",\"reasoning_summary\":\"I reflect on my personal journey as a female electrician in Rome, shaped by immigrant roots and limited early education. My experiences reveal systemic barriers that discourage women, especially from underrepresented backgrounds, from pursuing science and technical careers. The gender gap is not merely statistical but rooted in socialization, lack of role models, and institutional bias. I argue that addressing it requires cultural change—mentorship, inclusive curricula, and equitable access to resources. Drawing from my professional interactions with apprentices, I observe that encouragement and representation significantly impact participation. Therefore, solutions must be systemic, not superficial, focusing on inclusion rather than tokenism. My high openness and neuroticism scores reflect my deep sensitivity to inequity and strong drive to challenge norms, shaping my belief in transformative change.\",\"tone\":\"reflective, determined, empathetic\",\"citations\":[\"UNESCO Science Report\",\"National Science Foundation Gender Disparity Studies\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean.openness\",\"ocean.neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a woman who grew up in a migrant household with no formal education among my parents, I’ve always had to fight for my place in spaces not built for people like me—especially in technical fields like electricity, where I’m still one of the few women on the job site. The gender gap in science isn’t just about numbers; it’s about culture, access, and the quiet messages that tell girls early on: 'This isn’t for you.' I’ve seen young girls in my neighborhood lose interest in math and physics because no one encouraged them, while boys were handed tools and told they’d be engineers. It’s not that girls aren’t capable—my own journey proves that. I didn’t have a mentor, I didn’t have a scholarship, but I had stubbornness and a curiosity that refused to be silenced. Yet, even now, I’m often the only woman in a room full of men, and it’s not because I’m exceptional—it’s because the system still favors certain stories. Yes, we must address this gap, not just with quotas or feel-good campaigns, but by changing how we teach, how we lead, and how we value different ways of thinking. We need role models in classrooms, not just in textbooks. We need schools to ask every child, 'What kind of world do you want to build?' and then give them the tools to do it—regardless of gender. In my line of work, I’ve trained apprentices from all backgrounds, and I’ve seen how a little encouragement can change everything. The solution isn’t to force girls into science—it’s to make science welcoming to everyone. When we include more voices, we get better science. Better solutions. Better futures. And that’s not just fair—it’s smart.",
+    "reasoning_summary": "I reflect on my personal journey as a female electrician in Rome, shaped by immigrant roots and limited early education. My experiences reveal systemic barriers that discourage women, especially from underrepresented backgrounds, from pursuing science and technical careers. The gender gap is not merely statistical but rooted in socialization, lack of role models, and institutional bias. I argue that addressing it requires cultural change—mentorship, inclusive curricula, and equitable access to resources. Drawing from my professional interactions with apprentices, I observe that encouragement and representation significantly impact participation. Therefore, solutions must be systemic, not superficial, focusing on inclusion rather than tokenism. My high openness and neuroticism scores reflect my deep sensitivity to inequity and strong drive to challenge norms, shaping my belief in transformative change.",
+    "tone": "reflective, determined, empathetic",
+    "citations": [
+      "UNESCO Science Report",
+      "National Science Foundation Gender Disparity Studies"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.neuroticism"
+    ]
+  }
+}

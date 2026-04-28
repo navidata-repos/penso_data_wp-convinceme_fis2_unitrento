@@ -1,0 +1,136 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "Qwen/Qwen3-4B-Thinking-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 70,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Washington DC",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "board games",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 7,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 10,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 79,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 67,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 77,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":70,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":79,\"level\":\"high\"},\"agreeableness\":{\"score\":67,\"level\":\"high\"},\"neuroticism\":{\"score\":77,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":70,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"divorced\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":10,\"level\":\"low\"},\"extraversion\":{\"score\":79,\"level\":\"high\"},\"agreeableness\":{\"score\":67,\"level\":\"high\"},\"neuroticism\":{\"score\":77,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\n  \"mode\": \"human\",\n  \"topic\": \"What is the gender gap in science? Should we address it? And how?\",\n  \"persona\": {\n    \"age\": 70,\n    \"gender\": \"woman\",\n    \"sexual_orientation\": \"heterosexual\",\n    \"occupation\": \"not applicable\",\n    \"city_of_living\": \"Washington DC\",\n    \"employment_status\": \"retired\",\n    \"education_level\": \"upper secondary\",\n    \"parents_education\": {\n      \"parent_1\": \"lower secondary\",\n      \"parent_2\": \"primary school\"\n    },\n    \"current_marital_status\": \"divorced\",\n    \"children\": 1,\n    \"migration_status\": \"immigrant\",\n    \"psychological_feature\": \"anxious\",\n    \"religious_beliefs\": \"Christianity\",\n    \"time_onsocialmedia\": \"You spend a few times monthly on social media\",\n    \"hobbies\": [\"board games\", \"hiking\"],\n    \"ocean\": {\n      \"openness\": {\"score\": 7, \"level\": \"low\"},\n      \"conscientiousness\": {\"score\": 10, \"level\": \"low\"},\n      \"extraversion\": {\"score\": 79, \"level\": \"high\"},\n      \"agreeableness\": {\"score\": 67, \"level\": \"high\"},\n      \"neuroticism\": {\"score\": 77, \"level\": \"high\"}\n    }\n  },\n  \"opinion\": \"As a retired woman from Washington DC with roots in an immigrant family, I’ve observed the gender gap in science through my own experiences and the stories of my children’s peers. The gap isn’t just about fewer women in labs or engineering firms—it’s a systemic issue rooted in early educational opportunities and societal expectations. When I was young, my parents, both with limited formal education, encouraged my curiosity through books and simple experiments, but they couldn’t afford to send me to advanced science classes. Today, many girls still face similar barriers, like fewer role models in STEM fields or stereotypes that suggest science is for boys. I’ve seen this in my grandchildren’s schools, where girls often feel discouraged from pursuing math and science because they’re told it’s ‘not for them.’ The gap should be addressed, not because it’s a problem to fix, but because it’s a waste of potential. We need to start early—by making science accessible and engaging for all children, regardless of gender. Programs that pair girls with mentors in STEM fields, like the ones my daughter’s school runs, can help. But it’s not just about programs; it’s about changing how we talk about science. I worry about the anxiety that comes with being the only girl in a room full of boys, or the pressure to conform to traditional gender roles. Addressing this gap means creating spaces where everyone feels safe to explore their interests without judgment. It’s important to remember that science belongs to all of us, not just a select few. My own anxiety about being out of touch with modern science makes me even more determined to advocate for change—because when we empower girls and women, we’re not just closing a gap; we’re opening doors for everyone.\",\n  \"reasoning_summary\": \"The persona is a 70-year-old retired Washington DC woman with immigrant roots, upper secondary education, and a history of anxiety. Her background as a former immigrant and mother gives her unique insight into systemic barriers. She has observed gender gaps in science through personal experience and interactions with her children’s peers. The reasoning focuses on early educational barriers, societal stereotypes, and the importance of mentorship and inclusive environments. The tone is reflective, empathetic, and slightly anxious, reflecting her psychological traits. The opinion emphasizes practical, community-based solutions rather than theoretical fixes, aligning with her hobbies like board games (which foster collaboration) and hiking (which involves navigating challenges). The response avoids technical jargon to match her upper secondary education level and avoids overly complex solutions that might not resonate with her lived experience.\",\n  \"tone\": \"Reflective, empathetic, slightly anxious, practical\",\n  \"citations\": [\"National Science Foundation\", \"American Association of University Women\"],\n  \"safety_notes\": \"none\",\n  \"used_persona_fields\": [\"age\", \"gender\", \"city_of_living\", \"education_level\", \"parents_education\", \"psychological_feature\", \"religious_beliefs\", \"hobbies\", \"ocean\"]\n}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 70,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Washington DC",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "divorced",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "board games",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 7,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 10,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 79,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 67,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 77,
+          "level": "high"
+        }
+      }
+    },
+    "opinion": "As a retired woman from Washington DC with roots in an immigrant family, I’ve observed the gender gap in science through my own experiences and the stories of my children’s peers. The gap isn’t just about fewer women in labs or engineering firms—it’s a systemic issue rooted in early educational opportunities and societal expectations. When I was young, my parents, both with limited formal education, encouraged my curiosity through books and simple experiments, but they couldn’t afford to send me to advanced science classes. Today, many girls still face similar barriers, like fewer role models in STEM fields or stereotypes that suggest science is for boys. I’ve seen this in my grandchildren’s schools, where girls often feel discouraged from pursuing math and science because they’re told it’s ‘not for them.’ The gap should be addressed, not because it’s a problem to fix, but because it’s a waste of potential. We need to start early—by making science accessible and engaging for all children, regardless of gender. Programs that pair girls with mentors in STEM fields, like the ones my daughter’s school runs, can help. But it’s not just about programs; it’s about changing how we talk about science. I worry about the anxiety that comes with being the only girl in a room full of boys, or the pressure to conform to traditional gender roles. Addressing this gap means creating spaces where everyone feels safe to explore their interests without judgment. It’s important to remember that science belongs to all of us, not just a select few. My own anxiety about being out of touch with modern science makes me even more determined to advocate for change—because when we empower girls and women, we’re not just closing a gap; we’re opening doors for everyone.",
+    "reasoning_summary": "The persona is a 70-year-old retired Washington DC woman with immigrant roots, upper secondary education, and a history of anxiety. Her background as a former immigrant and mother gives her unique insight into systemic barriers. She has observed gender gaps in science through personal experience and interactions with her children’s peers. The reasoning focuses on early educational barriers, societal stereotypes, and the importance of mentorship and inclusive environments. The tone is reflective, empathetic, and slightly anxious, reflecting her psychological traits. The opinion emphasizes practical, community-based solutions rather than theoretical fixes, aligning with her hobbies like board games (which foster collaboration) and hiking (which involves navigating challenges). The response avoids technical jargon to match her upper secondary education level and avoids overly complex solutions that might not resonate with her lived experience.",
+    "tone": "Reflective, empathetic, slightly anxious, practical",
+    "citations": [
+      "National Science Foundation",
+      "American Association of University Women"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

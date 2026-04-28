@@ -1,0 +1,77 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 39,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "nurse",
+      "city_of_living": "New York",
+      "employment_status": "employed part-time",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "cycling",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 79,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 79,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 68,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 76,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":39,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"New York\",\"employment_status\":\"employed part-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"cycling\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":79,\"level\":\"high\"},\"conscientiousness\":{\"score\":79,\"level\":\"high\"},\"extraversion\":{\"score\":63,\"level\":\"moderate\"},\"agreeableness\":{\"score\":68,\"level\":\"high\"},\"neuroticism\":{\"score\":76,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":39,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"New York\",\"employment_status\":\"employed part-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"cycling\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":79,\"level\":\"high\"},\"conscientiousness\":{\"score\":79,\"level\":\"high\"},\"extraversion\":{\"score\":63,\"level\":\"moderate\"},\"agreeableness\":{\"score\":68,\"level\":\"high\"},\"neuroticism\":{\"score\":76,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a nurse in New York juggling part-time work, balancing life, and raising kids, navigating conversations on COVID vaccines feels layered. My own depressive streak and agnostic views shape how I approach these talks. Understanding where patients are coming from—fear, misinformation spread online, or genuine doubts—is key. Empathy goes hand-in-hand with facts; validating feelings even as gently correcting myths fosters trust. Leveraging open dialogue while anchoring on scientific consensus helps bridge gaps. Encouraging questions and providing credible sources creates a space for informed decisions. It's about threading compassion through expertise to dismantle barriers in healthcare discourse.\",\"reasoning_summary\":\"Considered nurse's perspective, patient's potential fears/misinformation, emphasized empathy and education, integrated persona traits like being busy parent and having high conscientiousness and neuroticism. Developed approach focusing on understanding, validating emotions, and methodically presenting facts from trusted sources.\", \"tone\":\"compassionate\",\"tone_based_on_persona\":true,\"citations':['CDC','WHO','medical journals'], \"\n \t:\"used_persona_fields':['age','occupation','psychological_feature'].\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a nurse in New York juggling part-time work, balancing life, and raising kids, navigating conversations on COVID vaccines feels layered. My own depressive streak and agnostic views shape how I approach these talks. Understanding where patients are coming from—fear, misinformation spread online, or genuine doubts—is key. Empathy goes hand-in-hand with facts; validating feelings even as gently correcting myths fosters trust. Leveraging open dialogue while anchoring on scientific consensus helps bridge gaps. Encouraging questions and providing credible sources creates a space for informed decisions. It's about threading compassion through expertise to dismantle barriers in healthcare discourse.",
+    "reasoning_summary": "Considered nurse's perspective, patient's potential fears/misinformation, emphasized empathy and education, integrated persona traits like being busy parent and having high conscientiousness and neuroticism. Developed approach focusing on understanding, validating emotions, and methodically presenting facts from trusted sources.",
+    "tone": "compassionate",
+    "tone_based_on_persona": true,
+    "citations':['CDC','WHO','medical journals'], ": "used_persona_fields':['age','occupation','psychological_feature']."
+  }
+}

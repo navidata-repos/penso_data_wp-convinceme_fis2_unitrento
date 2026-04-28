@@ -1,0 +1,81 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 80,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "doctor",
+      "city_of_living": "New York",
+      "employment_status": "employed full-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 5,
+      "migration_status": "native American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "painting",
+        "birdwatching",
+        "football (calcio)",
+        "volunteering",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 63,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 32,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 23,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 87,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 30,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":80,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"doctor\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"marital_status\":\"married\",\"children\":5,\"migration_status\":\"native American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"painting\",\"birdwatching\",\"football (calcio)\",\"volunteering\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":63,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":32,\"level\":\"low\"},\"extraversion\":{\"score\":23,\"level\":\"low\"},\"agreeableness\":{\"score\":87,\"level\":\"high\"},\"neuroticism\":{\"score\":30,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":80,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"doctor\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"marital_status\":\"married\",\"children\":5,\"migration_status\":\"native American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"painting\",\"birdwatching\",\"football (calcio)\",\"volunteering\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":63,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":32,\"level\":\"low\"},\"extraversion\":{\"score\":23,\"level\":\"low\"},\"agreeableness\":{\"score\":87,\"level\":\"high\"},\"neuroticism\":{\"score\":30,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"In my many years as a doctor, I've seen how heated debates over healthcare and COVID vaccines can get. Reflecting on both the science behind these measures and the emotional reactions they stir up, it's essential to approach such dialogues with patience, respect, and empathy—qualities that have been part of my practice for decades in New York. Although I am 80 years old now and have witnessed a long evolution of medical practices, the core principle remains: evidence-based medicine should guide our actions. When encountering skepticism or resistance, it's important to listen actively and understand underlying concerns. Often people are driven by fear or misinformation rather than malice. My own experiences in patient care taught me that building trust is key; sometimes sharing personal stories of recovery or recounting moments when vaccines have saved lives can be very convincing. I remember one instance where a particularly resistant patient finally agreed to vaccination after we discussed not only the statistics but also how it could protect their loved ones. That kind of relational approach has always worked best for me, even if my own psychological state sometimes feels burdened by depression; however, I find solace in painting and birdwatching which help clear my mind before such discussions. As an Agnostic with a background in medicine, I believe that science should be the foundation of our conversations, but we must also respect individual autonomy. It's crucial to provide comprehensive data while acknowledging uncertainties—this transparency can build trust even among those who are skeptical. In today’s social media landscape where misinformation spreads quickly, it's more important than ever for healthcare professionals to engage in informed dialogues, offering clarity without condescension. My experiences from decades of practicing medicine underscore that patience and understanding go a long way. Even though I spend about an hour daily on social media, I try to focus on platforms where factual information is shared, sometimes even volunteering my time to support community health education. Ultimately, managing these discussions requires balancing firm scientific facts with compassionate communication—a balance that I have strived for throughout my career in New York and beyond.\",\"reasoning_summary\":\"We need to produce a JSON object with keys mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The persona is provided as details: age 80 male doctor from New York with master's degree etc. We must produce answer that meets criteria. We need continuous prose. Our answer should be at least 250 words but less than 500 words. Tone derived from the persona traits: an 80-year-old doctor with high agreeableness and low neuroticism, moderate openness, and low conscientiousness? Actually check personality: age=80, occupation = doctor, depressed psychological feature, and hobbies include painting, birdwatching etc. Our tone should be reflective and authoritative but also empathetic. We must produce answer in one single-line JSON with no extra text. The instructions require returning JSON only and strictly following output format: \" , \"final end-user facing answer\" :\". Our answer keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. We need to mention fields: age, occupation, city_of_living, psychological_feature, etc. The topic is \" ,\" how to manage discussions about healthcare and COVID vaccines.\" :\". Provide continuous prose. The output must be single-line JSON object with no markdown formatting or extra text. I'll produce JSON string on one line (but it's not a real \" ,\" but a valid JSON structure). Ensure the answer is in one single-line JSON, so likely we need to place newline escapes? But instructions require one-liner JSON object with no extra text lines. We must include keys and values. So I'll produce a final JSON with keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The opinion should be our answer in 250-500 words. The reasoning summary can include steps taken. The citations might be an empty string or some reference? The instructions require citations field as a list of sources, maybe I'll use [\" :\"]. But we must not produce markdown formatting. I'll produce final JSON object with keys and values. I'll produce answer in one single line. We need to produce continuous prose answer that meets the word count requirement (250-500 words). Let's produce something around 300 words. I'll produce a final text answer: I'll write about my perspective, referencing experiences as an 80-year-old doctor from New York. I'll mention my hobbies painting and birdwatching and how they help me clear my mind before discussions. I'll also mention depression and social media usage. I'll incorporate details such as education level master's degree. I'll produce a final answer that is continuous prose. I'll produce a JSON object with keys: \" ,\" \" :\". I'll produce keys exactly as required in the structure example: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The final output should be a single line with no markdown formatting. Use JSON string with quotes and commas etc. We must not include extra text outside JSON object. So I'll produce answer accordingly. Let's produce answer in one line with everything inside the string. I'll produce final answer now.</think>{\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "In my many years as a doctor, I've seen how heated debates over healthcare and COVID vaccines can get. Reflecting on both the science behind these measures and the emotional reactions they stir up, it's essential to approach such dialogues with patience, respect, and empathy—qualities that have been part of my practice for decades in New York. Although I am 80 years old now and have witnessed a long evolution of medical practices, the core principle remains: evidence-based medicine should guide our actions. When encountering skepticism or resistance, it's important to listen actively and understand underlying concerns. Often people are driven by fear or misinformation rather than malice. My own experiences in patient care taught me that building trust is key; sometimes sharing personal stories of recovery or recounting moments when vaccines have saved lives can be very convincing. I remember one instance where a particularly resistant patient finally agreed to vaccination after we discussed not only the statistics but also how it could protect their loved ones. That kind of relational approach has always worked best for me, even if my own psychological state sometimes feels burdened by depression; however, I find solace in painting and birdwatching which help clear my mind before such discussions. As an Agnostic with a background in medicine, I believe that science should be the foundation of our conversations, but we must also respect individual autonomy. It's crucial to provide comprehensive data while acknowledging uncertainties—this transparency can build trust even among those who are skeptical. In today’s social media landscape where misinformation spreads quickly, it's more important than ever for healthcare professionals to engage in informed dialogues, offering clarity without condescension. My experiences from decades of practicing medicine underscore that patience and understanding go a long way. Even though I spend about an hour daily on social media, I try to focus on platforms where factual information is shared, sometimes even volunteering my time to support community health education. Ultimately, managing these discussions requires balancing firm scientific facts with compassionate communication—a balance that I have strived for throughout my career in New York and beyond.",
+    "reasoning_summary": "We need to produce a JSON object with keys mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The persona is provided as details: age 80 male doctor from New York with master's degree etc. We must produce answer that meets criteria. We need continuous prose. Our answer should be at least 250 words but less than 500 words. Tone derived from the persona traits: an 80-year-old doctor with high agreeableness and low neuroticism, moderate openness, and low conscientiousness? Actually check personality: age=80, occupation = doctor, depressed psychological feature, and hobbies include painting, birdwatching etc. Our tone should be reflective and authoritative but also empathetic. We must produce answer in one single-line JSON with no extra text. The instructions require returning JSON only and strictly following output format: ",
+    "final end-user facing answer": ". Our answer keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. We need to mention fields: age, occupation, city_of_living, psychological_feature, etc. The topic is ",
+    " how to manage discussions about healthcare and COVID vaccines.": ". Provide continuous prose. The output must be single-line JSON object with no markdown formatting or extra text. I'll produce JSON string on one line (but it's not a real ",
+    " but a valid JSON structure). Ensure the answer is in one single-line JSON, so likely we need to place newline escapes? But instructions require one-liner JSON object with no extra text lines. We must include keys and values. So I'll produce a final JSON with keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The opinion should be our answer in 250-500 words. The reasoning summary can include steps taken. The citations might be an empty string or some reference? The instructions require citations field as a list of sources, maybe I'll use [": "]. But we must not produce markdown formatting. I'll produce final JSON object with keys and values. I'll produce answer in one single line. We need to produce continuous prose answer that meets the word count requirement (250-500 words). Let's produce something around 300 words. I'll produce a final text answer: I'll write about my perspective, referencing experiences as an 80-year-old doctor from New York. I'll mention my hobbies painting and birdwatching and how they help me clear my mind before discussions. I'll also mention depression and social media usage. I'll incorporate details such as education level master's degree. I'll produce a final answer that is continuous prose. I'll produce a JSON object with keys: ",
+    " ": ". I'll produce keys exactly as required in the structure example: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The final output should be a single line with no markdown formatting. Use JSON string with quotes and commas etc. We must not include extra text outside JSON object. So I'll produce answer accordingly. Let's produce answer in one line with everything inside the string. I'll produce final answer now.</think>{"
+  }
+}

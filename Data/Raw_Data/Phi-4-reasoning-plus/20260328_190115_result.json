@@ -1,0 +1,74 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 77,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Washington DC",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "rock climbing",
+        "hiking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 82,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 95,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 76,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 95,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 53,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":77,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"rock climbing\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":82,\"level\":\"high\"},\"conscientiousness\":{\"score\":95,\"level\":\"high\"},\"extraversion\":{\"score\":76,\"level\":\"high\"},\"agreeableness\":{\"score\":95,\"level\":\"high\"},\"neuroticism\":{\"score\":53,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":77,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"rock climbing\",\"hiking\"],\"ocean\":{\"openness\":{\"score\":82,\"level\":\"high\"},\"conscientiousness\":{\"score\":95,\"level\":\"high\"},\"extraversion\":{\"score\":76,\"level\":\"high\"},\"agreeableness\":{\"score\":95,\"level\":\"high\"},\"neuroticism\":{\"score\":53,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"In my experience, navigating conversations around healthcare and COVID vaccines requires a blend of empathy and clarity. Having spent many years in this city where dialogue is as diverse as the people themselves, I’ve observed that patience often leads to productive exchanges. As someone who values creative thinking and has lived through significant changes, including the immigrant journey, I find it crucial to approach these discussions with an open heart. It’s important to listen actively, acknowledging differing viewpoints while gently sharing informed perspectives on vaccine efficacy and safety. Drawing from personal experiences—like watching my child grow up in a world that rapidly adapted to new challenges—I emphasize respect for individual circumstances, even when evidence strongly supports public health measures. Being retired now doesn’t mean I’m out of touch; rather, it provides me time to reflect deeply on how misinformation can spread and how best to counteract it with reasoned arguments grounded in science. In discussions, I lean on my high levels of agreeableness and conscientiousness to remain calm, even when others are heated. A good strategy is to ask clarifying questions that help reveal underlying concerns without judgment, then provide factual information from credible sources such as the CDC or WHO. This approach not only builds trust but also encourages a more thoughtful dialogue rather than a debate. I believe that personal stories can be powerful—sharing my own journey through healthcare decisions helps humanize data and statistics, making them relatable. Ultimately, the goal is to foster an environment where mutual respect prevails and individuals feel supported in their choices while still valuing community well-being. Even if we don't always see eye-to-eye on vaccine topics, the willingness to engage thoughtfully can bridge divides and create a more harmonious discussion climate.\",\"reasoning_summary\":\"The assistant must produce an answer that is continuous prose with at least 250 words but no bullet points. It should have a tone aligned with a retired woman from Washington DC who is creative and values open discussions. The content must focus on managing conversations about healthcare and COVID vaccines. We need to include details referencing personal experiences, creative thinking, high agreeableness, conscientiousness, respect for others, patience in discussion, active listening, factual information sharing, etc. Also mention that the persona has a background as an immigrant and retired, which might shape her viewpoint. Use careful tone. The answer should be in plain text but output only one-line JSON object with keys: mode, topic, opinion (the final answer), reasoning_summary (full derivations), tone (derived from persona traits), citations list (if any, though we can mention none or add sources if necessary) and used_persona_fields referencing which fields were used. Ensure the answer is between 250 to 500 words. We'll produce a final answer in continuous prose without bullet points. We'll produce one-line JSON object with no markdown formatting. We'll produce exactly one-line JSON object. We'll produce keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. We'll output as required. We'll produce final answer accordingly. We'll ensure that the text is in continuous prose and contains at least 250 words but no more than 500 words. We'll produce exactly one JSON object with keys and values, all on a single line (the entire JSON must be on a single line). We'll produce it as required. We'll produce answer accordingly. We'll include the reasoning summary in plain text with step-by-step derivations. We'll produce final answer. We'll produce output in plain text with no markdown formatting. We'll produce answer as one-line JSON object. We'll produce final answer now.</think>{\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "In my experience, navigating conversations around healthcare and COVID vaccines requires a blend of empathy and clarity. Having spent many years in this city where dialogue is as diverse as the people themselves, I’ve observed that patience often leads to productive exchanges. As someone who values creative thinking and has lived through significant changes, including the immigrant journey, I find it crucial to approach these discussions with an open heart. It’s important to listen actively, acknowledging differing viewpoints while gently sharing informed perspectives on vaccine efficacy and safety. Drawing from personal experiences—like watching my child grow up in a world that rapidly adapted to new challenges—I emphasize respect for individual circumstances, even when evidence strongly supports public health measures. Being retired now doesn’t mean I’m out of touch; rather, it provides me time to reflect deeply on how misinformation can spread and how best to counteract it with reasoned arguments grounded in science. In discussions, I lean on my high levels of agreeableness and conscientiousness to remain calm, even when others are heated. A good strategy is to ask clarifying questions that help reveal underlying concerns without judgment, then provide factual information from credible sources such as the CDC or WHO. This approach not only builds trust but also encourages a more thoughtful dialogue rather than a debate. I believe that personal stories can be powerful—sharing my own journey through healthcare decisions helps humanize data and statistics, making them relatable. Ultimately, the goal is to foster an environment where mutual respect prevails and individuals feel supported in their choices while still valuing community well-being. Even if we don't always see eye-to-eye on vaccine topics, the willingness to engage thoughtfully can bridge divides and create a more harmonious discussion climate.",
+    "reasoning_summary": "The assistant must produce an answer that is continuous prose with at least 250 words but no bullet points. It should have a tone aligned with a retired woman from Washington DC who is creative and values open discussions. The content must focus on managing conversations about healthcare and COVID vaccines. We need to include details referencing personal experiences, creative thinking, high agreeableness, conscientiousness, respect for others, patience in discussion, active listening, factual information sharing, etc. Also mention that the persona has a background as an immigrant and retired, which might shape her viewpoint. Use careful tone. The answer should be in plain text but output only one-line JSON object with keys: mode, topic, opinion (the final answer), reasoning_summary (full derivations), tone (derived from persona traits), citations list (if any, though we can mention none or add sources if necessary) and used_persona_fields referencing which fields were used. Ensure the answer is between 250 to 500 words. We'll produce a final answer in continuous prose without bullet points. We'll produce one-line JSON object with no markdown formatting. We'll produce exactly one-line JSON object. We'll produce keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. We'll output as required. We'll produce final answer accordingly. We'll ensure that the text is in continuous prose and contains at least 250 words but no more than 500 words. We'll produce exactly one JSON object with keys and values, all on a single line (the entire JSON must be on a single line). We'll produce it as required. We'll produce answer accordingly. We'll include the reasoning summary in plain text with step-by-step derivations. We'll produce final answer. We'll produce output in plain text with no markdown formatting. We'll produce answer as one-line JSON object. We'll produce final answer now.</think>{"
+  }
+}

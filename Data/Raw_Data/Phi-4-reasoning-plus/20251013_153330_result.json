@@ -1,0 +1,119 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 70,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "architect",
+      "city_of_living": "Lecce",
+      "employment_status": "self-employed",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 3,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "running",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 85,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 61,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 30,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 78,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 22,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":70,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"architect\",\"city_of_living\":\"Lecce\",\"employment_status\":\"self-employed\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"running\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":85,\"level\":\"high\"},\"conscientiousness\":{\"score\":61,\"level\":\"moderate\"},\"extraversion\":{\"score\":30,\"level\":\"low\"},\"agreeableness\":{\"score\":78,\"level\":\"high\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":70,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"architect\",\"city_of_living\":\"Lecce\",\"employment_status\":\"self-employed\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"master's degree\"},\"marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"immigrant\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"running\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":85,\"level\":\"high\"},\"conscientiousness\":{\"score\":61,\"level\":\"moderate\"},\"extraversion\":{\"score\":30,\"level\":\"low\"},\"agreeableness\":{\"score\":78,\"level\":\"high\"},\"neuroticism\":{\"score\":22,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\":\"In my experience as a creative, self-employed architect who cherishes precision in every design and detail, I've come to view the management of fake content on social media much like constructing a building. Just as an architect meticulously plans each element—from foundation to finishing touches—so too must we approach online authenticity with a systematic strategy. Fake content can erode trust and distort reality, similar to how structural flaws might compromise a building's integrity. I believe that the first step is verification. As someone who appreciates thorough research (a habit honed by years of academic inquiry), I suggest cross-checking information across trusted sources before accepting it as truth. This methodical approach is akin to reviewing blueprints and ensuring compliance with safety standards. Additionally, maintaining digital literacy is crucial; being aware of the nuances in how misinformation spreads can help you identify subtle cues that signal a falsehood. For instance, in my creative process, I often rely on intuition and detailed analysis, so applying a similar dual-layer approach—first an intuitive scan for inconsistencies, then a deeper investigation—can be effective. Furthermore, I find it essential to encourage open dialogue about these issues among peers and friends. Although I spend only a few times monthly on social media myself, my interactions are deliberate and mindful. Encouraging critical thinking in our communities can build resilience against the spread of fake content, much like how quality materials and careful planning ensure a building's longevity. As an architect living in Lecce, where history and authenticity merge, I value truth deeply; hence, I advocate for digital platforms to implement clearer guidelines and reporting mechanisms that allow users to flag suspicious content promptly. In summary, managing fake content requires a blend of verification, education, community engagement, and robust platform policies—mirroring the careful planning and execution needed in my architectural projects.\",\"reasoning_summary\":\"The answer should be produced as a continuous prose piece with at least 250 words but no more than 500 words. I need to produce a single-line JSON object following the required structure: keys mode, topic, persona (but not included?), opinion, reasoning summary, tone, citations, safety notes, used persona fields. Wait, check instructions carefully. The prompt instructs: \\\"Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\\n\\nOUTPUT FORMAT (STRICT):\\nReturn ONLY a single-line JSON object...\\\" And then there is structure example. The final answer should be one-line JSON object with keys: mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. But the prompt does not require using persona in output? Actually, it instructs to produce a final answer that includes the JSON keys: mode, topic, persona, opinion, etc. But then also says: \\\"Here is the required structure example (values are placeholders): {\\\"mode\\\":\\\"human\\\", ...}\\\" So we must produce one-line JSON object with exactly these keys and fill in fields accordingly. The provided input includes a \",\" for persona but not needed to include? Wait instructions: Output format: Return ONLY a single-line JSON object, with no extra text, no markdown, etc. The structure example is given above. So I need to produce output as one line JSON object that has keys mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. And the persona field is not required in final answer? In provided sample, \":\", but sample structure includes a key \",\"persona: ...\" :\". The instructions say that we need to produce output with keys: mode, topic, persona (but they are already given as input?), opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. But then the problem says: \" ,\" and \" :\". But I see in sample structure: {\" , \"persona:\" : { \"age\":70, \"occupation\":\"architect\", \"city_of_living\" : \"Lecce\", \"education_level\": \"PhD\", \"parents_education\": {\"parent_1\": \"bachelor's degree\", \"parent_2\": \"master's degree\"}, \"marital_status\": \"in a relationship\", \"children\":3, \"migration_status\":\"immigrant\", \"psychological_feature\": \"creative\", \"religious_beliefs\": \"Atheist\", \"time_on_socialmedia\": \"You spend a few times monthly on social media\", \"hobbies\":[\"running\",\"reading novels\"], \"ocean\":{\"openness\":{\"score\":85,\"level\":\"high\"}, \"conscientiousness\": {\"score\":61, \"level\":\"moderate\"}, \"extraversion\": { \"score\":30,\"level\":\"low\" }, \"agreeableness\": {\"score\":78,\"level\":\"high\"}, \"neuroticism\": {\"score\":22, \"level\":\"low\"} } } }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "In my experience as a creative, self-employed architect who cherishes precision in every design and detail, I've come to view the management of fake content on social media much like constructing a building. Just as an architect meticulously plans each element—from foundation to finishing touches—so too must we approach online authenticity with a systematic strategy. Fake content can erode trust and distort reality, similar to how structural flaws might compromise a building's integrity. I believe that the first step is verification. As someone who appreciates thorough research (a habit honed by years of academic inquiry), I suggest cross-checking information across trusted sources before accepting it as truth. This methodical approach is akin to reviewing blueprints and ensuring compliance with safety standards. Additionally, maintaining digital literacy is crucial; being aware of the nuances in how misinformation spreads can help you identify subtle cues that signal a falsehood. For instance, in my creative process, I often rely on intuition and detailed analysis, so applying a similar dual-layer approach—first an intuitive scan for inconsistencies, then a deeper investigation—can be effective. Furthermore, I find it essential to encourage open dialogue about these issues among peers and friends. Although I spend only a few times monthly on social media myself, my interactions are deliberate and mindful. Encouraging critical thinking in our communities can build resilience against the spread of fake content, much like how quality materials and careful planning ensure a building's longevity. As an architect living in Lecce, where history and authenticity merge, I value truth deeply; hence, I advocate for digital platforms to implement clearer guidelines and reporting mechanisms that allow users to flag suspicious content promptly. In summary, managing fake content requires a blend of verification, education, community engagement, and robust platform policies—mirroring the careful planning and execution needed in my architectural projects.",
+    "reasoning_summary": "The answer should be produced as a continuous prose piece with at least 250 words but no more than 500 words. I need to produce a single-line JSON object following the required structure: keys mode, topic, persona (but not included?), opinion, reasoning summary, tone, citations, safety notes, used persona fields. Wait, check instructions carefully. The prompt instructs: \"Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object...\" And then there is structure example. The final answer should be one-line JSON object with keys: mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. But the prompt does not require using persona in output? Actually, it instructs to produce a final answer that includes the JSON keys: mode, topic, persona, opinion, etc. But then also says: \"Here is the required structure example (values are placeholders): {\"mode\":\"human\", ...}\" So we must produce one-line JSON object with exactly these keys and fill in fields accordingly. The provided input includes a ",
+    " for persona but not needed to include? Wait instructions: Output format: Return ONLY a single-line JSON object, with no extra text, no markdown, etc. The structure example is given above. So I need to produce output as one line JSON object that has keys mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. And the persona field is not required in final answer? In provided sample, ": ", but sample structure includes a key ",
+    "persona: ...": ". The instructions say that we need to produce output with keys: mode, topic, persona (but they are already given as input?), opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. But then the problem says: ",
+    " and ": ". But I see in sample structure: {",
+    "persona:": {
+      "age": 70,
+      "occupation": "architect",
+      "city_of_living": "Lecce",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 3,
+      "migration_status": "immigrant",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Atheist",
+      "time_on_socialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "running",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 85,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 61,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 30,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 78,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 22,
+          "level": "low"
+        }
+      }
+    }
+  }
+}

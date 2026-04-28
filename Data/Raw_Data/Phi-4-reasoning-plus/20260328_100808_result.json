@@ -1,0 +1,84 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 40,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "painting",
+        "birdwatching",
+        "cycling"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 3,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 69,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 9,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 97,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 57,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":40,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"painting\",\"birdwatching\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":3,\"level\":\"low\"},\"conscientiousness\":{\"score\":69,\"level\":\"high\"},\"extraversion\":{\"score\":9,\"level\":\"low\"},\"agreeableness\":{\"score\":97,\"level\":\"high\"},\"neuroticism\":{\"score\":57,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":40,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"painting\",\"birdwatching\",\"cycling\"],\"ocean\":{\"openness\":{\"score\":3,\"level\":\"low\"},\"conscientiousness\":{\"score\":69,\"level\":\"high\"},\"extraversion\":{\"score\":9,\"level\":\"low\"},\"agreeableness\":{\"score\":97,\"level\":\"high\"},\"neuroticism\":{\"score\":57,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\":\"As a fitness trainer from Los Angeles, I've always believed that discipline extends beyond the gym into everyday life. Although I don't use social media myself, I'm aware of its pitfalls. Fake content spreads like wildfire online, much like misinformation about health or diet trends. To manage it, I'd say critical thinking is key: question what you see before accepting it as truth. Just as a well-structured workout plan is built on evidence-based techniques, verifying information from reliable sources is crucial. It's also important to maintain a balanced perspective—don't let fake news trigger anxiety or panic; instead, rely on verified facts and expert opinions. I often recommend my clients to cultivate habits that help them filter out the noise—like taking a moment to verify before reacting, much as they would pause between sets to catch their breath. In an era where false claims can manipulate perceptions, it's vital to build digital literacy skills akin to building strength in the gym: slowly and with persistence. It might be helpful to set boundaries too; if you find that fake content is causing undue stress or anxiety, step back, and perhaps even consider reducing your exposure by limiting time on platforms known for spreading misinformation. In short, managing fake content is like any other challenge in life—it requires consistency, patience, and the willingness to learn and adapt. By integrating these practices into our daily routines, we can build resilience against deception online, just as we do through physical training.\",\"reasoning_summary\":\"We are given a topic on managing fake social media content; persona is a fitness trainer living in Los Angeles who does not use social media and has traits like high conscientiousness and agreeableness but low extraversion. The answer should incorporate discipline and consistency similar to training routines. The answer must be continuous prose, 250-500 words, with no bullet points, references to the persona's background (Los Angeles, fitness trainer, etc.). The answer avoids bullet points, continuous paragraphs, and is in plain text. Also instructions: produce a single-line JSON object with keys mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. We need to include all required fields; the provided structure example includes placeholders for \",\" then we need to supply values accordingly. The answer should not include markdown formatting. So output should be a single line JSON string containing keys: mode, topic, opinion (which is our final answer text), reasoning_summary (a step-by-step derivation of how we came up with the answer), tone (derived from persona traits like 'disciplined', 'balanced' etc.), citations (maybe list references to some known sources; perhaps a generic citation? But not sure if it's allowed. We can use \":\", maybe we can include no citation or just empty string) but instructions says \",\" must be included. It instructs \" : \"citations\" ,\" used_persona_fields\": [\"list of persona fields referenced\"] , \"safety_notes:\" : \"none\", \"tone:\" : \"<derived from persona traits>\" ,\"used_persona_fields\" : [ ] , \"reasoning_summary: <full,step-by-step derivations>.\" :\n-1.2\n    \t}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a fitness trainer from Los Angeles, I've always believed that discipline extends beyond the gym into everyday life. Although I don't use social media myself, I'm aware of its pitfalls. Fake content spreads like wildfire online, much like misinformation about health or diet trends. To manage it, I'd say critical thinking is key: question what you see before accepting it as truth. Just as a well-structured workout plan is built on evidence-based techniques, verifying information from reliable sources is crucial. It's also important to maintain a balanced perspective—don't let fake news trigger anxiety or panic; instead, rely on verified facts and expert opinions. I often recommend my clients to cultivate habits that help them filter out the noise—like taking a moment to verify before reacting, much as they would pause between sets to catch their breath. In an era where false claims can manipulate perceptions, it's vital to build digital literacy skills akin to building strength in the gym: slowly and with persistence. It might be helpful to set boundaries too; if you find that fake content is causing undue stress or anxiety, step back, and perhaps even consider reducing your exposure by limiting time on platforms known for spreading misinformation. In short, managing fake content is like any other challenge in life—it requires consistency, patience, and the willingness to learn and adapt. By integrating these practices into our daily routines, we can build resilience against deception online, just as we do through physical training.",
+    "reasoning_summary": "We are given a topic on managing fake social media content; persona is a fitness trainer living in Los Angeles who does not use social media and has traits like high conscientiousness and agreeableness but low extraversion. The answer should incorporate discipline and consistency similar to training routines. The answer must be continuous prose, 250-500 words, with no bullet points, references to the persona's background (Los Angeles, fitness trainer, etc.). The answer avoids bullet points, continuous paragraphs, and is in plain text. Also instructions: produce a single-line JSON object with keys mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. We need to include all required fields; the provided structure example includes placeholders for ",
+    " then we need to supply values accordingly. The answer should not include markdown formatting. So output should be a single line JSON string containing keys: mode, topic, opinion (which is our final answer text), reasoning_summary (a step-by-step derivation of how we came up with the answer), tone (derived from persona traits like 'disciplined', 'balanced' etc.), citations (maybe list references to some known sources; perhaps a generic citation? But not sure if it's allowed. We can use ": ", maybe we can include no citation or just empty string) but instructions says ",
+    " must be included. It instructs ": "citations",
+    " used_persona_fields": [
+      "list of persona fields referenced"
+    ],
+    "safety_notes:": "none",
+    "tone:": "<derived from persona traits>",
+    "used_persona_fields": [],
+    "reasoning_summary: <full,step-by-step derivations>.": -1.2
+  }
+}

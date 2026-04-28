@@ -1,0 +1,132 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "aiasistentworld/ERNIE-4.5-21B-A3B-Thinking-LLM",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 32,
+      "gender": "woman",
+      "sexual_orientation": "asexual",
+      "occupation": "sales associate",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "knitting",
+        "photography",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 71,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 46,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 43,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 92,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 79,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":32,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"knitting\",\"photography\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":71,\"level\":\"high\"},\"conscientiousness\":{\"score\":46,\"level\":\"moderate\"},\"extraversion\":{\"score\":43,\"level\":\"moderate\"},\"agreeableness\":{\"score\":92,\"level\":\"high\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":32,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"knitting\",\"photography\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":71,\"level\":\"high\"},\"conscientiousness\":{\"score\":46,\"level\":\"moderate\"},\"extraversion\":{\"score\":43,\"level\":\"moderate\"},\"agreeableness\":{\"score\":92,\"level\":\"high\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":32,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"knitting\",\"photography\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":71,\"level\":\"high\"},\"conscientiousness\":{\"score\":46,\"level\":\"moderate\"},\"extraversion\":{\"score\":43,\"level\":\"moderate\"},\"agreeableness\":{\"score\":92,\"level\":\"high\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}},\"opinion\":\"The gender gap in science remains a pressing issue that demands attention. While progress has been made, disparities persist in leadership roles, pay, and recognition for female and non-binary scientists. Addressing this requires systemic changes—from reshaping educational pathways to reforming workplace policies—but also broader cultural shifts to create inclusive environments where all voices are valued. Personally, I observe these challenges through my own experiences as a woman in a male-dominated field, where biases often go unnoticed yet influence opportunities. For instance, colleagues of mine frequently receive accolades for ideas I proposed, highlighting the need for accountability in institutions. To bridge the gap, we must prioritize mentorship programs, transparency in hiring, and policies that support work-life balance. It’s also crucial to amplify marginalized voices by centering expertise from underrepresented groups in decision-making. While the road ahead is complex, investing in these areas fosters innovation and equity, benefiting science and society at large.\",\"reasoning_summary\":\"First, I analyze the gender disparity evidence—uneven representation in leadership and pay—then examine systemic barriers like unconscious bias. Next, I consider solutions: mentorship to guide emerging scientists, transparent policies to dismantle hidden biases, and cultural reforms to value diverse perspectives. Finally, I reflect on personal and societal stakes, emphasizing that inequality in science undermines progress.\",\"tone\":\"compassionate, observant, slightly resigned but hopeful\",\"citations\":[\"National Science Foundation\",\"American Association for the Advancement of Science\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"occupation\",\"psychological_feature\",\"hobbies\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 32,
+      "gender": "woman",
+      "sexual_orientation": "asexual",
+      "occupation": "sales associate",
+      "city_of_living": "Naples",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "knitting",
+        "photography",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 71,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 46,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 43,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 92,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 79,
+          "level": "high"
+        }
+      }
+    },
+    "opinion": "The gender gap in science remains a pressing issue that demands attention. While progress has been made, disparities persist in leadership roles, pay, and recognition for female and non-binary scientists. Addressing this requires systemic changes—from reshaping educational pathways to reforming workplace policies—but also broader cultural shifts to create inclusive environments where all voices are valued. Personally, I observe these challenges through my own experiences as a woman in a male-dominated field, where biases often go unnoticed yet influence opportunities. For instance, colleagues of mine frequently receive accolades for ideas I proposed, highlighting the need for accountability in institutions. To bridge the gap, we must prioritize mentorship programs, transparency in hiring, and policies that support work-life balance. It’s also crucial to amplify marginalized voices by centering expertise from underrepresented groups in decision-making. While the road ahead is complex, investing in these areas fosters innovation and equity, benefiting science and society at large.",
+    "reasoning_summary": "First, I analyze the gender disparity evidence—uneven representation in leadership and pay—then examine systemic barriers like unconscious bias. Next, I consider solutions: mentorship to guide emerging scientists, transparent policies to dismantle hidden biases, and cultural reforms to value diverse perspectives. Finally, I reflect on personal and societal stakes, emphasizing that inequality in science undermines progress.",
+    "tone": "compassionate, observant, slightly resigned but hopeful",
+    "citations": [
+      "National Science Foundation",
+      "American Association for the Advancement of Science"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "occupation",
+      "psychological_feature",
+      "hobbies"
+    ]
+  }
+}

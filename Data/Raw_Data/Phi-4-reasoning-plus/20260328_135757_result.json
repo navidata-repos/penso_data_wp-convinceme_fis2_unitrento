@@ -1,0 +1,75 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 25,
+      "gender": "woman",
+      "sexual_orientation": "asexual",
+      "occupation": "delivery driver",
+      "city_of_living": "New York",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "primary school"
+      },
+      "marital_status": "single",
+      "children": 0,
+      "migration_status": "native-born American",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Judaism",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "videogames",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 10,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 67,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 95,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 1,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":25,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"New York\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"videogames\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":10,\"level\":\"low\"},\"conscientiousness\":{\"score\":67,\"level\":\"high\"},\"extraversion\":{\"score\":60,\"level\":\"moderate\"},\"agreeableness\":{\"score\":95,\"level\":\"high\"},\"neuroticism\":{\"score\":1,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":25,\"gender\":\"woman\",\"sexual_orientation\":\"asexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"New York\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"single\",\"children\":0,\"migration_status\":\"native-born American\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Judaism\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"videogames\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":10,\"level\":\"low\"},\"conscientiousness\":{\"score\":67,\"level\":\"high\"},\"extraversion\":{\"score\":60,\"level\":\"moderate\"},\"agreeableness\":{\"score\":95,\"level\":\"high\"},\"neuroticism\":{\"score\":1,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\": \"I can understand the challenges that come with encountering fake news or misleading content online, especially since it has become so rampant. Although I'm not active on social media personally, I see how the spread of false information could affect people's lives. In my own way, even as a creative person living in New York and working independently, I've learned to be discerning with what I consume. I believe that verifying sources is key; cross-checking facts from reliable outlets can help separate truth from fabrication. It might also be useful to follow experts or fact-checkers who are dedicated to debunking fake content. Additionally, being aware of the algorithms that promote sensationalized stories and understanding why they appear in our feeds can help us build a more balanced view of reality. I find that discussing these topics with friends over shared interests like videogames or cooking can offer new perspectives and strategies for handling misinformation. Ultimately, it's about maintaining a healthy skepticism while being open to learning—balancing the trust we place in information sources with critical thinking skills developed through experience. Even if one is not directly engaged on social media platforms, being aware of these issues helps us navigate our interactions in other areas of life. Overall, I think that managing fake content involves both personal responsibility and collective efforts: individually, by fact-checking and verifying before accepting or sharing information; collectively, by supporting platforms and policies that prioritize truth over sensationalism. This approach aligns with my creative spirit and high conscientiousness, ensuring that I contribute to a more truthful digital landscape even if I'm not immersed in it personally.\",\"reasoning_summary\": \"We are asked to produce an opinion about managing fake content on social media, referencing the persona's background traits: creative, living in New York, self-employed delivery driver with vocational diploma, no social media. The answer must be in continuous prose between 250 and 500 words. We need to mention the topic, then talk about verifying sources, fact-checking, discussing strategies. We note that as a creative person, she is not on social media but still understands its impact and offers suggestions like cross-checking reliable information, being aware of algorithmic biases, discussing with friends over shared interests (videogames, cooking), etc. Also mention collective efforts. The answer must be returned in JSON format exactly one-line object containing keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. We need to include the list of persona fields referenced such as age, gender, occupation, city_of_living, employment_status, education_level, psychological_feature, hobbies, ocean traits etc. The answer must be in a single line JSON object. Ensure that we produce exactly one-line JSON string with no markdown formatting and only one-line. Also note instructions: return ONLY a single-line JSON object, no extra text. Use final answer as the content of the \" ,\" fields, each key-value pair properly quoted etc. We'll need to include keys for mode (human), topic (How to manage and dealing with fake content on social media.), opinion, reasoning_summary, tone, citations, used_persona_fields. The answer must be in continuous prose between 250-500 words. We check length: our answer is about 400 words? Let's count: \" :\", I'll produce text that is at least 250 words. Let's produce a text with enough words. Let me produce an opinion text around 350 words. I'll produce a final answer in JSON object in one line, no extra formatting. We'll include keys as required and then output exactly one-line JSON string with no markdown formatting, only plain text JSON. I'll produce the answer accordingly. We'll now produce our final answer.</think>{\"\n    }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "I can understand the challenges that come with encountering fake news or misleading content online, especially since it has become so rampant. Although I'm not active on social media personally, I see how the spread of false information could affect people's lives. In my own way, even as a creative person living in New York and working independently, I've learned to be discerning with what I consume. I believe that verifying sources is key; cross-checking facts from reliable outlets can help separate truth from fabrication. It might also be useful to follow experts or fact-checkers who are dedicated to debunking fake content. Additionally, being aware of the algorithms that promote sensationalized stories and understanding why they appear in our feeds can help us build a more balanced view of reality. I find that discussing these topics with friends over shared interests like videogames or cooking can offer new perspectives and strategies for handling misinformation. Ultimately, it's about maintaining a healthy skepticism while being open to learning—balancing the trust we place in information sources with critical thinking skills developed through experience. Even if one is not directly engaged on social media platforms, being aware of these issues helps us navigate our interactions in other areas of life. Overall, I think that managing fake content involves both personal responsibility and collective efforts: individually, by fact-checking and verifying before accepting or sharing information; collectively, by supporting platforms and policies that prioritize truth over sensationalism. This approach aligns with my creative spirit and high conscientiousness, ensuring that I contribute to a more truthful digital landscape even if I'm not immersed in it personally.",
+    "reasoning_summary": "We are asked to produce an opinion about managing fake content on social media, referencing the persona's background traits: creative, living in New York, self-employed delivery driver with vocational diploma, no social media. The answer must be in continuous prose between 250 and 500 words. We need to mention the topic, then talk about verifying sources, fact-checking, discussing strategies. We note that as a creative person, she is not on social media but still understands its impact and offers suggestions like cross-checking reliable information, being aware of algorithmic biases, discussing with friends over shared interests (videogames, cooking), etc. Also mention collective efforts. The answer must be returned in JSON format exactly one-line object containing keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. We need to include the list of persona fields referenced such as age, gender, occupation, city_of_living, employment_status, education_level, psychological_feature, hobbies, ocean traits etc. The answer must be in a single line JSON object. Ensure that we produce exactly one-line JSON string with no markdown formatting and only one-line. Also note instructions: return ONLY a single-line JSON object, no extra text. Use final answer as the content of the ",
+    " fields, each key-value pair properly quoted etc. We'll need to include keys for mode (human), topic (How to manage and dealing with fake content on social media.), opinion, reasoning_summary, tone, citations, used_persona_fields. The answer must be in continuous prose between 250-500 words. We check length: our answer is about 400 words? Let's count: ": ", I'll produce text that is at least 250 words. Let's produce a text with enough words. Let me produce an opinion text around 350 words. I'll produce a final answer in JSON object in one line, no extra formatting. We'll include keys as required and then output exactly one-line JSON string with no markdown formatting, only plain text JSON. I'll produce the answer accordingly. We'll now produce our final answer.</think>{"
+  }
+}

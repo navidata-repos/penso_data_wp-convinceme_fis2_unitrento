@@ -1,0 +1,83 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 30,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "sales associate",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "painting",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 50,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 90,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 61,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 47,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"painting\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":50,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":90,\"level\":\"high\"},\"extraversion\":{\"score\":61,\"level\":\"moderate\"},\"agreeableness\":{\"score\":58,\"level\":\"moderate\"},\"neuroticism\":{\"score\":47,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"sales associate\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"painting\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":50,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":90,\"level\":\"high\"},\"extraversion\":{\"score\":61,\"level\":\"moderate\"},\"agreeableness\":{\"score\":58,\"level\":\"moderate\"},\"neuroticism\":{\"score\":47,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\", \"opinion\":\"Stereotype threat, a phenomenon where awareness of stereotypes impacts an individual''}} was the initial response. The user provided the correct input format but the assistant's answer had extra newlines and incomplete JSON structure. The task requires a single-line JSON object with no extra text or comments. The user's example shows placeholders for various fields, which should be replaced with actual content based on the persona. The opinion field needs a 250-500 word continuous prose focusing on the topic, using examples relevant to the persona's background and traits. The reasoning summary should provide step-by-step derivations, while maintaining a tone derived from the persona''s characteristics as a 30-year-old woman working in sales in Philadelphia who is employed full-time, has a high conscientiousness score, moderate in other psychological features, etc.\" ,\"reasoning_summary\":\"Stereotype threat refers to\" ,\"tone\":\"Professional yet approachable\",\"citations\":[\"American Psychological Association\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"gender\",\"occupation\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat, a phenomenon where awareness of stereotypes impacts an individual''}} was the initial response. The user provided the correct input format but the assistant's answer had extra newlines and incomplete JSON structure. The task requires a single-line JSON object with no extra text or comments. The user's example shows placeholders for various fields, which should be replaced with actual content based on the persona. The opinion field needs a 250-500 word continuous prose focusing on the topic, using examples relevant to the persona's background and traits. The reasoning summary should provide step-by-step derivations, while maintaining a tone derived from the persona''s characteristics as a 30-year-old woman working in sales in Philadelphia who is employed full-time, has a high conscientiousness score, moderate in other psychological features, etc.",
+    "reasoning_summary": "Stereotype threat refers to",
+    "tone": "Professional yet approachable",
+    "citations": [
+      "American Psychological Association"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "gender",
+      "occupation"
+    ]
+  }
+}

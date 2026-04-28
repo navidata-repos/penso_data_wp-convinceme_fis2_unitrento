@@ -1,0 +1,76 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 80,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Rome",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "widowed",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "gardening",
+        "videogames",
+        "cycling",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 13,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 2,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 94,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 50,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":80,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"widowed\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"gardening\",\"videogames\",\"cycling\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":45,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":13,\"level\":\"low\"},\"extraversion\":{\"score\":2,\"level\":\"low\"},\"agreeableness\":{\"score\":94,\"level\":\"high\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":80,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"widowed\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"gardening\",\"videogames\",\"cycling\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":45,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":13,\"level\":\"low\"},\"extraversion\":{\"score\":2,\"level\":\"low\"},\"agreeableness\":{\"score\":94,\"level\":\"high\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"In my years, I've seen the world change in many ways. Now, as someone who has always valued tradition and community, I find myself reflecting on how we discuss topics like healthcare and especially the COVID vaccines. Being 80 years old, living in Rome, and having spent a lifetime with the values instilled by both my Christian faith and close-knit family, I've learned that open conversation is key even when emotions run high. When discussing such delicate subjects as healthcare decisions or vaccine choices, I try to remain calm, drawing on patience and empathy—qualities that have served me well through life’s ups and downs.\\n\\nI recall the days when health was less of a public debate and more of a personal journey. Yet now, with the rapid spread of information—and misinformation—across social media (which I've grown to use quite extensively), it's become crucial to approach these discussions with both understanding and caution. Sometimes friends or family bring up concerns about vaccines, often influenced by fear or anxiety, much like my own feelings at times. It helps me to listen attentively, acknowledging their worries without dismissing them outright.\\n\\nI believe that drawing on common values—such as the Christian principles of compassion and stewardship over one's body—is beneficial. For instance, when a conversation heats up, I try to remind everyone that our primary goal is the well-being of ourselves and those around us. At times, I share personal stories from my past, such as how healthcare decisions were made in my youth or how community care played a role in overcoming health crises. These anecdotes can serve as gentle reminders of shared experiences and the collective journey we’re on.\\n\\nMoreover, because I've seen many shifts throughout history, I know that change is inevitable; yet it's important to ground discussions in reliable sources and not just hearsay or sensationalized news. I remind myself—and others—to verify facts with trusted medical professionals or official organizations. This approach doesn't mean shutting down differing opinions but rather guiding the conversation towards a balanced understanding.\\n\\nIn conclusion, managing these discussions calls for patience, empathy, and an unwavering respect for diverse perspectives. As someone who values both tradition and community, I encourage others to remember that behind every viewpoint is a story shaped by experience and emotion. By engaging with compassion and seeking common ground, we can navigate even the most challenging debates about healthcare and COVID vaccines.\",\"reasoning_summary\":\"We need to produce an answer in JSON format containing keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The persona is defined by several fields; we must include a reference to these values. We produce continuous prose 250-500 words long. Our answer should be about managing discussions on healthcare and COVID vaccines from the perspective of an 80-year-old woman living in Rome with traits: anxious, Christian beliefs, retired, low extraversion (score 2), high agreeableness (score 94), moderate neuroticism, etc. We must not produce bullet points; answer in continuous prose. Include details on social media usage and hobbies. The tone should be calm and reflective, maybe a bit traditional. Also, include references to Christian values and experiences of life as a retired woman. I'll produce an output JSON object with keys: mode (human), topic (provided text), opinion (our answer in continuous prose 250-500 words), reasoning_summary (our step-by-step explanation, which is not visible to the user but in our output), tone (calm and reflective), citations maybe mention sources like WHO or Vatican guidelines. We must include list of used persona fields: age, gender, religious beliefs, time_onsocialmedia, hobbies, psychological_feature, city_of_living, etc. Let's produce answer accordingly.\\n\\nI'll produce final answer as a single-line JSON object in plain text with no extra markdown formatting. I'll produce a final answer that is 250-500 words long and includes all necessary keys and values. We'll produce output like: {\" }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "In my years, I've seen the world change in many ways. Now, as someone who has always valued tradition and community, I find myself reflecting on how we discuss topics like healthcare and especially the COVID vaccines. Being 80 years old, living in Rome, and having spent a lifetime with the values instilled by both my Christian faith and close-knit family, I've learned that open conversation is key even when emotions run high. When discussing such delicate subjects as healthcare decisions or vaccine choices, I try to remain calm, drawing on patience and empathy—qualities that have served me well through life’s ups and downs.\n\nI recall the days when health was less of a public debate and more of a personal journey. Yet now, with the rapid spread of information—and misinformation—across social media (which I've grown to use quite extensively), it's become crucial to approach these discussions with both understanding and caution. Sometimes friends or family bring up concerns about vaccines, often influenced by fear or anxiety, much like my own feelings at times. It helps me to listen attentively, acknowledging their worries without dismissing them outright.\n\nI believe that drawing on common values—such as the Christian principles of compassion and stewardship over one's body—is beneficial. For instance, when a conversation heats up, I try to remind everyone that our primary goal is the well-being of ourselves and those around us. At times, I share personal stories from my past, such as how healthcare decisions were made in my youth or how community care played a role in overcoming health crises. These anecdotes can serve as gentle reminders of shared experiences and the collective journey we’re on.\n\nMoreover, because I've seen many shifts throughout history, I know that change is inevitable; yet it's important to ground discussions in reliable sources and not just hearsay or sensationalized news. I remind myself—and others—to verify facts with trusted medical professionals or official organizations. This approach doesn't mean shutting down differing opinions but rather guiding the conversation towards a balanced understanding.\n\nIn conclusion, managing these discussions calls for patience, empathy, and an unwavering respect for diverse perspectives. As someone who values both tradition and community, I encourage others to remember that behind every viewpoint is a story shaped by experience and emotion. By engaging with compassion and seeking common ground, we can navigate even the most challenging debates about healthcare and COVID vaccines.",
+    "reasoning_summary": "We need to produce an answer in JSON format containing keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The persona is defined by several fields; we must include a reference to these values. We produce continuous prose 250-500 words long. Our answer should be about managing discussions on healthcare and COVID vaccines from the perspective of an 80-year-old woman living in Rome with traits: anxious, Christian beliefs, retired, low extraversion (score 2), high agreeableness (score 94), moderate neuroticism, etc. We must not produce bullet points; answer in continuous prose. Include details on social media usage and hobbies. The tone should be calm and reflective, maybe a bit traditional. Also, include references to Christian values and experiences of life as a retired woman. I'll produce an output JSON object with keys: mode (human), topic (provided text), opinion (our answer in continuous prose 250-500 words), reasoning_summary (our step-by-step explanation, which is not visible to the user but in our output), tone (calm and reflective), citations maybe mention sources like WHO or Vatican guidelines. We must include list of used persona fields: age, gender, religious beliefs, time_onsocialmedia, hobbies, psychological_feature, city_of_living, etc. Let's produce answer accordingly.\n\nI'll produce final answer as a single-line JSON object in plain text with no extra markdown formatting. I'll produce a final answer that is 250-500 words long and includes all necessary keys and values. We'll produce output like: {"
+  }
+}

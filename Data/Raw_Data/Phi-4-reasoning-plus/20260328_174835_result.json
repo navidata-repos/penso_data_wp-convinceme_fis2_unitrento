@@ -1,0 +1,83 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 29,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "retail worker",
+      "city_of_living": "Washington DC",
+      "employment_status": "employed part-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "football (calcio)",
+        "travel",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 25,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 17,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 46,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 99,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":29,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"football (calcio)\",\"travel\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":59,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":25,\"level\":\"low\"},\"extraversion\":{\"score\":17,\"level\":\"low\"},\"agreeableness\":{\"score\":46,\"level\":\"moderate\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":29,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"employed part-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"football (calcio)\",\"travel\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":59,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":25,\"level\":\"low\"},\"extraversion\":{\"score\":17,\"level\":\"low\"},\"agreeableness\":{\"score\":46,\"level\":\"moderate\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"From my perspective, discussing healthcare topics—particularly those revolving around COVID vaccines—is a delicate but crucial conversation in today's world. Given my background as an immigrant retail worker living in Washington DC, I have personally seen how differing opinions can create tension within communities. My journey through navigating such discussions often reflects the blend of cultural values and pragmatic approaches that shape my viewpoint. For example, balancing respect for diverse religious beliefs such as Islam with evidence-based scientific insights can be challenging but is essential for productive dialogue.\\n\\nI've noticed that while some of my peers are well-informed about the nuances of vaccine safety, others remain influenced by misinformation due to limited access to reliable resources or a lack of formal education. As someone who values good mental health and maintains a moderate level of openness, I try to approach these discussions with empathy and patience, aiming to bridge gaps in understanding rather than deepening divides.\\n\\nIn my everyday interactions—whether it’s during casual encounters at work or on social media, where I only spend a few times monthly—I’ve learned that listening is as important as speaking. It's about acknowledging people’s concerns without judgment, asking clarifying questions, and sharing personal experiences when appropriate. For instance, discussing how the vaccine helped protect my family, including my child, can sometimes offer relatable reassurance to those who might be hesitant.\\n\\nI also believe that clear communication is key. Using straightforward language free of jargon helps demystify complex medical information for people like me and others with a vocational diploma background. Moreover, being aware of one’s own biases—something I've worked on given my moderate levels of agreeableness and high neuroticism—is crucial to remain open-minded during heated debates.\\n\\nIn summary, managing discussions about healthcare and COVID vaccines involves a mix of empathy, clarity, and respect for diverse perspectives. It requires recognizing the varied backgrounds people come from, including cultural and educational differences, and striving for constructive dialogue that prioritizes public health while respecting individual choices. This balanced approach can help build trust and understanding in conversations that are often fraught with emotional intensity.\",\"reasoning_summary\":\"We need to produce a single-line JSON object containing keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The answer should be continuous prose (no bullet points) between 250-500 words. We must produce a final answer that is a single JSON string in one line and no markdown formatting.\\n\\nWe need to refer to the persona: age=29, gender=man, bisexual, retail worker from Washington DC, employed part-time, vocational diploma, parent's education with one lower secondary and one master's degree, married, 1 child, immigrant, good mental health, religious beliefs Islam. Hobbies include football (calcio), travel, birdwatching. Personality traits: moderate openness, low conscientiousness, low extraversion, moderate agreeableness, high neuroticism.\\n\\nWe need to discuss the topic: How to manage and dealing with discussions about healthcare and COVID vaccines.\\n\\nWe should produce a perspective that uses these persona details as background context for opinions. We mention personal experiences in retail work, living in Washington DC, being an immigrant, good mental health but high neuroticism, etc. \\n\\nI produce a well-written opinion piece discussing the importance of empathy and clear communication, using plain language, referencing personal experience with family safety (child) and so on.\\n\\nI'll now produce final answer accordingly in JSON format. We need to include keys: mode, topic, opinion (final answer), reasoning_summary (explanation but not required? But we are given a structure that includes \",\"reasoning_summary:\" : \"<full step-by-step derivations>\" , \"tone:\" : \"<derived from persona traits>\", \"citations:\" : [\"<source name or org>\"], \"used_persona_fields\": [\"<list of fields referenced>\"] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "From my perspective, discussing healthcare topics—particularly those revolving around COVID vaccines—is a delicate but crucial conversation in today's world. Given my background as an immigrant retail worker living in Washington DC, I have personally seen how differing opinions can create tension within communities. My journey through navigating such discussions often reflects the blend of cultural values and pragmatic approaches that shape my viewpoint. For example, balancing respect for diverse religious beliefs such as Islam with evidence-based scientific insights can be challenging but is essential for productive dialogue.\n\nI've noticed that while some of my peers are well-informed about the nuances of vaccine safety, others remain influenced by misinformation due to limited access to reliable resources or a lack of formal education. As someone who values good mental health and maintains a moderate level of openness, I try to approach these discussions with empathy and patience, aiming to bridge gaps in understanding rather than deepening divides.\n\nIn my everyday interactions—whether it’s during casual encounters at work or on social media, where I only spend a few times monthly—I’ve learned that listening is as important as speaking. It's about acknowledging people’s concerns without judgment, asking clarifying questions, and sharing personal experiences when appropriate. For instance, discussing how the vaccine helped protect my family, including my child, can sometimes offer relatable reassurance to those who might be hesitant.\n\nI also believe that clear communication is key. Using straightforward language free of jargon helps demystify complex medical information for people like me and others with a vocational diploma background. Moreover, being aware of one’s own biases—something I've worked on given my moderate levels of agreeableness and high neuroticism—is crucial to remain open-minded during heated debates.\n\nIn summary, managing discussions about healthcare and COVID vaccines involves a mix of empathy, clarity, and respect for diverse perspectives. It requires recognizing the varied backgrounds people come from, including cultural and educational differences, and striving for constructive dialogue that prioritizes public health while respecting individual choices. This balanced approach can help build trust and understanding in conversations that are often fraught with emotional intensity.",
+    "reasoning_summary": "We need to produce a single-line JSON object containing keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The answer should be continuous prose (no bullet points) between 250-500 words. We must produce a final answer that is a single JSON string in one line and no markdown formatting.\n\nWe need to refer to the persona: age=29, gender=man, bisexual, retail worker from Washington DC, employed part-time, vocational diploma, parent's education with one lower secondary and one master's degree, married, 1 child, immigrant, good mental health, religious beliefs Islam. Hobbies include football (calcio), travel, birdwatching. Personality traits: moderate openness, low conscientiousness, low extraversion, moderate agreeableness, high neuroticism.\n\nWe need to discuss the topic: How to manage and dealing with discussions about healthcare and COVID vaccines.\n\nWe should produce a perspective that uses these persona details as background context for opinions. We mention personal experiences in retail work, living in Washington DC, being an immigrant, good mental health but high neuroticism, etc. \n\nI produce a well-written opinion piece discussing the importance of empathy and clear communication, using plain language, referencing personal experience with family safety (child) and so on.\n\nI'll now produce final answer accordingly in JSON format. We need to include keys: mode, topic, opinion (final answer), reasoning_summary (explanation but not required? But we are given a structure that includes ",
+    "reasoning_summary:": "<full step-by-step derivations>",
+    "tone:": "<derived from persona traits>",
+    "citations:": [
+      "<source name or org>"
+    ],
+    "used_persona_fields": [
+      "<list of fields referenced>"
+    ]
+  }
+}

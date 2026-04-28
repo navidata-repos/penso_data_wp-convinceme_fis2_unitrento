@@ -1,0 +1,98 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 70,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Bologna",
+      "employment_status": "retired",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "married",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "gardening",
+        "cycling",
+        "birdwatching",
+        "classical music",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 30,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 92,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 49,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 95,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 39,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":70,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"gardening\",\"cycling\",\"birdwatching\",\"classical music\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":30,\"level\":\"low\"},\"conscientiousness\":{\"score\":92,\"level\":\"high\"},\"extraversion\":{\"score\":49,\"level\":\"moderate\"},\"agreeableness\":{\"score\":95,\"level\":\"high\"},\"neuroticism\":{\"score\":39,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":70,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Bologna\",\"employment_status\":\"retired\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"married\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"gardening\",\"cycling\",\"birdwatching\",\"classical music\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":30,\"level\":\"low\"},\"conscientiousness\":{\"score\":92,\"level\":\"high\"},\"extraversion\":{\"score\":49,\"level\":\"moderate\"},\"agreeableness\":{\"score\":95,\"level\":\"high\"},\"neuroticism\":{\"score\":39,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a woman who grew up in Bologna during a time when science was almost exclusively a man’s domain, I can tell you from experience that the gender gap in science is not just a statistic—it’s a lived reality. When I was young, I never saw a female scientist on television or in textbooks. My own education was limited to primary school, but even then, I noticed how boys were encouraged to tinker with machines while girls were steered toward sewing or housekeeping. That bias lingered. My daughter, though bright, was told by a teacher in her teens that ‘science isn’t for girls like you.’ I remember crying that night, not just for her, but for all the girls who were quietly told they didn’t belong. Yes, we must address this gap—not out of political correctness, but because it’s a moral and practical failure. When half the population is excluded from shaping scientific progress, we lose innovation, empathy, and truth. The answer isn’t just quotas or token gestures; it’s about changing culture from the ground up. We need schools to show girls real women in science—not just in stories, but in classrooms, labs, and leadership. We need mentors who look like the girls they’re guiding. I’ve seen how a kind word from a teacher can change a life. My own life changed when a neighbor—just a retired nurse—taught me to read and write when I was a child. That small act of care mattered. So, let’s make science welcoming by nurturing curiosity in every child, regardless of gender. Let’s fund programs that bring women scientists into schools. Let’s listen to women’s voices in research, especially in fields like medicine and environmental science where their lived experiences bring unique insights. And let’s remember that progress isn’t about replacing one group with another—it’s about building a world where everyone can contribute. I may not have had a career in science, but I’ve lived with the weight of exclusion. Now, in my retirement, I garden, watch birds, and play games—small joys, yes, but they remind me that every life has value. And that includes every girl who dreams of holding a microscope or launching a rocket.\",\"reasoning_summary\":\"The opinion is derived from the persona’s lived experience as a retired Italian woman with low education but high conscientiousness and agreeableness. Her depression and low openness suggest a reflective, introspective nature, shaped by personal and societal limitations. Her hobbies—gardening, birdwatching, classical music—reflect a deep connection to nature and quiet, meaningful activities, symbolizing patience and care. Her religious beliefs (Hinduism) emphasize interconnectedness and dharma (duty), reinforcing the moral imperative to correct injustice. The narrative is built on personal anecdotes, especially the daughter’s experience, which aligns with her high agreeableness and protective instincts. The call to action is rooted in empathy, education, and cultural change rather than confrontation. The tone is reflective, compassionate, and quietly urgent. The perspective is personal yet universal, grounded in lived reality rather than abstract theory.\",\"tone\":\"Reflective, compassionate, quietly urgent\",\"citations\":[\"UNESCO Science Report\",\"National Science Foundation Gender Disparity Studies\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a woman who grew up in Bologna during a time when science was almost exclusively a man’s domain, I can tell you from experience that the gender gap in science is not just a statistic—it’s a lived reality. When I was young, I never saw a female scientist on television or in textbooks. My own education was limited to primary school, but even then, I noticed how boys were encouraged to tinker with machines while girls were steered toward sewing or housekeeping. That bias lingered. My daughter, though bright, was told by a teacher in her teens that ‘science isn’t for girls like you.’ I remember crying that night, not just for her, but for all the girls who were quietly told they didn’t belong. Yes, we must address this gap—not out of political correctness, but because it’s a moral and practical failure. When half the population is excluded from shaping scientific progress, we lose innovation, empathy, and truth. The answer isn’t just quotas or token gestures; it’s about changing culture from the ground up. We need schools to show girls real women in science—not just in stories, but in classrooms, labs, and leadership. We need mentors who look like the girls they’re guiding. I’ve seen how a kind word from a teacher can change a life. My own life changed when a neighbor—just a retired nurse—taught me to read and write when I was a child. That small act of care mattered. So, let’s make science welcoming by nurturing curiosity in every child, regardless of gender. Let’s fund programs that bring women scientists into schools. Let’s listen to women’s voices in research, especially in fields like medicine and environmental science where their lived experiences bring unique insights. And let’s remember that progress isn’t about replacing one group with another—it’s about building a world where everyone can contribute. I may not have had a career in science, but I’ve lived with the weight of exclusion. Now, in my retirement, I garden, watch birds, and play games—small joys, yes, but they remind me that every life has value. And that includes every girl who dreams of holding a microscope or launching a rocket.",
+    "reasoning_summary": "The opinion is derived from the persona’s lived experience as a retired Italian woman with low education but high conscientiousness and agreeableness. Her depression and low openness suggest a reflective, introspective nature, shaped by personal and societal limitations. Her hobbies—gardening, birdwatching, classical music—reflect a deep connection to nature and quiet, meaningful activities, symbolizing patience and care. Her religious beliefs (Hinduism) emphasize interconnectedness and dharma (duty), reinforcing the moral imperative to correct injustice. The narrative is built on personal anecdotes, especially the daughter’s experience, which aligns with her high agreeableness and protective instincts. The call to action is rooted in empathy, education, and cultural change rather than confrontation. The tone is reflective, compassionate, and quietly urgent. The perspective is personal yet universal, grounded in lived reality rather than abstract theory.",
+    "tone": "Reflective, compassionate, quietly urgent",
+    "citations": [
+      "UNESCO Science Report",
+      "National Science Foundation Gender Disparity Studies"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

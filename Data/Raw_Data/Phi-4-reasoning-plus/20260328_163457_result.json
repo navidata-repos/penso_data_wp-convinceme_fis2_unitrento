@@ -1,0 +1,122 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 29,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Milan",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "primary school"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "rock climbing",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 70,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 18,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 61,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 76,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 4,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":29,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"rock climbing\",\"travel\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":18,\"level\":\"low\"},\"extraversion\":{\"score\":61,\"level\":\"moderate\"},\"agreeableness\":{\"score\":76,\"level\":\"high\"},\"neuroticism\":{\"score\":4,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":29,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Milan\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"rock climbing\",\"travel\"],\"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":18,\"level\":\"low\"},\"extraversion\":{\"score\":61,\"level\":\"moderate\"},\"agreeableness\":{\"score\":76,\"level\":\"high\"},\"neuroticism\":{\"score\":4,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a fitness trainer living in Milan, I've always believed that both physical health and mental well-being are intertwined. When discussing healthcare topics like COVID vaccines, it's important to remember that people come from diverse backgrounds—some may have had limited access to formal education or different cultural perspectives, as my own parents did—and this can influence their views on medical issues. Given my background in fitness, I'm attuned to the importance of evidence-based practices and how lifestyle choices play a role in overall immunity and recovery. In conversations about COVID vaccines, I try to remain calm and open-minded because I've noticed that social media sometimes amplifies heated debates. My own time spent online makes me aware of how misinformation can spread quickly among users who are not always well-informed. When someone shares a misconception, I gently steer the conversation toward credible sources—like trusted health organizations—and emphasize listening as much as speaking. It's also important to respect different perspectives, even if they conflict with scientific consensus. In my experience, acknowledging people's concerns and fears is crucial, especially when discussing sensitive topics like vaccines. The key is to build trust by showing empathy. I've learned that sometimes it helps to share personal anecdotes or relate vaccine discussions to familiar concepts in fitness—like how proper training and recovery can make a significant difference in performance—to help people see the parallels with health measures such as vaccination. Even if my own psychological state has been marked by moments of depression, I strive to remain positive and proactive when engaging in these topics. This balanced approach helps me connect with others, showing that while I value scientific rigor, I also understand the human aspect behind every opinion. Ultimately, managing discussions about healthcare and COVID vaccines is about finding common ground through respectful dialogue, supporting each other's well-being, and promoting informed decisions based on reliable data. In sum, staying compassionate, patient, and grounded in evidence can help navigate these conversations effectively.\",\"reasoning_summary\":\"We need to produce a JSON with keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The output should be a single-line JSON object with no extra text or markdown formatting. We must produce an answer that is at least 250 words and up to 500 words in the final answer. It must align with the persona's background: fitness trainer, living in Milan; education level upper secondary, parents' education low, depression; religious beliefs Islam; high time on social media; hobbies rock climbing and travel; personality traits: high openness, low conscientiousness, moderate extraversion, high agreeableness, low neuroticism. The answer must be continuous prose with no bullet points. We need to produce a final JSON object that includes keys mode, topic, opinion, reasoning_summary, tone, citations (empty if none provided?), used_persona_fields. I'll produce an answer in one line JSON structure with the required fields. It should have a single-line JSON object output with double quotes as necessary. Let's check each field: \",\"mode\\\":\\\"human\\\",\\\"topic\\\":\\\"How to manage and dealing with discussions about healthcare and COVID vaccines.\\\", ... We need final answer in continuous prose that is at least 250 words, up to 500 words. Let's produce an answer that meets the requirements. I'll produce a coherent answer as the \":\", then reasoning summary as a step-by-step breakdown, tone (derived from persona traits), citations maybe include some references e.g. WHO? The instructions: \" ,\"citations\\\":[\\\"<source name or org>\\\"],\" :\", used_persona_fields list fields referenced. We'll need to produce an answer that is exactly one line JSON object with no extra text. I'll produce the final answer as a JSON string in one line, with keys \" ,\"mode\\\":\\\"human\\\",\\\"topic\\\":\\\"How to manage and dealing with discussions about healthcare and COVID vaccines.\\\", etc. We must include fields: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. Let's check each field from the template given: \" :\"\", \"persona:\" : {\"age\":29,\"gender\":\"man\", \"sexual_orientation\":\"heterosexual\",\"occupation\":\"fitness trainer\", \"city_of_living\":\"Milan\", \"employment_status\":\"employed full-time\", \"education_level\":\"upper secondary\", \"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\", \"hobbies\":[\"rock climbing\",\"travel\"], \"ocean\":{\"openness\":{\"score\":70,\"level\":\"high\"},\"conscientiousness\":{\"score\":18,\"level\":\"low\"},\"extraversion\":{\"score\":61,\"level\":\"moderate\"},\"agreeableness\":{\"score\":76,\"level\":\"high\"},\"neuroticism\":{\"score\":4,\"level\":\"low\"}}} }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a fitness trainer living in Milan, I've always believed that both physical health and mental well-being are intertwined. When discussing healthcare topics like COVID vaccines, it's important to remember that people come from diverse backgrounds—some may have had limited access to formal education or different cultural perspectives, as my own parents did—and this can influence their views on medical issues. Given my background in fitness, I'm attuned to the importance of evidence-based practices and how lifestyle choices play a role in overall immunity and recovery. In conversations about COVID vaccines, I try to remain calm and open-minded because I've noticed that social media sometimes amplifies heated debates. My own time spent online makes me aware of how misinformation can spread quickly among users who are not always well-informed. When someone shares a misconception, I gently steer the conversation toward credible sources—like trusted health organizations—and emphasize listening as much as speaking. It's also important to respect different perspectives, even if they conflict with scientific consensus. In my experience, acknowledging people's concerns and fears is crucial, especially when discussing sensitive topics like vaccines. The key is to build trust by showing empathy. I've learned that sometimes it helps to share personal anecdotes or relate vaccine discussions to familiar concepts in fitness—like how proper training and recovery can make a significant difference in performance—to help people see the parallels with health measures such as vaccination. Even if my own psychological state has been marked by moments of depression, I strive to remain positive and proactive when engaging in these topics. This balanced approach helps me connect with others, showing that while I value scientific rigor, I also understand the human aspect behind every opinion. Ultimately, managing discussions about healthcare and COVID vaccines is about finding common ground through respectful dialogue, supporting each other's well-being, and promoting informed decisions based on reliable data. In sum, staying compassionate, patient, and grounded in evidence can help navigate these conversations effectively.",
+    "reasoning_summary": "We need to produce a JSON with keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The output should be a single-line JSON object with no extra text or markdown formatting. We must produce an answer that is at least 250 words and up to 500 words in the final answer. It must align with the persona's background: fitness trainer, living in Milan; education level upper secondary, parents' education low, depression; religious beliefs Islam; high time on social media; hobbies rock climbing and travel; personality traits: high openness, low conscientiousness, moderate extraversion, high agreeableness, low neuroticism. The answer must be continuous prose with no bullet points. We need to produce a final JSON object that includes keys mode, topic, opinion, reasoning_summary, tone, citations (empty if none provided?), used_persona_fields. I'll produce an answer in one line JSON structure with the required fields. It should have a single-line JSON object output with double quotes as necessary. Let's check each field: ",
+    "mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\", ... We need final answer in continuous prose that is at least 250 words, up to 500 words. Let's produce an answer that meets the requirements. I'll produce a coherent answer as the ": ", then reasoning summary as a step-by-step breakdown, tone (derived from persona traits), citations maybe include some references e.g. WHO? The instructions: ",
+    "citations\":[\"<source name or org>\"],": ", used_persona_fields list fields referenced. We'll need to produce an answer that is exactly one line JSON object with no extra text. I'll produce the final answer as a JSON string in one line, with keys ",
+    "mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\", etc. We must include fields: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. Let's check each field from the template given: ": "",
+    "persona:": {
+      "age": 29,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Milan",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "primary school"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "rock climbing",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 70,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 18,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 61,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 76,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 4,
+          "level": "low"
+        }
+      }
+    }
+  }
+}

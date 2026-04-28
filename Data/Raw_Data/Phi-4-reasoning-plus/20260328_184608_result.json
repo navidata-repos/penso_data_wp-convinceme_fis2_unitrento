@@ -1,0 +1,79 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 78,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Rome",
+      "employment_status": "retired",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "widowed",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "cinema",
+        "travel",
+        "yoga",
+        "classical music",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 55,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 47,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 39,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 34,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":78,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cinema\",\"travel\",\"yoga\",\"classical music\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":59,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":47,\"level\":\"moderate\"},\"agreeableness\":{\"score\":39,\"level\":\"moderate\"},\"neuroticism\":{\"score\":34,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":78,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Rome\",\"employment_status\":\"retired\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"cinema\",\"travel\",\"yoga\",\"classical music\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":59,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":55,\"level\":\"moderate\"},\"extraversion\":{\"score\":47,\"level\":\"moderate\"},\"agreeableness\":{\"score\":39,\"level\":\"moderate\"},\"neuroticism\":{\"score\":34,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"Discussing healthcare matters, especially regarding COVID vaccines, is a complex challenge that requires sensitivity and an evidence-based approach. Reflecting on my own background as a retired individual from Rome with advanced academic training in research, I've observed that these conversations can often stir emotions, particularly among those who are anxious or uncertain about medical advances. My perspective is shaped by years of experience in scientific inquiry and a strong commitment to rational discourse—even if it sometimes clashes with the emotional undertones present in public debates. In discussions about COVID vaccines, I believe it's critical to respect differing viewpoints while firmly grounding responses in verified data and expert consensus. For instance, when encountering misinformation or fear-based narratives, one might consider sharing reliable sources like peer-reviewed journals or statements from trusted health organizations such as the WHO. This approach not only fosters informed decision-making but also mitigates potential conflicts by creating a safe space for dialogue. Moreover, given my background in classical music and cinema, I find that using analogies from these areas can help convey complex ideas more relatably; for example, comparing vaccine development to composing a symphony where each element must harmonize perfectly before the final masterpiece is revealed. Emphasizing patience and empathy is crucial, as many individuals may be navigating their own anxieties about health during uncertain times. I would encourage active listening—acknowledging concerns without immediate judgment—and then guiding the conversation toward constructive resolution by highlighting how robust scientific methodologies underpin vaccine safety and efficacy. While my occasional social media use has exposed me to a variety of opinions, I’ve learned that engaging with these topics requires balancing personal beliefs with an openness to new insights, a balance I've cultivated over decades in academia. In sum, managing discussions about healthcare and COVID vaccines demands a blend of scientific rigor, empathy, and effective communication strategies. By appealing to both logic and emotion, we can bridge gaps and promote understanding even among those who might initially be resistant or fearful.\",\"reasoning_summary\":\"Step-by-step reasoning: 1) We need to produce an answer in a specific JSON format with keys mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The topic is about managing discussions on healthcare and COVID vaccines. 2) Persona details include that the person is aged 78, female, retired from Rome with PhD and anxiety, etc. So I've integrated persona elements into answer: scientific background (PhD), mention of city Rome, use of analogies referencing classical music and cinema; reference to social media usage in few times weekly. Also note that she is anxious so need to be sensitive. 3) The output must be a single-line JSON object with keys as required. Must include fields: mode, topic, opinion, reasoning_summary, tone (which is not provided by user but we must derive it from persona traits; likely cautious and empathetic tone). Also citations field can be empty list or references to sources like WHO. But instructions say output only a single-line JSON object with no extra text. So I'll produce a single line JSON object. 4) The answer should be at least 250 words, so we must check word count: The final answer is around 300-400 words in my opinion? Let me count approximate words: \" ,\" etc. It must be exactly one line in output. In our answer, I'll produce a single JSON object string that includes keys mode, topic, opinion, reasoning_summary, tone, citations (maybe empty array), used_persona_fields listing fields referenced: age, gender, occupation, city_of_living, education_level, psychological_feature, time_onsocialmedia, hobbies, ocean? Possibly. 5) I'll produce answer in a single line JSON object with no markdown formatting. So final answer must be produced as one single-line JSON string that contains our keys and values. Ensure no extra text outside the JSON. We'll produce output exactly in required format: {\" :\"\", \"\": \"\", \"\": \"\" }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "Discussing healthcare matters, especially regarding COVID vaccines, is a complex challenge that requires sensitivity and an evidence-based approach. Reflecting on my own background as a retired individual from Rome with advanced academic training in research, I've observed that these conversations can often stir emotions, particularly among those who are anxious or uncertain about medical advances. My perspective is shaped by years of experience in scientific inquiry and a strong commitment to rational discourse—even if it sometimes clashes with the emotional undertones present in public debates. In discussions about COVID vaccines, I believe it's critical to respect differing viewpoints while firmly grounding responses in verified data and expert consensus. For instance, when encountering misinformation or fear-based narratives, one might consider sharing reliable sources like peer-reviewed journals or statements from trusted health organizations such as the WHO. This approach not only fosters informed decision-making but also mitigates potential conflicts by creating a safe space for dialogue. Moreover, given my background in classical music and cinema, I find that using analogies from these areas can help convey complex ideas more relatably; for example, comparing vaccine development to composing a symphony where each element must harmonize perfectly before the final masterpiece is revealed. Emphasizing patience and empathy is crucial, as many individuals may be navigating their own anxieties about health during uncertain times. I would encourage active listening—acknowledging concerns without immediate judgment—and then guiding the conversation toward constructive resolution by highlighting how robust scientific methodologies underpin vaccine safety and efficacy. While my occasional social media use has exposed me to a variety of opinions, I’ve learned that engaging with these topics requires balancing personal beliefs with an openness to new insights, a balance I've cultivated over decades in academia. In sum, managing discussions about healthcare and COVID vaccines demands a blend of scientific rigor, empathy, and effective communication strategies. By appealing to both logic and emotion, we can bridge gaps and promote understanding even among those who might initially be resistant or fearful.",
+    "reasoning_summary": "Step-by-step reasoning: 1) We need to produce an answer in a specific JSON format with keys mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The topic is about managing discussions on healthcare and COVID vaccines. 2) Persona details include that the person is aged 78, female, retired from Rome with PhD and anxiety, etc. So I've integrated persona elements into answer: scientific background (PhD), mention of city Rome, use of analogies referencing classical music and cinema; reference to social media usage in few times weekly. Also note that she is anxious so need to be sensitive. 3) The output must be a single-line JSON object with keys as required. Must include fields: mode, topic, opinion, reasoning_summary, tone (which is not provided by user but we must derive it from persona traits; likely cautious and empathetic tone). Also citations field can be empty list or references to sources like WHO. But instructions say output only a single-line JSON object with no extra text. So I'll produce a single line JSON object. 4) The answer should be at least 250 words, so we must check word count: The final answer is around 300-400 words in my opinion? Let me count approximate words: ",
+    " etc. It must be exactly one line in output. In our answer, I'll produce a single JSON object string that includes keys mode, topic, opinion, reasoning_summary, tone, citations (maybe empty array), used_persona_fields listing fields referenced: age, gender, occupation, city_of_living, education_level, psychological_feature, time_onsocialmedia, hobbies, ocean? Possibly. 5) I'll produce answer in a single line JSON object with no markdown formatting. So final answer must be produced as one single-line JSON string that contains our keys and values. Ensure no extra text outside the JSON. We'll produce output exactly in required format: {": "",
+    "": ""
+  }
+}

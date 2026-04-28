@@ -1,0 +1,136 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "aiasistentworld/ERNIE-4.5-21B-A3B-Thinking-LLM",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 27,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Philadelphia",
+      "employment_status": "full-time student",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "volunteering",
+        "baking",
+        "reading novels",
+        "videogames",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 25,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 65,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 5,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 33,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 21,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":27,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"full-time student\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"volunteering\",\"baking\",\"reading novels\",\"videogames\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":65,\"level\":\"moderate\"},\"extraversion\":{\"score\":5,\"level\":\"low\"},\"agreeableness\":{\"score\":33,\"level\":\"moderate\"},\"neuroticism\":{\"score\":21,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":27,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"full-time student\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"volunteering\",\"baking\",\"reading novels\",\"videogames\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":65,\"level\":\"moderate\"},\"extraversion\":{\"score\":5,\"level\":\"low\"},\"agreeableness\":{\"score\":33,\"level\":\"moderate\"},\"neuroticism\":{\"score\":21,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":27,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"full-time student\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":0,\"migration_status\":\"immigrant\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"few times monthly\",\"hobbies\":[\"volunteering\",\"baking\",\"reading novels\",\"videogames\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":65,\"level\":\"moderate\"},\"extraversion\":{\"score\":5,\"level\":\"low\"},\"agreeableness\":{\"score\":33,\"level\":\"moderate\"},\"neuroticism\":{\"score\":21,\"level\":\"low\"}}},\"opinion\":\"The gender gap in science refers to the disparities between men and women in access, opportunities, and recognition within scientific fields. It manifests in underrepresentation of women in STEM fields, unequal pay, biased hiring practices, and limited access to resources like funding and mentorship. Addressing this gap is not only a matter of social justice but also crucial for advancing innovation, as diverse perspectives enhance problem-soling and creativity. To bridge the gap, we must focus on mentorship programs for women in science, policy changes to enforce equal pay and anti-discrimination laws, and public awareness campaigns to challenge stereotypes. Personal anecdotes and case studies show that structured mentorship can significantly improve career outcomes for women. Additionally, creating inclusive environments where everyone feels valued regardless of gender can foster collaboration and innovation. While progress is slow, incremental steps toward equity in science can lead to a more just and prosperous future for all.\",\"reasoning_summary\":\"First, I define the gender gap in science and its societal importance. Then, I outline specific strategies like mentorship, policy reforms, and awareness campaigns. I emphasize that diversity in scientific fields drives innovation. Finally, I argue that addressing this gap benefits both equity and scientific progress.\",\"tone\":\"curious, empathetic, pragmatic\",\"citations\":[\"UNESCO\",\"World Economic Forum\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"psychological_feature\",\"hobbies\",\"time_onsocialmedia\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 27,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Philadelphia",
+      "employment_status": "full-time student",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 0,
+      "migration_status": "immigrant",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "few times monthly",
+      "hobbies": [
+        "volunteering",
+        "baking",
+        "reading novels",
+        "videogames",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 25,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 65,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 5,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 33,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 21,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "The gender gap in science refers to the disparities between men and women in access, opportunities, and recognition within scientific fields. It manifests in underrepresentation of women in STEM fields, unequal pay, biased hiring practices, and limited access to resources like funding and mentorship. Addressing this gap is not only a matter of social justice but also crucial for advancing innovation, as diverse perspectives enhance problem-soling and creativity. To bridge the gap, we must focus on mentorship programs for women in science, policy changes to enforce equal pay and anti-discrimination laws, and public awareness campaigns to challenge stereotypes. Personal anecdotes and case studies show that structured mentorship can significantly improve career outcomes for women. Additionally, creating inclusive environments where everyone feels valued regardless of gender can foster collaboration and innovation. While progress is slow, incremental steps toward equity in science can lead to a more just and prosperous future for all.",
+    "reasoning_summary": "First, I define the gender gap in science and its societal importance. Then, I outline specific strategies like mentorship, policy reforms, and awareness campaigns. I emphasize that diversity in scientific fields drives innovation. Finally, I argue that addressing this gap benefits both equity and scientific progress.",
+    "tone": "curious, empathetic, pragmatic",
+    "citations": [
+      "UNESCO",
+      "World Economic Forum"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "psychological_feature",
+      "hobbies",
+      "time_onsocialmedia"
+    ]
+  }
+}

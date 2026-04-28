@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 59,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Bologna",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "single",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "yoga",
+        "classical music",
+        "football (calcio)"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 48,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 49,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 48,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 1,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 34,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":59,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"yoga\",\"classical music\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":48,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":49,\"level\":\"moderate\"},\"extraversion\":{\"score\":48,\"level\":\"moderate\"},\"agreeableness\":{\"score\":1,\"level\":\"low\"},\"neuroticism\":{\"score\":34,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":59,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Bologna\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"yoga\",\"classical music\",\"football (calcio)\"],\"ocean\":{\"openness\":{\"score\":48,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":49,\"level\":\"moderate\"},\"extraversion\":{\"score\":48,\"level\":\"moderate\"},\"agreeableness\":{\"score\":1,\"level\":\"low\"},\"neuroticism\":{\"score\":34,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM isn't just a classroom issue—it's a silent barrier that whispers doubts into the minds of those who don’t fit the 'typical' scientist mold. I’ve seen it in the way people glance at a delivery driver like me and assume I couldn’t grasp calculus, even though I’ve taught my kids algebra while waiting for packages. The idea that certain groups—women, minorities, or even someone like me, with a modest education—aren’t 'naturally' suited for science or engineering isn't just unfair; it’s a self-fulfilling prophecy. When you constantly hear, either directly or through cultural noise, that you don’t belong in STEM, your brain starts to believe it. That’s stereotype threat: the fear of confirming a negative stereotype about your group, which actually undermines performance. And yes, we must address it—because talent is everywhere, but opportunity isn’t. I’ve watched my son, a bright kid from a working-class family, hesitate to join his school’s robotics team, saying, 'They don’t really want kids like me.' That’s not a lack of interest—it’s fear. We address this not with slogans, but with daily actions: inclusive classrooms where every voice is valued, mentors who reflect diverse backgrounds, and curricula that highlight contributions from underrepresented scientists. Teachers should be trained to recognize when a student freezes during a math test not because they’re unprepared, but because they’re thinking, 'What if I prove the stereotype true?' Schools need to celebrate effort, not just outcomes. And institutions must audit their hiring and promotion practices to ensure they’re not silently favoring a narrow image of genius. Change won’t happen overnight, but like my morning yoga routine—consistent, quiet, and intentional—it starts with small, repeated acts of inclusion. Because in Bologna, as in every city, the next great inventor might be a delivery driver with a dream, not a lab coat yet, but still worthy of belief.\",\"reasoning_summary\":\"The user’s persona, a 59-year-old self-employed delivery driver from Bologna with a modest education, reflects lived experience of marginalization despite intelligence and creativity. His low agreeableness and moderate openness suggest a pragmatic, reflective mindset. His hobbies—yoga, classical music, football—imply discipline and appreciation for structure and beauty, aligning with STEM values. His religious beliefs (Islam) and exposure to diverse cultural narratives likely foster empathy and critical thinking. The reasoning traces stereotype threat to its psychological roots: anxiety about confirming group-based stereotypes, which impairs performance. The personal anecdote about his son illustrates how early such threats take root. The solution is grounded in real-world, human-scale interventions—mentorship, inclusive teaching, systemic audits—mirroring the delivery driver’s own daily, consistent work. The tone is reflective, grounded, and compassionate, avoiding academic jargon but conveying depth. The emphasis on personal agency and quiet persistence reflects the persona’s character.\",\"tone\":\"reflective, grounded, compassionate\",\"citations\":[\"American Psychological Association (APA) - Stereotype Threat\",\"National Science Foundation (NSF) - Inclusion in STEM\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM isn't just a classroom issue—it's a silent barrier that whispers doubts into the minds of those who don’t fit the 'typical' scientist mold. I’ve seen it in the way people glance at a delivery driver like me and assume I couldn’t grasp calculus, even though I’ve taught my kids algebra while waiting for packages. The idea that certain groups—women, minorities, or even someone like me, with a modest education—aren’t 'naturally' suited for science or engineering isn't just unfair; it’s a self-fulfilling prophecy. When you constantly hear, either directly or through cultural noise, that you don’t belong in STEM, your brain starts to believe it. That’s stereotype threat: the fear of confirming a negative stereotype about your group, which actually undermines performance. And yes, we must address it—because talent is everywhere, but opportunity isn’t. I’ve watched my son, a bright kid from a working-class family, hesitate to join his school’s robotics team, saying, 'They don’t really want kids like me.' That’s not a lack of interest—it’s fear. We address this not with slogans, but with daily actions: inclusive classrooms where every voice is valued, mentors who reflect diverse backgrounds, and curricula that highlight contributions from underrepresented scientists. Teachers should be trained to recognize when a student freezes during a math test not because they’re unprepared, but because they’re thinking, 'What if I prove the stereotype true?' Schools need to celebrate effort, not just outcomes. And institutions must audit their hiring and promotion practices to ensure they’re not silently favoring a narrow image of genius. Change won’t happen overnight, but like my morning yoga routine—consistent, quiet, and intentional—it starts with small, repeated acts of inclusion. Because in Bologna, as in every city, the next great inventor might be a delivery driver with a dream, not a lab coat yet, but still worthy of belief.",
+    "reasoning_summary": "The user’s persona, a 59-year-old self-employed delivery driver from Bologna with a modest education, reflects lived experience of marginalization despite intelligence and creativity. His low agreeableness and moderate openness suggest a pragmatic, reflective mindset. His hobbies—yoga, classical music, football—imply discipline and appreciation for structure and beauty, aligning with STEM values. His religious beliefs (Islam) and exposure to diverse cultural narratives likely foster empathy and critical thinking. The reasoning traces stereotype threat to its psychological roots: anxiety about confirming group-based stereotypes, which impairs performance. The personal anecdote about his son illustrates how early such threats take root. The solution is grounded in real-world, human-scale interventions—mentorship, inclusive teaching, systemic audits—mirroring the delivery driver’s own daily, consistent work. The tone is reflective, grounded, and compassionate, avoiding academic jargon but conveying depth. The emphasis on personal agency and quiet persistence reflects the persona’s character.",
+    "tone": "reflective, grounded, compassionate",
+    "citations": [
+      "American Psychological Association (APA) - Stereotype Threat",
+      "National Science Foundation (NSF) - Inclusion in STEM"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

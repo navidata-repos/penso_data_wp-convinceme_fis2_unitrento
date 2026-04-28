@@ -1,0 +1,74 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 67,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Lecce",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "painting",
+        "travel"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 69,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 95,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 42,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 9,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":67,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Lecce\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"painting\",\"travel\"],\"ocean\":{\"openness\":{\"score\":51,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":69,\"level\":\"high\"},\"extraversion\":{\"score\":95,\"level\":\"high\"},\"agreeableness\":{\"score\":42,\"level\":\"moderate\"},\"neuroticism\":{\"score\":9,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":67,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Lecce\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"painting\",\"travel\"],\"ocean\":{\"openness\":{\"score\":51,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":69,\"level\":\"high\"},\"extraversion\":{\"score\":95,\"level\":\"high\"},\"agreeableness\":{\"score\":42,\"level\":\"moderate\"},\"neuroticism\":{\"score\":9,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat refers to the phenomenon where individuals underperform or feel anxious when they worry that their performance might confirm a negative stereotype about their group. In STEM fields, this often affects women and minorities, who may fear being seen as less capable in subjects like mathematics or engineering because of prevailing stereotypes. This anxiety can create a self-fulfilling prophecy, leading to reduced confidence, increased stress, and lower achievement. It’s not only an academic issue but also influences career choices and long-term professional engagement in STEM areas. Addressing stereotype threat is essential for creating a more inclusive and equitable environment. One approach is to foster environments that emphasize growth mindsets—encouraging the idea that abilities can be developed through effort rather than being seen as fixed traits. In addition, educators and mentors should actively work to dismantle stereotypes by celebrating diverse contributions in STEM and showcasing role models from underrepresented groups. Creating safe spaces for open dialogue about these issues is also crucial. Furthermore, designing curricula that are culturally responsive and inclusive can help reduce the anxiety associated with stereotype threat. This might involve rethinking assessment methods or providing support networks where students feel valued beyond their stereotyped identities. The benefits of addressing stereotype threat extend far beyond academic performance; they contribute to a more diverse talent pool in STEM fields, driving innovation through varied perspectives. As someone who values curiosity and open-mindedness, I believe it's important that we continuously seek out strategies to mitigate such psychological barriers. These efforts require collaboration among educators, institutions, policymakers, and the community at large to ensure that everyone has an equal opportunity to succeed in STEM. Addressing stereotype threat is not just about fairness; it’s about unlocking potential and fostering a culture where diverse talents can thrive without the burden of negative assumptions.\",\"reasoning_summary\":\"We need to produce an answer discussing what stereotype threat is, its impact on underrepresented groups in STEM, and suggestions for addressing it. The answer should be written with continuous prose, at least 250 words and up to 500 words. Our output must be a JSON object with specific keys: mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. Our persona is that of a 67-year-old woman living in Lecce, retired, with curiosity as a psychological feature, etc. Her profile includes hobbies like painting and travel, and personality traits (openness moderate, high conscientiousness and extraversion, moderate agreeableness, low neuroticism). We'll mention these where relevant: perhaps referencing her curiosity, interest in education, and perspective on diversity. The answer should be written as continuous prose without bullet points. Our answer is produced with an explanation summary and a final output JSON object. We'll produce a single-line JSON object. We must follow the format exactly with keys mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields in our answer. We'll now produce the output accordingly. The content: We'll mention that stereotype threat is when individuals feel anxious or underperform because they worry about confirming negative stereotypes; particularly relevant to women and minorities in STEM fields. Strategies include growth mindset reinforcement, showcasing diverse role models, safe spaces, culturally responsive curricula. Also we need to emphasize collaboration among educators, institutions, policymakers, community. We'll produce a final answer that is at least 250 words. Our answer must be in plain text inside the JSON object as a single-line JSON string. We'll output our result accordingly. We'll produce a JSON with keys and values as required. We'll produce it as a single line with no markdown formatting. We'll now produce our final answer.</think>{\"}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat refers to the phenomenon where individuals underperform or feel anxious when they worry that their performance might confirm a negative stereotype about their group. In STEM fields, this often affects women and minorities, who may fear being seen as less capable in subjects like mathematics or engineering because of prevailing stereotypes. This anxiety can create a self-fulfilling prophecy, leading to reduced confidence, increased stress, and lower achievement. It’s not only an academic issue but also influences career choices and long-term professional engagement in STEM areas. Addressing stereotype threat is essential for creating a more inclusive and equitable environment. One approach is to foster environments that emphasize growth mindsets—encouraging the idea that abilities can be developed through effort rather than being seen as fixed traits. In addition, educators and mentors should actively work to dismantle stereotypes by celebrating diverse contributions in STEM and showcasing role models from underrepresented groups. Creating safe spaces for open dialogue about these issues is also crucial. Furthermore, designing curricula that are culturally responsive and inclusive can help reduce the anxiety associated with stereotype threat. This might involve rethinking assessment methods or providing support networks where students feel valued beyond their stereotyped identities. The benefits of addressing stereotype threat extend far beyond academic performance; they contribute to a more diverse talent pool in STEM fields, driving innovation through varied perspectives. As someone who values curiosity and open-mindedness, I believe it's important that we continuously seek out strategies to mitigate such psychological barriers. These efforts require collaboration among educators, institutions, policymakers, and the community at large to ensure that everyone has an equal opportunity to succeed in STEM. Addressing stereotype threat is not just about fairness; it’s about unlocking potential and fostering a culture where diverse talents can thrive without the burden of negative assumptions.",
+    "reasoning_summary": "We need to produce an answer discussing what stereotype threat is, its impact on underrepresented groups in STEM, and suggestions for addressing it. The answer should be written with continuous prose, at least 250 words and up to 500 words. Our output must be a JSON object with specific keys: mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. Our persona is that of a 67-year-old woman living in Lecce, retired, with curiosity as a psychological feature, etc. Her profile includes hobbies like painting and travel, and personality traits (openness moderate, high conscientiousness and extraversion, moderate agreeableness, low neuroticism). We'll mention these where relevant: perhaps referencing her curiosity, interest in education, and perspective on diversity. The answer should be written as continuous prose without bullet points. Our answer is produced with an explanation summary and a final output JSON object. We'll produce a single-line JSON object. We must follow the format exactly with keys mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields in our answer. We'll now produce the output accordingly. The content: We'll mention that stereotype threat is when individuals feel anxious or underperform because they worry about confirming negative stereotypes; particularly relevant to women and minorities in STEM fields. Strategies include growth mindset reinforcement, showcasing diverse role models, safe spaces, culturally responsive curricula. Also we need to emphasize collaboration among educators, institutions, policymakers, community. We'll produce a final answer that is at least 250 words. Our answer must be in plain text inside the JSON object as a single-line JSON string. We'll output our result accordingly. We'll produce a JSON with keys and values as required. We'll produce it as a single line with no markdown formatting. We'll now produce our final answer.</think>{"
+  }
+}

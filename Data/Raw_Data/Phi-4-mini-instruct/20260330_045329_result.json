@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 30,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Philadelphia",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "primary school"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "native-born American",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "classical music",
+        "painting",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 88,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 49,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 54,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 96,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"classical music\",\"painting\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":88,\"level\":\"high\"},\"conscientiousness\":{\"score\":49,\"level\":\"moderate\"},\"extraversion\":{\"score\":58,\"level\":\"moderate\"},\"agreeableness\":{\"score\":54,\"level\":\"moderate\"},\"neuroticism\":{\"score\":96,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":30,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"classical music\",\"painting\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":88,\"level\":\"high\"},\"conscientiousness\":{\"score\":49,\"level\":\"moderate\"},\"extraversion\":{\"score\":58,\"level\":\"moderate\"},\"agreeableness\":{\"score\":54,\"level\":\"moderate\"},\"neuroticism\":{\"score\":96,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\":\"As a mechanic in Philadelphia juggling self-employed work, staying informed through classical music and novels helps me navigate the digital world. To tackle fake news, I prioritize cross-checking sources—like verifying claims against multiple outlets. My high openness encourages exploring diverse perspectives, while moderate extraversion means discussing with peers to gain varied insights. Combining this with my neuroticism awareness, I approach content skeptically but seek corroboration before sharing. For instance, when encountering sensational headlines, I'd check fact-based sites like NPR or BBC via quick searches. Additionally, leveraging algorithms' biases by diversifying feeds and using tools like NewsGuard aids in spotting unreliable posts. Engaging in informed discussions at my local music events further enriches understanding. Ultimately, critical thinking paired with proactive verification forms the cornerstone of managing fake content effectively.\",\"reasoning_summary\":\"Started by assessing user's profession and interests; linked classical music/novels to analytical mindset needed for evaluating news; tied openness trait to seeking multiple sources; considered neuroticism as cautious skepticism; suggested peer discussions and algorithm awareness; emphasized critical thinking and tool usage as verification methods. Cross-referenced with reputable sites; mentioned NewsGuard tool; integrated personal habits like attending events for community insights.\",\"tone\":\"informative\",\"citations\":[\"NewsGuard\", \"NPR\", \"BBC\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"occupation\",\"hobbies\",\"time on social media\", \"psychological features\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "As a mechanic in Philadelphia juggling self-employed work, staying informed through classical music and novels helps me navigate the digital world. To tackle fake news, I prioritize cross-checking sources—like verifying claims against multiple outlets. My high openness encourages exploring diverse perspectives, while moderate extraversion means discussing with peers to gain varied insights. Combining this with my neuroticism awareness, I approach content skeptically but seek corroboration before sharing. For instance, when encountering sensational headlines, I'd check fact-based sites like NPR or BBC via quick searches. Additionally, leveraging algorithms' biases by diversifying feeds and using tools like NewsGuard aids in spotting unreliable posts. Engaging in informed discussions at my local music events further enriches understanding. Ultimately, critical thinking paired with proactive verification forms the cornerstone of managing fake content effectively.",
+    "reasoning_summary": "Started by assessing user's profession and interests; linked classical music/novels to analytical mindset needed for evaluating news; tied openness trait to seeking multiple sources; considered neuroticism as cautious skepticism; suggested peer discussions and algorithm awareness; emphasized critical thinking and tool usage as verification methods. Cross-referenced with reputable sites; mentioned NewsGuard tool; integrated personal habits like attending events for community insights.",
+    "tone": "informative",
+    "citations": [
+      "NewsGuard",
+      "NPR",
+      "BBC"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "hobbies",
+      "time on social media",
+      "psychological features"
+    ]
+  }
+}

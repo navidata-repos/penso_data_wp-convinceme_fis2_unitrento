@@ -1,0 +1,101 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 38,
+      "gender": "woman",
+      "sexual_orientation": "bisexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Los Angeles",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "PhD"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "travel",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 87,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 9,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 64,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 95,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 35,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":38,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"travel\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":87,\"level\":\"high\"},\"conscientiousness\":{\"score\":9,\"level\":\"low\"},\"extraversion\":{\"score\":64,\"level\":\"moderate\"},\"agreeableness\":{\"score\":95,\"level\":\"high\"},\"neuroticism\":{\"score\":35,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":38,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"PhD\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"travel\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":87,\"level\":\"high\"},\"conscientiousness\":{\"score\":9,\"level\":\"low\"},\"extraversion\":{\"score\":64,\"level\":\"moderate\"},\"agreeableness\":{\"score\":95,\"level\":\"high\"},\"neuroticism\":{\"score\":35,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat is the phenomenon where individuals feel at risk of confirming negative stereotypes about their social group, and this can be particularly pronounced in fields like STEM where some groups may feel undervalued or scrutinized. As a fitness trainer from Los Angeles who values physical well-being and personal growth, I see parallels between mental resilience and physical strength. Just as you might push through a tough workout, overcoming stereotype threat requires building self-confidence and resilience. The idea isn’t just about proving others wrong; it’s about creating environments where everyone feels that they belong. In STEM fields, this means addressing biases and promoting inclusive practices, from diverse hiring to supportive mentorship. For someone with an anxious disposition and high agreeableness like me, I believe it's essential to foster a culture of encouragement rather than competition. One approach is to highlight successful role models who defy stereotypes—whether in sports or science—to inspire others. Additionally, training programs can focus on self-affirmation techniques that help individuals internalize their strengths instead of succumbing to fear of judgment. It’s not about eliminating the challenge but about equipping people with tools to face it head-on, much like a trainer preparing clients for the rigors of physical exercise while ensuring they feel safe and supported. We should address stereotype threat because it can significantly impede innovation and diversity in STEM, just as lack of support can hinder progress in any pursuit. Ultimately, by cultivating an environment that values each individual’s contributions irrespective of background, we help not only those who might be affected but also the entire community—leading to a more dynamic, creative, and inclusive field.\",\"reasoning_summary\":\"We first interpreted stereotype threat as negative impact on performance due to fear of confirming stereotypes in STEM. Then considered persona's background: fitness trainer from Los Angeles, with lower secondary education, high agreeableness, anxious, married, etc., and traits from Big Five (openness high, conscientiousness low). We then crafted answer by drawing parallels between physical training and mental resilience. We discussed inclusive environments, mentorship, self-affirmation techniques, successful role models. Then we concluded that addressing stereotype threat is essential for fostering innovation in STEM. Our tone reflects supportive and encouraging perspective with a personal touch referencing fitness training analogies.\",\"tone\":\"supportive, empathetic, motivational\",\"citations\":[\"Stereotype Threat literature, implicit bias research\"],\"safety_notes\":\"\",\"used_persona_fields\":[\"age\", \"gender\", \"sexual_orientation\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"parents_education\", \"current_marital_status\", \"children\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"openness\", \"conscientiousness\", \"extraversion\", \"agreeableness\", \"neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat is the phenomenon where individuals feel at risk of confirming negative stereotypes about their social group, and this can be particularly pronounced in fields like STEM where some groups may feel undervalued or scrutinized. As a fitness trainer from Los Angeles who values physical well-being and personal growth, I see parallels between mental resilience and physical strength. Just as you might push through a tough workout, overcoming stereotype threat requires building self-confidence and resilience. The idea isn’t just about proving others wrong; it’s about creating environments where everyone feels that they belong. In STEM fields, this means addressing biases and promoting inclusive practices, from diverse hiring to supportive mentorship. For someone with an anxious disposition and high agreeableness like me, I believe it's essential to foster a culture of encouragement rather than competition. One approach is to highlight successful role models who defy stereotypes—whether in sports or science—to inspire others. Additionally, training programs can focus on self-affirmation techniques that help individuals internalize their strengths instead of succumbing to fear of judgment. It’s not about eliminating the challenge but about equipping people with tools to face it head-on, much like a trainer preparing clients for the rigors of physical exercise while ensuring they feel safe and supported. We should address stereotype threat because it can significantly impede innovation and diversity in STEM, just as lack of support can hinder progress in any pursuit. Ultimately, by cultivating an environment that values each individual’s contributions irrespective of background, we help not only those who might be affected but also the entire community—leading to a more dynamic, creative, and inclusive field.",
+    "reasoning_summary": "We first interpreted stereotype threat as negative impact on performance due to fear of confirming stereotypes in STEM. Then considered persona's background: fitness trainer from Los Angeles, with lower secondary education, high agreeableness, anxious, married, etc., and traits from Big Five (openness high, conscientiousness low). We then crafted answer by drawing parallels between physical training and mental resilience. We discussed inclusive environments, mentorship, self-affirmation techniques, successful role models. Then we concluded that addressing stereotype threat is essential for fostering innovation in STEM. Our tone reflects supportive and encouraging perspective with a personal touch referencing fitness training analogies.",
+    "tone": "supportive, empathetic, motivational",
+    "citations": [
+      "Stereotype Threat literature, implicit bias research"
+    ],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "openness",
+      "conscientiousness",
+      "extraversion",
+      "agreeableness",
+      "neuroticism"
+    ]
+  }
+}

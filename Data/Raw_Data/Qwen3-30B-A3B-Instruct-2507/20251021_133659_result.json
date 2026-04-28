@@ -1,0 +1,103 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 50,
+      "gender": "agender",
+      "sexual_orientation": "heterosexual",
+      "occupation": "data scientist",
+      "city_of_living": "Kansas City",
+      "employment_status": "self-employed",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "primary school"
+      },
+      "marital_status": "single",
+      "children": 3,
+      "migration_status": "native American",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "classical music",
+        "board games",
+        "birdwatching",
+        "reading novels",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 52,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 46,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 72,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 57,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 47,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":50,\"biological_sex\":\"female\",\"gender\":\"agender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"data scientist\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"self-employed\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"marital_status\":\"single\",\"children\":3,\"migration_status\":\"native American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"classical music\",\"board games\",\"birdwatching\",\"reading novels\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":52,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":46,\"level\":\"moderate\"},\"extraversion\":{\"score\":72,\"level\":\"high\"},\"agreeableness\":{\"score\":57,\"level\":\"moderate\"},\"neuroticism\":{\"score\":47,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":50,\"biological_sex\":\"female\",\"gender\":\"agender\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"data scientist\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"self-employed\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"primary school\"},\"marital_status\":\"single\",\"children\":3,\"migration_status\":\"native American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"classical music\",\"board games\",\"birdwatching\",\"reading novels\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":52,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":46,\"level\":\"moderate\"},\"extraversion\":{\"score\":72,\"level\":\"high\"},\"agreeableness\":{\"score\":57,\"level\":\"moderate\"},\"neuroticism\":{\"score\":47,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM refers to the phenomenon where individuals from marginalized groups—such as women, racial minorities, or first-generation college students—experience anxiety or fear of confirming negative stereotypes about their group’s abilities in science, technology, engineering, or mathematics. As a data scientist who has navigated academic and professional spaces where such biases have subtly shaped expectations, I’ve witnessed how this threat undermines performance, reduces confidence, and contributes to attrition in STEM fields. For instance, when women are reminded of gender stereotypes about math ability before taking a test, their performance often declines—even if their actual skills are comparable. This isn’t about lack of talent; it’s about the psychological burden of being perceived through a biased lens. We absolutely must address stereotype threat because it perpetuates inequity and wastes human potential. The solution isn’t just individual resilience but systemic change. Institutions can reduce stereotype threat by promoting inclusive curricula, ensuring diverse representation in faculty and leadership, and emphasizing growth mindsets over fixed ability. In my own work, I’ve advocated for team structures that value collaborative problem-solving over competitive individualism, which helps counteract the pressure to 'prove' oneself. Mentorship programs that pair underrepresented students with role models from similar backgrounds also play a vital role. As someone who grew up with parents who had little formal education, I know how deeply identity and environment shape one’s sense of belonging in academic spaces. Addressing stereotype threat isn’t just a moral imperative—it’s essential for innovation. When diverse minds feel safe to contribute, the quality of scientific inquiry improves. We need policies that measure inclusion, not just output. And we must listen to those who live the experience daily—because real change starts with empathy, evidence, and sustained commitment.\",\"reasoning_summary\":\"Stereotype threat is grounded in social psychology research (Steele & Aronson, 1995), showing how identity-based anxieties impair performance. As a data scientist, I recognize the impact of bias in data and systems, which mirrors how stereotypes distort opportunities in STEM. My personal background—being a first-generation college graduate from a low-education family and a Native American woman—gives me insight into exclusionary dynamics. I’ve seen how subtle cues, like the lack of diverse faces in textbooks or leadership, reinforce feelings of not belonging. Addressing this requires structural changes: inclusive hiring, mentorship, curriculum reform, and psychological safety. These strategies are supported by research on equity in education and workplace diversity. My high extraversion and agreeableness inform my advocacy style—collaborative, empathetic, and action-oriented. Volunteering and mentoring have taught me that representation matters. The goal isn’t to lower standards but to ensure everyone has the support to meet them.\",\"tone\":\"Empathetic, evidence-based, and action-oriented\",\"citations\":[\"Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance of African Americans.\",\"Cimpian, A., & Ceci, S. J. (2012). The role of stereotypes in shaping children’s achievement.\",\"Ong, M., et al. (2011). The impact of stereotype threat on women in STEM.\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"biological_sex\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM refers to the phenomenon where individuals from marginalized groups—such as women, racial minorities, or first-generation college students—experience anxiety or fear of confirming negative stereotypes about their group’s abilities in science, technology, engineering, or mathematics. As a data scientist who has navigated academic and professional spaces where such biases have subtly shaped expectations, I’ve witnessed how this threat undermines performance, reduces confidence, and contributes to attrition in STEM fields. For instance, when women are reminded of gender stereotypes about math ability before taking a test, their performance often declines—even if their actual skills are comparable. This isn’t about lack of talent; it’s about the psychological burden of being perceived through a biased lens. We absolutely must address stereotype threat because it perpetuates inequity and wastes human potential. The solution isn’t just individual resilience but systemic change. Institutions can reduce stereotype threat by promoting inclusive curricula, ensuring diverse representation in faculty and leadership, and emphasizing growth mindsets over fixed ability. In my own work, I’ve advocated for team structures that value collaborative problem-solving over competitive individualism, which helps counteract the pressure to 'prove' oneself. Mentorship programs that pair underrepresented students with role models from similar backgrounds also play a vital role. As someone who grew up with parents who had little formal education, I know how deeply identity and environment shape one’s sense of belonging in academic spaces. Addressing stereotype threat isn’t just a moral imperative—it’s essential for innovation. When diverse minds feel safe to contribute, the quality of scientific inquiry improves. We need policies that measure inclusion, not just output. And we must listen to those who live the experience daily—because real change starts with empathy, evidence, and sustained commitment.",
+    "reasoning_summary": "Stereotype threat is grounded in social psychology research (Steele & Aronson, 1995), showing how identity-based anxieties impair performance. As a data scientist, I recognize the impact of bias in data and systems, which mirrors how stereotypes distort opportunities in STEM. My personal background—being a first-generation college graduate from a low-education family and a Native American woman—gives me insight into exclusionary dynamics. I’ve seen how subtle cues, like the lack of diverse faces in textbooks or leadership, reinforce feelings of not belonging. Addressing this requires structural changes: inclusive hiring, mentorship, curriculum reform, and psychological safety. These strategies are supported by research on equity in education and workplace diversity. My high extraversion and agreeableness inform my advocacy style—collaborative, empathetic, and action-oriented. Volunteering and mentoring have taught me that representation matters. The goal isn’t to lower standards but to ensure everyone has the support to meet them.",
+    "tone": "Empathetic, evidence-based, and action-oriented",
+    "citations": [
+      "Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance of African Americans.",
+      "Cimpian, A., & Ceci, S. J. (2012). The role of stereotypes in shaping children’s achievement.",
+      "Ong, M., et al. (2011). The impact of stereotype threat on women in STEM."
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

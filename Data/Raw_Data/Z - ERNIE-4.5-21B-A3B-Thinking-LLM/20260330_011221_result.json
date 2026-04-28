@@ -1,0 +1,137 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "aiasistentworld/ERNIE-4.5-21B-A3B-Thinking-LLM",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 42,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "software developer",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed part-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "single",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "cooking",
+        "birdwatching",
+        "yoga",
+        "reading novels",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 75,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 8,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 66,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 47,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 95,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":42,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"cooking\",\"birdwatching\",\"yoga\",\"reading novels\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":75,\"level\":\"high\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":66,\"level\":\"moderate\"},\"agreeableness\":{\"score\":47,\"level\":\"moderate\"},\"neuroticism\":{\"score\":95,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":42,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"cooking\",\"birdwatching\",\"yoga\",\"reading novels\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":75,\"level\":\"high\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":66,\"level\":\"moderate\"},\"agreeableness\":{\"score\":47,\"level\":\"moderate\"},\"neuroticism\":{\"score\":95,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":42,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"single\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"several hours daily on social media\",\"hobbies\":[\"cooking\",\"birdwatching\",\"yoga\",\"reading novels\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":75,\"level\":\"high\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":66,\"level\":\"moderate\"},\"agreeableness\":{\"score\":47,\"level\":\"moderate\"},\"neuroticism\":{\"score\":95,\"level\":\"high\"}}},\"opinion\":\"The gender gap in science manifests through underrepresentation of women and marginalized genders in STEM fields, despite their contributions. This isn’t just about numbers—it’s about access, opportunities, and recognition. For instance, women constitute less than 30% of researchers globally, and men still occupy 80% of leadership roles in tech-driven scientific industries. Addressing this requires systemic changes: inclusive policies like quotas for underrepresented groups, mentorship programs pairing early-career scientists with established experts, and redefining metrics for success to include collaboration and community-building alongside traditional achievements. Personally, I’ve noticed how bias in peer review processes can silently sideline women’s work, making it harder for their discoveries to gain traction. However, grassroots movements like Women in Science conferences or online communities such as SciMoms Exchange are transforming the landscape by fostering connection and mutual support. While progress is slow, every small step—like ensuring funding agencies prioritize diverse proposals—brings us closer to equity. Science thrives when it reflects the diversity of its practitioners, and addressing the gender gap isn’t just fair—it’s essential for innovation.\",\"reasoning_summary\":\"To understand the gender gap in science, we must examine systemic barriers like unequal access to resources and implicit bias in evaluation systems. Addressing it calls for structured interventions: policy reforms to dismantle structural inequities, educational programs to inspire diverse young minds, and institutional accountability measures to ensure transparency. Personal anecdotes and observational evidence highlight how marginalization affects career progression, but collective action through advocacy and community-building can shift cultural norms. The path forward involves balancing systemic change with grassroots efforts, ensuring both institutional support and individual empowerment.\",\"tone\":\"caring, analytical, yet firm\",\"citations\":[\"U.S. Department of Education; American Psychological Association\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"occupation\",\"hobbies\",\"city_of_living\",\"parents_education\",\"time_onsocialmedia\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 42,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "software developer",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed part-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "single",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "several hours daily on social media",
+      "hobbies": [
+        "cooking",
+        "birdwatching",
+        "yoga",
+        "reading novels",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 75,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 8,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 66,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 47,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 95,
+          "level": "high"
+        }
+      }
+    },
+    "opinion": "The gender gap in science manifests through underrepresentation of women and marginalized genders in STEM fields, despite their contributions. This isn’t just about numbers—it’s about access, opportunities, and recognition. For instance, women constitute less than 30% of researchers globally, and men still occupy 80% of leadership roles in tech-driven scientific industries. Addressing this requires systemic changes: inclusive policies like quotas for underrepresented groups, mentorship programs pairing early-career scientists with established experts, and redefining metrics for success to include collaboration and community-building alongside traditional achievements. Personally, I’ve noticed how bias in peer review processes can silently sideline women’s work, making it harder for their discoveries to gain traction. However, grassroots movements like Women in Science conferences or online communities such as SciMoms Exchange are transforming the landscape by fostering connection and mutual support. While progress is slow, every small step—like ensuring funding agencies prioritize diverse proposals—brings us closer to equity. Science thrives when it reflects the diversity of its practitioners, and addressing the gender gap isn’t just fair—it’s essential for innovation.",
+    "reasoning_summary": "To understand the gender gap in science, we must examine systemic barriers like unequal access to resources and implicit bias in evaluation systems. Addressing it calls for structured interventions: policy reforms to dismantle structural inequities, educational programs to inspire diverse young minds, and institutional accountability measures to ensure transparency. Personal anecdotes and observational evidence highlight how marginalization affects career progression, but collective action through advocacy and community-building can shift cultural norms. The path forward involves balancing systemic change with grassroots efforts, ensuring both institutional support and individual empowerment.",
+    "tone": "caring, analytical, yet firm",
+    "citations": [
+      "U.S. Department of Education; American Psychological Association"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "hobbies",
+      "city_of_living",
+      "parents_education",
+      "time_onsocialmedia"
+    ]
+  }
+}

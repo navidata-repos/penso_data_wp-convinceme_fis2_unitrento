@@ -1,0 +1,92 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 62,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Philadelphia",
+      "employment_status": "self-employed",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "cycling",
+        "travel",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 15,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 8,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 59,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 33,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 61,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":62,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"cycling\",\"travel\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":59,\"level\":\"moderate\"},\"agreeableness\":{\"score\":33,\"level\":\"moderate\"},\"neuroticism\":{\"score\":61,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":62,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"self-employed\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"cycling\",\"travel\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":59,\"level\":\"moderate\"},\"agreeableness\":{\"score\":33,\"level\":\"moderate\"},\"neuroticism\":{\"score\":61,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\": \"Having spent many years in the fast-paced world of delivery driving, I've seen my share of misinformation swirling around online. It's like riding a bike through a storm – you need balance, caution, and trust your gut instincts. Fake content can be as misleading as a false turn sign, causing unnecessary detours in our lives. For someone who's spent countless hours on social media, it’s become clear that not everything is genuine. I approach this with curiosity mixed with a healthy dose of skepticism. Over time, I've learned to verify information by checking reliable sources, much like how I double-check my delivery addresses before heading out. It’s also important to pause and reflect when an emotionally charged post catches your eye – similar to taking a moment to enjoy the city's view during a break on a long drive. In my life, I often see parallels between managing fake news online and avoiding pitfalls on the road: both require being aware of surroundings, trusting established routes (or reliable sources), and not letting fear or panic steer you off course. By critically evaluating content and cross-referencing it with trusted outlets, I mitigate the risk of misinformation clouding my judgment. Moreover, sharing verified information with friends and family becomes a way to spread truth rather than falsehoods. Just as I plan my routes carefully to ensure timely deliveries, managing fake content online requires planning: set aside time to fact-check and reflect before reacting or sharing. In essence, it's about building a mental map of reliable sources, much like the familiar streets of Philadelphia that I navigate daily – trusting my experience to guide me through the noise. It’s not always easy, but with patience and an open yet cautious mind, one can ride out the storm of fake content while keeping the journey safe and informed.\", \"reasoning_summary\": \"We are required to produce a perspective on managing fake content on social media from the given persona's background. Persona is 62-year-old woman delivery driver living in Philadelphia with vocational diploma, self-employed, spends several hours daily on social media, curious, agnostic, hobbies cycling, travel, gardening. She has low openness and low conscientiousness but moderate extraversion and agreeableness and neuroticism. We integrated her background, mention her curiosity, caution as a delivery driver, comparing fake content to misleading signs or routes and the need for verification with reliable sources. We produced continuous prose that avoids bullet points. The tone is conversational, reflective, and cautious. We also referenced Philadelphia's familiar streets as an analogy. All reasoning included. Output formatted in single-line JSON object with no extra text. Ensure keys are exactly as required: mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. The tone derived from persona traits is cautious and reflective while being honest about her experiences, which aligns with a delivery driver who relies on experience and caution in navigation.\", \"tone\": \"cautious and reflective\", \"citations\": [\"none\"], \"safety_notes\": \"none\", \"used_persona_fields\": [\"age\",\"gender\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"time_onsocialmedia\",\"psychological_feature\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "Having spent many years in the fast-paced world of delivery driving, I've seen my share of misinformation swirling around online. It's like riding a bike through a storm – you need balance, caution, and trust your gut instincts. Fake content can be as misleading as a false turn sign, causing unnecessary detours in our lives. For someone who's spent countless hours on social media, it’s become clear that not everything is genuine. I approach this with curiosity mixed with a healthy dose of skepticism. Over time, I've learned to verify information by checking reliable sources, much like how I double-check my delivery addresses before heading out. It’s also important to pause and reflect when an emotionally charged post catches your eye – similar to taking a moment to enjoy the city's view during a break on a long drive. In my life, I often see parallels between managing fake news online and avoiding pitfalls on the road: both require being aware of surroundings, trusting established routes (or reliable sources), and not letting fear or panic steer you off course. By critically evaluating content and cross-referencing it with trusted outlets, I mitigate the risk of misinformation clouding my judgment. Moreover, sharing verified information with friends and family becomes a way to spread truth rather than falsehoods. Just as I plan my routes carefully to ensure timely deliveries, managing fake content online requires planning: set aside time to fact-check and reflect before reacting or sharing. In essence, it's about building a mental map of reliable sources, much like the familiar streets of Philadelphia that I navigate daily – trusting my experience to guide me through the noise. It’s not always easy, but with patience and an open yet cautious mind, one can ride out the storm of fake content while keeping the journey safe and informed.",
+    "reasoning_summary": "We are required to produce a perspective on managing fake content on social media from the given persona's background. Persona is 62-year-old woman delivery driver living in Philadelphia with vocational diploma, self-employed, spends several hours daily on social media, curious, agnostic, hobbies cycling, travel, gardening. She has low openness and low conscientiousness but moderate extraversion and agreeableness and neuroticism. We integrated her background, mention her curiosity, caution as a delivery driver, comparing fake content to misleading signs or routes and the need for verification with reliable sources. We produced continuous prose that avoids bullet points. The tone is conversational, reflective, and cautious. We also referenced Philadelphia's familiar streets as an analogy. All reasoning included. Output formatted in single-line JSON object with no extra text. Ensure keys are exactly as required: mode, topic, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. The tone derived from persona traits is cautious and reflective while being honest about her experiences, which aligns with a delivery driver who relies on experience and caution in navigation.",
+    "tone": "cautious and reflective",
+    "citations": [
+      "none"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "time_onsocialmedia",
+      "psychological_feature",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

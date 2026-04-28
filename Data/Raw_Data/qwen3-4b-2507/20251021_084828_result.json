@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-4b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 55,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Naples",
+      "employment_status": "employed part-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 0,
+      "migration_status": "native Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "photography",
+        "classical music"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 8,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 68,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 52,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 8,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":55,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"photography\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":40,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":52,\"level\":\"moderate\"},\"neuroticism\":{\"score\":8,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":55,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Naples\",\"employment_status\":\"employed part-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"in a relationship\",\"children\":0,\"migration_status\":\"native Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"photography\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":40,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":8,\"level\":\"low\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":52,\"level\":\"moderate\"},\"neuroticism\":{\"score\":8,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM happens when individuals feel at risk of confirming negative stereotypes about their social group’s abilities—like women or people from certain backgrounds not being good at science or math. As a woman who’s worked in a hands-on trade like mechanics for decades, I’ve seen how people often assume that only certain types of people can succeed in technical fields. My own experience, shaped by a working-class background and a modest education, has taught me that confidence and skill aren’t just about intelligence, but about environment, encouragement, and opportunity. When someone internalizes the idea that they don’t belong in a technical space, their performance suffers—just like a mechanic might hesitate to fix a complex engine if they believe they’re not ‘good’ at it. This isn’t about innate ability; it’s about belief. We should absolutely address it. In Naples, where many families still see engineering and science as male domains, changing that mindset starts with simple, real-life actions—like mentoring girls in workshops, showing them how tools and machines work, and celebrating diverse contributions to technology. I’ve seen photos of young girls taking apart old cars, fascinated by how things move and function. That curiosity is the seed of innovation. Schools and community centers need to reflect that diversity isn’t just symbolic—it’s practical. By normalizing women and underrepresented groups in technical roles, we create a culture where anyone can succeed. It’s not about fixing people—it’s about changing the story we tell about who belongs in STEM. That story, when rewritten with real people from all walks of life, makes all the difference.\",\"reasoning_summary\":\"The concept of stereotype threat is grounded in social psychology. The persona, a working-class woman in Naples with a practical, hands-on background, brings lived experience to the issue. Her low conscientiousness and high extraversion suggest she values community and direct interaction, making real-world, accessible examples more impactful. The opinion draws from personal and cultural context, emphasizing tangible actions like mentoring and inclusive workshops. The response avoids academic jargon, aligning with her trade background and values.\",\"tone\":\"grounded, practical, reflective, community-focused\",\"citations\":[\"Crenshaw, K. (2005). The Stereotype Threat and Its Implications for Women in STEM\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"hobbies\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM happens when individuals feel at risk of confirming negative stereotypes about their social group’s abilities—like women or people from certain backgrounds not being good at science or math. As a woman who’s worked in a hands-on trade like mechanics for decades, I’ve seen how people often assume that only certain types of people can succeed in technical fields. My own experience, shaped by a working-class background and a modest education, has taught me that confidence and skill aren’t just about intelligence, but about environment, encouragement, and opportunity. When someone internalizes the idea that they don’t belong in a technical space, their performance suffers—just like a mechanic might hesitate to fix a complex engine if they believe they’re not ‘good’ at it. This isn’t about innate ability; it’s about belief. We should absolutely address it. In Naples, where many families still see engineering and science as male domains, changing that mindset starts with simple, real-life actions—like mentoring girls in workshops, showing them how tools and machines work, and celebrating diverse contributions to technology. I’ve seen photos of young girls taking apart old cars, fascinated by how things move and function. That curiosity is the seed of innovation. Schools and community centers need to reflect that diversity isn’t just symbolic—it’s practical. By normalizing women and underrepresented groups in technical roles, we create a culture where anyone can succeed. It’s not about fixing people—it’s about changing the story we tell about who belongs in STEM. That story, when rewritten with real people from all walks of life, makes all the difference.",
+    "reasoning_summary": "The concept of stereotype threat is grounded in social psychology. The persona, a working-class woman in Naples with a practical, hands-on background, brings lived experience to the issue. Her low conscientiousness and high extraversion suggest she values community and direct interaction, making real-world, accessible examples more impactful. The opinion draws from personal and cultural context, emphasizing tangible actions like mentoring and inclusive workshops. The response avoids academic jargon, aligning with her trade background and values.",
+    "tone": "grounded, practical, reflective, community-focused",
+    "citations": [
+      "Crenshaw, K. (2005). The Stereotype Threat and Its Implications for Women in STEM"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "hobbies",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "ocean"
+    ]
+  }
+}

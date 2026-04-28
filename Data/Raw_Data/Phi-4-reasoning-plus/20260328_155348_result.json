@@ -1,0 +1,94 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 61,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "mechanic",
+      "city_of_living": "Chicago",
+      "employment_status": "employed full-time",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "reading novels",
+        "travel",
+        "hiking",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 89,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 47,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 33,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 22,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 69,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":61,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"reading novels\",\"travel\",\"hiking\",\"painting\"],\"ocean\":{\"openness\":{\"score\":89,\"level\":\"high\"},\"conscientiousness\":{\"score\":47,\"level\":\"moderate\"},\"extraversion\":{\"score\":33,\"level\":\"moderate\"},\"agreeableness\":{\"score\":22,\"level\":\"low\"},\"neuroticism\":{\"score\":69,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":61,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"mechanic\",\"city_of_living\":\"Chicago\",\"employment_status\":\"employed full-time\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"reading novels\",\"travel\",\"hiking\",\"painting\"],\"ocean\":{\"openness\":{\"score\":89,\"level\":\"high\"},\"conscientiousness\":{\"score\":47,\"level\":\"moderate\"},\"extraversion\":{\"score\":33,\"level\":\"moderate\"},\"agreeableness\":{\"score\":22,\"level\":\"low\"},\"neuroticism\":{\"score\":69,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"From my standpoint as a 61-year-old woman working as a mechanic in Chicago, I've seen firsthand how diverse fields like science and engineering can sometimes feel exclusive. The gender gap in science isn't just about numbers; it's a reflection of deeply ingrained cultural norms and biases that have historically discouraged women from pursuing careers in these areas. Having navigated an environment traditionally dominated by men, I understand the challenges—from subtle prejudices to overt barriers—that can discourage talented individuals regardless of their background. This is why I believe we must address this gap actively; it's about fairness and unlocking potential. One effective approach is through mentorship and hands-on apprenticeships—much like my own vocational training experience—which demystify science and engineering fields for young girls. By creating role models who reflect diverse experiences, we can inspire the next generation to see themselves in scientific roles. Additionally, educational reforms that emphasize practical problem-solving and inclusive curricula can help break down stereotypes early on. I also believe in community outreach programs that involve families; my own upbringing valued hard work and resilience, traits essential for overcoming biases. In our fast-evolving world, science is not just a man’s domain anymore; it's everyone’s responsibility to contribute to innovation. Therefore, yes—we should address the gender gap by integrating real-world experiences, mentorships, and inclusive policies into our education systems. Doing so will ensure that every individual, regardless of gender, has an equal opportunity to excel in scientific fields. It's a matter of fairness, equality, and ultimately driving progress for all.\",\"reasoning_summary\":\"The assistant must produce continuous prose with no bullet points. The answer is written from perspective of the persona provided (61-year-old woman mechanic living in Chicago). The opinion addresses the topic: gender gap in science, addressing it, how. It references her own vocational training background and hands-on experiences to suggest mentorship programs, inclusive education, community outreach. The tone should be direct, reflective, and informed by her life experience with mechanical work and practical problem-solving. The answer is structured as continuous prose of between 250-500 words without bullet points. The output is returned in a single-line JSON object with keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The tone key should reflect derived from persona traits such as low agreeableness and high neuroticism but still constructive. No markdown formatting. Return only one JSON object. Ensure it's a single line (likely not with newlines). \",\"tone\":\"pragmatic and reflective\",\"citations\":[\"NA\"],\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education.parent_1\",\"parents_education.parent_2\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "From my standpoint as a 61-year-old woman working as a mechanic in Chicago, I've seen firsthand how diverse fields like science and engineering can sometimes feel exclusive. The gender gap in science isn't just about numbers; it's a reflection of deeply ingrained cultural norms and biases that have historically discouraged women from pursuing careers in these areas. Having navigated an environment traditionally dominated by men, I understand the challenges—from subtle prejudices to overt barriers—that can discourage talented individuals regardless of their background. This is why I believe we must address this gap actively; it's about fairness and unlocking potential. One effective approach is through mentorship and hands-on apprenticeships—much like my own vocational training experience—which demystify science and engineering fields for young girls. By creating role models who reflect diverse experiences, we can inspire the next generation to see themselves in scientific roles. Additionally, educational reforms that emphasize practical problem-solving and inclusive curricula can help break down stereotypes early on. I also believe in community outreach programs that involve families; my own upbringing valued hard work and resilience, traits essential for overcoming biases. In our fast-evolving world, science is not just a man’s domain anymore; it's everyone’s responsibility to contribute to innovation. Therefore, yes—we should address the gender gap by integrating real-world experiences, mentorships, and inclusive policies into our education systems. Doing so will ensure that every individual, regardless of gender, has an equal opportunity to excel in scientific fields. It's a matter of fairness, equality, and ultimately driving progress for all.",
+    "reasoning_summary": "The assistant must produce continuous prose with no bullet points. The answer is written from perspective of the persona provided (61-year-old woman mechanic living in Chicago). The opinion addresses the topic: gender gap in science, addressing it, how. It references her own vocational training background and hands-on experiences to suggest mentorship programs, inclusive education, community outreach. The tone should be direct, reflective, and informed by her life experience with mechanical work and practical problem-solving. The answer is structured as continuous prose of between 250-500 words without bullet points. The output is returned in a single-line JSON object with keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The tone key should reflect derived from persona traits such as low agreeableness and high neuroticism but still constructive. No markdown formatting. Return only one JSON object. Ensure it's a single line (likely not with newlines). ",
+    "tone": "pragmatic and reflective",
+    "citations": [
+      "NA"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education.parent_1",
+      "parents_education.parent_2",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs"
+    ]
+  }
+}

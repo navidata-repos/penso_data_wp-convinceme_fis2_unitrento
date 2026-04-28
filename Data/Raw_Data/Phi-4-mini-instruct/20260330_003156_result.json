@@ -1,0 +1,89 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 38,
+      "gender": "woman",
+      "sexual_orientation": "bisexual",
+      "occupation": "cleaner",
+      "city_of_living": "Philadelphia",
+      "employment_status": "self-employed",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "running",
+        "cinema",
+        "photography",
+        "reading novels",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 28,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 57,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 32,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 73,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 50,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":38,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"running\",\"cinema\",\"photography\",\"reading novels\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":28,\"level\":\"low\"},\"conscientiousness\":{\"score\":57,\"level\":\"moderate\"},\"extraversion\":{\"score\":32,\"level\":\"low\"},\"agreeableness\":{\"score\":73,\"level\":\"high\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":38,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"self-employed\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"running\",\"cinema\",\"photography\",\"reading novels\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":28,\"level\":\"low\"},\"conscientiousness\":{\"score\":57,\"level\":\"moderate\"},\"extraversion\":{\"score\":32,\"level\":\"low\"},\"agreeableness\":{\"score\":73,\"level\":\"high\"},\"neuroticism\":{\"score\":50,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As someone who navigates life as a cleaner in Philadelphia with roots stretching back to immigrant parents of varying educational backgrounds, my perspective on the gender gap in science might not align with academic ivory towers. My own journey—marked by self-employment and single parenthood—is shaped by practical realities rather than theoretical ideals. While I hold curiosity close—as seen through hobbies like birdwatching and reading—the sciences have always been a realm of fascination mixed with intimidation. Growing up, my parents' differing educational attainments seeded an awareness that opportunity isn't evenly distributed. The gender gap in science is not merely about numbers; it's about visibility, representation, and access to resources. I recognize the merit in addressing disparities because they mirror systemic inequities I've witnessed firsthand in professional spaces where competence often battles with bias. Should we actively bridge this divide? Yes—through mentorship programs that connect aspiring young women of all sexual orientations, creating inclusive curricula that celebrate diverse role models, and institutions committing to equitable funding for research led by underrepresented groups. Practical steps also matter: scholarships targeted at non-traditional science students, flexible work arrangements in scientific fields, and amplifying voices via platforms where discussions like ours unfold. My own experiences as a working mother juggling self-employment demands underscore the necessity of systemic change; solutions must be more than lip service—they require structural adjustments that validate and uplift women stepping into sciences traditionally dominated by men. In essence, addressing the gender gap is about crafting a world where scientific brilliance isn't overshadowed by societal biases.\",\"reasoning_summary\":\"Started with persona's background: cleaner in Philadelphia, immigrant parents, single parent, practical outlook shaped by hobbies like birdwatching and reading. Connected personal experiences to systemic issues affecting access to science. Referenced curiosity and moderate conscientiousness as traits influencing interest but perhaps limiting engagement. High agreeableness suggests value for community-focused solutions. Integrated neuroticism score moderately indicating some resilience despite challenges. Cross-referenced occupational realism with need for practical support systems in STEM fields.\",\"tone\":\"empathetic, pragmatic\",\"citations\":[\"Reports on gender disparities in STEM (National Science Foundation, 2022); Mentorship programs efficacy studies (Journal of STEM Education)\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"occupation\",\"parent_education\",\"hobbies\",\"neuroticism\",\"agreeableness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As someone who navigates life as a cleaner in Philadelphia with roots stretching back to immigrant parents of varying educational backgrounds, my perspective on the gender gap in science might not align with academic ivory towers. My own journey—marked by self-employment and single parenthood—is shaped by practical realities rather than theoretical ideals. While I hold curiosity close—as seen through hobbies like birdwatching and reading—the sciences have always been a realm of fascination mixed with intimidation. Growing up, my parents' differing educational attainments seeded an awareness that opportunity isn't evenly distributed. The gender gap in science is not merely about numbers; it's about visibility, representation, and access to resources. I recognize the merit in addressing disparities because they mirror systemic inequities I've witnessed firsthand in professional spaces where competence often battles with bias. Should we actively bridge this divide? Yes—through mentorship programs that connect aspiring young women of all sexual orientations, creating inclusive curricula that celebrate diverse role models, and institutions committing to equitable funding for research led by underrepresented groups. Practical steps also matter: scholarships targeted at non-traditional science students, flexible work arrangements in scientific fields, and amplifying voices via platforms where discussions like ours unfold. My own experiences as a working mother juggling self-employment demands underscore the necessity of systemic change; solutions must be more than lip service—they require structural adjustments that validate and uplift women stepping into sciences traditionally dominated by men. In essence, addressing the gender gap is about crafting a world where scientific brilliance isn't overshadowed by societal biases.",
+    "reasoning_summary": "Started with persona's background: cleaner in Philadelphia, immigrant parents, single parent, practical outlook shaped by hobbies like birdwatching and reading. Connected personal experiences to systemic issues affecting access to science. Referenced curiosity and moderate conscientiousness as traits influencing interest but perhaps limiting engagement. High agreeableness suggests value for community-focused solutions. Integrated neuroticism score moderately indicating some resilience despite challenges. Cross-referenced occupational realism with need for practical support systems in STEM fields.",
+    "tone": "empathetic, pragmatic",
+    "citations": [
+      "Reports on gender disparities in STEM (National Science Foundation, 2022); Mentorship programs efficacy studies (Journal of STEM Education)"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "occupation",
+      "parent_education",
+      "hobbies",
+      "neuroticism",
+      "agreeableness"
+    ]
+  }
+}

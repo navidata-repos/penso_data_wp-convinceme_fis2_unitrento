@@ -1,0 +1,145 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 69,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Kansas City",
+      "employment_status": "retired",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "board games",
+        "travel",
+        "yoga",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 88,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 91,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 4,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 41,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":69,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"board games\",\"travel\",\"yoga\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":44,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":88,\"level\":\"high\"},\"extraversion\":{\"score\":91,\"level\":\"high\"},\"agreeableness\":{\"score\":4,\"level\":\"low\"},\"neuroticism\":{\"score\":41,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":69,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Kansas City\",\"employment_status\":\"retired\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"board games\",\"travel\",\"yoga\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":44,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":88,\"level\":\"high\"},\"extraversion\":{\"score\":91,\"level\":\"high\"},\"agreeableness\":{\"score\":4,\"level\":\"low\"},\"neuroticism\":{\"score\":41,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a retired, curious woman living in Kansas City, I've seen shifts over decades. The gender gap in science reflects long-standing social norms and educational barriers that have historically hindered women's participation in scientific fields. Observing my own journey – with limited formal education yet enriched by life experiences – has taught me that curiosity knows no bounds, but opportunities often do. Growing up, many believed that certain careers were reserved for one gender; however, over time, I've witnessed remarkable strides in inclusivity and empowerment through community and policy changes. Nevertheless, there remains a lingering disparity: women still face biases, less encouragement in technical fields from early education onward, and fewer role models in science compared to their male counterparts. Addressing this gap is essential for innovation, equity, and social progress. I believe that multi-faceted strategies are needed: educational reforms that emphasize STEM learning equally for all genders; mentorship programs connecting young women with accomplished female scientists; policies that ensure equitable hiring practices and support work-life balance; and cultural shifts in how we view gender roles in science. These steps can help nurture interest, build confidence, and ultimately lead to a more balanced representation in scientific fields. In my view, the solution lies not just in policy but also in changing mindsets – starting from the playgrounds of Kansas City to global institutions. We must celebrate curiosity and encourage all children to explore science without gender-based limitations. It's about creating a supportive ecosystem where every individual, regardless of gender, can thrive. This balanced approach aligns with my own life experiences of overcoming barriers despite modest education; it shows that with the right encouragement and resources, anyone can contribute meaningfully to scientific discovery. The journey toward equality in science is long but necessary. It requires dedicated efforts from educators, leaders, and communities alike. By championing inclusive practices and celebrating diverse perspectives in research and innovation, we can gradually close this gap and build a future where scientific progress benefits everyone.\",\"reasoning_summary\":\"We are asked to produce an output that fits the given JSON format with fields: mode, topic, persona, opinion, reasoning summary, tone, citations, used_persona_fields. The input gives details of persona, age 69 woman from Kansas City retired with lower secondary education and various traits (curious, moderate neuroticism, etc.). We need to produce a continuous prose answer on the gender gap in science as well as how it should be addressed. We must incorporate references to the persona's background: retired woman living in Kansas City, curiosity, life experience despite lower formal education, etc. The output should mention the topic and provide at least 250 words. Avoid bullet points, produce continuous prose text. Must include a JSON object with keys as described: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. We must fill out all required fields exactly. The answer's tone should be reflective and thoughtful, derived from the persona traits (curious, moderate neuroticism maybe, etc.). We'll produce output in a single-line JSON object with no extra formatting instructions or markdown formatting. I will produce a final answer accordingly. Let me produce an answer that is continuous prose text fulfilling all conditions. I'll produce reasoning summary as separate string and tone field as \",\" I must produce citations list if possible. I must include used_persona_fields in the last line. The output JSON object keys: mode, topic, persona, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. But the required structure example is provided; we need to fill them. The input only includes topic and persona fields. Our answer should be a JSON object with keys: \":\"\", \"mode:\" : \"human\", \"topic:\" : \"What is the gender gap in science? Should we address it? And how?\", \"persona:\": { \"age\":69, \"gender\":\"woman\", \"sexual_orientation\": \"heterosexual\", \"occupation\": \"not applicable\", \"city_of_living\": \"Kansas City\", \"employment_status\": \"retired\", \"education_level\": \"lower secondary\", \"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":4,\"migration_status\":\"native-born American\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"board games\",\"travel\",\"yoga\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":44,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":88,\"level\":\"high\"},\"extraversion\":{\"score\":91,\"level\":\"high\"},\"agreeableness\":{\"score\":4,\"level\":\"low\"},\"neuroticism\":{\"score\":41,\"level\":\"moderate\"}}} , \"opinion:\" : [500] , \"reasoning_summary:\" : [500], \"tone:\" : \"derived\", \"citations:\" : [\"source\"] , \"safety_notes:\" : \"none\", \"used_persona_fields:\" : [ \"age\",\"gender\",\"city_of_living\", \"education_level\",\"psychological_feature\", \"hobbies\" ] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a retired, curious woman living in Kansas City, I've seen shifts over decades. The gender gap in science reflects long-standing social norms and educational barriers that have historically hindered women's participation in scientific fields. Observing my own journey – with limited formal education yet enriched by life experiences – has taught me that curiosity knows no bounds, but opportunities often do. Growing up, many believed that certain careers were reserved for one gender; however, over time, I've witnessed remarkable strides in inclusivity and empowerment through community and policy changes. Nevertheless, there remains a lingering disparity: women still face biases, less encouragement in technical fields from early education onward, and fewer role models in science compared to their male counterparts. Addressing this gap is essential for innovation, equity, and social progress. I believe that multi-faceted strategies are needed: educational reforms that emphasize STEM learning equally for all genders; mentorship programs connecting young women with accomplished female scientists; policies that ensure equitable hiring practices and support work-life balance; and cultural shifts in how we view gender roles in science. These steps can help nurture interest, build confidence, and ultimately lead to a more balanced representation in scientific fields. In my view, the solution lies not just in policy but also in changing mindsets – starting from the playgrounds of Kansas City to global institutions. We must celebrate curiosity and encourage all children to explore science without gender-based limitations. It's about creating a supportive ecosystem where every individual, regardless of gender, can thrive. This balanced approach aligns with my own life experiences of overcoming barriers despite modest education; it shows that with the right encouragement and resources, anyone can contribute meaningfully to scientific discovery. The journey toward equality in science is long but necessary. It requires dedicated efforts from educators, leaders, and communities alike. By championing inclusive practices and celebrating diverse perspectives in research and innovation, we can gradually close this gap and build a future where scientific progress benefits everyone.",
+    "reasoning_summary": "We are asked to produce an output that fits the given JSON format with fields: mode, topic, persona, opinion, reasoning summary, tone, citations, used_persona_fields. The input gives details of persona, age 69 woman from Kansas City retired with lower secondary education and various traits (curious, moderate neuroticism, etc.). We need to produce a continuous prose answer on the gender gap in science as well as how it should be addressed. We must incorporate references to the persona's background: retired woman living in Kansas City, curiosity, life experience despite lower formal education, etc. The output should mention the topic and provide at least 250 words. Avoid bullet points, produce continuous prose text. Must include a JSON object with keys as described: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. We must fill out all required fields exactly. The answer's tone should be reflective and thoughtful, derived from the persona traits (curious, moderate neuroticism maybe, etc.). We'll produce output in a single-line JSON object with no extra formatting instructions or markdown formatting. I will produce a final answer accordingly. Let me produce an answer that is continuous prose text fulfilling all conditions. I'll produce reasoning summary as separate string and tone field as ",
+    " I must produce citations list if possible. I must include used_persona_fields in the last line. The output JSON object keys: mode, topic, persona, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. But the required structure example is provided; we need to fill them. The input only includes topic and persona fields. Our answer should be a JSON object with keys: ": "",
+    "mode:": "human",
+    "topic:": "What is the gender gap in science? Should we address it? And how?",
+    "persona:": {
+      "age": 69,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Kansas City",
+      "employment_status": "retired",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "native-born American",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "board games",
+        "travel",
+        "yoga",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 88,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 91,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 4,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 41,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion:": [
+      500
+    ],
+    "reasoning_summary:": [
+      500
+    ],
+    "tone:": "derived",
+    "citations:": [
+      "source"
+    ],
+    "safety_notes:": "none",
+    "used_persona_fields:": [
+      "age",
+      "gender",
+      "city_of_living",
+      "education_level",
+      "psychological_feature",
+      "hobbies"
+    ]
+  }
+}

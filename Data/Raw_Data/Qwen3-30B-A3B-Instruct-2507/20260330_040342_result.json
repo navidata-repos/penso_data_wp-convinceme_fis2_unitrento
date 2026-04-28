@@ -1,0 +1,99 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 37,
+      "gender": "woman",
+      "sexual_orientation": "bisexual",
+      "occupation": "engineer",
+      "city_of_living": "Lecce",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "divorced",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "travel",
+        "running",
+        "rock climbing",
+        "hiking",
+        "gardening"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 24,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 57,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 28,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 42,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":37,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"travel\",\"running\",\"rock climbing\",\"hiking\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":35,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":24,\"level\":\"low\"},\"extraversion\":{\"score\":57,\"level\":\"moderate\"},\"agreeableness\":{\"score\":28,\"level\":\"low\"},\"neuroticism\":{\"score\":42,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":37,\"gender\":\"woman\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"divorced\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"travel\",\"running\",\"rock climbing\",\"hiking\",\"gardening\"],\"ocean\":{\"openness\":{\"score\":35,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":24,\"level\":\"low\"},\"extraversion\":{\"score\":57,\"level\":\"moderate\"},\"agreeableness\":{\"score\":28,\"level\":\"low\"},\"neuroticism\":{\"score\":42,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a woman engineer in southern Italy, I’ve navigated a field where my presence is still often met with quiet surprise. The gender gap in science isn’t just about numbers—it’s about the invisible barriers that linger even when women like me earn degrees and climb career ladders. From my experience, it starts early: girls are subtly discouraged from pursuing math and engineering, not through overt hostility, but through cultural assumptions—like the idea that technical fields are 'not for girls.' Even in university, I was one of few women in my cohort, and that sense of isolation persisted into the workplace. I’ve been interrupted in meetings, my ideas attributed to male colleagues, and occasionally told I’m 'too emotional' to lead technical teams—comments that feel less like feedback and more like attempts to marginalize. This isn’t just anecdotal; data confirms it: women are underrepresented in STEM leadership, receive fewer research grants, and are less likely to be promoted. But here’s what’s clear: yes, we must address this gap—not because fairness is a luxury, but because science itself suffers when only one perspective dominates. Innovation thrives on diversity. When I mentor young female students, I tell them: your voice matters, your approach is valid, and your presence is not an exception—it’s a necessity. How do we fix it? Start early—revise school curricula to challenge stereotypes, offer female role models in classrooms, and ensure inclusive teaching. In workplaces, implement blind hiring practices, enforce equitable pay, and create mentorship networks. Support policies like paid parental leave and flexible work hours, which disproportionately affect women. Most importantly, listen. The solutions aren’t just in quotas or tokenism; they’re in culture change. As a mother of three, I’ve seen how balancing family and career is still harder for women—so we must design systems that don’t force impossible choices. The gender gap isn’t a flaw in women—it’s a flaw in the system. Fix the system, and science will be stronger, fairer, and more human.\",\"reasoning_summary\":\"The argument begins with personal experience as a woman engineer in a male-dominated field, highlighting microaggressions and underrepresentation. It connects individual stories to broader data on gender disparities in STEM. It establishes that the gap affects not just access but advancement, recognition, and retention. The moral imperative to address it is grounded in equity and the empirical benefit of diversity to innovation. The 'how' is derived from structural solutions: early education reform, inclusive hiring, equitable policies, and cultural change. Personal context—motherhood, religion, and identity as a bisexual woman in Italy—adds depth to the call for systemic change. The tone is reflective, firm, and empathetic, blending lived experience with reasoned advocacy.\",\"tone\":\"reflective, firm, empathetic\",\"citations\":[\"National Science Foundation (NSF) reports on gender disparities in STEM\",\"UNESCO Science Report: Towards 2030\",\"American Association of University Women (AAUW) research on gender bias in STEM\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"religious_beliefs\",\"hobbies\",\"ocean\",\"psychological_feature\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a woman engineer in southern Italy, I’ve navigated a field where my presence is still often met with quiet surprise. The gender gap in science isn’t just about numbers—it’s about the invisible barriers that linger even when women like me earn degrees and climb career ladders. From my experience, it starts early: girls are subtly discouraged from pursuing math and engineering, not through overt hostility, but through cultural assumptions—like the idea that technical fields are 'not for girls.' Even in university, I was one of few women in my cohort, and that sense of isolation persisted into the workplace. I’ve been interrupted in meetings, my ideas attributed to male colleagues, and occasionally told I’m 'too emotional' to lead technical teams—comments that feel less like feedback and more like attempts to marginalize. This isn’t just anecdotal; data confirms it: women are underrepresented in STEM leadership, receive fewer research grants, and are less likely to be promoted. But here’s what’s clear: yes, we must address this gap—not because fairness is a luxury, but because science itself suffers when only one perspective dominates. Innovation thrives on diversity. When I mentor young female students, I tell them: your voice matters, your approach is valid, and your presence is not an exception—it’s a necessity. How do we fix it? Start early—revise school curricula to challenge stereotypes, offer female role models in classrooms, and ensure inclusive teaching. In workplaces, implement blind hiring practices, enforce equitable pay, and create mentorship networks. Support policies like paid parental leave and flexible work hours, which disproportionately affect women. Most importantly, listen. The solutions aren’t just in quotas or tokenism; they’re in culture change. As a mother of three, I’ve seen how balancing family and career is still harder for women—so we must design systems that don’t force impossible choices. The gender gap isn’t a flaw in women—it’s a flaw in the system. Fix the system, and science will be stronger, fairer, and more human.",
+    "reasoning_summary": "The argument begins with personal experience as a woman engineer in a male-dominated field, highlighting microaggressions and underrepresentation. It connects individual stories to broader data on gender disparities in STEM. It establishes that the gap affects not just access but advancement, recognition, and retention. The moral imperative to address it is grounded in equity and the empirical benefit of diversity to innovation. The 'how' is derived from structural solutions: early education reform, inclusive hiring, equitable policies, and cultural change. Personal context—motherhood, religion, and identity as a bisexual woman in Italy—adds depth to the call for systemic change. The tone is reflective, firm, and empathetic, blending lived experience with reasoned advocacy.",
+    "tone": "reflective, firm, empathetic",
+    "citations": [
+      "National Science Foundation (NSF) reports on gender disparities in STEM",
+      "UNESCO Science Report: Towards 2030",
+      "American Association of University Women (AAUW) research on gender bias in STEM"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "religious_beliefs",
+      "hobbies",
+      "ocean",
+      "psychological_feature"
+    ]
+  }
+}

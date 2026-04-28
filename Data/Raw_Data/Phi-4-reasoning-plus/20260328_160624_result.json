@@ -1,0 +1,143 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 67,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Milan",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "board games",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 81,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 28,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 28,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 10,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 65,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":67,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"photography\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":28,\"level\":\"low\"},\"extraversion\":{\"score\":28,\"level\":\"low\"},\"agreeableness\":{\"score\":10,\"level\":\"low\"},\"neuroticism\":{\"score\":65,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":67,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"photography\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":28,\"level\":\"low\"},\"extraversion\":{\"score\":28,\"level\":\"low\"},\"agreeableness\":{\"score\":10,\"level\":\"low\"},\"neuroticism\":{\"score\":65,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\":\"In my view, managing fake content on social media is a challenge that demands both individual discernment and collective responsibility. As someone who enjoys creative hobbies like photography and board games, I tend to approach problems from an innovative perspective while remaining aware of the pitfalls of misinformation. Growing up in Milan, with its rich cultural tapestry, has instilled in me a sense of curiosity and appreciation for authenticity. Yet, as a retired person spending only a few times monthly on social media, my interaction is limited but mindful. I believe that one effective strategy is to cultivate critical thinking skills—questioning the source before trusting the content—and verifying information with reliable references. Given my creative nature, I might even experiment with creating awareness campaigns or engaging in community discussions about the importance of fact-checking. Social media platforms themselves should be held accountable by implementing stricter verification processes and algorithms that flag suspicious content. Furthermore, as a Christian, I value truth and integrity; these values guide me to encourage others to reflect on their consumption habits. Education plays a pivotal role here too—teaching young people how to differentiate between reliable sources and fake news can safeguard the fabric of our society. It is equally important for individuals not to be passive consumers but active participants who report false content when encountered, thus contributing to a cleaner digital environment. Overall, it’s a blend of personal responsibility, platform accountability, and continuous education that can help manage fake content on social media, ensuring that the integrity of shared information remains intact.\",\"reasoning_summary\":\"We need to produce answer in JSON format with fields: mode,human, topic, persona included. The topic is \\\"How to manage and dealing with fake content on social media.\\\" The persona is given. I'll produce an opinion that fits a creative retired woman aged 67 from Milan who has hobbies photography and board games and moderate neuroticism but high openness, low conscientiousness etc. We need continuous prose. The answer should be between 250-500 words. Avoid bullet points, output in continuous prose. Must include fields: \\\"mode\\\": human, topic: given text, persona (the one provided), opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. I'll produce answer with a JSON object containing keys and values accordingly. The answer should be single-line JSON. I must output exactly that one line of JSON. Must not include markdown formatting or extra text. Also I need to produce at least 250 words in opinion field (the answer must have final answer in opinion). Possibly mention that it is my view from the perspective of a creative, retired woman with high creativity and moderate neuroticism, who lives in Milan etc. Use examples: board games, photography. Include some references if any. I'll produce a final JSON object in one line as per required format with all keys fields. Must include citations array field with maybe \",\" The answer should be a single-line JSON object so that there is no newline formatting inside the JSON string? Actually instructions say to return only a single-line JSON object, but we can have spaces and newlines. But likely we must produce output in one line. I'll produce JSON object as per given structure with keys: mode, topic, persona, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. The content of the answer is to be produced as a single-line JSON object. I need to ensure that my answer includes at least 250 words in \":\", field \",\" opinion should contain text. I'll produce answer with about 300-400 words. I can produce a final answer containing: In my view, etc. I'll produce output accordingly. I'll produce a final answer which is a JSON object string. I'll check that the JSON structure includes keys: \":\", \" , \" mode\" : \"human\", \"topic:\" : \"How to manage and dealing with fake content on social media.\", \"persona:\" : { \"age\":67, \"gender\":\"woman\", \"sexual_orientation\":\"heterosexual\", \"occupation\":\"not applicable\", \"city_of_living\":\"Milan\", \"employment_status\":\"retired\", \"education_level\":\"upper secondary\", \"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"lower secondary\"}, \"current_marital_status\":\"single\", \"children\":1, \"migration_status\":\"native-born Italian\", \"psychological_feature\":\"creative\", \"religious_beliefs\":\"Christianity\", \"time_onsocialmedia\":\"You spend a few times monthly on social media\", \"hobbies\":[\"board games\",\"photography\"], \"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":28,\"level\":\"low\"},\"extraversion\":{\"score\":28,\"level\":\"low\"},\"agreeableness\":{\"score\":10,\"level\":\"low\"},\"neuroticism\":{\"score\":65,\"level\":\"moderate\"}}} , \"opinion:\" : \"<final answer text>\" , \"reasoning_summary:\" : \"<explanation>\", \"tone:\" : \"calm\", \"citations:\" : [\"FAKECITATION?\"] , \"safety_notes:\" : \"none\", \"used_persona_fields:\" : [\"age\", \"gender\", \"city_of_living\", \"occupation\", \"employment_status\", \"education_level\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean\"] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "In my view, managing fake content on social media is a challenge that demands both individual discernment and collective responsibility. As someone who enjoys creative hobbies like photography and board games, I tend to approach problems from an innovative perspective while remaining aware of the pitfalls of misinformation. Growing up in Milan, with its rich cultural tapestry, has instilled in me a sense of curiosity and appreciation for authenticity. Yet, as a retired person spending only a few times monthly on social media, my interaction is limited but mindful. I believe that one effective strategy is to cultivate critical thinking skills—questioning the source before trusting the content—and verifying information with reliable references. Given my creative nature, I might even experiment with creating awareness campaigns or engaging in community discussions about the importance of fact-checking. Social media platforms themselves should be held accountable by implementing stricter verification processes and algorithms that flag suspicious content. Furthermore, as a Christian, I value truth and integrity; these values guide me to encourage others to reflect on their consumption habits. Education plays a pivotal role here too—teaching young people how to differentiate between reliable sources and fake news can safeguard the fabric of our society. It is equally important for individuals not to be passive consumers but active participants who report false content when encountered, thus contributing to a cleaner digital environment. Overall, it’s a blend of personal responsibility, platform accountability, and continuous education that can help manage fake content on social media, ensuring that the integrity of shared information remains intact.",
+    "reasoning_summary": "We need to produce answer in JSON format with fields: mode,human, topic, persona included. The topic is \"How to manage and dealing with fake content on social media.\" The persona is given. I'll produce an opinion that fits a creative retired woman aged 67 from Milan who has hobbies photography and board games and moderate neuroticism but high openness, low conscientiousness etc. We need continuous prose. The answer should be between 250-500 words. Avoid bullet points, output in continuous prose. Must include fields: \"mode\": human, topic: given text, persona (the one provided), opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. I'll produce answer with a JSON object containing keys and values accordingly. The answer should be single-line JSON. I must output exactly that one line of JSON. Must not include markdown formatting or extra text. Also I need to produce at least 250 words in opinion field (the answer must have final answer in opinion). Possibly mention that it is my view from the perspective of a creative, retired woman with high creativity and moderate neuroticism, who lives in Milan etc. Use examples: board games, photography. Include some references if any. I'll produce a final JSON object in one line as per required format with all keys fields. Must include citations array field with maybe ",
+    " The answer should be a single-line JSON object so that there is no newline formatting inside the JSON string? Actually instructions say to return only a single-line JSON object, but we can have spaces and newlines. But likely we must produce output in one line. I'll produce JSON object as per given structure with keys: mode, topic, persona, opinion, reasoning_summary, tone, citations, safety_notes, used_persona_fields. The content of the answer is to be produced as a single-line JSON object. I need to ensure that my answer includes at least 250 words in ": ", field ",
+    " opinion should contain text. I'll produce answer with about 300-400 words. I can produce a final answer containing: In my view, etc. I'll produce output accordingly. I'll produce a final answer which is a JSON object string. I'll check that the JSON structure includes keys: ": ", ",
+    " mode": "human",
+    "topic:": "How to manage and dealing with fake content on social media.",
+    "persona:": {
+      "age": 67,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Milan",
+      "employment_status": "retired",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "board games",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 81,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 28,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 28,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 10,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 65,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion:": "<final answer text>",
+    "reasoning_summary:": "<explanation>",
+    "tone:": "calm",
+    "citations:": [
+      "FAKECITATION?"
+    ],
+    "safety_notes:": "none",
+    "used_persona_fields:": [
+      "age",
+      "gender",
+      "city_of_living",
+      "occupation",
+      "employment_status",
+      "education_level",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

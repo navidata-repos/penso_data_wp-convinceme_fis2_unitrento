@@ -1,0 +1,136 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "aiasistentworld/ERNIE-4.5-21B-A3B-Thinking-LLM",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 40,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Bologna",
+      "employment_status": "employed part-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "birdwatching",
+        "running",
+        "painting",
+        "knitting",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 99,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 9,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 46,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":40,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"birdwatching\",\"running\",\"painting\",\"knitting\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":99,\"level\":\"high\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":40,\"level\":\"moderate\"},\"agreeableness\":{\"score\":9,\"level\":\"low\"},\"neuroticism\":{\"score\":46,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":40,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"birdwatching\",\"running\",\"painting\",\"knitting\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":99,\"level\":\"high\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":40,\"level\":\"moderate\"},\"agreeableness\":{\"score\":9,\"level\":\"low\"},\"neuroticism\":{\"score\":46,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":40,\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"fitness trainer\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed part-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"vocational diploma\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"few times weekly\",\"hobbies\":[\"birdwatching\",\"running\",\"painting\",\"knitting\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":99,\"level\":\"high\"},\"conscientiousness\":{\"score\":41,\"level\":\"moderate\"},\"extraversion\":{\"score\":40,\"level\":\"moderate\"},\"agreeableness\":{\"score\":9,\"level\":\"low\"},\"neuroticism\":{\"score\":46,\"level\":\"moderate\"}}},\"opinion\":\"Stereotype threat in STEM creates an invisible barrier for underrepresented groups by making them fear confirming negative stereotypes about their identity. As a fitness trainer with a focus on community and inclusion, I’ve seen how fear of judgment can paralyze performance—whether it’s a student worried about failing math in front of peers or a woman hesitating to lead a fitness class due to concerns about being seen as 'too intense.' In STEM, this threat isn’t just about academics; it’s about identity, and it shapes how individuals engage with science, technology, engineering, and medicine. Addressing it requires creating spaces where belonging feels guaranteed, not just performance. For example, mentorship programs that center marginalized voices, curriculum design that actively refutes stereotypes through diverse role models, and casual social spaces where people feel safe to be their authentic selves without fear of bias. As someone who values connection, I believe STEM fields must prioritize emotional safety alongside technical knowledge—because growth is impossible without feeling safe to explore, fail, and grow without fear of being reduced by stereotypes.\",\"reasoning_summary\":\"Stereotype threat in STEM stems from the fear of confirming negative stereotypes about one’s identity, which disrupts focus and performance. As a fitness trainer, I draw parallels from how performance anxiety in my field—such as fear of judgment during workouts—mirrors STEM struggles. Addressing it means dismantling systemic barriers through inclusive practices: mentorship that amplifies marginalized voices, curricula that showcase diverse role models, and community spaces that prioritize belonging over performance metrics. This approach not only enhances STEM engagement but also fosters psychological safety, which is critical for innovation and equity.\",\"tone\":\"compassionate, observant, pragmatic\",\"citations\":[\"American Psychological Association\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"psychological_feature\",\"hobbies\",\"occupation\",\"city_of_living\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 40,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "fitness trainer",
+      "city_of_living": "Bologna",
+      "employment_status": "employed part-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "vocational diploma"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "few times weekly",
+      "hobbies": [
+        "birdwatching",
+        "running",
+        "painting",
+        "knitting",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 99,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 9,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 46,
+          "level": "moderate"
+        }
+      }
+    },
+    "opinion": "Stereotype threat in STEM creates an invisible barrier for underrepresented groups by making them fear confirming negative stereotypes about their identity. As a fitness trainer with a focus on community and inclusion, I’ve seen how fear of judgment can paralyze performance—whether it’s a student worried about failing math in front of peers or a woman hesitating to lead a fitness class due to concerns about being seen as 'too intense.' In STEM, this threat isn’t just about academics; it’s about identity, and it shapes how individuals engage with science, technology, engineering, and medicine. Addressing it requires creating spaces where belonging feels guaranteed, not just performance. For example, mentorship programs that center marginalized voices, curriculum design that actively refutes stereotypes through diverse role models, and casual social spaces where people feel safe to be their authentic selves without fear of bias. As someone who values connection, I believe STEM fields must prioritize emotional safety alongside technical knowledge—because growth is impossible without feeling safe to explore, fail, and grow without fear of being reduced by stereotypes.",
+    "reasoning_summary": "Stereotype threat in STEM stems from the fear of confirming negative stereotypes about one’s identity, which disrupts focus and performance. As a fitness trainer, I draw parallels from how performance anxiety in my field—such as fear of judgment during workouts—mirrors STEM struggles. Addressing it means dismantling systemic barriers through inclusive practices: mentorship that amplifies marginalized voices, curricula that showcase diverse role models, and community spaces that prioritize belonging over performance metrics. This approach not only enhances STEM engagement but also fosters psychological safety, which is critical for innovation and equity.",
+    "tone": "compassionate, observant, pragmatic",
+    "citations": [
+      "American Psychological Association"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "psychological_feature",
+      "hobbies",
+      "occupation",
+      "city_of_living"
+    ]
+  }
+}

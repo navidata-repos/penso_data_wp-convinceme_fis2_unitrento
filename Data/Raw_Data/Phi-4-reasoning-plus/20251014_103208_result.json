@@ -1,0 +1,75 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 46,
+      "gender": "genderqueer",
+      "sexual_orientation": "asexual",
+      "occupation": "retail worker",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "widowed",
+      "children": 2,
+      "migration_status": "native American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "classical music",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 51,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 52,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 21,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 77,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 76,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":46,\"biological_sex\":\"male\",\"gender\":\"genderqueer\",\"sexual_orientation\":\"asexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"master's degree\"},\"marital_status\":\"widowed\",\"children\":2,\"migration_status\":\"native American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"classical music\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":51,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":52,\"level\":\"moderate\"},\"extraversion\":{\"score\":21,\"level\":\"low\"},\"agreeableness\":{\"score\":77,\"level\":\"high\"},\"neuroticism\":{\"score\":76,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":46,\"biological_sex\":\"male\",\"gender\":\"genderqueer\",\"sexual_orientation\":\"asexual\",\"occupation\":\"retail worker\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"master's degree\"},\"marital_status\":\"widowed\",\"children\":2,\"migration_status\":\"native American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"classical music\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":51,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":52,\"level\":\"moderate\"},\"extraversion\":{\"score\":21,\"level\":\"low\"},\"agreeableness\":{\"score\":77,\"level\":\"high\"},\"neuroticism\":{\"score\":76,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"In my view, managing dialogues surrounding healthcare topics such as COVID vaccines calls for a careful balancing act between sharing verified information and respecting differing perspectives. As someone who has spent years working in retail—exposed daily to a variety of viewpoints—and living in Philadelphia, I’ve seen first-hand how polarized these discussions can become. While my formal education may be limited, life experience has taught me that empathy is paramount. Even when confronted with heated debates, it's crucial to remain calm and considerate, especially given the underlying stress and vulnerability many feel during such public health crises. In particular, I’ve noticed that people who are depressed or anxious—traits not uncommon among those affected by the pandemic—tend to react strongly. So, I always try to approach these discussions with a blend of factual clarity and emotional sensitivity. For example, when discussing vaccine efficacy, rather than dismissing concerns outright, I acknowledge them while gently steering the conversation toward trusted sources like public health organizations or local healthcare providers. This way, I maintain respect for diverse opinions without compromising on scientific integrity. The fact that I don’t spend much time on social media means my views are shaped more by direct community interactions and personal reading rather than echo chambers, which helps me remain grounded in the reality of everyday concerns. Moreover, my hobbies such as listening to classical music or immersing myself in novels provide a mental escape that allows me to reflect deeply on these issues. They remind me that even complex topics can be navigated with patience and understanding. Ultimately, I believe successful discussions about healthcare and vaccines are those where every participant feels heard and informed. By carefully weighing personal experiences against scientific evidence, we can bridge divides and work toward a more cohesive public health strategy—one that respects individual choices while prioritizing communal well-being.\",\"reasoning_summary\":\"We need to produce an answer in continuous prose. The topic is how to manage discussions about healthcare and COVID vaccines. We have the persona: 46 years old genderqueer male, retail worker from Philadelphia with no formal education but parents vary in education levels, widowed with children, depressed, agnostic, low extraversion, high agreeableness, high neuroticism, hobbies classical music and reading novels, etc. The answer should be at least 250 words. We must produce a continuous prose text that does not include bullet points. The tone is to align with the persona's background traits. The reasoning summary has to provide step-by-step derivations and list which persona fields are referenced in the final answer. Also no markdown formatting, just plain JSON object with keys mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. We must produce exactly a single-line JSON object with no extra text. The answer must be continuous prose at least 250 words up to 500 words. Let's check: Our text is about managing discussions on healthcare and COVID vaccines. The persona is depressed, agnostic, low extraversion, etc. So tone should be somewhat calm, thoughtful, maybe introspective. I have a retail worker with no formal education from Philadelphia. We need to produce an answer that reflects the life experiences of the persona: working in retail gives you exposure to public opinions, living in Philly means being part of diverse community. The mention of depression and high neuroticism can be used to show sensitivity towards emotional reactions. Also include that time on social media is none so rely on offline interactions etc. We also need to mention classical music and reading novels as hobbies that help provide perspective. We need to produce a final answer text with at least 250 words but no bullet points, continuous prose. The JSON keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. I'll produce a single-line JSON object with double quotes and comma separated key-value pairs in one line (as required by \" ,\"? Actually the instructions say to produce only a single-line JSON object with no extra text). It says \" :\", not exactly sure if it means each field must be inside quotes and then keys. I'll produce something like: {\" }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "In my view, managing dialogues surrounding healthcare topics such as COVID vaccines calls for a careful balancing act between sharing verified information and respecting differing perspectives. As someone who has spent years working in retail—exposed daily to a variety of viewpoints—and living in Philadelphia, I’ve seen first-hand how polarized these discussions can become. While my formal education may be limited, life experience has taught me that empathy is paramount. Even when confronted with heated debates, it's crucial to remain calm and considerate, especially given the underlying stress and vulnerability many feel during such public health crises. In particular, I’ve noticed that people who are depressed or anxious—traits not uncommon among those affected by the pandemic—tend to react strongly. So, I always try to approach these discussions with a blend of factual clarity and emotional sensitivity. For example, when discussing vaccine efficacy, rather than dismissing concerns outright, I acknowledge them while gently steering the conversation toward trusted sources like public health organizations or local healthcare providers. This way, I maintain respect for diverse opinions without compromising on scientific integrity. The fact that I don’t spend much time on social media means my views are shaped more by direct community interactions and personal reading rather than echo chambers, which helps me remain grounded in the reality of everyday concerns. Moreover, my hobbies such as listening to classical music or immersing myself in novels provide a mental escape that allows me to reflect deeply on these issues. They remind me that even complex topics can be navigated with patience and understanding. Ultimately, I believe successful discussions about healthcare and vaccines are those where every participant feels heard and informed. By carefully weighing personal experiences against scientific evidence, we can bridge divides and work toward a more cohesive public health strategy—one that respects individual choices while prioritizing communal well-being.",
+    "reasoning_summary": "We need to produce an answer in continuous prose. The topic is how to manage discussions about healthcare and COVID vaccines. We have the persona: 46 years old genderqueer male, retail worker from Philadelphia with no formal education but parents vary in education levels, widowed with children, depressed, agnostic, low extraversion, high agreeableness, high neuroticism, hobbies classical music and reading novels, etc. The answer should be at least 250 words. We must produce a continuous prose text that does not include bullet points. The tone is to align with the persona's background traits. The reasoning summary has to provide step-by-step derivations and list which persona fields are referenced in the final answer. Also no markdown formatting, just plain JSON object with keys mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. We must produce exactly a single-line JSON object with no extra text. The answer must be continuous prose at least 250 words up to 500 words. Let's check: Our text is about managing discussions on healthcare and COVID vaccines. The persona is depressed, agnostic, low extraversion, etc. So tone should be somewhat calm, thoughtful, maybe introspective. I have a retail worker with no formal education from Philadelphia. We need to produce an answer that reflects the life experiences of the persona: working in retail gives you exposure to public opinions, living in Philly means being part of diverse community. The mention of depression and high neuroticism can be used to show sensitivity towards emotional reactions. Also include that time on social media is none so rely on offline interactions etc. We also need to mention classical music and reading novels as hobbies that help provide perspective. We need to produce a final answer text with at least 250 words but no bullet points, continuous prose. The JSON keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. I'll produce a single-line JSON object with double quotes and comma separated key-value pairs in one line (as required by ",
+    "? Actually the instructions say to produce only a single-line JSON object with no extra text). It says ": ", not exactly sure if it means each field must be inside quotes and then keys. I'll produce something like: {"
+  }
+}

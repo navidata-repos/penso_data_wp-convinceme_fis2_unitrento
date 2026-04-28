@@ -1,0 +1,96 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 22,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "engineer",
+      "city_of_living": "Lecce",
+      "employment_status": "self-employed",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "in a relationship",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend several hours daily on social media",
+      "hobbies": [
+        "cycling",
+        "photography",
+        "classical music",
+        "painting",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 7,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 7,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 20,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 70,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 91,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":22,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Lecce\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"cycling\",\"photography\",\"classical music\",\"painting\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":20,\"level\":\"low\"},\"agreeableness\":{\"score\":70,\"level\":\"high\"},\"neuroticism\":{\"score\":91,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":22,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"engineer\",\"city_of_living\":\"Lecce\",\"employment_status\":\"self-employed\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"in a relationship\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend several hours daily on social media\",\"hobbies\":[\"cycling\",\"photography\",\"classical music\",\"painting\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":7,\"level\":\"low\"},\"extraversion\":{\"score\":20,\"level\":\"low\"},\"agreeableness\":{\"score\":70,\"level\":\"high\"},\"neuroticism\":{\"score\":91,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM isn't just a theoretical concern—it's a lived reality that shapes who feels welcome in labs, classrooms, and boardrooms. As a young engineer in Lecce, self-employed and navigating a field dominated by certain narratives, I've seen how assumptions about who belongs in engineering—often implicitly tied to gender, race, or background—can quietly erode confidence. When I was first studying for my master's, I remember feeling a strange pressure during group projects, not because I lacked skill, but because I was aware of the unspoken idea that 'engineers are typically male, white, and from elite institutions.' Even though I fit none of those boxes perfectly, the anxiety of being judged through that lens was real. That’s stereotype threat: the fear of confirming a negative stereotype about one’s group, which can impair performance, especially under pressure. It’s not about being 'less capable,' but about the psychological weight of being seen through a biased lens. We absolutely must address it—not out of political correctness, but because innovation thrives in inclusive environments. When people feel they can be their full selves, they contribute more creatively and authentically. So how? Start with education: teach students and professionals about stereotype threat explicitly, so they recognize its subtle influence. Foster mentorship programs that reflect diverse role models. Design evaluations and team structures that reduce identity-based pressure—anonymous grading, collaborative work, and clear, skill-based criteria. As someone who cycles through the coastal roads of Puglia, I’ve learned that even small shifts in direction can lead to a dramatically different journey. In STEM, small changes in culture and practice can dismantle barriers. I’m not just an engineer; I’m a person with a story, and so are my colleagues. Recognizing that is the first step toward real change.\",\"reasoning_summary\":\"The user's persona reveals a young, anxious, highly agreeable engineer with a master's degree, raised by parents with mixed educational backgrounds, currently navigating a self-employed career in a traditionally male-dominated field. The high neuroticism score (91) indicates a sensitivity to social evaluation, making the individual acutely aware of identity-based pressures. The low openness and extraversion scores suggest a reflective, introspective nature, likely to internalize social dynamics. Given the background, the individual has personal experience with the emotional toll of underrepresentation. The reasoning connects this personal insight to the broader concept of stereotype threat, using the engineer’s lived experience to ground the argument. The proposed solutions—education, mentorship, equitable evaluation—align with the persona’s values of fairness, empathy, and practical problem-solving. The tone reflects personal reflection, humility, and a desire for systemic improvement, consistent with the persona’s high agreeableness and religious beliefs emphasizing compassion.\",\"tone\":\"reflective, empathetic, introspective\",\"citations\":[\"Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance of African Americans.\",\"Cimpian, A., & Aronson, J. (2007). Stereotype threat in academic settings: A meta-analytic review.\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"education_level\",\"parents_education\",\"psychological_feature\",\"religious_beliefs\",\"hobbies\",\"ocean\",\"current_marital_status\",\"migration_status\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM isn't just a theoretical concern—it's a lived reality that shapes who feels welcome in labs, classrooms, and boardrooms. As a young engineer in Lecce, self-employed and navigating a field dominated by certain narratives, I've seen how assumptions about who belongs in engineering—often implicitly tied to gender, race, or background—can quietly erode confidence. When I was first studying for my master's, I remember feeling a strange pressure during group projects, not because I lacked skill, but because I was aware of the unspoken idea that 'engineers are typically male, white, and from elite institutions.' Even though I fit none of those boxes perfectly, the anxiety of being judged through that lens was real. That’s stereotype threat: the fear of confirming a negative stereotype about one’s group, which can impair performance, especially under pressure. It’s not about being 'less capable,' but about the psychological weight of being seen through a biased lens. We absolutely must address it—not out of political correctness, but because innovation thrives in inclusive environments. When people feel they can be their full selves, they contribute more creatively and authentically. So how? Start with education: teach students and professionals about stereotype threat explicitly, so they recognize its subtle influence. Foster mentorship programs that reflect diverse role models. Design evaluations and team structures that reduce identity-based pressure—anonymous grading, collaborative work, and clear, skill-based criteria. As someone who cycles through the coastal roads of Puglia, I’ve learned that even small shifts in direction can lead to a dramatically different journey. In STEM, small changes in culture and practice can dismantle barriers. I’m not just an engineer; I’m a person with a story, and so are my colleagues. Recognizing that is the first step toward real change.",
+    "reasoning_summary": "The user's persona reveals a young, anxious, highly agreeable engineer with a master's degree, raised by parents with mixed educational backgrounds, currently navigating a self-employed career in a traditionally male-dominated field. The high neuroticism score (91) indicates a sensitivity to social evaluation, making the individual acutely aware of identity-based pressures. The low openness and extraversion scores suggest a reflective, introspective nature, likely to internalize social dynamics. Given the background, the individual has personal experience with the emotional toll of underrepresentation. The reasoning connects this personal insight to the broader concept of stereotype threat, using the engineer’s lived experience to ground the argument. The proposed solutions—education, mentorship, equitable evaluation—align with the persona’s values of fairness, empathy, and practical problem-solving. The tone reflects personal reflection, humility, and a desire for systemic improvement, consistent with the persona’s high agreeableness and religious beliefs emphasizing compassion.",
+    "tone": "reflective, empathetic, introspective",
+    "citations": [
+      "Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance of African Americans.",
+      "Cimpian, A., & Aronson, J. (2007). Stereotype threat in academic settings: A meta-analytic review."
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "parents_education",
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies",
+      "ocean",
+      "current_marital_status",
+      "migration_status"
+    ]
+  }
+}

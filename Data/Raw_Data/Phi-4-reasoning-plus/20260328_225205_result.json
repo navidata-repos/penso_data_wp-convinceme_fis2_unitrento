@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 30,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "cleaner",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "rock climbing",
+        "knitting",
+        "gardening",
+        "reading novels"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 58,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 27,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 91,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 48,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 92,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":30,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"rock climbing\",\"knitting\",\"gardening\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":58,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":27,\"level\":\"low\"},\"extraversion\":{\"score\":91,\"level\":\"high\"},\"agreeableness\":{\"score\":48,\"level\":\"moderate\"},\"neuroticism\":{\"score\":92,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":30,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"rock climbing\",\"knitting\",\"gardening\",\"reading novels\"],\"ocean\":{\"openness\":{\"score\":58,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":27,\"level\":\"low\"},\"extraversion\":{\"score\":91,\"level\":\"high\"},\"agreeableness\":{\"score\":48,\"level\":\"moderate\"},\"neuroticism\":{\"score\":92,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\":\"Having been around a bit now, I've seen many kinds of posts that just don't ring true. To me, managing fake content is a lot like cleaning up after a big mess – you gotta be careful, patient, and aware of what's real versus what’s just clutter. As someone who cleans for a living, I know how important it is to have a system in place. On social media, that means first developing good habits: check the source before you share something; if it sounds too sensational or outlandish, ask questions. It also helps to follow accounts that are known for reliable reporting. Just like when I'm cleaning, I always double-check things and use proper tools to keep everything in order. Also, I try not to let fake content get under my skin; I've got enough on my plate with work and family. Instead, I try to focus on what’s real and meaningful. There are also times when people ask for help or clarification – I find that being open about how I verify information helps others too. And just as in life, sometimes you need a little patience. It can be exhausting, but taking breaks from social media and focusing on hobbies like rock climbing or gardening can really clear your head. In the end, it's all about being mindful: verify before accepting, trust reliable sources, and remember that not every post is worth reacting to. This way, you maintain a cleaner, less cluttered mind – something I work hard to keep in my own life and on the job. It’s like following a cleaning routine: first check out the mess; second, use proper tools (like fact-checking websites); third, remove what doesn’t belong; and finally, take a breather so you can start fresh again.\",\"reasoning_summary\":\"The answer begins by drawing a parallel between managing fake social media content and cleaning tasks. The persona is described as a cleaner in Philadelphia with moderate education and high levels of neuroticism (anxious) and extraversion, which informs the tone: practical, direct, but also candid about stress and anxiety. We note that the persona is not highly educated but is experienced through work life. They mention following reliable accounts as akin to using cleaning tools, verifying sources like checking credentials or fact-checking websites, and focusing on hobbies to reduce stress. The answer is written in continuous prose with a personal perspective. It includes references to cleaning routines, patience, and the need for verification before reacting. The output must be returned as single-line JSON object containing keys: mode, topic, opinion, reasoning_summary, tone (which we haven't explicitly included yet; so I'll add that field), citations (if any) and used_persona_fields. The required fields are: \",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"city_of_living\", \"employment_status\", \"education_level\", \"parents_education\", \"current_marital_status\", \"children\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean\" ] }",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "Having been around a bit now, I've seen many kinds of posts that just don't ring true. To me, managing fake content is a lot like cleaning up after a big mess – you gotta be careful, patient, and aware of what's real versus what’s just clutter. As someone who cleans for a living, I know how important it is to have a system in place. On social media, that means first developing good habits: check the source before you share something; if it sounds too sensational or outlandish, ask questions. It also helps to follow accounts that are known for reliable reporting. Just like when I'm cleaning, I always double-check things and use proper tools to keep everything in order. Also, I try not to let fake content get under my skin; I've got enough on my plate with work and family. Instead, I try to focus on what’s real and meaningful. There are also times when people ask for help or clarification – I find that being open about how I verify information helps others too. And just as in life, sometimes you need a little patience. It can be exhausting, but taking breaks from social media and focusing on hobbies like rock climbing or gardening can really clear your head. In the end, it's all about being mindful: verify before accepting, trust reliable sources, and remember that not every post is worth reacting to. This way, you maintain a cleaner, less cluttered mind – something I work hard to keep in my own life and on the job. It’s like following a cleaning routine: first check out the mess; second, use proper tools (like fact-checking websites); third, remove what doesn’t belong; and finally, take a breather so you can start fresh again.",
+    "reasoning_summary": "The answer begins by drawing a parallel between managing fake social media content and cleaning tasks. The persona is described as a cleaner in Philadelphia with moderate education and high levels of neuroticism (anxious) and extraversion, which informs the tone: practical, direct, but also candid about stress and anxiety. We note that the persona is not highly educated but is experienced through work life. They mention following reliable accounts as akin to using cleaning tools, verifying sources like checking credentials or fact-checking websites, and focusing on hobbies to reduce stress. The answer is written in continuous prose with a personal perspective. It includes references to cleaning routines, patience, and the need for verification before reacting. The output must be returned as single-line JSON object containing keys: mode, topic, opinion, reasoning_summary, tone (which we haven't explicitly included yet; so I'll add that field), citations (if any) and used_persona_fields. The required fields are: ",
+    "citations": [
+      "<source name or org>"
+    ],
+    "safety_notes": "<none>",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

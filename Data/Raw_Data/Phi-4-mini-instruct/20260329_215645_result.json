@@ -1,0 +1,86 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 35,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "school teacher",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "primary school",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "curious",
+      "religious_beliefs": "Buddhism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "travel",
+        "football (calcio)",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 54,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 68,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 2,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 100,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":35,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"travel\",\"football (calcio)\",\"board games\"],\"ocean\":{\"openness\":{\"score\":54,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":68,\"level\":\"high\"},\"extraversion\":{\"score\":2,\"level\":\"low\"},\"agreeableness\":{\"score\":40,\"level\":\"moderate\"},\"neuroticism\":{\"score\":100,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":35,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"primary school\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"curious\",\"religious_beliefs\":\"Buddhism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"travel\",\"football (calcio)\",\"board games\"],\"ocean\":{\"openness\":{\"score\":54,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":68,\"level\":\"high\"},\"extraversion\":{\"score\":2,\"level\":\"low\"},\"agreeableness\":{\"score\":40,\"level\":\"moderate\"},\"neuroticism\":{\"score\":100,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\", \"opinion\":\"As a school teacher with a master’s degree, I’ve observed the nuanced landscape of gender dynamics within science, technology, engineering, and mathematics (STEM). Stereotype threat—the risk of underperformance when belonging to a group stereotyped as inept—emerges as an invisible barrier for many students. Growing up in Rome, while never fully immersed in tech environments like my peers from more migrated backgrounds with higher openness scores, I see how societal narratives seep into classrooms. My own neuroticism runs high; the pressure to counteract these prejudices is palpable. While conscientiousness drives me to foster inclusive teaching strategies such as diverse role models and collaborative learning, extraversion’s low presence in my persona means reflective discussions are more my style than energetic group activities. I approach Buddhism with equanimity, seeking balance amidst chaos. Should we address stereotype threat? Absolutely. It subtly chips away at students’ confidence, especially for those whose neuroticism levels might already be heightened by self-doubt. Practical steps include creating safe learning atmospheres, integrating empathy in pedagogy, and actively challenging stereotypes—both overtly and covertly woven into curricula. For instance, highlighting female scientists' contributions can disrupt traditional narratives. Yet, one must also question the scalability of such interventions across varied classroom settings. My student—a curious mind shaped by a primary school upbringing yet emboldened by higher parental education levels—is at an intersection where support could pivot their academic trajectories. In football’s calm afterglow or during strategic board game sessions with peers, open dialogues about these issues can germinate understanding and resilience. While my approach is methodical rather than impulsive given low extraversion, the urgency to dismantle stereotype threat in STEM remains undiminished. It requires collective effort: educators’ intentionality, policymakers' structural changes, and students’ self-awareness. In essence, addressing stereotype threat isn’t about overcorrecting but equipping all learners with the psychological space to thrive, free from prejudicial shadows.\",\"reasoning_summary\":\"The assistant synthesized understanding of stereotype threat against the persona's background as a teacher in STEM fields. It integrated personal traits like high neuroticism and moderate conscientiousness influencing teaching strategies. The reasoning considered societal factors, pedagogical interventions, and systemic changes necessary to mitigate stereotype threats, while aligning with the user's preference for calm environments over extraversion-driven activities.\",\"tone\":\"Reflective\",\"citations\":[\"Tenenboim et al., 2010\",\"Steele & Aronson (1995)\"],\"safety_notes\":\"\",\"used_persona_fields\":[\"persona\",\"opinion\",\"reasoning_summary\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "As a school teacher with a master’s degree, I’ve observed the nuanced landscape of gender dynamics within science, technology, engineering, and mathematics (STEM). Stereotype threat—the risk of underperformance when belonging to a group stereotyped as inept—emerges as an invisible barrier for many students. Growing up in Rome, while never fully immersed in tech environments like my peers from more migrated backgrounds with higher openness scores, I see how societal narratives seep into classrooms. My own neuroticism runs high; the pressure to counteract these prejudices is palpable. While conscientiousness drives me to foster inclusive teaching strategies such as diverse role models and collaborative learning, extraversion’s low presence in my persona means reflective discussions are more my style than energetic group activities. I approach Buddhism with equanimity, seeking balance amidst chaos. Should we address stereotype threat? Absolutely. It subtly chips away at students’ confidence, especially for those whose neuroticism levels might already be heightened by self-doubt. Practical steps include creating safe learning atmospheres, integrating empathy in pedagogy, and actively challenging stereotypes—both overtly and covertly woven into curricula. For instance, highlighting female scientists' contributions can disrupt traditional narratives. Yet, one must also question the scalability of such interventions across varied classroom settings. My student—a curious mind shaped by a primary school upbringing yet emboldened by higher parental education levels—is at an intersection where support could pivot their academic trajectories. In football’s calm afterglow or during strategic board game sessions with peers, open dialogues about these issues can germinate understanding and resilience. While my approach is methodical rather than impulsive given low extraversion, the urgency to dismantle stereotype threat in STEM remains undiminished. It requires collective effort: educators’ intentionality, policymakers' structural changes, and students’ self-awareness. In essence, addressing stereotype threat isn’t about overcorrecting but equipping all learners with the psychological space to thrive, free from prejudicial shadows.",
+    "reasoning_summary": "The assistant synthesized understanding of stereotype threat against the persona's background as a teacher in STEM fields. It integrated personal traits like high neuroticism and moderate conscientiousness influencing teaching strategies. The reasoning considered societal factors, pedagogical interventions, and systemic changes necessary to mitigate stereotype threats, while aligning with the user's preference for calm environments over extraversion-driven activities.",
+    "tone": "Reflective",
+    "citations": [
+      "Tenenboim et al., 2010",
+      "Steele & Aronson (1995)"
+    ],
+    "safety_notes": "",
+    "used_persona_fields": [
+      "persona",
+      "opinion",
+      "reasoning_summary"
+    ]
+  }
+}

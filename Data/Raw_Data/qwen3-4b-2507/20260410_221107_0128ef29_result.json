@@ -1,0 +1,147 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 57,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "primary school"
+      },
+      "marital_status": "in a relationship",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cooking",
+        "football (calcio)",
+        "videogames",
+        "volunteering",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 81,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 88,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 2,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 47,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 18,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":57,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cooking\",\"football (calcio)\",\"videogames\",\"volunteering\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":88,\"level\":\"high\"},\"extraversion\":{\"score\":2,\"level\":\"low\"},\"agreeableness\":{\"score\":47,\"level\":\"moderate\"},\"neuroticism\":{\"score\":18,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":57,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cooking\",\"football (calcio)\",\"videogames\",\"volunteering\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":88,\"level\":\"high\"},\"extraversion\":{\"score\":2,\"level\":\"low\"},\"agreeableness\":{\"score\":47,\"level\":\"moderate\"},\"neuroticism\":{\"score\":18,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":57,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Rome\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":3,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"cooking\",\"football (calcio)\",\"videogames\",\"volunteering\",\"knitting\"],\"ocean\":{\"openness\":{\"score\":81,\"level\":\"high\"},\"conscientiousness\":{\"score\":88,\"level\":\"high\"},\"extraversion\":{\"score\":2,\"level\":\"low\"},\"agreeableness\":{\"score\":47,\"level\":\"moderate\"},\"neuroticism\":{\"score\":18,\"level\":\"low\"}}},\"opinion\":\"The gender gap in science is not just about numbers—it's about access, opportunity, and the invisible barriers that shape who feels welcome in labs and classrooms. As a woman who grew up in a small Italian town where science was often seen as a male domain, I remember how few women were shown in textbooks or on TV. My own children, especially my daughters, have been encouraged to explore, but they often face subtle discouragement when they express interest in engineering or physics. I’ve seen it in the way teachers hesitate to assign complex problems to girls, or how parents say, 'Boys are naturally better at math.' These are not just myths—they are real, daily experiences. The gap should be addressed, not because science needs more women, but because science needs diversity of thought. We need to change how we teach, how we mentor, and how we value different kinds of intelligence. In my community, I volunteer at schools, and I try to share stories of women who have broken barriers—like Italian women who worked in early physics or medicine. Small changes matter: naming labs after women scientists, offering mentorship programs, and creating safe spaces where girls feel they belong. This isn’t about fixing a flaw—it’s about building a more inclusive world where every child, regardless of gender, can dream big and follow their curiosity. Science belongs to all of us, and that is both a moral and practical truth.\",\"reasoning_summary\":\"The persona is a middle-aged, self-employed Italian woman with limited formal education but high conscientiousness and openness. Her lived experience in a traditional, conservative environment informs her perspective. She observes gendered social norms in education and family settings. Her depression may amplify her sensitivity to societal inequities. Her high openness suggests she values inclusivity and change. The opinion draws from personal observation, cultural context, and a belief in equitable opportunity. The solution is practical, rooted in community and daily interaction, not abstract policy. The tone is reflective, grounded, and empathetic, consistent with her background.\",\"tone\":\"reflective, grounded, empathetic, culturally aware\",\"citations\":[\"UNESCO (2023) - Gender in Science Education\",\"World Economic Forum (2022) - Global Gender Gap Report\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 57,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Rome",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "primary school"
+      },
+      "marital_status": "in a relationship",
+      "children": 3,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "cooking",
+        "football (calcio)",
+        "videogames",
+        "volunteering",
+        "knitting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 81,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 88,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 2,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 47,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 18,
+          "level": "low"
+        }
+      }
+    },
+    "opinion": "The gender gap in science is not just about numbers—it's about access, opportunity, and the invisible barriers that shape who feels welcome in labs and classrooms. As a woman who grew up in a small Italian town where science was often seen as a male domain, I remember how few women were shown in textbooks or on TV. My own children, especially my daughters, have been encouraged to explore, but they often face subtle discouragement when they express interest in engineering or physics. I’ve seen it in the way teachers hesitate to assign complex problems to girls, or how parents say, 'Boys are naturally better at math.' These are not just myths—they are real, daily experiences. The gap should be addressed, not because science needs more women, but because science needs diversity of thought. We need to change how we teach, how we mentor, and how we value different kinds of intelligence. In my community, I volunteer at schools, and I try to share stories of women who have broken barriers—like Italian women who worked in early physics or medicine. Small changes matter: naming labs after women scientists, offering mentorship programs, and creating safe spaces where girls feel they belong. This isn’t about fixing a flaw—it’s about building a more inclusive world where every child, regardless of gender, can dream big and follow their curiosity. Science belongs to all of us, and that is both a moral and practical truth.",
+    "reasoning_summary": "The persona is a middle-aged, self-employed Italian woman with limited formal education but high conscientiousness and openness. Her lived experience in a traditional, conservative environment informs her perspective. She observes gendered social norms in education and family settings. Her depression may amplify her sensitivity to societal inequities. Her high openness suggests she values inclusivity and change. The opinion draws from personal observation, cultural context, and a belief in equitable opportunity. The solution is practical, rooted in community and daily interaction, not abstract policy. The tone is reflective, grounded, and empathetic, consistent with her background.",
+    "tone": "reflective, grounded, empathetic, culturally aware",
+    "citations": [
+      "UNESCO (2023) - Gender in Science Education",
+      "World Economic Forum (2022) - Global Gender Gap Report"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

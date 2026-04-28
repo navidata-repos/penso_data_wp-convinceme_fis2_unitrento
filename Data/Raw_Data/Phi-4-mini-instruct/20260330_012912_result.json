@@ -1,0 +1,85 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 62,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "school teacher",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 1,
+      "migration_status": "immigrant",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "running",
+        "board games"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 18,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 22,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 40,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 46,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 8,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":62,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"running\",\"board games\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":22,\"level\":\"low\"},\"extraversion\":{\"score\":40,\"level\":\"moderate\"},\"agreeableness\":{\"score\":46,\"level\":\"moderate\"},\"neuroticism\":{\"score\":8,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":62,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"school teacher\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":1,\"migration_status\":\"immigrant\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"running\",\"board games\"],\"ocean\":{\"openness\":{\"score\":18,\"level\":\"low\"},\"conscientiousness\":{\"score\":22,\"level\":\"low\"},\"extraversion\":{\"score\":40,\"level\":\"moderate\"},\"agreeableness\":{\"score\":46,\"level\":\"moderate\"},\"neuroticism\":{\"score\":8,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a school teacher residing in Philadelphia with over half a century of life experience, I have observed firsthand the disparities women encounter within scientific fields. Having received only a bachelor's degree while my parents' educational backgrounds differ starkly—one achieved upper secondary and the other none—I witness today’s gender gap that persists despite societal advancements. My daughter’s journey into STEM mirrors many young women’s struggles: implicit biases, underrepresentation of female role models in science narratives, and systemic hurdles such as unequal funding opportunities or workplace cultures that often marginalize mothers seeking balance between career and family life.\\n\\nThe issue is not merely about equal numbers but also equitable recognition. A statistic I recall states women hold a mere fraction of academic scientific positions relative to their male counterparts—a gap exacerbated by unconscious prejudices during peer reviews, grant evaluations, and hiring processes. Such biases are subtle yet cumulative, affecting career trajectories over decades.\\n\\nAddressing this requires multi-pronged efforts: educational reforms beginning at early exposure to science for girls; mentorship programs connecting young women with female scientists who can provide guidance and counter prevailing stereotypes; policy interventions ensuring transparent funding criteria free from gender bias; and workplace cultures that genuinely support work-life balance, such as flexible hours or parental leave policies accommodating both parents. Additionally, media representation plays a critical role—celebrating achievements of women in science to reshape public perceptions and inspire future generations.\\n\\nI’ve personally encountered instances where capable female colleagues were overlooked for promotions due solely to assumptions about their commitment outside work—a reflection of deep-seated gender norms. This not only hinders individual careers but also deprives the scientific community of diverse perspectives essential for innovation.\\n\\nWhile strides have been made—organizations like CERN actively promote inclusivity, and programs such as Girls Who Code are emerging—the pace is slow, demanding sustained advocacy at institutional, governmental, and societal levels. My own daughter’s curiosity in mathematics and my encouragement reflect a parental duty to challenge these systemic barriers by empowering her with confidence despite the odds.\\n\\nIn conclusion, yes—closing the gender gap in science must be an urgent collective endeavor. Through education reform, policy changes, mentorship, cultural shifts in media representation, and supportive work environments that value contributions of all individuals regardless of gender, we can foster a more inclusive scientific community where talent thrives irrespective of identity. It is not only a matter of justice but also enriches the quality and scope of human understanding itself.\",\"reasoning_summary\":\"Gender gap analysis involves reviewing statistical disparities in STEM representation, considering factors like education access, systemic biases in hiring/advancement processes, societal role expectations impacting career balance, and influence of media portrayal. Proposed solutions include early educational interventions to spark interest across genders, mentorship by female professionals, policy reforms for equitable resource distribution and parental support mechanisms, alongside cultural shifts via positive media representations. Teacher's observations from 35+ years provide contextual weight on persistence of these issues despite progress.\",\"tone\":\"Reflective\",\"citations\":[\"STEM gender gap statistics\",\"CERN inclusivity programs\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\", \"occupation\", \"education_level\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a school teacher residing in Philadelphia with over half a century of life experience, I have observed firsthand the disparities women encounter within scientific fields. Having received only a bachelor's degree while my parents' educational backgrounds differ starkly—one achieved upper secondary and the other none—I witness today’s gender gap that persists despite societal advancements. My daughter’s journey into STEM mirrors many young women’s struggles: implicit biases, underrepresentation of female role models in science narratives, and systemic hurdles such as unequal funding opportunities or workplace cultures that often marginalize mothers seeking balance between career and family life.\n\nThe issue is not merely about equal numbers but also equitable recognition. A statistic I recall states women hold a mere fraction of academic scientific positions relative to their male counterparts—a gap exacerbated by unconscious prejudices during peer reviews, grant evaluations, and hiring processes. Such biases are subtle yet cumulative, affecting career trajectories over decades.\n\nAddressing this requires multi-pronged efforts: educational reforms beginning at early exposure to science for girls; mentorship programs connecting young women with female scientists who can provide guidance and counter prevailing stereotypes; policy interventions ensuring transparent funding criteria free from gender bias; and workplace cultures that genuinely support work-life balance, such as flexible hours or parental leave policies accommodating both parents. Additionally, media representation plays a critical role—celebrating achievements of women in science to reshape public perceptions and inspire future generations.\n\nI’ve personally encountered instances where capable female colleagues were overlooked for promotions due solely to assumptions about their commitment outside work—a reflection of deep-seated gender norms. This not only hinders individual careers but also deprives the scientific community of diverse perspectives essential for innovation.\n\nWhile strides have been made—organizations like CERN actively promote inclusivity, and programs such as Girls Who Code are emerging—the pace is slow, demanding sustained advocacy at institutional, governmental, and societal levels. My own daughter’s curiosity in mathematics and my encouragement reflect a parental duty to challenge these systemic barriers by empowering her with confidence despite the odds.\n\nIn conclusion, yes—closing the gender gap in science must be an urgent collective endeavor. Through education reform, policy changes, mentorship, cultural shifts in media representation, and supportive work environments that value contributions of all individuals regardless of gender, we can foster a more inclusive scientific community where talent thrives irrespective of identity. It is not only a matter of justice but also enriches the quality and scope of human understanding itself.",
+    "reasoning_summary": "Gender gap analysis involves reviewing statistical disparities in STEM representation, considering factors like education access, systemic biases in hiring/advancement processes, societal role expectations impacting career balance, and influence of media portrayal. Proposed solutions include early educational interventions to spark interest across genders, mentorship by female professionals, policy reforms for equitable resource distribution and parental support mechanisms, alongside cultural shifts via positive media representations. Teacher's observations from 35+ years provide contextual weight on persistence of these issues despite progress.",
+    "tone": "Reflective",
+    "citations": [
+      "STEM gender gap statistics",
+      "CERN inclusivity programs"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "education_level"
+    ]
+  }
+}

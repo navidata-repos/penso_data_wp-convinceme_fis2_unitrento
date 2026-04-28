@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 39,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "carpenter",
+      "city_of_living": "Rome",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "master's degree",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "immigrant",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "classical music",
+        "gardening",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 31,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 25,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 28,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 79,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":39,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"classical music\",\"gardening\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":31,\"level\":\"low\"},\"conscientiousness\":{\"score\":25,\"level\":\"low\"},\"extraversion\":{\"score\":44,\"level\":\"moderate\"},\"agreeableness\":{\"score\":28,\"level\":\"low\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":39,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"carpenter\",\"city_of_living\":\"Rome\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"master's degree\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"immigrant\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"classical music\",\"gardening\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":31,\"level\":\"low\"},\"conscientiousness\":{\"score\":25,\"level\":\"low\"},\"extraversion\":{\"score\":44,\"level\":\"moderate\"},\"agreeableness\":{\"score\":28,\"level\":\"low\"},\"neuroticism\":{\"score\":79,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"As a carpenter in Rome, I’ve spent years shaping wood with precision, patience, and care—tools that mirror the kind of dedication science demands. Yet, I’ve noticed how few women I’ve seen in technical workshops or engineering firms, even though I’ve worked alongside skilled female artisans in the past. That’s not just a coincidence; it’s a reflection of the gender gap in science. It’s not just about numbers—it’s about who gets to design, build, and lead in fields that shape our world. Women are often underrepresented in STEM, not because they lack ability, but because of barriers: outdated assumptions, lack of role models, and systems that favor certain mindsets over others. I’ve seen how my own son, raised with equal encouragement, shows curiosity in mechanics and nature just as much as his sister does. But I’ve also noticed that when she shows interest in science, people often say, 'That’s more for boys.' That kind of subtle bias matters. We should absolutely address this gap. Not out of guilt, but because diversity strengthens innovation. When more minds from different backgrounds contribute, solutions become more inclusive and effective. I don’t have a PhD, but I’ve learned through experience that every hand that holds a tool can build something meaningful. So, how do we fix it? Start early—educate children equally, celebrate female scientists in schools, and ensure mentorship programs are accessible. Create safe spaces where girls and women feel welcome in labs and workshops. And as someone who’s worked with both genders, I can say: talent isn’t gendered. It’s about opportunity, encouragement, and removing the invisible walls that still stand in the way.\",\"reasoning_summary\":\"The user’s perspective is shaped by lived experience as a male immigrant carpenter in Rome with low openness and high neuroticism, indicating caution and sensitivity to social dynamics. His background as a manual laborer and his observation of gender disparities in technical fields inform his view. His children’s upbringing and exposure to equal encouragement highlight the role of early influence. His low agreeableness and conscientiousness suggest he values directness and practicality over abstract ideals, making him responsive to tangible solutions. He references real-world exclusion and the need for inclusive systems, aligning with evidence from UNESCO and OECD on gender gaps in STEM. He advocates for early education and mentorship, grounded in personal observation rather than academic theory.\",\"tone\":\"Practical, reflective, and cautiously empathetic with a focus on real-world application and fairness\",\"citations\":[\"UNESCO\",\"OECD\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "As a carpenter in Rome, I’ve spent years shaping wood with precision, patience, and care—tools that mirror the kind of dedication science demands. Yet, I’ve noticed how few women I’ve seen in technical workshops or engineering firms, even though I’ve worked alongside skilled female artisans in the past. That’s not just a coincidence; it’s a reflection of the gender gap in science. It’s not just about numbers—it’s about who gets to design, build, and lead in fields that shape our world. Women are often underrepresented in STEM, not because they lack ability, but because of barriers: outdated assumptions, lack of role models, and systems that favor certain mindsets over others. I’ve seen how my own son, raised with equal encouragement, shows curiosity in mechanics and nature just as much as his sister does. But I’ve also noticed that when she shows interest in science, people often say, 'That’s more for boys.' That kind of subtle bias matters. We should absolutely address this gap. Not out of guilt, but because diversity strengthens innovation. When more minds from different backgrounds contribute, solutions become more inclusive and effective. I don’t have a PhD, but I’ve learned through experience that every hand that holds a tool can build something meaningful. So, how do we fix it? Start early—educate children equally, celebrate female scientists in schools, and ensure mentorship programs are accessible. Create safe spaces where girls and women feel welcome in labs and workshops. And as someone who’s worked with both genders, I can say: talent isn’t gendered. It’s about opportunity, encouragement, and removing the invisible walls that still stand in the way.",
+    "reasoning_summary": "The user’s perspective is shaped by lived experience as a male immigrant carpenter in Rome with low openness and high neuroticism, indicating caution and sensitivity to social dynamics. His background as a manual laborer and his observation of gender disparities in technical fields inform his view. His children’s upbringing and exposure to equal encouragement highlight the role of early influence. His low agreeableness and conscientiousness suggest he values directness and practicality over abstract ideals, making him responsive to tangible solutions. He references real-world exclusion and the need for inclusive systems, aligning with evidence from UNESCO and OECD on gender gaps in STEM. He advocates for early education and mentorship, grounded in personal observation rather than academic theory.",
+    "tone": "Practical, reflective, and cautiously empathetic with a focus on real-world application and fairness",
+    "citations": [
+      "UNESCO",
+      "OECD"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

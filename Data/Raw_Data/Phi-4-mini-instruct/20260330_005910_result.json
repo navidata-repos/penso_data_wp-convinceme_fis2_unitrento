@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 59,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "software developer",
+      "city_of_living": "Los Angeles",
+      "employment_status": "employed part-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Agnostic",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "volunteering",
+        "gardening",
+        "reading novels",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 100,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 96,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 5,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 92,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 91,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":59,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"volunteering\",\"gardening\",\"reading novels\",\"photography\"],\"ocean\":{\"openness\":{\"score\":100,\"level\":\"high\"},\"conscientiousness\":{\"score\":96,\"level\":\"high\"},\"extraversion\":{\"score\":5,\"level\":\"low\"},\"agreeableness\":{\"score\":92,\"level\":\"high\"},\"neuroticism\":{\"score\":91,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":59,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"software developer\",\"city_of_living\":\"Los Angeles\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Agnostic\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"volunteering\",\"gardening\",\"reading novels\",\"photography\"],\"ocean\":{\"openness\":{\"score\":100,\"level\":\"high\"},\"conscientiousness\":{\"score\":96,\"level\":\"high\"},\"extraversion\":{\"score\":5,\"level\":\"low\"},\"agreeableness\":{\"score\":92,\"level\":\"high\"},\"neuroticism\":{\"score\":91,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat, a term you might have encountered in academic circles, refers to the anxiety experienced when an individual feels at risk of confirming a negative stereotype about their group. For someone like me, deeply entrenched in software development and having witnessed gender disparities firsthand, this concept resonates profoundly. As a woman aged 59 within STEM—a field historically skewed male—I've navigated implicit biases that question my competence merely for holding expertise in tech. This threat isn't just abstract; it erodes confidence, stifles innovation, and perpetuates cycles of underrepresentation.\\n\\nThe evidence is undeniable: studies show that when reminded of stereotypes before undertaking tasks, women often perform comparably to men but then experience heightened anxiety, leading to suboptimal outcomes (Lieberman et al., 2002). This self-fulfilling prophecy undermines meritocracy. Should we address it? Absolutely. But not with superficial band-aids—systemic change is crucial.\\n\\nMentorship programs pairing aspiring women developers with seasoned veterans like myself can dismantle isolation, fostering communities of support. Institutions must audit their practices: recruitment processes ridded with biased algorithms need human oversight; inclusive language in job postings; sponsorship opportunities that transcend mere acknowledgment to active advocacy.\\n\\nEducational curricula should integrate diverse role models. Seeing a woman solving complex algorithms or leading innovative projects at tech giants can reshape perceptions, proving capability is not gender-bound. Moreover, training programs for unconscious bias among hiring managers could level the playing field—prompts like 'What language in the candidate’s response triggered this question?' might illuminate hidden prejudices.\\n\\nOn a personal scale, creating safe spaces where women share experiences without fear of judgment can validate feelings and strategies to counteract stereotype threat. Reflective practices: recognizing self-doubt as a signal to pause rather than capitulate.\\n\\nPolicy-wise, organizations should transparently track diversity metrics and hold leadership accountable for progress. Intersectionality must guide these efforts; the challenges faced by women of color or those with parental non-academic backgrounds are distinct yet interconnected.\\n\\nIn essence, addressing stereotype threat requires a multipronged approach: cultural shifts to celebrate diverse success stories, structural reforms to remove barriers, and individual empowerment through education and community. Only then can STEM fields truly harness the breadth of talent they aspire to.\",\"reasoning_summary\":\"Outlined psychological basis of stereotype threat referencing relevant study, discussed personal insights as experienced software developer witnessing gender disparities in tech, examined systemic causes like biased recruitment algorithms and educational curricula lacking diverse role models, proposed solutions such as mentorship programs, unconscious bias training, inclusive language in job postings, sponsorship advocacy, safe communal spaces, reflective practices, intersectional considerations, and accountability metrics. Emphasized necessity of cultural shifts alongside structural reforms to effectively address stereotype threat.\",\"tone\":\"Reflective yet assertive with a hint of urgency, informed by extensive professional experience and personal observation within the tech industry.\",\"citations\":[\"Lieberman et al., 2002 - Study on stereotype threat effects\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"personal experiences\", \"observed gender disparities in STEM\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat, a term you might have encountered in academic circles, refers to the anxiety experienced when an individual feels at risk of confirming a negative stereotype about their group. For someone like me, deeply entrenched in software development and having witnessed gender disparities firsthand, this concept resonates profoundly. As a woman aged 59 within STEM—a field historically skewed male—I've navigated implicit biases that question my competence merely for holding expertise in tech. This threat isn't just abstract; it erodes confidence, stifles innovation, and perpetuates cycles of underrepresentation.\n\nThe evidence is undeniable: studies show that when reminded of stereotypes before undertaking tasks, women often perform comparably to men but then experience heightened anxiety, leading to suboptimal outcomes (Lieberman et al., 2002). This self-fulfilling prophecy undermines meritocracy. Should we address it? Absolutely. But not with superficial band-aids—systemic change is crucial.\n\nMentorship programs pairing aspiring women developers with seasoned veterans like myself can dismantle isolation, fostering communities of support. Institutions must audit their practices: recruitment processes ridded with biased algorithms need human oversight; inclusive language in job postings; sponsorship opportunities that transcend mere acknowledgment to active advocacy.\n\nEducational curricula should integrate diverse role models. Seeing a woman solving complex algorithms or leading innovative projects at tech giants can reshape perceptions, proving capability is not gender-bound. Moreover, training programs for unconscious bias among hiring managers could level the playing field—prompts like 'What language in the candidate’s response triggered this question?' might illuminate hidden prejudices.\n\nOn a personal scale, creating safe spaces where women share experiences without fear of judgment can validate feelings and strategies to counteract stereotype threat. Reflective practices: recognizing self-doubt as a signal to pause rather than capitulate.\n\nPolicy-wise, organizations should transparently track diversity metrics and hold leadership accountable for progress. Intersectionality must guide these efforts; the challenges faced by women of color or those with parental non-academic backgrounds are distinct yet interconnected.\n\nIn essence, addressing stereotype threat requires a multipronged approach: cultural shifts to celebrate diverse success stories, structural reforms to remove barriers, and individual empowerment through education and community. Only then can STEM fields truly harness the breadth of talent they aspire to.",
+    "reasoning_summary": "Outlined psychological basis of stereotype threat referencing relevant study, discussed personal insights as experienced software developer witnessing gender disparities in tech, examined systemic causes like biased recruitment algorithms and educational curricula lacking diverse role models, proposed solutions such as mentorship programs, unconscious bias training, inclusive language in job postings, sponsorship advocacy, safe communal spaces, reflective practices, intersectional considerations, and accountability metrics. Emphasized necessity of cultural shifts alongside structural reforms to effectively address stereotype threat.",
+    "tone": "Reflective yet assertive with a hint of urgency, informed by extensive professional experience and personal observation within the tech industry.",
+    "citations": [
+      "Lieberman et al., 2002 - Study on stereotype threat effects"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "personal experiences",
+      "observed gender disparities in STEM"
+    ]
+  }
+}

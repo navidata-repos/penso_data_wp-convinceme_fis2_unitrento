@@ -1,0 +1,105 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 56,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "civil servant",
+      "city_of_living": "Philadelphia",
+      "employment_status": "employed part-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "vocational diploma",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "divorced",
+      "children": 5,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "travel",
+        "birdwatching",
+        "photography"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 80,
+          "level": "high"
+        },
+        "conscientiousness": {
+          "score": 60,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 83,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 79,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 38,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":56,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"civil servant\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"divorced\",\"children\":5,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"travel\",\"birdwatching\",\"photography\"],\"ocean\":{\"openness\":{\"score\":80,\"level\":\"high\"},\"conscientiousness\":{\"score\":60,\"level\":\"moderate\"},\"extraversion\":{\"score\":83,\"level\":\"high\"},\"agreeableness\":{\"score\":79,\"level\":\"high\"},\"neuroticism\":{\"score\":38,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":56,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"civil servant\",\"city_of_living\":\"Philadelphia\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"vocational diploma\",\"parent_2\":\"bachelor's degree\"},\"marital_status\":\"divorced\",\"children\":5,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"travel\",\"birdwatching\",\"photography\"],\"ocean\":{\"openness\":{\"score\":80,\"level\":\"high\"},\"conscientiousness\":{\"score\":60,\"level\":\"moderate\"},\"extraversion\":{\"score\":83,\"level\":\"high\"},\"agreeableness\":{\"score\":79,\"level\":\"high\"},\"neuroticism\":{\"score\":38,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"The gender gap in science is not merely a statistical disparity but a systemic imbalance rooted in cultural norms, institutional biases, and unequal access to opportunity—issues I’ve observed both in my professional life as a civil servant and through personal experiences as an immigrant father raising five children in Philadelphia. While women now earn nearly half of all science and engineering bachelor’s degrees in the U.S., they remain underrepresented in senior academic roles, leadership positions, and high-impact research fields like physics and computer science. This gap persists not because women lack aptitude, but because of entrenched structures that favor traditional male pathways—such as the expectation of uninterrupted career trajectories, which disproportionately disadvantage women who take time for family. As a man who grew up in a household where my mother held a vocational diploma and my father a bachelor’s degree, I recognize how education can be a bridge, but only if access is equitable. Addressing this gap is not just a matter of fairness—it’s essential for innovation. Diverse perspectives lead to better problem-solving, as seen in global health initiatives where women scientists have driven breakthroughs in maternal care and community-based medicine. To close the gap, we must implement structural reforms: equitable parental leave policies, mentorship programs that actively include women and nonbinary individuals, and transparent hiring and promotion practices that minimize unconscious bias. Institutions must also track and publish gender data to hold themselves accountable. As someone who values open-mindedness and community, I believe change starts not with grand gestures, but with consistent, intentional action—supporting young girls in STEM through outreach, ensuring female researchers receive equal funding, and creating inclusive environments where everyone feels they belong. The goal isn’t to ‘fix’ women to fit science, but to reshape science to reflect the full spectrum of human potential.\",\"reasoning_summary\":\"I began by acknowledging the statistical reality of gender disparities in science, drawing from my education and civil service experience where I’ve seen policy gaps firsthand. I considered my immigrant background, which taught me the value of access and opportunity, and reflected on raising five children, which highlighted gendered expectations in caregiving. I referenced personal values like openness and agreeableness to emphasize inclusivity. I evaluated the root causes—cultural bias, structural barriers, and work-life imbalance—and linked them to real-world outcomes like underrepresentation in leadership. I argued that addressing the gap is necessary for innovation and social equity, citing evidence from global health and education research. I proposed concrete solutions grounded in policy, mentorship, and transparency, aligning with my conscientiousness and civic-mindedness. Finally, I emphasized systemic change over individual fixes, reflecting my long-term, community-oriented worldview.\",\"tone\":\"Reflective, civic-minded, and grounded in lived experience with a strong emphasis on equity and systemic reform\",\"citations\":[\"National Science Foundation (NSF) reports on gender in STEM\",\"UNESCO Science Report: The Race for Smart\",\"American Association of University Women (AAUW) research on gender equity in STEM\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"biological_sex\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean.openness\",\"ocean.conscientiousness\",\"ocean.extraversion\",\"ocean.agreeableness\",\"ocean.neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science is not merely a statistical disparity but a systemic imbalance rooted in cultural norms, institutional biases, and unequal access to opportunity—issues I’ve observed both in my professional life as a civil servant and through personal experiences as an immigrant father raising five children in Philadelphia. While women now earn nearly half of all science and engineering bachelor’s degrees in the U.S., they remain underrepresented in senior academic roles, leadership positions, and high-impact research fields like physics and computer science. This gap persists not because women lack aptitude, but because of entrenched structures that favor traditional male pathways—such as the expectation of uninterrupted career trajectories, which disproportionately disadvantage women who take time for family. As a man who grew up in a household where my mother held a vocational diploma and my father a bachelor’s degree, I recognize how education can be a bridge, but only if access is equitable. Addressing this gap is not just a matter of fairness—it’s essential for innovation. Diverse perspectives lead to better problem-solving, as seen in global health initiatives where women scientists have driven breakthroughs in maternal care and community-based medicine. To close the gap, we must implement structural reforms: equitable parental leave policies, mentorship programs that actively include women and nonbinary individuals, and transparent hiring and promotion practices that minimize unconscious bias. Institutions must also track and publish gender data to hold themselves accountable. As someone who values open-mindedness and community, I believe change starts not with grand gestures, but with consistent, intentional action—supporting young girls in STEM through outreach, ensuring female researchers receive equal funding, and creating inclusive environments where everyone feels they belong. The goal isn’t to ‘fix’ women to fit science, but to reshape science to reflect the full spectrum of human potential.",
+    "reasoning_summary": "I began by acknowledging the statistical reality of gender disparities in science, drawing from my education and civil service experience where I’ve seen policy gaps firsthand. I considered my immigrant background, which taught me the value of access and opportunity, and reflected on raising five children, which highlighted gendered expectations in caregiving. I referenced personal values like openness and agreeableness to emphasize inclusivity. I evaluated the root causes—cultural bias, structural barriers, and work-life imbalance—and linked them to real-world outcomes like underrepresentation in leadership. I argued that addressing the gap is necessary for innovation and social equity, citing evidence from global health and education research. I proposed concrete solutions grounded in policy, mentorship, and transparency, aligning with my conscientiousness and civic-mindedness. Finally, I emphasized systemic change over individual fixes, reflecting my long-term, community-oriented worldview.",
+    "tone": "Reflective, civic-minded, and grounded in lived experience with a strong emphasis on equity and systemic reform",
+    "citations": [
+      "National Science Foundation (NSF) reports on gender in STEM",
+      "UNESCO Science Report: The Race for Smart",
+      "American Association of University Women (AAUW) research on gender equity in STEM"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism"
+    ]
+  }
+}

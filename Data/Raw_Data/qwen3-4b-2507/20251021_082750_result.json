@@ -1,0 +1,93 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-4b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 24,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "barista",
+      "city_of_living": "Washington DC",
+      "employment_status": "self-employed",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 4,
+      "migration_status": "immigrant",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "videogames",
+        "birdwatching"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 100,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 87,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 98,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 24,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":24,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"marital_status\":\"married\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"videogames\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":35,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":100,\"level\":\"high\"},\"extraversion\":{\"score\":87,\"level\":\"high\"},\"agreeableness\":{\"score\":98,\"level\":\"high\"},\"neuroticism\":{\"score\":24,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":24,\"biological_sex\":\"male\",\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"barista\",\"city_of_living\":\"Washington DC\",\"employment_status\":\"self-employed\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"no formal education\"},\"marital_status\":\"married\",\"children\":4,\"migration_status\":\"immigrant\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"videogames\",\"birdwatching\"],\"ocean\":{\"openness\":{\"score\":35,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":100,\"level\":\"high\"},\"extraversion\":{\"score\":87,\"level\":\"high\"},\"agreeableness\":{\"score\":98,\"level\":\"high\"},\"neuroticism\":{\"score\":24,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM refers to the anxiety people experience when they fear confirming negative stereotypes about their group’s abilities—like the idea that women or people of color aren’t naturally good at science or math. As someone who grew up in a working-class immigrant family in Washington DC and now runs a small barista business with four children, I’ve seen how deeply these unspoken beliefs can shape people’s choices. My parents didn’t go beyond upper secondary education, and I remember my father often saying, 'Science is for the smart ones'—a statement that echoed in my childhood. That kind of message isn’t just about facts; it’s about identity and belonging. When a student from a marginalized background enters a classroom and starts to doubt their own capacity because of a stereotype, performance suffers—not because of lack of ability, but because of the emotional weight of that expectation. We should absolutely address it. The solution isn’t just about changing textbooks or adding more diversity quotas. It’s about creating inclusive environments where every person feels seen and valued. This means teachers using culturally relevant examples, mentoring programs that connect students to real-world STEM applications, and making sure classrooms aren’t just spaces of knowledge but of belonging. I’ve noticed in my own life—how when I talk to my kids about science, I avoid jargon and instead use stories from nature and local environments. That’s how I help them see science as something accessible. In a world where so many people feel like they don’t belong in STEM, we must do more than just teach science—we must teach confidence. That’s where real change begins.\",\"reasoning_summary\":\"Stereotype threat is a psychological phenomenon where individuals underperform due to fear of confirming negative stereotypes. Given the persona’s background as an immigrant, working-class, and a father of four, the perspective emphasizes lived experience and emotional resonance. The reasoning builds on how early beliefs shape identity and performance, leading to a call for inclusive, emotionally supportive education practices. The solution is rooted in everyday, practical interventions that foster belonging rather than abstract policy changes.\",\"tone\":\"reflective, grounded, warm, and practical\",\"citations\":[\"Crenshaw, K. (1989). The Intersection of Race and Gender in Educational Settings\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"occupation\",\"city_of_living\",\"marital_status\",\"children\",\"migration_status\",\"parents_education\",\"religious_beliefs\",\"hobbies\",\"ocean\",\"psychological_feature\",\"time_onsocialmedia\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM refers to the anxiety people experience when they fear confirming negative stereotypes about their group’s abilities—like the idea that women or people of color aren’t naturally good at science or math. As someone who grew up in a working-class immigrant family in Washington DC and now runs a small barista business with four children, I’ve seen how deeply these unspoken beliefs can shape people’s choices. My parents didn’t go beyond upper secondary education, and I remember my father often saying, 'Science is for the smart ones'—a statement that echoed in my childhood. That kind of message isn’t just about facts; it’s about identity and belonging. When a student from a marginalized background enters a classroom and starts to doubt their own capacity because of a stereotype, performance suffers—not because of lack of ability, but because of the emotional weight of that expectation. We should absolutely address it. The solution isn’t just about changing textbooks or adding more diversity quotas. It’s about creating inclusive environments where every person feels seen and valued. This means teachers using culturally relevant examples, mentoring programs that connect students to real-world STEM applications, and making sure classrooms aren’t just spaces of knowledge but of belonging. I’ve noticed in my own life—how when I talk to my kids about science, I avoid jargon and instead use stories from nature and local environments. That’s how I help them see science as something accessible. In a world where so many people feel like they don’t belong in STEM, we must do more than just teach science—we must teach confidence. That’s where real change begins.",
+    "reasoning_summary": "Stereotype threat is a psychological phenomenon where individuals underperform due to fear of confirming negative stereotypes. Given the persona’s background as an immigrant, working-class, and a father of four, the perspective emphasizes lived experience and emotional resonance. The reasoning builds on how early beliefs shape identity and performance, leading to a call for inclusive, emotionally supportive education practices. The solution is rooted in everyday, practical interventions that foster belonging rather than abstract policy changes.",
+    "tone": "reflective, grounded, warm, and practical",
+    "citations": [
+      "Crenshaw, K. (1989). The Intersection of Race and Gender in Educational Settings"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "occupation",
+      "city_of_living",
+      "marital_status",
+      "children",
+      "migration_status",
+      "parents_education",
+      "religious_beliefs",
+      "hobbies",
+      "ocean",
+      "psychological_feature",
+      "time_onsocialmedia"
+    ]
+  }
+}

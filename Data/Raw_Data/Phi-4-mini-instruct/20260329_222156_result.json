@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-mini-reasoning",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "persona": {
+      "age": 33,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "plumber",
+      "city_of_living": "New York",
+      "employment_status": "employed full-time",
+      "education_level": "no formal education",
+      "parents_education": {
+        "parent_1": "upper secondary",
+        "parent_2": "primary school"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "with good mental health",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "birdwatching",
+        "photography",
+        "cinema",
+        "baking",
+        "classical music"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 39,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 35,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 18,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 5,
+          "level": "low"
+        },
+        "neuroticism": {
+          "score": 56,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"persona\":{\"age\":33,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"birdwatching\",\"photography\",\"cinema\",\"baking\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":39,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":18,\"level\":\"low\"},\"agreeableness\":{\"score\":5,\"level\":\"low\"},\"neuroticism\":{\"score\":56,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with discussions about healthcare and COVID vaccines.\npersona = {\"age\":33,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"plumber\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"no formal education\",\"parents_education\":{\"parent_1\":\"upper secondary\",\"parent_2\":\"primary school\"},\"current_marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"with good mental health\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"birdwatching\",\"photography\",\"cinema\",\"baking\",\"classical music\"],\"ocean\":{\"openness\":{\"score\":39,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":35,\"level\":\"moderate\"},\"extraversion\":{\"score\":18,\"level\":\"low\"},\"agreeableness\":{\"score\":5,\"level\":\"low\"},\"neuroticism\":{\"score\":56,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with discussions about healthcare and COVID vaccines.\",\"opinion\":\"As a plumber in New York juggling family life, my approach is hands-on. First, I’d seek clear info from trusted sources like the CDC or local health boards. Second, create safe spaces for discussion at home—maybe set aside specific times to talk calmly without distractions. Acknowledge emotions; folks are stressed about their health. Maybe share personal stories—I’ve seen neighbors worried sick. Suggest reliable resources and encourage breaks. Balance is key: stay informed but don’t let fear overwhelm daily life.\",\"reasoning_summary\":\"Started by identifying credible sources, emphasized empathy due to low extraversion and stress from neuroticism score, considered user’s hobby in suggesting structured discussions like birdwatching meetings as analogy.\",\"tone\":\"practical\",\"citations\":[\"CDC\",\"Local NY health boards\"],\"safety_notes\":\"Ensure mental well-being during stressful times.\",\"used_persona_fields\":[\"empathy\",\"resourcefulness\",\"family-orientation\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with discussions about healthcare and COVID vaccines.",
+    "opinion": "As a plumber in New York juggling family life, my approach is hands-on. First, I’d seek clear info from trusted sources like the CDC or local health boards. Second, create safe spaces for discussion at home—maybe set aside specific times to talk calmly without distractions. Acknowledge emotions; folks are stressed about their health. Maybe share personal stories—I’ve seen neighbors worried sick. Suggest reliable resources and encourage breaks. Balance is key: stay informed but don’t let fear overwhelm daily life.",
+    "reasoning_summary": "Started by identifying credible sources, emphasized empathy due to low extraversion and stress from neuroticism score, considered user’s hobby in suggesting structured discussions like birdwatching meetings as analogy.",
+    "tone": "practical",
+    "citations": [
+      "CDC",
+      "Local NY health boards"
+    ],
+    "safety_notes": "Ensure mental well-being during stressful times.",
+    "used_persona_fields": [
+      "empathy",
+      "resourcefulness",
+      "family-orientation"
+    ]
+  }
+}

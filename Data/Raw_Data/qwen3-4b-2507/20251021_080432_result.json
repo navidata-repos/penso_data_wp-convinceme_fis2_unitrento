@@ -1,0 +1,98 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-4b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 37,
+      "gender": "woman",
+      "sexual_orientation": "homosexual",
+      "occupation": "cleaner",
+      "city_of_living": "Lecce",
+      "employment_status": "employed full-time",
+      "education_level": "PhD",
+      "parents_education": {
+        "parent_1": "bachelor's degree",
+        "parent_2": "primary school"
+      },
+      "marital_status": "in a relationship",
+      "children": 2,
+      "migration_status": "native Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "board games",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 11,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 94,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 13,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 87,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 59,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":37,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"primary school\"},\"marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"painting\"],\"ocean\":{\"openness\":{\"score\":11,\"level\":\"low\"},\"conscientiousness\":{\"score\":94,\"level\":\"high\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":87,\"level\":\"high\"},\"neuroticism\":{\"score\":59,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":37,\"biological_sex\":\"female\",\"gender\":\"woman\",\"sexual_orientation\":\"homosexual\",\"occupation\":\"cleaner\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed full-time\",\"education_level\":\"PhD\",\"parents_education\":{\"parent_1\":\"bachelor's degree\",\"parent_2\":\"primary school\"},\"marital_status\":\"in a relationship\",\"children\":2,\"migration_status\":\"native Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"painting\"],\"ocean\":{\"openness\":{\"score\":11,\"level\":\"low\"},\"conscientiousness\":{\"score\":94,\"level\":\"high\"},\"extraversion\":{\"score\":13,\"level\":\"low\"},\"agreeableness\":{\"score\":87,\"level\":\"high\"},\"neuroticism\":{\"score\":59,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"The gender gap in science is not a simple disparity in participation, but a complex web of societal, cultural, and institutional forces that shape who sees themselves as capable of pursuing scientific careers. As a woman with a PhD in science who works as a cleaner in Lecce, I have witnessed firsthand how the image of the scientist—often portrayed as a white, male, solitary figure in a lab coat—marginalizes women, especially those from non-elite backgrounds. My own journey through academia was marked by subtle discouragements, from professors who assumed I was there for a short-term role, to peers who seemed to treat scientific inquiry as a domain reserved for men. This is not just about numbers; it's about belonging. The gap is reinforced by deeply rooted stereotypes, unequal access to mentorship, and the absence of role models—especially women of color, women from rural areas, or women from religious backgrounds like mine. I am Muslim, and in many cultures, including parts of Italy, women’s roles in technical fields are still viewed with suspicion. Yet, science is not a gendered field—it is a tool for understanding the world, and every person, regardless of gender, deserves to contribute. We must address this gap not through tokenism or quotas, but through systemic change: ensuring equitable access to early education, supporting women in STEM with dedicated networks, and redefining what it means to be a scientist. My depression, while personal, is also a reflection of the emotional toll of being invisible in a field that claims to value all minds equally. To fix this, we need to reframe science as a collective human endeavor, where diversity is not an add-on but the foundation of progress. In Lecce, where I live, such changes might begin in schools, in community centers, or even in the simple act of a woman sharing her story in a local science fair. We must stop seeing science as a masculine domain and start seeing it as a shared inheritance of human curiosity.\",\"reasoning_summary\":\"The gender gap in science stems from cultural stereotypes, lack of representation, and structural barriers. As a woman with a PhD and a working-class background, I observe how these gaps are both visible and invisible. My personal experience, combined with societal and religious contexts, informs a view that the gap is not about ability but about access and belonging. Addressing it requires systemic, inclusive, and culturally sensitive reforms that empower all individuals to engage in science.\",\"tone\":\"reflective, grounded, personal, with a quiet urgency\",\"citations\":[\"UNESCO (2023) - Gender Equality in Science\",\"National Science Foundation (2022) - Women in STEM\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"biological_sex\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"employment_status\",\"education_level\",\"parents_education\",\"marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "The gender gap in science is not a simple disparity in participation, but a complex web of societal, cultural, and institutional forces that shape who sees themselves as capable of pursuing scientific careers. As a woman with a PhD in science who works as a cleaner in Lecce, I have witnessed firsthand how the image of the scientist—often portrayed as a white, male, solitary figure in a lab coat—marginalizes women, especially those from non-elite backgrounds. My own journey through academia was marked by subtle discouragements, from professors who assumed I was there for a short-term role, to peers who seemed to treat scientific inquiry as a domain reserved for men. This is not just about numbers; it's about belonging. The gap is reinforced by deeply rooted stereotypes, unequal access to mentorship, and the absence of role models—especially women of color, women from rural areas, or women from religious backgrounds like mine. I am Muslim, and in many cultures, including parts of Italy, women’s roles in technical fields are still viewed with suspicion. Yet, science is not a gendered field—it is a tool for understanding the world, and every person, regardless of gender, deserves to contribute. We must address this gap not through tokenism or quotas, but through systemic change: ensuring equitable access to early education, supporting women in STEM with dedicated networks, and redefining what it means to be a scientist. My depression, while personal, is also a reflection of the emotional toll of being invisible in a field that claims to value all minds equally. To fix this, we need to reframe science as a collective human endeavor, where diversity is not an add-on but the foundation of progress. In Lecce, where I live, such changes might begin in schools, in community centers, or even in the simple act of a woman sharing her story in a local science fair. We must stop seeing science as a masculine domain and start seeing it as a shared inheritance of human curiosity.",
+    "reasoning_summary": "The gender gap in science stems from cultural stereotypes, lack of representation, and structural barriers. As a woman with a PhD and a working-class background, I observe how these gaps are both visible and invisible. My personal experience, combined with societal and religious contexts, informs a view that the gap is not about ability but about access and belonging. Addressing it requires systemic, inclusive, and culturally sensitive reforms that empower all individuals to engage in science.",
+    "tone": "reflective, grounded, personal, with a quiet urgency",
+    "citations": [
+      "UNESCO (2023) - Gender Equality in Science",
+      "National Science Foundation (2022) - Women in STEM"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "biological_sex",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "employment_status",
+      "education_level",
+      "parents_education",
+      "marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "persona": {
+      "age": 60,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "nurse",
+      "city_of_living": "Lecce",
+      "employment_status": "employed part-time",
+      "education_level": "master's degree",
+      "parents_education": {
+        "parent_1": "lower secondary",
+        "parent_2": "lower secondary"
+      },
+      "marital_status": "widowed",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "normal",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "board games",
+        "travel",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 25,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 81,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 68,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 74,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 58,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"persona\":{\"age\":60,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"travel\",\"painting\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":81,\"level\":\"high\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":74,\"level\":\"high\"},\"neuroticism\":{\"score\":58,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = How to manage and dealing with fake content on social media.\npersona = {\"age\":60,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"nurse\",\"city_of_living\":\"Lecce\",\"employment_status\":\"employed part-time\",\"education_level\":\"master's degree\",\"parents_education\":{\"parent_1\":\"lower secondary\",\"parent_2\":\"lower secondary\"},\"current_marital_status\":\"widowed\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"normal\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"board games\",\"travel\",\"painting\"],\"ocean\":{\"openness\":{\"score\":25,\"level\":\"low\"},\"conscientiousness\":{\"score\":81,\"level\":\"high\"},\"extraversion\":{\"score\":68,\"level\":\"high\"},\"agreeableness\":{\"score\":74,\"level\":\"high\"},\"neuroticism\":{\"score\":58,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"How to manage and dealing with fake content on social media.\",\"opinion\":\"In my experience as a nurse who has spent many years in healthcare, I have learned that authenticity is paramount—whether it’s in patient care or our interactions online. Fake content, which can range from misleading health information to manipulated news stories, poses risks not just for individuals but also communities at large. From my perspective, dealing with such content requires a mix of critical thinking and compassion. First and foremost, I encourage people to always verify sources before accepting information as truth. For instance, when encountering questionable posts, one could cross-check details using reputable websites or consult experts in the field. Moreover, it’s important to develop digital literacy skills that help us understand how content can be manipulated; this is especially crucial given our limited but regular exposure to social media. I also believe that engaging with others respectfully—while sharing verified information—can help counteract the spread of falsehoods. As someone who values high conscientiousness and agreeableness, I’d stress that patience and understanding are key when addressing misinformation. We must remember that not everyone is tech-savvy or aware of these issues; thus, educational initiatives that empower users to spot fake content can be very effective. Additionally, social media platforms should shoulder some responsibility by implementing better algorithms and reporting mechanisms to flag potential falsehoods. In my downtime, I find solace in board games, travel, and painting—activities that remind me of the beauty of genuine human connection beyond digital screens. So, while fake content remains a persistent issue on social media, combining personal responsibility with systemic improvements can help manage and mitigate its effects. Ultimately, by fostering an environment where truth is celebrated and falsehoods are systematically questioned, we contribute to a more informed society. This approach not only safeguards our well-being but also upholds the integrity of information in our increasingly digital lives.\",\"reasoning_summary\":\"We need to produce an answer that reflects the persona provided: a 60-year-old male nurse from Lecce with master's degree and limited social media exposure (few times monthly). The opinion should reflect his background, values, and traits such as high conscientiousness, agreeableness, etc. It must be a continuous prose text without bullet points. We need to produce an answer in the required JSON format including keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The answer should mention authenticity, critical thinking, verification of sources. Also note his interests (board games, travel, painting) and his traits such as high conscientiousness and agreeableness, but also low openness. Must mention fake content on social media. The answer must be produced in a single-line JSON object with no extra text outside the output format.\\n\\nI'll produce final answer in one line as per instructions.\\n\\nI'll produce final answer JSON with keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields.\\n\\nThe tone should reflect his traits (like high conscientiousness and agreeableness) so formal but friendly tone. I must also include his hobbies or background details to show alignment with the persona.\\n\\nI'll produce final answer in single-line JSON object with keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields.\\n\\nI'll produce answer accordingly.\", \"tone\":\"formal and empathetic\",\"citations\":[\"World Health Organization guidelines on digital misinformation\",\"Digital literacy educational resources\"],\"used_persona_fields\":[\"age\", \"gender\", \"occupation\", \"city_of_living\", \"education_level\", \"current_marital_status\", \"migration_status\", \"psychological_feature\", \"religious_beliefs\", \"time_onsocialmedia\", \"hobbies\", \"ocean.conscientiousness\", \"ocean.agreeableness\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "How to manage and dealing with fake content on social media.",
+    "opinion": "In my experience as a nurse who has spent many years in healthcare, I have learned that authenticity is paramount—whether it’s in patient care or our interactions online. Fake content, which can range from misleading health information to manipulated news stories, poses risks not just for individuals but also communities at large. From my perspective, dealing with such content requires a mix of critical thinking and compassion. First and foremost, I encourage people to always verify sources before accepting information as truth. For instance, when encountering questionable posts, one could cross-check details using reputable websites or consult experts in the field. Moreover, it’s important to develop digital literacy skills that help us understand how content can be manipulated; this is especially crucial given our limited but regular exposure to social media. I also believe that engaging with others respectfully—while sharing verified information—can help counteract the spread of falsehoods. As someone who values high conscientiousness and agreeableness, I’d stress that patience and understanding are key when addressing misinformation. We must remember that not everyone is tech-savvy or aware of these issues; thus, educational initiatives that empower users to spot fake content can be very effective. Additionally, social media platforms should shoulder some responsibility by implementing better algorithms and reporting mechanisms to flag potential falsehoods. In my downtime, I find solace in board games, travel, and painting—activities that remind me of the beauty of genuine human connection beyond digital screens. So, while fake content remains a persistent issue on social media, combining personal responsibility with systemic improvements can help manage and mitigate its effects. Ultimately, by fostering an environment where truth is celebrated and falsehoods are systematically questioned, we contribute to a more informed society. This approach not only safeguards our well-being but also upholds the integrity of information in our increasingly digital lives.",
+    "reasoning_summary": "We need to produce an answer that reflects the persona provided: a 60-year-old male nurse from Lecce with master's degree and limited social media exposure (few times monthly). The opinion should reflect his background, values, and traits such as high conscientiousness, agreeableness, etc. It must be a continuous prose text without bullet points. We need to produce an answer in the required JSON format including keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields. The answer should mention authenticity, critical thinking, verification of sources. Also note his interests (board games, travel, painting) and his traits such as high conscientiousness and agreeableness, but also low openness. Must mention fake content on social media. The answer must be produced in a single-line JSON object with no extra text outside the output format.\n\nI'll produce final answer in one line as per instructions.\n\nI'll produce final answer JSON with keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields.\n\nThe tone should reflect his traits (like high conscientiousness and agreeableness) so formal but friendly tone. I must also include his hobbies or background details to show alignment with the persona.\n\nI'll produce final answer in single-line JSON object with keys: mode, topic, opinion, reasoning_summary, tone, citations, used_persona_fields.\n\nI'll produce answer accordingly.",
+    "tone": "formal and empathetic",
+    "citations": [
+      "World Health Organization guidelines on digital misinformation",
+      "Digital literacy educational resources"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "current_marital_status",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.conscientiousness",
+      "ocean.agreeableness"
+    ]
+  }
+}

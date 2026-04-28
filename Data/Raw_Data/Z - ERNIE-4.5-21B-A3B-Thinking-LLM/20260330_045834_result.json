@@ -1,0 +1,128 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "aiasistentworld/ERNIE-4.5-21B-A3B-Thinking-LLM",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 35,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "electrician",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "classical music",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 2,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 4,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 15,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 93,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 67,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only. ALL fields in the schema must be present, even if null or empty."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":35,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"classical music\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":15,\"level\":\"low\"},\"agreeableness\":{\"score\":93,\"level\":\"high\"},\"neuroticism\":{\"score\":67,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":35,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"classical music\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":15,\"level\":\"low\"},\"agreeableness\":{\"score\":93,\"level\":\"high\"},\"neuroticism\":{\"score\":67,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":35,\"gender\":\"man\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"electrician\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"bachelor's degree\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"classical music\",\"videogames\"],\"ocean\":{\"openness\":{\"score\":2,\"level\":\"low\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"big5\":{\"openness\":2,\"conscientiousness\":4,\"extraversion\":15,\"agreeableness\":93,\"neuroticism\":67}}},\"opinion\":\"The gender gap in science is not just a statistical discrepancy but a systemic issue rooted in historical biases and societal expectations. While men remain majority in high-paying STEM fields, women are often underrepresented in specialized roles like research leadership or tech innovation hubs. This imbalance affects morale and innovation potential, as diverse perspectives drive problem-soling. Addressing it requires targeted policies—like subsidized childcare to reduce caregiving burdens on women—and cultural shifts, such as normalizing STEM careers for girls from an early age. Personal anecdotes from female scientists highlighting systemic barriers can humanize the issue, fostering empathy. Proactive measures like mentorship programs pairing women with industry leaders have shown success in closing gaps. Ignoring it risks stagnation in technological advancement and equity in academia.\",\"reasoning_summary\":\"First, I analyze the disparity: men dominate leadership roles in STEM despite similar aptitude. Historical biases shape educational pathways, with girls often discouraged from pursuing math-intensive fields. Second, I explore solutions: structural changes like flexible work policies reduce burnout; educational campaigns challenge stereotypes; and institutional accountability through audits ensures progress. Cultural shifts, like male allies advocating for gender parity in panel discussions, are equally vital. Finally, I argue that addressing the gender gap isn't just fair—it's essential for innovation and global competitiveness.\",\"tone\":\"analytical yet empathetic, blending professional insight with personal commitment to equity\",\"citations\":[\"National Science Foundation\",\"American Association of University Women\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"occupation\",\"children\",\"migration_status\",\"psychological_feature\",\"hobbies\",\"big5\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 35,
+      "gender": "man",
+      "sexual_orientation": "heterosexual",
+      "occupation": "electrician",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "bachelor's degree",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "classical music",
+        "videogames"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 2,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 4,
+          "level": "low"
+        },
+        "big5": {
+          "openness": 2,
+          "conscientiousness": 4,
+          "extraversion": 15,
+          "agreeableness": 93,
+          "neuroticism": 67
+        }
+      }
+    },
+    "opinion": "The gender gap in science is not just a statistical discrepancy but a systemic issue rooted in historical biases and societal expectations. While men remain majority in high-paying STEM fields, women are often underrepresented in specialized roles like research leadership or tech innovation hubs. This imbalance affects morale and innovation potential, as diverse perspectives drive problem-soling. Addressing it requires targeted policies—like subsidized childcare to reduce caregiving burdens on women—and cultural shifts, such as normalizing STEM careers for girls from an early age. Personal anecdotes from female scientists highlighting systemic barriers can humanize the issue, fostering empathy. Proactive measures like mentorship programs pairing women with industry leaders have shown success in closing gaps. Ignoring it risks stagnation in technological advancement and equity in academia.",
+    "reasoning_summary": "First, I analyze the disparity: men dominate leadership roles in STEM despite similar aptitude. Historical biases shape educational pathways, with girls often discouraged from pursuing math-intensive fields. Second, I explore solutions: structural changes like flexible work policies reduce burnout; educational campaigns challenge stereotypes; and institutional accountability through audits ensures progress. Cultural shifts, like male allies advocating for gender parity in panel discussions, are equally vital. Finally, I argue that addressing the gender gap isn't just fair—it's essential for innovation and global competitiveness.",
+    "tone": "analytical yet empathetic, blending professional insight with personal commitment to equity",
+    "citations": [
+      "National Science Foundation",
+      "American Association of University Women"
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "occupation",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "hobbies",
+      "big5"
+    ]
+  }
+}

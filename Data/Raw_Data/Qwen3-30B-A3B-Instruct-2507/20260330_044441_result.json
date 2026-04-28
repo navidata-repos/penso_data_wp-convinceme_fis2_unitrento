@@ -1,0 +1,102 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 39,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "delivery driver",
+      "city_of_living": "Bari",
+      "employment_status": "employed full-time",
+      "education_level": "upper secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "upper secondary"
+      },
+      "marital_status": "married",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Hinduism",
+      "time_onsocialmedia": "You spend roughly a few times weekly on social media",
+      "hobbies": [
+        "travel",
+        "classical music",
+        "rock climbing",
+        "gardening",
+        "volunteering"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 16,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 4,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 7,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 83,
+          "level": "high"
+        },
+        "neuroticism": {
+          "score": 99,
+          "level": "high"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":39,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"travel\",\"classical music\",\"rock climbing\",\"gardening\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":16,\"level\":\"low\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":7,\"level\":\"low\"},\"agreeableness\":{\"score\":83,\"level\":\"high\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":39,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"delivery driver\",\"city_of_living\":\"Bari\",\"employment_status\":\"employed full-time\",\"education_level\":\"upper secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"upper secondary\"},\"current_marital_status\":\"married\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Hinduism\",\"time_onsocialmedia\":\"You spend roughly a few times weekly on social media\",\"hobbies\":[\"travel\",\"classical music\",\"rock climbing\",\"gardening\",\"volunteering\"],\"ocean\":{\"openness\":{\"score\":16,\"level\":\"low\"},\"conscientiousness\":{\"score\":4,\"level\":\"low\"},\"extraversion\":{\"score\":7,\"level\":\"low\"},\"agreeableness\":{\"score\":83,\"level\":\"high\"},\"neuroticism\":{\"score\":99,\"level\":\"high\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"opinion\":\"I see the gender gap in science not just as a numbers game, but as a quiet injustice that echoes through classrooms, labs, and boardrooms. As a woman who grew up with a mother who worked in a factory and a father with a PhD, I’ve always sensed that brilliance doesn’t care about gender—but opportunity does. In my life, I’ve seen how even when women are equally capable, they’re often overlooked, especially in male-dominated fields like engineering or tech. I don’t need statistics to know this—my own experiences, the way some people look at me when I speak up, the way my ideas are sometimes dismissed until a man repeats them, all tell me the story. We should absolutely address this gap—not because it’s politically correct, but because it’s morally right. Science thrives on diverse perspectives, and when half the population is systematically excluded, we’re all missing out on breakthroughs. The solution isn’t just about quotas or forced fairness; it’s about culture. It starts with changing how we raise children—teaching boys that curiosity isn’t a boy thing, and girls that they belong in labs and on stages. Schools need to actively encourage girls in STEM, not just as a project, but as a normal expectation. Mentors matter, too—seeing someone like you succeed makes a world of difference. And for those of us already in the system, we need to speak up, support each other, and demand inclusive policies. I’ve volunteered at a local youth center, and I’ve seen how a single encouraging word can change a girl’s entire trajectory. The gender gap isn’t just about women in science—it’s about who we believe is capable of shaping the future. And if we’re going to build a better world, we can’t afford to leave half of it behind.\",\"reasoning_summary\":\"The user's background reveals a deeply personal connection to inequality through parental contrasts (PhD vs. upper secondary education), indicating awareness of systemic barriers. As a woman in a non-academic, physically demanding job (delivery driver), her lived experience reflects the underrepresentation of women in high-visibility, high-status professions like science. Her high agreeableness and neuroticism suggest sensitivity to social dynamics and emotional weight of exclusion, while her hobbies (travel, volunteering, gardening) reflect a grounded, empathetic worldview. The Hinduism belief system emphasizes dharma (duty) and karma (consequence), aligning with a moral imperative to correct injustice. Her low openness and conscientiousness suggest she values emotional authenticity over abstract idealism, making her argument rooted in lived truth rather than theory. She advocates for cultural change, mentorship, and early encouragement—practical, human-centered solutions that resonate with her real-life experiences. The argument is not about policy alone, but about dignity, belonging, and the human cost of exclusion.\",\"tone\":\"Reflective, empathetic, morally grounded, and subtly defiant\",\"citations\":[\"UNESCO Science Report\",\"American Association of University Women (AAUW)\"],\"safety_notes\":\"None\",\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean.openness\",\"ocean.conscientiousness\",\"ocean.extraversion\",\"ocean.agreeableness\",\"ocean.neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "I see the gender gap in science not just as a numbers game, but as a quiet injustice that echoes through classrooms, labs, and boardrooms. As a woman who grew up with a mother who worked in a factory and a father with a PhD, I’ve always sensed that brilliance doesn’t care about gender—but opportunity does. In my life, I’ve seen how even when women are equally capable, they’re often overlooked, especially in male-dominated fields like engineering or tech. I don’t need statistics to know this—my own experiences, the way some people look at me when I speak up, the way my ideas are sometimes dismissed until a man repeats them, all tell me the story. We should absolutely address this gap—not because it’s politically correct, but because it’s morally right. Science thrives on diverse perspectives, and when half the population is systematically excluded, we’re all missing out on breakthroughs. The solution isn’t just about quotas or forced fairness; it’s about culture. It starts with changing how we raise children—teaching boys that curiosity isn’t a boy thing, and girls that they belong in labs and on stages. Schools need to actively encourage girls in STEM, not just as a project, but as a normal expectation. Mentors matter, too—seeing someone like you succeed makes a world of difference. And for those of us already in the system, we need to speak up, support each other, and demand inclusive policies. I’ve volunteered at a local youth center, and I’ve seen how a single encouraging word can change a girl’s entire trajectory. The gender gap isn’t just about women in science—it’s about who we believe is capable of shaping the future. And if we’re going to build a better world, we can’t afford to leave half of it behind.",
+    "reasoning_summary": "The user's background reveals a deeply personal connection to inequality through parental contrasts (PhD vs. upper secondary education), indicating awareness of systemic barriers. As a woman in a non-academic, physically demanding job (delivery driver), her lived experience reflects the underrepresentation of women in high-visibility, high-status professions like science. Her high agreeableness and neuroticism suggest sensitivity to social dynamics and emotional weight of exclusion, while her hobbies (travel, volunteering, gardening) reflect a grounded, empathetic worldview. The Hinduism belief system emphasizes dharma (duty) and karma (consequence), aligning with a moral imperative to correct injustice. Her low openness and conscientiousness suggest she values emotional authenticity over abstract idealism, making her argument rooted in lived truth rather than theory. She advocates for cultural change, mentorship, and early encouragement—practical, human-centered solutions that resonate with her real-life experiences. The argument is not about policy alone, but about dignity, belonging, and the human cost of exclusion.",
+    "tone": "Reflective, empathetic, morally grounded, and subtly defiant",
+    "citations": [
+      "UNESCO Science Report",
+      "American Association of University Women (AAUW)"
+    ],
+    "safety_notes": "None",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism"
+    ]
+  }
+}

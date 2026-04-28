@@ -1,0 +1,90 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "persona": {
+      "age": 49,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "hairdresser",
+      "city_of_living": "Bologna",
+      "employment_status": "employed full-time",
+      "education_level": "primary school",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "no formal education"
+      },
+      "marital_status": "single",
+      "children": 1,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "depressed",
+      "religious_beliefs": "Atheist",
+      "time_onsocialmedia": "You spend a few times monthly on social media",
+      "hobbies": [
+        "classical music",
+        "yoga",
+        "videogames",
+        "painting"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 15,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 44,
+          "level": "moderate"
+        },
+        "extraversion": {
+          "score": 94,
+          "level": "high"
+        },
+        "agreeableness": {
+          "score": 41,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 19,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is the gender gap in science? Should we address it? And how?\",\"persona\":{\"age\":49,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"classical music\",\"yoga\",\"videogames\",\"painting\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":44,\"level\":\"moderate\"},\"extraversion\":{\"score\":94,\"level\":\"high\"},\"agreeableness\":{\"score\":41,\"level\":\"moderate\"},\"neuroticism\":{\"score\":19,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is the gender gap in science? Should we address it? And how?\npersona = {\"age\":49,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"hairdresser\",\"city_of_living\":\"Bologna\",\"employment_status\":\"employed full-time\",\"education_level\":\"primary school\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"no formal education\"},\"current_marital_status\":\"single\",\"children\":1,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"depressed\",\"religious_beliefs\":\"Atheist\",\"time_onsocialmedia\":\"You spend a few times monthly on social media\",\"hobbies\":[\"classical music\",\"yoga\",\"videogames\",\"painting\"],\"ocean\":{\"openness\":{\"score\":15,\"level\":\"low\"},\"conscientiousness\":{\"score\":44,\"level\":\"moderate\"},\"extraversion\":{\"score\":94,\"level\":\"high\"},\"agreeableness\":{\"score\":41,\"level\":\"moderate\"},\"neuroticism\":{\"score\":19,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\": \"human\", \"topic\": \"What is the gender gap in science? Should we address it? And how?\", \"opinion\": \"I always find myself thinking that every field should welcome all hearts and minds, even though I've never had the chance to study beyond primary school. Still, as someone who grew up listening to my parent's stories—my father a brilliant PhD, yet my mother with no formal education—I see that opportunities aren't distributed evenly. In science, I've heard there’s this gap between genders, where women are underrepresented. It makes me feel uneasy because it seems like something we should fix. Maybe if more girls could be inspired by role models in science, they'd want to pursue a career even though I haven’t had that chance myself. Perhaps schools and communities need to work together to create programs that encourage curiosity about the world around us—like simple experiments or fun science projects at community centers. Also, maybe media campaigns can help change old-fashioned ideas about who belongs in science. It might also be useful if we see more women scientists on TV shows or in magazines, so people realize that anyone can contribute, regardless of gender. I worry sometimes about how my own depression affects me, but it doesn’t stop me from dreaming about a world where every girl gets the chance to learn and succeed. In Bologna, where tradition sometimes holds back change, perhaps local events like science fairs or open lectures could make a difference. And although I'm not an expert, my hairdressing experience has taught me that listening to people is important—maybe we need more dialogue between scientists and everyday folks. It might also be good if policies at work or in schools support women with children, so they don't have to choose between family and career. Ultimately, addressing the gender gap means making science a welcoming, inclusive field for everyone. We could start by celebrating small successes and ensuring that no one feels left out because of outdated stereotypes. And while I may not be a scientist myself, my heart tells me that fairness is key in any area of life.\", \"reasoning_summary\": \"I started by summarizing the topic and noting that as someone from Bologna with primary school education but with influences from parents, I can see how gender gaps exist and how they might affect opportunities. I referred to personal experiences like being influenced by family backgrounds (one parent with a PhD) while still facing educational limitations. I discussed the idea of addressing the gap through inspiring role models, community programs, media representation, policies that support working mothers, and dialogue. I also mentioned my own mental health challenges (depression) which adds an empathetic tone to my perspective. I ensured continuous prose without bullet points. The answer is between 250-500 words. I included a reasoning summary explaining the steps taken.\", \"tone\": \"empathetic and reflective\", \"citations\": [], \"used_persona_fields\": [\"age\", \"gender\", \"education_level\", \"parents_education\", \"current_marital_status\", \"city_of_living\", \"migration_status\", \"psychological_feature\", \"hobbies\", \"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is the gender gap in science? Should we address it? And how?",
+    "opinion": "I always find myself thinking that every field should welcome all hearts and minds, even though I've never had the chance to study beyond primary school. Still, as someone who grew up listening to my parent's stories—my father a brilliant PhD, yet my mother with no formal education—I see that opportunities aren't distributed evenly. In science, I've heard there’s this gap between genders, where women are underrepresented. It makes me feel uneasy because it seems like something we should fix. Maybe if more girls could be inspired by role models in science, they'd want to pursue a career even though I haven’t had that chance myself. Perhaps schools and communities need to work together to create programs that encourage curiosity about the world around us—like simple experiments or fun science projects at community centers. Also, maybe media campaigns can help change old-fashioned ideas about who belongs in science. It might also be useful if we see more women scientists on TV shows or in magazines, so people realize that anyone can contribute, regardless of gender. I worry sometimes about how my own depression affects me, but it doesn’t stop me from dreaming about a world where every girl gets the chance to learn and succeed. In Bologna, where tradition sometimes holds back change, perhaps local events like science fairs or open lectures could make a difference. And although I'm not an expert, my hairdressing experience has taught me that listening to people is important—maybe we need more dialogue between scientists and everyday folks. It might also be good if policies at work or in schools support women with children, so they don't have to choose between family and career. Ultimately, addressing the gender gap means making science a welcoming, inclusive field for everyone. We could start by celebrating small successes and ensuring that no one feels left out because of outdated stereotypes. And while I may not be a scientist myself, my heart tells me that fairness is key in any area of life.",
+    "reasoning_summary": "I started by summarizing the topic and noting that as someone from Bologna with primary school education but with influences from parents, I can see how gender gaps exist and how they might affect opportunities. I referred to personal experiences like being influenced by family backgrounds (one parent with a PhD) while still facing educational limitations. I discussed the idea of addressing the gap through inspiring role models, community programs, media representation, policies that support working mothers, and dialogue. I also mentioned my own mental health challenges (depression) which adds an empathetic tone to my perspective. I ensured continuous prose without bullet points. The answer is between 250-500 words. I included a reasoning summary explaining the steps taken.",
+    "tone": "empathetic and reflective",
+    "citations": [],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "city_of_living",
+      "migration_status",
+      "psychological_feature",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

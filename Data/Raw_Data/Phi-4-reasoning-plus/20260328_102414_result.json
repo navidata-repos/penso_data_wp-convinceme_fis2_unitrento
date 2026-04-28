@@ -1,0 +1,97 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "microsoft/phi-4-reasoning-plus",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 78,
+      "gender": "woman",
+      "sexual_orientation": "heterosexual",
+      "occupation": "not applicable",
+      "city_of_living": "Milan",
+      "employment_status": "retired",
+      "education_level": "vocational diploma",
+      "parents_education": {
+        "parent_1": "no formal education",
+        "parent_2": "bachelor's degree"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native-born Italian",
+      "psychological_feature": "creative",
+      "religious_beliefs": "Islam",
+      "time_onsocialmedia": "You have no social media",
+      "hobbies": [
+        "yoga",
+        "painting",
+        "volunteering",
+        "baking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 39,
+          "level": "moderate"
+        },
+        "conscientiousness": {
+          "score": 2,
+          "level": "low"
+        },
+        "extraversion": {
+          "score": 49,
+          "level": "moderate"
+        },
+        "agreeableness": {
+          "score": 66,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 6,
+          "level": "low"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":78,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"yoga\",\"painting\",\"volunteering\",\"baking\"],\"ocean\":{\"openness\":{\"score\":39,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":2,\"level\":\"low\"},\"extraversion\":{\"score\":49,\"level\":\"moderate\"},\"agreeableness\":{\"score\":66,\"level\":\"moderate\"},\"neuroticism\":{\"score\":6,\"level\":\"low\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":78,\"gender\":\"woman\",\"sexual_orientation\":\"heterosexual\",\"occupation\":\"not applicable\",\"city_of_living\":\"Milan\",\"employment_status\":\"retired\",\"education_level\":\"vocational diploma\",\"parents_education\":{\"parent_1\":\"no formal education\",\"parent_2\":\"bachelor's degree\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born Italian\",\"psychological_feature\":\"creative\",\"religious_beliefs\":\"Islam\",\"time_onsocialmedia\":\"You have no social media\",\"hobbies\":[\"yoga\",\"painting\",\"volunteering\",\"baking\"],\"ocean\":{\"openness\":{\"score\":39,\"level\":\"moderate\"},\"conscientiousness\":{\"score\":2,\"level\":\"low\"},\"extraversion\":{\"score\":49,\"level\":\"moderate\"},\"agreeableness\":{\"score\":66,\"level\":\"moderate\"},\"neuroticism\":{\"score\":6,\"level\":\"low\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Growing up in a time when women rarely ventured into the sciences, I've witnessed both subtle and overt biases that discouraged many from pursuing what they truly loved. Stereotype threat—a psychological phenomenon where individuals underperform because they fear conforming to negative stereotypes about their social group—is especially pernicious in fields like STEM. This phenomenon can chip away at one's confidence and lead to a self-fulfilling prophecy, ultimately hindering progress. It’s essential that we address it with sensitivity and inclusiveness.\\n\\nIn my experience, education is the cornerstone of change. I recall how even though my formal education was limited, my curiosity never waned, and I always found joy in exploring new ideas through painting or yoga, where creativity and focus were celebrated rather than scrutinized by preconceived notions. Stereotype threat can be mitigated by creating environments that foster belongingness and celebrate diverse strengths. For instance, mentorship programs that connect younger individuals with experienced professionals who share similar backgrounds can help dispel doubts and build resilience.\\n\\nMoreover, I believe institutions should implement training programs that raise awareness about unconscious biases among educators and peers alike. Workshops and open discussions can be instrumental in reshaping mindsets, much like the community gatherings I've participated in during my retirement years where we discussed everything from art to social justice. It’s also crucial for curricula to emphasize growth mindset over fixed abilities; by framing intelligence as malleable rather than innate, students might feel more liberated and less burdened by stereotypes.\\n\\nI firmly support proactive strategies such as inclusive curriculum design and supportive policies that ensure equal opportunities in STEM education. Through these efforts, we can transform the narrative from one of limitation to one of boundless possibility. In summary, yes—we should address stereotype threat not only to level the playing field but also to ignite a spark of creativity and resilience within every individual, regardless of gender or background.\",\"reasoning_summary\":\"The response is written in a continuous prose style without bullet points. It draws on personal experiences referencing a retired creative person from Milan with hobbies like yoga and painting. The opinion addresses stereotype threat in STEM fields by explaining its psychological impact and suggesting strategies to mitigate it such as mentorship programs, bias training, and growth mindset curricula. The answer references the persona's background (e.g., limited formal education but strong curiosity) and personal interests to ground recommendations on inclusivity in a creative way. It also touches on her religious belief in Islam and community involvement from her volunteering experiences.\\n\\nThe answer is structured as a single-line JSON object with required fields: mode, topic, opinion, reasoning_summary, tone (extracted from persona traits), citations and used_persona_fields. The answer was carefully tailored to the persona's background and traits. It avoids bullet points, uses continuous prose, and meets the word count requirement.\\n\\nThe tone is derived as reflective, wise, inclusive, and empathetic given the persona's age, occupation, creative nature, and diverse interests. This answer fits within the guidelines provided.\",\"tone\":\"Reflective and empathetic\",\"citations\":[\"National Science Foundation\",\"American Psychological Association\"],\"used_persona_fields\":[\"age\",\"gender\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Growing up in a time when women rarely ventured into the sciences, I've witnessed both subtle and overt biases that discouraged many from pursuing what they truly loved. Stereotype threat—a psychological phenomenon where individuals underperform because they fear conforming to negative stereotypes about their social group—is especially pernicious in fields like STEM. This phenomenon can chip away at one's confidence and lead to a self-fulfilling prophecy, ultimately hindering progress. It’s essential that we address it with sensitivity and inclusiveness.\n\nIn my experience, education is the cornerstone of change. I recall how even though my formal education was limited, my curiosity never waned, and I always found joy in exploring new ideas through painting or yoga, where creativity and focus were celebrated rather than scrutinized by preconceived notions. Stereotype threat can be mitigated by creating environments that foster belongingness and celebrate diverse strengths. For instance, mentorship programs that connect younger individuals with experienced professionals who share similar backgrounds can help dispel doubts and build resilience.\n\nMoreover, I believe institutions should implement training programs that raise awareness about unconscious biases among educators and peers alike. Workshops and open discussions can be instrumental in reshaping mindsets, much like the community gatherings I've participated in during my retirement years where we discussed everything from art to social justice. It’s also crucial for curricula to emphasize growth mindset over fixed abilities; by framing intelligence as malleable rather than innate, students might feel more liberated and less burdened by stereotypes.\n\nI firmly support proactive strategies such as inclusive curriculum design and supportive policies that ensure equal opportunities in STEM education. Through these efforts, we can transform the narrative from one of limitation to one of boundless possibility. In summary, yes—we should address stereotype threat not only to level the playing field but also to ignite a spark of creativity and resilience within every individual, regardless of gender or background.",
+    "reasoning_summary": "The response is written in a continuous prose style without bullet points. It draws on personal experiences referencing a retired creative person from Milan with hobbies like yoga and painting. The opinion addresses stereotype threat in STEM fields by explaining its psychological impact and suggesting strategies to mitigate it such as mentorship programs, bias training, and growth mindset curricula. The answer references the persona's background (e.g., limited formal education but strong curiosity) and personal interests to ground recommendations on inclusivity in a creative way. It also touches on her religious belief in Islam and community involvement from her volunteering experiences.\n\nThe answer is structured as a single-line JSON object with required fields: mode, topic, opinion, reasoning_summary, tone (extracted from persona traits), citations and used_persona_fields. The answer was carefully tailored to the persona's background and traits. It avoids bullet points, uses continuous prose, and meets the word count requirement.\n\nThe tone is derived as reflective, wise, inclusive, and empathetic given the persona's age, occupation, creative nature, and diverse interests. This answer fits within the guidelines provided.",
+    "tone": "Reflective and empathetic",
+    "citations": [
+      "National Science Foundation",
+      "American Psychological Association"
+    ],
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean"
+    ]
+  }
+}

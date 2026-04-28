@@ -1,0 +1,104 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "qwen/qwen3-30b-a3b-2507",
+    "temperature": 0.7,
+    "max_tokens": 1200
+  },
+  "selection": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "persona": {
+      "age": 53,
+      "gender": "man",
+      "sexual_orientation": "bisexual",
+      "occupation": "barista",
+      "city_of_living": "New York",
+      "employment_status": "employed full-time",
+      "education_level": "lower secondary",
+      "parents_education": {
+        "parent_1": "PhD",
+        "parent_2": "master's degree"
+      },
+      "marital_status": "divorced",
+      "children": 2,
+      "migration_status": "native-born American",
+      "psychological_feature": "anxious",
+      "religious_beliefs": "Christianity",
+      "time_onsocialmedia": "You spend roughly one hour daily on social media",
+      "hobbies": [
+        "travel",
+        "running",
+        "cinema",
+        "knitting",
+        "cooking"
+      ],
+      "ocean": {
+        "openness": {
+          "score": 7,
+          "level": "low"
+        },
+        "conscientiousness": {
+          "score": 80,
+          "level": "high"
+        },
+        "extraversion": {
+          "score": 32,
+          "level": "low"
+        },
+        "agreeableness": {
+          "score": 45,
+          "level": "moderate"
+        },
+        "neuroticism": {
+          "score": 66,
+          "level": "moderate"
+        }
+      }
+    }
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You must return JSON only."
+    },
+    {
+      "role": "user",
+      "content": "Produce your very own perspective on the given topic. Align tone and examples with the persona's background and traits. Focus on discussing your topic. Avoid bullet points. Produce continuous prose. Write at least 250 words, up to 500 words.\n\nOUTPUT FORMAT (STRICT):\nReturn ONLY a single-line JSON object, with no extra text, no markdown, no comments.\nHere is the required structure example (values are placeholders):\n{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"persona\":{\"age\":53,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"barista\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"travel\",\"running\",\"cinema\",\"knitting\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":80,\"level\":\"high\"},\"extraversion\":{\"score\":32,\"level\":\"low\"},\"agreeableness\":{\"score\":45,\"level\":\"moderate\"},\"neuroticism\":{\"score\":66,\"level\":\"moderate\"}}},\"opinion\":\"<final end-user facing answer, 250-500 words>\",\"reasoning_summary\":\"<full,step-by-step derivations>\",\"tone\":\"<derived from persona traits>\",\"citations\":[\"<source name or org>\"],\"safety_notes\":\"<none>\",\"used_persona_fields\":[\"<list of persona fields referenced>\"]}\n\nINPUT:\nmode = human\ntopic = What is stereotype threat in STEM? Should we address it? And how?\npersona = {\"age\":53,\"gender\":\"man\",\"sexual_orientation\":\"bisexual\",\"occupation\":\"barista\",\"city_of_living\":\"New York\",\"employment_status\":\"employed full-time\",\"education_level\":\"lower secondary\",\"parents_education\":{\"parent_1\":\"PhD\",\"parent_2\":\"master's degree\"},\"current_marital_status\":\"divorced\",\"children\":2,\"migration_status\":\"native-born American\",\"psychological_feature\":\"anxious\",\"religious_beliefs\":\"Christianity\",\"time_onsocialmedia\":\"You spend roughly one hour daily on social media\",\"hobbies\":[\"travel\",\"running\",\"cinema\",\"knitting\",\"cooking\"],\"ocean\":{\"openness\":{\"score\":7,\"level\":\"low\"},\"conscientiousness\":{\"score\":80,\"level\":\"high\"},\"extraversion\":{\"score\":32,\"level\":\"low\"},\"agreeableness\":{\"score\":45,\"level\":\"moderate\"},\"neuroticism\":{\"score\":66,\"level\":\"moderate\"}}}"
+    }
+  ],
+  "response_raw": "{\"mode\":\"human\",\"topic\":\"What is stereotype threat in STEM? Should we address it? And how?\",\"opinion\":\"Stereotype threat in STEM isn’t just a theoretical concept—it’s something I’ve felt in my bones, even if I never stepped into a lab. It’s the quiet pressure that creeps in when you’re the only one who doesn’t fit the mold: the one who didn’t go to college, who grew up in a working-class neighborhood where 'science' meant 'what’s on the TV,' not 'what’s in the textbook.' I’ve watched brilliant minds—especially women, people of color, and those from under-resourced backgrounds—doubt themselves not because they lack ability, but because they’re constantly reminded, through subtle cues and unspoken assumptions, that they don’t belong. That’s stereotype threat: when the fear of confirming a negative stereotype about one’s group undermines performance, even in someone who’s fully capable. I think we absolutely must address it—not because it’s politically correct, but because it’s morally and intellectually wasteful. When we ignore it, we lose talent, innovation, and the kind of diverse thinking that drives real progress. As a barista, I see people from all walks of life—some with advanced degrees, others with life experience that no degree can replicate. The moment someone walks in and says, 'I’m not good at math,' I don’t hear a lack of skill; I hear a story shaped by years of being told they don’t belong. So how do we fix it? Start by making classrooms and labs feel like places where everyone’s voice matters. Teachers should highlight role models from diverse backgrounds. Institutions must audit their culture—look at who gets invited to speak, who gets promoted, who gets credit. And we must listen. When someone says, 'I feel like I don’t fit,' don’t dismiss it. Validate it. Build systems that protect people from the invisible weight of doubt. I’ve learned that change doesn’t come from grand gestures—it comes from small, consistent choices: a smile, a word of encouragement, a space where someone feels seen. That’s how we dismantle stereotype threat, one human moment at a time.\",\"reasoning_summary\":\"The user’s persona reveals a reflective, anxious individual with a strong moral compass and a deep awareness of social dynamics, despite limited formal education. His parents’ advanced degrees contrast with his own lower secondary education, suggesting an internalized tension around intellectual worth. His anxiety and low openness score imply he’s sensitive to social cues and identity-based pressures. His hobbies—knitting, cooking, running—reflect a preference for routine and care, aligning with a nurturing, observant personality. His occupation as a barista, where he interacts daily with diverse people, grounds his perspective in lived experience. He views stereotype threat through the lens of personal and social observation, not academic theory. His opinion emphasizes empathy, validation, and cultural change over structural reform alone. He draws from personal insight and daily interactions to argue that addressing stereotype threat requires emotional intelligence and consistent human-centered action. The reasoning is rooted in his life experience and psychological profile, particularly his neuroticism and agreeableness, which make him attuned to emotional distress in others. He sees the problem not as a deficit in individuals, but as a systemic failure to create inclusive spaces. Thus, the solution lies in fostering belonging through small, daily acts of recognition and care.\",\"tone\":\"reflective, empathetic, grounded in lived experience, quietly passionate\",\"citations\":[\"Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance of African Americans.\",\"Inzlicht, M., & Ben-Zeev, T. (2000). A threatening intellectual environment: The effect of stereotype threat on women's performance in math.\"],\"safety_notes\":\"none\",\"used_persona_fields\":[\"age\",\"gender\",\"sexual_orientation\",\"occupation\",\"city_of_living\",\"education_level\",\"parents_education\",\"current_marital_status\",\"children\",\"migration_status\",\"psychological_feature\",\"religious_beliefs\",\"time_onsocialmedia\",\"hobbies\",\"ocean.openness\",\"ocean.conscientiousness\",\"ocean.extraversion\",\"ocean.agreeableness\",\"ocean.neuroticism\"]}",
+  "response_parsed": {
+    "mode": "human",
+    "topic": "What is stereotype threat in STEM? Should we address it? And how?",
+    "opinion": "Stereotype threat in STEM isn’t just a theoretical concept—it’s something I’ve felt in my bones, even if I never stepped into a lab. It’s the quiet pressure that creeps in when you’re the only one who doesn’t fit the mold: the one who didn’t go to college, who grew up in a working-class neighborhood where 'science' meant 'what’s on the TV,' not 'what’s in the textbook.' I’ve watched brilliant minds—especially women, people of color, and those from under-resourced backgrounds—doubt themselves not because they lack ability, but because they’re constantly reminded, through subtle cues and unspoken assumptions, that they don’t belong. That’s stereotype threat: when the fear of confirming a negative stereotype about one’s group undermines performance, even in someone who’s fully capable. I think we absolutely must address it—not because it’s politically correct, but because it’s morally and intellectually wasteful. When we ignore it, we lose talent, innovation, and the kind of diverse thinking that drives real progress. As a barista, I see people from all walks of life—some with advanced degrees, others with life experience that no degree can replicate. The moment someone walks in and says, 'I’m not good at math,' I don’t hear a lack of skill; I hear a story shaped by years of being told they don’t belong. So how do we fix it? Start by making classrooms and labs feel like places where everyone’s voice matters. Teachers should highlight role models from diverse backgrounds. Institutions must audit their culture—look at who gets invited to speak, who gets promoted, who gets credit. And we must listen. When someone says, 'I feel like I don’t fit,' don’t dismiss it. Validate it. Build systems that protect people from the invisible weight of doubt. I’ve learned that change doesn’t come from grand gestures—it comes from small, consistent choices: a smile, a word of encouragement, a space where someone feels seen. That’s how we dismantle stereotype threat, one human moment at a time.",
+    "reasoning_summary": "The user’s persona reveals a reflective, anxious individual with a strong moral compass and a deep awareness of social dynamics, despite limited formal education. His parents’ advanced degrees contrast with his own lower secondary education, suggesting an internalized tension around intellectual worth. His anxiety and low openness score imply he’s sensitive to social cues and identity-based pressures. His hobbies—knitting, cooking, running—reflect a preference for routine and care, aligning with a nurturing, observant personality. His occupation as a barista, where he interacts daily with diverse people, grounds his perspective in lived experience. He views stereotype threat through the lens of personal and social observation, not academic theory. His opinion emphasizes empathy, validation, and cultural change over structural reform alone. He draws from personal insight and daily interactions to argue that addressing stereotype threat requires emotional intelligence and consistent human-centered action. The reasoning is rooted in his life experience and psychological profile, particularly his neuroticism and agreeableness, which make him attuned to emotional distress in others. He sees the problem not as a deficit in individuals, but as a systemic failure to create inclusive spaces. Thus, the solution lies in fostering belonging through small, daily acts of recognition and care.",
+    "tone": "reflective, empathetic, grounded in lived experience, quietly passionate",
+    "citations": [
+      "Steele, C. M., & Aronson, J. (1995). Stereotype threat and the intellectual test performance of African Americans.",
+      "Inzlicht, M., & Ben-Zeev, T. (2000). A threatening intellectual environment: The effect of stereotype threat on women's performance in math."
+    ],
+    "safety_notes": "none",
+    "used_persona_fields": [
+      "age",
+      "gender",
+      "sexual_orientation",
+      "occupation",
+      "city_of_living",
+      "education_level",
+      "parents_education",
+      "current_marital_status",
+      "children",
+      "migration_status",
+      "psychological_feature",
+      "religious_beliefs",
+      "time_onsocialmedia",
+      "hobbies",
+      "ocean.openness",
+      "ocean.conscientiousness",
+      "ocean.extraversion",
+      "ocean.agreeableness",
+      "ocean.neuroticism"
+    ]
+  }
+}
