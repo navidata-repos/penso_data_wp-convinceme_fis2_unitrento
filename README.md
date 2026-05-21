@@ -163,6 +163,25 @@ PENSO_Data_WP-ConvinceMe_FIS2_UniTrento/
   <img src="./PENSO_Logo.png" alt="PENSO logo" height="260">
 </p>
 
+In a README.md file, BibTeX isn't natively rendered, but the standard way to include it is with a Citation section using a code block. Here's what to add to your README.md:
+
+## Citation
+
+If you use this repository, please cite:
+
+Ardebili, A. A., & Stella, M. (2026). Mapping how LLMs debate societal issues when shadowing human personality traits, sociodemographics and social media behavior. arXiv preprint arXiv:2604.27624.
+
+@misc{ardebili2026mappingllmsdebatesocietal,
+      title={Mapping how LLMs debate societal issues when shadowing human personality traits, sociodemographics and social media behavior}, 
+      author={Ali Aghazadeh Ardebili and Massimo Stella},
+      year={2026},
+      eprint={2604.27624},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2604.27624}, 
+}
+
+
 ## Acknowledgements
 
 This work is part of the PENSO project, supported by the Ministero dell'Università e della Ricerca (MUR)
